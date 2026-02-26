@@ -50,6 +50,11 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
+/* Allow Tailwind text-color utilities to override the default navy */
+h1.text-white, h2.text-white, h3.text-white, h4.text-white {
+  color: var(--color-white);
+}
+
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
