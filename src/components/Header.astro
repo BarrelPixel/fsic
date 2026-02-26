@@ -1,0 +1,95 @@
+---
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'The Model', href: '/model' },
+  { label: 'Economic Impact', href: '/economic-impact' },
+  { label: 'Deployment', href: '/deployment' },
+  { label: 'Governance', href: '/governance' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+<header class="bg-navy text-white relative z-50">
+  <div class="container">
+    <nav class="flex items-center justify-between py-4" aria-label="Main navigation">
+      <a href="/" class="text-lg font-bold tracking-tight hover:opacity-90 transition-opacity leading-tight">
+        <span class="block">Florida Space</span>
+        <span class="block text-sm font-medium text-orange">Innovation Center</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden lg:flex items-center gap-1" role="list">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'px-3 py-2 text-sm font-medium rounded transition-colors',
+                currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+                  ? 'bg-white/15 text-white'
+                  : 'text-white/80 hover:text-white hover:bg-white/10',
+              ]}
+              aria-current={currentPath === item.href ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-toggle"
+        class="lg:hidden p-2 text-white hover:bg-white/10 rounded transition-colors"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-navy border-t border-white/10">
+    <div class="container py-4">
+      <ul class="flex flex-col gap-1" role="list">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'block px-3 py-2.5 text-sm font-medium rounded transition-colors',
+                currentPath === item.href
+                  ? 'bg-white/15 text-white'
+                  : 'text-white/80 hover:text-white hover:bg-white/10',
+              ]}
+              aria-current={currentPath === item.href ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    menu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+</script>

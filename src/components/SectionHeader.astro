@@ -1,0 +1,22 @@
+---
+interface Props {
+  align?: 'center' | 'left';
+  dark?: boolean;
+}
+
+const { align = 'center', dark = false } = Astro.props;
+---
+<div class:list={[
+  'mb-12',
+  align === 'center' ? 'text-center max-w-3xl mx-auto' : 'max-w-4xl',
+]}>
+  <slot name="headline" />
+  {Astro.slots.has('subhead') && (
+    <div class:list={[
+      'mt-4 text-lg leading-relaxed',
+      dark ? 'text-white/80' : 'text-gray-dark',
+    ]}>
+      <slot name="subhead" />
+    </div>
+  )}
+</div>
