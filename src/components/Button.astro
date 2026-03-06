@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { href, variant = 'primary', class: className = '' } = Astro.props;
+const resolvedHref = href.startsWith('/') ? `${import.meta.env.BASE_URL}${href}` : href;
 
 const variants = {
   primary: 'bg-orange text-white hover:bg-orange-dark',
@@ -14,7 +15,7 @@ const variants = {
 };
 ---
 <a
-  href={href}
+  href={resolvedHref}
   class:list={[
     'inline-block px-8 py-3.5 text-base font-semibold rounded-md transition-all duration-200 text-center',
     variants[variant],

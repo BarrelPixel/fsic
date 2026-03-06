@@ -1,18 +1,19 @@
 ---
+const base = import.meta.env.BASE_URL;
 const primaryLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'The Model', href: '/model' },
-  { label: 'Economic Impact', href: '/economic-impact' },
-  { label: 'Deployment', href: '/deployment' },
-  { label: 'Governance', href: '/governance' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Home', href: base },
+  { label: 'The Model', href: `${base}/model` },
+  { label: 'Economic Impact', href: `${base}/economic-impact` },
+  { label: 'Deployment', href: `${base}/deployment` },
+  { label: 'Governance', href: `${base}/governance` },
+  { label: 'Contact', href: `${base}/contact` },
 ];
 
 const secondaryLinks = [
-  { label: 'The Strategic Moment', href: '/strategic-moment' },
-  { label: 'Programs & Facilities', href: '/programs-facilities' },
-  { label: 'Partnership & Funding', href: '/partnership-funding' },
-  { label: 'Long-Term Vision', href: '/long-term-vision' },
+  { label: 'The Strategic Moment', href: `${base}/strategic-moment` },
+  { label: 'Programs & Facilities', href: `${base}/programs-facilities` },
+  { label: 'Partnership & Funding', href: `${base}/partnership-funding` },
+  { label: 'Long-Term Vision', href: `${base}/long-term-vision` },
 ];
 ---
 <footer class="bg-navy text-white/80" role="contentinfo">
