@@ -158,19 +158,19 @@ const engines: Engine[] = [
         {engines.map((engine, i) => (
           <>
             <li class="border-b border-rule-on-dark">
-              <a href={`#${engine.id}`} class="group grid grid-cols-[2.5rem_minmax(0,1fr)] sm:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1.3fr)] gap-x-4 gap-y-1 py-4 rounded-sm">
+              <a href={`#${engine.id}`} class="group grid grid-cols-[2.5rem_minmax(0,1fr)] sm:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1.3fr)] gap-x-4 gap-y-1 py-4">
                 <span class="text-sm text-white/60 tabular-nums pt-1.5">{pad2(i + 1)}</span>
                 <span class="font-display text-2xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2 flex items-center gap-3">
                   <span class:list={['w-2.5 h-2.5 shrink-0 rounded-full', engine.tone === 'lagoon' ? 'bg-lagoon-light' : 'bg-orange']} aria-hidden="true"></span>
                   {engine.name}
                 </span>
-                <span class="col-start-2 sm:col-start-auto text-white/70 sm:pt-1.5">{engine.shift}</span>
+                <span class="col-start-2 sm:col-start-auto text-white/75 sm:pt-1.5">{engine.shift}</span>
               </a>
             </li>
             {engine.launchesFirst && (
               <li class="border-b border-rule-on-dark grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 py-4">
                 <span></span>
-                <p class="mb-0 text-sm text-white/70 max-w-xl">
+                <p class="mb-0 text-sm text-white/75 max-w-xl">
                   <span class="text-white font-semibold">Talent launches first.</span>
                   As partnerships deepen and demand grows, the Innovation, Market, and Civic Engines scale in alignment with regional development timelines.
                 </p>
@@ -242,12 +242,12 @@ const engines: Engine[] = [
     <Grid>
       <h2 slot="label" class="text-white mb-0">Guiding Principles</h2>
       <p class="font-display text-3xl md:text-4xl font-semibold text-white leading-tight mb-6">Partner-first, gap-filling, and coalition-driven.</p>
-      <p class="text-lead text-white/85 mb-10 max-w-3xl">
+      <p class="text-lead text-white/90 mb-10 max-w-3xl">
         FSIC positions itself as a neutral convener that strengthens—not competes with—existing institutions by aligning talent, industry needs, and community priorities.
       </p>
       <ul role="list">
-        <li class="border-t border-rule-on-dark py-5 text-white/80">The strategy starts small, delivers visible early wins, and scales only when partners signal readiness.</li>
-        <li class="border-y border-rule-on-dark py-5 text-white/80">Every partnership is structured for low operational burden, high shared value, and clear governance.</li>
+        <li class="border-t border-rule-on-dark py-5 text-white/75">The strategy starts small, delivers visible early wins, and scales only when partners signal readiness.</li>
+        <li class="border-y border-rule-on-dark py-5 text-white/75">Every partnership is structured for low operational burden, high shared value, and clear governance.</li>
       </ul>
     </Grid>
   </Section>

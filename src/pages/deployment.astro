@@ -127,12 +127,12 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
       <ol class="border-t border-rule-on-dark md:border-t-0">
         {phases.map((phase, i) => (
           <li class="border-b border-rule-on-dark">
-            <a href={`#${phase.id}`} class="group grid gap-y-2 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)] md:gap-x-6 md:items-center py-3.5 rounded-sm">
+            <a href={`#${phase.id}`} class="group grid gap-y-2 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)] md:gap-x-6 md:items-center py-3.5">
               <span class="flex items-baseline gap-3">
                 <span class="text-sm text-white/60 tabular-nums">{pad2(i + 1)}</span>
                 <span>
                   <span class="block font-display text-xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2 leading-tight">{phase.name}</span>
-                  <span class="block text-sm text-white/70">{phase.timeframe}</span>
+                  <span class="block text-sm text-white/75">{phase.timeframe}</span>
                 </span>
               </span>
               <span class="grid grid-cols-5 h-3 bg-white/[0.06]" aria-hidden="true">
@@ -194,10 +194,10 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
   <Section dark>
     <Grid>
       <h2 slot="label" class="text-white mb-0">A Phased Model That Reduces Risk and Builds Momentum</h2>
-      <p class="text-lead text-white/85 mb-8 max-w-3xl">
+      <p class="text-lead text-white/90 mb-8 max-w-3xl">
         FSIC launches with a lean operational model supported by philanthropic investment, in-kind contributions, and early public-private partnerships. Over three years, FSIC transitions from startup to full Talent Engine activation, supported by diversified revenue streams including grants, employer partnerships, earned revenue, and corporate sponsorships.
       </p>
-      <p class="text-lg text-white/80 mb-0 max-w-3xl pt-6 border-t border-rule-on-dark">
+      <p class="text-white/75 mb-0 max-w-3xl pt-6 border-t border-rule-on-dark">
         By Year 3, FSIC is positioned to sustain 30–50% of its operating budget through recurring earned revenue and employer partnerships, with grants and philanthropy fueling innovation and growth.
       </p>
     </Grid>

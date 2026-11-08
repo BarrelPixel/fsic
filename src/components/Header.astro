@@ -34,14 +34,14 @@ const groupActive = (links: { active: boolean }[]) => links.some((l) => l.active
 
 
 const itemClass = (active: boolean) => [
-  'px-3 py-2 text-sm font-medium rounded transition-colors',
-  active ? 'bg-white/15 text-white' : 'text-white/80 hover:text-white hover:bg-white/10',
+  'px-3 py-2 text-sm font-medium transition-colors',
+  active ? 'bg-white/15 text-white' : 'text-white/75 hover:text-white hover:bg-white/10',
 ];
 ---
 <header class="font-sans bg-night text-white relative z-50 border-b border-white/10">
   <div class="container">
     <nav class="flex items-center justify-between py-3" aria-label="Main navigation">
-      <a href={base} class="block shrink-0 rounded hover:opacity-90 transition-opacity">
+      <a href={base} class="block shrink-0 hover:opacity-90 transition-opacity">
         <img
           src={`${base}/images/fsic-logo-reverse.png`}
           alt="Florida Space Innovation Center"
@@ -67,7 +67,7 @@ const itemClass = (active: boolean) => [
                 </svg>
               </button>
               <div id={item.id} class="nav-panel absolute left-0 top-full pt-2 min-w-60" data-nav-panel>
-                <ul class="bg-night border border-white/15 rounded p-2 shadow-lg shadow-black/30" role="list">
+                <ul class="bg-night border border-white/15 p-2" role="list">
                   {item.links.map((link) => (
                     <li>
                       <a
@@ -95,7 +95,7 @@ const itemClass = (active: boolean) => [
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-toggle"
-        class="lg:hidden p-2 text-white hover:bg-white/10 rounded transition-colors"
+        class="lg:hidden p-2 text-white hover:bg-white/10 transition-colors"
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Toggle navigation menu"

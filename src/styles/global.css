@@ -67,7 +67,8 @@ html {
     font-optical-sizing: auto;
     font-size: 1.125rem;
     color: var(--color-gray-dark);
-    line-height: 1.7;
+    /* One leading for all reading text, paragraphs and lists alike: 18px on 28px (a 4px grid). */
+    line-height: calc(28 / 18);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -241,9 +242,9 @@ html {
     margin-bottom: 1rem;
   }
 
+  /* Hanging dashes, as in DashList: text flush with the paragraphs, the dash in the gutter. */
   .release li {
     position: relative;
-    padding-left: 1.5rem;
   }
 
   .release li + li {
@@ -253,9 +254,9 @@ html {
   .release li::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0.8em;
-    width: 0.75rem;
+    left: -0.875rem;
+    top: calc(0.5lh + 0.1em - 1px);
+    width: 0.5rem;
     height: 2px;
     background: var(--color-navy);
   }

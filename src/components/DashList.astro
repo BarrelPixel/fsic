@@ -1,5 +1,6 @@
 ---
-// A list with short dash markers (DESIGN.md "Structure should show what the content is").
+// A list with short dash markers (DESIGN.md "Structure should show what the content is"). The text sits
+// flush with the column like a paragraph; the 8px dash hangs 14px into the gutter on its left.
 // Marker color carries meaning: gray = problems, navy = neutral points, orange / lagoon = impact
 // for an industry or community engine, lagoon-light = community items on night.
 interface Props {
@@ -7,7 +8,8 @@ interface Props {
   marker?: 'gray' | 'navy' | 'orange' | 'lagoon' | 'lagoon-light';
   /** Two columns from sm (short items only). */
   columns?: boolean;
-  /** More space between items, for longer lines at text-lg. */
+  /** Space between items (8px), for items that run to several lines. Otherwise items follow on the
+   *  28px line, and the dash marks where each one starts. */
   spacious?: boolean;
   /** Items are trusted, hand-written HTML (links, <strong>), rendered with set:html. */
   html?: boolean;
@@ -24,12 +26,12 @@ const markerClass = {
 }[marker];
 ---
 <ul
-  class:list={[columns ? 'grid gap-x-8 gap-y-2 sm:grid-cols-2' : ['flex flex-col', spacious ? 'gap-3' : 'gap-2'], className]}
+  class:list={[columns ? 'grid gap-x-8 sm:grid-cols-2' : ['flex flex-col', spacious && 'gap-2'], className]}
   role="list"
 >
   {items.map((item) => (
-    <li class="flex gap-3 leading-snug">
-      <span class:list={['mt-[0.6em] w-3 h-0.5 shrink-0', markerClass]} aria-hidden="true"></span>
+    <li class="relative">
+      <span class:list={['absolute -left-3.5 top-[calc(0.5lh+0.1em-1px)] w-2 h-0.5', markerClass]} aria-hidden="true"></span>
       {html ? <span set:html={item} /> : item}
     </li>
   ))}
