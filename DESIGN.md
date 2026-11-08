@@ -88,7 +88,7 @@ The site uses one Swiss-style modular grid. Every section shares the same vertic
 | `Row` | A label \| content row inside the content column, for use in a `<dl>`. `rule="bottom"` when it opens the content column, `count` for "Programs · 5", `list` when the content is a list of `<details>`. `dot` (gray, navy, orange, lagoon, lagoon-light) puts a small dot after the label to say what the list beside it is: gray for problems, the engine or phase color for impact |
 | `List` | Items with a small round dot on the column edge, text 16px in, 8px apart on the 28px leading (`.list` in `global.css`; on-dark dots inside night sections). `spacious` (12px) for items that run to several lines, `columns` for short items, `html` for items with links |
 | `PageHero` | Interior page opening (below) |
-| `SectionBar` | Sticky in-page navigation with the current section marked |
+| `SectionBar` | Sticky in-page navigation with the current section marked. Use it on long pages with four or more numbered sections (Model, Governance, Partnership & Funding, Economic Impact): wrap the numbered sections in an element whose first child is the bar, and give each section `scroll-mt-20` so links land below it |
 | `RunningHead` | Used by `Section`; use directly only in custom layouts |
 
 - **12 columns** at `lg` (`lg:grid-cols-12 lg:gap-x-8`) inside the container (max 76rem, 1.5rem gutter).
@@ -125,7 +125,7 @@ Headline across cols 1–9 (max-w-4xl)
 - A set of peers becomes a 2-column grid with a top rule.
 - A before/after pair (what it solves, regional impact) sits in adjacent rows on the same axis. Don't put unrelated kinds of content in matching side-by-side columns.
 - Lists (`List`) mark each item with a small round dot on the column edge; the text starts 16px in, and items are separated by space (8px; `spacious` 12px), so they read as a list without rules or dashes. The dot is navy at 60% (white at 60% on night), drawn in CSS and centered on the first line's lowercase letters. When a list's meaning matters (problems vs. impact), say it on the list's label with `Row`'s `dot` (after the label, so labels stay flush): gray for problems, the engine or phase color for impact. Only `List`'s dot marks list items: no other bullets, dashes, chips, pills or boxed tags.
-- Long lists of items people may want to read in full use native `<details>` with a + that turns to ×. Don't hide short lists.
+- Long lists of items people may want to read in full use native `<details>` with a + that turns to ×. Don't hide short lists. When several items each carry two or more lists (partner types, governing bodies), keep each item's name and one-sentence summary visible and put its lists in `Disclosure`s, so all items fit in a scan.
 - Square corners and no shadows anywhere (buttons, menus, panels); the only round shapes are the small dots. Don't make cards. No diagonal dividers or decorative grids.
 - **Left-aligned by default.** Center only short, standalone moments.
 

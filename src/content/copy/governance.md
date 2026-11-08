@@ -185,6 +185,8 @@ Master Plan p. 17: the founder serves as unpaid CEO during the startup phase, th
 
 > **⚠ Review:** Check the wording with John Joaquin before publishing.
 
+
+> **Layout (November 2026):** each governing body shows its purpose; its lists (Composition, Board independence, Responsibilities…) open in place. A sticky section bar follows the page.
 ---
 
 ## 03 · PUBLIC REPORTING AND TRANSPARENCY

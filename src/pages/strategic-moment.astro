@@ -7,6 +7,7 @@ import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import List from '../components/List.astro';
 import Closing from '../components/Closing.astro';
+import HeroIndex from '../components/HeroIndex.astro';
 
 // Copy: src/content/copy/strategic-moment.md (Draft). Sections are verbatim from fsic.space/about-4,
 // except the lead (Master Plan p. 4) and the development figures (Master Plan pp. 4 and 6, unnamed:
@@ -25,9 +26,15 @@ const figures = [
 
   <!-- Interior page template (DESIGN.md): PageHero, four narrative sections, closing -->
   <PageHero title="Why Now — The Strategic Moment">
-    <p class="text-lead text-white/90 mb-0">
+    <p class="text-lead text-white/90 mb-10">
       Southeast Volusia is entering one of the most consequential economic windows in its modern history.
     </p>
+    <HeroIndex label="Sections on this page" size="large" items={[
+      { id: 'inflection-point', name: 'A Region at an Inflection Point' },
+      { id: 'place-based-innovation', name: 'A National Shift Toward Place-Based Innovation' },
+      { id: 'catalyst', name: 'A Once-in-a-Generation Catalyst' },
+      { id: 'window', name: 'The Window Is Open' },
+    ]} />
   </PageHero>
 
   <!-- 01 · Narrative: the consequence as the thesis (cols 1–4), the situation (cols 5–12) -->

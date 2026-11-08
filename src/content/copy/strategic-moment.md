@@ -15,6 +15,7 @@
 Southeast Volusia is entering one of the most consequential economic windows in its modern history.
 
 > **Source:** fsic.space/about-4 — section heading "Why Now — The Strategic Moment". Lead: Master Plan p. 4 (verbatim).
+**Index:** the four sections (03 is shortened to "A Once-in-a-Generation Catalyst", 04 to "The Window Is Open").
 
 ---
 

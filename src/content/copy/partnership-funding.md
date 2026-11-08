@@ -143,3 +143,5 @@ For each partner type: who they are (overview), partnership roles, strategic ben
 Running-head labels "Why partner", "Funding", "Get involved"; table headers "Partner", "Partnership roles", "Strategic benefits", "Funding stream", "Purpose and sources", "Sources:", "Year 1"–"Year 5", "Years not stated"; nav label "Partner types"; and the timeline note "Timeframes: FSIC Master Plan 2026–2031. The plan gives no timeframe for employer partnerships."
 
 > **⚠ Review:** Check the timeline note, the only new sentence on the page.
+
+> **Layout (November 2026):** each partner type shows its name and overview; its Partnership roles and Strategic benefits open in place. A sticky section bar follows the page.
