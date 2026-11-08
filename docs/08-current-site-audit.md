@@ -20,15 +20,15 @@ The Wix sitemap lists 33 URLs. Only five are linked from the navigation. The res
 | About | `/about-4` | Why FSIC, four engines, phased model, Why Now, development catalyst, contact form | **Yes.** This is the main source of long-form copy |
 | News & Media | `/news` | Four press releases (May 25 to July 29, 2026) | **Yes**, all four |
 | FAQ | `/copy-of-news-media` | Mission, vision, 16 Q&As | **Yes**, all of it |
-| Talent Engine | `/talent` | Overview and 6 components (linked from the home page card only) | **Yes** |
+| Talent Engine | `/talent` | Overview and 6 components (linked from the home page card only) | **Overview, yes.** Components replaced by the Master Plan's programs (November 2026) |
 
 ### Not linked, but with real copy
 
 | Page | URL | Content | Migrate? |
 |------|-----|---------|----------|
-| Innovation Engine | `/innovation` | Overview and 6 components. **Not linked anywhere** | **Yes** |
-| Market Engine | `/market` | Overview and 6 components. **Not linked anywhere** | **Yes** |
-| Civic Engine | `/civic` | Overview and 6 components. **Not linked anywhere** | **Yes** |
+| Innovation Engine | `/innovation` | Overview and 6 components. **Not linked anywhere** | **Overview, yes.** Components replaced by the Master Plan's programs (November 2026) |
+| Market Engine | `/market` | Overview and 6 components. **Not linked anywhere** | **Overview, yes.** Components replaced by the Master Plan's programs (November 2026) |
+| Civic Engine | `/civic` | Overview and 6 components. **Not linked anywhere** | **Overview, yes.** Components replaced by the Master Plan's programs (November 2026) |
 | John Joaquin | `/john-joaquin` | Founder bio, community leadership, career, education | Yes. Contact block is placeholder |
 | News & Media (old) | `/about-7` | Duplicate of `/news` | No (duplicate) |
 | Why we are building FSIC | `/1-why-we-are-building-the-fsic` | Older draft of About, using the Master Plan's single-development figures, mixed with Wix placeholder text | No. Useful only for the figure conflict (§3.1) |
@@ -59,7 +59,7 @@ The Wix sitemap lists 33 URLs. Only five are linked from the navigation. The res
 |----------|-----------|----------------------------|----------------|
 | Home `/` | `home.md` (approved, unchanged) | — | Consider adding the mission statement (§3.7) |
 | The Strategic Moment (built) | `strategic-moment.md` | About → "Why Now" (whole section) | — (showing the unnamed development's size was confirmed, November 2026) |
-| The FSIC Model | `model.md` | Engine definition, About engine summaries, all 24 engine components | Guiding principles, how the engines reinforce each other |
+| The FSIC Model | `model.md` | Engine definition, About engine summaries, engine overviews (the 24 components were replaced by the Master Plan's 19 programs, November 2026) | Guiding principles, how the engines reinforce each other |
 | Economic Impact | `economic-impact.md` | FAQ economic answer and disclaimer | Three-scenario comparison, ROI framework (Master Plan) |
 | Phased Deployment | `deployment.md` | About → phased model, FAQ → first programs | Milestones, facilities per phase (Master Plan) |
 | Programs & Facilities (built) | `programs-facilities.md` | FAQ → residents, businesses, location | — (both review items decided, November 2026) |

@@ -7,13 +7,15 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
+import { programsFor, type EngineId } from '../lib/programs';
 
 // Copy: src/content/copy/model.md (Draft). Wording is verbatim from the copy deck.
-// Open review items (see model.md ⚠): the "Brings together" lists, the Civic shift line, and the
-// startup overlap between the Innovation and Market engines.
+// Open review items (see model.md ⚠): the "Brings together" lists and the Civic shift line.
+// Each engine's programs come from the Master Plan portfolio in src/lib/programs.ts (shared with
+// /programs-facilities), not from this file.
 
 type Engine = {
-  id: string;
+  id: EngineId;
   name: string;
   tone: 'orange' | 'lagoon';
   shift: string;
@@ -22,7 +24,6 @@ type Engine = {
   together: string[];
   solves: string[];
   impact: string[];
-  components: { title: string; body: string }[];
 };
 
 const engines: Engine[] = [
@@ -49,14 +50,6 @@ const engines: Engine[] = [
       "Strengthens regional competitiveness",
       "Expands economic mobility for residents",
       "Positions Southeast Volusia as a workforce hub for the Space Coast",
-    ],
-    components: [
-      { title: 'STEM & Early Exposure Programs', body: "Hands-on STEM and space-focused learning experiences for K–12 students that spark curiosity, build foundational skills, and connect young learners to real opportunities in the region's growing space economy." },
-      { title: 'Technical Training & Micro-Credentials', body: 'Short-form, industry-aligned training that equips learners with the technical skills employers need today. Micro-credentials and certifications help residents quickly qualify for high-wage roles in space, aerospace, advanced manufacturing, and related sectors.' },
-      { title: 'Internships, Apprenticeships & Work-Based Learning', body: 'Structured pathways that place students and adults directly inside local companies. These experiences build real-world skills, strengthen employer pipelines, and increase job placements for Southeast Volusia residents.' },
-      { title: 'University Partnerships & Degree Pathways', body: 'Collaborations with regional and national universities that bring new programs, research opportunities, and degree pathways to Southeast Volusia. These partnerships expand access to higher education and anchor long-term economic growth.' },
-      { title: 'Employer Engagement & Talent Alignment', body: 'Continuous collaboration with employers to identify workforce needs, shape curriculum, and ensure training programs lead directly to high-wage jobs. This alignment strengthens local hiring and keeps talent in the community.' },
-      { title: 'Community Access & On-Ramps', body: 'Inclusive programs that make space and technology careers accessible to residents of all ages and backgrounds. These on-ramps help adults re-skill, help students explore new futures, and ensure the benefits of growth reach the entire community.' },
     ],
   },
   {
@@ -85,14 +78,6 @@ const engines: Engine[] = [
       "Builds a culture of problem-solving and experimentation",
       "Positions Southeast Volusia as a hub for dual-use innovation",
     ],
-    components: [
-      { title: 'Challenge Labs & Problem-Solving Sprints', body: 'Structured programs where industry, government, and community partners bring real challenges for teams of students, researchers, and innovators to solve. These labs generate new ideas, prototypes, and pathways for commercialization.' },
-      { title: 'Rapid Prototyping & Maker Capabilities', body: 'Hands-on spaces and tools that allow innovators to quickly design, build, and test early-stage concepts. This accelerates learning, reduces risk, and helps founders and students move from idea to prototype faster.' },
-      { title: 'Applied Research Partnerships', body: "Collaborations between universities, employers, and researchers that turn scientific and technical expertise into real-world solutions. These partnerships strengthen the region's research capacity and attract new academic investment." },
-      { title: 'Startup Support & Venture Acceleration', body: "Programs that help founders refine ideas, validate markets, build teams, and access mentors and partners. This support increases the number of viable startups and strengthens the region's entrepreneurial pipeline." },
-      { title: 'Industry Collaboration & Technology Adoption', body: 'Ongoing engagement with employers to identify innovation needs, shape challenge topics, and accelerate the adoption of new technologies across the region. This ensures innovation activity is aligned with real market demand.' },
-      { title: 'Innovation Community & Events', body: 'Meetups, workshops, hackathons, and showcases that bring together students, founders, researchers, and employers. These events build a visible, connected innovation culture across Southeast Volusia.' },
-    ],
   },
   {
     id: 'market',
@@ -119,14 +104,6 @@ const engines: Engine[] = [
       "Attracts employers seeking a ready ecosystem",
       "Diversifies the regional economy",
     ],
-    components: [
-      { title: 'Supplier Readiness & Certification Support', body: 'Training and guidance that help local companies meet the requirements of aerospace, defense, and advanced manufacturing supply chains. This includes support for quality systems, compliance, and key certifications that unlock new contract opportunities.' },
-      { title: 'SBIR/STTR Navigation & Federal Funding Pathways', body: 'Hands-on assistance helping startups and small businesses pursue federal innovation funding. This includes topic scouting, proposal guidance, partner matching, and pathways into NSF, DoD, NASA, and other agency programs.' },
-      { title: 'Startup Acceleration & Venture Support', body: 'Programs that help founders validate markets, refine business models, build teams, and access mentors and investors. This support strengthens early-stage companies and increases the number of scalable ventures in Southeast Volusia.' },
-      { title: 'Contract Matchmaking & Industry Connections', body: 'Direct connections between local suppliers and regional buyers, primes, and government partners. These relationships open doors to new contracts, partnerships, and long-term business growth.' },
-      { title: 'Business Growth Services & Technical Assistance', body: 'Targeted support that helps companies expand capacity, adopt new technologies, improve operations, and prepare for larger contracts. This strengthens the competitiveness of local firms across the region.' },
-      { title: 'Investment & Capital Access Pathways', body: 'Connections to venture capital, angel investors, state programs, and federal funding opportunities. These pathways help companies secure the resources needed to scale and compete in the space and advanced technology sectors.' },
-    ],
   },
   {
     id: 'civic',
@@ -151,14 +128,6 @@ const engines: Engine[] = [
       "Strengthens civic trust and transparency",
       "Expands access to STEM opportunities",
       "Creates a shared narrative around regional growth",
-    ],
-    components: [
-      { title: 'Community Engagement & Public Programming', body: "Accessible events, workshops, exhibitions, and hands-on activities that bring space, science, and technology into everyday community life. These programs build excitement, understanding, and pride in the region's growing space economy." },
-      { title: 'STEM Culture & Youth Inspiration', body: "Initiatives that spark curiosity and expand access to STEM learning for students of all ages. These efforts help young people see themselves in future space and technology careers and strengthen the region's long-term talent pipeline." },
-      { title: 'Storytelling, Branding & Regional Identity', body: "Public-facing narratives, campaigns, and creative collaborations that highlight Southeast Volusia's role in the space economy. This work builds a shared identity and reinforces the region's position as a rising innovation hub." },
-      { title: 'Cross-Sector Convening & Coalition Building', body: 'Regular engagement with educators, employers, civic leaders, nonprofits, and community groups to align priorities, share resources, and strengthen regional collaboration. This ensures that growth benefits residents and supports long-term community goals.' },
-      { title: 'Transparency, Governance & Public Trust', body: "Clear communication, open processes, and community-centered decision-making that build confidence in FSIC's mission and ensure residents feel included in shaping the region's future." },
-      { title: 'Arts, Culture & Space Integration', body: "Creative programs that blend arts, storytelling, and space themes to make innovation feel accessible, inspiring, and uniquely tied to Southeast Volusia's identity." },
     ],
   },
 ];
@@ -255,19 +224,24 @@ const engines: Engine[] = [
               <DashList items={engine.impact} marker={engine.tone} class="text-navy" />
             </Row>
 
-            <!-- The program catalogue: each item opens in place -->
-            <Row label="Components" count={engine.components.length} list>
+            <!-- The engine's programs (Master Plan pp. 19–21, shared with Programs & Facilities via
+                 src/lib/programs.ts): each opens in place -->
+            <Row label="Programs" count={programsFor(engine.id).length} list>
               <ul role="list">
-                {engine.components.map((item) => (
+                {programsFor(engine.id).map((item) => (
                   <li class="border-b border-navy/15 last:border-b-0">
                     <details class="group">
                       <summary class="flex items-start justify-between gap-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                        <span class="font-sans font-semibold text-navy leading-snug">{item.title}</span>
+                        <span class="font-sans font-semibold text-navy leading-snug">{item.name}</span>
                         <svg class="w-5 h-5 mt-px shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                           <path d="M10 4v12M4 10h12" stroke-linecap="round" />
                         </svg>
                       </summary>
-                      <p class="pb-5 pr-9 text-base text-gray-dark">{item.body}</p>
+                      <div class="pb-5 pr-9 text-base text-gray-dark">
+                        <p class:list={[item.items || item.outcome ? 'mb-2' : 'mb-0']}>{item.lead}</p>
+                        {item.items && <DashList items={item.items} class:list={[item.outcome ? 'mb-3' : '']} />}
+                        {item.outcome && <p class="mb-0">{item.outcome}</p>}
+                      </div>
                     </details>
                   </li>
                 ))}

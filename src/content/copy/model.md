@@ -3,7 +3,7 @@
 **Status:** Draft
 **Last Updated:** November 2026
 **Route:** /model
-**Sources:** fsic.space/ (engine definition), /about-4 (engine summaries), /talent, /innovation, /market, /civic (components); Master Plan pp. 9–14
+**Sources:** fsic.space/ (engine definition), /about-4 (engine summaries), /talent, /innovation, /market, /civic (engine overviews); Master Plan pp. 9–14, 19–21 (programs)
 
 ---
 
@@ -75,16 +75,11 @@ The Talent Engine is FSIC's workforce powerhouse, building clear, employer-align
 > **Source:** What it solves and Regional impact: Master Plan pp. 9–11, engine tables (verbatim).
 > **⚠ Review:** "Brings together" is drawn from the overview above and is new for the page. The page shows Brings together, What it solves and Regional impact in place of the overview paragraph.
 
-**Components:**
-- **STEM & Early Exposure Programs** — Hands-on STEM and space-focused learning experiences for K–12 students that spark curiosity, build foundational skills, and connect young learners to real opportunities in the region's growing space economy.
-- **Technical Training & Micro-Credentials** — Short-form, industry-aligned training that equips learners with the technical skills employers need today. Micro-credentials and certifications help residents quickly qualify for high-wage roles in space, aerospace, advanced manufacturing, and related sectors.
-- **Internships, Apprenticeships & Work-Based Learning** — Structured pathways that place students and adults directly inside local companies. These experiences build real-world skills, strengthen employer pipelines, and increase job placements for Southeast Volusia residents.
-- **University Partnerships & Degree Pathways** — Collaborations with regional and national universities that bring new programs, research opportunities, and degree pathways to Southeast Volusia. These partnerships expand access to higher education and anchor long-term economic growth.
-- **Employer Engagement & Talent Alignment** — Continuous collaboration with employers to identify workforce needs, shape curriculum, and ensure training programs lead directly to high-wage jobs. This alignment strengthens local hiring and keeps talent in the community.
-- **Community Access & On-Ramps** — Inclusive programs that make space and technology careers accessible to residents of all ages and backgrounds. These on-ramps help adults re-skill, help students explore new futures, and ensure the benefits of growth reach the entire community.
+**Programs:** the Master Plan's programs for this engine (pp. 19–21), as listed in `programs-facilities.md` (PROGRAM PORTFOLIO). Both pages read one list, `src/lib/programs.ts`.
 
-> **Source:** Summary from fsic.space/about-4; overview and components from fsic.space/talent (verbatim).
-> **Layout note:** The page leaves out the "Includes:" line because the components list says the same thing.
+> **Changed (November 2026):** each engine's "Components" (from fsic.space) are replaced by the Master Plan's programs, as chosen by the project lead, so the Model and Programs & Facilities pages use one list.
+> **Source:** Summary from fsic.space/about-4; overview from fsic.space/talent (verbatim).
+> **Layout note:** The page leaves out the "Includes:" line because the programs list says the same thing.
 > **⚠ Review:** "workforce powerhouse" is hype language under the content guidelines.
 
 ---
@@ -124,16 +119,10 @@ The Innovation Engine turns regional challenges into new ideas, prototypes, and 
 > **Source:** What it solves and Regional impact: Master Plan pp. 9–11, engine tables (verbatim).
 > **⚠ Review:** "Brings together" is drawn from the overview above and is new for the page. The page shows Brings together, What it solves and Regional impact in place of the overview paragraph.
 
-**Components:**
-- **Challenge Labs & Problem-Solving Sprints** — Structured programs where industry, government, and community partners bring real challenges for teams of students, researchers, and innovators to solve. These labs generate new ideas, prototypes, and pathways for commercialization.
-- **Rapid Prototyping & Maker Capabilities** — Hands-on spaces and tools that allow innovators to quickly design, build, and test early-stage concepts. This accelerates learning, reduces risk, and helps founders and students move from idea to prototype faster.
-- **Applied Research Partnerships** — Collaborations between universities, employers, and researchers that turn scientific and technical expertise into real-world solutions. These partnerships strengthen the region's research capacity and attract new academic investment.
-- **Startup Support & Venture Acceleration** — Programs that help founders refine ideas, validate markets, build teams, and access mentors and partners. This support increases the number of viable startups and strengthens the region's entrepreneurial pipeline.
-- **Industry Collaboration & Technology Adoption** — Ongoing engagement with employers to identify innovation needs, shape challenge topics, and accelerate the adoption of new technologies across the region. This ensures innovation activity is aligned with real market demand.
-- **Innovation Community & Events** — Meetups, workshops, hackathons, and showcases that bring together students, founders, researchers, and employers. These events build a visible, connected innovation culture across Southeast Volusia.
+**Programs:** the Master Plan's programs for this engine (pp. 19–21), as listed in `programs-facilities.md` (PROGRAM PORTFOLIO). Both pages read one list, `src/lib/programs.ts`.
 
-> **Source:** Summary from fsic.space/about-4; overview and components from fsic.space/innovation (verbatim). The live /innovation page is not linked from anywhere on the current site.
-> **⚠ Review:** "Startup Support & Venture Acceleration" overlaps with the Market Engine's "Startup Acceleration & Venture Support", and the descriptions are nearly the same. Decide which engine owns startups, or explain how the two differ.
+> **Source:** Summary from fsic.space/about-4; overview from fsic.space/innovation (verbatim). The live /innovation page is not linked from anywhere on the current site.
+> **Resolved (November 2026):** the earlier components list had a startup item under both Innovation and Market. The Master Plan's programs place startups under Market only (Startup Acceleration).
 
 ---
 
@@ -173,15 +162,9 @@ By aligning business support with regional industry demand, the Market Engine in
 > **Source:** What it solves and Regional impact: Master Plan pp. 9–11, engine tables (verbatim).
 > **⚠ Review:** "Brings together" is drawn from the overview above and is new for the page. The page shows Brings together, What it solves and Regional impact in place of the overview paragraph.
 
-**Components:**
-- **Supplier Readiness & Certification Support** — Training and guidance that help local companies meet the requirements of aerospace, defense, and advanced manufacturing supply chains. This includes support for quality systems, compliance, and key certifications that unlock new contract opportunities.
-- **SBIR/STTR Navigation & Federal Funding Pathways** — Hands-on assistance helping startups and small businesses pursue federal innovation funding. This includes topic scouting, proposal guidance, partner matching, and pathways into NSF, DoD, NASA, and other agency programs.
-- **Startup Acceleration & Venture Support** — Programs that help founders validate markets, refine business models, build teams, and access mentors and investors. This support strengthens early-stage companies and increases the number of scalable ventures in Southeast Volusia.
-- **Contract Matchmaking & Industry Connections** — Direct connections between local suppliers and regional buyers, primes, and government partners. These relationships open doors to new contracts, partnerships, and long-term business growth.
-- **Business Growth Services & Technical Assistance** — Targeted support that helps companies expand capacity, adopt new technologies, improve operations, and prepare for larger contracts. This strengthens the competitiveness of local firms across the region.
-- **Investment & Capital Access Pathways** — Connections to venture capital, angel investors, state programs, and federal funding opportunities. These pathways help companies secure the resources needed to scale and compete in the space and advanced technology sectors.
+**Programs:** the Master Plan's programs for this engine (pp. 19–21), as listed in `programs-facilities.md` (PROGRAM PORTFOLIO). Both pages read one list, `src/lib/programs.ts`.
 
-> **Source:** Summary from fsic.space/about-4; overview and components from fsic.space/market (verbatim). Master Plan pp. 10–11 names specific certifications (AS9100, ITAR, CMMC). Consider adding them to "Supplier Readiness".
+> **Source:** Summary from fsic.space/about-4; overview from fsic.space/market (verbatim). The Master Plan's programs name the certifications (Certification & Compliance Support: AS9100, ITAR, CMMC, ISO standards).
 
 ---
 
@@ -222,15 +205,9 @@ The Civic Engine is FSIC's community-anchoring platform, building public trust, 
 > **Source:** What it solves and Regional impact: Master Plan pp. 9–11, engine tables (verbatim).
 > **⚠ Review:** "Brings together" is drawn from the overview above and is new for the page. The page shows Brings together, What it solves and Regional impact in place of the overview paragraph.
 
-**Components:**
-- **Community Engagement & Public Programming** — Accessible events, workshops, exhibitions, and hands-on activities that bring space, science, and technology into everyday community life. These programs build excitement, understanding, and pride in the region's growing space economy.
-- **STEM Culture & Youth Inspiration** — Initiatives that spark curiosity and expand access to STEM learning for students of all ages. These efforts help young people see themselves in future space and technology careers and strengthen the region's long-term talent pipeline.
-- **Storytelling, Branding & Regional Identity** — Public-facing narratives, campaigns, and creative collaborations that highlight Southeast Volusia's role in the space economy. This work builds a shared identity and reinforces the region's position as a rising innovation hub.
-- **Cross-Sector Convening & Coalition Building** — Regular engagement with educators, employers, civic leaders, nonprofits, and community groups to align priorities, share resources, and strengthen regional collaboration. This ensures that growth benefits residents and supports long-term community goals.
-- **Transparency, Governance & Public Trust** — Clear communication, open processes, and community-centered decision-making that build confidence in FSIC's mission and ensure residents feel included in shaping the region's future.
-- **Arts, Culture & Space Integration** — Creative programs that blend arts, storytelling, and space themes to make innovation feel accessible, inspiring, and uniquely tied to Southeast Volusia's identity.
+**Programs:** the Master Plan's programs for this engine (pp. 19–21), as listed in `programs-facilities.md` (PROGRAM PORTFOLIO). Both pages read one list, `src/lib/programs.ts`.
 
-> **Source:** Summary from fsic.space/about-4; overview and components from fsic.space/civic (verbatim).
+> **Source:** Summary from fsic.space/about-4; overview from fsic.space/civic (verbatim).
 
 ---
 
@@ -271,4 +248,4 @@ The Civic Engine is FSIC's community-anchoring platform, building public trust, 
 
 **CTAs:** View the Deployment Timeline → /deployment; Explore Programs & Facilities → /programs-facilities
 
-> **⚠ Review:** /deployment is built (November 2026). /programs-facilities is still a "Coming soon" page.
+> /deployment and /programs-facilities are both built (November 2026).

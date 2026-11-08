@@ -85,7 +85,7 @@ The site uses one Swiss-style modular grid. Every section shares the same vertic
 |-----------|--------------|
 | `Section` | Section shell: `RunningHead`, heavy rule, headline across cols 1–9, optional intro line. Props: `index`/`total`/`label`/`dot` for the running head, `heading` (or a `heading` slot), `intro`, `dark`, `spacing` (`default`, `stacked` for a white section under another white one, `large` for the final call to action), `rule={false}` for a closing statement, a `media` slot for a full-bleed image before the container |
 | `Grid` | The label \| content split (cols 1–4 \| 5–12), hung from one top line. `labelOffset` for content that opens with a peer rule, `stickyLabel` + `labelAs="header"` for spec sections, `labelLast` for a note that should follow the content on mobile |
-| `Row` | A label \| content row inside the content column, for use in a `<dl>`. `rule="bottom"` when it opens the content column, `count` for "Components · 6", `list` when the content is a list of `<details>` |
+| `Row` | A label \| content row inside the content column, for use in a `<dl>`. `rule="bottom"` when it opens the content column, `count` for "Programs · 5", `list` when the content is a list of `<details>` |
 | `DashList` | A list with dash markers. `marker` carries the meaning (gray, navy, orange, lagoon, lagoon-light), `columns` for short items, `spacious` for longer lines |
 | `PageHero` | Interior page opening (below) |
 | `SectionBar` | Sticky in-page navigation with the current section marked |
