@@ -160,9 +160,9 @@ Don't put the hero photo on interior pages.
 
 ## Motion
 
-- **One automatic animation on the whole site: the homepage's range bars.** In "Transformational, Long-Term Regional Impact", each bar draws once when the list scrolls into view: the solid low estimate grows from the left, then the lighter extension continues to the high estimate, rows following one another (`--motion-stagger`). It shows how to read a range; the figures themselves never move. Without JS, with reduced motion and in print, the bars are fully drawn. Don't add a second automatic animation.
+- **One automatic animation on the whole site: range bars draw in, wherever they appear** (the homepage figures; Economic Impact's at-a-glance figures and its scenario comparison). Each bar draws once when its group scrolls into view: the solid low estimate grows from the left, then the lighter extension continues to the high estimate. Rows follow one another (`--row` × `--motion-stagger`); in the scenario comparison, each row builds up Baseline → FSIC 1.0 → FSIC 2.0 (`--step` × `--motion-step`). It shows how to read a range and how the scenarios compare; the figures themselves never move. Mark a group with `range-bars` and `data-range-bars`, its bars with `range-low` / `range-high`, and include `RangeBarsDraw` on the page. Without JS, with reduced motion and in print, the bars are fully drawn. Don't add a different automatic animation.
 - No fade-in on scroll, no hover lift on cards, no count-up numbers, no parallax, nothing that loops.
-- Interaction feedback is fine and shares the motion tokens in `global.css` (`--ease-standard`; `--motion-fast` 150ms, `--motion-medium` 250ms): link underlines darken, the menu dropdowns fade in and settle 4px down, expanding items (`Disclosure`) open with a height transition where the browser supports it (others open instantly), index and headline links reveal their underline (`underline-reveal`), the Model page's section bar eases between sections, the phone menu fades in like the dropdowns, and moving between pages cross-fades the content while the header stays put (view transitions; browsers without them navigate as before).
+- Interaction feedback is fine and shares the motion tokens in `global.css` (`--ease-standard`; `--motion-fast` 150ms, `--motion-medium` 250ms): link underlines darken, the menu dropdowns fade in and settle 4px down, expanding items (`Disclosure`) open with a height transition where the browser supports it (others open instantly), index and headline links reveal their underline (`underline-reveal`), the Model page's section bar eases between sections, the phone menu fades in like the dropdowns, and moving between pages cross-fades the content while the header stays put (view transitions; browsers without them navigate as before). On Economic Impact, hovering a scenario's header or cells dims the other scenarios' bars to 30% (`scenario-table`, CSS `:has`), so one scenario can be followed down the table.
 - Always respect `prefers-reduced-motion`: it turns every transition and the range-bar animation off, and the page then looks exactly as it does at rest.
 
 ## Components
@@ -177,6 +177,7 @@ Don't put the hero photo on interior pages.
 | `Disclosure` | An item that opens in place: `<details>` with the + that turns to ×. Summary in the `summary` slot; callers set spacing |
 | `ProgramList` | An engine's programs from `src/data/programs.ts`, each a `Disclosure` |
 | `Closing` | A page's closing: `statement` in display type and the buttons in the default slot, no heavy rule |
+| `RangeBarsDraw` | Draws every `data-range-bars` group on the page once when it scrolls into view (see "Motion"). Include once per page with range bars |
 | `ComingSoon` | Placeholder for interior pages until they're built |
 
 ## Accessibility floor

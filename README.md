@@ -45,7 +45,7 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
     ├── assets/                  # Images processed by astro:assets (homepage hero photo)
     ├── components/
     │   ├── Section, Grid, Row, List, PageHero, SectionBar, RunningHead   # grid components
-    │   ├── Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing
+    │   ├── Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBarsDraw
     │   └── ComingSoon           # placeholder for unbuilt pages
     ├── content/copy/            # Copy deck: one Markdown file per page (docs/09)
     ├── content/news/            # Press releases, one Markdown file each (as published); images/ holds their graphics

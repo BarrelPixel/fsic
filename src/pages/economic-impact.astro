@@ -9,6 +9,7 @@ import List from '../components/List.astro';
 import { EMAIL, mailto } from '../lib/site';
 import Closing from '../components/Closing.astro';
 import { SOURCE, glance, scenarios, comparison, roi } from '../data/economics';
+import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 
 // Copy: src/content/copy/economic-impact.md (Draft). Wording is verbatim from the copy deck.
 // Open review items (see the ⚠ notes there): the headline figures are the FSIC 2.0 scenario;
@@ -34,17 +35,18 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
 
   <!-- 01 · AT A GLANCE: figure (cols 1–4) | what it means (5–8) | range bar (9–12) -->
   <Section id="at-a-glance" index={1} total={4} heading="25-Year Impact at a Glance" intro="Extended FSIC (FSIC 2.0) scenario, over 25 years:">
-    <ul class="border-t border-rule" role="list">
-      {glance.map((row) => (
-        <li class="grid gap-y-3 py-6 border-b border-rule lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
+    <!-- The range bars draw in once when the list is in view (global.css "Range bars draw in") -->
+    <ul class="range-bars border-t border-rule" role="list" data-range-bars>
+      {glance.map((row, r) => (
+        <li class="grid gap-y-3 py-6 border-b border-rule lg:grid-cols-12 lg:gap-x-8 lg:items-baseline" style={`--row:${r}`}>
           <div class="lg:col-span-4">
             <p class="mb-1 text-3xl md:text-4xl font-bold text-navy font-display leading-tight tabular-nums">{row.display}</p>
             <p class="mb-0 text-label text-navy">{row.metric}</p>
           </div>
           <p class="lg:col-span-5 mb-0 text-base text-gray-dark">{row.body}</p>
           <div class="lg:col-span-3 lg:self-center flex gap-0.5 h-2.5" aria-hidden="true">
-            <div class="h-full bg-orange" style={`width:${pct(row.low, row.high)}%`}></div>
-            <div class="h-full bg-orange/40 flex-1"></div>
+            <div class="range-low h-full bg-orange" style={`width:${pct(row.low, row.high)}%`}></div>
+            <div class="range-high h-full bg-orange/40 flex-1"></div>
           </div>
         </li>
       ))}
@@ -83,7 +85,9 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
          Each row has its own scale (bars scaled to the row's highest value); values are always printed. -->
     <!-- Below md each row restacks: the metric across the top, the three scenarios side by side under it -->
     <div class="mt-14">
-      <table class="w-full font-sans border-collapse md:table-fixed">
+      <!-- The bars build up scenario by scenario in each row when the table is in view (--step), and
+           hovering a scenario's column dims the other two (global.css "Scenario highlight"). -->
+      <table class="scenario-table range-bars w-full font-sans border-collapse md:table-fixed" data-range-bars>
         <caption class="sr-only">25-year projections by scenario, Master Plan p. 8</caption>
         <!-- Metric column = label column (cols 1–4 + one third of a gap ≈ 34.2%; tables ignore mixed calc()), so the scenarios start on the content column line -->
         <colgroup>
@@ -93,8 +97,8 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
         <thead>
           <tr class="grid grid-cols-3 gap-x-3 md:table-row border-b-2 border-navy">
             <th scope="col" class="hidden md:table-cell text-left text-sm font-semibold text-navy pb-3 pr-4 align-bottom">Metric</th>
-            {scenarios.map((s) => (
-              <th scope="col" class="text-left text-sm font-semibold text-navy pb-3 pr-4 align-bottom">
+            {scenarios.map((s, i) => (
+              <th scope="col" class="text-left text-sm font-semibold text-navy pb-3 pr-4 align-bottom" data-scenario={i}>
                 <span class="flex items-center gap-2">
                   <span class="w-3 h-3 shrink-0" style={`background:${s.color}`} aria-hidden="true"></span>
                   {s.short}
@@ -104,17 +108,17 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
           </tr>
         </thead>
         <tbody>
-          {comparison.map((row) => {
+          {comparison.map((row, r) => {
             const max = Math.max(...row.cells.map((c) => c.high));
             return (
-              <tr class="grid grid-cols-3 gap-x-3 md:table-row border-b border-rule py-4 md:py-0">
+              <tr class="grid grid-cols-3 gap-x-3 md:table-row border-b border-rule py-4 md:py-0" style={`--row:${r}`}>
                 <th scope="row" class="col-span-3 md:table-cell text-left font-medium text-navy pb-2 md:py-4 md:pr-4 align-top">{row.metric}</th>
                 {row.cells.map((cell, i) => (
-                  <td class="md:py-4 md:pr-4 align-top">
+                  <td class="md:py-4 md:pr-4 align-top" data-scenario={i} style={`--step:${i}`}>
                     <span class="block text-sm md:text-base text-navy tabular-nums mb-2">{cell.display}</span>
-                    <span class="flex gap-0.5 h-2" aria-hidden="true">
-                      {cell.low > 0 && <span class="h-full" style={`width:${pct(cell.low, max)}%;background:${scenarios[i].color}`}></span>}
-                      {cell.high > cell.low && <span class="h-full opacity-40" style={`width:${pct(cell.high - cell.low, max)}%;background:${scenarios[i].color}`}></span>}
+                    <span class="scenario-bar flex gap-0.5 h-2" data-scenario={i} aria-hidden="true">
+                      {cell.low > 0 && <span class="range-low h-full" style={`width:${pct(cell.low, max)}%;background:${scenarios[i].color}`}></span>}
+                      {cell.high > cell.low && <span class="range-high h-full opacity-40" style={`width:${pct(cell.high - cell.low, max)}%;background:${scenarios[i].color}`}></span>}
                     </span>
                   </td>
                 ))}
@@ -196,5 +200,7 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
     <Button href="/partnership-funding">Become a Partner</Button>
     <Button href="/deployment" variant="secondary">View the Deployment Timeline</Button>
   </Closing>
+
+  <RangeBarsDraw />
 
 </BaseLayout>
