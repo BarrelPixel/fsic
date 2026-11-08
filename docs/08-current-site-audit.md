@@ -63,7 +63,7 @@ The Wix sitemap lists 33 URLs. Only five are linked from the navigation. The res
 | Economic Impact | `economic-impact.md` | FAQ economic answer and disclaimer | Three-scenario comparison, ROI framework (Master Plan) |
 | Phased Deployment | `deployment.md` | About → phased model, FAQ → first programs | Milestones, facilities per phase (Master Plan) |
 | Programs & Facilities | `programs-facilities.md` | FAQ → residents, businesses, location | Program details, facilities plan |
-| Governance | `governance.md` | FAQ → leadership, neutrality, developers; board members from press releases | Board bios and photos, committees, metrics |
+| Governance | `governance.md` | FAQ → leadership, neutrality, developers; board members from press releases; structure, reporting and metrics from the Master Plan | Confirmed board roster, bios and photos; founder transition wording |
 | Partnership & Funding | `partnership-funding.md` | FAQ → funding, get involved; launch release → three core benefits | Stakeholder value propositions, financial outlook |
 | Long-Term Vision | `long-term-vision.md` | FAQ → "What could FSIC look like" | Visuals; location wording (§3.3) |
 | Contact | `contact.md` | Contact form, email, location, social links | Routing, form backend |

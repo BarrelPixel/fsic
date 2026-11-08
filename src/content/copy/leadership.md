@@ -2,7 +2,7 @@
 
 **Status:** Draft
 **Last Updated:** November 2026
-**Route:** /leadership (proposed; could instead be a section of /governance)
+**Route:** /leadership (proposed; could instead be a section of /governance, which is now built and has no names yet)
 **Sources:** fsic.space/john-joaquin, fsic.space/leadership, fsic.space/news
 
 > **⚠ Review:** The live /leadership page lists Wix sample people (Ashley Jones, Tech Lead; Tess Brown, Office Manager; Lisa Rose, Product Manager). They are **not real**. Do not migrate them. Only John Joaquin's entry is real.
