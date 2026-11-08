@@ -186,12 +186,21 @@ These concepts reflect the direction FSIC is planning toward, and we are buildin
 ## PAGE
 
 **Headline:** Frequently Asked Questions
-**Lead:** Answers to common questions about the Florida Space Innovation Center.
+**Hero:** the Mission (as the lead) and the Vision, each with a small label, then an index of the four topics with their question counts.
 **Aside:** Other questions: info@fsic.space
 
-> **⚠ Review:** Lead and aside are new.
+**Topics** (each a section, the topic pinned in the label column; the published order is kept within each topic):
 
-The page opens with the mission and vision, then lists the questions in the order above. Each answer opens from its question (native `<details>`), and each question has its own link (`/faq#<question>`).
+| Topic | Questions |
+|------|------|
+| About FSIC | What is FSIC; history; school, research center or agency; competing with schools; who leads; location |
+| Why Now | why now; market opportunity; economic impact |
+| Programs and Funding | residents and families; businesses and entrepreneurs; first programs; funding; developers |
+| Getting Involved | how the public can get involved; what FSIC could look like |
+
+Each answer opens from its question (native `<details>`), and each question has its own link (`/faq#<question>`).
+
+> **⚠ Review:** The topic names, the grouping and the aside are new. The live page lists the 16 questions in one run, in the order above under QUESTIONS. The earlier draft lead ("Answers to common questions about the Florida Space Innovation Center.") is replaced by the mission.
 
 ---
 

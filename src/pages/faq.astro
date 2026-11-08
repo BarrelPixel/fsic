@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
-import Row from '../components/Row.astro';
 
 // Copy: src/content/copy/faq.md (Draft). Answers are as published on fsic.space, except where the
 // copy deck notes a change: ranges for the economic figures, the five phases, the sourced
@@ -171,82 +170,112 @@ const faqs: { q: string; id: string; a: Block[] }[] = [
   },
 ];
 
+// Topics group the questions (the published order is kept within each topic). Topic names are
+// new labels (faq.md, PAGE). Every question belongs to exactly one topic.
+const topics = [
+  { id: 'about', name: 'About FSIC', ids: ['what-is-fsic', 'history', 'what-kind-of-organization', 'compete', 'leadership', 'location'] },
+  { id: 'why-fsic-now', name: 'Why Now', ids: ['why-now', 'market-opportunity', 'economic-impact'] },
+  { id: 'programs-funding', name: 'Programs and Funding', ids: ['residents-and-families', 'businesses-and-entrepreneurs', 'first-programs', 'funding', 'developers'] },
+  { id: 'getting-involved', name: 'Getting Involved', ids: ['get-involved', 'future'] },
+].map((t) => ({ ...t, faqs: t.ids.map((id) => faqs.find((f) => f.id === id)!) }));
+
+const assigned = topics.flatMap((t) => t.ids);
+if (assigned.length !== faqs.length || new Set(assigned).size !== faqs.length || topics.some((t) => t.faqs.includes(undefined as never))) {
+  throw new Error('faq.astro: every question must belong to exactly one topic');
+}
+
+const pad = (n: number) => String(n).padStart(2, '0');
+const count = (n: number) => `${n} question${n === 1 ? '' : 's'}`;
 const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-navy/30 hover:[&_a]:decoration-navy';
 ---
 <BaseLayout title="Frequently Asked Questions" description="Answers to common questions about the Florida Space Innovation Center: what it is, why it is needed now, how it is funded, and how to get involved.">
 
-  <!-- Interior page template (DESIGN.md): PageHero, mission and vision, then the questions -->
+  <!-- Interior page template (DESIGN.md): PageHero with the mission (lead), the vision, and an index of
+       the topics; then one spec section per topic. Hierarchy: topic (h2) > question (h3) > answer. -->
   <PageHero title="Frequently Asked Questions">
     <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
       Other questions:
       <a href={`mailto:${email}`} class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">{email}</a>
     </p>
-    <p class="text-2xl text-white/90 leading-snug mb-0">
-      Answers to common questions about the Florida Space Innovation Center.
+
+    <p class="mb-2 font-sans text-sm font-semibold text-white/60">Mission</p>
+    <p class="text-2xl text-white/90 leading-snug mb-6 max-w-3xl">
+      The Florida Space Innovation Center advances the space economy by first strengthening Southeast Volusia County through talent development, technology innovation, and strategic partnerships that expand economic opportunity and long-term community prosperity.
     </p>
+    <p class="mb-2 font-sans text-sm font-semibold text-white/60">Vision</p>
+    <p class="text-lg text-white/75 mb-10 max-w-3xl">
+      To establish Southeast Volusia County as a recognized center of excellence in Florida's space economy, demonstrating a scalable model of innovation, workforce readiness, and inclusive economic growth.
+    </p>
+
+    <!-- Topic index: number, topic, how many questions -->
+    <nav aria-label="Topics on this page" class="font-sans">
+      <ol class="border-t border-white/25">
+        {topics.map((t, i) => (
+          <li class="border-b border-white/25">
+            <a href={`#${t.id}`} class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-baseline gap-x-4 py-4 rounded-sm">
+              <span class="text-sm text-white/60 tabular-nums">{pad(i + 1)}</span>
+              <span class="font-display text-2xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2">{t.name}</span>
+              <span class="text-sm text-white/70 tabular-nums">{count(t.faqs.length)}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
   </PageHero>
 
-  <!-- 01 · Mission and vision as rows (statement type), as on the live FAQ page -->
-  <Section id="mission" index={1} total={2} heading="Mission and Vision">
-    <Grid>
-      <Fragment slot="label"></Fragment>
-      <dl>
-        <Row label="Mission" rule="bottom">
-          <p class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">
-            The Florida Space Innovation Center advances the space economy by first strengthening Southeast Volusia County through talent development, technology innovation, and strategic partnerships that expand economic opportunity and long-term community prosperity.
-          </p>
-        </Row>
-        <Row label="Vision" rule="bottom" class="pt-5">
-          <p class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">
-            To establish Southeast Volusia County as a recognized center of excellence in Florida's space economy, demonstrating a scalable model of innovation, workforce readiness, and inclusive economic growth.
-          </p>
-        </Row>
-      </dl>
-    </Grid>
-  </Section>
+  <!-- One spec section per topic: the topic pinned in the label column, its questions in the content
+       column. Each answer opens from its question (<details>, + turns to ×); /faq#<question> opens it. -->
+  {topics.map((t, i) => (
+    <Section
+      id={t.id}
+      index={i + 1}
+      total={topics.length}
+      spacing={i === 0 ? 'default' : 'stacked'}
+      labelledby={`${t.id}-title`}
+      class="scroll-mt-12"
+    >
+      <Grid labelAs="header" stickyLabel>
+        <Fragment slot="label">
+          <h2 id={`${t.id}-title`} class="mb-2">{t.name}</h2>
+          <p class="mb-0 font-sans text-sm font-semibold text-gray">{count(t.faqs.length)}</p>
+        </Fragment>
 
-  <!-- 02 · Questions: each answer opens from its question (<details>, + turns to ×), rules between
-       questions. Each question has its own link (/faq#id), which opens it. -->
-  <Section id="questions" index={2} total={2} spacing="stacked" heading="Questions">
-    <Grid>
-      <p slot="label" class="mb-0 font-sans text-sm font-semibold text-navy md:pt-[0.3rem]">
-        {faqs.length} questions<span class="font-medium text-gray"> · Select one to read the answer</span>
-      </p>
-      <div class="divide-y divide-navy/15 border-b border-navy/15">
-        {faqs.map((f) => (
-          <details id={f.id} class="group py-5 first:pt-0 scroll-mt-24">
-            <summary class="flex items-start justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="mb-0 text-xl md:text-2xl">{f.q}</h3>
-              <svg class="mt-1.5 w-5 h-5 shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M10 4v12M4 10h12" stroke-linecap="round" />
-              </svg>
-            </summary>
-            <div class:list={['pt-4 max-w-3xl text-gray-dark', link]}>
-              {f.a.map((b) =>
-                'p' in b ? (
-                  <p set:html={b.p} />
-                ) : 'source' in b ? (
-                  <p class="font-sans text-sm text-gray" set:html={b.source} />
-                ) : (
-                  <div class="mb-4">
-                    {b.label && <p class="mb-2 font-sans text-sm font-semibold text-navy" set:html={b.label} />}
-                    <ul class="flex flex-col gap-2" role="list">
-                      {b.list.map((item) => (
-                        <li class="flex gap-3 leading-snug">
-                          <span class="mt-[0.6em] w-3 h-0.5 shrink-0 bg-navy" aria-hidden="true"></span>
-                          <span set:html={item} />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ),
-              )}
-            </div>
-          </details>
-        ))}
-      </div>
-    </Grid>
-  </Section>
+        <div class="divide-y divide-navy/15 border-b border-navy/15">
+          {t.faqs.map((f) => (
+            <details id={f.id} class="group py-5 first:pt-0 scroll-mt-24">
+              <summary class="flex items-start justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <h3 class="mb-0 text-xl">{f.q}</h3>
+                <svg class="mt-1 w-5 h-5 shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M10 4v12M4 10h12" stroke-linecap="round" />
+                </svg>
+              </summary>
+              <div class:list={['pt-4 max-w-3xl text-gray-dark', link]}>
+                {f.a.map((b) =>
+                  'p' in b ? (
+                    <p set:html={b.p} />
+                  ) : 'source' in b ? (
+                    <p class="font-sans text-sm text-gray" set:html={b.source} />
+                  ) : (
+                    <div class="mb-4">
+                      {b.label && <p class="mb-2 font-sans text-sm font-semibold text-navy" set:html={b.label} />}
+                      <ul class="flex flex-col gap-2" role="list">
+                        {b.list.map((item) => (
+                          <li class="flex gap-3 leading-snug">
+                            <span class="mt-[0.6em] w-3 h-0.5 shrink-0 bg-navy" aria-hidden="true"></span>
+                            <span set:html={item} />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ),
+                )}
+              </div>
+            </details>
+          ))}
+        </div>
+      </Grid>
+    </Section>
+  ))}
 
 </BaseLayout>
 

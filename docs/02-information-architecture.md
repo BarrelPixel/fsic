@@ -81,7 +81,7 @@
 ### FAQ (`/faq`) — IMPLEMENTED
 **Goal:** Answer common questions about FSIC in one place.
 **Audience:** All, especially residents.
-**Key content:** Mission and vision, then the 16 questions from the live FAQ page, each opening from its question with its own link (`/faq#<id>`). Answers are as published except where `faq.md` notes a change (economic ranges, five phases, sourced space-economy figures).
+**Key content:** Mission and vision in the hero with an index of four topics (About FSIC, Why Now, Programs and Funding, Getting Involved), then one section per topic holding the 16 questions from the live FAQ page, each opening from its question with its own link (`/faq#<id>`). Answers are as published except where `faq.md` notes a change (economic ranges, five phases, sourced space-economy figures).
 
 ### News & Media (`/news`) — IMPLEMENTED
 **Goal:** Publish FSIC's press releases as issued.
