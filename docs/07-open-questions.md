@@ -5,7 +5,7 @@ Items requiring stakeholder input or decisions before full launch.
 ## Branding & Identity
 - [ ] **Logo:** A PNG (300×128) was provided and is in use (`public/images/fsic-logo.png`, plus a dark-background version). Still need an SVG or a larger source so it stays sharp at larger sizes.
 - [ ] **Favicon:** Derived from logo. Need source file.
-- [x] **Typography:** Resolved. Barlow Semi Condensed, Source Serif 4 and Archivo from Google Fonts (see `DESIGN.md`).
+- [x] **Typography:** Resolved. Barlow Semi Condensed, Source Serif 4 and Archivo, self-hosted (see `DESIGN.md`).
 - [ ] **Photography / Imagery:** No approved photos provided. Need hero images, section backgrounds, campus renderings if available. What are the usage rights for conceptual renderings referenced in the PDFs?
 - [ ] **Press release graphics:** the four graphics from fsic.space/news are in use on `/news` (November 2026). Confirm FSIC owns them, and check two details: the Jessie Thompson graphic says "Executive Board" (the release says Board of Directors), and the Trine and DePew graphics show a building signed "Florida Space Innovation Center", which does not exist yet. See `src/content/copy/news.md`.
 - [ ] **Brand guidelines:** Are there existing brand guidelines beyond the color palette provided?

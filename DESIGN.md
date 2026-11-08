@@ -52,7 +52,7 @@ Three families, each with one job:
 | UI: nav, buttons, captions, labels, data, map, small print | **Archivo** (`font-sans`), weights 400–700 |
 
 - **Reading text is serif by default.** Add `font-sans` to UI elements. Header, Footer and Button already do this at their root.
-- All three load from Google Fonts in `BaseLayout.astro`. Barlow loads 500, 600 and 700 only, so don't ask for 400 in display type.
+- All three are self-hosted (Fontsource packages, imported in `BaseLayout.astro`, which also preloads the Latin files). Source Serif 4 and Archivo are variable fonts (`--font-serif` and `--font-sans` name them "… Variable"). Barlow loads 500, 600 and 700 only, so don't ask for 400 in display type.
 - Headline sizes use `clamp()` in `global.css`. Condensed type looks smaller at the same size, so display text outside headings uses one step up (`text-2xl` for emphasis lines, `text-3xl`/`text-4xl` for figures).
 - Use `font-display` for non-heading display text (wordmark, figures, closing lines). Don't hard-code heading sizes in pages without a reason.
 - Set display type in title case or sentence case. **No all-caps labels and no tracked-out eyebrow text.**
