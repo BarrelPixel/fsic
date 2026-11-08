@@ -3,6 +3,10 @@
 **Status:** Approved
 **Last Updated:** February 2026
 
+> **Layout note (November 2026):** The page is set on the 12-column grid in DESIGN.md. Wording is unchanged, but some lines moved into each section's label column, so on the page they read before the body text: "Without coordination, growth concentrates elsewhere.", "This is not a short-term program…", "Growth is structured. Not speculative.", and "This is a coordinated regional investment…". Sections 01–07 carry small running-head numbers, and where the headline doesn't already name the topic, a label taken from this file's section names (for example "The strategic moment"). They are wayfinding, not copy, and are hidden from screen readers.
+
+> **Change (November 2026):** The project lead decided the site does not name a campus site. The Long-Range Vision headline changed from naming the Master Plan's proposed site to "A Landmark Campus for Southeast Volusia". See `docs/08-current-site-audit.md` §3.3.
+
 ---
 
 ## HERO
@@ -114,7 +118,7 @@ Growth is structured. Not speculative.
 
 ## LONG-RANGE VISION (2031–2040)
 
-**Headline:** A Landmark Campus at Deering Park
+**Headline:** A Landmark Campus for Southeast Volusia
 
 **Body:**
 As the model matures, FSIC evolves into a permanent anchor institution for Southeast Volusia.

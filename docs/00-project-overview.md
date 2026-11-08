@@ -16,9 +16,9 @@ A production-quality, static-first institutional website that communicates FSIC'
 FSIC is a long-horizon initiative spanning a 2026–2031 master plan with a 2032–2040 extended vision. The website must reflect this institutional scale while launching with a focused initial page set.
 
 ### Phase 1 (Current — Launch)
-- Home page (fully built)
-- Route stubs for all future pages
-- Complete design system and component library
+- Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Partnership & Funding
+- Route stubs (`<ComingSoon>`) for the remaining pages
+- Design system (`DESIGN.md`) and the grid component library (`src/components/`)
 - Full documentation suite
 
 ### Phase 2 (Post-Launch)
@@ -29,16 +29,11 @@ FSIC is a long-horizon initiative spanning a 2026–2031 master plan with a 2032
 ## Tech Stack
 - **Framework:** Astro (static-first, TypeScript)
 - **Styling:** Tailwind CSS v4 + CSS custom properties for design tokens
-- **Hosting:** TBD (see open questions)
+- **Hosting:** GitHub Pages under the `/fsic` base path for now (`.github/workflows/deploy.yml`). Production hosting and domain are open (see `07-open-questions.md`)
 - **Content:** Markdown-based copy files
 
 ## Brand Palette
-| Token   | Hex       | Usage                          |
-|---------|-----------|--------------------------------|
-| Navy    | `#163256` | Primary backgrounds, headings  |
-| White   | `#FFFFFF` | Page backgrounds, text on dark |
-| Orange  | `#E37A2D` | CTAs, accents, highlights      |
-| Gray    | `#7F7F7F` | Body text, borders, muted UI   |
+The brand colors are navy `#163256` and orange `#E37A2D`. The full palette, with the meaning of each color (orange for the space industry, lagoon green for the community), is in `/DESIGN.md` ("Color").
 
 ## Tone
 Institutional, measured, credible. No startup hype. Data-forward, heavy whitespace, clean typography.

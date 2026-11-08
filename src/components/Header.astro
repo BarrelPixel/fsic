@@ -20,12 +20,17 @@ const isActive = (href: string) => {
   return currentPath === target || currentPath.startsWith(`${target}/`);
 };
 ---
-<header class="bg-night text-white relative z-50 border-b border-white/10">
+<header class="font-sans bg-night text-white relative z-50 border-b border-white/10">
   <div class="container">
-    <nav class="flex items-center justify-between py-4" aria-label="Main navigation">
-      <a href={base} class="leading-tight hover:opacity-90 transition-opacity">
-        <span class="block text-xl font-bold font-display">Florida Space</span>
-        <span class="block text-sm font-medium text-white/70 font-display">Innovation Center</span>
+    <nav class="flex items-center justify-between py-3" aria-label="Main navigation">
+      <a href={base} class="block shrink-0 rounded hover:opacity-90 transition-opacity">
+        <img
+          src={`${base}/images/fsic-logo-reverse.png`}
+          alt="Florida Space Innovation Center"
+          width="300"
+          height="128"
+          class="h-14 w-auto lg:h-16"
+        />
       </a>
 
       <!-- Desktop Nav -->

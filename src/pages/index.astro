@@ -2,6 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import CoastlineMap from '../components/CoastlineMap.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Row from '../components/Row.astro';
+import DashList from '../components/DashList.astro';
 
 const base = import.meta.env.BASE_URL;
 
@@ -63,10 +67,16 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
 ---
 <BaseLayout title="Florida Space Innovation Center">
 
+  <!--
+    GRID (DESIGN.md "Grid"): one 12-column grid. Label column = cols 1–4, content column = cols 5–12.
+    Sections use <Section> (running head, heavy rule, headline) and <Grid> (label | content).
+    Copy is verbatim from src/content/copy/home.md.
+  -->
+
   <!-- HERO: the coastline and launch arc are the signature element (DESIGN.md) -->
   <section class="bg-night text-white overflow-hidden">
-    <div class="container pt-14 pb-20 md:pt-20 md:pb-28 grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-10 items-center">
-      <div class="max-w-2xl">
+    <div class="container pt-14 pb-20 md:pt-20 md:pb-28 grid gap-14 lg:grid-cols-12 lg:gap-x-8 lg:items-start">
+      <div class="lg:col-span-6 max-w-2xl">
         <h1 class="text-white mb-8">A New Commitment to the Space Coast</h1>
         <div class="text-lg text-white/80 leading-relaxed space-y-5 mb-10">
           <p>
@@ -84,185 +94,160 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
           <Button href="/economic-impact" variant="secondary-light">View Economic Impact</Button>
         </div>
       </div>
-      <CoastlineMap />
+      <div class="lg:col-span-6">
+        <CoastlineMap />
+      </div>
     </div>
   </section>
 
-  <!-- THE STRATEGIC MOMENT -->
-  <section id="strategic-moment" class="section bg-white">
-    <div class="container grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:gap-20">
-      <h2 class="text-navy">
-        The Question Is Not Whether the Space Coast Will Grow.
-        <span class="block mt-4 font-medium text-gray-dark">It Is Whether Southeast Volusia Will Participate in That Growth.</span>
-      </h2>
-      <div class="text-lg leading-relaxed lg:pt-3">
+  <!-- 01 THE STRATEGIC MOMENT -->
+  <Section id="strategic-moment" index={1} total={7} label="The strategic moment">
+    <Fragment slot="heading">
+      The Question Is Not Whether the Space Coast Will Grow.
+      <span class="block mt-3 font-medium text-gray-dark">It Is Whether Southeast Volusia Will Participate in That Growth.</span>
+    </Fragment>
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">Without coordination, growth concentrates elsewhere.</p>
+      <div class="max-w-3xl text-lg">
         <p>
           Florida's space economy is expanding rapidly — driven by commercial launch activity, advanced manufacturing, aerospace engineering, and emerging technologies.
-        </p>
-        <p class="text-navy font-semibold">
-          Without coordination, growth concentrates elsewhere.
         </p>
         <p>
           The Florida Space Innovation Center (FSIC) ensures that Southeast Volusia is not a spectator to that growth, but an active participant — building the talent, infrastructure, and partnerships required to compete in a global innovation economy.
         </p>
-        <p class="mt-8 pl-5 border-l-4 border-lagoon text-navy font-medium">
+        <p class="mt-8 pt-6 border-t border-navy/15 text-navy font-medium">
           FSIC is designed to align education, industry, and community in one coordinated regional platform.
         </p>
       </div>
-    </div>
-  </section>
+    </Grid>
+  </Section>
 
-  <!-- THE ECONOMIC CASE: ranges, not single numbers -->
-  <section id="economic-impact" class="section bg-night text-white">
-    <div class="container">
-      <div class="max-w-3xl mb-14">
-        <h2 class="text-white mb-5">Transformational, Long-Term Regional Impact</h2>
-        <p class="text-lg text-white/80">Independent 25-year analysis projects that FSIC will generate:</p>
-      </div>
-
-      <ul class="divide-y divide-white/15 border-y border-white/15">
-        {impact.map((row) => {
-          const lowPct = Math.round((row.low / row.high) * 100);
-          return (
-            <li class="grid gap-3 py-7 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-12 md:items-center">
-              <div>
-                <p class="text-3xl md:text-4xl font-bold text-white font-display leading-tight mb-0">{row.display}</p>
-                <p class="text-white/70 mt-1">{row.label}</p>
-              </div>
-              <div class="h-3 bg-white/10 rounded-full overflow-hidden flex" aria-hidden="true">
-                <div class="h-full bg-orange" style={`width:${lowPct}%`}></div>
-                <div class="h-full bg-orange/40" style={`width:${100 - lowPct}%`}></div>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-      <p class="text-sm text-white/60 mt-4 flex items-center gap-3">
+  <!-- 02 THE ECONOMIC CASE: a table on the page grid. Figure (cols 1–4) | what it measures (5–8) | range bar (9–12) -->
+  <Section
+    id="economic-impact"
+    index={2}
+    total={7}
+    label="The economic case"
+    dark
+    heading="Transformational, Long-Term Regional Impact"
+    intro="Independent 25-year analysis projects that FSIC will generate:"
+  >
+    <ul class="border-t border-white/25" role="list">
+      {impact.map((row) => {
+        const lowPct = Math.round((row.low / row.high) * 100);
+        return (
+          <li class="grid gap-y-3 py-6 border-b border-white/25 lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
+            <p class="lg:col-span-4 mb-0 text-3xl md:text-4xl font-bold text-white font-display leading-tight tabular-nums">{row.display}</p>
+            <p class="lg:col-span-4 mb-0 font-sans text-white/75">{row.label}</p>
+            <div class="lg:col-span-4 lg:self-center h-2.5 bg-white/10 flex" aria-hidden="true">
+              <div class="h-full bg-orange" style={`width:${lowPct}%`}></div>
+              <div class="h-full bg-orange/40" style={`width:${100 - lowPct}%`}></div>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+    <div class="grid lg:grid-cols-12 lg:gap-x-8 mt-4">
+      <p class="lg:col-start-9 lg:col-span-4 font-sans text-sm text-white/60 flex items-center gap-3 mb-0">
         <span class="inline-flex gap-1" aria-hidden="true">
-          <span class="w-4 h-2 rounded-full bg-orange"></span><span class="w-4 h-2 rounded-full bg-orange/40"></span>
+          <span class="w-4 h-2 bg-orange"></span><span class="w-4 h-2 bg-orange/40"></span>
         </span>
         Solid bar: low estimate. Lighter extension: range to the high estimate.
       </p>
+    </div>
 
-      <div class="grid gap-10 mt-16 lg:grid-cols-[1.25fr_1fr] lg:gap-20">
-        <p class="text-lg text-white/85">
+    <Grid class="mt-16">
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-white">This is not a short-term program. It is a durable economic backbone.</p>
+      <div class="max-w-3xl">
+        <p class="text-lg text-white/85 mb-8">
           In addition, FSIC positions the region to attract <strong class="text-white">$800 Million to $1.56 Billion</strong> in external federal, state, private, and philanthropic investment tied to research, innovation, and workforce development.
         </p>
-        <div>
-          <p class="text-2xl text-white font-semibold font-display leading-snug mb-8">
-            This is not a short-term program. It is a durable economic backbone.
+        <Button href="/economic-impact" variant="secondary-light">Explore the Full Economic Analysis</Button>
+        <p class="font-sans text-sm text-white/60 mt-10 mb-0">
+          Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- 03 THE FOUR-ENGINE MODEL: four numbered columns on the grid (3 cols each) -->
+  <Section
+    id="model"
+    index={3}
+    total={7}
+    label="The four-engine model"
+    heading="One Coordinated Platform. Four Integrated Engines."
+    intro="FSIC operates through a structured, phased model designed for early activation and long-term scale."
+  >
+    <ol class="grid gap-y-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-x-8">
+      {engines.map((engine, i) => (
+        <li class="lg:col-span-3 border-t border-navy/25 pt-5">
+          <p class="font-sans text-sm text-gray tabular-nums flex items-center gap-2 mb-3">
+            <span class:list={['w-2.5 h-2.5 rounded-full', engine.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']} aria-hidden="true"></span>
+            {String(i + 1).padStart(2, '0')}
           </p>
-          <Button href="/economic-impact" variant="secondary-light">Explore the Full Economic Analysis</Button>
-        </div>
-      </div>
-      <p class="text-sm text-white/50 mt-14 max-w-3xl">
-        Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.
+          <h3 class="mb-2">{engine.name}</h3>
+          <p class:list={['font-sans font-medium mb-3', engine.tone === 'lagoon' ? 'text-lagoon' : 'text-gray-dark']}>{engine.shift}</p>
+          <p class="mb-0">{engine.body}</p>
+        </li>
+      ))}
+    </ol>
+
+    <Grid class="mt-14 pt-6 border-t border-navy/15">
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">Each engine reinforces the others. Together, they create a coordinated regional ecosystem.</p>
+      <Button href="/model" variant="secondary">Learn More About the FSIC Model</Button>
+    </Grid>
+  </Section>
+
+  <!-- 04 PHASED DEPLOYMENT -->
+  <Section id="deployment" index={4} total={7} label="Phased deployment" spacing="stacked" heading="Start Small. Deliver Early Wins. Scale with Readiness.">
+    <Grid class="gap-y-10">
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">Growth is structured. Not speculative.</p>
+      <p class="text-lg max-w-3xl">
+        FSIC launches with the Talent Engine — requiring minimal physical footprint while delivering immediate workforce and employer-support outcomes.
       </p>
-    </div>
-  </section>
+      <p class="text-lg max-w-3xl mb-10">
+        As partnerships deepen and demand grows, the Innovation, Market, and Civic Engines scale in alignment with regional development timelines.
+      </p>
 
-  <!-- THE FOUR-ENGINE MODEL: a connected loop, because the engines reinforce each other -->
-  <section id="model" class="section bg-salt">
-    <div class="container">
-      <div class="max-w-3xl mb-14">
-        <h2 class="mb-5">One Coordinated Platform. Four Integrated Engines.</h2>
-        <p class="text-lg">FSIC operates through a structured, phased model designed for early activation and long-term scale.</p>
-      </div>
-
-      <ol class="grid gap-0 lg:grid-cols-4 lg:gap-8">
-        {engines.map((engine) => (
-          <li class="relative pl-8 pb-10 border-l-2 border-navy/20 lg:pl-0 lg:pt-10 lg:pb-0 lg:border-l-0 lg:border-t-2">
-            <span
-              class:list={[
-                'absolute -left-[9px] top-0 w-4 h-4 rounded-full ring-4 ring-salt lg:left-0 lg:-top-[9px]',
-                engine.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange',
-              ]}
-              aria-hidden="true"
-            ></span>
-            <h3 class="mb-1">{engine.name}</h3>
-            <p class:list={['font-medium mb-3', engine.tone === 'lagoon' ? 'text-lagoon' : 'text-navy/70']}>{engine.shift}</p>
-            <p>{engine.body}</p>
-          </li>
-        ))}
+      <ol class="grid gap-y-6 md:grid-cols-2 md:gap-x-8 mb-10">
+        <li class="border-t-2 border-orange pt-4">
+          <h3 class="mb-1">First: the Talent Engine</h3>
+          <p class="mb-0">Minimal physical footprint. Immediate workforce and employer-support outcomes.</p>
+        </li>
+        <li class="border-t-2 border-navy/25 pt-4">
+          <h3 class="mb-1">Then: Innovation, Market, and Civic</h3>
+          <p class="mb-0">Each scales as partnerships deepen and demand grows.</p>
+        </li>
       </ol>
 
-      <!-- The return line closes the loop: Civic feeds back into Talent -->
-      <svg class="hidden lg:block w-full h-10 mt-6" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M 980 0 L 980 30 L 6 30 L 6 6" fill="none" stroke="var(--color-navy)" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke" />
-      </svg>
+      <dl class="mb-8">
+        <Row label="This phased approach:">
+          <DashList columns items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} />
+        </Row>
+      </dl>
+      <Button href="/deployment" variant="secondary">View the Deployment Timeline</Button>
+    </Grid>
+  </Section>
 
-      <div class="flex flex-col gap-6 mt-6 lg:mt-4 md:flex-row md:items-center md:justify-between">
-        <p class="text-lg text-navy font-medium max-w-2xl">
-          Each engine reinforces the others. Together, they create a coordinated regional ecosystem.
-        </p>
-        <Button href="/model" variant="secondary">Learn More About the FSIC Model</Button>
-      </div>
-    </div>
-  </section>
-
-  <!-- PHASED DEPLOYMENT -->
-  <section id="deployment" class="section bg-white">
-    <div class="container grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-      <div>
-        <h2 class="mb-8">Start Small. Deliver Early Wins. Scale with Readiness.</h2>
-        <p class="text-lg">
-          FSIC launches with the Talent Engine — requiring minimal physical footprint while delivering immediate workforce and employer-support outcomes.
-        </p>
-        <p class="text-lg">
-          As partnerships deepen and demand grows, the Innovation, Market, and Civic Engines scale in alignment with regional development timelines.
-        </p>
-      </div>
-
-      <div class="lg:pt-2">
-        <!-- Two real stages, in order -->
-        <ol class="mb-12">
-          <li class="relative pl-10 pb-8 border-l-2 border-orange">
-            <span class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-orange" aria-hidden="true"></span>
-            <h3 class="mb-1">First: the Talent Engine</h3>
-            <p>Minimal physical footprint. Immediate workforce and employer-support outcomes.</p>
-          </li>
-          <li class="relative pl-10 border-l-2 border-transparent">
-            <span class="absolute -left-[11px] top-0 w-5 h-5 rounded-full border-2 border-orange bg-white" aria-hidden="true"></span>
-            <h3 class="mb-1">Then: Innovation, Market, and Civic</h3>
-            <p>Each scales as partnerships deepen and demand grows.</p>
-          </li>
-        </ol>
-
-        <p class="font-semibold text-navy mb-4">This phased approach:</p>
-        <ul class="grid gap-x-8 gap-y-3 sm:grid-cols-2 mb-10">
-          <li class="flex gap-3"><span class="mt-[0.6em] w-1.5 h-1.5 shrink-0 bg-navy" aria-hidden="true"></span>Reduces risk</li>
-          <li class="flex gap-3"><span class="mt-[0.6em] w-1.5 h-1.5 shrink-0 bg-navy" aria-hidden="true"></span>Aligns with funding cycles</li>
-          <li class="flex gap-3"><span class="mt-[0.6em] w-1.5 h-1.5 shrink-0 bg-navy" aria-hidden="true"></span>Ensures operational discipline</li>
-          <li class="flex gap-3"><span class="mt-[0.6em] w-1.5 h-1.5 shrink-0 bg-navy" aria-hidden="true"></span>Builds momentum before expansion</li>
-        </ul>
-
-        <p class="text-2xl text-navy font-semibold font-display mb-8">Growth is structured. Not speculative.</p>
-        <Button href="/deployment" variant="secondary">View the Deployment Timeline</Button>
-      </div>
-    </div>
-  </section>
-
-  <!-- STRATEGIC VALUE TO VOLUSIA COUNTY: community value, so lagoon green -->
-  <section id="value" class="section bg-salt">
-    <div class="container">
-      <h2 class="mb-14 max-w-3xl">Strategic Value to Volusia County</h2>
-      <div class="grid gap-x-16 gap-y-10 md:grid-cols-2">
+  <!-- 05 STRATEGIC VALUE: community value, so lagoon rules. Peers as a 2×2 grid in the content column. -->
+  <Section id="value" index={5} total={7} dot="lagoon" spacing="stacked" heading="Strategic Value to Volusia County">
+    <Grid class="gap-y-10" labelOffset>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">This is a coordinated regional investment — not a standalone facility.</p>
+      <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">
         {value.map((item) => (
-          <div class="border-t-2 border-lagoon pt-6">
+          <div class="border-t-2 border-lagoon pt-5">
             <h3 class="mb-3">{item.title}</h3>
-            <p>{item.body}</p>
+            <p class="mb-0">{item.body}</p>
           </div>
         ))}
       </div>
-      <p class="mt-14 text-2xl text-navy font-semibold font-display max-w-3xl">
-        This is a coordinated regional investment — not a standalone facility.
-      </p>
-    </div>
-  </section>
+    </Grid>
+  </Section>
 
-  <!-- LONG-RANGE VISION: the campus rendering, labeled as a concept -->
-  <section id="vision" class="bg-night text-white">
-    <figure class="relative">
+  <!-- 06 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
+  <Section id="vision" index={6} total={7} label="Long-range vision" dark heading="A Landmark Campus for Southeast Volusia">
+    <figure slot="media" class="relative">
       <img
         src={`${base}/images/fsic-hero.jpg`}
         alt="Concept rendering of a future campus: research buildings, a tower, and a glass dome set among wetlands, palms, and a boardwalk."
@@ -272,73 +257,77 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         decoding="async"
         class="w-full h-[50vh] min-h-[320px] max-h-[640px] object-cover"
       />
-      <figcaption class="container text-sm text-white/55 pt-3">Concept rendering. Design and location to be determined.</figcaption>
+      <figcaption class="font-sans container text-sm text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>
     </figure>
-    <div class="container section grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-      <div>
-        <h2 class="text-white mb-6">A Landmark Campus at Deering Park</h2>
-        <p class="text-lg text-white/80">As the model matures, FSIC evolves into a permanent anchor institution for Southeast Volusia.</p>
-      </div>
-      <div>
-        <p class="text-lg text-white/80 mb-5">The long-term vision includes:</p>
-        <ul class="space-y-4 mb-10 text-lg text-white/85">
-          <li class="flex gap-4"><span class="mt-[0.55em] w-2 h-2 shrink-0 rounded-full bg-lagoon-light" aria-hidden="true"></span>A multi-university consortium with shared research facilities</li>
-          <li class="flex gap-4"><span class="mt-[0.55em] w-2 h-2 shrink-0 rounded-full bg-lagoon-light" aria-hidden="true"></span>Applied labs and innovation studios</li>
-          <li class="flex gap-4"><span class="mt-[0.55em] w-2 h-2 shrink-0 rounded-full bg-lagoon-light" aria-hidden="true"></span>A multipurpose auditorium and performing arts center</li>
-          <li class="flex gap-4"><span class="mt-[0.55em] w-2 h-2 shrink-0 rounded-full bg-lagoon-light" aria-hidden="true"></span>Public gathering spaces integrating arts, science, and community programming</li>
-        </ul>
-        <p class="text-2xl font-semibold font-display leading-snug">
-          The future is built in phases.<br />The commitment begins now.
-        </p>
-      </div>
-    </div>
-  </section>
+    <Grid class="gap-y-10">
+      <p slot="label" class="mb-0 text-xl text-white/85 leading-snug">
+        As the model matures, FSIC evolves into a permanent anchor institution for Southeast Volusia.
+      </p>
+      <dl class="mb-8">
+        <Row label="The long-term vision includes:" rule="bottom" dark>
+          <DashList
+            marker="lagoon-light"
+            spacious class="text-lg text-white/85"
+            items={[
+              'A multi-university consortium with shared research facilities',
+              'Applied labs and innovation studios',
+              'A multipurpose auditorium and performing arts center',
+              'Public gathering spaces integrating arts, science, and community programming',
+            ]}
+          />
+        </Row>
+      </dl>
+      <p class="mb-0 font-display text-2xl font-semibold leading-snug">
+        The future is built in phases.<br />The commitment begins now.
+      </p>
+    </Grid>
+  </Section>
 
-  <!-- GOVERNANCE & TRANSPARENCY -->
-  <section id="governance" class="section bg-white">
-    <div class="container grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-      <div>
-        <h2 class="mb-6">Governance & Transparency</h2>
-        <p class="text-lg">FSIC operates under a partner-first, coalition-driven governance structure.</p>
-      </div>
-      <div>
-        <p class="text-lg mb-5">It is designed to:</p>
-        <ul class="space-y-4 mb-10 text-lg">
-          <li class="flex gap-4"><span class="mt-[0.6em] w-1.5 h-1.5 shrink-0 bg-navy" aria-hidden="true"></span>Strengthen — not compete with — existing institutions</li>
-          <li class="flex gap-4"><span class="mt-[0.6em] w-1.5 h-1.5 shrink-0 bg-navy" aria-hidden="true"></span>Maintain transparent oversight</li>
-          <li class="flex gap-4"><span class="mt-[0.6em] w-1.5 h-1.5 shrink-0 bg-navy" aria-hidden="true"></span>Deliver shared value across education, industry, and community stakeholders</li>
-          <li class="flex gap-4"><span class="mt-[0.6em] w-1.5 h-1.5 shrink-0 bg-navy" aria-hidden="true"></span>Scale only when readiness and demand are clear</li>
-        </ul>
-        <p class="text-2xl text-navy font-semibold font-display mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
-        <Button href="/governance" variant="secondary">Review Governance & Structure</Button>
-      </div>
-    </div>
-  </section>
+  <!-- 07 GOVERNANCE & TRANSPARENCY -->
+  <Section id="governance" index={7} total={7} heading="Governance & Transparency">
+    <Grid class="gap-y-10">
+      <p slot="label" class="mb-0 text-xl text-navy leading-snug">
+        FSIC operates under a partner-first, coalition-driven governance structure.
+      </p>
+      <dl class="mb-8">
+        <Row label="It is designed to:" rule="bottom">
+          <DashList
+            spacious class="text-lg"
+            items={[
+              'Strengthen — not compete with — existing institutions',
+              'Maintain transparent oversight',
+              'Deliver shared value across education, industry, and community stakeholders',
+              'Scale only when readiness and demand are clear',
+            ]}
+          />
+        </Row>
+      </dl>
+      <p class="font-display text-2xl text-navy font-semibold leading-snug mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
+      <Button href="/governance" variant="secondary">Review Governance & Structure</Button>
+    </Grid>
+  </Section>
 
-  <!-- FINAL CTA -->
-  <section class="section--lg bg-night text-white">
-    <div class="container grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:gap-20 items-end">
-      <div>
-        <h2 class="text-white mb-8">Partner. Collaborate. Participate.</h2>
+  <!-- FINAL CTA: the page's close, so no running head. Who can take part sits in the label column as a plain list. -->
+  <Section dark spacing="large" heading="Partner. Collaborate. Participate.">
+    <Grid class="gap-y-10">
+      <ul slot="label" class="font-sans flex flex-col divide-y divide-white/25 border-b border-white/25" aria-label="Who can take part">
+        {audiences.map((a) => (
+          <li class="py-2.5 first:pt-0 text-lagoon-light">{a}</li>
+        ))}
+      </ul>
+      <div class="max-w-3xl">
         <p class="text-lg text-white/80">
           The Florida Space Innovation Center represents a coordinated investment in the region's future.
         </p>
-        <p class="text-lg text-white/80">
+        <p class="text-lg text-white/80 mb-10">
           Whether you are an employer, university leader, policymaker, workforce partner, or community member, there is a role to play in shaping Southeast Volusia's place in the global space economy.
         </p>
-      </div>
-      <div>
-        <ul class="flex flex-wrap gap-2 mb-10" aria-label="Who can take part">
-          {audiences.map((a) => (
-            <li class="px-3 py-1.5 border border-lagoon-light/50 text-lagoon-light text-sm rounded-sm">{a}</li>
-          ))}
-        </ul>
         <div class="flex flex-wrap gap-4">
           <Button href="/partnership-funding" variant="primary">Become a Partner</Button>
           <Button href="/contact" variant="secondary-light">Contact FSIC</Button>
         </div>
       </div>
-    </div>
-  </section>
+    </Grid>
+  </Section>
 
 </BaseLayout>

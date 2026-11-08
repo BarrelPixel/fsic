@@ -24,15 +24,15 @@
 
 ## Heading Hierarchy
 - **H1:** Page title. One per page.
-- **H2:** Major section headings (e.g., "The Economic Case").
-- **H3:** Subsection headings (e.g., individual engine names).
+- **H2:** Major section headings (e.g., "The Economic Case"). In spec sections, each item's name is the H2 (e.g., the engine names on the Model page; see `DESIGN.md` "Interior page template").
+- **H3:** Subsection headings (e.g., engine names in the home page's four-engine overview).
 - **H4:** Rarely used; reserved for deeply nested content.
 
 ## Data Presentation
 - All economic figures must match the PDFs exactly (see `01-source-materials.md`).
 - Use en-dash for ranges: "$10.2–$12.4 billion" not "$10.2-$12.4 billion."
 - Use comma separators for large numbers: "74,500" not "74500."
-- Currency: "$X.XX billion" for billions, "$XXX million" for millions.
+- Currency: "$X.X billion" or "$X.XX billion" for billions and "$XXX million" for millions, with the decimals the source uses ("$10.2–$12.4 billion", "$1.35–$1.55 billion").
 
 ## CTA Language
 - Use imperative verbs: "Explore," "View," "Review," "Learn," "Become," "Contact."

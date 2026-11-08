@@ -11,7 +11,7 @@
   --color-night: #0D2138;
   --color-white: #FFFFFF;
   --color-orange: #E37A2D;
-  --color-orange-dark: #c96820;
+  --color-orange-light: #F08F48;
   --color-lagoon: #3E7F74;
   --color-lagoon-light: #7FB8AC;
   --color-salt: #EEF2F3;
@@ -20,6 +20,7 @@
   --color-gray-dark: #3F4A56;
 
   --font-display: 'Barlow Semi Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --font-sans: 'Archivo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -37,11 +38,13 @@ html {
 /* Base styles live in @layer base so Tailwind utilities (in @layer utilities)
    can override them, e.g. text-white or text-5xl on a heading. */
 @layer base {
+  /* Reading text is serif by default; UI elements opt back into sans with .font-sans */
   body {
-    font-family: var(--font-sans);
-    font-size: 1.0625rem;
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-size: 1.125rem;
     color: var(--color-gray-dark);
-    line-height: 1.65;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -136,7 +139,7 @@ html {
 }
 
 /* ============================================
-   Signature moment: the launch arc draws once on load.
+   Signature moment: the launch arc draws once when the map scrolls into view.
    The only automatic animation on the site (see DESIGN.md).
    ============================================ */
 

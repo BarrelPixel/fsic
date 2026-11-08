@@ -128,7 +128,7 @@ FSIC launches with a phased, low-risk model focused on early wins and visible co
 - Startup incubation and access to regional funder network
 - Community STEM + arts programming
 
-> **⚠ Review:** This three-phase model conflicts with the Master Plan's five phases. See audit §3.4.
+> **⚠ Review:** This three-phase model conflicts with the Master Plan's five phases. **Decided (November 2026): the site uses the five phases** (see `deployment.md`). Rewrite this answer to match before the FAQ is built, or link it to /deployment.
 
 ### Where will FSIC be located?
 FSIC is a virtual organization located in New Smyrna Beach. A specific future site in Volusia County will be determined through a collaborative process with community members, civic leaders, industry partners, and other stakeholders. This ensures the final location reflects community priorities, long-term economic strategy, and the needs of partners.

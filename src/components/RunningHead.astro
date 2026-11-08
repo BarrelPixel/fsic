@@ -1,0 +1,35 @@
+---
+// Section running head (Swiss layout, DESIGN.md "Grid"): a small index and optional label that sit
+// just above a section's heavy top rule. Decorative wayfinding, so hidden from screen readers;
+// the section's own heading carries the meaning.
+interface Props {
+  index: number;
+  total: number;
+  label?: string;
+  /** Engine color marker: orange for industry engines, lagoon for Civic. */
+  dot?: 'orange' | 'lagoon';
+  /** On a night background. */
+  dark?: boolean;
+}
+
+const { index, total, label, dot, dark = false } = Astro.props;
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+<p
+  class:list={[
+    'font-sans text-sm tabular-nums flex items-center gap-2 mb-2',
+    dark ? 'text-white/60' : 'text-gray',
+  ]}
+  aria-hidden="true"
+>
+  {dot && (
+    <span
+      class:list={[
+        'w-2.5 h-2.5 rounded-full',
+        dot === 'lagoon' ? (dark ? 'bg-lagoon-light' : 'bg-lagoon') : 'bg-orange',
+      ]}
+    ></span>
+  )}
+  <span>{pad(index)} / {pad(total)}</span>
+  {label && <span class:list={['ml-2', dark ? 'text-white/80' : 'text-gray-dark']}>{label}</span>}
+</p>

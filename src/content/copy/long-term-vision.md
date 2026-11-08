@@ -54,11 +54,11 @@ These concepts reflect the direction FSIC is planning toward, and we are buildin
 
 ## A LANDMARK CAMPUS
 
-**Headline:** [TODO — home.md uses "A Landmark Campus at Deering Park"]
+**Headline:** [TODO — home.md uses "A Landmark Campus for Southeast Volusia"]
 **Body:** [TODO: Signature architecture including a multi-university research complex, performing arts center, innovation labs, Talent Engine pavilion, public plazas, green spaces, and community gathering areas.]
 
 > **Source notes:** Master Plan p. 38
-> **⚠ Review:** Naming Deering Park conflicts with the current FAQ ("site … will be determined through a collaborative process"). See audit §3.3.
+> **Note:** Don't name a site. The project lead decided (November 2026) that the site does not name a specific campus site or development. See `docs/08-current-site-audit.md` §3.3.
 
 ---
 

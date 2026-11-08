@@ -31,7 +31,7 @@ The Wix sitemap lists 33 URLs. Only five are linked from the navigation. The res
 | Civic Engine | `/civic` | Overview and 6 components. **Not linked anywhere** | **Yes** |
 | John Joaquin | `/john-joaquin` | Founder bio, community leadership, career, education | Yes. Contact block is placeholder |
 | News & Media (old) | `/about-7` | Duplicate of `/news` | No (duplicate) |
-| Why we are building FSIC | `/1-why-we-are-building-the-fsic` | Older draft of About, using **Deering Park** figures, mixed with Wix placeholder text | No. Useful only for the figure conflict (§3.1) |
+| Why we are building FSIC | `/1-why-we-are-building-the-fsic` | Older draft of About, using the Master Plan's single-development figures, mixed with Wix placeholder text | No. Useful only for the figure conflict (§3.1) |
 | Alternate home | `/copy-of-home` | "A Future We Shape Ourselves" (short manifesto) | Maybe. Kept in `faq.md` as an unused block |
 
 ### Placeholder or template content (do not migrate)
@@ -82,10 +82,10 @@ These conflicts are between the current site, the source PDFs, and the new site 
 
 ### 3.1 Development scale figures (high priority)
 - **Current About page:** "more than **20,000** new homes and over **12 million** square feet of industrial and commercial space planned across the region … in Edgewater, New Smyrna Beach and Daytona Beach."
-- **Older About draft and Master Plan (pp. 4, 6):** "Deering Park will add more than **10,000** homes and over **10 million** square feet."
+- **Older About draft and Master Plan (pp. 4, 6):** a single named development "will add more than **10,000** homes and over **10 million** square feet."
 - **FAQ:** "tens of thousands of new homes approved across Edgewater, New Smyrna Beach, and Daytona Beach."
 
-These figures describe different areas (all of Southeast Volusia versus Deering Park only). Decide which framing the new site uses and give a source for the regional figure, which is not in the PDFs.
+These figures describe different areas (all of Southeast Volusia versus one development). Decide which framing the new site uses and give a source for the regional figure, which is not in the PDFs.
 
 ### 3.2 Economic impact: ranges versus upper bound (high priority)
 - `home.md` (approved) and the Master Plan give **ranges**: $10.2–$12.4B, 74,500–79,500 job-years, $1.35–$1.55B, $690–$910M.
@@ -94,13 +94,15 @@ These figures describe different areas (all of Southeast Volusia versus Deering 
 
 The built page doesn't match the approved copy, and it doesn't follow the content guidelines (figures must match the PDFs). Either show the ranges, or label the figures as "up to" and add the disclaimer.
 
-### 3.3 Location and Deering Park (high priority)
+**Status (November 2026): resolved.** The home page now shows the full ranges with range bars, the source and the disclaimer. The Economic Impact page does the same. See §3.10 for a related open question about which scenario the figures describe.
+
+### 3.3 Location
 - **Current FAQ:** "FSIC is a virtual organization located in New Smyrna Beach. A specific future site in Volusia County will be determined through a collaborative process."
 - **Current FAQ (developers):** "FSIC does not endorse specific projects or drive development."
-- **New home page and Master Plan:** "A Landmark Campus at Deering Park."
-- The current About page has replaced Deering Park with regional language.
+- **Master Plan and the first build of the new home page:** named a specific campus site.
+- The current About page has replaced the site name with regional language.
 
-The current site appears to have moved away from naming Deering Park on purpose. Confirm with FSIC leadership before the new site names a site.
+**Decision (November 2026):** the project lead chose not to name a site anywhere on the new site or in its docs. The home page vision headline is now "A Landmark Campus for Southeast Volusia". The Economic Impact page drops the absorption-timeline figures and the development size, which were about the named development, and the Deployment page drops the Phase 5 activity that named it.
 
 ### 3.4 Number of phases
 - **Master Plan:** five phases (Talent → Innovation → Market → Civic → Integration) over Years 1–5.
@@ -108,11 +110,13 @@ The current site appears to have moved away from naming Deering Park on purpose.
 
 Use one model across the deployment page, the FAQ, and the home page.
 
+**Decision (November 2026):** the project lead chose the Master Plan's **five phases**. The Deployment page uses them, with the Master Plan's timeframes (Year 1; Years 1–2; 2–3; 2–4; 3–5). Still to do: rewrite the FAQ answer (`faq.md`). The home page's two-stage summary ("First: the Talent Engine" / "Then: Innovation, Market, and Civic") is compatible and can stay. Open: the Master Plan's year-by-year milestones (pp. 33–34) sequence the phases one per year, which doesn't match the overlapping phase table; the page leaves the milestones out until FSIC confirms which is current.
+
 ### 3.5 Claims not in the source PDFs
 Under the content guidelines, these need a citation before they are used:
 - "The global space economy is projected to grow from roughly $630 billion today to more than $1 trillion within the next decade" (FAQ)
 - "SpaceX's IPO S-1 filing … $28.5 trillion market opportunity" (FAQ)
-- "By Year 3, FSIC is positioned to sustain 30–50% of its operating budget through recurring earned revenue" (About). Check against Master Plan pp. 22–27.
+- ~~"By Year 3, FSIC is positioned to sustain 30–50% of its operating budget through recurring earned revenue" (About).~~ **Confirmed** in the Master Plan (pp. 2 and 27); used on the Deployment and Partnership & Funding pages.
 - "Billions in funding … flowing to regions" (About)
 
 ### 3.6 Leadership titles
@@ -131,9 +135,18 @@ The FAQ page has a formal **mission statement** and **vision statement**. The ne
 - The source PDFs list a personal email and phone number for John Joaquin. Decide whether these are public or whether all contact goes to `info@fsic.space`.
 
 ### 3.9 Things the current site has that the new build does not
-- **Social links:** LinkedIn, Facebook, X (@FLSpaceCenter). These are missing from the new footer.
+- **Social links:** LinkedIn, Facebook, X (@FLSpaceCenter). Now in the new footer.
 - **Newsletter signup** (email and opt-in). Already an open question in `07-open-questions.md`.
-- **Logo** (shown in the Wix footer). Ask for the source file (see `07-open-questions.md`, Branding).
+- **Logo:** now in the header and footer from a PNG (300×128). Still ask for an SVG or larger source (see `07-open-questions.md`, Branding).
+
+### 3.10 Which scenario the headline figures describe (high priority)
+- The chart on Master Plan p. 8 compares three 25-year scenarios: **Baseline (No FSIC)**, **FSIC 1.0** (the foundational program phase) and **FSIC 2.0** (a full innovation district anchored by NASA, universities, employers and a convention and performing arts center).
+- The headline figures used everywhere ($10.2–$12.4B output, 74,500–79,500 job-years, $1.35–$1.55B wages, $690–$910M fiscal, $800M–$1.56B funding) are the **FSIC 2.0** values. FSIC 1.0 is $8.1–$9.7B output, $250–$500M funding, $420–$520M fiscal, $1.05–$1.25B wages.
+- The approved home page introduces them as "Independent 25-year analysis projects that FSIC will generate:" without naming the scenario. The current FAQ says "with full implementation", which fits FSIC 2.0.
+- The Economic Impact page labels them "Extended FSIC (FSIC 2.0) scenario" and shows all three scenarios.
+- Two possible errors in the same chart: **job-years** are 18k–22k for both Baseline and FSIC 1.0, and **fiscal impact** is labeled "City + County" while the text (p. 7) says "local and state governments".
+
+Decide whether the home page should name the scenario, and confirm the two chart values with whoever produced the analysis.
 
 ---
 

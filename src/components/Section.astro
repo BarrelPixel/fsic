@@ -1,0 +1,81 @@
+---
+// Page section on the 12-column grid (DESIGN.md "Grid" > "Section anatomy").
+//
+//   01 / 07  Label            ← RunningHead (only when `index` is set)
+//   ══════════════════════    ← heavy rule
+//   Headline (cols 1–9)       ← `heading` prop or `heading` slot; omit for spec sections that put
+//   Intro line                   the name in the label column themselves
+//   <slot />                  ← usually a <Grid> (label | content)
+//
+// The `media` slot renders full-bleed before the container (the vision section's rendering).
+import RunningHead from './RunningHead.astro';
+
+interface Props {
+  id?: string;
+  /** Running-head index. Omit for the page's final call to action. */
+  index?: number;
+  total?: number;
+  /** Running-head label. Only when the headline doesn't already name the topic. */
+  label?: string;
+  dot?: 'orange' | 'lagoon';
+  heading?: string;
+  /** Short line under the headline, before the grid. */
+  intro?: string;
+  dark?: boolean;
+  /**
+   * default: full section padding. stacked: bottom padding only, for a white section directly
+   * below another white section. large: the final call to action.
+   */
+  spacing?: 'default' | 'stacked' | 'large';
+  /** Heavy top rule. Off only for a closing statement that follows a ruled section. */
+  rule?: boolean;
+  /** id of the heading element when it lives in the slot (spec sections). */
+  labelledby?: string;
+  class?: string;
+}
+
+const {
+  id,
+  index,
+  total,
+  label,
+  dot,
+  heading,
+  intro,
+  dark = false,
+  spacing = 'default',
+  rule = true,
+  labelledby,
+  class: className,
+} = Astro.props;
+
+const hasHeading = heading || Astro.slots.has('heading');
+const padding = {
+  default: 'section',
+  stacked: 'pb-[var(--section-py)]',
+  large: 'section--lg',
+}[spacing];
+---
+<section
+  id={id}
+  aria-labelledby={labelledby}
+  class:list={[dark ? 'bg-night text-white' : 'bg-white', className]}
+>
+  <slot name="media" />
+  <div class:list={['container', padding]}>
+    {index !== undefined && total !== undefined && (
+      <RunningHead index={index} total={total} label={label} dot={dot} dark={dark} />
+    )}
+    <div class:list={rule && ['border-t-2 pt-6 md:pt-8', dark ? 'border-white' : 'border-navy']}>
+      {hasHeading && (
+        <h2 class:list={['max-w-4xl', intro ? 'mb-4' : 'mb-12', dark && 'text-white']}>
+          {heading ?? <slot name="heading" />}
+        </h2>
+      )}
+      {intro && (
+        <p class:list={['text-lg max-w-3xl mb-12', dark && 'text-white/80']}>{intro}</p>
+      )}
+      <slot />
+    </div>
+  </div>
+</section>

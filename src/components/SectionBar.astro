@@ -1,0 +1,61 @@
+---
+// Sticky in-page navigation for a run of sections (DESIGN.md "Components").
+// Place it as the first child of a wrapper that contains exactly those sections: the wrapper bounds
+// the sticky range, so the bar scrolls away after the last one. The section in view gets
+// aria-current="location" from the script below; without JS it is a plain list of links.
+interface Item {
+  id: string;
+  label: string;
+  /** Visually hidden suffix for screen readers, e.g. " Engine". */
+  srSuffix?: string;
+}
+
+interface Props {
+  items: Item[];
+  ariaLabel: string;
+  /** Show 01, 02… before each label from sm up. */
+  numbered?: boolean;
+}
+
+const { items, ariaLabel, numbered = false } = Astro.props;
+---
+<nav aria-label={ariaLabel} class="font-sans sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-navy/15">
+  <div class="container">
+    <ul class="flex gap-1 overflow-x-auto [scrollbar-width:none] -mx-2" role="list">
+      {items.map((item, i) => (
+        <li class="shrink-0">
+          <a
+            href={`#${item.id}`}
+            data-section-link={item.id}
+            class="flex items-center gap-2 px-2 sm:px-3 py-3.5 border-b-2 border-transparent text-sm sm:text-base font-medium text-gray-dark hover:text-navy aria-[current=location]:border-navy aria-[current=location]:text-navy aria-[current=location]:font-semibold"
+          >
+            {numbered && <span class="hidden sm:inline text-gray tabular-nums text-sm">{String(i + 1).padStart(2, '0')}</span>}
+            {item.label}
+            {item.srSuffix && <span class="sr-only">{item.srSuffix}</span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<script>
+  // Mark the section currently in view.
+  const links = new Map(
+    [...document.querySelectorAll<HTMLAnchorElement>('[data-section-link]')].map((a) => [a.dataset.sectionLink, a]),
+  );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        links.forEach((a) => a.removeAttribute('aria-current'));
+        links.get(entry.target.id)?.setAttribute('aria-current', 'location');
+      }
+    },
+    { rootMargin: '-40% 0px -55% 0px' },
+  );
+  links.forEach((_, id) => {
+    const section = id && document.getElementById(id);
+    if (section) observer.observe(section);
+  });
+</script>

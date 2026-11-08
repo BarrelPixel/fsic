@@ -10,7 +10,7 @@ const resolvedHref = href.startsWith('/') ? `${import.meta.env.BASE_URL}${href}`
 
 // Primary uses night text on orange: white on orange is only 2.97:1 and fails WCAG AA.
 const variants = {
-  primary: 'bg-orange text-night hover:bg-[#F08F48]',
+  primary: 'bg-orange text-night hover:bg-orange-light',
   secondary: 'border-2 border-navy text-navy hover:bg-navy hover:text-white',
   'secondary-light': 'border-2 border-white/70 text-white hover:border-white hover:bg-white hover:text-night',
 };
@@ -18,7 +18,7 @@ const variants = {
 <a
   href={resolvedHref}
   class:list={[
-    'inline-block px-7 py-3.5 text-base font-semibold rounded-sm transition-colors duration-200 text-center',
+    'font-sans inline-block px-7 py-3.5 text-base font-semibold rounded-sm transition-colors duration-200 text-center',
     variants[variant],
     className,
   ]}
