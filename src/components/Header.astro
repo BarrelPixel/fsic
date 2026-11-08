@@ -2,7 +2,8 @@
 // Main navigation. The structure lives in src/lib/nav.ts (shared with the footer).
 // Groups are disclosure buttons (aria-expanded), not ARIA menus: they open on click and close on
 // Escape, an outside click, or when focus leaves. Without JS they open on hover and focus-within
-// (global.css, "Navigation dropdowns").
+// (global.css, "Navigation dropdowns"). The script adds aria-expanded and aria-controls when it runs,
+// so without JS the buttons don't announce a collapsed state while their panel is showing.
 import { getNav, isGroup, href as navHref } from '../lib/nav';
 
 const base = import.meta.env.BASE_URL;
@@ -62,8 +63,7 @@ const itemClass = (active: boolean) => [
               <button
                 type="button"
                 class:list={[itemClass(groupActive(item.links)), 'inline-flex items-center gap-1.5']}
-                aria-expanded="false"
-                aria-controls={item.id}
+                data-controls={item.id}
               >
                 {item.label}
                 <svg class="nav-chevron w-3.5 h-3.5 transition-transform" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -169,6 +169,9 @@ const itemClass = (active: boolean) => [
 
   groups.forEach((group) => {
     const button = buttonOf(group);
+    // State attributes only exist once the script runs (see the note at the top of this file).
+    button.setAttribute('aria-expanded', 'false');
+    if (button.dataset.controls) button.setAttribute('aria-controls', button.dataset.controls);
     button.addEventListener('click', () => {
       const open = button.getAttribute('aria-expanded') !== 'true';
       groups.forEach((g) => g !== group && setOpen(g, false));
