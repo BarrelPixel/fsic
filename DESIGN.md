@@ -43,14 +43,16 @@ Example: in the four-engine section, Talent, Innovation and Market get orange ma
 
 ## Typography
 
-Two families with clearly separate jobs:
+Three families, each with one job:
 
 | Role | Setting |
 |------|---------|
-| H1–H4, wordmark, key figures, emphasis lines | **Barlow Semi Condensed** (`font-display`), weights 600–700. Tall, compact, engineered signage: launch-control directness, and it fits more text per line on phones |
-| Body, UI, labels | **Archivo** (`font-sans`), weights 400–700, 17px, line-height 1.65 |
+| Display: H1–H4, wordmark, key figures, emphasis lines | **Barlow Semi Condensed** (`font-display`), weights 600–700. Tall, compact, engineered signage: launch-control directness, and it fits more text per line on phones |
+| Reading: paragraphs and lists | **Source Serif 4** (`font-serif`, the body default), 18px, line-height 1.7, optical sizing on. Gives the steady, established voice of an anchor institution and reads well over long pages |
+| UI: nav, buttons, captions, labels, data, map, small print | **Archivo** (`font-sans`), weights 400–700 |
 
-- Both load from Google Fonts in `BaseLayout.astro`. Barlow loads 500, 600 and 700 only, so don't ask for 400 in display type.
+- **Reading text is serif by default.** Add `font-sans` to UI elements. Header, Footer, Button and CoastlineMap already do this at their root.
+- All three load from Google Fonts in `BaseLayout.astro`. Barlow loads 500, 600 and 700 only, so don't ask for 400 in display type.
 - Headline sizes use `clamp()` in `global.css`. Condensed type looks smaller at the same size, so display text outside headings uses one step up (`text-2xl` for emphasis lines, `text-3xl`/`text-4xl` for figures).
 - Use `font-display` for non-heading display text (wordmark, figures, closing lines). Don't hard-code heading sizes in pages without a reason.
 - Set display type in title case or sentence case. **No all-caps labels and no tracked-out eyebrow text.**

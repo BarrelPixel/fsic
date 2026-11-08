@@ -127,7 +127,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
             <li class="grid gap-3 py-7 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-12 md:items-center">
               <div>
                 <p class="text-3xl md:text-4xl font-bold text-white font-display leading-tight mb-0">{row.display}</p>
-                <p class="text-white/70 mt-1">{row.label}</p>
+                <p class="font-sans text-white/70 mt-1">{row.label}</p>
               </div>
               <div class="h-3 bg-white/10 rounded-full overflow-hidden flex" aria-hidden="true">
                 <div class="h-full bg-orange" style={`width:${lowPct}%`}></div>
@@ -137,7 +137,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
           );
         })}
       </ul>
-      <p class="text-sm text-white/60 mt-4 flex items-center gap-3">
+      <p class="font-sans text-sm text-white/60 mt-4 flex items-center gap-3">
         <span class="inline-flex gap-1" aria-hidden="true">
           <span class="w-4 h-2 rounded-full bg-orange"></span><span class="w-4 h-2 rounded-full bg-orange/40"></span>
         </span>
@@ -155,7 +155,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
           <Button href="/economic-impact" variant="secondary-light">Explore the Full Economic Analysis</Button>
         </div>
       </div>
-      <p class="text-sm text-white/50 mt-14 max-w-3xl">
+      <p class="font-sans text-sm text-white/50 mt-14 max-w-3xl">
         Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.
       </p>
     </div>
@@ -272,7 +272,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         decoding="async"
         class="w-full h-[50vh] min-h-[320px] max-h-[640px] object-cover"
       />
-      <figcaption class="container text-sm text-white/55 pt-3">Concept rendering. Design and location to be determined.</figcaption>
+      <figcaption class="font-sans container text-sm text-white/55 pt-3">Concept rendering. Design and location to be determined.</figcaption>
     </figure>
     <div class="container section grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
       <div>
@@ -328,7 +328,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         </p>
       </div>
       <div>
-        <ul class="flex flex-wrap gap-2 mb-10" aria-label="Who can take part">
+        <ul class="font-sans flex flex-wrap gap-2 mb-10" aria-label="Who can take part">
           {audiences.map((a) => (
             <li class="px-3 py-1.5 border border-lagoon-light/50 text-lagoon-light text-sm rounded-sm">{a}</li>
           ))}
