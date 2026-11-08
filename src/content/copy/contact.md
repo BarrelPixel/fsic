@@ -11,24 +11,24 @@
 
 **Headline:** Let's Work Together
 **Lead:** Get in touch so we can start working together. Whether you are an employer, educator, policymaker, or community member, there is a role to play.
-**Aside:** info@fsic.space · New Smyrna Beach, Florida
+**Aside:** Every message goes to info@fsic.space. Choose a topic to open an email with the subject filled in.
 
 > **Source:** fsic.space/about-4 (headline and first sentence, verbatim). The second sentence is from the new site's Coming Soon placeholder for this page.
 > **⚠ Review:** Second sentence and aside are new.
 
+**Below the hero (label column):** the address, info@fsic.space, as the page's one statement (a link), then Location and Follow FSIC (see CONTACT DETAILS and FOLLOW FSIC).
+
 ---
 
-## GET IN TOUCH (built November 2026, in place of the form)
+## TOPICS (built November 2026, in place of the form)
 
-**Intro (label column):** Every message goes to info@fsic.space. Choose a topic to open an email with the subject filled in.
-
-Each topic is a row: the topic, one line on who it is for, and an email link with the subject set.
+No section headline: the hero names the page. The four topics are peers in a 2×2 grid, each with its name, one line on who it is for, and an email link with the subject set.
 
 | Topic | Line | Link text | Email subject |
 |------|------|------|------|
-| Partnerships | Employers, school districts, colleges and universities, local government, workforce agencies, and civic organizations. Partner roles are on the Partnership & Funding page. | Email about a partnership | Partnership inquiry |
+| Partnerships | Employers, school districts, colleges and universities, local government, workforce agencies, and civic organizations. | Email about a partnership | Partnership inquiry |
 | Volunteering and leadership | FSIC is actively seeking leaders and volunteers with relevant experience across the Center's four core engines — Talent, Innovation, Market, and Civic. | Email about volunteering | Volunteer or leadership interest |
-| Media | Press inquiries. Press releases are on the News page. | Email a media inquiry | Media inquiry |
+| Media | Press inquiries. | Email a media inquiry | Media inquiry |
 | General | Questions about FSIC and its plans. | Email FSIC | General inquiry |
 
 > **Source:** partner list from `partnership-funding.md`; volunteer line from the FAQ ("How can the public get involved?", verbatim). The FAQ promises "a simple way to express interest in volunteering, advising, or serving in a leadership capacity"; this row is that way until a form exists.
