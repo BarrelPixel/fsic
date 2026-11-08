@@ -11,7 +11,9 @@
   --color-night: #0D2138;
   --color-white: #FFFFFF;
   --color-orange: #E37A2D;
-  --color-orange-light: #F08F48;
+  /* Primary button fill: a deeper orange so white text passes AA (4.68:1; brand orange is 2.96:1). */
+  --color-orange-deep: #B75A16;
+  --color-orange-deeper: #A9510F;
   --color-lagoon: #3E7F74;
   --color-lagoon-light: #7FB8AC;
   --color-gray: #6B7280;

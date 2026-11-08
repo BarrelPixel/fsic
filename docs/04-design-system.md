@@ -13,7 +13,7 @@ All colors are defined as CSS custom properties on `:root` and mapped to Tailwin
 | Orange | `--color-orange` | `#E37A2D` | CTAs, accents, stat highlights, hover states |
 | Gray | `--color-gray` | `#6B7280` | Running heads, counts, muted UI text |
 | Navy Light | `--color-navy-light` | `#1e4370` | Hover states on navy backgrounds |
-| Orange Light | `--color-orange-light` | `#F08F48` | Hover state for primary (orange) buttons |
+| Orange Deep | `--color-orange-deep` | `#B75A16` | Primary button fill, white text (4.68:1); hover `--color-orange-deeper` `#A9510F` |
 | Night | `--color-night` | `#0D2138` | Dark sections, header, footer (see `DESIGN.md`) |
 | Lagoon | `--color-lagoon` | `#3E7F74` | Community and coast (see `DESIGN.md`) |
 | Lagoon Light | `--color-lagoon-light` | `#7FB8AC` | Lagoon on dark backgrounds |
@@ -68,5 +68,5 @@ Retired. The first build's components (StatBlock, EngineCard, TimelineRow, Secti
 - All text-on-background combinations must meet WCAG 2.1 AA contrast (4.5:1 normal, 3:1 large).
 - Navy (#163256) on White (#FFFFFF): **11.6:1** — passes AAA.
 - White (#FFFFFF) on Navy (#163256): **11.6:1** — passes AAA.
-- Orange (#E37A2D) on White (#FFFFFF): **2.97:1** — fails AA even for large text. Never use orange text on light backgrounds, and never put white text on orange. Primary buttons use night text on orange (5.5:1). See `DESIGN.md` "Contrast rules".
+- Orange (#E37A2D) on White (#FFFFFF): **2.97:1** — fails AA even for large text. Never use orange text on light backgrounds, and never put white text on orange. Primary buttons use white text on `orange-deep` #B75A16 (4.68:1). See `DESIGN.md` "Contrast rules".
 - Gray (#6B7280) on White (#FFFFFF): **4.8:1** — passes AA. Body text uses `--color-gray-dark` (#3F4A56).

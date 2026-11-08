@@ -24,19 +24,19 @@ Each color has a meaning. Don't use them as decoration.
 |-------|-----|-----------------|
 | `night` | `#0D2138` | Dark sections: heroes, economics, vision, guiding principles, final CTA, header, footer |
 | `navy` | `#163256` | Brand. Headings and text on light backgrounds |
-| `orange` | `#E37A2D` | Brand. **The space industry**: primary buttons, data bars, industry-side markers |
+| `orange` | `#E37A2D` | Brand. **The space industry**: data bars, industry-side markers, the focus ring |
+| `orange-deep` | `#B75A16` | Primary button fill (white text, 4.68:1). Hover: `orange-deeper` `#A9510F` (5.43:1). Buttons only |
 | `lagoon` | `#3E7F74` | **The community and the coast**: civic and community content, accent rules on light backgrounds |
 | `lagoon-light` | `#7FB8AC` | Lagoon on dark backgrounds |
 | `gray-dark` | `#3F4A56` | Body text on light backgrounds |
 | `gray` | `#6B7280` | Muted UI text: running heads, counts, problem markers (4.8:1 on white) |
 | `rule` / `rule-on-dark` | navy 15% / white 25% | Hairline rules between rows and around lists (`border-rule`, `divide-rule`; `border-rule-on-dark` on night) |
 | `scenario-baseline`, `scenario-1`, `scenario-2` | `#9DB0C8`, `#4E6F99`, `#1E4370` | The ordered scenario ramp (see "Data"). Use only for scenarios |
-| `orange-light` | `#F08F48` | Hover state of primary buttons only |
 
 Example: in the four-engine sections, Talent, Innovation and Market get orange markers, and Civic gets lagoon green.
 
 ### Contrast rules (WCAG AA)
-- **Never put white text on orange** (2.97:1). Primary buttons use `night` text on `orange` (5.5:1).
+- **Never put white text on the brand `orange`** (2.96:1). Primary buttons use white text on `orange-deep` (4.68:1), so the brand orange is never a button fill.
 - **Never use orange for text on a light background** (it fails). Orange text is fine on `night` (5.5:1).
 - `lagoon` on white is 4.7:1, fine for text. On `night`, use `lagoon-light` (7.2:1).
 - Body text on dark backgrounds should be at least `white/70`.
@@ -169,7 +169,7 @@ Don't put the hero photo on interior pages.
 
 | Component | Notes |
 |-----------|-------|
-| `Button` | `primary` (orange with night text), `secondary` (navy outline), `secondary-light` (white outline on dark). Small 2px radius. Joins `BASE_URL` for internal hrefs |
+| `Button` | `primary` (white on `orange-deep`), `secondary` (navy outline), `secondary-light` (white outline on dark). All have a 2px border (primary's matches its fill), so buttons side by side are the same height, and the label is centered with flex. Small 2px radius. Joins `BASE_URL` for internal hrefs |
 | `Header` / `Footer` | `night` background, FSIC logo (`public/images/fsic-logo-reverse.png`, the dark-background version), social links in the footer. Both read `src/lib/nav.ts`. Header groups are dropdowns: a flat `night` panel with a hairline border under the trigger, opened by click (disclosure buttons, not ARIA menus), closed by Escape, an outside click or focus leaving; without JS they open on hover and focus. The phone menu lists each group under its name, with rules between entries. Each page appears once in the menus. The footer shows one column per group |
 | `RunningHead` | Section index above the heavy rule: `01 / 07`, an optional label, an optional engine-color `dot`, and `dark` for night sections. Decorative, so `aria-hidden` |
 | `Section`, `Grid`, `Row`, `DashList`, `PageHero`, `SectionBar` | The grid components. See "Grid" for props and when to use each |
