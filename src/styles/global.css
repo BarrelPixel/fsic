@@ -47,6 +47,7 @@
   --motion-draw: 700ms;    /* the range bars: low estimate */
   --motion-extend: 450ms;  /* the range bars: extension to the high estimate */
   --motion-stagger: 120ms; /* the range bars: delay between rows */
+  --motion-step: 350ms;    /* the range bars: delay between scenarios in a row */
 
   --section-py: 6rem;
   --section-py-lg: 8rem;
@@ -363,10 +364,31 @@ html {
 }
 
 /* ============================================
-   The one automatic animation (DESIGN.md "Motion"): the homepage's range bars draw once when they
-   scroll into view. Each row's low estimate grows from the left, then the lighter extension
-   continues to the high estimate; rows follow one another. The script in index.astro adds
-   .is-drawn. Without JS (no .js on <html>), with reduced motion, and in print, the bars are drawn.
+   Scenario highlight (Economic Impact comparison table): hovering a scenario's header or any of its
+   cells dims the other scenarios' bars, so one scenario can be followed down the table. The values
+   stay at full strength. Interaction feedback only; no JS (:has).
+   ============================================ */
+
+@layer components {
+  .scenario-table .scenario-bar {
+    transition: opacity var(--motion-fast) var(--ease-standard);
+  }
+
+  .scenario-table:has([data-scenario="0"]:hover) .scenario-bar:not([data-scenario="0"]),
+  .scenario-table:has([data-scenario="1"]:hover) .scenario-bar:not([data-scenario="1"]),
+  .scenario-table:has([data-scenario="2"]:hover) .scenario-bar:not([data-scenario="2"]) {
+    opacity: 0.3;
+  }
+}
+
+/* ============================================
+   Range bars draw in (DESIGN.md "Motion"): the site's one automatic animation, used wherever range
+   bars appear (the homepage figures, Economic Impact's figures and scenario comparison). Each bar's
+   low estimate grows from the left, then the lighter extension continues to the high estimate.
+   A group draws once when it scrolls into view (RangeBarsDraw adds .is-drawn). The delay per bar is
+   --row × --motion-stagger + --step × --motion-step: rows follow one another, and steps (the
+   scenarios, left to right) build up within a row. Without JS (no .js on <html>), with reduced
+   motion, and in print, the bars are drawn.
    ============================================ */
 
 .js .range-bars .range-low,
@@ -379,17 +401,18 @@ html {
    while waiting for its delay) and then lets go, so nothing stays on a compositing layer afterwards. */
 .js .range-bars.is-drawn .range-low,
 .js .range-bars.is-drawn .range-high {
+  --range-delay: calc(var(--row, 0) * var(--motion-stagger) + var(--step, 0) * var(--motion-step));
   transform: none;
 }
 
 .js .range-bars.is-drawn .range-low {
   animation: range-grow var(--motion-draw) var(--ease-standard) backwards;
-  animation-delay: calc(var(--row, 0) * var(--motion-stagger));
+  animation-delay: var(--range-delay);
 }
 
 .js .range-bars.is-drawn .range-high {
   animation: range-grow var(--motion-extend) var(--ease-standard) backwards;
-  animation-delay: calc(var(--row, 0) * var(--motion-stagger) + var(--motion-draw));
+  animation-delay: calc(var(--range-delay) + var(--motion-draw));
 }
 
 @keyframes range-grow {

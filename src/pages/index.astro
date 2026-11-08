@@ -11,6 +11,7 @@ import heroImage from '../assets/fsic-hero.png';
 import { pad2 } from '../lib/format';
 import { FIGURES } from '../data/economics';
 import { engines } from '../data/engines';
+import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 
 const base = import.meta.env.BASE_URL;
 
@@ -122,7 +123,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     intro="Independent 25-year analysis projects that FSIC will generate:"
   >
     <!-- The range bars are the site's one automatic animation: they draw once when the list scrolls into
-         view (global.css "The one automatic animation"; the script at the end of this file). -->
+         view (global.css "Range bars draw in"; RangeBarsDraw). -->
     <ul class="range-bars border-t border-rule-on-dark" role="list" data-range-bars>
       {impact.map((row, i) => {
         const lowPct = Math.round((row.low / row.high) * 100);
@@ -320,27 +321,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Grid>
   </Section>
 
+  <RangeBarsDraw />
+
 </BaseLayout>
 
-<script>
-  // Draw the range bars once, when at least a third of the list is in view. Browsers without
-  // IntersectionObserver get the bars drawn straight away.
-  const bars = document.querySelector<HTMLElement>('[data-range-bars]');
-  if (bars) {
-    const draw = () => bars.classList.add('is-drawn');
-    if (!('IntersectionObserver' in window)) {
-      draw();
-    } else {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries.some((entry) => entry.isIntersecting)) {
-            draw();
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.35 },
-      );
-      observer.observe(bars);
-    }
-  }
-</script>
