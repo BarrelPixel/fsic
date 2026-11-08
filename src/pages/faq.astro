@@ -1,0 +1,291 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+
+// Copy: src/content/copy/faq.md (Draft). Answers are as published on fsic.space, except where the
+// copy deck notes a change: ranges for the economic figures, the five phases, the sourced
+// space-economy figures, and the removed regional housing figure.
+// Several answers also appear on other pages (see the note at the top of faq.md).
+
+const base = import.meta.env.BASE_URL;
+const email = 'info@fsic.space';
+const mail = `<a href="mailto:${email}">${email}</a>`;
+const page = (path: string, text: string) => `<a href="${base}${path}">${text}</a>`;
+
+/** An answer is a list of blocks. Strings are trusted, hand-written HTML (links and <strong>). */
+type Block =
+  | { p: string }
+  | { list: string[]; label?: string }
+  | { source: string };
+
+const faqs: { q: string; id: string; a: Block[] }[] = [
+  {
+    q: 'What is the Florida Space Innovation Center (FSIC)?',
+    id: 'what-is-fsic',
+    a: [
+      { p: "The FSIC is a regional innovation and workforce engine designed to connect residents, students, educators, small businesses, and employers to the rapidly expanding space and advanced technology economy. It is not a single building, but a coordinated platform that brings together universities, industry, government, and community partners to accelerate economic activity and expand opportunity. Rooted in the city's goal to diversify its economy and bring higher wage jobs to local residents, FSIC aims to ensure that our children and grandchildren can live and thrive in our communities for generations to come." },
+      {
+        label: 'FSIC operates through four integrated engines:',
+        list: [
+          '<strong>Talent</strong> — developing a cradle-to-career STEM and technical workforce',
+          '<strong>Innovation</strong> — challenge labs, prototyping, and applied research',
+          '<strong>Market</strong> — helping small businesses and startups enter aerospace and advanced manufacturing supply chains',
+          '<strong>Civic</strong> — community STEM engagement, arts integration, and public programming',
+        ],
+      },
+    ],
+  },
+  {
+    q: 'What is the history of the Florida Space Innovation Center (FSIC)?',
+    id: 'history',
+    a: [
+      { p: "The origins of FSIC trace back to the City of New Smyrna Beach's 2023 Economic Development Task Force formed to develop recommendations for economic diversification and better career pathways for local residents. As regional growth accelerates, FSIC provides the strategy to match that population surge with high-quality jobs built in our own communities." },
+    ],
+  },
+  {
+    q: 'Why is FSIC needed now?',
+    id: 'why-now',
+    a: [
+      { p: 'Southeast Volusia sits beside one of the fastest-growing aerospace and advanced manufacturing corridors in the world — yet currently captures very little of its value. Students lack clear pathways into high-growth careers, small businesses struggle to access certifications and contracts, and the region has no unified system to connect local talent and companies to the booming Space Coast economy.' },
+      { p: 'FSIC fills this gap by providing the structure, partnerships, and momentum needed to ensure the region participates fully in the opportunities unfolding next door.' },
+    ],
+  },
+  {
+    q: 'What is the market opportunity for the space industry over the next 20 years?',
+    id: 'market-opportunity',
+    a: [
+      { p: 'The global space economy is projected to grow from roughly $630 billion in 2023 to $1.8 trillion by 2035, driven by lower launch costs, mass-produced satellites, AI-enabled applications, and rising demand for space-based data across nearly every industry. Industry leaders now see the space economy growing far beyond rockets and satellites, opening the door to whole new industries.' },
+      { p: 'FSIC positions the region to seize this opportunity by building the talent pipeline employers need, connecting local businesses to space-related supply chains, and creating a hub for innovation and commercialization. It aligns K-12 schools, colleges, workforce agencies, employers, and civic partners into a coordinated system that can produce skilled workers, support entrepreneurs, and attract new industry. FSIC also serves as the backbone organization that organizes partners, secures funding, and accelerates pilot programs that prepare residents and businesses for space-driven economic growth.' },
+      { p: 'FSIC ensures that Florida — starting with Southeast Volusia — has the structure, strategy, and community alignment needed to compete for the next wave of jobs, investment, and innovation. It transforms the space economy from something happening "near us" into something that directly benefits local families, students, and businesses.' },
+      { source: 'Source: World Economic Forum and McKinsey &amp; Company, <cite>Space: The $1.8 Trillion Opportunity for Global Economic Growth</cite> (April 2024).' },
+    ],
+  },
+  {
+    q: 'How will FSIC benefit local residents and families?',
+    id: 'residents-and-families',
+    a: [
+      { p: 'FSIC expands opportunity for residents of all ages by making the space economy accessible and visible.' },
+      { label: 'For students and families:', list: ['Hands-on STEM learning and maker experiences', 'Dual-enrollment pathways', 'Micro-credentials tied to real jobs', 'Community STEM and arts events'] },
+      { label: 'For adults and career-switchers:', list: ['Short, employer-validated training programs', 'Job placement, apprenticeships, and upskilling', 'Clear pathways into high-wage technical careers'] },
+      { label: 'For the community:', list: ['Higher wages and economic mobility', 'A stronger regional identity tied to innovation', 'More opportunities for youth and families to engage in STEM'] },
+    ],
+  },
+  {
+    q: 'How does FSIC support local businesses and entrepreneurs?',
+    id: 'businesses-and-entrepreneurs',
+    a: [
+      { p: 'FSIC helps small businesses and startups participate in aerospace and advanced manufacturing supply chains — opportunities that are currently difficult to access.' },
+      { label: 'Support includes:', list: ['Supplier-readiness bootcamps', 'Certification and contracting navigation', 'SBIR/STTR proposal support', 'Startup incubation and acceleration', 'Access to prototyping labs and applied research partners'] },
+      { p: 'This creates a pipeline of supplier-ready companies capable of competing in high-value markets.' },
+    ],
+  },
+  {
+    q: 'What economic impact will FSIC have on the region?',
+    id: 'economic-impact',
+    a: [
+      { p: `Independent economic modeling shows that FSIC dramatically improves the region's long-term economic trajectory. With full implementation over 25 years (the Master Plan's Extended FSIC, or FSIC 2.0, scenario), FSIC is projected to help the region generate $10.2–$12.4 billion in economic output, support 74,500–79,500 job-years, increase local wages by $1.35–$1.55 billion, and generate $690–$910 million in fiscal revenue for local and state governments. It also positions the region to attract $800 million to $1.56 billion in external funding tied to workforce development, innovation, and research. These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at ${mail}.` },
+      { p: `The full analysis is on the ${page('/economic-impact', 'Economic Impact')} page.` },
+      { source: 'Source: FSIC Master Plan 2026–2031, pp. 7–8.' },
+    ],
+  },
+  {
+    q: 'What is the role of developers in the FSIC?',
+    id: 'developers',
+    a: [
+      { p: "Developers play a collaborative — not controlling — role in FSIC's work." },
+      { p: 'FSIC is an independent, community-aligned organization, and we recognize that many residents value slow growth or prefer no additional growth at all. Large developments in the region have already been approved, and FSIC does not influence or promote those decisions.' },
+      { p: 'Our role is to help ensure that what happens within that approved growth reflects community priorities by steering opportunities toward high-wage, future-focused industries rather than low-value or high-impact uses. Developers may help create spaces that support training, innovation, and community engagement, but FSIC does not endorse specific projects or drive development.' },
+      { p: 'Our focus is protecting community character while shaping the future economy in ways that benefit the people who already live here.' },
+    ],
+  },
+  {
+    q: 'Is FSIC a school, a research center, or an economic development agency?',
+    id: 'what-kind-of-organization',
+    a: [
+      { p: 'FSIC is a neutral backbone organization that coordinates the work of schools, colleges, universities, employers, and civic partners. It does not replace existing institutions — it strengthens them.' },
+      { p: 'FSIC fills gaps, aligns stakeholders, and builds the connective infrastructure that no single organization can create alone.' },
+    ],
+  },
+  {
+    q: 'Will FSIC compete with local schools, colleges, or nonprofits?',
+    id: 'compete',
+    a: [
+      { label: 'No. FSIC is intentionally designed to amplify, not compete with, existing institutions. It:', list: ['Co-brands programs with partners', 'Shares credit, curriculum, and facilities', 'Strengthens enrollment in partner institutions', 'Builds pathways that benefit all stakeholders'] },
+      { p: "FSIC's role is to coordinate, align, and accelerate — not duplicate." },
+    ],
+  },
+  {
+    q: 'What kinds of programs will FSIC offer first?',
+    id: 'first-programs',
+    a: [
+      { p: 'FSIC launches with a phased, low-risk model focused on early wins and visible community value.' },
+      { label: 'Phase 1: Foundation & Talent Engine Launch (Year 1)', list: ['Micro-credential academies', 'Dual-enrollment STEM pathways', 'Teacher upskilling', 'Industry-embedded learning', 'K–12 STEM exploration programs'] },
+      { label: 'Then:', list: ['Phase 2: Innovation Engine Activation (Years 1–2)', 'Phase 3: Market Engine Deployment (Years 2–3)', 'Phase 4: Civic Engine Expansion (Years 2–4)', 'Phase 5: Full Ecosystem Integration (Years 3–5)'] },
+      { p: `Each phase's activities are on the ${page('/deployment', 'Phased Deployment')} page.` },
+    ],
+  },
+  {
+    q: 'Where will FSIC be located?',
+    id: 'location',
+    a: [
+      { p: 'FSIC is a virtual organization located in New Smyrna Beach. A specific future site in Volusia County will be determined through a collaborative process with community members, civic leaders, industry partners, and other stakeholders. This ensures the final location reflects community priorities, long-term economic strategy, and the needs of partners.' },
+    ],
+  },
+  {
+    q: 'How is FSIC funded?',
+    id: 'funding',
+    a: [
+      { label: 'FSIC uses a proven public-private funding model that blends:', list: ['Philanthropic and private investment', 'State and federal workforce grants', 'Space Florida and economic development programs', 'Earned revenue from training, partnerships, events and other activities.'] },
+      { p: "Long-term projections show significant external funding potential aligned with FSIC's mission and program areas." },
+    ],
+  },
+  {
+    q: 'Who leads FSIC?',
+    id: 'leadership',
+    a: [
+      { p: 'The Florida Space Innovation Center is founded by John Joaquin, a technology industry leader and civic strategist with more than four decades of experience driving large-scale innovation, workforce, and modernization initiatives across government, healthcare, and advanced technology sectors. He has held executive roles at Adobe, ADP, IBM, and Ernst &amp; Young (EY) and has led major ecosystem-building efforts, including one of the nation\'s earliest regional quantum innovation ecosystems.' },
+      { p: "In addition, he served as chair of the City of New Smyrna Beach's Economic Development Task Force (EDTF) and the Southeast Volusia Chamber of Commerce's Advocacy &amp; Economic Development (A&amp;ED) committee, where the idea of the FSIC was developed." },
+      { p: "FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — will be featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution." },
+    ],
+  },
+  {
+    q: 'How can the public get involved?',
+    id: 'get-involved',
+    a: [
+      { p: 'FSIC is designed to be a community-powered movement, and there are many ways for residents, educators, businesses, and civic partners to participate from the very beginning.' },
+      { label: 'Residents can get involved through:', list: ['Community STEM nights that bring families together around hands-on learning', 'Public exhibitions and arts-and-space events that celebrate creativity and innovation', 'Student programs and camps that spark curiosity and build early skills', 'Volunteer and mentorship opportunities supporting learners, educators, and small businesses', 'Employer councils and advisory groups that help shape training, innovation challenges, and regional strategy'] },
+      { p: "In addition, FSIC is actively seeking leaders and volunteers with relevant experience across the Center's four core engines — Talent, Innovation, Market, and Civic. Individuals with backgrounds in STEM education, engineering, advanced manufacturing, entrepreneurship, arts and culture, workforce development, community engagement, or related fields are encouraged to step forward. These early contributors will help shape programs, guide partnerships, and build the foundation for FSIC's long-term impact." },
+      { p: 'The FSIC website will include updates, program announcements, and a simple way to express interest in volunteering, advising, or serving in a leadership capacity.' },
+    ],
+  },
+  {
+    q: 'What could FSIC look like in the future?',
+    id: 'future',
+    a: [
+      { label: 'While no outcomes are guaranteed, we envision FSIC evolving into a regional hub that may include:', list: ['A multi-university research and learning center', 'A performing arts and convening space', 'A startup incubator and accelerator', 'A regional talent marketplace serving thousands annually', 'A recognized civilian-facing innovation hub for the Space Coast'] },
+      { p: 'These concepts reflect the direction FSIC is planning toward, and we are building our partnerships, programs, and strategy to make these possibilities achievable.' },
+    ],
+  },
+];
+
+// Topics group the questions (the published order is kept within each topic). Topic names are
+// new labels (faq.md, PAGE). Every question belongs to exactly one topic.
+const topics = [
+  { id: 'about', name: 'About FSIC', ids: ['what-is-fsic', 'history', 'what-kind-of-organization', 'compete', 'leadership', 'location'] },
+  { id: 'why-fsic-now', name: 'Why Now', ids: ['why-now', 'market-opportunity', 'economic-impact'] },
+  { id: 'programs-funding', name: 'Programs and Funding', ids: ['residents-and-families', 'businesses-and-entrepreneurs', 'first-programs', 'funding', 'developers'] },
+  { id: 'getting-involved', name: 'Getting Involved', ids: ['get-involved', 'future'] },
+].map((t) => ({ ...t, faqs: t.ids.map((id) => faqs.find((f) => f.id === id)!) }));
+
+const assigned = topics.flatMap((t) => t.ids);
+if (assigned.length !== faqs.length || new Set(assigned).size !== faqs.length || topics.some((t) => t.faqs.includes(undefined as never))) {
+  throw new Error('faq.astro: every question must belong to exactly one topic');
+}
+
+const pad = (n: number) => String(n).padStart(2, '0');
+const count = (n: number) => `${n} question${n === 1 ? '' : 's'}`;
+const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-navy/30 hover:[&_a]:decoration-navy';
+---
+<BaseLayout title="Frequently Asked Questions" description="Answers to common questions about the Florida Space Innovation Center: what it is, why it is needed now, how it is funded, and how to get involved.">
+
+  <!-- Interior page template (DESIGN.md): PageHero with the mission (lead), the vision, and an index of
+       the topics; then one spec section per topic. Hierarchy: topic (h2) > question (h3) > answer. -->
+  <PageHero title="Frequently Asked Questions">
+    <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
+      Other questions:
+      <a href={`mailto:${email}`} class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">{email}</a>
+    </p>
+
+    <p class="mb-2 font-sans text-sm font-semibold text-white/60">Mission</p>
+    <p class="text-2xl text-white/90 leading-snug mb-6 max-w-3xl">
+      The Florida Space Innovation Center advances the space economy by first strengthening Southeast Volusia County through talent development, technology innovation, and strategic partnerships that expand economic opportunity and long-term community prosperity.
+    </p>
+    <p class="mb-2 font-sans text-sm font-semibold text-white/60">Vision</p>
+    <p class="text-lg text-white/75 mb-10 max-w-3xl">
+      To establish Southeast Volusia County as a recognized center of excellence in Florida's space economy, demonstrating a scalable model of innovation, workforce readiness, and inclusive economic growth.
+    </p>
+
+    <!-- Topic index: number, topic, how many questions -->
+    <nav aria-label="Topics on this page" class="font-sans">
+      <ol class="border-t border-white/25">
+        {topics.map((t, i) => (
+          <li class="border-b border-white/25">
+            <a href={`#${t.id}`} class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-baseline gap-x-4 py-4 rounded-sm">
+              <span class="text-sm text-white/60 tabular-nums">{pad(i + 1)}</span>
+              <span class="font-display text-2xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2">{t.name}</span>
+              <span class="text-sm text-white/70 tabular-nums">{count(t.faqs.length)}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </PageHero>
+
+  <!-- One spec section per topic: the topic pinned in the label column, its questions in the content
+       column. Each answer opens from its question (<details>, + turns to ×); /faq#<question> opens it. -->
+  {topics.map((t, i) => (
+    <Section
+      id={t.id}
+      index={i + 1}
+      total={topics.length}
+      spacing={i === 0 ? 'default' : 'stacked'}
+      labelledby={`${t.id}-title`}
+      class="scroll-mt-12"
+    >
+      <Grid labelAs="header" stickyLabel>
+        <Fragment slot="label">
+          <h2 id={`${t.id}-title`} class="mb-2">{t.name}</h2>
+          <p class="mb-0 font-sans text-sm font-semibold text-gray">{count(t.faqs.length)}</p>
+        </Fragment>
+
+        <div class="divide-y divide-navy/15 border-b border-navy/15">
+          {t.faqs.map((f) => (
+            <details id={f.id} class="group py-5 first:pt-0 scroll-mt-24">
+              <summary class="flex items-start justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <h3 class="mb-0 text-xl">{f.q}</h3>
+                <svg class="mt-1 w-5 h-5 shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M10 4v12M4 10h12" stroke-linecap="round" />
+                </svg>
+              </summary>
+              <div class:list={['pt-4 max-w-3xl text-gray-dark', link]}>
+                {f.a.map((b) =>
+                  'p' in b ? (
+                    <p set:html={b.p} />
+                  ) : 'source' in b ? (
+                    <p class="font-sans text-sm text-gray" set:html={b.source} />
+                  ) : (
+                    <div class="mb-4">
+                      {b.label && <p class="mb-2 font-sans text-sm font-semibold text-navy" set:html={b.label} />}
+                      <ul class="flex flex-col gap-2" role="list">
+                        {b.list.map((item) => (
+                          <li class="flex gap-3 leading-snug">
+                            <span class="mt-[0.6em] w-3 h-0.5 shrink-0 bg-navy" aria-hidden="true"></span>
+                            <span set:html={item} />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ),
+                )}
+              </div>
+            </details>
+          ))}
+        </div>
+      </Grid>
+    </Section>
+  ))}
+
+</BaseLayout>
+
+<script>
+  // Open the question named in the URL (/faq#location), on load and when the hash changes.
+  const openFromHash = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const target = id ? document.getElementById(id) : null;
+    if (target instanceof HTMLDetailsElement) target.open = true;
+  };
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+</script>

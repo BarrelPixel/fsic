@@ -67,7 +67,7 @@ The Wix sitemap lists 33 URLs. Only five are linked from the navigation. The res
 | Partnership & Funding | `partnership-funding.md` | FAQ → funding, get involved; launch release → three core benefits | Stakeholder value propositions, financial outlook |
 | Long-Term Vision | `long-term-vision.md` | FAQ → "What could FSIC look like" | Visuals; location wording (§3.3) |
 | Contact (built, no form) | `contact.md` | Email, location, social links; topic links replace the form for now | Routing, form backend |
-| *Proposed:* FAQ | `faq.md` | Entire FAQ page | — |
+| FAQ (built) | `faq.md` | Entire FAQ page | "Who leads FSIC?" answer is out of date (§3.6) |
 | News & Media (built) | `news.md`, `src/content/news/` | All four press releases | Graphics copied from the live page (see `news.md` review note); one standard boilerplate |
 | *Proposed:* Leadership | `leadership.md` | John Joaquin bio | Board member bios |
 | Site-wide | `site-wide.md` | Footer, social links, newsletter | Legal pages |
@@ -87,7 +87,7 @@ These conflicts are between the current site, the source PDFs, and the new site 
 
 These figures describe different areas (all of Southeast Volusia versus one development). Decide which framing the new site uses and give a source for the regional figure, which is not in the PDFs.
 
-**Decision (November 2026):** use the Master Plan's figures. The Strategic Moment page says "A master-planned development in Southeast Volusia will add" more than 10,000 homes and over 10 million square feet of industrial and commercial space, citing pp. 4 and 6. The development is not named (§3.3); showing its size unnamed was confirmed by the project lead. The FAQ's "tens of thousands of new homes" answer still needs rewriting to match (`faq.md`).
+**Decision (November 2026):** use the Master Plan's figures. The FAQ's history answer no longer gives a regional figure. The Strategic Moment page says "A master-planned development in Southeast Volusia will add" more than 10,000 homes and over 10 million square feet of industrial and commercial space, citing pp. 4 and 6. The development is not named (§3.3); showing its size unnamed was confirmed by the project lead.
 
 ### 3.2 Economic impact: ranges versus upper bound (high priority)
 - `home.md` (approved) and the Master Plan give **ranges**: $10.2–$12.4B, 74,500–79,500 job-years, $1.35–$1.55B, $690–$910M.
@@ -112,12 +112,12 @@ The built page doesn't match the approved copy, and it doesn't follow the conten
 
 Use one model across the deployment page, the FAQ, and the home page.
 
-**Decision (November 2026):** the project lead chose the Master Plan's **five phases**. The Deployment page uses them, with the Master Plan's timeframes (Year 1; Years 1–2; 2–3; 2–4; 3–5). Still to do: rewrite the FAQ answer (`faq.md`). The home page's two-stage summary ("First: the Talent Engine" / "Then: Innovation, Market, and Civic") is compatible and can stay. Open: the Master Plan's year-by-year milestones (pp. 33–34) sequence the phases one per year, which doesn't match the overlapping phase table; the page leaves the milestones out until FSIC confirms which is current.
+**Decision (November 2026):** the project lead chose the Master Plan's **five phases**. The Deployment page uses them, with the Master Plan's timeframes (Year 1; Years 1–2; 2–3; 2–4; 3–5). The FAQ answer now lists the five phases. The home page's two-stage summary ("First: the Talent Engine" / "Then: Innovation, Market, and Civic") is compatible and can stay. Open: the Master Plan's year-by-year milestones (pp. 33–34) sequence the phases one per year, which doesn't match the overlapping phase table; the page leaves the milestones out until FSIC confirms which is current.
 
 ### 3.5 Claims not in the source PDFs
 Under the content guidelines, these need a citation before they are used:
-- "The global space economy is projected to grow from roughly $630 billion today to more than $1 trillion within the next decade" (FAQ)
-- "SpaceX's IPO S-1 filing … $28.5 trillion market opportunity" (FAQ)
+- ~~"The global space economy is projected to grow from roughly $630 billion today to more than $1 trillion within the next decade" (FAQ).~~ **Sourced:** WEF and McKinsey, April 2024 ($630 billion in 2023, $1.8 trillion by 2035). The FAQ now uses and cites those figures.
+- ~~"SpaceX's IPO S-1 filing … $28.5 trillion market opportunity" (FAQ).~~ **Removed:** the figure is in SpaceX's S-1 (May 20, 2026) but describes SpaceX's own addressable market, about 93% AI, not the space economy.
 - ~~"By Year 3, FSIC is positioned to sustain 30–50% of its operating budget through recurring earned revenue" (About).~~ **Confirmed** in the Master Plan (pp. 2 and 27); used on the Deployment and Partnership & Funding pages.
 - ~~"Billions in funding … flowing to regions" (About).~~ **Confirmed** in the Master Plan (p. 4: programs "are directing billions toward regions that can demonstrate coordinated capacity"); used on The Strategic Moment page.
 
@@ -129,7 +129,7 @@ Under the content guidelines, these need a citation before they are used:
 Confirm current titles and the full seated board. The July 7 release mentions an **inaugural board meeting in September**, so more members may have been seated since then.
 
 ### 3.7 Mission and vision statements
-The FAQ page has a formal **mission statement** and **vision statement**. The new site has neither. They have been copied into `faq.md`. Decide where they appear (home, governance, or an About section).
+The FAQ page has a formal **mission statement** and **vision statement**. The new site has neither. They have been copied into `faq.md`. **Decision (November 2026):** they open the FAQ page, as on the live site; they can move later.
 
 ### 3.8 Contact details
 - The current footer shows `info@FSIC.space`, but the link sends to **`info@mysite.com`** (a Wix placeholder).

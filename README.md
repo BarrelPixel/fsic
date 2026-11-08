@@ -56,11 +56,11 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
 
 ## Current Status
 
-**Built:** Home (`/`), The FSIC Model (`/model`), Economic Impact (`/economic-impact`), Phased Deployment (`/deployment`), Governance & Transparency (`/governance`), Partnership & Funding (`/partnership-funding`), The Strategic Moment (`/strategic-moment`), News & Media (`/news`, one page per press release), Contact (`/contact`, email links by topic; no form yet).
+**Built:** Home (`/`), The FSIC Model (`/model`), Economic Impact (`/economic-impact`), Phased Deployment (`/deployment`), Governance & Transparency (`/governance`), Partnership & Funding (`/partnership-funding`), The Strategic Moment (`/strategic-moment`), FAQ (`/faq`), News & Media (`/news`, one page per press release), Contact (`/contact`, email links by topic; no form yet).
 
 **Coming Soon stubs:** Programs & Facilities, Long-Term Vision. Each uses `<ComingSoon>` until its copy is ready.
 
-**Proposed pages** (copy drafted, not yet in the IA): FAQ, Leadership.
+**Proposed pages** (copy drafted, not yet in the IA): Leadership.
 
 Copy status for every page is tracked in `docs/09-copy-deck.md`. Open content decisions are in `docs/07-open-questions.md` and `docs/08-current-site-audit.md` §3.
 
