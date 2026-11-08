@@ -5,7 +5,7 @@ import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
-import DashList from '../components/DashList.astro';
+import List from '../components/List.astro';
 import { mailto } from '../lib/site';
 import HeroIndex from '../components/HeroIndex.astro';
 import { pad2 } from '../lib/format';
@@ -146,11 +146,11 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
           </div>
           <div class="lg:col-span-4 lg:pt-7">
             <p class="lg:sr-only mb-2 text-label text-navy">Partnership roles</p>
-            <DashList items={p.roles} marker="gray" class="text-gray-dark" />
+            <List items={p.roles} class="text-gray-dark" />
           </div>
           <div class="lg:col-span-4 lg:pt-7">
             <p class="lg:sr-only mb-2 text-label text-navy">Strategic benefits</p>
-            <DashList items={p.benefits} marker="navy" class="text-navy" />
+            <List items={p.benefits} class="text-navy" />
           </div>
         </div>
       ))}
@@ -162,9 +162,8 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
     <Grid>
       <div slot="label">
         <p class="text-xl text-navy leading-snug mb-4">FSIC uses a proven public-private funding model that blends:</p>
-        <DashList
+        <List
           items={['Philanthropic and private investment', 'State and federal workforce grants', 'Space Florida and economic development programs', 'Earned revenue from training, partnerships, events and other activities.']}
-          marker="navy"
         />
       </div>
       <p class="max-w-3xl mb-0 lg:pt-1">
@@ -224,8 +223,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
       </p>
       <dl class="mb-8">
         <Row label="Residents can get involved through:" rule="bottom" dark>
-          <DashList
-            marker="lagoon-light"
+          <List
             spacious
             class="text-white/90"
             items={[

@@ -5,7 +5,7 @@ import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
-import DashList from '../components/DashList.astro';
+import List from '../components/List.astro';
 import { EMAIL, mailto } from '../lib/site';
 import Closing from '../components/Closing.astro';
 
@@ -215,11 +215,11 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
         Without coordination, growth concentrates elsewhere.
       </p>
       <dl>
-        <Row label="Risks without FSIC" rule="bottom" dark>
-          <DashList items={['Becoming a commuter corridor', 'Low-wage service-sector concentration', 'Limited employer recruitment', 'Weak regional identity']} marker="gray" class="text-white/75" />
+        <Row label="Risks without FSIC" rule="bottom" dark dot="gray">
+          <List items={['Becoming a commuter corridor', 'Low-wage service-sector concentration', 'Limited employer recruitment', 'Weak regional identity']} class="text-white/75" />
         </Row>
-        <Row label="Opportunities with FSIC" rule="bottom" dark class="pt-5">
-          <DashList items={['High-value employer attraction', 'Innovation district development', 'Stronger workforce alignment', 'Expanded economic mobility', 'A shared regional identity rooted in innovation']} marker="lagoon-light" class="text-white" />
+        <Row label="Opportunities with FSIC" rule="bottom" dark dot="lagoon-light" class="pt-5">
+          <List items={['High-value employer attraction', 'Innovation district development', 'Stronger workforce alignment', 'Expanded economic mobility', 'A shared regional identity rooted in innovation']} class="text-white" />
         </Row>
       </dl>
     </Grid>
@@ -247,11 +247,11 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
           <h3 class="lg:col-span-4 text-xl mb-0">{row.area}</h3>
           <div class="lg:col-span-4">
             <p class="lg:sr-only mb-2 text-label text-navy">Key outcomes</p>
-            <DashList items={row.outcomes} marker="gray" class="text-gray-dark" />
+            <List items={row.outcomes} class="text-gray-dark" />
           </div>
           <div class="lg:col-span-4">
             <p class="lg:sr-only mb-2 text-label text-navy">Economic implications</p>
-            <DashList items={row.implications} marker="navy" class="text-navy" />
+            <List items={row.implications} class="text-navy" />
           </div>
         </div>
       ))}

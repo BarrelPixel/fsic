@@ -5,7 +5,7 @@ import Button from '../components/Button.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
-import DashList from '../components/DashList.astro';
+import List from '../components/List.astro';
 
 import heroImage from '../assets/fsic-hero.png';
 import { pad2 } from '../lib/format';
@@ -238,7 +238,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
 
       <dl class="mb-8">
         <Row label="This phased approach:">
-          <DashList columns items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} />
+          <List columns items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} />
         </Row>
       </dl>
       <Button href="/deployment" variant="secondary">View the Deployment Timeline</Button>
@@ -280,8 +280,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
       </p>
       <dl class="mb-8">
         <Row label="The long-term vision includes:" rule="bottom" dark>
-          <DashList
-            marker="lagoon-light"
+          <List
             spacious class="text-white/90"
             items={[
               'A multi-university consortium with shared research facilities',
@@ -306,7 +305,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
       </p>
       <dl class="mb-8">
         <Row label="It is designed to:" rule="bottom">
-          <DashList
+          <List
             spacious class=""
             items={[
               'Strengthen — not compete with — existing institutions',

@@ -5,7 +5,7 @@ import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
-import DashList from '../components/DashList.astro';
+import List from '../components/List.astro';
 import { mailto } from '../lib/site';
 import Disclosure from '../components/Disclosure.astro';
 import HeroIndex from '../components/HeroIndex.astro';
@@ -115,7 +115,7 @@ const metrics = [
         <p class="mt-8 pt-6 border-t border-rule mb-4">
           FSIC is intentionally designed to amplify, not compete with, existing institutions. It:
         </p>
-        <DashList
+        <List
           items={['Co-brands programs with partners', 'Shares credit, curriculum, and facilities', 'Strengthens enrollment in partner institutions', 'Builds pathways that benefit all stakeholders']}
           class="text-navy"
         />
@@ -140,7 +140,7 @@ const metrics = [
               {body.lists.map((list) => (
                 <div class="mt-5 first:mt-0">
                   <p class="mb-2 text-label text-navy">{list.label}</p>
-                  <DashList items={list.items} class="text-gray-dark" />
+                  <List items={list.items} class="text-gray-dark" />
                 </div>
               ))}
               {body.duties && (
@@ -148,7 +148,7 @@ const metrics = [
                   <span slot="summary" class="text-label text-navy">
                     {body.duties.label}<span class="font-medium text-gray"> · {body.duties.items.length}</span>
                   </span>
-                  <DashList items={body.duties.items} class="pt-3 text-gray-dark" />
+                  <List items={body.duties.items} class="pt-3 text-gray-dark" />
                 </Disclosure>
               )}
             </Row>
@@ -170,13 +170,13 @@ const metrics = [
         </p>
         <dl>
           <Row label="Public reporting">
-            <DashList items={['Annual Impact Report', "Public dashboards on FSIC's website", 'Community presentations and exhibitions', 'Grant-specific reporting for funders', 'Regular updates to local governments and partners']} class="text-gray-dark" />
+            <List items={['Annual Impact Report', "Public dashboards on FSIC's website", 'Community presentations and exhibitions', 'Grant-specific reporting for funders', 'Regular updates to local governments and partners']} class="text-gray-dark" />
           </Row>
           <Row label="Compliance">
-            <DashList items={['Annual audits', 'Conflict-of-interest disclosures', 'Public reporting and transparency', 'Grant compliance and reporting', 'Ethical fundraising policies']} class="text-gray-dark" />
+            <List items={['Annual audits', 'Conflict-of-interest disclosures', 'Public reporting and transparency', 'Grant compliance and reporting', 'Ethical fundraising policies']} class="text-gray-dark" />
           </Row>
           <Row label="Evaluation principles" class="border-b border-rule">
-            <DashList items={['Measure what matters most to employers, educators, funders, and the community', 'Use data to drive continuous improvement', 'Report outcomes transparently and consistently', 'Align metrics with state and federal funding requirements', 'Demonstrate clear return on investment']} class="text-gray-dark" />
+            <List items={['Measure what matters most to employers, educators, funders, and the community', 'Use data to drive continuous improvement', 'Report outcomes transparently and consistently', 'Align metrics with state and federal funding requirements', 'Demonstrate clear return on investment']} class="text-gray-dark" />
           </Row>
         </dl>
       </div>
@@ -211,11 +211,11 @@ const metrics = [
           </div>
           <div class:list={['lg:col-span-4', m.number !== null && 'lg:pt-7']}>
             <p class="lg:sr-only mb-2 text-label text-navy">Key metrics</p>
-            <DashList items={[...m.items]} class="text-gray-dark" />
+            <List items={[...m.items]} class="text-gray-dark" />
           </div>
           <div class:list={['lg:col-span-4', m.number !== null && 'lg:pt-7']}>
             <p class="lg:sr-only mb-2 text-label text-navy">Reporting cadence</p>
-            <DashList items={[...m.cadence]} class="text-navy" />
+            <List items={[...m.cadence]} class="text-navy" />
           </div>
         </div>
       ))}

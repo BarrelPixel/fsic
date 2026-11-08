@@ -6,7 +6,7 @@ import SectionBar from '../components/SectionBar.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
-import DashList from '../components/DashList.astro';
+import List from '../components/List.astro';
 import { programsFor, type EngineId } from '../lib/programs';
 import ProgramList from '../components/ProgramList.astro';
 import { pad2 } from '../lib/format';
@@ -139,7 +139,7 @@ const engines: Engine[] = [
   <!--
     Built from the grid components (DESIGN.md "Grid" and "Interior page template"):
     PageHero, SectionBar, Section, Grid (label | content), Row (label | content inside the content
-    column), DashList. Hierarchy comes from position, scale and hairline rules, not boxes or fills.
+    column), List. Hierarchy comes from position, scale and hairline rules, not boxes or fills.
   -->
 
   <PageHero title="One Coordinated Platform. Four Integrated Engines.">
@@ -219,11 +219,11 @@ const engines: Engine[] = [
             </Row>
 
             <!-- The before/after pair: adjacent rows on the same axis -->
-            <Row label="What it solves">
-              <DashList items={engine.solves} marker="gray" class="text-gray-dark" />
+            <Row label="What it solves" dot="gray">
+              <List items={engine.solves} class="text-gray-dark" />
             </Row>
-            <Row label="Regional impact">
-              <DashList items={engine.impact} marker={engine.tone} class="text-navy" />
+            <Row label="Regional impact" dot={engine.tone}>
+              <List items={engine.impact} class="text-navy" />
             </Row>
 
             <!-- The engine's programs (Master Plan pp. 19–21, shared with Programs & Facilities via

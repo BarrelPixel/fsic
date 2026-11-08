@@ -5,7 +5,7 @@ import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
-import DashList from '../components/DashList.astro';
+import List from '../components/List.astro';
 import { engines } from '../lib/programs';
 import ProgramList from '../components/ProgramList.astro';
 import HeroIndex from '../components/HeroIndex.astro';
@@ -66,13 +66,13 @@ const link = 'link';
       <dl>
         {audiences.map((a, i) => (
           <Row label={`${a.label}:`} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
-            <DashList items={a.items} class="text-gray-dark" />
+            <List items={a.items} class="text-gray-dark" />
           </Row>
         ))}
         <Row label="For businesses and entrepreneurs:" rule="bottom" class="pt-5">
           <p class="mb-4 text-gray-dark">FSIC helps small businesses and startups participate in aerospace and advanced manufacturing supply chains — opportunities that are currently difficult to access.</p>
           <p class="mb-2 text-label text-navy">Support includes:</p>
-          <DashList items={['Supplier-readiness bootcamps', 'Certification and contracting navigation', 'SBIR/STTR proposal support', 'Startup incubation and acceleration', 'Access to prototyping labs and applied research partners']} class="mb-4 text-gray-dark" />
+          <List items={['Supplier-readiness bootcamps', 'Certification and contracting navigation', 'SBIR/STTR proposal support', 'Startup incubation and acceleration', 'Access to prototyping labs and applied research partners']} class="mb-4 text-gray-dark" />
           <p class="mb-0 text-gray-dark">This creates a pipeline of supplier-ready companies capable of competing in high-value markets.</p>
         </Row>
       </dl>
@@ -124,13 +124,13 @@ const link = 'link';
         </div>
         <dl>
           <Row label="Guiding principles" rule="bottom">
-            <DashList items={principles} class="text-gray-dark" />
+            <List items={principles} class="text-gray-dark" />
           </Row>
           {phases.map((ph) => (
             <Row label={`Phase ${ph.n} · ${ph.when}`} rule="bottom" class="pt-5">
               <p class="mb-2 font-sans font-semibold text-navy">{ph.name}</p>
               <p class="mb-2 text-caption text-gray-dark">Planned core spaces:</p>
-              <DashList items={ph.spaces} class="text-gray-dark" />
+              <List items={ph.spaces} class="text-gray-dark" />
             </Row>
           ))}
         </dl>

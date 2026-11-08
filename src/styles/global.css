@@ -229,7 +229,7 @@ html {
 
 /* ============================================
    Press release text (rendered Markdown, src/content/news/)
-   Lists use the same short dash marker as DashList.
+   Lists are plain lines, as in List.
    ============================================ */
 
 @layer components {
@@ -242,23 +242,9 @@ html {
     margin-bottom: 1rem;
   }
 
-  /* Hanging dashes, as in DashList: text flush with the paragraphs, the dash in the gutter. */
-  .release li {
-    position: relative;
-  }
-
+  /* Plain lines, as in List: flush with the paragraphs, separated by space. */
   .release li + li {
-    margin-top: 0.75rem;
-  }
-
-  .release li::before {
-    content: '';
-    position: absolute;
-    left: -0.875rem;
-    top: calc(0.5lh + 0.1em - 1px);
-    width: 0.5rem;
-    height: 2px;
-    background: var(--color-navy);
+    margin-top: 0.5rem;
   }
 }
 

@@ -6,7 +6,7 @@ import SectionBar from '../components/SectionBar.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
-import DashList from '../components/DashList.astro';
+import List from '../components/List.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
 
@@ -109,7 +109,7 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
   <PageHero title="Start Small. Deliver Early Wins. Scale with Readiness.">
     <div slot="aside" class="max-w-sm">
       <p class="text-label text-white mb-3">This phased approach:</p>
-      <DashList items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} marker="lagoon-light" class="text-caption text-white/75" />
+      <List items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} class="text-caption text-white/75" />
     </div>
 
     <p class="text-lead text-white/90 mb-10">
@@ -176,10 +176,10 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
 
           <dl>
             <Row label="Core activities">
-              <DashList items={phase.activities} marker="navy" class="text-gray-dark" />
+              <List items={phase.activities} class="text-gray-dark" />
             </Row>
-            <Row label="Key outcomes">
-              <DashList items={phase.outcomes} marker={phase.tone} class="text-navy" />
+            <Row label="Key outcomes" dot={phase.tone}>
+              <List items={phase.outcomes} class="text-navy" />
             </Row>
             <Row label="Facilities" class="border-b border-rule">
               <p class="mb-0 text-gray-dark">{phase.facilities}</p>
