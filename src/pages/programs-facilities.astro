@@ -9,6 +9,7 @@ import DashList from '../components/DashList.astro';
 import { engines } from '../lib/programs';
 import ProgramList from '../components/ProgramList.astro';
 import HeroIndex from '../components/HeroIndex.astro';
+import Closing from '../components/Closing.astro';
 
 // Copy: src/content/copy/programs-facilities.md (Draft). Audiences: fsic.space FAQ (verbatim). Portfolio
 // (src/lib/programs.ts, shared with the Model page):
@@ -141,19 +142,9 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
   </Section>
 
   <!-- CLOSING: statement and next steps on the content axis -->
-  <Section rule={false}>
-    <Grid>
-      <Fragment slot="label"></Fragment>
-      <div>
-        <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10 max-w-3xl">
-          The program portfolio is intentionally modular and scalable, enabling FSIC to grow responsibly while maintaining high quality and strong outcomes.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <Button href="/partnership-funding">Get Involved</Button>
-          <Button href="/contact" variant="secondary">Contact FSIC</Button>
-        </div>
-      </div>
-    </Grid>
-  </Section>
+  <Closing statement="The program portfolio is intentionally modular and scalable, enabling FSIC to grow responsibly while maintaining high quality and strong outcomes.">
+    <Button href="/partnership-funding">Get Involved</Button>
+    <Button href="/contact" variant="secondary">Contact FSIC</Button>
+  </Closing>
 
 </BaseLayout>

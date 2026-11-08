@@ -6,6 +6,7 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
+import Closing from '../components/Closing.astro';
 
 // Copy: src/content/copy/strategic-moment.md (Draft). Sections are verbatim from fsic.space/about-4,
 // except the lead (Master Plan p. 4) and the development figures (Master Plan pp. 4 and 6, unnamed:
@@ -113,19 +114,9 @@ const figures = [
   </Section>
 
   <!-- CLOSING: the callout as the statement, next steps on the content axis -->
-  <Section rule={false}>
-    <Grid>
-      <Fragment slot="label"></Fragment>
-      <div>
-        <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10 max-w-3xl">
-          FSIC transforms fragmented potential into coordinated progress. It ensures that opportunity flows into Southeast Volusia — not past it.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <Button href="/model">Explore the FSIC Model</Button>
-          <Button href="/economic-impact" variant="secondary">View Economic Impact</Button>
-        </div>
-      </div>
-    </Grid>
-  </Section>
+  <Closing statement="FSIC transforms fragmented potential into coordinated progress. It ensures that opportunity flows into Southeast Volusia — not past it.">
+    <Button href="/model">Explore the FSIC Model</Button>
+    <Button href="/economic-impact" variant="secondary">View Economic Impact</Button>
+  </Closing>
 
 </BaseLayout>

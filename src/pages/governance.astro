@@ -10,6 +10,7 @@ import { mailto } from '../lib/site';
 import Disclosure from '../components/Disclosure.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 import { pad2 } from '../lib/format';
+import Closing from '../components/Closing.astro';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
 // Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
@@ -242,17 +243,9 @@ const metrics = [
   </Section>
 
   <!-- CLOSING (home.md). "Contact FSIC" opens an email until the Contact page has a form. -->
-  <Section rule={false}>
-    <Grid>
-      <Fragment slot="label"></Fragment>
-      <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10">
-        Neutral convener. Clear structure. Long-term accountability.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <Button href="/partnership-funding">Become a Partner</Button>
-        <Button href={mailto()} variant="secondary">Contact FSIC</Button>
-      </div>
-    </Grid>
-  </Section>
+  <Closing statement="Neutral convener. Clear structure. Long-term accountability.">
+    <Button href="/partnership-funding">Become a Partner</Button>
+    <Button href={mailto()} variant="secondary">Contact FSIC</Button>
+  </Closing>
 
 </BaseLayout>
