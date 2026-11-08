@@ -32,10 +32,6 @@ const items = nav.map((item, i) =>
 );
 const groupActive = (links: { active: boolean }[]) => links.some((l) => l.active);
 
-// The phone menu is one stacked list, so each page appears once there (Contact is also in
-// Get Involved; on the desktop bar the extra top-level Contact works as a call to action).
-const inGroups = new Set(items.flatMap((i) => (i.kind === 'group' ? i.links.map((l) => l.href) : [])));
-const mobileItems = items.filter((i) => i.kind === 'group' || !inGroups.has(i.href));
 
 const itemClass = (active: boolean) => [
   'px-3 py-2 text-sm font-medium rounded transition-colors',
@@ -116,7 +112,7 @@ const itemClass = (active: boolean) => [
   <div id="mobile-menu" class="hidden lg:hidden bg-night border-t border-white/10">
     <div class="container py-2">
       <ul class="divide-y divide-white/10" role="list">
-        {mobileItems.map((item) =>
+        {items.map((item) =>
           item.kind === 'group' ? (
             <li class="py-2">
               <p id={`${item.id}-m`} class="px-3 pt-2 pb-1 mb-0 text-sm font-semibold text-white/60">{item.label}</p>
