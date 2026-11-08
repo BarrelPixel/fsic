@@ -8,9 +8,12 @@ interface Props {
 const { href, variant = 'primary', class: className = '' } = Astro.props;
 const resolvedHref = href.startsWith('/') ? `${import.meta.env.BASE_URL}${href}` : href;
 
-// Primary uses night text on orange: white on orange is only 2.97:1 and fails WCAG AA.
+// Primary: white text on orange-deep (4.68:1, AA); hover orange-deeper (5.43:1). White on the brand
+// orange would be 2.96:1, so the brand orange is never a button fill. Every variant has a 2px border
+// (primary's matches its fill) so side-by-side buttons are the same height, and the label is centered
+// with flex, so it stays on the center line even when a row stretches the button.
 const variants = {
-  primary: 'bg-orange text-night hover:bg-orange-light',
+  primary: 'border-2 border-orange-deep bg-orange-deep text-white hover:bg-orange-deeper hover:border-orange-deeper',
   secondary: 'border-2 border-navy text-navy hover:bg-navy hover:text-white',
   'secondary-light': 'border-2 border-white/70 text-white hover:border-white hover:bg-white hover:text-night',
 };
@@ -18,7 +21,7 @@ const variants = {
 <a
   href={resolvedHref}
   class:list={[
-    'font-sans inline-block px-7 py-3.5 text-base font-semibold rounded-sm transition-colors duration-200 text-center',
+    'font-sans inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-sm transition-colors duration-200 text-center',
     variants[variant],
     className,
   ]}
