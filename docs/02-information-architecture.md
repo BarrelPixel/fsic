@@ -49,10 +49,10 @@
 **Key content:** Phase-by-phase timeline, milestones, expected outcomes, facilities plan per phase.
 **Source:** Master Plan Pages 13–14, 17–19, 32–34.
 
-### Programs & Facilities (`/programs-facilities`) — STUB
+### Programs & Facilities (`/programs-facilities`) — IMPLEMENTED
 **Goal:** Detail every program offering across all four engines plus facilities plan.
 **Audience:** Students, educators, businesses, community members.
-**Key content:** Full program portfolio (micro-credentials, challenge labs, supplier bootcamps, STEM nights, etc.), facilities vision per phase.
+**Key content:** Programs by audience (FAQ); the Master Plan's program portfolio, one row per engine with each program opening in place and a link to that engine on the Model page; the facilities plan: FSIC is a virtual organization today, guiding principles, and planned core spaces per phase (no development named).
 **Source:** Master Plan Pages 17–21.
 
 ### Governance & Transparency (`/governance`) — IMPLEMENTED
@@ -93,11 +93,11 @@ The current site (fsic.space) has founder bio content with no place in this site
 
 ## Navigation Structure
 
-Defined once in `src/lib/nav.ts` and shared by the header and footer. Pages are grouped by the question they answer. Pages that still use `<ComingSoon>` (Programs & Facilities, Long-Term Vision) are listed with `built: false` and stay out of both menus until they ship.
+Defined once in `src/lib/nav.ts` and shared by the header and footer. Pages are grouped by the question they answer. Pages that still use `<ComingSoon>` (Long-Term Vision) are listed with `built: false` and stay out of both menus until they ship.
 
 **Header (desktop):** dropdown groups and plain links.
 - Why FSIC ▾ — The Strategic Moment, Economic Impact, (Long-Term Vision when built)
-- The Model ▾ — The FSIC Model, Phased Deployment, (Programs & Facilities when built)
+- The Model ▾ — The FSIC Model, Phased Deployment, Programs & Facilities
 - Governance
 - Get Involved ▾ — Partnership & Funding, Contact
 - News (News & Media)
@@ -109,4 +109,4 @@ The logo links to Home. On phones, the menu lists each group under its name and 
 **Footer:** one column per group (Why FSIC, The Model, Get Involved), then a column "FSIC" with Home, Governance, News and FAQ. Each page appears once.
 
 ## Implementation Note
-Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, FAQ, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
+Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, FAQ, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
