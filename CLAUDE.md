@@ -43,7 +43,7 @@ scripts/             check-links.mjs (run via `npm run check-links`)
 ### Design
 Read **`DESIGN.md`** before changing any UI. In short:
 - Every page sits on one 12-column grid: framing in cols 1–4, detail in cols 5–12. Build sections from the grid components (`Section`, `Grid`, `Row`, `DashList`), and interior pages from the template in DESIGN.md "Interior page template" (`PageHero` first; `src/pages/model.astro` is the reference). Don't hand-write grid classes.
-- The coastline and launch arc is the only signature element and the only automatic animation.
+- The coastline and launch arc is the only signature element and the only automatic animation. It sits in the homepage's first section; the homepage hero is a full-bleed launch photo (`src/assets/fsic-hero.png`, see DESIGN.md "Imagery").
 - Orange means the space industry. Lagoon green means the community. Don't use either as decoration.
 - Never put white text on orange, and never use orange text on light backgrounds (contrast).
 - Barlow Semi Condensed for headings (`font-display`), Source Serif 4 for reading text (the body default), Archivo for UI (`font-sans`: nav, buttons, captions, labels, data). No all-caps eyebrow labels, no fade-in on scroll, no identical shadowed cards, no chips or pills.

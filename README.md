@@ -40,6 +40,7 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
 ├── scripts/
 │   └── check-links.mjs          # Run via `npm run check-links`
 └── src/
+    ├── assets/                  # Images processed by astro:assets (homepage hero photo)
     ├── components/
     │   ├── Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead   # grid components
     │   ├── Button, CoastlineMap, Header, Footer

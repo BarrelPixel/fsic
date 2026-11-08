@@ -14,7 +14,7 @@ What to avoid: starfields, rockets, planets, glowing "space tech" gradients. Eve
 
 **The coastline and the launch arc** (`src/components/CoastlineMap.astro`). The map is a schematic line drawing of the coast from Cape Canaveral north to Edgewater and New Smyrna Beach. An orange launch arc rises from the Cape and bends north to land on Southeast Volusia.
 
-- It's the one bold element on the page, and everything around it stays quiet.
+- It sits in the homepage's first section (01, "The strategic moment"), below the hero photo, on a `night` plate fitted to the map (`max-w-[35rem]`), because it is drawn for a dark background. Within that section it's the one bold element, and everything around it stays quiet.
 - It's the **only** automatic animation. The arc draws once when the map scrolls into view. Without JS, or with reduced motion, it appears fully drawn.
 - It's labeled "Schematic, not to scale." Don't add distances or figures to the map unless they're sourced.
 - It appears on the homepage only. Interior pages open with `PageHero` (see "Interior page template"), not a smaller copy of the arc. Don't add a second signature element.
@@ -109,7 +109,7 @@ Headline across cols 1–9 (max-w-4xl)
 - The hero and the page's final call to action skip the running head.
 - **Running-head labels only when the headline doesn't already name the topic.** "02 / 07 The economic case" above "Transformational, Long-Term Regional Impact" helps; "Governance and transparency" above "Governance & Transparency" is noise, so that section shows the number alone.
 - **Columns share one top line.** The first line of the label column and the first line of the content column start at the same height. Check it by measuring, not by eye (the first-line tops should be within the difference between the two type sizes).
-  - Hang columns from the top (`lg:items-start`). Don't vertically center text against a taller neighbour, including the hero text against the map.
+  - Hang columns from the top (`lg:items-start`). Don't vertically center text against a taller neighbour.
   - Don't open a column with a rule when the column beside it has none. Put the rule below the row, use rules between items (`divide-y`, first item `pt-0`), or, where the content opens with peer rules (the 2×2 value grid), give the label column the same offset (`lg:pt-[1.375rem]` for `border-t-2` + `pt-5`).
   - In tables, align figure and label on a shared baseline (`lg:items-baseline`); center only non-text marks such as range bars (`lg:self-center`).
   - A closing row puts the statement in the label column and the action (button) in the content column, both hung from the rule above. Don't push buttons to the right edge; everything is flush left.
@@ -154,6 +154,7 @@ Don't put the coastline map or the launch arc on interior pages.
 
 - The campus rendering (`public/images/fsic-hero.jpg`) is a **concept**. It always carries the caption "Concept rendering. Design and location to be determined." It belongs in the vision section, not the hero.
 - Prefer real photographs of the region (lagoon, beach launch viewing, local classrooms and shops) when they become available. Don't use stock rockets or astronauts.
+- **Homepage hero photo** (`src/assets/fsic-hero.png`, through `astro:assets` so it's resized per screen): a launch plume seen from the dunes, full-bleed behind the hero text. The text sits over the open sky on the left; a `night` gradient keeps it readable (left to right at `lg`, top to bottom below, stronger on phones because the text spans the plume there). The plume and coastline stay clear on the right at `lg` (`object-[80%_100%]`). Check contrast against the lightest pixel under each text block when changing the photo or the gradient (it measured 6.4:1 or better at 375, 768, 1024 and 1280 px). It's the homepage's opening image, not a second signature element: the map below carries the region's story.
 - **Press release graphics** (`src/content/news/images/`) are shown as FSIC published them, only on the News pages: beside the text in the label column of a release page (above it on small screens, `max-w-xs`), and as a decorative `w-40` thumbnail under the date on the list at `lg`. They are the one exception to the color and imagery rules above, because they are part of the published release. Don't crop them, add text over them, or reuse them elsewhere on the site.
 
 ## Motion

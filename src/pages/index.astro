@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import CoastlineMap from '../components/CoastlineMap.astro';
@@ -6,6 +7,8 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
+
+import heroImage from '../assets/fsic-hero.png';
 
 const base = import.meta.env.BASE_URL;
 
@@ -73,9 +76,21 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     Copy is verbatim from src/content/copy/home.md.
   -->
 
-  <!-- HERO: the coastline and launch arc are the signature element (DESIGN.md) -->
-  <section class="bg-night text-white overflow-hidden">
-    <div class="container pt-14 pb-20 md:pt-20 md:pb-28 grid gap-14 lg:grid-cols-12 lg:gap-x-8 lg:items-start">
+  <!-- HERO: the launch photo, full-bleed. The text sits over the open sky on the left; a night gradient
+       keeps it readable (left to right on lg, top to bottom below). The plume and coastline stay clear
+       on the right. The coastline map is in section 01. -->
+  <section class="relative bg-night text-white overflow-hidden">
+    <Image
+      src={heroImage}
+      alt="A rocket's exhaust plume climbs into a clear sky above the ocean, seen from the dunes along the coast."
+      widths={[640, 960, 1280, 1440]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover object-[80%_100%]"
+    />
+    <div class="absolute inset-0 bg-linear-to-b from-night/90 via-night/80 to-night/50 lg:bg-linear-to-r lg:from-night/90 lg:via-night/65 lg:via-45% lg:to-night/0 lg:to-75%" aria-hidden="true"></div>
+    <div class="relative container pt-16 pb-40 md:pt-24 md:pb-48 lg:pb-56 grid lg:grid-cols-12 lg:gap-x-8">
       <div class="lg:col-span-6 max-w-2xl">
         <h1 class="text-white mb-8">A New Commitment to the Space Coast</h1>
         <div class="text-lg text-white/80 leading-relaxed space-y-5 mb-10">
@@ -93,9 +108,6 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
           <Button href="/model" variant="primary">Explore the Vision</Button>
           <Button href="/economic-impact" variant="secondary-light">View Economic Impact</Button>
         </div>
-      </div>
-      <div class="lg:col-span-6">
-        <CoastlineMap />
       </div>
     </div>
   </section>
@@ -118,6 +130,11 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         <p class="mt-8 pt-6 border-t border-navy/15 text-navy font-medium">
           FSIC is designed to align education, industry, and community in one coordinated regional platform.
         </p>
+        <!-- The coastline and launch arc, the signature element (DESIGN.md), drawn for night: shown on a
+             night plate so it keeps its colors on this white section. -->
+        <div class="mt-12 max-w-[35rem] bg-night px-6 py-8 md:px-10 md:py-10">
+          <CoastlineMap />
+        </div>
       </div>
     </Grid>
   </Section>
