@@ -22,12 +22,19 @@ const secondaryLinks = [
   { label: 'Long-Term Vision', href: `${base}/long-term-vision` },
 ];
 ---
-<footer class="bg-night text-white/80 border-t border-white/10" role="contentinfo">
+<footer class="font-sans bg-night text-white/80 border-t border-white/10" role="contentinfo">
   <div class="container py-16">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
       <!-- Brand -->
       <div>
-        <p class="text-white font-bold text-lg leading-tight mb-1 font-display">Florida Space Innovation Center</p>
+        <img
+          src={`${base}/images/fsic-logo-reverse.png`}
+          alt="Florida Space Innovation Center"
+          width="300"
+          height="128"
+          loading="lazy"
+          class="h-16 w-auto mb-4"
+        />
         <p class="text-sm text-lagoon-light font-medium mb-4">Southeast Volusia County, Florida</p>
         <p class="text-sm leading-relaxed">
           A coordinated regional platform strengthening workforce, innovation, and economic growth for the Space Coast.
