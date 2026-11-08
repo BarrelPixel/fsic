@@ -242,9 +242,9 @@ html {
 }
 
 /* ============================================
-   Lists (List.astro): a small chevron on the column edge, the text 16px in, items separated by space.
-   The chevron is drawn from two borders of a rotated square, in the marker color (navy at 60%, or
-   white at 60% inside night sections), and centered on the first line's lowercase letters.
+   Lists (List.astro): a small round dot on the column edge, the text 16px in, items separated by
+   space. The dot is in the marker color (navy at 60%, or white at 60% inside night sections) and
+   centered on the first line's lowercase letters.
    ============================================ */
 
 @layer components {
@@ -266,21 +266,19 @@ html {
   .release li::before {
     content: '';
     position: absolute;
-    /* The rotated square's left tip is at its horizontal center, so center it on the column edge;
-       center it vertically on the lowercase letters (0.5lh + 0.1em). */
-    left: calc(-0.15em + 1px);
+    /* On the column edge; centered vertically on the lowercase letters (0.5lh + 0.1em). */
+    left: 0;
     top: calc(0.5lh + 0.1em - 0.15em);
     width: 0.3em;
     height: 0.3em;
-    border-top: 1.5px solid var(--list-marker, color-mix(in oklab, var(--color-navy) 60%, transparent));
-    border-right: 1.5px solid var(--list-marker, color-mix(in oklab, var(--color-navy) 60%, transparent));
-    rotate: 45deg;
+    border-radius: 50%;
+    background: var(--list-marker, color-mix(in oklab, var(--color-navy) 60%, transparent));
   }
 }
 
 /* ============================================
    Press release text (rendered Markdown, src/content/news/)
-   Lists use chevrons, as in List.
+   Lists use dots, as in List.
    ============================================ */
 
 @layer components {
@@ -293,7 +291,7 @@ html {
     margin-bottom: 1rem;
   }
 
-  /* As List: chevrons (see "Lists" above), items separated by space. */
+  /* As List: dots (see "Lists" above), items separated by space. */
   .release li + li {
     margin-top: 0.5rem;
   }
