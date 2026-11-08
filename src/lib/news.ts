@@ -23,6 +23,21 @@ export function firstParagraph(release: Release): string {
     .trim();
 }
 
+/**
+ * The release's first sentence (from firstParagraph), for the news list. A sentence ends at . ! or ?
+ * followed by a space and a capital letter or opening quote, except after a single capital letter,
+ * so initials and abbreviations ("U.S. Army", "John F. Kennedy") don't end it.
+ */
+export function firstSentence(release: Release): string {
+  const text = firstParagraph(release);
+  for (const m of text.matchAll(/[.!?](?=\s+[A-Z“"(])/g)) {
+    const before = text.slice(0, m.index);
+    if (/(?:^|[\s.])[A-Z]$/.test(before)) continue;
+    return text.slice(0, m.index + 1);
+  }
+  return text;
+}
+
 /** Shortened at a word boundary for meta descriptions (about 155 characters). */
 export function truncate(text: string, max = 155): string {
   if (text.length <= max) return text;

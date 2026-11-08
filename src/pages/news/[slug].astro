@@ -37,7 +37,7 @@ const isoDate = (d: Date) => d.toISOString().slice(0, 10);
     </p>
   </PageHero>
 
-  <!-- The release (cols 5–12). The label column holds the way back and the graphic published with the release. -->
+  <!-- The release (cols 5–12). The label column holds the way back and, on lg, the graphic published with the release. -->
   <Section>
     <Grid stickyLabel>
       <div slot="label">
@@ -50,13 +50,24 @@ const isoDate = (d: Date) => d.toISOString().slice(0, 10);
             alt={imageAlt}
             widths={[320, 480, 720]}
             sizes="(min-width: 1024px) 22rem, 20rem"
-            class="mt-6 w-full max-w-xs lg:max-w-sm h-auto"
+            class="hidden lg:block mt-6 w-full max-w-sm h-auto"
           />
         )}
       </div>
       <article class="release max-w-3xl">
         <Content />
       </article>
+      <!-- Below lg the label column stacks first, so the graphic follows the text there instead of
+           pushing the first paragraph below the fold. (On lg it sits in the label column above.) -->
+      {image && imageAlt && (
+        <Image
+          src={image}
+          alt={imageAlt}
+          widths={[320, 480, 720]}
+          sizes="20rem"
+          class="lg:hidden mt-10 w-full max-w-xs h-auto"
+        />
+      )}
     </Grid>
 
     {others.length > 0 && (

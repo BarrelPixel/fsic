@@ -41,13 +41,13 @@ Keep the wording as published, including quotes. Fix only obvious formatting (bo
 
 > **⚠ Review:** Lead and aside are new. The media contact uses the general address rather than a named person until titles are confirmed (audit §3.6, §3.8).
 
-Each row shows the date, the headline (linking to the release) and the release's first paragraph without its dateline. On wide screens, a thumbnail of the release graphic sits under the date.
+Each row shows the date, the headline (linking to the release) and the release's first sentence, without its dateline (`firstSentence()` in `src/lib/news.ts`; initials such as "U.S." don't end a sentence). On wide screens, a thumbnail of the release graphic, all at one height, sits under the date and also links to the release.
 
 ---
 
 ## RELEASE PAGE
 
-Headline, then "<date> · Press release", the release graphic beside the text (above it on small screens; also the page's share image), the release text, a link back to "All news and media", and a "More news" list of the other releases. The meta description is the first paragraph, shortened to about 155 characters.
+Headline, then "<date> · Press release", the release graphic beside the text (after it on small screens, so the text comes first; also the page's share image), the release text, a link back to "All news and media", and a "More news" list of the other releases. The meta description is the first paragraph, shortened to about 155 characters.
 
 ---
 

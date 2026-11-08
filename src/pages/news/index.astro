@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
-import { getReleases, formatDate, firstParagraph } from '../../lib/news';
+import { getReleases, formatDate, firstSentence } from '../../lib/news';
 
 // Copy: src/content/copy/news.md (page wording); releases: src/content/news/ (as published).
 const base = import.meta.env.BASE_URL;
@@ -22,7 +22,8 @@ const releases = await getReleases();
     </p>
   </PageHero>
 
-  <!-- Releases: date and thumbnail (cols 1–4) | headline and first paragraph (cols 5–12) -->
+  <!-- Releases: date and thumbnail (cols 1–4) | headline and first sentence (cols 5–12). Date and
+       headline share a baseline (DESIGN.md, tables). -->
   <Section>
     <ol class="divide-y divide-navy/15 border-b border-navy/15">
       {releases.map((r) => (
@@ -31,16 +32,20 @@ const releases = await getReleases();
             <p class="mb-0 font-sans text-sm font-semibold text-gray-dark">
               <time datetime={r.data.date.toISOString().slice(0, 10)}>{formatDate(r.data.date)}</time>
             </p>
-            {/* Thumbnail of the release graphic. Decorative here: the headline is the link, and the release page carries the alt text. */}
+            {/* Thumbnail of the release graphic at one height (width follows the graphic; never cropped).
+                A mouse shortcut to the release: hidden from keyboard and screen readers, since the
+                headline is the same link and the release page carries the alt text. */}
             {r.data.image && (
-              <Image src={r.data.image} alt="" widths={[160, 320]} sizes="10rem" class="hidden lg:block mt-4 w-40 h-auto" />
+              <a href={`${base}/news/${r.id}`} tabindex="-1" aria-hidden="true" class="hidden lg:inline-block mt-4 hover:opacity-90 transition-opacity">
+                <Image src={r.data.image} alt="" widths={[128, 256]} sizes="8rem" class="block h-32 w-auto" />
+              </a>
             )}
           </div>
           <div class="lg:col-span-8 max-w-3xl">
             <h2 class="text-2xl md:text-3xl mb-3">
               <a href={`${base}/news/${r.id}`} class="hover:underline underline-offset-4 decoration-2">{r.data.title}</a>
             </h2>
-            <p class="mb-0 text-gray-dark">{firstParagraph(r)}</p>
+            <p class="mb-0 text-gray-dark">{firstSentence(r)}</p>
           </div>
         </li>
       ))}
