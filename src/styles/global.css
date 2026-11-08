@@ -268,9 +268,9 @@ html {
     position: absolute;
     /* On the column edge; centered vertically on the lowercase letters (0.5lh + 0.1em). */
     left: 0;
-    top: calc(0.5lh + 0.1em - 0.15em);
-    width: 0.3em;
-    height: 0.3em;
+    top: calc(0.5lh + 0.1em - 0.1125em);
+    width: 0.225em;
+    height: 0.225em;
     border-radius: 50%;
     background: var(--list-marker, color-mix(in oklab, var(--color-navy) 60%, transparent));
   }
