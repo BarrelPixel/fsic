@@ -35,7 +35,7 @@ All colors are defined as CSS custom properties on `:root` and mapped to Tailwin
 | H3 | 1.5 | 600 | 1.3 | Subsection headings |
 | H4 | 1.25 | 600 | 1.35 | Card titles |
 | Body Large | 1.25 | 400 | 1.6 | Lead paragraphs |
-| Body | 1.0625 | 400 | 1.7 | Default body text |
+| Body | 1.125 | 400 | 28px (1.556) | Default body text, paragraphs and lists |
 | Body Small | 0.875 | 400 | 1.6 | Captions, fine print |
 | Stat Value | 2.5 | 700 | 1.1 | Economic impact numbers |
 | Stat Label | 0.875 | 500 | 1.4 | Stat descriptions |

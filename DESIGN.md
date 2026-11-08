@@ -39,7 +39,7 @@ Example: in the four-engine sections, Talent, Innovation and Market get orange m
 - **Never put white text on the brand `orange`** (2.96:1). Primary buttons use white text on `orange-deep` (4.68:1), so the brand orange is never a button fill.
 - **Never use orange for text on a light background** (it fails). Orange text is fine on `night` (5.5:1).
 - `lagoon` on white is 4.7:1, fine for text. On `night`, use `lagoon-light` (7.2:1).
-- Body text on dark backgrounds should be at least `white/70`.
+- White text on dark backgrounds uses three tints only: `white/90` for main text, `white/75` for secondary text, `white/60` for captions.
 
 ## Typography
 
@@ -48,7 +48,7 @@ Three families, each with one job:
 | Role | Setting |
 |------|---------|
 | Display: H1–H4, wordmark, key figures, emphasis lines | **Barlow Semi Condensed** (`font-display`), weights 600–700. Tall, compact, engineered signage: launch-control directness, and it fits more text per line on phones |
-| Reading: paragraphs and lists | **Source Serif 4** (`font-serif`, the body default), 18px, line-height 1.7, optical sizing on. Gives the steady, established voice of an anchor institution and reads well over long pages |
+| Reading: paragraphs and lists | **Source Serif 4** (`font-serif`, the body default), 18px on a 28px line (paragraphs and lists alike), optical sizing on. Gives the steady, established voice of an anchor institution and reads well over long pages |
 | UI: nav, buttons, captions, labels, data, map, small print | **Archivo** (`font-sans`), weights 400–700 |
 
 - **Reading text is serif by default.** Add `font-sans` to UI elements. Header, Footer and Button already do this at their root.
@@ -68,7 +68,7 @@ Use these steps and no others. Hierarchy comes from scale, weight and position, 
 | Display | `h1`, `h2` | clamp sizes in `global.css` | Page title, section headlines, engine names |
 | Statement | `text-statement` | Barlow `text-2xl` semibold, `leading-snug`. Closings and figures step up (`Closing`: `text-3xl`–`4xl`) | A section's thesis or closing line, key figures |
 | Lead | `text-lead` | Serif `text-2xl`, `leading-snug` | The first thing to read after a headline: summaries, intro sentences |
-| Body | — | Serif 18px (the default) | Paragraphs and lists |
+| Body | — | Serif 18px on 28px (the default; never `text-lg` or `leading-*` on reading text) | Paragraphs and lists |
 | Label | `text-label` | Archivo `text-sm` semibold | Row labels, running heads, legends |
 | Caption | `text-caption` | Archivo `text-sm` | Source lines, notes, small print, the PageHero aside |
 | UI | — | `font-sans` 16–18px, `font-semibold` for list items you open | Nav, buttons, component titles |
@@ -85,8 +85,8 @@ The site uses one Swiss-style modular grid. Every section shares the same vertic
 |-----------|--------------|
 | `Section` | Section shell: `RunningHead`, heavy rule, headline across cols 1–9, optional intro line. Props: `index`/`total`/`label`/`dot` for the running head, `heading` (or a `heading` slot), `intro`, `dark`, `spacing` (`default`, `stacked` for a white section under another white one, `large` for the final call to action), `rule={false}` for a closing statement, a `media` slot for a full-bleed image before the container |
 | `Grid` | The label \| content split (cols 1–4 \| 5–12), hung from one top line. `labelOffset` for content that opens with a peer rule, `stickyLabel` + `labelAs="header"` for spec sections, `labelLast` for a note that should follow the content on mobile |
-| `Row` | A label \| content row inside the content column, for use in a `<dl>`. `rule="bottom"` when it opens the content column, `count` for "Programs · 5", `list` when the content is a list of `<details>` |
-| `DashList` | A list with dash markers. `marker` carries the meaning (gray, navy, orange, lagoon, lagoon-light), `columns` for short items, `spacious` for longer lines |
+| `Row` | A label \| content row inside the content column, for use in a `<dl>`. `rule="bottom"` when it opens the content column, `count` for "Programs · 5", `list` when the content is a list of `<details>`. `dot` (gray, navy, orange, lagoon, lagoon-light) puts a small dot after the label to say what the list beside it is: gray for problems, the engine or phase color for impact |
+| `List` | Plain lines flush with the column, 8px apart on the 28px leading, no markers. `spacious` (12px) for items that run to several lines, `columns` for short items, `html` for items with links |
 | `PageHero` | Interior page opening (below) |
 | `SectionBar` | Sticky in-page navigation with the current section marked |
 | `RunningHead` | Used by `Section`; use directly only in custom layouts |
@@ -124,9 +124,9 @@ Headline across cols 1–9 (max-w-4xl)
 - A range becomes a range bar, never a single big number. On the homepage the figures are a table on the page grid: figure (cols 1–4), what it measures (5–8), range bar (9–12).
 - A set of peers becomes a 2-column grid with a top rule.
 - A before/after pair (what it solves, regional impact) sits in adjacent rows on the same axis. Don't put unrelated kinds of content in matching side-by-side columns.
-- Lists use a short dash marker (`w-3 h-0.5`), grey for problems, navy for neutral points, the engine color for impact. No round bullets, chips, pills or boxed tags. Show sets of names as plain text (`Students · Educators · Employers`) or a ruled list.
+- Lists are plain lines (`List`): flush with the column like a paragraph, separated by space, with no markers, so every line on the page starts on the same edge. When a list's meaning matters (problems vs. impact), say it on the list's label with `Row`'s `dot` (after the label, so labels stay flush): gray for problems, the engine or phase color for impact. No bullets, dashes, chips, pills or boxed tags. Show sets of names as plain text (`Students · Educators · Employers`) or a ruled list.
 - Long lists of items people may want to read in full use native `<details>` with a + that turns to ×. Don't hide short lists.
-- Don't make identical cards with shadows. No diagonal dividers or decorative grids.
+- Square corners and no shadows anywhere (buttons, menus, panels); the only round shapes are the small dots. Don't make cards. No diagonal dividers or decorative grids.
 - **Left-aligned by default.** Center only short, standalone moments.
 
 ## Interior page template
@@ -162,17 +162,17 @@ Don't put the hero photo on interior pages.
 
 - **One automatic animation on the whole site: the homepage's range bars.** In "Transformational, Long-Term Regional Impact", each bar draws once when the list scrolls into view: the solid low estimate grows from the left, then the lighter extension continues to the high estimate, rows following one another (`--motion-stagger`). It shows how to read a range; the figures themselves never move. Without JS, with reduced motion and in print, the bars are fully drawn. Don't add a second automatic animation.
 - No fade-in on scroll, no hover lift on cards, no count-up numbers, no parallax, nothing that loops.
-- Interaction feedback is fine and shares the motion tokens in `global.css` (`--ease-standard`; `--motion-fast` 150ms, `--motion-medium` 250ms): link underlines darken, the menu dropdowns fade in and settle 4px down, expanding items (`Disclosure`) open with a height transition where the browser supports it (others open instantly).
+- Interaction feedback is fine and shares the motion tokens in `global.css` (`--ease-standard`; `--motion-fast` 150ms, `--motion-medium` 250ms): link underlines darken, the menu dropdowns fade in and settle 4px down, expanding items (`Disclosure`) open with a height transition where the browser supports it (others open instantly), index and headline links reveal their underline (`underline-reveal`), the Model page's section bar eases between sections, the phone menu fades in like the dropdowns, and moving between pages cross-fades the content while the header stays put (view transitions; browsers without them navigate as before).
 - Always respect `prefers-reduced-motion`: it turns every transition and the range-bar animation off, and the page then looks exactly as it does at rest.
 
 ## Components
 
 | Component | Notes |
 |-----------|-------|
-| `Button` | `primary` (white on `orange-deep`), `secondary` (navy outline), `secondary-light` (white outline on dark). All have a 2px border (primary's matches its fill), so buttons side by side are the same height, and the label is centered with flex. Small 2px radius. Joins `BASE_URL` for internal hrefs |
+| `Button` | `primary` (white on `orange-deep`), `secondary` (navy outline), `secondary-light` (white outline on dark). All have a 2px border (primary's matches its fill), so buttons side by side are the same height, and the label is centered with flex. Square corners. Joins `BASE_URL` for internal hrefs |
 | `Header` / `Footer` | `night` background, FSIC logo (`public/images/fsic-logo-reverse.png`, the dark-background version), social links in the footer. Both read `src/lib/nav.ts`. Header groups are dropdowns: a flat `night` panel with a hairline border under the trigger, opened by click (disclosure buttons, not ARIA menus), closed by Escape, an outside click or focus leaving; without JS they open on hover and focus. The phone menu lists each group under its name, with rules between entries. Each page appears once in the menus. The footer shows one column per group |
 | `RunningHead` | Section index above the heavy rule: `01 / 07`, an optional label, an optional engine-color `dot`, and `dark` for night sections. Decorative, so `aria-hidden` |
-| `Section`, `Grid`, `Row`, `DashList`, `PageHero`, `SectionBar` | The grid components. See "Grid" for props and when to use each |
+| `Section`, `Grid`, `Row`, `List`, `PageHero`, `SectionBar` | The grid components. See "Grid" for props and when to use each |
 | `HeroIndex` | The numbered section index inside `PageHero`. `size="large"` (display names, optional note such as "6 questions") or `compact` (body type, `columns` for two columns) |
 | `Disclosure` | An item that opens in place: `<details>` with the + that turns to ×. Summary in the `summary` slot; callers set spacing |
 | `ProgramList` | An engine's programs from `src/lib/programs.ts`, each a `Disclosure` |
@@ -187,7 +187,7 @@ Don't put the hero photo on interior pages.
 
 ## Checklist for new pages
 
-1. Is the page built from the grid components (`Section`, `Grid`, `Row`, `DashList`, `PageHero`), with framing in cols 1–4 and detail in cols 5–12?
+1. Is the page built from the grid components (`Section`, `Grid`, `Row`, `List`, `PageHero`), with framing in cols 1–4 and detail in cols 5–12?
 2. Does the page show its content's structure, rather than using cards by default?
 3. Is orange used only for industry or action, and lagoon for community?
 4. Is there one memorable element at most?

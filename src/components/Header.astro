@@ -38,7 +38,7 @@ const itemClass = (active: boolean) => [
   active ? 'bg-white/15 text-white' : 'text-white/75 hover:text-white hover:bg-white/10',
 ];
 ---
-<header class="font-sans bg-night text-white relative z-50 border-b border-white/10">
+<header class="font-sans bg-night text-white relative z-50 border-b border-white/10 [view-transition-name:site-header]">
   <div class="container">
     <nav class="flex items-center justify-between py-3" aria-label="Main navigation">
       <a href={base} class="block shrink-0 hover:opacity-90 transition-opacity">
@@ -109,7 +109,7 @@ const itemClass = (active: boolean) => [
   </div>
 
   <!-- Mobile Menu: groups listed under their names (no nested toggles), rules between entries -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-night border-t border-white/10">
+  <div id="mobile-menu" class="mobile-menu hidden lg:hidden bg-night border-t border-white/10">
     <div class="container py-2">
       <ul class="divide-y divide-white/10" role="list">
         {items.map((item) =>

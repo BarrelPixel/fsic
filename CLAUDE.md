@@ -24,7 +24,7 @@ There is no linter or test suite. `npm run build` and `npm run check-links` are 
 
 ```
 src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding, strategic-moment, programs-facilities, faq, news and contact are built out; long-term-vision uses <ComingSoon>
-src/components/      Grid components (Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead),
+src/components/      Grid components (Section, Grid, Row, List, PageHero, SectionBar, RunningHead),
                      Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, arc animation
@@ -46,11 +46,12 @@ scripts/             check-links.mjs (run via `npm run check-links`)
 
 ### Design
 Read **`DESIGN.md`** before changing any UI. In short:
-- Every page sits on one 12-column grid: framing in cols 1–4, detail in cols 5–12. Build sections from the grid components (`Section`, `Grid`, `Row`, `DashList`), and interior pages from the template in DESIGN.md "Interior page template" (`PageHero` first; `src/pages/model.astro` is the reference). Don't hand-write grid classes.
+- Every page sits on one 12-column grid: framing in cols 1–4, detail in cols 5–12. Build sections from the grid components (`Section`, `Grid`, `Row`, `List`), and interior pages from the template in DESIGN.md "Interior page template" (`PageHero` first; `src/pages/model.astro` is the reference). Don't hand-write grid classes.
 - The homepage hero photo (`src/assets/fsic-hero.png`, a launch plume seen from the dunes) is the only signature element (DESIGN.md "Signature element" and "Imagery"). The range bars on the homepage are the site's only automatic animation (DESIGN.md "Motion"); don't add another, and use the motion tokens in `global.css` for interaction feedback.
 - Orange means the space industry. Lagoon green means the community. Don't use either as decoration.
 - Never put white text on the brand orange, and never use orange text on light backgrounds (contrast). Primary buttons are white on `orange-deep` (the `Button` component handles this).
-- Barlow Semi Condensed for headings (`font-display`), Source Serif 4 for reading text (the body default), Archivo for UI (`font-sans`: nav, buttons, captions, labels, data). No all-caps eyebrow labels, no fade-in on scroll, no identical shadowed cards, no chips or pills.
+- Barlow Semi Condensed for headings (`font-display`), Source Serif 4 for reading text (the body default), Archivo for UI (`font-sans`: nav, buttons, captions, labels, data). No all-caps eyebrow labels, no fade-in on scroll, no cards, no chips or pills.
+- Square corners and no shadows (only the small dots are round). Reading text is 18px on a 28px line everywhere; don't add `text-lg` or `leading-*` to paragraphs or lists. White text on night uses `white/90`, `/75` or `/60` only. Lists are plain lines (`List`), no markers; put a list's meaning on its label (`Row` `dot`).
 
 ### Copy
 - Wording comes from `src/content/copy/<page>.md`. Press releases are the exception: each is a file in `src/content/news/`, kept as published. Write and approve copy there first, then build it into the page. The workflow and markers (`> Source`, `⚠ Review`, `[TODO]`) are in `docs/09-copy-deck.md`.

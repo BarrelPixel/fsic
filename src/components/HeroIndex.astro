@@ -23,13 +23,13 @@ const hasNotes = items.some((i) => i.note);
         {size === 'large' ? (
           <a href={`#${item.id}`} class:list={['group grid items-baseline gap-x-4 py-4', hasNotes ? 'grid-cols-[2.5rem_minmax(0,1fr)_auto]' : 'grid-cols-[2.5rem_minmax(0,1fr)]']}>
             <span class="text-sm text-white/60 tabular-nums">{pad2(i + 1)}</span>
-            <span class="font-display text-2xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2">{item.name}</span>
+            <span class="font-display text-2xl font-semibold text-white underline-reveal underline-offset-4 decoration-2">{item.name}</span>
             {item.note && <span class="text-sm text-white/75 tabular-nums">{item.note}</span>}
           </a>
         ) : (
           <a href={`#${item.id}`} class="group flex items-baseline gap-3 py-3">
             <span class="text-sm text-white/60 tabular-nums">{pad2(i + 1)}</span>
-            <span class="text-white group-hover:underline underline-offset-4">{item.name}</span>
+            <span class="text-white underline-reveal underline-offset-4">{item.name}</span>
           </a>
         )}
       </li>
