@@ -2,7 +2,7 @@
 
 **Status:** Draft
 **Last Updated:** November 2026
-**Route:** /strategic-moment
+**Route:** /strategic-moment (built November 2026)
 **Sources:** fsic.space/about-4 ("Why Now — The Strategic Moment"); Master Plan pp. 4–6
 
 ---
@@ -11,10 +11,10 @@
 
 **Headline:** Why Now — The Strategic Moment
 
-**Body:**
-[TODO: 1–2 sentence page intro. Could adapt: "Southeast Volusia is standing at one of the most important economic moments in its history."]
+**Lead:**
+Southeast Volusia is entering one of the most consequential economic windows in its modern history.
 
-> **Source:** fsic.space/about-4 — section heading "Why Now — The Strategic Moment"
+> **Source:** fsic.space/about-4 — section heading "Why Now — The Strategic Moment". Lead: Master Plan p. 4 (verbatim).
 
 ---
 
@@ -26,6 +26,8 @@
 The Space Coast is now the busiest launch corridor in the world, with commercial, civil, and defense missions driving rapid expansion in spacecraft manufacturing, robotics, autonomy, and dual-use technologies.
 
 Yet Southeast Volusia lacks the coordinated systems needed to capture this opportunity. Without intervention, we risk absorbing population growth without gaining the high-wage jobs and employer investment that should accompany it.
+
+**Label column (statement):** the second paragraph.
 
 > **Source:** fsic.space/about-4 (verbatim). "Busiest launch corridor" is supported by Master Plan p. 4.
 
@@ -40,8 +42,10 @@ Federal and state policy is moving decisively toward regional innovation ecosyst
 
 The Space Coast has no civilian-facing innovation hub capable of competing for these investments. Southeast Volusia can fill that gap — but only if we organize now.
 
-> **Source:** fsic.space/about-4 (verbatim); Master Plan p. 4.
-> **⚠ Review:** "Billions in funding" needs a citation or softer wording. The Master Plan also lists "Build Back Better", which is omitted here (probably on purpose). See audit §3.5.
+**Label column (statement):** Southeast Volusia can fill that gap — but only if we organize now.
+On the page, the five areas of capacity are a list, as in the Master Plan.
+
+> **Source:** fsic.space/about-4 (verbatim); Master Plan p. 4. "Billions" is sourced: the Master Plan says these programs "are directing billions toward regions that can demonstrate coordinated capacity" (p. 4). The Master Plan also lists the Build Back Better Regional Challenge, which the current site omits; it stays out.
 
 ---
 
@@ -50,7 +54,10 @@ The Space Coast has no civilian-facing innovation hub capable of competing for t
 **Headline:** Southeast Volusia County: A Once-in-a-Generation Catalyst
 
 **Body:**
-Southeast Volusia County is poised for transformative growth, with more than 20,000 new homes and over 12 million square feet of industrial and commercial space planned across the region. This scale of development in Edgewater, New Smyrna Beach and Daytona Beach will reshape our workforce needs, employer mix, and long-term economic trajectory.
+A master-planned development in Southeast Volusia will add more than 10,000 homes and over 10 million square feet of industrial and commercial space. This growth will reshape the region's workforce needs, employer mix, and long-term economic trajectory.
+
+**On the page:** the first sentence is split so the figures appear once. Label column: "A master-planned development in Southeast Volusia will add:", then the figures as statements (More than 10,000 homes · Over 10 million square feet of industrial and commercial space). Content column: the second sentence, then the lists.
+**Source line:** Source: FSIC Master Plan 2026–2031, pp. 4 and 6.
 
 **Without FSIC, Volusia County risks becoming:**
 - a logistics corridor
@@ -63,8 +70,9 @@ Southeast Volusia County is poised for transformative growth, with more than 20,
 - a destination for innovation, education, and community engagement
 - a regional anchor for economic mobility and identity
 
-> **Source:** fsic.space/about-4 (verbatim).
-> **⚠ Review:** These figures (20,000 homes, 12M sq ft, region-wide) conflict with the Master Plan and the older draft (a single development: 10,000+ homes, 10M+ sq ft). Choose one framing and cite it. The site no longer names that development. See audit §3.1 and §3.3.
+> **Source:** headline and lists: fsic.space/about-4 (verbatim). Paragraph and figures: Master Plan pp. 4 and 6, with the development's name replaced by "A master-planned development in Southeast Volusia" (the site does not name it; audit §3.3).
+> **Decision (November 2026):** use the Master Plan's figures (10,000+ homes, 10M+ sq ft, one development), not the current site's unsourced regional figures (20,000 homes, 12M sq ft). See audit §3.1.
+> **Decision (November 2026):** the project lead confirmed that this page shows the development's size (Master Plan pp. 4 and 6) without naming it, although the Economic Impact page left the size out.
 
 ---
 
@@ -86,7 +94,9 @@ FSIC transforms fragmented potential into coordinated progress. It ensures that 
 
 ---
 
-## CTA
+## CLOSING
 
-**Headline:** [TODO]
-**CTAs:** [TODO — suggest "Explore the FSIC Model" → /model; "View Economic Impact" → /economic-impact]
+**Statement:** the callout above ("FSIC transforms fragmented potential into coordinated progress. It ensures that opportunity flows into Southeast Volusia — not past it.")
+**CTAs:** Explore the FSIC Model → /model; View Economic Impact → /economic-impact
+
+> On the page the callout is the closing statement, so it is not repeated in section 4.
