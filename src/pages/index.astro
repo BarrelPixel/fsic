@@ -120,7 +120,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
       <span class="block mt-3 font-medium text-gray-dark">It Is Whether Southeast Volusia Will Participate in That Growth.</span>
     </Fragment>
     <Grid>
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">Without coordination, growth concentrates elsewhere.</p>
+      <p slot="label" class="mb-0 text-statement text-navy">Without coordination, growth concentrates elsewhere.</p>
       <div class="max-w-3xl text-lg">
         <p>
           Florida's space economy is expanding rapidly — driven by commercial launch activity, advanced manufacturing, aerospace engineering, and emerging technologies.
@@ -128,7 +128,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         <p>
           The Florida Space Innovation Center (FSIC) ensures that Southeast Volusia is not a spectator to that growth, but an active participant — building the talent, infrastructure, and partnerships required to compete in a global innovation economy.
         </p>
-        <p class="mt-8 pt-6 border-t border-navy/15 text-navy font-medium">
+        <p class="mt-8 pt-6 border-t border-rule text-navy font-medium">
           FSIC is designed to align education, industry, and community in one coordinated regional platform.
         </p>
       </div>
@@ -145,11 +145,11 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     heading="Transformational, Long-Term Regional Impact"
     intro="Independent 25-year analysis projects that FSIC will generate:"
   >
-    <ul class="border-t border-white/25" role="list">
+    <ul class="border-t border-rule-on-dark" role="list">
       {impact.map((row) => {
         const lowPct = Math.round((row.low / row.high) * 100);
         return (
-          <li class="grid gap-y-3 py-6 border-b border-white/25 lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
+          <li class="grid gap-y-3 py-6 border-b border-rule-on-dark lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
             <p class="lg:col-span-4 mb-0 text-3xl md:text-4xl font-bold text-white font-display leading-tight tabular-nums">{row.display}</p>
             <p class="lg:col-span-4 mb-0 font-sans text-white/75">{row.label}</p>
             <div class="lg:col-span-4 lg:self-center h-2.5 bg-white/10 flex" aria-hidden="true">
@@ -161,7 +161,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
       })}
     </ul>
     <div class="grid lg:grid-cols-12 lg:gap-x-8 mt-4">
-      <p class="lg:col-start-9 lg:col-span-4 font-sans text-sm text-white/60 flex items-center gap-3 mb-0">
+      <p class="lg:col-start-9 lg:col-span-4 text-caption text-white/60 flex items-center gap-3 mb-0">
         <span class="inline-flex gap-1" aria-hidden="true">
           <span class="w-4 h-2 bg-orange"></span><span class="w-4 h-2 bg-orange/40"></span>
         </span>
@@ -170,13 +170,13 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </div>
 
     <Grid class="mt-16">
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-white">This is not a short-term program. It is a durable economic backbone.</p>
+      <p slot="label" class="mb-0 text-statement text-white">This is not a short-term program. It is a durable economic backbone.</p>
       <div class="max-w-3xl">
         <p class="text-lg text-white/85 mb-8">
           In addition, FSIC positions the region to attract <strong class="text-white">$800 Million to $1.56 Billion</strong> in external federal, state, private, and philanthropic investment tied to research, innovation, and workforce development.
         </p>
         <Button href="/economic-impact" variant="secondary-light">Explore the Full Economic Analysis</Button>
-        <p class="font-sans text-sm text-white/60 mt-10 mb-0">
+        <p class="text-caption text-white/60 mt-10 mb-0">
           Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.
         </p>
       </div>
@@ -195,7 +195,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     <ol class="grid gap-y-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-x-8">
       {engines.map((engine, i) => (
         <li class="lg:col-span-3 border-t border-navy/25 pt-5">
-          <p class="font-sans text-sm text-gray tabular-nums flex items-center gap-2 mb-3">
+          <p class="text-caption text-gray tabular-nums flex items-center gap-2 mb-3">
             <span class:list={['w-2.5 h-2.5 rounded-full', engine.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']} aria-hidden="true"></span>
             {pad2(i + 1)}
           </p>
@@ -206,8 +206,8 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
       ))}
     </ol>
 
-    <Grid class="mt-14 pt-6 border-t border-navy/15">
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">Each engine reinforces the others. Together, they create a coordinated regional ecosystem.</p>
+    <Grid class="mt-14 pt-6 border-t border-rule">
+      <p slot="label" class="mb-0 text-statement text-navy">Each engine reinforces the others. Together, they create a coordinated regional ecosystem.</p>
       <Button href="/model" variant="secondary">Learn More About the FSIC Model</Button>
     </Grid>
   </Section>
@@ -215,7 +215,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   <!-- 04 PHASED DEPLOYMENT -->
   <Section id="deployment" index={4} total={7} label="Phased deployment" spacing="stacked" heading="Start Small. Deliver Early Wins. Scale with Readiness.">
     <Grid class="gap-y-10">
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">Growth is structured. Not speculative.</p>
+      <p slot="label" class="mb-0 text-statement text-navy">Growth is structured. Not speculative.</p>
       <p class="text-lg max-w-3xl">
         FSIC launches with the Talent Engine — requiring minimal physical footprint while delivering immediate workforce and employer-support outcomes.
       </p>
@@ -246,7 +246,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   <!-- 05 STRATEGIC VALUE: community value, so lagoon rules. Peers as a 2×2 grid in the content column. -->
   <Section id="value" index={5} total={7} dot="lagoon" spacing="stacked" heading="Strategic Value to Volusia County">
     <Grid class="gap-y-10" labelOffset>
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">This is a coordinated regional investment — not a standalone facility.</p>
+      <p slot="label" class="mb-0 text-statement text-navy">This is a coordinated regional investment — not a standalone facility.</p>
       <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">
         {value.map((item) => (
           <div class="border-t-2 border-lagoon pt-5">
@@ -270,7 +270,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         decoding="async"
         class="w-full h-[50vh] min-h-[320px] max-h-[640px] object-cover"
       />
-      <figcaption class="font-sans container text-sm text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>
+      <figcaption class="text-caption container text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>
     </figure>
     <Grid class="gap-y-10">
       <p slot="label" class="mb-0 text-xl text-white/85 leading-snug">
@@ -290,7 +290,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
           />
         </Row>
       </dl>
-      <p class="mb-0 font-display text-2xl font-semibold leading-snug">
+      <p class="mb-0 text-statement">
         The future is built in phases.<br />The commitment begins now.
       </p>
     </Grid>
@@ -315,7 +315,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
           />
         </Row>
       </dl>
-      <p class="font-display text-2xl text-navy font-semibold leading-snug mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
+      <p class="text-statement text-navy mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
       <Button href="/governance" variant="secondary">Review Governance & Structure</Button>
     </Grid>
   </Section>
@@ -323,7 +323,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   <!-- FINAL CTA: the page's close, so no running head. Who can take part sits in the label column as a plain list. -->
   <Section dark spacing="large" heading="Partner. Collaborate. Participate.">
     <Grid class="gap-y-10">
-      <ul slot="label" class="font-sans flex flex-col divide-y divide-white/25 border-b border-white/25" aria-label="Who can take part">
+      <ul slot="label" class="font-sans flex flex-col divide-y divide-rule-on-dark border-b border-rule-on-dark" aria-label="Who can take part">
         {audiences.map((a) => (
           <li class="py-2.5 first:pt-0 text-lagoon-light">{a}</li>
         ))}

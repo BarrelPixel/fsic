@@ -38,16 +38,16 @@ const topics = [
 ];
 
 
-const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:decoration-navy';
+const link = 'link';
 ---
 <BaseLayout title="Contact" description="Contact the Florida Space Innovation Center about partnerships, volunteering and leadership, media inquiries, or general questions.">
 
   <!-- Interior page template (DESIGN.md): PageHero; the aside carries the one instruction -->
   <PageHero title="Let's Work Together">
-    <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
+    <p slot="aside">
       Every message goes to {EMAIL}. Choose a topic to open an email with the subject filled in.
     </p>
-    <p class="text-2xl text-white/90 leading-snug mb-0">
+    <p class="text-lead text-white/90 mb-0">
       Get in touch so we can start working together. Whether you are an employer, educator, policymaker, or community member, there is a role to play.
     </p>
   </PageHero>
@@ -58,7 +58,7 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
     <Grid class="gap-y-10" labelOffset>
       <div slot="label">
         <a href={mailto()} class="font-display text-3xl font-semibold leading-snug text-navy underline underline-offset-[6px] decoration-2 decoration-navy/25 hover:decoration-navy">{EMAIL}</a>
-        <dl class="mt-8 space-y-4 font-sans text-sm">
+        <dl class="mt-8 space-y-4 text-caption">
           <div>
             <dt class="font-semibold text-navy">Location</dt>
             <dd class="text-gray-dark">New Smyrna Beach, Florida</dd>

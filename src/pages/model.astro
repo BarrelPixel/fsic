@@ -143,21 +143,21 @@ const engines: Engine[] = [
   -->
 
   <PageHero title="One Coordinated Platform. Four Integrated Engines.">
-    <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
+    <p slot="aside">
       <dfn class="not-italic font-semibold text-white">Engine:</dfn>
       a coordinated system of people, programs, and partnerships designed to generate movement, produce results, and drive sustained progress. At FSIC, each Engine is a focused platform that brings partners together to solve problems, fill gaps, and create measurable outcomes for the region.
     </p>
 
-    <p class="text-2xl text-white/90 leading-snug mb-10">
+    <p class="text-lead text-white/90 mb-10">
       Each engine addresses a structural gap in the region's current capacity—talent, innovation, commercialization, and civic identity—and together they create the infrastructure required for Southeast Volusia to participate fully in the Space Coast economy.
     </p>
 
     <!-- Engine index: number, name, what it transforms. Launch order sits between 01 and 02. -->
     <nav aria-label="The four engines" class="font-sans">
-      <ol class="border-t border-white/25">
+      <ol class="border-t border-rule-on-dark">
         {engines.map((engine, i) => (
           <>
-            <li class="border-b border-white/25">
+            <li class="border-b border-rule-on-dark">
               <a href={`#${engine.id}`} class="group grid grid-cols-[2.5rem_minmax(0,1fr)] sm:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1.3fr)] gap-x-4 gap-y-1 py-4 rounded-sm">
                 <span class="text-sm text-white/60 tabular-nums pt-1.5">{pad2(i + 1)}</span>
                 <span class="font-display text-2xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2 flex items-center gap-3">
@@ -168,7 +168,7 @@ const engines: Engine[] = [
               </a>
             </li>
             {engine.launchesFirst && (
-              <li class="border-b border-white/25 grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 py-4">
+              <li class="border-b border-rule-on-dark grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 py-4">
                 <span></span>
                 <p class="mb-0 text-sm text-white/70 max-w-xl">
                   <span class="text-white font-semibold">Talent launches first.</span>
@@ -207,11 +207,11 @@ const engines: Engine[] = [
             <h2 id={`${engine.id}-title`} class="mb-4">{engine.name}</h2>
             <p class:list={['font-sans font-medium mb-0', engine.tone === 'lagoon' ? 'text-lagoon' : 'text-gray-dark']}>{engine.shift}</p>
             {engine.launchesFirst && (
-              <p class="font-sans text-sm text-navy font-semibold mt-2 mb-0">Launches first</p>
+              <p class="text-label text-navy mt-2 mb-0">Launches first</p>
             )}
           </Fragment>
 
-          <p class="text-2xl text-navy leading-snug mb-10 max-w-3xl lg:pt-1">{engine.summary.join(' ')}</p>
+          <p class="text-lead text-navy mb-10 max-w-3xl lg:pt-1">{engine.summary.join(' ')}</p>
 
           <dl>
             <Row label="Brings together">
@@ -229,7 +229,7 @@ const engines: Engine[] = [
             <!-- The engine's programs (Master Plan pp. 19–21, shared with Programs & Facilities via
                  src/lib/programs.ts): each opens in place -->
             <Row label="Programs" count={programsFor(engine.id).length} list>
-              <ProgramList programs={programsFor(engine.id)} itemClass="border-b border-navy/15 last:border-b-0" />
+              <ProgramList programs={programsFor(engine.id)} itemClass="border-b border-rule last:border-b-0" />
             </Row>
           </dl>
         </Grid>
@@ -242,12 +242,12 @@ const engines: Engine[] = [
     <Grid>
       <h2 slot="label" class="text-white mb-0">Guiding Principles</h2>
       <p class="font-display text-3xl md:text-4xl font-semibold text-white leading-tight mb-6">Partner-first, gap-filling, and coalition-driven.</p>
-      <p class="text-2xl text-white/85 leading-snug mb-10 max-w-3xl">
+      <p class="text-lead text-white/85 mb-10 max-w-3xl">
         FSIC positions itself as a neutral convener that strengthens—not competes with—existing institutions by aligning talent, industry needs, and community priorities.
       </p>
       <ul role="list">
-        <li class="border-t border-white/25 py-5 text-white/80">The strategy starts small, delivers visible early wins, and scales only when partners signal readiness.</li>
-        <li class="border-y border-white/25 py-5 text-white/80">Every partnership is structured for low operational burden, high shared value, and clear governance.</li>
+        <li class="border-t border-rule-on-dark py-5 text-white/80">The strategy starts small, delivers visible early wins, and scales only when partners signal readiness.</li>
+        <li class="border-y border-rule-on-dark py-5 text-white/80">Every partnership is structured for low operational burden, high shared value, and clear governance.</li>
       </ul>
     </Grid>
   </Section>

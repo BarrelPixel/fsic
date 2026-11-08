@@ -14,10 +14,22 @@
   --color-orange-light: #F08F48;
   --color-lagoon: #3E7F74;
   --color-lagoon-light: #7FB8AC;
-  --color-salt: #EEF2F3;
   --color-gray: #6B7280;
-  --color-gray-light: #F5F5F5;
   --color-gray-dark: #3F4A56;
+
+  /* Hairline rules between rows and around lists: one value per background. */
+  --color-rule: color-mix(in oklab, var(--color-navy) 15%, transparent);
+  --color-rule-on-dark: color-mix(in oklab, var(--color-white) 25%, transparent);
+
+  /* Ordered scenarios (Baseline → FSIC 1.0 → FSIC 2.0), one hue light to dark (DESIGN.md "Data"). */
+  --color-scenario-baseline: #9DB0C8;
+  --color-scenario-1: #4E6F99;
+  --color-scenario-2: var(--color-navy-light);
+
+  /* Offsets that put a label column's first line on the content column's first line (DESIGN.md "Grid"):
+     a Label beside 18px body text, and a column beside content that opens with border-t-2 + pt-5. */
+  --spacing-label-offset: 0.3rem;
+  --spacing-rule-offset: 1.375rem;
 
   --font-display: 'Barlow Semi Condensed', 'Arial Narrow', system-ui, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
@@ -95,6 +107,61 @@ html {
 }
 
 /* ============================================
+   Type scale (DESIGN.md "Type scale"). Size, family and weight only: set color separately
+   (text-navy on white, text-white on night), so one class works on both.
+   ============================================ */
+
+/* Statement: a section's thesis or a label-column line. */
+@utility text-statement {
+  @apply font-display text-2xl font-semibold leading-snug;
+}
+
+/* Lead: the first thing to read after a headline (serif, the body default). */
+@utility text-lead {
+  @apply text-2xl leading-snug;
+}
+
+/* Label: row labels, running heads, captions you scan. */
+@utility text-label {
+  @apply font-sans text-sm font-semibold;
+}
+
+/* Caption: source lines, notes, small print. */
+@utility text-caption {
+  @apply font-sans text-sm;
+}
+
+/* ============================================
+   Links in running text
+   ============================================ */
+
+@utility link {
+  @apply text-navy underline underline-offset-4 decoration-navy/30;
+  @variant hover {
+    @apply decoration-navy;
+  }
+}
+
+@utility link-on-dark {
+  @apply text-white underline underline-offset-4 decoration-white/40;
+  @variant hover {
+    @apply decoration-white;
+  }
+}
+
+/* For HTML you don't write tag by tag (set:html answers): styles every link inside. */
+@utility links-in {
+  & a {
+    @apply text-navy underline underline-offset-4 decoration-navy/30;
+  }
+  & a {
+    @variant hover {
+      @apply decoration-navy;
+    }
+  }
+}
+
+/* ============================================
    Homepage hero photo (index.astro)
    The photo keeps its full height and sits at the right; its left edge fades out so that on screens
    wider than the photo it blends into the night background instead of ending in a seam.
@@ -168,6 +235,9 @@ html {
    Layout
    ============================================ */
 
+/* Unlayered on purpose. Tailwind v4 ships its own `container` utility, which caps max-width at each
+   breakpoint (40rem, 48rem, …), and `@utility container` would only add to it. An unlayered rule
+   beats every layered utility, so this max-width wins at all sizes. Same for .section padding. */
 .container {
   max-width: var(--container-max);
   margin-inline: auto;
@@ -182,7 +252,8 @@ html {
   padding-block: var(--section-py-lg);
 }
 
-@media (max-width: 768px) {
+/* Below Tailwind's md (48rem), with no overlap at exactly 768px. */
+@media (width < 48rem) {
   :root {
     --section-py: 4rem;
     --section-py-lg: 5rem;

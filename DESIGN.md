@@ -27,9 +27,10 @@ Each color has a meaning. Don't use them as decoration.
 | `orange` | `#E37A2D` | Brand. **The space industry**: primary buttons, data bars, industry-side markers |
 | `lagoon` | `#3E7F74` | **The community and the coast**: civic and community content, accent rules on light backgrounds |
 | `lagoon-light` | `#7FB8AC` | Lagoon on dark backgrounds |
-| `salt` | `#EEF2F3` | Light fill, used sparingly (a cool coastal white, not cream). Prefer white with rules |
 | `gray-dark` | `#3F4A56` | Body text on light backgrounds |
 | `gray` | `#6B7280` | Muted UI text: running heads, counts, problem markers (4.8:1 on white) |
+| `rule` / `rule-on-dark` | navy 15% / white 25% | Hairline rules between rows and around lists (`border-rule`, `divide-rule`; `border-rule-on-dark` on night) |
+| `scenario-baseline`, `scenario-1`, `scenario-2` | `#9DB0C8`, `#4E6F99`, `#1E4370` | The ordered scenario ramp (see "Data"). Use only for scenarios |
 | `orange-light` | `#F08F48` | Hover state of primary buttons only |
 
 Example: in the four-engine sections, Talent, Innovation and Market get orange markers, and Civic gets lagoon green.
@@ -60,16 +61,19 @@ Three families, each with one job:
 
 ### Type scale
 
-Use these steps and no others. Hierarchy comes from scale, weight and position, not from boxes or color.
+Use these steps and no others. Hierarchy comes from scale, weight and position, not from boxes or color. The steps are classes in `global.css` (`@utility`): use the class, not the separate Tailwind classes it stands for, and set color separately (`text-navy` on white, `text-white` on night).
 
-| Step | Setting | Use |
-|------|---------|-----|
-| Display | `h1`, `h2` (clamp sizes in `global.css`) | Page title, section headlines, engine names |
-| Statement | `font-display text-2xl`–`text-4xl font-semibold` | A section's thesis or closing line, key figures |
-| Lead | Serif `text-xl`–`text-2xl`, `leading-snug` | The first thing to read after a headline: summaries, intro sentences |
-| Body | Serif 18px (the default) | Paragraphs and lists |
-| Label | `font-sans text-sm font-semibold` | Row labels, running heads, captions, legends |
-| UI | `font-sans` 16–18px, `font-semibold` for list items you open | Nav, buttons, component titles |
+| Step | Class | Setting | Use |
+|------|-------|---------|-----|
+| Display | `h1`, `h2` | clamp sizes in `global.css` | Page title, section headlines, engine names |
+| Statement | `text-statement` | Barlow `text-2xl` semibold, `leading-snug`. Closings and figures step up (`Closing`: `text-3xl`–`4xl`) | A section's thesis or closing line, key figures |
+| Lead | `text-lead` | Serif `text-2xl`, `leading-snug` | The first thing to read after a headline: summaries, intro sentences |
+| Body | — | Serif 18px (the default) | Paragraphs and lists |
+| Label | `text-label` | Archivo `text-sm` semibold | Row labels, running heads, legends |
+| Caption | `text-caption` | Archivo `text-sm` | Source lines, notes, small print, the PageHero aside |
+| UI | — | `font-sans` 16–18px, `font-semibold` for list items you open | Nav, buttons, component titles |
+
+Links in running text use `link` (navy), `link-on-dark` (on night), or `links-in` on a container whose HTML you don't write tag by tag (the FAQ answers).
 
 ## Grid
 
@@ -90,7 +94,7 @@ The site uses one Swiss-style modular grid. Every section shares the same vertic
 - **12 columns** at `lg` (`lg:grid-cols-12 lg:gap-x-8`) inside the container (max 76rem, 1.5rem gutter).
 - **Label column: cols 1–4** (`lg:col-span-4`). It holds the section's framing: a thesis statement, an intro sentence, an engine's name, or a short list such as who can take part.
 - **Content column: cols 5–12** (`lg:col-span-8`). It holds the detail: body text, lists, data, buttons.
-- **Rows inside the content column** split 2 + 6 of 8 (`md:grid-cols-8`, `md:col-span-2` label, `md:col-span-6` content), using `<dl>` where it fits. Row labels are Label step type with `md:pt-[0.3rem]` so they share the first line of their content. Every list starting at the same line is the point.
+- **Rows inside the content column** split 2 + 6 of 8 (`md:grid-cols-8`, `md:col-span-2` label, `md:col-span-6` content), using `<dl>` where it fits. Row labels are Label step type with `md:pt-label-offset` (a theme spacing token) so they share the first line of their content. Every list starting at the same line is the point.
 - Below `lg`, everything stacks in reading order: label column first, then content.
 
 ### Section anatomy
@@ -107,12 +111,12 @@ Headline across cols 1–9 (max-w-4xl)
 - **Running-head labels only when the headline doesn't already name the topic.** "02 / 07 The economic case" above "Transformational, Long-Term Regional Impact" helps; "Governance and transparency" above "Governance & Transparency" is noise, so that section shows the number alone.
 - **Columns share one top line.** The first line of the label column and the first line of the content column start at the same height. Check it by measuring, not by eye (the first-line tops should be within the difference between the two type sizes).
   - Hang columns from the top (`lg:items-start`). Don't vertically center text against a taller neighbour.
-  - Don't open a column with a rule when the column beside it has none. Put the rule below the row, use rules between items (`divide-y`, first item `pt-0`), or, where the content opens with peer rules (the 2×2 value grid), give the label column the same offset (`lg:pt-[1.375rem]` for `border-t-2` + `pt-5`).
+  - Don't open a column with a rule when the column beside it has none. Put the rule below the row, use rules between items (`divide-y`, first item `pt-0`), or, where the content opens with peer rules (the 2×2 value grid), give the label column the same offset (`lg:pt-rule-offset` for `border-t-2` + `pt-5`; `Grid labelOffset` does this).
   - In tables, align figure and label on a shared baseline (`lg:items-baseline`); center only non-text marks such as range bars (`lg:self-center`).
   - A closing row puts the statement in the label column and the action (button) in the content column, both hung from the rule above. Don't push buttons to the right edge; everything is flush left.
 - **One numbering system per page.** Section numbers (`01 / 07`) and engine numbers (`01`–`04`, the same on every page) are the only numerals used as labels. Sub-sequences inside a section use words ("First:", "Then:") rather than a second set of numbers.
-- Separate sections with the heavy rule and whitespace. Prefer white with rules over background fills. Use `night` for a few anchor sections (hero, economics, vision, principles, final CTA). Use `salt` sparingly.
-- `.section` is outside a CSS layer and overrides padding utilities. When two white sections stack, give the second `spacing="stacked"` so the gap doesn't double.
+- Separate sections with the heavy rule and whitespace. Prefer white with rules over background fills. Use `night` for a few anchor sections (hero, economics, vision, principles, final CTA).
+- `.container` and `.section` are outside a CSS layer on purpose: `.container` must beat Tailwind's own `container` utility (which caps width at each breakpoint), and `.section` overrides padding utilities. Section padding steps down below `md` (48rem). When two white sections stack, give the second `spacing="stacked"` so the gap doesn't double.
 
 ### Structure should show what the content is
 

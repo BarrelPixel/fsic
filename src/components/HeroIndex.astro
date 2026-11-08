@@ -17,9 +17,9 @@ const { label, items, size = 'compact', columns = false } = Astro.props;
 const hasNotes = items.some((i) => i.note);
 ---
 <nav aria-label={label} class="font-sans">
-  <ol class:list={['border-t border-white/25', columns && 'sm:columns-2 sm:gap-x-8']}>
+  <ol class:list={['border-t border-rule-on-dark', columns && 'sm:columns-2 sm:gap-x-8']}>
     {items.map((item, i) => (
-      <li class:list={[columns && 'break-inside-avoid', 'border-b border-white/25']}>
+      <li class:list={[columns && 'break-inside-avoid', 'border-b border-rule-on-dark']}>
         {size === 'large' ? (
           <a href={`#${item.id}`} class:list={['group grid items-baseline gap-x-4 py-4 rounded-sm', hasNotes ? 'grid-cols-[2.5rem_minmax(0,1fr)_auto]' : 'grid-cols-[2.5rem_minmax(0,1fr)]']}>
             <span class="text-sm text-white/60 tabular-nums">{pad2(i + 1)}</span>
