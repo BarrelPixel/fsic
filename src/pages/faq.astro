@@ -5,7 +5,7 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import { EMAIL, mailto } from '../lib/site';
 import Disclosure from '../components/Disclosure.astro';
-import DashList from '../components/DashList.astro';
+import List from '../components/List.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 
 // Copy: src/content/copy/faq.md (Draft). Answers are as published on fsic.space, except where the
@@ -205,7 +205,7 @@ const link = 'links-in';
       The Florida Space Innovation Center advances the space economy by first strengthening Southeast Volusia County through talent development, technology innovation, and strategic partnerships that expand economic opportunity and long-term community prosperity.
     </p>
     <p class="mb-2 text-label text-white/60">Vision</p>
-    <p class="text-lg text-white/75 mb-10 max-w-3xl">
+    <p class="text-white/75 mb-10 max-w-3xl">
       To establish Southeast Volusia County as a recognized center of excellence in Florida's space economy, demonstrating a scalable model of innovation, workforce readiness, and inclusive economic growth.
     </p>
 
@@ -243,7 +243,7 @@ const link = 'links-in';
                   ) : (
                     <div class="mb-4">
                       {b.label && <p class="mb-2 text-label text-navy" set:html={b.label} />}
-                      <DashList items={b.list} html />
+                      <List items={b.list} html />
                     </div>
                   ),
                 )}

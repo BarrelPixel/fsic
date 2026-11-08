@@ -11,10 +11,14 @@ interface Props {
   rule?: 'top' | 'bottom';
   list?: boolean;
   dark?: boolean;
+  /** A dot after the label (so every label starts on the column edge) that says what the list beside it is: gray for problems, the engine
+   *  color for impact, navy for neutral (DESIGN.md). */
+  dot?: 'gray' | 'navy' | 'orange' | 'lagoon' | 'lagoon-light';
   class?: string;
 }
 
-const { label, count, rule = 'top', list = false, dark = false, class: className } = Astro.props;
+const { label, count, rule = 'top', list = false, dark = false, dot, class: className } = Astro.props;
+const dotClass = dot && { gray: 'bg-gray/60', navy: 'bg-navy', orange: 'bg-orange', lagoon: 'bg-lagoon', 'lagoon-light': 'bg-lagoon-light' }[dot];
 const line = dark ? 'border-rule-on-dark' : 'border-rule';
 ---
 <div
@@ -27,6 +31,7 @@ const line = dark ? 'border-rule-on-dark' : 'border-rule';
   <dt class:list={['md:col-span-2 md:pt-label-offset text-label', dark ? 'text-white' : 'text-navy']}>
     {label}
     {count !== undefined && <span class="font-medium text-gray"> · {count}</span>}
+    {dotClass && <span class:list={['inline-block w-2 h-2 rounded-full ml-2 align-[0.05em]', dotClass]} aria-hidden="true"></span>}
   </dt>
   <dd class:list={['md:col-span-6', list && 'md:-mt-3']}>
     <slot />

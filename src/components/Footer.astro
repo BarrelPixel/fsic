@@ -13,7 +13,7 @@ const singles: NavLink[] = [{ label: 'Home', path: '/' }, ...nav.filter((i): i i
 const columns = [...groups.map((g) => ({ label: g.label, links: g.links })), { label: 'FSIC', links: singles }];
 
 ---
-<footer class="font-sans bg-night text-white/80 border-t border-white/10" role="contentinfo">
+<footer class="font-sans bg-night text-white/75 border-t border-white/10" role="contentinfo">
   <div class="container py-16">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
       <!-- Brand -->
@@ -31,12 +31,12 @@ const columns = [...groups.map((g) => ({ label: g.label, links: g.links })), { l
           A coordinated regional platform strengthening workforce, innovation, and economic growth for the Space Coast.
         </p>
         <p class="text-sm mt-4">
-          <a href={mailto()} class="text-white/80 hover:text-white underline underline-offset-4 decoration-white/30">{EMAIL}</a>
+          <a href={mailto()} class="text-white/75 hover:text-white underline underline-offset-4 decoration-white/30">{EMAIL}</a>
         </p>
         <ul class="flex gap-5 mt-4" role="list">
           {SOCIAL_LINKS.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-white/70 hover:text-white transition-colors" rel="noopener">
+              <a href={link.href} class="text-sm text-white/75 hover:text-white transition-colors" rel="noopener">
                 {link.label}
               </a>
             </li>
@@ -52,7 +52,7 @@ const columns = [...groups.map((g) => ({ label: g.label, links: g.links })), { l
             <ul class="flex flex-col gap-2" role="list">
               {col.links.map((link) => (
                 <li>
-                  <a href={navHref(base, link.path)} class="text-sm text-white/70 hover:text-white transition-colors">
+                  <a href={navHref(base, link.path)} class="text-sm text-white/75 hover:text-white transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -65,11 +65,11 @@ const columns = [...groups.map((g) => ({ label: g.label, links: g.links })), { l
 
     <!-- Bottom Bar -->
     <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-white/50">
+      <p class="text-xs text-white/60">
         &copy; {new Date().getFullYear()} Florida Space Innovation Center. All rights reserved.
       </p>
-      <p class="text-xs text-white/50">
-        Built by <span class="text-white/70">Barrel &amp; Pixel</span>
+      <p class="text-xs text-white/60">
+        Built by <span class="text-white/75">Barrel &amp; Pixel</span>
       </p>
     </div>
   </div>

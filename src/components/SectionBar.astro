@@ -28,7 +28,7 @@ const { items, ariaLabel, numbered = false } = Astro.props;
           <a
             href={`#${item.id}`}
             data-section-link={item.id}
-            class="flex items-center gap-2 px-2 sm:px-3 py-3.5 border-b-2 border-transparent text-sm sm:text-base font-medium text-gray-dark hover:text-navy aria-[current=location]:border-navy aria-[current=location]:text-navy aria-[current=location]:font-semibold"
+            class="flex items-center gap-2 px-2 sm:px-3 py-3.5 border-b-2 border-transparent text-sm sm:text-base font-medium text-gray-dark hover:text-navy aria-[current=location]:border-navy aria-[current=location]:text-navy aria-[current=location]:font-semibold transition-colors duration-(--motion-fast) ease-standard"
           >
             {numbered && <span class="hidden sm:inline text-gray tabular-nums text-sm">{pad2(i + 1)}</span>}
             {item.label}

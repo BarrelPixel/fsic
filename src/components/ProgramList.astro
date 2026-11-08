@@ -3,7 +3,7 @@
 // description: lead, the listed items, and the outcome line. Used on the Model page (each engine's
 // "Programs" row) and on Programs & Facilities (the portfolio).
 import Disclosure from './Disclosure.astro';
-import DashList from './DashList.astro';
+import List from './List.astro';
 import type { Program } from '../lib/programs';
 
 interface Props {
@@ -23,7 +23,7 @@ const { programs, class: className, itemClass = 'border-b border-rule' } = Astro
         <span slot="summary" class="font-sans font-semibold text-navy leading-snug">{p.name}</span>
         <div class="pb-5 pr-9 text-base text-gray-dark">
           <p class:list={[p.items || p.outcome ? 'mb-2' : 'mb-0']}>{p.lead}</p>
-          {p.items && <DashList items={p.items} class:list={[p.outcome ? 'mb-3' : '']} />}
+          {p.items && <List items={p.items} class:list={[p.outcome ? 'mb-3' : '']} />}
           {p.outcome && <p class="mb-0">{p.outcome}</p>}
         </div>
       </Disclosure>

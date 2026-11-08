@@ -3,7 +3,7 @@
 // full measure, a rule, then label | content. The `aside` slot (label column) holds a short note,
 // such as a definition; it moves below the content on small screens. The default slot holds the
 // lead and, if the page has sections, an index of them. The aside is set in caption type on night
-// (text-caption text-white/70, max-w-sm); give the aside's own elements classes only to differ.
+// (text-caption text-white/75, max-w-sm); give the aside's own elements classes only to differ.
 import Grid from './Grid.astro';
 
 interface Props {
@@ -19,7 +19,7 @@ const { title, titleClass } = Astro.props;
     <h1 class:list={['text-white max-w-5xl mb-12 md:mb-16', titleClass]}>{title}</h1>
     <Grid labelLast class="gap-y-10 border-t border-rule-on-dark pt-8">
       {Astro.slots.has('aside') ? (
-        <div slot="label" class="text-caption text-white/70 max-w-sm"><slot name="aside" /></div>
+        <div slot="label" class="text-caption text-white/75 max-w-sm"><slot name="aside" /></div>
       ) : (
         <Fragment slot="label"></Fragment>
       )}

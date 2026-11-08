@@ -67,7 +67,8 @@ html {
     font-optical-sizing: auto;
     font-size: 1.125rem;
     color: var(--color-gray-dark);
-    line-height: 1.7;
+    /* One leading for all reading text, paragraphs and lists alike: 18px on 28px (a 4px grid). */
+    line-height: calc(28 / 18);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -175,6 +176,20 @@ html {
   }
 }
 
+/* An underline that eases in on hover, for links that read as headings or index entries (no
+   underline at rest). Inside a .group, it reveals when the whole group is hovered. */
+@utility underline-reveal {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--motion-fast) var(--ease-standard);
+  @variant hover {
+    text-decoration-color: currentColor;
+  }
+  :where(.group):hover & {
+    text-decoration-color: currentColor;
+  }
+}
+
 /* ============================================
    Homepage hero photo (index.astro)
    The photo keeps its full height and sits at the right; its left edge fades out so that on screens
@@ -228,7 +243,7 @@ html {
 
 /* ============================================
    Press release text (rendered Markdown, src/content/news/)
-   Lists use the same short dash marker as DashList.
+   Lists are plain lines, as in List.
    ============================================ */
 
 @layer components {
@@ -241,24 +256,51 @@ html {
     margin-bottom: 1rem;
   }
 
-  .release li {
-    position: relative;
-    padding-left: 1.5rem;
-  }
-
+  /* Plain lines, as in List: flush with the paragraphs, separated by space. */
   .release li + li {
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ============================================
+   Phone menu (Header.astro): fades in and settles 4px, like the dropdowns. The script toggles .hidden.
+   ============================================ */
+
+@layer components {
+  .mobile-menu {
+    opacity: 1;
+    translate: 0 0;
+    transition:
+      opacity var(--motion-fast) var(--ease-standard),
+      translate var(--motion-fast) var(--ease-standard),
+      display var(--motion-fast) allow-discrete;
+
+    @starting-style {
+      opacity: 0;
+      translate: 0 -4px;
+    }
   }
 
-  .release li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.8em;
-    width: 0.75rem;
-    height: 2px;
-    background: var(--color-navy);
+  .mobile-menu.hidden {
+    opacity: 0;
+    translate: 0 -4px;
   }
+}
+
+/* ============================================
+   Page transitions: moving between pages cross-fades the content while the header stays put
+   (view-transition-name on the header). Browsers without cross-document view transitions navigate
+   as before; reduced motion turns it off.
+   ============================================ */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--motion-fast);
+  animation-timing-function: var(--ease-standard);
 }
 
 /* ============================================
@@ -374,8 +416,13 @@ html {
   top: 0;
 }
 
-/* Reduced motion: no smooth scrolling, no transitions, and the range bars are already drawn. */
+/* Reduced motion: no smooth scrolling, no transitions or page cross-fades, and the range bars are
+   already drawn. */
 @media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+
   html {
     scroll-behavior: auto;
   }

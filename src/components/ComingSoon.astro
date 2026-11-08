@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -11,13 +13,8 @@ const { title, description } = Astro.props;
     <div class="max-w-2xl mx-auto text-center">
       <p class="font-sans text-lagoon font-semibold mb-4">Coming soon</p>
       <h1 class="text-3xl md:text-4xl font-bold text-navy mb-6">{title}</h1>
-      <p class="text-lg text-gray-dark leading-relaxed mb-10">{description}</p>
-      <a
-        href={import.meta.env.BASE_URL}
-        class="font-sans inline-block px-8 py-3.5 text-base font-semibold rounded-md bg-navy text-white hover:bg-navy-light transition-colors"
-      >
-        Return to Home
-      </a>
+      <p class="text-gray-dark mb-10">{description}</p>
+      <Button href="/" variant="secondary">Return to Home</Button>
     </div>
   </div>
 </div>

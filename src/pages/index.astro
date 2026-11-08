@@ -5,7 +5,7 @@ import Button from '../components/Button.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
-import DashList from '../components/DashList.astro';
+import List from '../components/List.astro';
 
 import heroImage from '../assets/fsic-hero.png';
 import { pad2 } from '../lib/format';
@@ -94,7 +94,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     <div class="relative container pt-16 pb-40 md:pt-24 md:pb-48 lg:pb-56 grid lg:grid-cols-12 lg:gap-x-8">
       <div class="lg:col-span-6 max-w-2xl">
         <h1 class="text-white mb-8">A New Commitment to the Space Coast</h1>
-        <div class="text-lg text-white/80 leading-relaxed space-y-5 mb-10">
+        <div class="text-white/75 space-y-5 mb-10">
           <p>
             On May 25, 1961, the United States committed to landing a man on the Moon — not because it was easy, but because it demanded coordination, capability, and national resolve.
           </p>
@@ -121,7 +121,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Fragment>
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">Without coordination, growth concentrates elsewhere.</p>
-      <div class="max-w-3xl text-lg">
+      <div class="max-w-3xl">
         <p>
           Florida's space economy is expanding rapidly — driven by commercial launch activity, advanced manufacturing, aerospace engineering, and emerging technologies.
         </p>
@@ -174,7 +174,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     <Grid class="mt-16">
       <p slot="label" class="mb-0 text-statement text-white">This is not a short-term program. It is a durable economic backbone.</p>
       <div class="max-w-3xl">
-        <p class="text-lg text-white/85 mb-8">
+        <p class="text-white/90 mb-8">
           In addition, FSIC positions the region to attract <strong class="text-white">$800 Million to $1.56 Billion</strong> in external federal, state, private, and philanthropic investment tied to research, innovation, and workforce development.
         </p>
         <Button href="/economic-impact" variant="secondary-light">Explore the Full Economic Analysis</Button>
@@ -218,10 +218,10 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   <Section id="deployment" index={4} total={7} label="Phased deployment" spacing="stacked" heading="Start Small. Deliver Early Wins. Scale with Readiness.">
     <Grid class="gap-y-10">
       <p slot="label" class="mb-0 text-statement text-navy">Growth is structured. Not speculative.</p>
-      <p class="text-lg max-w-3xl">
+      <p class="max-w-3xl">
         FSIC launches with the Talent Engine — requiring minimal physical footprint while delivering immediate workforce and employer-support outcomes.
       </p>
-      <p class="text-lg max-w-3xl mb-10">
+      <p class="max-w-3xl mb-10">
         As partnerships deepen and demand grows, the Innovation, Market, and Civic Engines scale in alignment with regional development timelines.
       </p>
 
@@ -238,7 +238,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
 
       <dl class="mb-8">
         <Row label="This phased approach:">
-          <DashList columns items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} />
+          <List columns items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} />
         </Row>
       </dl>
       <Button href="/deployment" variant="secondary">View the Deployment Timeline</Button>
@@ -275,14 +275,13 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
       <figcaption class="text-caption container text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>
     </figure>
     <Grid class="gap-y-10">
-      <p slot="label" class="mb-0 text-xl text-white/85 leading-snug">
+      <p slot="label" class="mb-0 text-xl text-white/90 leading-snug">
         As the model matures, FSIC evolves into a permanent anchor institution for Southeast Volusia.
       </p>
       <dl class="mb-8">
         <Row label="The long-term vision includes:" rule="bottom" dark>
-          <DashList
-            marker="lagoon-light"
-            spacious class="text-lg text-white/85"
+          <List
+            spacious class="text-white/90"
             items={[
               'A multi-university consortium with shared research facilities',
               'Applied labs and innovation studios',
@@ -306,8 +305,8 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
       </p>
       <dl class="mb-8">
         <Row label="It is designed to:" rule="bottom">
-          <DashList
-            spacious class="text-lg"
+          <List
+            spacious class=""
             items={[
               'Strengthen — not compete with — existing institutions',
               'Maintain transparent oversight',
@@ -331,10 +330,10 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         ))}
       </ul>
       <div class="max-w-3xl">
-        <p class="text-lg text-white/80">
+        <p class="text-white/75">
           The Florida Space Innovation Center represents a coordinated investment in the region's future.
         </p>
-        <p class="text-lg text-white/80 mb-10">
+        <p class="text-white/75 mb-10">
           Whether you are an employer, university leader, policymaker, workforce partner, or community member, there is a role to play in shaping Southeast Volusia's place in the global space economy.
         </p>
         <div class="flex flex-wrap gap-4">

@@ -1,0 +1,23 @@
+---
+// A list as plain lines, flush with the column like a paragraph, on the 28px reading leading. Space
+// separates the items; there are no markers (DESIGN.md "Structure should show what the content is").
+// When a list's meaning matters (problems vs. impact), say it on the list's label: Row's `dot`.
+interface Props {
+  items: string[];
+  /** Two columns from sm (short items only). */
+  columns?: boolean;
+  /** 12px between items instead of 8px, for items that run to several lines. */
+  spacious?: boolean;
+  /** Items are trusted, hand-written HTML (links, <strong>), rendered with set:html. */
+  html?: boolean;
+  class?: string;
+}
+
+const { items, columns = false, spacious = false, html = false, class: className } = Astro.props;
+---
+<ul
+  class:list={[columns ? 'grid gap-x-8 gap-y-2 sm:grid-cols-2' : ['flex flex-col', spacious ? 'gap-3' : 'gap-2'], className]}
+  role="list"
+>
+  {items.map((item) => (html ? <li set:html={item} /> : <li>{item}</li>))}
+</ul>
