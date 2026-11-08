@@ -93,6 +93,7 @@ The current site (fsic.space) has substantial FAQ and founder bio content with n
 - Economic Impact
 - Deployment
 - Governance
+- News (News & Media)
 - Contact
 
 **Secondary Nav (Footer):**
@@ -101,7 +102,6 @@ The current site (fsic.space) has substantial FAQ and founder bio content with n
 - Partnership & Funding
 - Long-Term Vision
 - The Strategic Moment
-- News & Media
 
 ## Implementation Note
 Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, and News & Media. The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
