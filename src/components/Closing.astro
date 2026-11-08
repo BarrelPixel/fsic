@@ -1,0 +1,23 @@
+---
+// A page's closing (DESIGN.md "Interior page template" step 4): one statement in display type and the
+// next steps (Buttons, in the default slot) on the content axis, with no heavy rule above.
+import Section from './Section.astro';
+import Grid from './Grid.astro';
+
+interface Props {
+  statement: string;
+  /** Passed to Section, e.g. "stacked" when the closing follows another white section closely. */
+  spacing?: 'default' | 'stacked' | 'large';
+}
+
+const { statement, spacing } = Astro.props;
+---
+<Section rule={false} spacing={spacing}>
+  <Grid>
+    <Fragment slot="label"></Fragment>
+    <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10 max-w-3xl">{statement}</p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <slot />
+    </div>
+  </Grid>
+</Section>

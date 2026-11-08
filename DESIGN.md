@@ -14,11 +14,7 @@ What to avoid: starfields, rockets, planets, glowing "space tech" gradients. Eve
 
 **The homepage hero photo**: a launch plume seen from the dunes, the region watching the Cape (see "Imagery"). It's the one bold element on the homepage, and everything around it stays quiet. Interior pages open with `PageHero` (see "Interior page template"). Don't add a second signature element.
 
-**Not currently used: the coastline and launch arc** (`src/components/CoastlineMap.astro`). A schematic line drawing of the coast from Cape Canaveral north to Edgewater and New Smyrna Beach, with an orange launch arc between the Cape and Southeast Volusia. It was the homepage's signature element until November 2026, when the hero photo replaced it and it was removed from the page. The component (and its arc animation in `global.css`) is kept in case it returns. If it does:
-- It's drawn for a `night` background.
-- It's labeled "Schematic, not to scale." Don't add distances or figures to the map unless they're sourced.
-- The arc draws once when the map scrolls into view. Without JS, or with reduced motion, it appears fully drawn. It would be the site's only automatic animation.
-- Don't put it on interior pages.
+The coastline map with its launch arc was the signature element until November 2026. It was removed from the site; it is in the git history if it's ever wanted again.
 
 ## Color
 
@@ -28,8 +24,8 @@ Each color has a meaning. Don't use them as decoration.
 |-------|-----|-----------------|
 | `night` | `#0D2138` | Dark sections: heroes, economics, vision, guiding principles, final CTA, header, footer |
 | `navy` | `#163256` | Brand. Headings and text on light backgrounds |
-| `orange` | `#E37A2D` | Brand. **The space industry**: the launch arc, primary buttons, data bars, industry-side markers |
-| `lagoon` | `#3E7F74` | **The community and the coast**: land on the map, civic and community content, accent rules on light backgrounds |
+| `orange` | `#E37A2D` | Brand. **The space industry**: primary buttons, data bars, industry-side markers |
+| `lagoon` | `#3E7F74` | **The community and the coast**: civic and community content, accent rules on light backgrounds |
 | `lagoon-light` | `#7FB8AC` | Lagoon on dark backgrounds |
 | `salt` | `#EEF2F3` | Light fill, used sparingly (a cool coastal white, not cream). Prefer white with rules |
 | `gray-dark` | `#3F4A56` | Body text on light backgrounds |
@@ -138,9 +134,9 @@ Every interior page uses the same frame. The Model page (`src/pages/model.astro`
    - *Narrative sections* (an argument told in order): headline above the grid, thesis in the label column, detail in the content column. This is the homepage pattern.
    - *Spec sections* (several items with the same shape, such as the four engines): no headline above the grid. The item's name is the `h2` in a sticky label column, and the content column is a summary followed by `Row`s, so items can be compared row by row. Wrap the run in an element whose first child is a `SectionBar`.
 3. **Optional principles or context section** on `night`, `h2` in the label column.
-4. **Closing**: one statement (`font-display text-3xl`–`4xl`) and the next steps in the content column, `rule={false}`.
+4. **Closing** (`Closing` component): one statement (`font-display text-3xl`–`4xl`) and the next steps in the content column, `rule={false}`.
 
-Don't put the hero photo, the coastline map or the launch arc on interior pages.
+Don't put the hero photo on interior pages.
 
 ## Data
 
@@ -160,7 +156,7 @@ Don't put the hero photo, the coastline map or the launch arc on interior pages.
 
 ## Motion
 
-- No automatic animations on the site at present. (The launch arc was the only one; see "Signature element".)
+- No automatic animations on the site.
 - No fade-in on scroll, no hover lift on cards, no count-up numbers.
 - Interaction feedback (hover color, focus ring, menu open) is fine.
 - Always respect `prefers-reduced-motion`.
@@ -170,16 +166,19 @@ Don't put the hero photo, the coastline map or the launch arc on interior pages.
 | Component | Notes |
 |-----------|-------|
 | `Button` | `primary` (orange with night text), `secondary` (navy outline), `secondary-light` (white outline on dark). Small 2px radius. Joins `BASE_URL` for internal hrefs |
-| `CoastlineMap` | Not currently used (see "Signature element"). Scripted only for the visibility trigger |
 | `Header` / `Footer` | `night` background, FSIC logo (`public/images/fsic-logo-reverse.png`, the dark-background version), social links in the footer. Both read `src/lib/nav.ts`. Header groups are dropdowns: a flat `night` panel with a hairline border under the trigger, opened by click (disclosure buttons, not ARIA menus), closed by Escape, an outside click or focus leaving; without JS they open on hover and focus. The phone menu lists each group under its name, with rules between entries. Each page appears once in the menus. The footer shows one column per group |
 | `RunningHead` | Section index above the heavy rule: `01 / 07`, an optional label, an optional engine-color `dot`, and `dark` for night sections. Decorative, so `aria-hidden` |
 | `Section`, `Grid`, `Row`, `DashList`, `PageHero`, `SectionBar` | The grid components. See "Grid" for props and when to use each |
+| `HeroIndex` | The numbered section index inside `PageHero`. `size="large"` (display names, optional note such as "6 questions") or `compact` (body type, `columns` for two columns) |
+| `Disclosure` | An item that opens in place: `<details>` with the + that turns to ×. Summary in the `summary` slot; callers set spacing |
+| `ProgramList` | An engine's programs from `src/lib/programs.ts`, each a `Disclosure` |
+| `Closing` | A page's closing: `statement` in display type and the buttons in the default slot, no heavy rule |
 | `ComingSoon` | Placeholder for interior pages until they're built |
 
 ## Accessibility floor
 
 - Visible focus: a 3px orange outline with a 3px offset (set globally).
-- Skip link, logical heading order, and descriptive `alt` text. (The unused map has `<title>` and `<desc>`.)
+- Skip link, logical heading order, and descriptive `alt` text.
 - Check pages at 375px wide. Nothing should scroll horizontally.
 
 ## Checklist for new pages

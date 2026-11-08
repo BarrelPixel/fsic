@@ -1,0 +1,23 @@
+---
+// An item that opens in place (native <details>), with the + that turns to × (DESIGN.md "Structure
+// should show what the content is"). Put the summary content in the `summary` slot and the body in
+// the default slot. Spacing differs by use (a list item, a FAQ question, a sub-list), so callers pass
+// it: `class` on <details>, `summaryClass` (alignment, gap, padding) and `iconClass` (offset).
+interface Props {
+  id?: string;
+  class?: string;
+  summaryClass?: string;
+  iconClass?: string;
+}
+
+const { id, class: className, summaryClass, iconClass } = Astro.props;
+---
+<details id={id} class:list={['group', className]}>
+  <summary class:list={['flex justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden', summaryClass]}>
+    <slot name="summary" />
+    <svg class:list={['w-5 h-5 shrink-0 text-navy transition-transform group-open:rotate-45', iconClass]} viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M10 4v12M4 10h12" stroke-linecap="round" />
+    </svg>
+  </summary>
+  <slot />
+</details>

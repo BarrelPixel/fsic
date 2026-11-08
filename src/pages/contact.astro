@@ -3,13 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
+import { EMAIL, mailto, SOCIAL_LINKS } from '../lib/site';
 
 // Copy: src/content/copy/contact.md (Draft). No form until a backend and routing are chosen
 // (docs/07-open-questions.md); each topic opens an email to info@fsic.space with the subject set.
 // Not on the page until confirmed: a phone number, a named media contact.
 
-const email = 'info@fsic.space';
-const mailto = (subject: string) => `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
 const topics = [
   {
@@ -38,11 +37,6 @@ const topics = [
   },
 ];
 
-const socialLinks = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/florida-space-innovation-center/' },
-  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61589280681125' },
-  { label: 'X', href: 'https://x.com/FLSpaceCenter' },
-];
 
 const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:decoration-navy';
 ---
@@ -51,7 +45,7 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
   <!-- Interior page template (DESIGN.md): PageHero; the aside carries the one instruction -->
   <PageHero title="Let's Work Together">
     <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
-      Every message goes to {email}. Choose a topic to open an email with the subject filled in.
+      Every message goes to {EMAIL}. Choose a topic to open an email with the subject filled in.
     </p>
     <p class="text-2xl text-white/90 leading-snug mb-0">
       Get in touch so we can start working together. Whether you are an employer, educator, policymaker, or community member, there is a role to play.
@@ -63,7 +57,7 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
   <Section rule={false}>
     <Grid class="gap-y-10" labelOffset>
       <div slot="label">
-        <a href={`mailto:${email}`} class="font-display text-3xl font-semibold leading-snug text-navy underline underline-offset-[6px] decoration-2 decoration-navy/25 hover:decoration-navy">{email}</a>
+        <a href={mailto()} class="font-display text-3xl font-semibold leading-snug text-navy underline underline-offset-[6px] decoration-2 decoration-navy/25 hover:decoration-navy">{EMAIL}</a>
         <dl class="mt-8 space-y-4 font-sans text-sm">
           <div>
             <dt class="font-semibold text-navy">Location</dt>
@@ -73,7 +67,7 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
             <dt class="font-semibold text-navy">Follow FSIC</dt>
             <dd>
               <ul role="list" class="flex flex-wrap gap-x-5 gap-y-1">
-                {socialLinks.map((s) => (
+                {SOCIAL_LINKS.map((s) => (
                   <li><a href={s.href} rel="noopener" class={link}>{s.label}</a></li>
                 ))}
               </ul>

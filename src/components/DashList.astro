@@ -9,10 +9,12 @@ interface Props {
   columns?: boolean;
   /** More space between items, for longer lines at text-lg. */
   spacious?: boolean;
+  /** Items are trusted, hand-written HTML (links, <strong>), rendered with set:html. */
+  html?: boolean;
   class?: string;
 }
 
-const { items, marker = 'navy', columns = false, spacious = false, class: className } = Astro.props;
+const { items, marker = 'navy', columns = false, spacious = false, html = false, class: className } = Astro.props;
 const markerClass = {
   gray: 'bg-gray/60',
   navy: 'bg-navy',
@@ -28,7 +30,7 @@ const markerClass = {
   {items.map((item) => (
     <li class="flex gap-3 leading-snug">
       <span class:list={['mt-[0.6em] w-3 h-0.5 shrink-0', markerClass]} aria-hidden="true"></span>
-      {item}
+      {html ? <span set:html={item} /> : item}
     </li>
   ))}
 </ul>

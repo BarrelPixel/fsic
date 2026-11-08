@@ -6,6 +6,8 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
+import { EMAIL, mailto } from '../lib/site';
+import Closing from '../components/Closing.astro';
 
 // Copy: src/content/copy/economic-impact.md (Draft). Wording is verbatim from the copy deck.
 // Open review items (see the ⚠ notes there): the headline figures are the FSIC 2.0 scenario;
@@ -94,7 +96,7 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
   <PageHero title="Transformational, Long-Term Regional Impact">
     <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
       These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at
-      <a href="mailto:info@fsic.space" class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">info@fsic.space</a>.
+      <a href={mailto()} class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">{EMAIL}</a>.
     </p>
     <p class="text-2xl text-white/90 leading-snug mb-6">
       The Florida Space Innovation Center (FSIC) is a regional platform designed to ensure that the growth of Florida's space economy directly benefits the people who live and work in Volusia County.
@@ -264,17 +266,9 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
   </Section>
 
   <!-- CLOSING (Master Plan p. 29) -->
-  <Section rule={false} spacing="stacked">
-    <Grid>
-      <Fragment slot="label"></Fragment>
-      <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10">
-        FSIC positions Southeast Volusia as a full participant in the Space Coast's next decade of growth.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <Button href="/partnership-funding">Become a Partner</Button>
-        <Button href="/deployment" variant="secondary">View the Deployment Timeline</Button>
-      </div>
-    </Grid>
-  </Section>
+  <Closing spacing="stacked" statement="FSIC positions Southeast Volusia as a full participant in the Space Coast's next decade of growth.">
+    <Button href="/partnership-funding">Become a Partner</Button>
+    <Button href="/deployment" variant="secondary">View the Deployment Timeline</Button>
+  </Closing>
 
 </BaseLayout>

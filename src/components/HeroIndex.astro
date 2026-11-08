@@ -1,0 +1,38 @@
+---
+// The numbered index of a page's sections, inside PageHero (DESIGN.md "Interior page template").
+//   size="large"    display-type names, with an optional right-hand note per item (e.g. "6 questions")
+//   size="compact"  body-type names; `columns` sets them in two columns from sm
+// The Model and Deployment pages keep their own indexes (an extra row; timeline bars).
+import { pad2 } from '../lib/format';
+
+interface Props {
+  /** aria-label for the <nav>. */
+  label: string;
+  items: { id: string; name: string; note?: string }[];
+  size?: 'large' | 'compact';
+  columns?: boolean;
+}
+
+const { label, items, size = 'compact', columns = false } = Astro.props;
+const hasNotes = items.some((i) => i.note);
+---
+<nav aria-label={label} class="font-sans">
+  <ol class:list={['border-t border-white/25', columns && 'sm:columns-2 sm:gap-x-8']}>
+    {items.map((item, i) => (
+      <li class:list={[columns && 'break-inside-avoid', 'border-b border-white/25']}>
+        {size === 'large' ? (
+          <a href={`#${item.id}`} class:list={['group grid items-baseline gap-x-4 py-4 rounded-sm', hasNotes ? 'grid-cols-[2.5rem_minmax(0,1fr)_auto]' : 'grid-cols-[2.5rem_minmax(0,1fr)]']}>
+            <span class="text-sm text-white/60 tabular-nums">{pad2(i + 1)}</span>
+            <span class="font-display text-2xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2">{item.name}</span>
+            {item.note && <span class="text-sm text-white/70 tabular-nums">{item.note}</span>}
+          </a>
+        ) : (
+          <a href={`#${item.id}`} class="group flex items-baseline gap-3 py-3 rounded-sm">
+            <span class="text-sm text-white/60 tabular-nums">{pad2(i + 1)}</span>
+            <span class="text-white group-hover:underline underline-offset-4">{item.name}</span>
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

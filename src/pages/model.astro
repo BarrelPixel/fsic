@@ -8,6 +8,8 @@ import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
 import { programsFor, type EngineId } from '../lib/programs';
+import ProgramList from '../components/ProgramList.astro';
+import { pad2 } from '../lib/format';
 
 // Copy: src/content/copy/model.md (Draft). Wording is verbatim from the copy deck.
 // Open review items (see model.md ⚠): the "Brings together" lists and the Civic shift line.
@@ -157,7 +159,7 @@ const engines: Engine[] = [
           <>
             <li class="border-b border-white/25">
               <a href={`#${engine.id}`} class="group grid grid-cols-[2.5rem_minmax(0,1fr)] sm:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1.3fr)] gap-x-4 gap-y-1 py-4 rounded-sm">
-                <span class="text-sm text-white/60 tabular-nums pt-1.5">{String(i + 1).padStart(2, '0')}</span>
+                <span class="text-sm text-white/60 tabular-nums pt-1.5">{pad2(i + 1)}</span>
                 <span class="font-display text-2xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2 flex items-center gap-3">
                   <span class:list={['w-2.5 h-2.5 shrink-0 rounded-full', engine.tone === 'lagoon' ? 'bg-lagoon-light' : 'bg-orange']} aria-hidden="true"></span>
                   {engine.name}
@@ -227,25 +229,7 @@ const engines: Engine[] = [
             <!-- The engine's programs (Master Plan pp. 19–21, shared with Programs & Facilities via
                  src/lib/programs.ts): each opens in place -->
             <Row label="Programs" count={programsFor(engine.id).length} list>
-              <ul role="list">
-                {programsFor(engine.id).map((item) => (
-                  <li class="border-b border-navy/15 last:border-b-0">
-                    <details class="group">
-                      <summary class="flex items-start justify-between gap-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                        <span class="font-sans font-semibold text-navy leading-snug">{item.name}</span>
-                        <svg class="w-5 h-5 mt-px shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                          <path d="M10 4v12M4 10h12" stroke-linecap="round" />
-                        </svg>
-                      </summary>
-                      <div class="pb-5 pr-9 text-base text-gray-dark">
-                        <p class:list={[item.items || item.outcome ? 'mb-2' : 'mb-0']}>{item.lead}</p>
-                        {item.items && <DashList items={item.items} class:list={[item.outcome ? 'mb-3' : '']} />}
-                        {item.outcome && <p class="mb-0">{item.outcome}</p>}
-                      </div>
-                    </details>
-                  </li>
-                ))}
-              </ul>
+              <ProgramList programs={programsFor(engine.id)} itemClass="border-b border-navy/15 last:border-b-0" />
             </Row>
           </dl>
         </Grid>
