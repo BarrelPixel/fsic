@@ -7,13 +7,15 @@ import Grid from './Grid.astro';
 
 interface Props {
   title: string;
+  /** Smaller title for long headlines, such as press releases. */
+  titleClass?: string;
 }
 
-const { title } = Astro.props;
+const { title, titleClass } = Astro.props;
 ---
 <section class="bg-night text-white">
   <div class="container pt-14 pb-20 md:pt-20 md:pb-24">
-    <h1 class="text-white max-w-5xl mb-12 md:mb-16">{title}</h1>
+    <h1 class:list={['text-white max-w-5xl mb-12 md:mb-16', titleClass]}>{title}</h1>
     <Grid labelLast class="gap-y-10 border-t border-white/25 pt-8">
       <Fragment slot="label"><slot name="aside" /></Fragment>
       <slot />

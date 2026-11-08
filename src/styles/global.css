@@ -95,6 +95,41 @@ html {
 }
 
 /* ============================================
+   Press release text (rendered Markdown, src/content/news/)
+   Lists use the same short dash marker as DashList.
+   ============================================ */
+
+@layer components {
+  .release strong {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+
+  .release ul {
+    margin-bottom: 1rem;
+  }
+
+  .release li {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .release li + li {
+    margin-top: 0.75rem;
+  }
+
+  .release li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.8em;
+    width: 0.75rem;
+    height: 2px;
+    background: var(--color-navy);
+  }
+}
+
+/* ============================================
    Layout
    ============================================ */
 

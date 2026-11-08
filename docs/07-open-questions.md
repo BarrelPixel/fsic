@@ -12,7 +12,7 @@ Items requiring stakeholder input or decisions before full launch.
 ## Content & Copy
 - [ ] **Stakeholder CTA priorities:** Which call-to-action should be most prominent — partner inquiry, general contact, or specific program interest?
 - [ ] **Contact handling:** How should contact form submissions be routed? Email? CRM? Which email addresses?
-- [ ] **News / Updates section:** Should the site include a blog or news feed at launch?
+- [x] **News / Updates section:** resolved. `/news` publishes the press releases, one file per release. The old Wix blog posts are not migrated.
 - [ ] **Partner logos:** Are there approved partner organizations whose logos can be displayed? (Do not fabricate.)
 - [ ] **Testimonials / Endorsements:** Are there approved quotes from stakeholders to include?
 - [ ] **Economic scenario:** The headline economic figures are the Master Plan's FSIC 2.0 scenario. Should the home page say so? And are two chart values right: job-years for FSIC 1.0 (same as Baseline) and "City + County" fiscal impact? See `08-current-site-audit.md` §3.10.
@@ -51,4 +51,4 @@ Decisions needed before copy can be approved. Details are in `08-current-site-au
 - [ ] **Unsourced claims:** citations for the $630B→$1T market size and the SpaceX S-1 "$28.5T" figure. (30–50% earned revenue by Year 3 is confirmed in the Master Plan, pp. 2 and 27.)
 - [ ] **Titles:** confirm current titles for John Joaquin and Erik Ahlgren, and the full seated board.
 - [ ] **Mission and vision:** where do they appear on the new site?
-- [ ] **New pages:** add FAQ, News, and Leadership to the IA?
+- [ ] **New pages:** News is built (November 2026). Still to decide: FAQ, and Leadership (its own page or part of Governance)?

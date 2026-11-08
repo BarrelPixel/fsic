@@ -45,18 +45,20 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
     │   ├── Button, CoastlineMap, Header, Footer
     │   └── ComingSoon           # placeholder for unbuilt pages
     ├── content/copy/            # Copy deck: one Markdown file per page (docs/09)
+    ├── content/news/            # Press releases, one Markdown file each (as published)
+    ├── lib/news.ts              # Press release helpers (sorting, dates, excerpts)
     ├── layouts/BaseLayout.astro # Meta tags, fonts, header and footer
-    ├── pages/                   # One .astro file per route
+    ├── pages/                   # One .astro file per route; pages/news/ holds the list and [slug] pages
     └── styles/global.css        # Design tokens (@theme), base styles, arc animation
 ```
 
 ## Current Status
 
-**Built:** Home (`/`), The FSIC Model (`/model`), Economic Impact (`/economic-impact`), Phased Deployment (`/deployment`), Governance & Transparency (`/governance`), Partnership & Funding (`/partnership-funding`).
+**Built:** Home (`/`), The FSIC Model (`/model`), Economic Impact (`/economic-impact`), Phased Deployment (`/deployment`), Governance & Transparency (`/governance`), Partnership & Funding (`/partnership-funding`), News & Media (`/news`, one page per press release).
 
 **Coming Soon stubs:** The Strategic Moment, Programs & Facilities, Long-Term Vision, Contact. Each uses `<ComingSoon>` until its copy is ready.
 
-**Proposed pages** (copy drafted, not yet in the IA): FAQ, News, Leadership.
+**Proposed pages** (copy drafted, not yet in the IA): FAQ, Leadership.
 
 Copy status for every page is tracked in `docs/09-copy-deck.md`. Open content decisions are in `docs/07-open-questions.md` and `docs/08-current-site-audit.md` §3.
 

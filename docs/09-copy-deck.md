@@ -17,7 +17,7 @@ All website copy lives in `src/content/copy/`, with one Markdown file per page. 
 | `long-term-vision.md` | `/long-term-vision` | Draft |
 | `contact.md` | `/contact` | Draft |
 | `faq.md` | `/faq` (proposed) | Draft |
-| `news.md` | `/news` (proposed) | Draft |
+| `news.md` | `/news` (releases in `src/content/news/`, one file each) | Draft |
 | `leadership.md` | `/leadership` (proposed) | Draft |
 | `site-wide.md` | Header, footer, metadata | Draft |
 
