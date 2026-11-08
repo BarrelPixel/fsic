@@ -1,15 +1,16 @@
+import { engineName, type EngineId } from './engines';
+
 // The Master Plan's program portfolio (pp. 19–21), by engine. One list for the whole site: the
 // Programs & Facilities page (portfolio) and the Model page (each engine's programs) both read it.
 // Copy: src/content/copy/programs-facilities.md, "PROGRAM PORTFOLIO".
 
 export type Program = { name: string; lead: string; items?: string[]; outcome?: string };
-export type EngineId = 'talent' | 'innovation' | 'market' | 'civic';
 export type EnginePrograms = { id: EngineId; name: string; line: string; programs: Program[] };
 
 export const engines: EnginePrograms[] = [
   {
     id: 'talent',
-    name: 'Talent Engine',
+    name: engineName('talent'),
     line: 'The Talent Engine provides a coordinated, employer-validated workforce pipeline that prepares students and adults for high-demand careers in aerospace, advanced manufacturing, robotics, and dual-use technologies.',
     programs: [
       { name: 'Micro-Credential Academies', lead: 'Short, stackable credentials aligned to employer needs, including:', items: ['Robotics & automation', 'Composites & materials', 'Avionics fundamentals', 'Precision machining', 'Additive manufacturing', 'Launch operations support'], outcome: 'These credentials provide rapid pathways into high-value careers.' },
@@ -21,7 +22,7 @@ export const engines: EnginePrograms[] = [
   },
   {
     id: 'innovation',
-    name: 'Innovation Engine',
+    name: engineName('innovation'),
     line: "The Innovation Engine provides the region's first civilian-facing applied innovation hub, enabling collaboration among students, educators, researchers, startups, and industry partners.",
     programs: [
       { name: 'Challenge Labs', lead: 'Teams work on real aerospace and advanced manufacturing problems provided by employers, universities, or federal partners. Outcomes include prototypes, research findings, and new technologies.' },
@@ -32,7 +33,7 @@ export const engines: EnginePrograms[] = [
   },
   {
     id: 'market',
-    name: 'Market Engine',
+    name: engineName('market'),
     line: 'The Market Engine supports local businesses, startups, and entrepreneurs through commercialization, supplier readiness, and federal funding pathways.',
     programs: [
       { name: 'Supplier Readiness Bootcamps', lead: 'Training and support for companies seeking to enter aerospace and defense supply chains, including:', items: ['Quality systems', 'Compliance requirements', 'Contracting', 'Procurement pathways'] },
@@ -44,7 +45,7 @@ export const engines: EnginePrograms[] = [
   },
   {
     id: 'civic',
-    name: 'Civic Engine',
+    name: engineName('civic'),
     line: 'The Civic Engine ensures that innovation is visible, accessible, and meaningful to the public. It builds community trust, regional identity, and broad-based support for innovation-driven growth.',
     programs: [
       { name: 'Community STEM Nights', lead: 'Hands-on events for families and youth that build excitement around science, technology, and space.' },
@@ -55,5 +56,7 @@ export const engines: EnginePrograms[] = [
     ],
   },
 ];
+
+export type { EngineId };
 
 export const programsFor = (id: EngineId): Program[] => engines.find((e) => e.id === id)!.programs;

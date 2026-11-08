@@ -9,43 +9,19 @@ import List from '../components/List.astro';
 
 import heroImage from '../assets/fsic-hero.png';
 import { pad2 } from '../lib/format';
+import { FIGURES } from '../data/economics';
+import { engines } from '../data/engines';
 
 const base = import.meta.env.BASE_URL;
 
-// 25-year projections, Master Plan pp. 7–8. Always show the full range (see docs/08 §3.2).
+// 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
-  { label: 'Total economic output', low: 10.2, high: 12.4, display: '$10.2–$12.4 billion' },
-  { label: 'Job-years across aerospace, engineering, advanced manufacturing, and technology', low: 74500, high: 79500, display: '74,500–79,500' },
-  { label: 'New wages for Florida workers', low: 1.35, high: 1.55, display: '$1.35–$1.55 billion' },
-  { label: 'Fiscal revenue for local and state governments', low: 690, high: 910, display: '$690–$910 million' },
+  { label: 'Total economic output', ...FIGURES.output },
+  { label: 'Job-years across aerospace, engineering, advanced manufacturing, and technology', ...FIGURES.jobYears },
+  { label: 'New wages for Florida workers', ...FIGURES.wages },
+  { label: 'Fiscal revenue for local and state governments', ...FIGURES.fiscal },
 ];
 
-const engines = [
-  {
-    name: 'Talent Engine',
-    shift: 'Transforming individuals into skilled talent',
-    body: 'Drives employer-aligned training, micro-credential academies, dual-enrollment pathways, and industry-embedded learning.',
-    tone: 'orange',
-  },
-  {
-    name: 'Innovation Engine',
-    shift: 'Transforming knowledge into innovation',
-    body: 'Powers challenge labs, applied research partnerships, prototyping studios, and university collaboration.',
-    tone: 'orange',
-  },
-  {
-    name: 'Market Engine',
-    shift: 'Transforming opportunity into market success',
-    body: 'Accelerates supplier readiness, startup development, SBIR/STTR navigation, and venture pathways.',
-    tone: 'orange',
-  },
-  {
-    name: 'Civic Engine',
-    shift: 'Transforming innovation into shared identity',
-    body: 'Engages the broader community through STEM programming, exhibitions, arts-and-space initiatives, and public events.',
-    tone: 'lagoon',
-  },
-];
 
 const value = [
   {
@@ -175,7 +151,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
       <p slot="label" class="mb-0 text-statement text-white">This is not a short-term program. It is a durable economic backbone.</p>
       <div class="max-w-3xl">
         <p class="text-white/90 mb-8">
-          In addition, FSIC positions the region to attract <strong class="text-white">$800 Million to $1.56 Billion</strong> in external federal, state, private, and philanthropic investment tied to research, innovation, and workforce development.
+          In addition, FSIC positions the region to attract <strong class="text-white">{FIGURES.externalFunding.words}</strong> in external federal, state, private, and philanthropic investment tied to research, innovation, and workforce development.
         </p>
         <Button href="/economic-impact" variant="secondary-light">Explore the Full Economic Analysis</Button>
         <p class="text-caption text-white/60 mt-10 mb-0">
@@ -203,7 +179,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
           </p>
           <h3 class="mb-2">{engine.name}</h3>
           <p class:list={['font-sans font-medium mb-3', engine.tone === 'lagoon' ? 'text-lagoon' : 'text-gray-dark']}>{engine.shift}</p>
-          <p class="mb-0">{engine.body}</p>
+          <p class="mb-0">{engine.homeSummary}</p>
         </li>
       ))}
     </ol>

@@ -6,13 +6,14 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import List from '../components/List.astro';
-import { engines } from '../lib/programs';
+import { engines } from '../data/programs';
 import ProgramList from '../components/ProgramList.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 import Closing from '../components/Closing.astro';
+import { phases as phaseData } from '../data/phases';
 
 // Copy: src/content/copy/programs-facilities.md (Draft). Audiences: fsic.space FAQ (verbatim). Portfolio
-// (src/lib/programs.ts, shared with the Model page):
+// (src/data/programs.ts, shared with the Model page):
 // Master Plan pp. 19–21. Facilities: FAQ (status) and Master Plan pp. 17–19, without the named
 // development (docs/08 §3.3).
 
@@ -38,14 +39,8 @@ const principles = [
   'Spaces that inspire creativity, collaboration, and civic pride',
 ];
 
-// Phase names and timeframes as on the Deployment page; core spaces from Master Plan p. 18.
-const phases = [
-  { n: 1, name: 'Foundation & Talent Engine Launch', when: 'Year 1', spaces: ['Classrooms and training labs for micro-credentials', 'Flexible multipurpose space for workshops and events', 'Small prototyping and fabrication area', 'Office space for staff and partners', 'Meeting rooms for employer and advisory council engagement'] },
-  { n: 2, name: 'Innovation Engine Activation', when: 'Years 1–2', spaces: ['Challenge labs for student and industry collaboration', 'Rapid prototyping studio with fabrication tools', 'Small research and testing labs', 'Collaboration zones for university and industry partners', 'Expanded multipurpose space for innovation events'] },
-  { n: 3, name: 'Market Engine Deployment', when: 'Years 2–3', spaces: ['Small business resource center', 'Certification and compliance training rooms', 'Startup incubation and co-working space', 'Meeting rooms for procurement and contracting support', 'Expanded prototyping and testing capacity'] },
-  { n: 4, name: 'Civic Engine Expansion', when: 'Years 2–4', spaces: ['Public exhibition gallery', 'Community event space', 'Arts-and-space integration areas', 'STEM exploration zones for families and youth', 'Outdoor gathering and placemaking spaces'] },
-  { n: 5, name: 'Full Ecosystem Integration', when: 'Years 3–5', spaces: ['Full-scale innovation center', 'Expanded research and prototyping labs', 'Large multipurpose event and conference space', 'Co-located university and industry partner suites', 'Outdoor innovation plaza and community spaces'] },
-];
+// Planned core spaces per phase (src/data/phases.ts, shared with Deployment).
+const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timeframe, spaces: p.spaces }));
 
 const link = 'link';
 ---

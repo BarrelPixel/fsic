@@ -54,7 +54,9 @@ FSIC is designed to align education, industry, and community in one coordinated 
 - $690–$910 Million in fiscal revenue for local and state governments
 
 **Body outro:**
-In addition, FSIC positions the region to attract $800 Million to $1.56 Billion in external federal, state, private, and philanthropic investment tied to research, innovation, and workforce development.
+In addition, FSIC positions the region to attract $800 million to $1.56 billion in external federal, state, private, and philanthropic investment tied to research, innovation, and workforce development.
+
+> **Changed (November 2026):** "Million"/"Billion" lowercased to match the other pages; the site reads the range from `src/data/economics.ts`.
 
 This is not a short-term program.
 It is a durable economic backbone.

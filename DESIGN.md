@@ -175,7 +175,7 @@ Don't put the hero photo on interior pages.
 | `Section`, `Grid`, `Row`, `List`, `PageHero`, `SectionBar` | The grid components. See "Grid" for props and when to use each |
 | `HeroIndex` | The numbered section index inside `PageHero`. `size="large"` (display names, optional note such as "6 questions") or `compact` (body type, `columns` for two columns) |
 | `Disclosure` | An item that opens in place: `<details>` with the + that turns to ×. Summary in the `summary` slot; callers set spacing |
-| `ProgramList` | An engine's programs from `src/lib/programs.ts`, each a `Disclosure` |
+| `ProgramList` | An engine's programs from `src/data/programs.ts`, each a `Disclosure` |
 | `Closing` | A page's closing: `statement` in display type and the buttons in the default slot, no heavy rule |
 | `ComingSoon` | Placeholder for interior pages until they're built |
 
