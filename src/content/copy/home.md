@@ -118,6 +118,24 @@ Growth is structured. Not speculative.
 
 ---
 
+## GOVERNANCE & TRANSPARENCY
+
+**Headline:** Governance & Transparency
+
+**Body:**
+FSIC operates under a partner-first, coalition-driven governance structure.
+It is designed to:
+- Strengthen — not compete with — existing institutions
+- Maintain transparent oversight
+- Deliver shared value across education, industry, and community stakeholders
+- Scale only when readiness and demand are clear
+
+**Close:** Neutral convener. Clear structure. Long-term accountability.
+
+**CTA:** Review Governance & Structure
+
+---
+
 ## LONG-RANGE VISION (2032–2040)
 
 > **Changed (November 2026):** the period follows the Master Plan (p. 36), 2032–2040; it was 2031–2040, from the Overview PDF. Decided with the Long-Term Vision page.
@@ -135,24 +153,6 @@ The long-term vision includes:
 **Close:**
 The future is built in phases.
 The commitment begins now.
-
----
-
-## GOVERNANCE & TRANSPARENCY
-
-**Headline:** Governance & Transparency
-
-**Body:**
-FSIC operates under a partner-first, coalition-driven governance structure.
-It is designed to:
-- Strengthen — not compete with — existing institutions
-- Maintain transparent oversight
-- Deliver shared value across education, industry, and community stakeholders
-- Scale only when readiness and demand are clear
-
-**Close:** Neutral convener. Clear structure. Long-term accountability.
-
-**CTA:** Review Governance & Structure
 
 ---
 

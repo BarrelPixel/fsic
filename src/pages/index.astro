@@ -237,8 +237,32 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Grid>
   </Section>
 
-  <!-- 06 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
-  <Section id="vision" index={6} total={7} label="Long-range vision" dark heading="A Landmark Campus for Southeast Volusia">
+  <!-- 06 GOVERNANCE & TRANSPARENCY -->
+  <Section id="governance" index={6} total={7} spacing="stacked" heading="Governance & Transparency">
+    <Grid class="gap-y-10">
+      <p slot="label" class="mb-0 text-xl text-navy leading-snug">
+        FSIC operates under a partner-first, coalition-driven governance structure.
+      </p>
+      <dl class="mb-8">
+        <Row label="It is designed to:" rule="bottom">
+          <List
+            spacious class=""
+            items={[
+              'Strengthen — not compete with — existing institutions',
+              'Maintain transparent oversight',
+              'Deliver shared value across education, industry, and community stakeholders',
+              'Scale only when readiness and demand are clear',
+            ]}
+          />
+        </Row>
+      </dl>
+      <p class="text-statement text-navy mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
+      <Button href="/governance" variant="secondary">Review Governance & Structure</Button>
+    </Grid>
+  </Section>
+
+  <!-- 07 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
+  <Section id="vision" index={7} total={7} label="Long-range vision" dark heading="A Landmark Campus for Southeast Volusia">
     <figure slot="media" class="relative">
       <img
         src={`${base}/images/fsic-concept.jpg`}
@@ -274,48 +298,24 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Grid>
   </Section>
 
-  <!-- 07 GOVERNANCE & TRANSPARENCY -->
-  <Section id="governance" index={7} total={7} heading="Governance & Transparency">
-    <Grid class="gap-y-10">
-      <p slot="label" class="mb-0 text-xl text-navy leading-snug">
-        FSIC operates under a partner-first, coalition-driven governance structure.
-      </p>
-      <dl class="mb-8">
-        <Row label="It is designed to:" rule="bottom">
-          <List
-            spacious class=""
-            items={[
-              'Strengthen — not compete with — existing institutions',
-              'Maintain transparent oversight',
-              'Deliver shared value across education, industry, and community stakeholders',
-              'Scale only when readiness and demand are clear',
-            ]}
-          />
-        </Row>
-      </dl>
-      <p class="text-statement text-navy mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
-      <Button href="/governance" variant="secondary">Review Governance & Structure</Button>
-    </Grid>
-  </Section>
-
   <!-- FINAL CTA: the page's close, so no running head. Who can take part sits in the label column as a plain list. -->
-  <Section dark spacing="large" heading="Partner. Collaborate. Participate.">
+  <Section spacing="large" heading="Partner. Collaborate. Participate.">
     <Grid class="gap-y-10">
-      <ul slot="label" class="font-sans flex flex-col divide-y divide-rule-on-dark border-b border-rule-on-dark" aria-label="Who can take part">
+      <ul slot="label" class="font-sans flex flex-col divide-y divide-rule border-b border-rule" aria-label="Who can take part">
         {audiences.map((a) => (
-          <li class="py-2.5 first:pt-0 text-lagoon-light">{a}</li>
+          <li class="py-2.5 first:pt-0 text-lagoon">{a}</li>
         ))}
       </ul>
       <div class="max-w-3xl">
-        <p class="text-white/75">
+        <p>
           The Florida Space Innovation Center represents a coordinated investment in the region's future.
         </p>
-        <p class="text-white/75 mb-10">
+        <p class="mb-10">
           Whether you are an employer, university leader, policymaker, workforce partner, or community member, there is a role to play in shaping Southeast Volusia's place in the global space economy.
         </p>
         <div class="flex flex-wrap gap-4">
           <Button href="/partnership-funding" variant="primary">Become a Partner</Button>
-          <Button href="/contact" variant="secondary-light">Contact FSIC</Button>
+          <Button href="/contact" variant="secondary">Contact FSIC</Button>
         </div>
       </div>
     </Grid>
