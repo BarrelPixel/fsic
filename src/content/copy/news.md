@@ -15,12 +15,15 @@ Keep the wording as published, including quotes. Fix only obvious formatting (bo
 
 | Date | File |
 |------|------|
+| August 3, 2026 | `2026-08-03-jake-johansson-joins-founders-council.md` |
 | July 29, 2026 | `2026-07-29-ryan-trine-joins-board.md` |
 | July 13, 2026 | `2026-07-13-diezel-depew-joins-board.md` |
 | July 7, 2026 | `2026-07-07-jessie-thompson-joins-board.md` |
 | May 25, 2026 | `2026-05-25-fsic-launches-on-may-25.md` |
 
 > **Source:** fsic.space/news (verbatim). Checked November 8, 2026: no releases newer than July 29.
+> **August 3 release (Jake Johansson, Founders Council):** text and graphic supplied by the project lead (November 8, 2026), not taken from fsic.space. Added as supplied; the only changes are the bold dateline and ordinary hyphens in place of non-breaking ones ("county-level", "fastest-growing", "long-term", "forward-looking").
+> **⚠ Review:** The site doesn't describe a Founders Council anywhere else. The Governance page names a Board of Directors and a Multi-Institution Advisory Council. Add the Founders Council to the governance copy (`governance.md`) if it is a standing body.
 > **Note:** The releases use words the content guidelines avoid ("proud to announce", "premier hub"). They stay as published.
 > **Images:** each release shows the graphic published with it on fsic.space/news (November 2026). The files are in `src/content/news/images/`, set by `image` and `imageAlt` in each release's frontmatter. The alt text transcribes the words in the graphic.
 
