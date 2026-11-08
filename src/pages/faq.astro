@@ -15,9 +15,7 @@ import SectionBar from '../components/SectionBar.astro';
 // space-economy figures, and the removed regional housing figure.
 // Several answers also appear on other pages (see the note at the top of faq.md).
 
-
 const count = (n: number) => `${n} question${n === 1 ? '' : 's'}`;
-const link = 'links-in';
 ---
 <BaseLayout title="Frequently Asked Questions" description="Answers to common questions about the Florida Space Innovation Center: what it is, why it is needed now, how it is funded, and how to get involved.">
 
@@ -70,7 +68,7 @@ const link = 'links-in';
           {t.faqs.map((f) => (
             <Disclosure id={f.id} class="py-5 first:pt-0 scroll-mt-24" summaryClass="items-start gap-6" iconClass="mt-1">
               <h3 slot="summary" class="mb-0 text-xl">{f.q}</h3>
-              <div class:list={['pt-4 max-w-3xl text-gray-dark', link]}>
+              <div class="pt-4 max-w-3xl text-gray-dark links-in">
                 {f.a.map((b) =>
                   'p' in b ? (
                     <p set:html={b.p} />

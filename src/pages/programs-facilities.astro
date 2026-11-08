@@ -44,8 +44,6 @@ const principles = [
 
 // Planned core spaces per phase (src/data/phases.ts, shared with Deployment).
 const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timeframe, spaces: p.spaces }));
-
-const link = 'link';
 ---
 <BaseLayout title="Programs & Facilities" description="FSIC's programs for students, adults, businesses, and the community, the program portfolio across the Talent, Innovation, Market, and Civic Engines, and the phased facilities plan.">
 
@@ -101,7 +99,7 @@ const link = 'link';
             <p class="mb-3 text-gray-dark">{e.line}</p>
             <ProgramList programs={e.programs} class="border-t border-rule" />
             <p class="mt-3 mb-0 text-caption">
-              <a href={`${base}/model#${e.id}`} class={link}>The {e.name} on the Model page</a>
+              <a href={`${base}/model#${e.id}`} class="link">The {e.name} on the Model page</a>
             </p>
           </Row>
         ))}
@@ -138,7 +136,7 @@ const link = 'link';
           ))}
         </dl>
         <p class="mt-6 mb-0 text-caption">
-          Each phase's activities and outcomes are on the <a href={`${base}/deployment`} class={link}>Phased Deployment</a> page.
+          Each phase's activities and outcomes are on the <a href={`${base}/deployment`} class="link">Phased Deployment</a> page.
         </p>
       </div>
     </Grid>

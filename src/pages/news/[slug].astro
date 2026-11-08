@@ -5,7 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import Grid from '../../components/Grid.astro';
-import { getReleases, formatDate, firstParagraph, truncate, type Release } from '../../lib/news';
+import { getReleases, formatDate, firstParagraph, truncate, isoDate, releaseHref, type Release } from '../../lib/news';
 
 // One page per press release (src/content/news/<slug>.md). The text is shown as published.
 export async function getStaticPaths() {
@@ -26,7 +26,6 @@ const { Content } = await render(release);
 const base = import.meta.env.BASE_URL;
 const { image, imageAlt } = release.data;
 const shareImage = image ? await getImage({ src: image, width: 1200, format: 'jpg' }) : undefined;
-const isoDate = (d: Date) => d.toISOString().slice(0, 10);
 ---
 <BaseLayout title={release.data.title} description={truncate(firstParagraph(release))} image={shareImage?.src}>
 
@@ -79,7 +78,7 @@ const isoDate = (d: Date) => d.toISOString().slice(0, 10);
               <p class="mb-1 text-caption text-gray-dark">
                 <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
               </p>
-              <a href={`${base}/news/${r.id}`} class="font-display text-xl font-semibold text-navy leading-snug underline-reveal underline-offset-4">{r.data.title}</a>
+              <a href={releaseHref(base, r)} class="font-display text-xl font-semibold text-navy leading-snug underline-reveal underline-offset-4">{r.data.title}</a>
             </li>
           ))}
         </ul>

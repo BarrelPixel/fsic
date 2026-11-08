@@ -8,6 +8,12 @@ export async function getReleases(): Promise<Release[]> {
   return releases.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 }
 
+/** The release page's address: /news/<slug>, with the base path. */
+export const releaseHref = (base: string, release: Release) => `${base}/news/${release.id}`;
+
+/** "2026-07-29", for <time datetime>. */
+export const isoDate = (date: Date) => date.toISOString().slice(0, 10);
+
 /** "July 29, 2026". Dates are stored as UTC midnight, so format in UTC. */
 export function formatDate(date: Date): string {
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });

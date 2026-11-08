@@ -20,7 +20,6 @@ import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections
 // funding streams: pp. 25–26; benefits: May 25, 2026 launch release; get involved: FAQ.
 // Open review items: no years given for employer funding; "Build Back Better"; no named partners.
 
-
 const YEARS = [1, 2, 3, 4, 5];
 const yearsLabel = (s: { start: number | null; end: number | null }) =>
   s.start === null ? 'Years not stated' : s.start === s.end ? `Year ${s.start}` : `Years ${s.start}–${s.end}`;

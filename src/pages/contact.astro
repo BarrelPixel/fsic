@@ -9,7 +9,6 @@ import { EMAIL, mailto, SOCIAL_LINKS } from '../lib/site';
 // (docs/07-open-questions.md); each topic opens an email to info@fsic.space with the subject set.
 // Not on the page until confirmed: a phone number, a named media contact.
 
-
 const topics = [
   {
     name: 'Partnerships',
@@ -36,9 +35,6 @@ const topics = [
     subject: 'General inquiry',
   },
 ];
-
-
-const link = 'link';
 ---
 <BaseLayout title="Contact" description="Contact the Florida Space Innovation Center about partnerships, volunteering and leadership, media inquiries, or general questions.">
 
@@ -68,7 +64,7 @@ const link = 'link';
             <dd>
               <ul role="list" class="flex flex-wrap gap-x-5 gap-y-1">
                 {SOCIAL_LINKS.map((s) => (
-                  <li><a href={s.href} rel="noopener" class={link}>{s.label}</a></li>
+                  <li><a href={s.href} rel="noopener" class="link">{s.label}</a></li>
                 ))}
               </ul>
             </dd>
@@ -82,7 +78,7 @@ const link = 'link';
             <h2 class="text-2xl mb-3">{t.name}</h2>
             <p class="mb-4 text-gray-dark">{t.line}</p>
             <p class="mt-auto mb-0 font-sans font-semibold">
-              <a href={mailto(t.subject)} class={link}>{t.linkText}</a>
+              <a href={mailto(t.subject)} class="link">{t.linkText}</a>
             </p>
           </div>
         ))}

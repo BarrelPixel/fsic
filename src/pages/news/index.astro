@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
-import { getReleases, formatDate, firstSentence } from '../../lib/news';
+import { getReleases, formatDate, firstSentence, isoDate, releaseHref } from '../../lib/news';
 import { EMAIL, mailto } from '../../lib/site';
 
 // Copy: src/content/copy/news.md (page wording); releases: src/content/news/ (as published).
@@ -31,20 +31,20 @@ const releases = await getReleases();
         <li class="grid gap-y-2 py-8 first:pt-0 lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
           <div class="lg:col-span-4">
             <p class="mb-0 text-label text-gray-dark">
-              <time datetime={r.data.date.toISOString().slice(0, 10)}>{formatDate(r.data.date)}</time>
+              <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
             </p>
             {/* Thumbnail of the release graphic at one height (width follows the graphic; never cropped).
                 A mouse shortcut to the release: hidden from keyboard and screen readers, since the
                 headline is the same link and the release page carries the alt text. */}
             {r.data.image && (
-              <a href={`${base}/news/${r.id}`} tabindex="-1" aria-hidden="true" class="hidden lg:inline-block mt-4 hover:opacity-90 transition-opacity">
+              <a href={releaseHref(base, r)} tabindex="-1" aria-hidden="true" class="hidden lg:inline-block mt-4 hover:opacity-90 transition-opacity">
                 <Image src={r.data.image} alt="" widths={[128, 256]} sizes="8rem" class="block h-32 w-auto" />
               </a>
             )}
           </div>
           <div class="lg:col-span-8 max-w-3xl">
             <h2 class="text-2xl md:text-3xl mb-3">
-              <a href={`${base}/news/${r.id}`} class="underline-reveal underline-offset-4 decoration-2">{r.data.title}</a>
+              <a href={releaseHref(base, r)} class="underline-reveal underline-offset-4 decoration-2">{r.data.title}</a>
             </h2>
             <p class="mb-0 text-gray-dark">{firstSentence(r)}</p>
           </div>
