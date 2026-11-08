@@ -236,6 +236,8 @@ Master Plan p. 17: the founder serves as unpaid CEO during the startup phase, th
 | Organizational Health | Financial performance and revenue diversification · Board engagement and governance effectiveness · Staff retention and professional development · Partnership growth and satisfaction · Compliance and audit outcomes | Monthly internal dashboards · Quarterly board reports · Annual audit and compliance review |
 
 > **Source:** Master Plan pp. 31–32 (verbatim)
+> **On the page (November 2026):** one row per area, the area's metrics one per line. The reporting cadence column becomes a **Reporting calendar** below the rows: every report grouped by frequency (Monthly, Quarterly, Semiannual, Annual), each followed by its area, built from the table above (`src/data/governance.ts`). The frequency is the line's first word ("Quarterly program dashboards" → Quarterly: "Program dashboards"); lines without one ("Employer advisory council reviews", "Partner feedback sessions", "Federal grant reporting as required", "Public presentations and exhibitions") are grouped under "Other". The calendar's label line ("Every area's reports, by how often they come out.") is new.
+> **⚠ Review:** the calendar's label line and the "Other" group name are new wording.
 
 ---
 

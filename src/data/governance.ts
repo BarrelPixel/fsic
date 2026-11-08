@@ -60,3 +60,21 @@ export const metrics = [
   { name: 'Civic Engine', number: 4, tone: 'lagoon', items: ['Attendance at community STEM nights', 'Participation in exhibitions and public events', 'Arts-and-space program engagement', 'Public awareness and perception metrics', 'Volunteer and mentorship participation'], cadence: ['Quarterly community engagement summaries', 'Annual civic impact report', 'Public presentations and exhibitions'] },
   { name: 'Organizational Health', number: null, tone: null, items: ['Financial performance and revenue diversification', 'Board engagement and governance effectiveness', 'Staff retention and professional development', 'Partnership growth and satisfaction', 'Compliance and audit outcomes'], cadence: ['Monthly internal dashboards', 'Quarterly board reports', 'Annual audit and compliance review'] },
 ] as const;
+
+// The reporting calendar: every area's reporting lines, grouped by how often they come out. The
+// frequency is the line's first word ("Quarterly program dashboards" → Quarterly: "Program dashboards");
+// lines without one go under "Other". Derived from `metrics`, so each report is still defined once.
+const FREQUENCIES = ['Monthly', 'Quarterly', 'Semiannual', 'Annual'] as const;
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+export const reportingCalendar = [...FREQUENCIES, 'Other' as const].map((frequency) => ({
+  frequency,
+  reports: metrics.flatMap((m) =>
+    m.cadence
+      .filter((line) => (frequency === 'Other' ? !FREQUENCIES.some((f) => line.startsWith(`${f} `)) : line.startsWith(`${frequency} `)))
+      .map((line) => ({
+        report: frequency === 'Other' ? line : capitalize(line.slice(frequency.length + 1)),
+        area: m.name,
+      })),
+  ),
+})).filter((group) => group.reports.length > 0);
