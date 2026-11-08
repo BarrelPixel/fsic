@@ -1,10 +1,131 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComingSoon from '../components/ComingSoon.astro';
+import Button from '../components/Button.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Row from '../components/Row.astro';
+import DashList from '../components/DashList.astro';
+
+// Copy: src/content/copy/strategic-moment.md (Draft). Sections are verbatim from fsic.space/about-4,
+// except the lead (Master Plan p. 4) and the development figures (Master Plan pp. 4 and 6, unnamed:
+// the site does not name the development, docs/08 §3.3).
+
+const total = 4;
+
+const capacity = ['workforce development', 'applied research', 'entrepreneurship', 'enabling infrastructure', 'cross-sector governance'];
+
+const figures = [
+  { value: 'More than 10,000', measure: 'homes' },
+  { value: 'Over 10 million', measure: 'square feet of industrial and commercial space' },
+];
 ---
-<BaseLayout title="The Strategic Moment" description="Why now — the convergence of Space Coast growth, regional development, and federal funding shifts that make FSIC essential.">
-  <ComingSoon
-    title="The Strategic Moment"
-    description="Explore why the convergence of Space Coast growth, regional development, and a national shift toward place-based innovation ecosystems makes coordinated action essential for Southeast Volusia."
-  />
+<BaseLayout title="The Strategic Moment" description="Southeast Volusia is entering one of the most consequential economic windows in its modern history. Why the Florida Space Innovation Center is needed now.">
+
+  <!-- Interior page template (DESIGN.md): PageHero, four narrative sections, closing -->
+  <PageHero title="Why Now — The Strategic Moment">
+    <p class="text-2xl text-white/90 leading-snug mb-0">
+      Southeast Volusia is entering one of the most consequential economic windows in its modern history.
+    </p>
+  </PageHero>
+
+  <!-- 01 · Narrative: the consequence as the thesis (cols 1–4), the situation (cols 5–12) -->
+  <Section id="inflection-point" index={1} total={total} heading="A Region at an Inflection Point">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">
+        Without intervention, we risk absorbing population growth without gaining the high-wage jobs and employer investment that should accompany it.
+      </p>
+      <div class="max-w-3xl text-lg">
+        <p>
+          The Space Coast is now the busiest launch corridor in the world, with commercial, civil, and defense missions driving rapid expansion in spacecraft manufacturing, robotics, autonomy, and dual-use technologies.
+        </p>
+        <p class="mb-0">
+          Yet Southeast Volusia lacks the coordinated systems needed to capture this opportunity.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- 02 · Narrative: the five areas of capacity as a list, as in the Master Plan (p. 4) -->
+  <Section id="place-based-innovation" index={2} total={total} spacing="stacked" heading="A National Shift Toward Place-Based Innovation">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">
+        Southeast Volusia can fill that gap — but only if we organize now.
+      </p>
+      <div class="max-w-3xl text-lg">
+        <p>
+          Federal and state policy is moving decisively toward regional innovation ecosystems. Billions in funding — CHIPS and Science Act, EDA Tech Hubs, NSF Engines, and state programs — are flowing to regions that can demonstrate coordinated capacity across:
+        </p>
+        <DashList items={capacity} class="mb-6 text-gray-dark" />
+        <p class="mb-0">
+          The Space Coast has no civilian-facing innovation hub capable of competing for these investments.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- 03 · The catalyst on night: the figures, introduced by the first half of the sentence (cols 1–4); the
+       consequence and the before/after pair as
+       adjacent rows on one axis (Master Plan pp. 4 and 6; the development is not named) -->
+  <Section id="catalyst" index={3} total={total} dark heading="Southeast Volusia County: A Once-in-a-Generation Catalyst">
+    <Grid>
+      <div slot="label">
+        <p class="mb-5 font-sans text-white/75">A master-planned development in Southeast Volusia will add:</p>
+        <dl class="space-y-6">
+          {figures.map((f) => (
+            <div>
+              <dt class="font-display text-3xl md:text-4xl font-bold leading-tight text-white">{f.value}</dt>
+              <dd class="mt-1 font-sans text-white/75">{f.measure}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="mt-6 mb-0 font-sans text-sm text-white/60">Source: FSIC Master Plan 2026–2031, pp. 4 and 6.</p>
+      </div>
+      <div>
+        <p class="max-w-3xl text-lg text-white/85 mb-10">
+          This growth will reshape the region's workforce needs, employer mix, and long-term economic trajectory.
+        </p>
+        <dl>
+          <Row label="Without FSIC, Volusia County risks becoming:" rule="bottom" dark>
+            <DashList items={['a logistics corridor', 'a low-wage service economy', 'a commuter community for neighboring counties']} marker="gray" class="text-white/75" />
+          </Row>
+          <Row label="With FSIC, Volusia County becomes:" rule="bottom" dark class="pt-5">
+            <DashList items={['a magnet for high-value employers', 'a hub for space and advanced manufacturing', 'a destination for innovation, education, and community engagement', 'a regional anchor for economic mobility and identity']} marker="lagoon-light" class="text-white" />
+          </Row>
+        </dl>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- 04 · The two possible outcomes, then FSIC's role -->
+  <Section id="window" index={4} total={total} heading="The Window Is Open — But Not for Long">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">
+        The next five years will determine whether Southeast Volusia becomes:
+      </p>
+      <div class="max-w-3xl text-lg">
+        <DashList items={["a full participant in the Space Coast's next decade of growth, or", 'a region that watches opportunity flow past it']} spacious class="mb-8 font-display text-2xl font-semibold text-navy" />
+        <p class="mb-0">
+          FSIC is designed to meet this moment. It provides the coordinated talent, innovation, commercialization, and civic infrastructure required to compete for high-value jobs, federal investment, and long-term economic mobility.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- CLOSING: the callout as the statement, next steps on the content axis -->
+  <Section rule={false}>
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <div>
+        <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10 max-w-3xl">
+          FSIC transforms fragmented potential into coordinated progress. It ensures that opportunity flows into Southeast Volusia — not past it.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <Button href="/model">Explore the FSIC Model</Button>
+          <Button href="/economic-impact" variant="secondary">View Economic Impact</Button>
+        </div>
+      </div>
+    </Grid>
+  </Section>
+
 </BaseLayout>

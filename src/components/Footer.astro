@@ -1,26 +1,20 @@
 ---
+// Footer navigation reads the same structure as the header (src/lib/nav.ts): one column per group,
+// then the single links. Each page appears once.
+import { getNav, isGroup, href as navHref, type NavLink } from '../lib/nav';
+
 const base = import.meta.env.BASE_URL;
-const primaryLinks = [
-  { label: 'Home', href: base },
-  { label: 'The Model', href: `${base}/model` },
-  { label: 'Economic Impact', href: `${base}/economic-impact` },
-  { label: 'Deployment', href: `${base}/deployment` },
-  { label: 'Governance', href: `${base}/governance` },
-  { label: 'News', href: `${base}/news` },
-  { label: 'Contact', href: `${base}/contact` },
-];
+const nav = getNav();
+
+const groups = nav.filter(isGroup);
+const grouped = new Set(groups.flatMap((g) => g.links.map((l) => l.path)));
+const singles: NavLink[] = [{ label: 'Home', path: '/' }, ...nav.filter((i): i is NavLink => !isGroup(i) && !grouped.has(i.path))];
+const columns = [...groups.map((g) => ({ label: g.label, links: g.links })), { label: 'FSIC', links: singles }];
 
 const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/florida-space-innovation-center/' },
   { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61589280681125' },
   { label: 'X', href: 'https://x.com/FLSpaceCenter' },
-];
-
-const secondaryLinks = [
-  { label: 'The Strategic Moment', href: `${base}/strategic-moment` },
-  { label: 'Programs & Facilities', href: `${base}/programs-facilities` },
-  { label: 'Partnership & Funding', href: `${base}/partnership-funding` },
-  { label: 'Long-Term Vision', href: `${base}/long-term-vision` },
 ];
 ---
 <footer class="font-sans bg-night text-white/80 border-t border-white/10" role="contentinfo">
@@ -54,33 +48,23 @@ const secondaryLinks = [
         </ul>
       </div>
 
-      <!-- Primary Links -->
-      <div>
-        <p class="text-white font-semibold text-sm mb-4">Navigation</p>
-        <ul class="flex flex-col gap-2" role="list">
-          {primaryLinks.map((link) => (
-            <li>
-              <a href={link.href} class="text-sm text-white/70 hover:text-white transition-colors">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Secondary Links -->
-      <div>
-        <p class="text-white font-semibold text-sm mb-4">Explore</p>
-        <ul class="flex flex-col gap-2" role="list">
-          {secondaryLinks.map((link) => (
-            <li>
-              <a href={link.href} class="text-sm text-white/70 hover:text-white transition-colors">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <!-- Site navigation, grouped as in the header -->
+      <nav class="md:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-8" aria-label="Footer navigation">
+        {columns.map((col) => (
+          <div>
+            <p class="text-white font-semibold text-sm mb-4">{col.label}</p>
+            <ul class="flex flex-col gap-2" role="list">
+              {col.links.map((link) => (
+                <li>
+                  <a href={navHref(base, link.path)} class="text-sm text-white/70 hover:text-white transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </nav>
     </div>
 
     <!-- Bottom Bar -->

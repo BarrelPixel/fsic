@@ -1,14 +1,13 @@
 ---
+// Main navigation. The structure lives in src/lib/nav.ts (shared with the footer).
+// Groups are disclosure buttons (aria-expanded), not ARIA menus: they open on click and close on
+// Escape, an outside click, or when focus leaves. Without JS they open on hover and focus-within
+// (global.css, "Navigation dropdowns"). The script adds aria-expanded and aria-controls when it runs,
+// so without JS the buttons don't announce a collapsed state while their panel is showing.
+import { getNav, isGroup, href as navHref } from '../lib/nav';
+
 const base = import.meta.env.BASE_URL;
-const navItems = [
-  { label: 'Home', href: base },
-  { label: 'The Model', href: `${base}/model` },
-  { label: 'Economic Impact', href: `${base}/economic-impact` },
-  { label: 'Deployment', href: `${base}/deployment` },
-  { label: 'Governance', href: `${base}/governance` },
-  { label: 'News', href: `${base}/news` },
-  { label: 'Contact', href: `${base}/contact` },
-];
+const nav = getNav();
 
 const stripSlash = (path: string) => (path.length > 1 ? path.replace(/\/+$/, '') : path);
 const currentPath = stripSlash(Astro.url.pathname);
@@ -20,6 +19,28 @@ const isActive = (href: string) => {
   if (target === homePath) return currentPath === homePath;
   return currentPath === target || currentPath.startsWith(`${target}/`);
 };
+
+const items = nav.map((item, i) =>
+  isGroup(item)
+    ? {
+        kind: 'group' as const,
+        id: `nav-group-${i}`,
+        label: item.label,
+        links: item.links.map((l) => ({ label: l.label, href: navHref(base, l.path), active: isActive(navHref(base, l.path)) })),
+      }
+    : { kind: 'link' as const, label: item.label, href: navHref(base, item.path), active: isActive(navHref(base, item.path)) },
+);
+const groupActive = (links: { active: boolean }[]) => links.some((l) => l.active);
+
+// The phone menu is one stacked list, so each page appears once there (Contact is also in
+// Get Involved; on the desktop bar the extra top-level Contact works as a call to action).
+const inGroups = new Set(items.flatMap((i) => (i.kind === 'group' ? i.links.map((l) => l.href) : [])));
+const mobileItems = items.filter((i) => i.kind === 'group' || !inGroups.has(i.href));
+
+const itemClass = (active: boolean) => [
+  'px-3 py-2 text-sm font-medium rounded transition-colors',
+  active ? 'bg-white/15 text-white' : 'text-white/80 hover:text-white hover:bg-white/10',
+];
 ---
 <header class="font-sans bg-night text-white relative z-50 border-b border-white/10">
   <div class="container">
@@ -36,22 +57,43 @@ const isActive = (href: string) => {
 
       <!-- Desktop Nav -->
       <ul class="hidden lg:flex items-center gap-1" role="list">
-        {navItems.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class:list={[
-                'px-3 py-2 text-sm font-medium rounded transition-colors',
-                isActive(item.href)
-                  ? 'bg-white/15 text-white'
-                  : 'text-white/80 hover:text-white hover:bg-white/10',
-              ]}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+        {items.map((item) =>
+          item.kind === 'group' ? (
+            <li class="relative" data-nav-group>
+              <button
+                type="button"
+                class:list={[itemClass(groupActive(item.links)), 'inline-flex items-center gap-1.5']}
+                data-controls={item.id}
+              >
+                {item.label}
+                <svg class="nav-chevron w-3.5 h-3.5 transition-transform" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div id={item.id} class="nav-panel absolute left-0 top-full pt-2 min-w-60" data-nav-panel>
+                <ul class="bg-night border border-white/15 rounded p-2 shadow-lg shadow-black/30" role="list">
+                  {item.links.map((link) => (
+                    <li>
+                      <a
+                        href={link.href}
+                        class:list={['block', itemClass(link.active)]}
+                        aria-current={link.active ? 'page' : undefined}
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ) : (
+            <li>
+              <a href={item.href} class:list={itemClass(item.active)} aria-current={item.active ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ),
+        )}
       </ul>
 
       <!-- Mobile Menu Button -->
@@ -70,32 +112,39 @@ const isActive = (href: string) => {
     </nav>
   </div>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu: groups listed under their names (no nested toggles), rules between entries -->
   <div id="mobile-menu" class="hidden lg:hidden bg-night border-t border-white/10">
-    <div class="container py-4">
-      <ul class="flex flex-col gap-1" role="list">
-        {navItems.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class:list={[
-                'block px-3 py-2.5 text-sm font-medium rounded transition-colors',
-                isActive(item.href)
-                  ? 'bg-white/15 text-white'
-                  : 'text-white/80 hover:text-white hover:bg-white/10',
-              ]}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+    <div class="container py-2">
+      <ul class="divide-y divide-white/10" role="list">
+        {mobileItems.map((item) =>
+          item.kind === 'group' ? (
+            <li class="py-2">
+              <p id={`${item.id}-m`} class="px-3 pt-2 pb-1 mb-0 text-sm font-semibold text-white/60">{item.label}</p>
+              <ul class="flex flex-col gap-1" role="list" aria-labelledby={`${item.id}-m`}>
+                {item.links.map((link) => (
+                  <li>
+                    <a href={link.href} class:list={['block py-2.5', itemClass(link.active)]} aria-current={link.active ? 'page' : undefined}>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li class="py-2">
+              <a href={item.href} class:list={['block py-2.5', itemClass(item.active)]} aria-current={item.active ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ),
+        )}
       </ul>
     </div>
   </div>
 </header>
 
 <script>
+  // Mobile menu
   const toggle = document.getElementById('mobile-menu-toggle');
   const menu = document.getElementById('mobile-menu');
   const menuIcon = document.getElementById('menu-icon');
@@ -107,5 +156,39 @@ const isActive = (href: string) => {
     menu?.classList.toggle('hidden');
     menuIcon?.classList.toggle('hidden');
     closeIcon?.classList.toggle('hidden');
+  });
+
+  // Desktop dropdowns (disclosure pattern)
+  const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-nav-group]'));
+  const buttonOf = (group: HTMLElement) => group.querySelector<HTMLButtonElement>('button')!;
+
+  const setOpen = (group: HTMLElement, open: boolean) => {
+    group.toggleAttribute('data-open', open);
+    buttonOf(group).setAttribute('aria-expanded', String(open));
+  };
+
+  groups.forEach((group) => {
+    const button = buttonOf(group);
+    // State attributes only exist once the script runs (see the note at the top of this file).
+    button.setAttribute('aria-expanded', 'false');
+    if (button.dataset.controls) button.setAttribute('aria-controls', button.dataset.controls);
+    button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') !== 'true';
+      groups.forEach((g) => g !== group && setOpen(g, false));
+      setOpen(group, open);
+    });
+    group.addEventListener('focusout', (event) => {
+      if (!group.contains(event.relatedTarget as Node | null)) setOpen(group, false);
+    });
+    group.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && group.hasAttribute('data-open')) {
+        setOpen(group, false);
+        button.focus();
+      }
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    groups.forEach((g) => !g.contains(event.target as Node) && setOpen(g, false));
   });
 </script>
