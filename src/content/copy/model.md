@@ -9,7 +9,9 @@
 
 ## HERO
 
-**Headline:** [TODO — e.g. "One Coordinated Platform. Four Integrated Engines." (matches home.md)]
+**Headline:** One Coordinated Platform. Four Integrated Engines.
+
+> **Source:** home.md (approved), Four-Engine Model headline.
 
 **Body:**
 FSIC is built on a four-engine architecture that scales in phases and aligns with national best practices for place-based innovation ecosystems.
@@ -266,4 +268,6 @@ The Civic Engine is FSIC's community-anchoring platform, building public trust, 
 
 ## CTA
 
-**CTAs:** [TODO — suggest "View the Deployment Timeline" → /deployment; "Explore Programs & Facilities" → /programs-facilities]
+**CTAs:** View the Deployment Timeline → /deployment; Explore Programs & Facilities → /programs-facilities
+
+> **⚠ Review:** Both destinations are still "Coming soon" pages.

@@ -1,0 +1,34 @@
+---
+// A label | content row inside the content column (DESIGN.md "Grid"): 2 + 6 of 8 columns from md.
+// Use inside a <dl>. The label shares the first line of its content (md:pt-[0.3rem]).
+//   rule="top"     hairline above (rows that follow other content)
+//   rule="bottom"  hairline below (a row that opens the content column, so it keeps the shared top line)
+//   list           the content is a list of <details> items, so pull it up to the label's line
+interface Props {
+  label: string;
+  /** Shown after the label in grey, e.g. "Components · 6". */
+  count?: number;
+  rule?: 'top' | 'bottom';
+  list?: boolean;
+  dark?: boolean;
+  class?: string;
+}
+
+const { label, count, rule = 'top', list = false, dark = false, class: className } = Astro.props;
+const line = dark ? 'border-white/25' : 'border-navy/15';
+---
+<div
+  class:list={[
+    'grid gap-y-3 md:grid-cols-8 md:gap-x-8',
+    rule === 'top' ? ['border-t', line, list ? 'pt-5' : 'py-5'] : ['border-b', line, 'pb-6'],
+    className,
+  ]}
+>
+  <dt class:list={['md:col-span-2 md:pt-[0.3rem] font-sans text-sm font-semibold', dark ? 'text-white' : 'text-navy']}>
+    {label}
+    {count !== undefined && <span class="font-medium text-gray"> · {count}</span>}
+  </dt>
+  <dd class:list={['md:col-span-6', list && 'md:-mt-3']}>
+    <slot />
+  </dd>
+</div>

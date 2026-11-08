@@ -17,7 +17,7 @@ What to avoid: starfields, rockets, planets, glowing "space tech" gradients. Eve
 - It's the one bold element on the page, and everything around it stays quiet.
 - It's the **only** automatic animation. The arc draws once when the map scrolls into view. Without JS, or with reduced motion, it appears fully drawn.
 - It's labeled "Schematic, not to scale." Don't add distances or figures to the map unless they're sourced.
-- The arc and its landing point can be reused at a smaller size on interior page headers. Don't add a second signature element.
+- It appears on the homepage only. Interior pages open with `PageHero` (see "Interior page template"), not a smaller copy of the arc. Don't add a second signature element.
 
 ## Color
 
@@ -25,7 +25,7 @@ Each color has a meaning. Don't use them as decoration.
 
 | Token | Hex | Meaning and use |
 |-------|-----|-----------------|
-| `night` | `#0D2138` | Dark sections: hero, economics, vision, final CTA, header, footer |
+| `night` | `#0D2138` | Dark sections: heroes, economics, vision, guiding principles, final CTA, header, footer |
 | `navy` | `#163256` | Brand. Headings and text on light backgrounds |
 | `orange` | `#E37A2D` | Brand. **The space industry**: the launch arc, primary buttons, data bars, industry-side markers |
 | `lagoon` | `#3E7F74` | **The community and the coast**: land on the map, civic and community content, accent rules on light backgrounds |
@@ -76,6 +76,18 @@ Use these steps and no others. Hierarchy comes from scale, weight and position, 
 
 The site uses one Swiss-style modular grid. Every section shares the same vertical lines, so content aligns down the whole page.
 
+**Build pages from the grid components** (`src/components/`), not hand-written grid classes. They carry the rules below, so new pages can't drift from them:
+
+| Component | What it does |
+|-----------|--------------|
+| `Section` | Section shell: `RunningHead`, heavy rule, headline across cols 1–9, optional intro line. Props: `index`/`total`/`label`/`dot` for the running head, `heading` (or a `heading` slot), `intro`, `dark`, `spacing` (`default`, `stacked` for a white section under another white one, `large` for the final call to action), `rule={false}` for a closing statement, a `media` slot for a full-bleed image before the container |
+| `Grid` | The label \| content split (cols 1–4 \| 5–12), hung from one top line. `labelOffset` for content that opens with a peer rule, `stickyLabel` + `labelAs="header"` for spec sections, `labelLast` for a note that should follow the content on mobile |
+| `Row` | A label \| content row inside the content column, for use in a `<dl>`. `rule="bottom"` when it opens the content column, `count` for "Components · 6", `list` when the content is a list of `<details>` |
+| `DashList` | A list with dash markers. `marker` carries the meaning (gray, navy, orange, lagoon, lagoon-light), `columns` for short items, `spacious` for longer lines |
+| `PageHero` | Interior page opening (below) |
+| `SectionBar` | Sticky in-page navigation with the current section marked |
+| `RunningHead` | Used by `Section`; use directly only in custom layouts |
+
 - **12 columns** at `lg` (`lg:grid-cols-12 lg:gap-x-8`) inside the container (max 76rem, 1.5rem gutter).
 - **Label column: cols 1–4** (`lg:col-span-4`). It holds the section's framing: a thesis statement, an intro sentence, an engine's name, or a short list such as who can take part.
 - **Content column: cols 5–12** (`lg:col-span-8`). It holds the detail: body text, lists, data, buttons.
@@ -101,7 +113,7 @@ Headline across cols 1–9 (max-w-4xl)
   - A closing row puts the statement in the label column and the action (button) in the content column, both hung from the rule above. Don't push buttons to the right edge; everything is flush left.
 - **One numbering system per page.** Section numbers (`01 / 07`) and engine numbers (`01`–`04`, the same on every page) are the only numerals used as labels. Sub-sequences inside a section use words ("First:", "Then:") rather than a second set of numbers.
 - Separate sections with the heavy rule and whitespace. Prefer white with rules over background fills. Use `night` for a few anchor sections (hero, economics, vision, principles, final CTA). Use `salt` sparingly.
-- `.section` is outside a CSS layer and overrides padding utilities. When two white sections stack, give the second `pb-[var(--section-py)]` instead of `.section` so the gap doesn't double.
+- `.section` is outside a CSS layer and overrides padding utilities. When two white sections stack, give the second `spacing="stacked"` so the gap doesn't double.
 
 ### Structure should show what the content is
 
@@ -113,6 +125,19 @@ Headline across cols 1–9 (max-w-4xl)
 - Long lists of items people may want to read in full use native `<details>` with a + that turns to ×. Don't hide short lists.
 - Don't make identical cards with shadows. No diagonal dividers or decorative grids.
 - **Left-aligned by default.** Center only short, standalone moments.
+
+## Interior page template
+
+Every interior page uses the same frame. The Model page (`src/pages/model.astro`) is the reference.
+
+1. **`PageHero`** on `night`: the page title across the full measure, a rule, then label | content. The `aside` slot (label column) holds a short note such as a definition. It moves below the content on mobile. The default slot holds the lead (serif `text-2xl`) and, when the page has parallel sections, a numbered index of them (number, name, one line), linking to each.
+2. **The body sections**, each a `Section` with a `RunningHead`:
+   - *Narrative sections* (an argument told in order): headline above the grid, thesis in the label column, detail in the content column. This is the homepage pattern.
+   - *Spec sections* (several items with the same shape, such as the four engines): no headline above the grid. The item's name is the `h2` in a sticky label column, and the content column is a summary followed by `Row`s, so items can be compared row by row. Wrap the run in an element whose first child is a `SectionBar`.
+3. **Optional principles or context section** on `night`, `h2` in the label column.
+4. **Closing**: one statement (`font-display text-3xl`–`4xl`) and the next steps in the content column, `rule={false}`.
+
+Don't put the coastline map or the launch arc on interior pages.
 
 ## Data
 
@@ -127,7 +152,7 @@ Headline across cols 1–9 (max-w-4xl)
 
 ## Motion
 
-- One automatic animation per page at most: the launch arc on the homepage.
+- One automatic animation on the whole site: the launch arc on the homepage. Interior pages have none.
 - No fade-in on scroll, no hover lift on cards, no count-up numbers.
 - Interaction feedback (hover color, focus ring, menu open) is fine.
 - Always respect `prefers-reduced-motion`.
@@ -140,6 +165,7 @@ Headline across cols 1–9 (max-w-4xl)
 | `CoastlineMap` | The signature element. Scripted only for the visibility trigger |
 | `Header` / `Footer` | `night` background, FSIC logo (`public/images/fsic-logo-reverse.png`, the dark-background version), social links in the footer |
 | `RunningHead` | Section index above the heavy rule: `01 / 07`, an optional label, an optional engine-color `dot`, and `dark` for night sections. Decorative, so `aria-hidden` |
+| `Section`, `Grid`, `Row`, `DashList`, `PageHero`, `SectionBar` | The grid components. See "Grid" for props and when to use each |
 | `ComingSoon` | Placeholder for interior pages until they're built |
 
 ## Accessibility floor
@@ -150,7 +176,7 @@ Headline across cols 1–9 (max-w-4xl)
 
 ## Checklist for new pages
 
-1. Does every section sit on the 12-column grid, with framing in cols 1–4 and detail in cols 5–12?
+1. Is the page built from the grid components (`Section`, `Grid`, `Row`, `DashList`, `PageHero`), with framing in cols 1–4 and detail in cols 5–12?
 2. Does the page show its content's structure, rather than using cards by default?
 3. Is orange used only for industry or action, and lagoon for community?
 4. Is there one memorable element at most?

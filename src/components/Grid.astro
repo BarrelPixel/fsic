@@ -1,0 +1,42 @@
+---
+// The label | content split (DESIGN.md "Grid"): cols 1–4 and cols 5–12 at lg, stacked below.
+// Put the framing (thesis, intro, name) in the `label` slot and the detail in the default slot.
+// Columns hang from one top line (items-start). `labelOffset` gives the label column the same
+// offset as a content column that opens with a peer rule (border-t-2 + pt-5).
+interface Props {
+  /** Label column goes after the content on small screens (e.g. a definition note). */
+  labelLast?: boolean;
+  labelOffset?: boolean;
+  /** Pin the label column while the content scrolls (spec sections). */
+  stickyLabel?: boolean;
+  /** Element for the label column. */
+  labelAs?: 'div' | 'header';
+  class?: string;
+  labelClass?: string;
+}
+
+const {
+  labelLast = false,
+  labelOffset = false,
+  stickyLabel = false,
+  labelAs: LabelTag = 'div',
+  class: className,
+  labelClass,
+} = Astro.props;
+---
+<div class:list={['grid gap-y-8 lg:grid-cols-12 lg:gap-x-8 lg:items-start', className]}>
+  <LabelTag
+    class:list={[
+      'lg:col-span-4',
+      labelLast && 'order-last lg:order-none',
+      labelOffset && 'lg:pt-[1.375rem]',
+      stickyLabel && 'lg:sticky lg:top-20 lg:self-start',
+      labelClass,
+    ]}
+  >
+    <slot name="label" />
+  </LabelTag>
+  <div class="lg:col-span-8">
+    <slot />
+  </div>
+</div>

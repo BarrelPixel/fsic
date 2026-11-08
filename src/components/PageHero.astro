@@ -1,0 +1,22 @@
+---
+// Interior page opening (DESIGN.md "Interior page template"): night band, page title across the
+// full measure, a rule, then label | content. The `aside` slot (label column) holds a short note,
+// such as a definition; it moves below the content on small screens. The default slot holds the
+// lead and, if the page has sections, an index of them.
+import Grid from './Grid.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+<section class="bg-night text-white">
+  <div class="container pt-14 pb-20 md:pt-20 md:pb-24">
+    <h1 class="text-white max-w-5xl mb-12 md:mb-16">{title}</h1>
+    <Grid labelLast class="gap-y-10 border-t border-white/25 pt-8">
+      <Fragment slot="label"><slot name="aside" /></Fragment>
+      <slot />
+    </Grid>
+  </div>
+</section>

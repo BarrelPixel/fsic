@@ -1,6 +1,6 @@
 # 04 — Design System
 
-> **Superseded in part by `/DESIGN.md`** (November 2026: the "Within Sight of the Cape" direction). For colors, type (Barlow Semi Condensed, Source Serif 4 and Archivo), the 12-column grid and section anatomy, layout and motion, follow `DESIGN.md`. The specs below are from the first build. Some no longer apply: the system font, white-on-orange buttons, StatBlock and EngineCard.
+> **Superseded in part by `/DESIGN.md`** (November 2026: the "Within Sight of the Cape" direction). For colors, type (Barlow Semi Condensed, Source Serif 4 and Archivo), the 12-column grid and section anatomy, layout and motion, follow `DESIGN.md`. The specs below are from the first build. Some no longer apply: the system font, white-on-orange buttons, and the component specifications (retired below).
 
 ## Color Tokens
 
@@ -51,65 +51,7 @@ Base unit: `0.25rem` (4px). Use Tailwind's default spacing scale, supplemented b
 
 ## Component Specifications
 
-### Button
-Two variants: **Primary** and **Secondary**.
-
-**Primary (Orange):**
-- Background: `--color-orange`
-- Text: `--color-white`
-- Padding: `0.875rem 2rem`
-- Border-radius: `0.375rem`
-- Font-weight: 600
-- Font-size: 1rem
-- Hover: background darkens to `--color-orange-dark`
-- Transition: 200ms ease
-
-**Secondary (Outline):**
-- Background: transparent
-- Border: 2px solid `--color-navy` (or `--color-white` on dark backgrounds)
-- Text: `--color-navy` (or `--color-white` on dark)
-- Same padding, radius, weight as primary
-- Hover: fill navy with white text (or fill white with navy text on dark)
-
-### StatBlock
-Displays a single economic impact figure.
-- **Value:** Stat Value typography, color `--color-orange`
-- **Label:** Stat Label typography, color `--color-gray` (or `--color-white` on dark)
-- Layout: stacked (value above label), centered
-- Grid: 2-up on mobile, 4-up on desktop
-
-### EngineCard
-Displays one of the four engines.
-- **Title:** H4 typography, `--color-navy`
-- **Subtitle (em dash label):** Body Small, `--color-gray`
-- **Body:** Body typography
-- Background: `--color-white`
-- Border-top: 4px solid `--color-orange`
-- Padding: `2rem`
-- Shadow: subtle (`0 1px 3px rgba(0,0,0,0.1)`)
-- Grid: 1-up mobile, 2-up tablet, 4-up desktop
-
-### TimelineRow
-Displays a phase in the deployment timeline.
-- **Phase label:** H4 typography, `--color-orange`
-- **Description:** Body typography
-- Left border or marker: `--color-orange`
-- Alternating background: transparent / `--color-gray-light`
-
-### SectionHeader
-Standard section header pattern.
-- **Headline:** H2 typography
-- **Optional subhead:** Body Large typography, `--color-gray`
-- Centered alignment for most sections
-- Left-aligned for content-heavy sections
-- Bottom margin: `2rem`
-
-### Callout
-Highlighted text block (used for closing statements).
-- Background: `--color-gray-light` or `--color-navy`
-- Padding: `2rem`
-- Border-left: 4px solid `--color-orange`
-- Text: Body Large typography, italic optional
+Retired. The first build's components (StatBlock, EngineCard, TimelineRow, SectionHeader, Callout) and its button specs no longer match the site: they used white text on orange, centered headers, shadowed cards and filled callouts, all of which `DESIGN.md` rules out. For components, follow the "Grid" and "Components" sections of `/DESIGN.md` and the files in `src/components/`.
 
 ## Responsive Breakpoints
 

@@ -23,7 +23,8 @@ There is no linter or test suite. `npm run build` is the check.
 
 ```
 src/pages/           One .astro file per route. index.astro and model.astro are built out; the rest use <ComingSoon>
-src/components/      Button, CoastlineMap, Header, Footer, ComingSoon, RunningHead
+src/components/      Grid components (Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead),
+                     Button, CoastlineMap, Header, Footer, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, arc animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
@@ -36,7 +37,7 @@ mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
 
 ### Design
 Read **`DESIGN.md`** before changing any UI. In short:
-- Every page sits on one 12-column grid: framing in cols 1–4, detail in cols 5–12, sections opened by a `RunningHead` on a heavy rule. See DESIGN.md "Grid".
+- Every page sits on one 12-column grid: framing in cols 1–4, detail in cols 5–12. Build sections from the grid components (`Section`, `Grid`, `Row`, `DashList`), and interior pages from the template in DESIGN.md "Interior page template" (`PageHero` first; `src/pages/model.astro` is the reference). Don't hand-write grid classes.
 - The coastline and launch arc is the only signature element and the only automatic animation.
 - Orange means the space industry. Lagoon green means the community. Don't use either as decoration.
 - Never put white text on orange, and never use orange text on light backgrounds (contrast).
