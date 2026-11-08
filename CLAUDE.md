@@ -32,6 +32,7 @@ src/content/copy/    Copy deck: one Markdown file per page (see below)
 src/content/news/    Press releases, one Markdown file each, wording as published (built into /news and /news/<slug>);
                      images/ holds the graphic published with each release
 src/lib/news.ts      Press release helpers
+src/lib/nav.ts       Site navigation (groups and links), shared by Header and Footer
 docs/                Project docs 00–09 (IA, content guidelines, site audit, copy-deck workflow)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
@@ -60,7 +61,7 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - **Base path:** internal links must include `import.meta.env.BASE_URL` (currently `/fsic`, no trailing slash). `Button` handles this for hrefs starting with `/`. Elsewhere, write `` `${base}/path` ``. A bare `/path` breaks on GitHub Pages.
 - **CSS layers:** base element styles in `global.css` live inside `@layer base`. Keep them there. Styles outside a layer override Tailwind utilities.
 - Use the theme tokens (`bg-night`, `text-lagoon`, `bg-salt`…) rather than raw hex values.
-- Header nav highlighting uses the `isActive()` helper in `Header.astro`. Home matches only itself. The footer's Navigation list mirrors the header nav; keep them in sync.
+- **Navigation** lives in `src/lib/nav.ts`; Header and Footer both read it, so change menus there, not in the components. Pages are grouped by question (Why FSIC, The Model, Get Involved) with plain links for the rest. A page still on `<ComingSoon>` has `built: false` and stays out of both menus; set it to `true` (or remove the flag) when the page ships. Header highlighting uses `isActive()` in `Header.astro` (Home matches only itself); a group is highlighted when one of its pages is current.
 - **Press releases:** add `src/content/news/<YYYY-MM-DD>-<slug>.md` with `title` and `date`. If the release was published with a graphic, put it in `src/content/news/images/` and set `image` and `imageAlt` (required with `image`; transcribe the words in the graphic). The release page uses it as the share image.
 - `BaseLayout` takes an optional `image` (a built image `src`, e.g. from `getImage()`) for `og:image` and `twitter:image`. Pages without one have no share image yet.
 - The `<html>` element gets a `js` class from an inline script in `BaseLayout`. Use it to gate JS-only states so the page still works without JS.
