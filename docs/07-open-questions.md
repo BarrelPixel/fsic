@@ -45,7 +45,7 @@ Items requiring stakeholder input or decisions before full launch.
 
 ## Content Conflicts from the Current Site Audit
 Decisions needed before copy can be approved. Details are in `08-current-site-audit.md` §3.
-- [ ] **Development figures:** regional (20,000 homes, 12M sq ft, unsourced) or the Master Plan's single-development figures (10,000 homes, 10M sq ft)? The site no longer names that development.
+- [x] **Development figures:** resolved (November 2026). The site uses the Master Plan's single-development figures (more than 10,000 homes, over 10 million sq ft, pp. 4 and 6), without naming the development. Used on The Strategic Moment page.
 - [x] **Economic figures:** resolved. The home and Economic Impact pages show ranges. (Related open item: which scenario the figures describe, under Content & Copy.)
 - [x] **Location:** resolved (November 2026). The site does not name a campus site; it keeps the current "site to be determined collaboratively" position.
 - [x] **Phases:** resolved. Five phases (Master Plan), used on the Deployment page. The FAQ answer still needs rewriting.
