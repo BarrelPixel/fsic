@@ -18,6 +18,10 @@ interface Props {
 }
 
 const { label, count, rule = 'top', list = false, dark = false, dot, class: className } = Astro.props;
+// The dot stays on the line with the label's last word, so it never wraps onto a line of its own.
+const words = label.split(' ');
+const last = words.pop();
+const head = words.join(' ');
 const dotClass = dot && { gray: 'bg-gray/60', navy: 'bg-navy', orange: 'bg-orange', lagoon: 'bg-lagoon', 'lagoon-light': 'bg-lagoon-light' }[dot];
 const line = dark ? 'border-rule-on-dark' : 'border-rule';
 ---
@@ -29,9 +33,14 @@ const line = dark ? 'border-rule-on-dark' : 'border-rule';
   ]}
 >
   <dt class:list={['md:col-span-2 md:pt-label-offset text-label', dark ? 'text-white' : 'text-navy']}>
-    {label}
+    {dotClass ? (
+      <>
+        {head}{head && ' '}<span class="whitespace-nowrap">{last}<span class:list={['inline-block w-2 h-2 rounded-full ml-2 align-[0.05em]', dotClass]} aria-hidden="true"></span></span>
+      </>
+    ) : (
+      label
+    )}
     {count !== undefined && <span class="font-medium text-gray"> · {count}</span>}
-    {dotClass && <span class:list={['inline-block w-2 h-2 rounded-full ml-2 align-[0.05em]', dotClass]} aria-hidden="true"></span>}
   </dt>
   <dd class:list={['md:col-span-6', list && 'md:-mt-3']}>
     <slot />

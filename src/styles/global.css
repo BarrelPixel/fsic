@@ -242,8 +242,66 @@ html {
 }
 
 /* ============================================
+   Lists (List.astro): flush with the column, hairline rules between items, no markers.
+   ============================================ */
+
+@layer components {
+  /* One rule color per list, overridden on night, so every rule below uses the right color. */
+  .list {
+    --list-rule: var(--color-rule);
+  }
+
+  :where(.bg-night) .list {
+    --list-rule: var(--color-rule-on-dark);
+  }
+
+  .list > li {
+    padding-block: 0.5rem;
+  }
+
+  .list.list-spacious > li {
+    padding-block: 0.75rem;
+  }
+
+  .list > li + li {
+    border-top: 1px solid var(--list-rule);
+  }
+
+  /* A rule above the list when something precedes it (a lead-in sentence or a label); a list that
+     opens its column starts on the column's first line instead (DESIGN.md "Columns share one top
+     line"). No rule under the last item: a row's own rule or the next block closes the list. */
+  .list:not(:first-child) {
+    border-top: 1px solid var(--list-rule);
+  }
+
+  .list:first-child > li:first-child {
+    padding-top: 0;
+  }
+
+  .list > li:last-child {
+    padding-bottom: 0;
+  }
+
+  /* Two columns of peers (from sm): rules between rows, not between neighbours, and the whole
+     first row starts on the column's first line. */
+  @media (width >= 40rem) {
+    .list.list-columns > li:nth-child(2) {
+      border-top: 0;
+    }
+
+    .list.list-columns:first-child > li:nth-child(2) {
+      padding-top: 0;
+    }
+
+    .list.list-columns > li:nth-last-child(2):nth-child(odd) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+/* ============================================
    Press release text (rendered Markdown, src/content/news/)
-   Lists are plain lines, as in List.
+   Lists are ruled, as in List.
    ============================================ */
 
 @layer components {
@@ -256,9 +314,17 @@ html {
     margin-bottom: 1rem;
   }
 
-  /* Plain lines, as in List: flush with the paragraphs, separated by space. */
+  /* As List: flush with the paragraphs, a rule above the list and hairline rules between items. */
+  .release ul {
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .release li {
+    padding-block: 0.5rem;
+  }
+
   .release li + li {
-    margin-top: 0.5rem;
+    border-top: 1px solid var(--color-rule);
   }
 }
 
