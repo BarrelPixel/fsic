@@ -14,6 +14,7 @@
 /long-term-vision           Long-Term Vision
 /contact                    Contact
 /news                       News & Media (and /news/<slug> per press release)
+/faq                        FAQ
 ```
 
 ## Page Goals
@@ -77,13 +78,18 @@
 **Audience:** Partners, volunteers, media, the public.
 **Key content:** Email, location, social links, and four topics (Partnerships, Volunteering and leadership, Media, General), each opening an email to info@fsic.space with the subject set. The contact form waits on a backend and routing decision (`07-open-questions.md`). No phone number is published.
 
+### FAQ (`/faq`) — IMPLEMENTED
+**Goal:** Answer common questions about FSIC in one place.
+**Audience:** All, especially residents.
+**Key content:** Mission and vision, then the 16 questions from the live FAQ page, each opening from its question with its own link (`/faq#<id>`). Answers are as published except where `faq.md` notes a change (economic ranges, five phases, sourced space-economy figures).
+
 ### News & Media (`/news`) — IMPLEMENTED
 **Goal:** Publish FSIC's press releases as issued.
 **Audience:** Media, partners, residents.
 **Key content:** Press releases, newest first, each on its own page (`/news/<slug>`), with the graphic published with each release. One Markdown file per release in `src/content/news/`; graphics in `src/content/news/images/`.
 
 ## Proposed Additions
-The current site (fsic.space) has substantial FAQ and founder bio content with no place in this sitemap. Proposed: `/faq`, `/leadership` (or a section of `/governance`). Copy for these is drafted in `src/content/copy/`. See `08-current-site-audit.md`.
+The current site (fsic.space) has founder bio content with no place in this sitemap. Proposed: `/leadership` (or a section of `/governance`). Copy for these is drafted in `src/content/copy/`. See `08-current-site-audit.md`.
 
 ## Navigation Structure
 
@@ -95,11 +101,12 @@ Defined once in `src/lib/nav.ts` and shared by the header and footer. Pages are 
 - Governance
 - Get Involved ▾ — Partnership & Funding, Contact
 - News (News & Media)
+- FAQ
 - Contact
 
 The logo links to Home. On phones, the menu lists each group under its name and shows each page once (Contact only under Get Involved).
 
-**Footer:** one column per group (Why FSIC, The Model, Get Involved), then a column "FSIC" with Home, Governance and News. Each page appears once.
+**Footer:** one column per group (Why FSIC, The Model, Get Involved), then a column "FSIC" with Home, Governance, News and FAQ. Each page appears once.
 
 ## Implementation Note
-Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
+Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, FAQ, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.

@@ -2,10 +2,10 @@
 
 **Status:** Draft
 **Last Updated:** November 2026
-**Route:** /faq (proposed; not yet in the information architecture)
+**Route:** /faq (built November 2026; in the header menu)
 **Sources:** fsic.space/copy-of-news-media (the live FAQ page), copied verbatim
 
-Several answers are also used on other pages: governance, partnership-funding, programs-facilities, deployment, long-term-vision, and economic-impact. If you edit an answer here, update those pages too, or have the build read from a single source.
+The page is built from this file (`src/pages/faq.astro`). Several answers are also used on other pages: governance, partnership-funding, programs-facilities, deployment, long-term-vision, and economic-impact. If you edit an answer here, update those pages too, or have the build read from a single source.
 
 ---
 
@@ -17,7 +17,7 @@ The Florida Space Innovation Center advances the space economy by first strength
 **Vision Statement:**
 To establish Southeast Volusia County as a recognized center of excellence in Florida's space economy, demonstrating a scalable model of innovation, workforce readiness, and inclusive economic growth.
 
-> **⚠ Review:** The new site has no mission or vision statement anywhere. Decide where these go (home, governance, or About). See audit §3.7.
+> **Decision (November 2026):** the FAQ page opens with the mission and vision, as the live FAQ page does. They can move to another page later. See audit §3.7.
 
 ---
 
@@ -33,9 +33,9 @@ FSIC operates through four integrated engines:
 - **Civic** — community STEM engagement, arts integration, and public programming
 
 ### What is the history of the Florida Space Innovation Center (FSIC)?
-The origins of FSIC trace back to the City of New Smyrna Beach's 2023 Economic Development Task Force formed to develop recommendation for economic diversification and better career pathways for local residents. As regional growth accelerates – with tens of thousands of new homes approved across Edgewater, New Smyrna Beach, and Daytona Beach – FSIC provides the strategy to match that population surge with high-quality jobs built in our own communities.
+The origins of FSIC trace back to the City of New Smyrna Beach's 2023 Economic Development Task Force formed to develop recommendations for economic diversification and better career pathways for local residents. As regional growth accelerates, FSIC provides the strategy to match that population surge with high-quality jobs built in our own communities.
 
-> **⚠ Review:** Typo on the live site: "develop recommendation" should be "develop recommendations". The growth figure needs to match the one chosen in audit §3.1.
+> **Changed (November 2026):** fixed the live site's typo ("develop recommendation"). Removed "with tens of thousands of new homes approved across Edgewater, New Smyrna Beach, and Daytona Beach": the site uses the Master Plan's single-development figures instead (audit §3.1), and this regional figure has no source.
 
 ### Why is FSIC needed now?
 Southeast Volusia sits beside one of the fastest-growing aerospace and advanced manufacturing corridors in the world — yet currently captures very little of its value. Students lack clear pathways into high-growth careers, small businesses struggle to access certifications and contracts, and the region has no unified system to connect local talent and companies to the booming Space Coast economy.
@@ -43,13 +43,17 @@ Southeast Volusia sits beside one of the fastest-growing aerospace and advanced 
 FSIC fills this gap by providing the structure, partnerships, and momentum needed to ensure the region participates fully in the opportunities unfolding next door.
 
 ### What is the market opportunity for the space industry over the next 20 years?
-The global space economy is projected to grow from roughly $630 billion today to more than $1 trillion within the next decade, driven by lower launch costs, mass-produced satellites, AI-enabled applications, and rising demand for space-based data across nearly every industry. Industry leaders now see the space economy growing far beyond rockets and satellites, opening the door to whole new industries. SpaceX's IPO S-1 filing reflects this shift, pointing to a $28.5 trillion market opportunity that includes future AI-driven orbital data centers and computing systems.
+The global space economy is projected to grow from roughly $630 billion in 2023 to $1.8 trillion by 2035, driven by lower launch costs, mass-produced satellites, AI-enabled applications, and rising demand for space-based data across nearly every industry. Industry leaders now see the space economy growing far beyond rockets and satellites, opening the door to whole new industries.
 
 FSIC positions the region to seize this opportunity by building the talent pipeline employers need, connecting local businesses to space-related supply chains, and creating a hub for innovation and commercialization. It aligns K-12 schools, colleges, workforce agencies, employers, and civic partners into a coordinated system that can produce skilled workers, support entrepreneurs, and attract new industry. FSIC also serves as the backbone organization that organizes partners, secures funding, and accelerates pilot programs that prepare residents and businesses for space-driven economic growth.
 
 FSIC ensures that Florida — starting with Southeast Volusia — has the structure, strategy, and community alignment needed to compete for the next wave of jobs, investment, and innovation. It transforms the space economy from something happening "near us" into something that directly benefits local families, students, and businesses.
 
-> **⚠ Review:** The $630B, $1T, and $28.5T figures are not in the source PDFs and need citations. See audit §3.5.
+**Source line:** Source: World Economic Forum and McKinsey & Company, *Space: The $1.8 Trillion Opportunity for Global Economic Growth* (April 2024).
+
+> **Checked (November 2026):** The live site says "from roughly $630 billion today to more than $1 trillion within the next decade". The source (WEF and McKinsey, April 2024, https://www.weforum.org/publications/space-the-1-8-trillion-opportunity-for-global-economic-growth/) gives $630 billion for 2023 and $1.8 trillion by 2035, so the answer now uses those figures and cites them.
+> **Removed:** "SpaceX's IPO S-1 filing reflects this shift, pointing to a $28.5 trillion market opportunity that includes future AI-driven orbital data centers and computing systems." The figure is in SpaceX's S-1 (filed May 20, 2026), but it is SpaceX's own total addressable market, not a space-economy projection: about $26.5 trillion of it is AI (mostly enterprise applications) and about $370 billion is space. Reporting on the filing does not tie it to orbital data centers. Presenting it as the space industry's market opportunity would mislead.
+> **⚠ Review:** Confirm both changes.
 
 ### How will FSIC benefit local residents and families?
 FSIC expands opportunity for residents of all ages by making the space economy accessible and visible.
@@ -83,7 +87,11 @@ Support includes:
 This creates a pipeline of supplier-ready companies capable of competing in high-value markets.
 
 ### What economic impact will FSIC have on the region?
-Independent economic modeling shows that FSIC dramatically improves the region's long-term economic trajectory. With full implementation over 25 years, FSIC is projected to help the region generate over $10 billion in economic output, support tens of thousands of job-years, increase local wages by more than $1 billion, and significantly expand fiscal revenue for local governments. It also positions the region to attract hundreds of millions in external funding tied to workforce development, innovation, and research. These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at info@fsic.space.
+Independent economic modeling shows that FSIC dramatically improves the region's long-term economic trajectory. With full implementation over 25 years, FSIC is projected to help the region generate $10.2–$12.4 billion in economic output, support 74,500–79,500 job-years, increase local wages by $1.35–$1.55 billion, and generate $690–$910 million in fiscal revenue for local and state governments. It also positions the region to attract $800 million to $1.56 billion in external funding tied to workforce development, innovation, and research. These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at info@fsic.space.
+
+**Link:** The full analysis is on the Economic Impact page.
+
+> **Changed (November 2026):** the live site's rounded figures ("over $10 billion", "tens of thousands of job-years", "more than $1 billion", "hundreds of millions") are replaced with the Master Plan's ranges (pp. 7–8), as the content guidelines require. These are the Extended FSIC (FSIC 2.0) scenario figures, the same as on the home and Economic Impact pages (audit §3.10).
 
 ### What is the role of developers in the FSIC?
 Developers play a collaborative — not controlling — role in FSIC's work.
@@ -111,24 +119,22 @@ FSIC's role is to coordinate, align, and accelerate — not duplicate.
 ### What kinds of programs will FSIC offer first?
 FSIC launches with a phased, low-risk model focused on early wins and visible community value.
 
-**Phase 1: Talent Engine**
+**Phase 1: Foundation & Talent Engine Launch (Year 1)**
 - Micro-credential academies
 - Dual-enrollment STEM pathways
 - Teacher upskilling
 - Industry-embedded learning
 - K–12 STEM exploration programs
 
-**Phase 2: Innovation Engine**
-- Challenge labs
-- Rapid prototyping
-- Applied research partnerships
+**Then:**
+- Phase 2: Innovation Engine Activation (Years 1–2)
+- Phase 3: Market Engine Deployment (Years 2–3)
+- Phase 4: Civic Engine Expansion (Years 2–4)
+- Phase 5: Full Ecosystem Integration (Years 3–5)
 
-**Phase 3: Market & Civic Engines**
-- Supplier readiness
-- Startup incubation and access to regional funder network
-- Community STEM + arts programming
+**Link:** Each phase's activities are on the Phased Deployment page.
 
-> **⚠ Review:** This three-phase model conflicts with the Master Plan's five phases. **Decided (November 2026): the site uses the five phases** (see `deployment.md`). Rewrite this answer to match before the FAQ is built, or link it to /deployment.
+> **Changed (November 2026):** the live site's three phases are replaced with the Master Plan's five (names and timeframes from `deployment.md`), as decided for the Deployment page (audit §3.4). The Phase 1 programs are the live site's Talent Engine list.
 
 ### Where will FSIC be located?
 FSIC is a virtual organization located in New Smyrna Beach. A specific future site in Volusia County will be determined through a collaborative process with community members, civic leaders, industry partners, and other stakeholders. This ensures the final location reflects community priorities, long-term economic strategy, and the needs of partners.
@@ -149,7 +155,7 @@ In addition, he served as chair of the City of New Smyrna Beach's Economic Devel
 
 FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — will be featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution.
 
-> **⚠ Review:** Board members have now been seated (see `governance.md`), so update this answer to name them. See audit §3.6.
+> **⚠ Review:** Shown as published. Board members have now been seated and announced (see the News page), so "will be featured on the FSIC website as they are formally seated" is out of date. Update the answer once titles and the seated board are confirmed. See audit §3.6.
 
 ### How can the public get involved?
 FSIC is designed to be a community-powered movement, and there are many ways for residents, educators, businesses, and civic partners to participate from the very beginning.
@@ -174,6 +180,18 @@ While no outcomes are guaranteed, we envision FSIC evolving into a regional hub 
 - A recognized civilian-facing innovation hub for the Space Coast
 
 These concepts reflect the direction FSIC is planning toward, and we are building our partnerships, programs, and strategy to make these possibilities achievable.
+
+---
+
+## PAGE
+
+**Headline:** Frequently Asked Questions
+**Lead:** Answers to common questions about the Florida Space Innovation Center.
+**Aside:** Other questions: info@fsic.space
+
+> **⚠ Review:** Lead and aside are new.
+
+The page opens with the mission and vision, then lists the questions in the order above. Each answer opens from its question (native `<details>`), and each question has its own link (`/faq#<question>`).
 
 ---
 

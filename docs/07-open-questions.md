@@ -48,8 +48,8 @@ Decisions needed before copy can be approved. Details are in `08-current-site-au
 - [x] **Development figures:** resolved (November 2026). The site uses the Master Plan's single-development figures (more than 10,000 homes, over 10 million sq ft, pp. 4 and 6), without naming the development. Used on The Strategic Moment page.
 - [x] **Economic figures:** resolved. The home and Economic Impact pages show ranges. (Related open item: which scenario the figures describe, under Content & Copy.)
 - [x] **Location:** resolved (November 2026). The site does not name a campus site; it keeps the current "site to be determined collaboratively" position.
-- [x] **Phases:** resolved. Five phases (Master Plan), used on the Deployment page. The FAQ answer still needs rewriting.
-- [ ] **Unsourced claims:** citations for the $630B→$1T market size and the SpaceX S-1 "$28.5T" figure. (30–50% earned revenue by Year 3 is confirmed in the Master Plan, pp. 2 and 27.)
+- [x] **Phases:** resolved. Five phases (Master Plan), used on the Deployment page and in the FAQ answer.
+- [x] **Unsourced claims:** resolved (November 2026). The space-economy figure is cited to WEF and McKinsey (April 2024: $630B in 2023, $1.8T by 2035) and the FAQ uses those figures. The SpaceX S-1 "$28.5T" sentence is removed: it is SpaceX's own addressable market, mostly AI, not a space-economy projection. 30–50% earned revenue by Year 3 and "billions" in federal funding are confirmed in the Master Plan. Confirm the FAQ wording (`faq.md`).
 - [ ] **Titles:** confirm current titles for John Joaquin and Erik Ahlgren, and the full seated board.
-- [ ] **Mission and vision:** where do they appear on the new site?
-- [ ] **New pages:** News is built (November 2026). Still to decide: FAQ, and Leadership (its own page or part of Governance)?
+- [x] **Mission and vision:** they open the FAQ page, as on the live site (November 2026). They can move later.
+- [ ] **New pages:** News and FAQ are built (November 2026). Still to decide: Leadership (its own page or part of Governance)?

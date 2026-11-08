@@ -42,6 +42,7 @@ const nav: NavItem[] = [
     ],
   },
   { label: 'News', path: '/news' },
+  { label: 'FAQ', path: '/faq' },
   { label: 'Contact', path: '/contact' },
 ];
 
