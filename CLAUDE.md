@@ -7,7 +7,7 @@ Guidance for Claude Code when working in this repository.
 Public website for the **Florida Space Innovation Center (FSIC)**, a regional workforce and innovation initiative based in New Smyrna Beach, Southeast Volusia County, Florida. Built by Barrel & Pixel. It will replace the current Wix site at https://www.fsic.space.
 
 - **Stack:** Astro 5 (static) + Tailwind CSS v4 (via `@tailwindcss/vite`), TypeScript.
-- **Hosting:** GitHub Pages under the `/fsic` base path (`astro.config.mjs`), deployed by `.github/workflows/deploy.yml` on push to `main`.
+- **Hosting:** GitHub Pages under the `/fsic` base path (`astro.config.mjs`), deployed by `.github/workflows/deploy.yml` on push to `main`. The deploy runs `npm run check-links`, so a broken link fails it.
 
 ## Commands
 
