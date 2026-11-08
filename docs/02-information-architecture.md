@@ -89,6 +89,7 @@ The current site (fsic.space) has substantial FAQ and founder bio content with n
 
 **Primary Nav (Header):**
 - Home
+- Why Now (The Strategic Moment; the short label keeps the menu on one line at 1024px)
 - The Model
 - Economic Impact
 - Deployment
@@ -101,7 +102,6 @@ The current site (fsic.space) has substantial FAQ and founder bio content with n
 - Programs & Facilities
 - Partnership & Funding
 - Long-Term Vision
-- The Strategic Moment
 
 ## Implementation Note
 Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
