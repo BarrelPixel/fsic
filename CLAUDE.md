@@ -51,7 +51,7 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - Orange means the space industry. Lagoon green means the community. Don't use either as decoration.
 - Never put white text on the brand orange, and never use orange text on light backgrounds (contrast). Primary buttons are white on `orange-deep` (the `Button` component handles this).
 - Barlow Semi Condensed for headings (`font-display`), Source Serif 4 for reading text (the body default), Archivo for UI (`font-sans`: nav, buttons, captions, labels, data). No all-caps eyebrow labels, no fade-in on scroll, no cards, no chips or pills.
-- Square corners and no shadows (only the small dots are round). Reading text is 18px on a 28px line everywhere; don't add `text-lg` or `leading-*` to paragraphs or lists. White text on night uses `white/90`, `/75` or `/60` only. Lists are plain lines (`List`), no markers; put a list's meaning on its label (`Row` `dot`).
+- Square corners and no shadows (only the small dots are round). Reading text is 18px on a 28px line everywhere; don't add `text-lg` or `leading-*` to paragraphs or lists. White text on night uses `white/90`, `/75` or `/60` only. Lists use `List` (a small chevron on the column edge, no rules or bullets); put a list's meaning on its label (`Row` `dot`).
 
 ### Copy
 - Wording comes from `src/content/copy/<page>.md`. Press releases are the exception: each is a file in `src/content/news/`, kept as published. Write and approve copy there first, then build it into the page. The workflow and markers (`> Source`, `⚠ Review`, `[TODO]`) are in `docs/09-copy-deck.md`.
