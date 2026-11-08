@@ -68,11 +68,11 @@ The Wix sitemap lists 33 URLs. Only five are linked from the navigation. The res
 | Long-Term Vision | `long-term-vision.md` | FAQ → "What could FSIC look like" | Visuals; location wording (§3.3) |
 | Contact | `contact.md` | Contact form, email, location, social links | Routing, form backend |
 | *Proposed:* FAQ | `faq.md` | Entire FAQ page | — |
-| *Proposed:* News | `news.md` | All four press releases | Ongoing |
+| News & Media (built) | `news.md`, `src/content/news/` | All four press releases | Graphics copied from the live page (see `news.md` review note); one standard boilerplate |
 | *Proposed:* Leadership | `leadership.md` | John Joaquin bio | Board member bios |
 | Site-wide | `site-wide.md` | Footer, social links, newsletter | Legal pages |
 
-**Recommendation:** Add **FAQ**, **News**, and **Leadership** to the information architecture (`02-information-architecture.md`). The current site's best copy is in these three pages, and stakeholders already link to the press releases.
+**Recommendation:** Add **FAQ**, **News**, and **Leadership** to the information architecture (News is now built) (`02-information-architecture.md`). The current site's best copy is in these three pages, and stakeholders already link to the press releases.
 
 ---
 

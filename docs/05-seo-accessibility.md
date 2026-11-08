@@ -18,7 +18,7 @@ Every page must include:
 - `og:description` — Same as meta description
 - `og:type` — `website`
 - `og:url` — Canonical URL
-- `og:image` — TBD (placeholder until brand imagery is finalized)
+- `og:image` — Press release pages use the release graphic (1200px JPEG, absolute URL from `site` in `astro.config.mjs`), passed to `BaseLayout` as `image`. Other pages: TBD (placeholder until brand imagery is finalized)
 - `og:site_name` — `Florida Space Innovation Center`
 
 ### Twitter Card Tags

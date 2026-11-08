@@ -13,6 +13,7 @@
 /partnership-funding        Partnership & Funding
 /long-term-vision           Long-Term Vision
 /contact                    Contact
+/news                       News & Media (and /news/<slug> per press release)
 ```
 
 ## Page Goals
@@ -76,8 +77,13 @@
 **Audience:** All.
 **Key content:** Contact form, email, phone, physical location (TBD), partner inquiry routing.
 
+### News & Media (`/news`) — IMPLEMENTED
+**Goal:** Publish FSIC's press releases as issued.
+**Audience:** Media, partners, residents.
+**Key content:** Press releases, newest first, each on its own page (`/news/<slug>`), with the graphic published with each release. One Markdown file per release in `src/content/news/`; graphics in `src/content/news/images/`.
+
 ## Proposed Additions
-The current site (fsic.space) has substantial FAQ, press release, and founder bio content with no place in this sitemap. Proposed: `/faq`, `/news`, `/leadership`. Copy for these is drafted in `src/content/copy/`. See `08-current-site-audit.md`.
+The current site (fsic.space) has substantial FAQ and founder bio content with no place in this sitemap. Proposed: `/faq`, `/leadership` (or a section of `/governance`). Copy for these is drafted in `src/content/copy/`. See `08-current-site-audit.md`.
 
 ## Navigation Structure
 
@@ -87,6 +93,7 @@ The current site (fsic.space) has substantial FAQ, press release, and founder bi
 - Economic Impact
 - Deployment
 - Governance
+- News (News & Media)
 - Contact
 
 **Secondary Nav (Footer):**
@@ -97,4 +104,4 @@ The current site (fsic.space) has substantial FAQ, press release, and founder bi
 - The Strategic Moment
 
 ## Implementation Note
-Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency and Partnership & Funding. The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
+Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, and News & Media. The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.

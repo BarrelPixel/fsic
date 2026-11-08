@@ -23,12 +23,15 @@ There is no linter or test suite. `npm run build` and `npm run check-links` are 
 ## Layout
 
 ```
-src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance and partnership-funding are built out; the rest use <ComingSoon>
+src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding and news are built out; the rest use <ComingSoon>
 src/components/      Grid components (Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead),
                      Button, CoastlineMap, Header, Footer, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, arc animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
+src/content/news/    Press releases, one Markdown file each, wording as published (built into /news and /news/<slug>);
+                     images/ holds the graphic published with each release
+src/lib/news.ts      Press release helpers
 docs/                Project docs 00–09 (IA, content guidelines, site audit, copy-deck workflow)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
@@ -46,7 +49,7 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - Barlow Semi Condensed for headings (`font-display`), Source Serif 4 for reading text (the body default), Archivo for UI (`font-sans`: nav, buttons, captions, labels, data). No all-caps eyebrow labels, no fade-in on scroll, no identical shadowed cards, no chips or pills.
 
 ### Copy
-- Wording comes from `src/content/copy/<page>.md`. Write and approve copy there first, then build it into the page. The workflow and markers (`> Source`, `⚠ Review`, `[TODO]`) are in `docs/09-copy-deck.md`.
+- Wording comes from `src/content/copy/<page>.md`. Press releases are the exception: each is a file in `src/content/news/`, kept as published. Write and approve copy there first, then build it into the page. The workflow and markers (`> Source`, `⚠ Review`, `[TODO]`) are in `docs/09-copy-deck.md`.
 - Follow `docs/03-content-guidelines.md`: institutional tone, no hype words, no exclamation marks.
 - **Economic figures must match the Master Plan exactly, shown as ranges** ("$10.2–$12.4 billion"), never only the upper bound.
 - Don't invent partners, quotes, testimonials, logos or statistics. When unsure, leave it out.
@@ -57,7 +60,9 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - **Base path:** internal links must include `import.meta.env.BASE_URL` (currently `/fsic`, no trailing slash). `Button` handles this for hrefs starting with `/`. Elsewhere, write `` `${base}/path` ``. A bare `/path` breaks on GitHub Pages.
 - **CSS layers:** base element styles in `global.css` live inside `@layer base`. Keep them there. Styles outside a layer override Tailwind utilities.
 - Use the theme tokens (`bg-night`, `text-lagoon`, `bg-salt`…) rather than raw hex values.
-- Header nav highlighting uses the `isActive()` helper in `Header.astro`. Home matches only itself.
+- Header nav highlighting uses the `isActive()` helper in `Header.astro`. Home matches only itself. The footer's Navigation list mirrors the header nav; keep them in sync.
+- **Press releases:** add `src/content/news/<YYYY-MM-DD>-<slug>.md` with `title` and `date`. If the release was published with a graphic, put it in `src/content/news/images/` and set `image` and `imageAlt` (required with `image`; transcribe the words in the graphic). The release page uses it as the share image.
+- `BaseLayout` takes an optional `image` (a built image `src`, e.g. from `getImage()`) for `og:image` and `twitter:image`. Pages without one have no share image yet.
 - The `<html>` element gets a `js` class from an inline script in `BaseLayout`. Use it to gate JS-only states so the page still works without JS.
 
 ## Before finishing a change

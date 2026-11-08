@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import { getReleases, formatDate, firstParagraph } from '../../lib/news';
+
+// Copy: src/content/copy/news.md (page wording); releases: src/content/news/ (as published).
+const base = import.meta.env.BASE_URL;
+const releases = await getReleases();
+---
+<BaseLayout title="News & Media" description="Press releases from the Florida Space Innovation Center, including its launch and the appointments to its Board of Directors.">
+
+  <!-- Interior page template (DESIGN.md): PageHero, then the releases as rows on the grid -->
+  <PageHero title="News & Media">
+    <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
+      Media inquiries:
+      <a href="mailto:info@fsic.space" class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">info@fsic.space</a>
+    </p>
+    <p class="text-2xl text-white/90 leading-snug mb-0">
+      Press releases from the Florida Space Innovation Center, newest first.
+    </p>
+  </PageHero>
+
+  <!-- Releases: date and thumbnail (cols 1–4) | headline and first paragraph (cols 5–12) -->
+  <Section>
+    <ol class="divide-y divide-navy/15 border-b border-navy/15">
+      {releases.map((r) => (
+        <li class="grid gap-y-2 py-8 first:pt-0 lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
+          <div class="lg:col-span-4">
+            <p class="mb-0 font-sans text-sm font-semibold text-gray-dark">
+              <time datetime={r.data.date.toISOString().slice(0, 10)}>{formatDate(r.data.date)}</time>
+            </p>
+            {/* Thumbnail of the release graphic. Decorative here: the headline is the link, and the release page carries the alt text. */}
+            {r.data.image && (
+              <Image src={r.data.image} alt="" widths={[160, 320]} sizes="10rem" class="hidden lg:block mt-4 w-40 h-auto" />
+            )}
+          </div>
+          <div class="lg:col-span-8 max-w-3xl">
+            <h2 class="text-2xl md:text-3xl mb-3">
+              <a href={`${base}/news/${r.id}`} class="hover:underline underline-offset-4 decoration-2">{r.data.title}</a>
+            </h2>
+            <p class="mb-0 text-gray-dark">{firstParagraph(r)}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </Section>
+
+</BaseLayout>

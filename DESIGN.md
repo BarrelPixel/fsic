@@ -154,6 +154,7 @@ Don't put the coastline map or the launch arc on interior pages.
 
 - The campus rendering (`public/images/fsic-hero.jpg`) is a **concept**. It always carries the caption "Concept rendering. Design and location to be determined." It belongs in the vision section, not the hero.
 - Prefer real photographs of the region (lagoon, beach launch viewing, local classrooms and shops) when they become available. Don't use stock rockets or astronauts.
+- **Press release graphics** (`src/content/news/images/`) are shown as FSIC published them, only on the News pages: beside the text in the label column of a release page (above it on small screens, `max-w-xs`), and as a decorative `w-40` thumbnail under the date on the list at `lg`. They are the one exception to the color and imagery rules above, because they are part of the published release. Don't crop them, add text over them, or reuse them elsewhere on the site.
 
 ## Motion
 
