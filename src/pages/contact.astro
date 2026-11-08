@@ -1,10 +1,119 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComingSoon from '../components/ComingSoon.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Row from '../components/Row.astro';
+
+// Copy: src/content/copy/contact.md (Draft). No form until a backend and routing are chosen
+// (docs/07-open-questions.md); each topic opens an email to info@fsic.space with the subject set.
+// Not on the page until confirmed: a phone number, a named media contact.
+
+const base = import.meta.env.BASE_URL;
+const email = 'info@fsic.space';
+const mailto = (subject: string) => `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+
+const topics = [
+  {
+    name: 'Partnerships',
+    line: 'Employers, school districts, colleges and universities, local government, workforce agencies, and civic organizations.',
+    more: { text: 'Partner roles are on the Partnership & Funding page.', linkText: 'Partnership & Funding', href: `${base}/partnership-funding` },
+    linkText: 'Email about a partnership',
+    subject: 'Partnership inquiry',
+  },
+  {
+    name: 'Volunteering and leadership',
+    line: "FSIC is actively seeking leaders and volunteers with relevant experience across the Center's four core engines — Talent, Innovation, Market, and Civic.",
+    linkText: 'Email about volunteering',
+    subject: 'Volunteer or leadership interest',
+  },
+  {
+    name: 'Media',
+    line: 'Press inquiries.',
+    more: { text: 'Press releases are on the News page.', linkText: 'News', href: `${base}/news` },
+    linkText: 'Email a media inquiry',
+    subject: 'Media inquiry',
+  },
+  {
+    name: 'General',
+    line: 'Questions about FSIC and its plans.',
+    linkText: 'Email FSIC',
+    subject: 'General inquiry',
+  },
+] as {
+  name: string;
+  line: string;
+  more?: { text: string; linkText: string; href: string };
+  linkText: string;
+  subject: string;
+}[];
+
+const socialLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/florida-space-innovation-center/' },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61589280681125' },
+  { label: 'X', href: 'https://x.com/FLSpaceCenter' },
+];
+
+const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:decoration-navy';
 ---
-<BaseLayout title="Contact" description="Get in touch with the Florida Space Innovation Center to explore partnership, collaboration, and participation opportunities.">
-  <ComingSoon
-    title="Contact FSIC"
-    description="Reach the Florida Space Innovation Center to explore partnership, collaboration, and participation opportunities. Whether you are an employer, educator, policymaker, or community member, there is a role to play."
-  />
+<BaseLayout title="Contact" description="Contact the Florida Space Innovation Center about partnerships, volunteering and leadership, media inquiries, or general questions.">
+
+  <!-- Interior page template (DESIGN.md): PageHero, then one section -->
+  <PageHero title="Let's Work Together">
+    <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
+      <a href={`mailto:${email}`} class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">{email}</a>
+      <span aria-hidden="true"> · </span>New Smyrna Beach, Florida
+    </p>
+    <p class="text-2xl text-white/90 leading-snug mb-0">
+      Get in touch so we can start working together. Whether you are an employer, educator, policymaker, or community member, there is a role to play.
+    </p>
+  </PageHero>
+
+  <!-- Contact details (cols 1–4) | topics, each opening an email with its subject (cols 5–12) -->
+  <Section heading="Get in Touch">
+    <Grid>
+      <div slot="label" class="font-sans text-sm">
+        <p class="mb-6 font-serif text-base text-gray-dark max-w-sm">
+          Every message goes to {email}. Choose a topic to open an email with the subject filled in.
+        </p>
+        <dl class="space-y-4">
+          <div>
+            <dt class="font-semibold text-navy">Email</dt>
+            <dd><a href={`mailto:${email}`} class={link}>{email}</a></dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-navy">Location</dt>
+            <dd class="text-gray-dark">New Smyrna Beach, Florida</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-navy">Follow FSIC</dt>
+            <dd>
+              <ul role="list" class="flex flex-wrap gap-x-5 gap-y-1">
+                {socialLinks.map((s) => (
+                  <li><a href={s.href} rel="noopener" class={link}>{s.label}</a></li>
+                ))}
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <dl>
+        {topics.map((t, i) => (
+          <Row label={t.name} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
+            <p class="mb-3 text-gray-dark">
+              {t.line}
+              {t.more && (
+                <> {t.more.text.split(t.more.linkText)[0]}<a href={t.more.href} class={link}>{t.more.linkText}</a>{t.more.text.split(t.more.linkText)[1]}</>
+              )}
+            </p>
+            <p class="mb-0 font-sans font-semibold">
+              <a href={mailto(t.subject)} class={link}>{t.linkText}</a>
+            </p>
+          </Row>
+        ))}
+      </dl>
+    </Grid>
+  </Section>
+
 </BaseLayout>
