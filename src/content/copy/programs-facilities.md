@@ -91,7 +91,7 @@ One row per engine: the engine's line, then its programs (each opens to its desc
 - **Community Convenings & Placemaking:** Events that bring residents together to build a shared sense of identity and belonging.
 
 > **Source:** Master Plan pp. 19–21, "Program Portfolio and Core Offerings" (verbatim; hyphens added in compound terms such as "Micro-Credential" and "employer-led"). Left out: the Market Engine's one-line outcomes, which are misaligned with their programs in the PDF table, and a stray "tools" under Certification & Compliance Support.
-> **⚠ Review:** These program names (Master Plan) differ from the engine "components" on the Model page (`model.md`), which come from a different source and group the work differently. The page links each engine to the Model page rather than reconciling the two lists. Confirm both can stand, or choose one.
+> **Decision (November 2026):** the project lead chose the Master Plan's program names for both pages. The Model page's engine components are replaced with this portfolio (separate PR); both pages read one list (`src/lib/programs.ts`).
 > **⚠ Review:** Do **not** move the Wix "Book Online" services (Challenge Lab $100, STEM Outreach Event $80, Micro-Credential Academy $250) or the sample events dated Jan 15, 2026. They are template placeholders. See audit §1.
 
 ---
@@ -124,7 +124,7 @@ One row per engine: the engine's line, then its programs (each opens to its desc
 
 > **Source:** Master Plan pp. 17–19, "Facilities and Infrastructure Plan" (verbatim except as noted).
 > **Change — the unnamed development (audit §3.3):** the plan's first sentence drops "align with [the development]'s development timeline"; the guiding principle "Integration with [the development]'s innovation district vision" is left out; Phase 5 uses the Deployment page's name ("Full Ecosystem Integration") instead of "Full Innovation District Integration". Facility characteristics and strategic-purpose lines are not shown (two name the development; the Deployment page carries each phase's facilities focus).
-> **⚠ Review:** Confirm the plan sentence without the development clause.
+> **Decision (November 2026):** the project lead confirmed the plan sentence without the development clause.
 
 ---
 
