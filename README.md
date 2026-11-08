@@ -45,7 +45,7 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
     │   ├── Button, CoastlineMap, Header, Footer
     │   └── ComingSoon           # placeholder for unbuilt pages
     ├── content/copy/            # Copy deck: one Markdown file per page (docs/09)
-    ├── content/news/            # Press releases, one Markdown file each (as published)
+    ├── content/news/            # Press releases, one Markdown file each (as published); images/ holds their graphics
     ├── lib/news.ts              # Press release helpers (sorting, dates, excerpts)
     ├── layouts/BaseLayout.astro # Meta tags, fonts, header and footer
     ├── pages/                   # One .astro file per route; pages/news/ holds the list and [slug] pages

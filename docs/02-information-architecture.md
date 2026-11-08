@@ -80,7 +80,7 @@
 ### News & Media (`/news`) — IMPLEMENTED
 **Goal:** Publish FSIC's press releases as issued.
 **Audience:** Media, partners, residents.
-**Key content:** Press releases, newest first, each on its own page (`/news/<slug>`). One Markdown file per release in `src/content/news/`.
+**Key content:** Press releases, newest first, each on its own page (`/news/<slug>`), with the graphic published with each release. One Markdown file per release in `src/content/news/`; graphics in `src/content/news/images/`.
 
 ## Proposed Additions
 The current site (fsic.space) has substantial FAQ and founder bio content with no place in this sitemap. Proposed: `/faq`, `/leadership` (or a section of `/governance`). Copy for these is drafted in `src/content/copy/`. See `08-current-site-audit.md`.
