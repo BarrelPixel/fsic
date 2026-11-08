@@ -7,6 +7,8 @@ import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
 import { mailto } from '../lib/site';
+import HeroIndex from '../components/HeroIndex.astro';
+import { pad2 } from '../lib/format';
 
 // Copy: src/content/copy/partnership-funding.md (Draft). Partner table: Master Plan pp. 22–24;
 // funding streams: pp. 25–26; benefits: May 25, 2026 launch release; get involved: FAQ.
@@ -81,7 +83,6 @@ const streams = [
 ] as { name: string; start: number | null; end: number | null; purpose: string; sources: string[] }[];
 
 const YEARS = [1, 2, 3, 4, 5];
-const pad = (n: number) => String(n).padStart(2, '0');
 const yearsLabel = (s: { start: number | null; end: number | null }) =>
   s.start === null ? 'Years not stated' : s.start === s.end ? `Year ${s.start}` : `Years ${s.start}–${s.end}`;
 ---
@@ -97,18 +98,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
     </p>
 
     <!-- Partner index: each type links to its row in section 02 -->
-    <nav aria-label="Partner types" class="font-sans">
-      <ol class="border-t border-white/25 sm:columns-2 sm:gap-x-8">
-        {partners.map((p, i) => (
-          <li class="break-inside-avoid border-b border-white/25">
-            <a href={`#${p.id}`} class="group flex items-baseline gap-3 py-3 rounded-sm">
-              <span class="text-sm text-white/60 tabular-nums">{pad(i + 1)}</span>
-              <span class="text-white group-hover:underline underline-offset-4">{p.name}</span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
+    <HeroIndex label="Partner types" items={partners} columns />
   </PageHero>
 
   <!-- 01 · WHY PARTNER: three peers on the grid (4 cols each) -->
@@ -116,7 +106,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
     <ol class="grid gap-y-10 lg:grid-cols-12 lg:gap-x-8">
       {benefits.map((b, i) => (
         <li class="lg:col-span-4 border-t-2 border-navy pt-5">
-          <p class="font-sans text-sm text-gray tabular-nums mb-3">{pad(i + 1)}</p>
+          <p class="font-sans text-sm text-gray tabular-nums mb-3">{pad2(i + 1)}</p>
           <h3 class="mb-3">{b.title}</h3>
           <p class="mb-0">{b.body}</p>
         </li>
@@ -149,7 +139,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
       {partners.map((p, i) => (
         <div id={p.id} class="scroll-mt-4 grid gap-y-4 py-7 border-b border-navy/15 lg:grid-cols-12 lg:gap-x-8">
           <div class="lg:col-span-4">
-            <p class="font-sans text-sm text-gray tabular-nums mb-2">{pad(i + 1)}</p>
+            <p class="font-sans text-sm text-gray tabular-nums mb-2">{pad2(i + 1)}</p>
             <h3 class="text-xl mb-2">{p.name}</h3>
             <p class="mb-0 text-base text-gray-dark">{p.overview}</p>
           </div>

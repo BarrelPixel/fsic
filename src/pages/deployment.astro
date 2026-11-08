@@ -7,6 +7,7 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
+import { pad2 } from '../lib/format';
 
 // Copy: src/content/copy/deployment.md (Draft). Five-phase model from the Master Plan (pp. 13–14),
 // chosen by the project lead; facilities lines from p. 18. Open review items: facilities/location
@@ -127,7 +128,7 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
           <li class="border-b border-white/25">
             <a href={`#${phase.id}`} class="group grid gap-y-2 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)] md:gap-x-6 md:items-center py-3.5 rounded-sm">
               <span class="flex items-baseline gap-3">
-                <span class="text-sm text-white/60 tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+                <span class="text-sm text-white/60 tabular-nums">{pad2(i + 1)}</span>
                 <span>
                   <span class="block font-display text-xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2 leading-tight">{phase.name}</span>
                   <span class="block text-sm text-white/70">{phase.timeframe}</span>

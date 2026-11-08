@@ -6,6 +6,7 @@ import Grid from '../components/Grid.astro';
 import { EMAIL, mailto } from '../lib/site';
 import Disclosure from '../components/Disclosure.astro';
 import DashList from '../components/DashList.astro';
+import HeroIndex from '../components/HeroIndex.astro';
 
 // Copy: src/content/copy/faq.md (Draft). Answers are as published on fsic.space, except where the
 // copy deck notes a change: ranges for the economic figures, the five phases, the sourced
@@ -186,7 +187,6 @@ if (assigned.length !== faqs.length || new Set(assigned).size !== faqs.length ||
   throw new Error('faq.astro: every question must belong to exactly one topic');
 }
 
-const pad = (n: number) => String(n).padStart(2, '0');
 const count = (n: number) => `${n} question${n === 1 ? '' : 's'}`;
 const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-navy/30 hover:[&_a]:decoration-navy';
 ---
@@ -210,19 +210,7 @@ const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:dec
     </p>
 
     <!-- Topic index: number, topic, how many questions -->
-    <nav aria-label="Topics on this page" class="font-sans">
-      <ol class="border-t border-white/25">
-        {topics.map((t, i) => (
-          <li class="border-b border-white/25">
-            <a href={`#${t.id}`} class="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-baseline gap-x-4 py-4 rounded-sm">
-              <span class="text-sm text-white/60 tabular-nums">{pad(i + 1)}</span>
-              <span class="font-display text-2xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2">{t.name}</span>
-              <span class="text-sm text-white/70 tabular-nums">{count(t.faqs.length)}</span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
+    <HeroIndex label="Topics on this page" size="large" items={topics.map((t) => ({ id: t.id, name: t.name, note: count(t.faqs.length) }))} />
   </PageHero>
 
   <!-- One spec section per topic: the topic pinned in the label column, its questions in the content

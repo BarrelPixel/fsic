@@ -8,11 +8,12 @@ import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
 import { mailto } from '../lib/site';
 import Disclosure from '../components/Disclosure.astro';
+import HeroIndex from '../components/HeroIndex.astro';
+import { pad2 } from '../lib/format';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
 // Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
 
-const pad = (n: number) => String(n).padStart(2, '0');
 
 const sections = [
   { id: 'backbone', name: 'A neutral backbone organization' },
@@ -94,18 +95,7 @@ const metrics = [
       The Florida Space Innovation Center is designed with a governance model that ensures independence, transparency, accountability, and long-term institutional credibility. The structure reflects national best practices for nonprofit innovation hubs and aligns with expectations from philanthropic funders, state agencies, federal partners, and major employers.
     </p>
 
-    <nav aria-label="On this page" class="font-sans">
-      <ol class="border-t border-white/25">
-        {sections.map((s, i) => (
-          <li class="border-b border-white/25">
-            <a href={`#${s.id}`} class="group flex items-baseline gap-3 py-3 rounded-sm">
-              <span class="text-sm text-white/60 tabular-nums">{pad(i + 1)}</span>
-              <span class="text-white group-hover:underline underline-offset-4">{s.name}</span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
+    <HeroIndex label="On this page" items={sections} />
   </PageHero>
 
   <!-- 01 · A NEUTRAL BACKBONE ORGANIZATION (fsic.space FAQ) -->
@@ -213,7 +203,7 @@ const metrics = [
             {m.number !== null && (
               <p class="font-sans text-sm text-gray tabular-nums flex items-center gap-2 mb-2">
                 <span class:list={['w-2.5 h-2.5 rounded-full', m.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']} aria-hidden="true"></span>
-                {pad(m.number)}
+                {pad2(m.number)}
               </p>
             )}
             <h3 class="text-xl mb-0">{m.name}</h3>

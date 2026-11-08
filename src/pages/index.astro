@@ -8,6 +8,7 @@ import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
 
 import heroImage from '../assets/fsic-hero.png';
+import { pad2 } from '../lib/format';
 
 const base = import.meta.env.BASE_URL;
 
@@ -196,7 +197,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         <li class="lg:col-span-3 border-t border-navy/25 pt-5">
           <p class="font-sans text-sm text-gray tabular-nums flex items-center gap-2 mb-3">
             <span class:list={['w-2.5 h-2.5 rounded-full', engine.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']} aria-hidden="true"></span>
-            {String(i + 1).padStart(2, '0')}
+            {pad2(i + 1)}
           </p>
           <h3 class="mb-2">{engine.name}</h3>
           <p class:list={['font-sans font-medium mb-3', engine.tone === 'lagoon' ? 'text-lagoon' : 'text-gray-dark']}>{engine.shift}</p>
