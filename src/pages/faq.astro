@@ -50,7 +50,7 @@ const link = 'links-in';
       items={topics.map((t) => ({ id: t.id, label: t.name }))}
     />
 
-  <!-- One spec section per topic: the topic pinned in the label column, its questions in the content
+  <!-- One spec section per topic: the topic in the label column, its questions in the content
        column. Each answer opens from its question (<details>, + turns to ×); /faq#<question> opens it. -->
   {topics.map((t, i) => (
     <Section
@@ -61,7 +61,7 @@ const link = 'links-in';
       labelledby={`${t.id}-title`}
       class="scroll-mt-20"
     >
-      <Grid labelAs="header" stickyLabel>
+      <Grid labelAs="header">
         <Fragment slot="label">
           <h2 id={`${t.id}-title`} class="mb-2">{t.name}</h2>
           <p class="mb-0 text-label text-gray">{count(t.faqs.length)}</p>
