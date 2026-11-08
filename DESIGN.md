@@ -22,7 +22,7 @@ Each color has a meaning. Don't use them as decoration.
 
 | Token | Hex | Meaning and use |
 |-------|-----|-----------------|
-| `night` | `#0D2138` | Dark sections: heroes, economics, vision, guiding principles, final CTA, header, footer |
+| `night` | `#0D2138` | Dark sections: heroes, economics, vision, guiding principles, header, footer |
 | `navy` | `#163256` | Brand. Headings and text on light backgrounds |
 | `orange` | `#E37A2D` | Brand. **The space industry**: data bars, industry-side markers, the focus ring |
 | `orange-deep` | `#B75A16` | Primary button fill (white text, 4.68:1). Hover: `orange-deeper` `#A9510F` (5.43:1). Buttons only |
@@ -115,7 +115,7 @@ Headline across cols 1–9 (max-w-4xl)
   - In tables, align figure and label on a shared baseline (`lg:items-baseline`); center only non-text marks such as range bars (`lg:self-center`).
   - A closing row puts the statement in the label column and the action (button) in the content column, both hung from the rule above. Don't push buttons to the right edge; everything is flush left.
 - **One numbering system per page.** Section numbers (`01 / 07`) and engine numbers (`01`–`04`, the same on every page) are the only numerals used as labels. Sub-sequences inside a section use words ("First:", "Then:") rather than a second set of numbers.
-- Separate sections with the heavy rule and whitespace. Prefer white with rules over background fills. Use `night` for a few anchor sections (hero, economics, vision, principles, final CTA).
+- Separate sections with the heavy rule and whitespace. Prefer white with rules over background fills. Use `night` for a few anchor sections (hero, economics, vision, principles). Every page ends on white (the homepage's final call to action, an interior page's `Closing`) so it never runs into the `night` footer.
 - `.container` and `.section` are outside a CSS layer on purpose: `.container` must beat Tailwind's own `container` utility (which caps width at each breakpoint), and `.section` overrides padding utilities. Section padding steps down below `md` (48rem). When two white sections stack, give the second `spacing="stacked"` so the gap doesn't double.
 
 ### Structure should show what the content is
