@@ -188,23 +188,23 @@ if (assigned.length !== faqs.length || new Set(assigned).size !== faqs.length ||
 }
 
 const count = (n: number) => `${n} question${n === 1 ? '' : 's'}`;
-const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-navy/30 hover:[&_a]:decoration-navy';
+const link = 'links-in';
 ---
 <BaseLayout title="Frequently Asked Questions" description="Answers to common questions about the Florida Space Innovation Center: what it is, why it is needed now, how it is funded, and how to get involved.">
 
   <!-- Interior page template (DESIGN.md): PageHero with the mission (lead), the vision, and an index of
        the topics; then one spec section per topic. Hierarchy: topic (h2) > question (h3) > answer. -->
   <PageHero title="Frequently Asked Questions">
-    <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
+    <p slot="aside">
       Other questions:
-      <a href={mailto()} class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">{EMAIL}</a>
+      <a href={mailto()} class="link-on-dark">{EMAIL}</a>
     </p>
 
-    <p class="mb-2 font-sans text-sm font-semibold text-white/60">Mission</p>
-    <p class="text-2xl text-white/90 leading-snug mb-6 max-w-3xl">
+    <p class="mb-2 text-label text-white/60">Mission</p>
+    <p class="text-lead text-white/90 mb-6 max-w-3xl">
       The Florida Space Innovation Center advances the space economy by first strengthening Southeast Volusia County through talent development, technology innovation, and strategic partnerships that expand economic opportunity and long-term community prosperity.
     </p>
-    <p class="mb-2 font-sans text-sm font-semibold text-white/60">Vision</p>
+    <p class="mb-2 text-label text-white/60">Vision</p>
     <p class="text-lg text-white/75 mb-10 max-w-3xl">
       To establish Southeast Volusia County as a recognized center of excellence in Florida's space economy, demonstrating a scalable model of innovation, workforce readiness, and inclusive economic growth.
     </p>
@@ -227,10 +227,10 @@ const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:dec
       <Grid labelAs="header" stickyLabel>
         <Fragment slot="label">
           <h2 id={`${t.id}-title`} class="mb-2">{t.name}</h2>
-          <p class="mb-0 font-sans text-sm font-semibold text-gray">{count(t.faqs.length)}</p>
+          <p class="mb-0 text-label text-gray">{count(t.faqs.length)}</p>
         </Fragment>
 
-        <div class="divide-y divide-navy/15 border-b border-navy/15">
+        <div class="divide-y divide-rule border-b border-rule">
           {t.faqs.map((f) => (
             <Disclosure id={f.id} class="py-5 first:pt-0 scroll-mt-24" summaryClass="items-start gap-6" iconClass="mt-1">
               <h3 slot="summary" class="mb-0 text-xl">{f.q}</h3>
@@ -239,10 +239,10 @@ const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:dec
                   'p' in b ? (
                     <p set:html={b.p} />
                   ) : 'source' in b ? (
-                    <p class="font-sans text-sm text-gray" set:html={b.source} />
+                    <p class="text-caption text-gray" set:html={b.source} />
                   ) : (
                     <div class="mb-4">
-                      {b.label && <p class="mb-2 font-sans text-sm font-semibold text-navy" set:html={b.label} />}
+                      {b.label && <p class="mb-2 text-label text-navy" set:html={b.label} />}
                       <DashList items={b.list} html />
                     </div>
                   ),

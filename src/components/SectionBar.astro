@@ -20,7 +20,7 @@ interface Props {
 
 const { items, ariaLabel, numbered = false } = Astro.props;
 ---
-<nav aria-label={ariaLabel} class="font-sans sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-navy/15">
+<nav aria-label={ariaLabel} class="font-sans sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-rule">
   <div class="container">
     <ul class="flex gap-1 overflow-x-auto [scrollbar-width:none] -mx-2" role="list">
       {items.map((item, i) => (

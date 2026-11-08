@@ -41,7 +41,7 @@ const isoDate = (d: Date) => d.toISOString().slice(0, 10);
   <Section>
     <Grid stickyLabel>
       <div slot="label">
-        <p class="mb-0 font-sans text-sm font-semibold md:pt-[0.3rem]">
+        <p class="mb-0 text-label md:pt-label-offset">
           <a href={`${base}/news`} class="text-navy hover:underline underline-offset-4">All news and media</a>
         </p>
         {image && imageAlt && (
@@ -71,12 +71,12 @@ const isoDate = (d: Date) => d.toISOString().slice(0, 10);
     </Grid>
 
     {others.length > 0 && (
-      <Grid class="mt-16 pt-6 border-t border-navy/15">
-        <h2 slot="label" class="mb-0 font-sans text-sm font-semibold text-navy md:pt-[0.3rem]">More news</h2>
-        <ul role="list" class="divide-y divide-navy/15">
+      <Grid class="mt-16 pt-6 border-t border-rule">
+        <h2 slot="label" class="mb-0 text-label text-navy md:pt-label-offset">More news</h2>
+        <ul role="list" class="divide-y divide-rule">
           {others.map((r) => (
             <li class="py-4 first:pt-0">
-              <p class="mb-1 font-sans text-sm text-gray-dark">
+              <p class="mb-1 text-caption text-gray-dark">
                 <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
               </p>
               <a href={`${base}/news/${r.id}`} class="font-display text-xl font-semibold text-navy leading-snug hover:underline underline-offset-4">{r.data.title}</a>

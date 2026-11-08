@@ -1,6 +1,6 @@
 ---
 // A label | content row inside the content column (DESIGN.md "Grid"): 2 + 6 of 8 columns from md.
-// Use inside a <dl>. The label shares the first line of its content (md:pt-[0.3rem]).
+// Use inside a <dl>. The label shares the first line of its content (md:pt-label-offset).
 //   rule="top"     hairline above (rows that follow other content)
 //   rule="bottom"  hairline below (a row that opens the content column, so it keeps the shared top line)
 //   list           the content is a list of <details> items, so pull it up to the label's line
@@ -15,7 +15,7 @@ interface Props {
 }
 
 const { label, count, rule = 'top', list = false, dark = false, class: className } = Astro.props;
-const line = dark ? 'border-white/25' : 'border-navy/15';
+const line = dark ? 'border-rule-on-dark' : 'border-rule';
 ---
 <div
   class:list={[
@@ -24,7 +24,7 @@ const line = dark ? 'border-white/25' : 'border-navy/15';
     className,
   ]}
 >
-  <dt class:list={['md:col-span-2 md:pt-[0.3rem] font-sans text-sm font-semibold', dark ? 'text-white' : 'text-navy']}>
+  <dt class:list={['md:col-span-2 md:pt-label-offset text-label', dark ? 'text-white' : 'text-navy']}>
     {label}
     {count !== undefined && <span class="font-medium text-gray"> · {count}</span>}
   </dt>

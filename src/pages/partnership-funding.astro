@@ -91,7 +91,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
 
   <!-- Interior page template (DESIGN.md): PageHero with an index of partner types, narrative sections, closing -->
   <PageHero title="Partner. Collaborate. Participate.">
-    <p class="text-2xl text-white/90 leading-snug mb-6">
+    <p class="text-lead text-white/90 mb-6">
       The Florida Space Innovation Center represents a coordinated investment in the region's future.
     </p>
     <p class="text-lg text-white/75 mb-10 max-w-3xl">
@@ -107,15 +107,15 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
     <ol class="grid gap-y-10 lg:grid-cols-12 lg:gap-x-8">
       {benefits.map((b, i) => (
         <li class="lg:col-span-4 border-t-2 border-navy pt-5">
-          <p class="font-sans text-sm text-gray tabular-nums mb-3">{pad2(i + 1)}</p>
+          <p class="text-caption text-gray tabular-nums mb-3">{pad2(i + 1)}</p>
           <h3 class="mb-3">{b.title}</h3>
           <p class="mb-0">{b.body}</p>
         </li>
       ))}
     </ol>
 
-    <Grid class="mt-14 pt-6 border-t border-navy/15">
-      <p slot="label" class="mb-0 font-sans text-sm font-semibold text-navy md:pt-[0.3rem]">A proven foundation</p>
+    <Grid class="mt-14 pt-6 border-t border-rule">
+      <p slot="label" class="mb-0 text-label text-navy md:pt-label-offset">A proven foundation</p>
       <p class="text-lg max-w-3xl mb-0">
         FSIC is built on approaches that have already delivered measurable results in other regions. It draws on the coordinated innovation model that propelled the quantum ecosystem in the Washington, D.C. area and the structured talent and industry strategy that reshaped Osceola County's semiconductor sector. These proven frameworks demonstrate how communities can organize, align partners, and attract major outside investment — and FSIC adapts these lessons to Florida's rapidly expanding space economy.
       </p>
@@ -133,23 +133,23 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
   >
     <div>
       <div class="hidden lg:grid lg:grid-cols-12 lg:gap-x-8 border-b-2 border-navy pb-3" aria-hidden="true">
-        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Partner</p>
-        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Partnership roles</p>
-        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Strategic benefits</p>
+        <p class="lg:col-span-4 mb-0 text-label text-navy">Partner</p>
+        <p class="lg:col-span-4 mb-0 text-label text-navy">Partnership roles</p>
+        <p class="lg:col-span-4 mb-0 text-label text-navy">Strategic benefits</p>
       </div>
       {partners.map((p, i) => (
-        <div id={p.id} class="scroll-mt-4 grid gap-y-4 py-7 border-b border-navy/15 lg:grid-cols-12 lg:gap-x-8">
+        <div id={p.id} class="scroll-mt-4 grid gap-y-4 py-7 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
           <div class="lg:col-span-4">
-            <p class="font-sans text-sm text-gray tabular-nums mb-2">{pad2(i + 1)}</p>
+            <p class="text-caption text-gray tabular-nums mb-2">{pad2(i + 1)}</p>
             <h3 class="text-xl mb-2">{p.name}</h3>
             <p class="mb-0 text-base text-gray-dark">{p.overview}</p>
           </div>
           <div class="lg:col-span-4 lg:pt-7">
-            <p class="lg:sr-only mb-2 font-sans text-sm font-semibold text-navy">Partnership roles</p>
+            <p class="lg:sr-only mb-2 text-label text-navy">Partnership roles</p>
             <DashList items={p.roles} marker="gray" class="text-gray-dark" />
           </div>
           <div class="lg:col-span-4 lg:pt-7">
-            <p class="lg:sr-only mb-2 font-sans text-sm font-semibold text-navy">Strategic benefits</p>
+            <p class="lg:sr-only mb-2 text-label text-navy">Strategic benefits</p>
             <DashList items={p.benefits} marker="navy" class="text-navy" />
           </div>
         </div>
@@ -175,21 +175,21 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
     <!-- Streams: name + years (cols 1–4) | purpose and sources (5–8) | Years 1–5 track (9–12) -->
     <div class="mt-14">
       <div class="hidden lg:grid lg:grid-cols-12 lg:gap-x-8 border-b-2 border-navy pb-3" aria-hidden="true">
-        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Funding stream</p>
-        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Purpose and sources</p>
-        <p class="lg:col-span-4 mb-0 grid grid-cols-5 font-sans text-sm text-gray tabular-nums">
+        <p class="lg:col-span-4 mb-0 text-label text-navy">Funding stream</p>
+        <p class="lg:col-span-4 mb-0 text-label text-navy">Purpose and sources</p>
+        <p class="lg:col-span-4 mb-0 grid grid-cols-5 text-caption text-gray tabular-nums">
           {YEARS.map((y) => <span>Year {y}</span>)}
         </p>
       </div>
       {streams.map((s) => (
-        <div class="grid gap-y-3 py-6 border-b border-navy/15 lg:grid-cols-12 lg:gap-x-8">
+        <div class="grid gap-y-3 py-6 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
           <div class="lg:col-span-4">
             <h3 class="text-xl mb-1">{s.name}</h3>
-            <p class="mb-0 font-sans text-sm text-gray-dark">{yearsLabel(s)}</p>
+            <p class="mb-0 text-caption text-gray-dark">{yearsLabel(s)}</p>
           </div>
           <div class="lg:col-span-4">
             <p class="text-base text-gray-dark mb-2">{s.purpose}</p>
-            <p class="mb-0 font-sans text-sm text-gray-dark"><span class="font-semibold text-navy">Sources:</span> {s.sources.join(' · ')}</p>
+            <p class="mb-0 text-caption text-gray-dark"><span class="font-semibold text-navy">Sources:</span> {s.sources.join(' · ')}</p>
           </div>
           <div class="lg:col-span-4 lg:pt-2" aria-hidden="true">
             <span class="grid grid-cols-5 h-3 bg-navy/[0.07]">
@@ -200,18 +200,18 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
           </div>
         </div>
       ))}
-      <p class="mt-3 mb-0 font-sans text-sm text-gray-dark">Timeframes: FSIC Master Plan 2026–2031. The plan gives no timeframe for employer partnerships.</p>
+      <p class="mt-3 mb-0 text-caption text-gray-dark">Timeframes: FSIC Master Plan 2026–2031. The plan gives no timeframe for employer partnerships.</p>
     </div>
 
     <Grid class="mt-16">
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-navy leading-snug">
+      <p slot="label" class="mb-0 text-statement text-navy">
         By Year 3, FSIC is positioned to sustain 30–50% of its operating budget through earned revenue and employer partnerships, with grants and philanthropy supporting innovation and growth.
       </p>
       <div class="border-t-2 border-orange pt-5">
         <p class="mb-1 text-3xl md:text-4xl font-bold text-navy font-display leading-tight tabular-nums">$800 million–$1.56 billion</p>
-        <p class="mb-6 font-sans text-sm font-semibold text-navy">External funding potential · Extended FSIC (FSIC 2.0) scenario, over 25 years</p>
+        <p class="mb-6 text-label text-navy">External funding potential · Extended FSIC (FSIC 2.0) scenario, over 25 years</p>
         <Button href="/economic-impact" variant="secondary">Explore the Full Economic Analysis</Button>
-        <p class="font-sans text-sm text-gray-dark mt-6 mb-0">Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.</p>
+        <p class="text-caption text-gray-dark mt-6 mb-0">Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.</p>
       </div>
     </Grid>
   </Section>

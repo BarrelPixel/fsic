@@ -14,7 +14,7 @@ interface Props {
   itemClass?: string;
 }
 
-const { programs, class: className, itemClass = 'border-b border-navy/15' } = Astro.props;
+const { programs, class: className, itemClass = 'border-b border-rule' } = Astro.props;
 ---
 <ul role="list" class={className}>
   {programs.map((p) => (

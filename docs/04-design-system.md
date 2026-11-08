@@ -17,8 +17,6 @@ All colors are defined as CSS custom properties on `:root` and mapped to Tailwin
 | Night | `--color-night` | `#0D2138` | Dark sections, header, footer (see `DESIGN.md`) |
 | Lagoon | `--color-lagoon` | `#3E7F74` | Community and coast (see `DESIGN.md`) |
 | Lagoon Light | `--color-lagoon-light` | `#7FB8AC` | Lagoon on dark backgrounds |
-| Salt | `--color-salt` | `#EEF2F3` | Light fill, used sparingly |
-| Gray Light | `--color-gray-light` | `#F5F5F5` | Alternating section backgrounds |
 | Gray Dark | `--color-gray-dark` | `#3F4A56` | Body text on light backgrounds |
 
 ## Typography Scale

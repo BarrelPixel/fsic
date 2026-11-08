@@ -108,25 +108,25 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
   <!-- Interior page template (DESIGN.md): PageHero with a phase timeline as the index, spec sections, closing -->
   <PageHero title="Start Small. Deliver Early Wins. Scale with Readiness.">
     <div slot="aside" class="max-w-sm">
-      <p class="font-sans text-sm font-semibold text-white mb-3">This phased approach:</p>
-      <DashList items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} marker="lagoon-light" class="font-sans text-sm text-white/75" />
+      <p class="text-label text-white mb-3">This phased approach:</p>
+      <DashList items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} marker="lagoon-light" class="text-caption text-white/75" />
     </div>
 
-    <p class="text-2xl text-white/90 leading-snug mb-10">
+    <p class="text-lead text-white/90 mb-10">
       The Florida Space Innovation Center is intentionally designed as a phased, scalable model that reduces risk, builds early momentum, and aligns with regional capacity. Each phase strengthens the next, ensuring that FSIC grows in a financially responsible, strategically aligned, and operationally sustainable manner.
     </p>
 
     <!-- Phase timeline: name (left) | Years 1–5 track (right). Each row links to its phase. -->
     <nav aria-label="The five phases" class="font-sans">
-      <div class="hidden md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)] md:gap-x-6 border-b border-white/25 pb-2" aria-hidden="true">
+      <div class="hidden md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)] md:gap-x-6 border-b border-rule-on-dark pb-2" aria-hidden="true">
         <span></span>
         <span class="grid grid-cols-5 text-sm text-white/60 tabular-nums">
           {YEARS.map((y) => <span>Year {y}</span>)}
         </span>
       </div>
-      <ol class="border-t border-white/25 md:border-t-0">
+      <ol class="border-t border-rule-on-dark md:border-t-0">
         {phases.map((phase, i) => (
-          <li class="border-b border-white/25">
+          <li class="border-b border-rule-on-dark">
             <a href={`#${phase.id}`} class="group grid gap-y-2 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)] md:gap-x-6 md:items-center py-3.5 rounded-sm">
               <span class="flex items-baseline gap-3">
                 <span class="text-sm text-white/60 tabular-nums">{pad2(i + 1)}</span>
@@ -168,11 +168,11 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
       >
         <Grid labelAs="header" stickyLabel>
           <Fragment slot="label">
-            <p class="font-sans text-sm font-semibold text-navy mb-2">Phase {i + 1} · {phase.timeframe}</p>
+            <p class="text-label text-navy mb-2">Phase {i + 1} · {phase.timeframe}</p>
             <h2 id={`${phase.id}-title`} class="mb-0">{phase.name}</h2>
           </Fragment>
 
-          <p class="text-2xl text-navy leading-snug mb-10 max-w-3xl lg:pt-1">{phase.overview}</p>
+          <p class="text-lead text-navy mb-10 max-w-3xl lg:pt-1">{phase.overview}</p>
 
           <dl>
             <Row label="Core activities">
@@ -181,7 +181,7 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
             <Row label="Key outcomes">
               <DashList items={phase.outcomes} marker={phase.tone} class="text-navy" />
             </Row>
-            <Row label="Facilities" class="border-b border-navy/15">
+            <Row label="Facilities" class="border-b border-rule">
               <p class="mb-0 text-gray-dark">{phase.facilities}</p>
             </Row>
           </dl>
@@ -194,10 +194,10 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
   <Section dark>
     <Grid>
       <h2 slot="label" class="text-white mb-0">A Phased Model That Reduces Risk and Builds Momentum</h2>
-      <p class="text-2xl text-white/85 leading-snug mb-8 max-w-3xl">
+      <p class="text-lead text-white/85 mb-8 max-w-3xl">
         FSIC launches with a lean operational model supported by philanthropic investment, in-kind contributions, and early public-private partnerships. Over three years, FSIC transitions from startup to full Talent Engine activation, supported by diversified revenue streams including grants, employer partnerships, earned revenue, and corporate sponsorships.
       </p>
-      <p class="text-lg text-white/80 mb-0 max-w-3xl pt-6 border-t border-white/25">
+      <p class="text-lg text-white/80 mb-0 max-w-3xl pt-6 border-t border-rule-on-dark">
         By Year 3, FSIC is positioned to sustain 30–50% of its operating budget through recurring earned revenue and employer partnerships, with grants and philanthropy fueling innovation and growth.
       </p>
     </Grid>

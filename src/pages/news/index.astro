@@ -14,11 +14,11 @@ const releases = await getReleases();
 
   <!-- Interior page template (DESIGN.md): PageHero, then the releases as rows on the grid -->
   <PageHero title="News & Media">
-    <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
+    <p slot="aside">
       Media inquiries:
-      <a href={mailto()} class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">{EMAIL}</a>
+      <a href={mailto()} class="link-on-dark">{EMAIL}</a>
     </p>
-    <p class="text-2xl text-white/90 leading-snug mb-0">
+    <p class="text-lead text-white/90 mb-0">
       Press releases from the Florida Space Innovation Center, newest first.
     </p>
   </PageHero>
@@ -26,11 +26,11 @@ const releases = await getReleases();
   <!-- Releases: date and thumbnail (cols 1–4) | headline and first sentence (cols 5–12). Date and
        headline share a baseline (DESIGN.md, tables). -->
   <Section>
-    <ol class="divide-y divide-navy/15 border-b border-navy/15">
+    <ol class="divide-y divide-rule border-b border-rule">
       {releases.map((r) => (
         <li class="grid gap-y-2 py-8 first:pt-0 lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
           <div class="lg:col-span-4">
-            <p class="mb-0 font-sans text-sm font-semibold text-gray-dark">
+            <p class="mb-0 text-label text-gray-dark">
               <time datetime={r.data.date.toISOString().slice(0, 10)}>{formatDate(r.data.date)}</time>
             </p>
             {/* Thumbnail of the release graphic at one height (width follows the graphic; never cropped).

@@ -47,13 +47,13 @@ const phases = [
   { n: 5, name: 'Full Ecosystem Integration', when: 'Years 3–5', spaces: ['Full-scale innovation center', 'Expanded research and prototyping labs', 'Large multipurpose event and conference space', 'Co-located university and industry partner suites', 'Outdoor innovation plaza and community spaces'] },
 ];
 
-const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:decoration-navy';
+const link = 'link';
 ---
 <BaseLayout title="Programs & Facilities" description="FSIC's programs for students, adults, businesses, and the community, the program portfolio across the Talent, Innovation, Market, and Civic Engines, and the phased facilities plan.">
 
   <!-- Interior page template (DESIGN.md): PageHero with an index of the three sections -->
   <PageHero title="Programs & Facilities">
-    <p class="text-2xl text-white/90 leading-snug mb-10 max-w-3xl">
+    <p class="text-lead text-white/90 mb-10 max-w-3xl">
       FSIC expands opportunity for residents of all ages by making the space economy accessible and visible.
     </p>
     <HeroIndex label="Sections on this page" size="large" items={sections} />
@@ -71,7 +71,7 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
         ))}
         <Row label="For businesses and entrepreneurs:" rule="bottom" class="pt-5">
           <p class="mb-4 text-gray-dark">FSIC helps small businesses and startups participate in aerospace and advanced manufacturing supply chains — opportunities that are currently difficult to access.</p>
-          <p class="mb-2 font-sans text-sm font-semibold text-navy">Support includes:</p>
+          <p class="mb-2 text-label text-navy">Support includes:</p>
           <DashList items={['Supplier-readiness bootcamps', 'Certification and contracting navigation', 'SBIR/STTR proposal support', 'Startup incubation and acceleration', 'Access to prototyping labs and applied research partners']} class="mb-4 text-gray-dark" />
           <p class="mb-0 text-gray-dark">This creates a pipeline of supplier-ready companies capable of competing in high-value markets.</p>
         </Row>
@@ -96,8 +96,8 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
         {engines.map((e, i) => (
           <Row label={e.name} count={e.programs.length} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
             <p class="mb-3 text-gray-dark">{e.line}</p>
-            <ProgramList programs={e.programs} class="border-t border-navy/15" />
-            <p class="mt-3 mb-0 font-sans text-sm">
+            <ProgramList programs={e.programs} class="border-t border-rule" />
+            <p class="mt-3 mb-0 text-caption">
               <a href={`${base}/model#${e.id}`} class={link}>The {e.name} on the Model page</a>
             </p>
           </Row>
@@ -110,7 +110,7 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
        the principles and the planned core spaces by phase. No development is named (docs/08 §3.3). -->
   <Section id="facilities" index={3} total={3} spacing="stacked" heading="Facilities and Infrastructure Plan" class="scroll-mt-12">
     <Grid>
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">
+      <p slot="label" class="mb-0 text-statement text-navy">
         FSIC is a virtual organization located in New Smyrna Beach.
       </p>
       <div>
@@ -129,12 +129,12 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
           {phases.map((ph) => (
             <Row label={`Phase ${ph.n} · ${ph.when}`} rule="bottom" class="pt-5">
               <p class="mb-2 font-sans font-semibold text-navy">{ph.name}</p>
-              <p class="mb-2 font-sans text-sm text-gray-dark">Planned core spaces:</p>
+              <p class="mb-2 text-caption text-gray-dark">Planned core spaces:</p>
               <DashList items={ph.spaces} class="text-gray-dark" />
             </Row>
           ))}
         </dl>
-        <p class="mt-6 mb-0 font-sans text-sm">
+        <p class="mt-6 mb-0 text-caption">
           Each phase's activities and outcomes are on the <a href={`${base}/deployment`} class={link}>Phased Deployment</a> page.
         </p>
       </div>

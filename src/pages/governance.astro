@@ -89,7 +89,7 @@ const metrics = [
 
   <!-- Interior page template (DESIGN.md): PageHero with an index of sections, narrative sections, closing -->
   <PageHero title="Governance & Transparency">
-    <p class="text-2xl text-white/90 leading-snug mb-6">
+    <p class="text-lead text-white/90 mb-6">
       FSIC operates under a partner-first, coalition-driven governance structure.
     </p>
     <p class="text-lg text-white/75 mb-10 max-w-3xl">
@@ -102,7 +102,7 @@ const metrics = [
   <!-- 01 · A NEUTRAL BACKBONE ORGANIZATION (fsic.space FAQ) -->
   <Section id="backbone" index={1} total={total} heading="A Neutral Backbone Organization">
     <Grid>
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-navy leading-snug">
+      <p slot="label" class="mb-0 text-statement text-navy">
         FSIC's role is to coordinate, align, and accelerate — not duplicate.
       </p>
       <div class="max-w-3xl text-lg">
@@ -112,7 +112,7 @@ const metrics = [
         <p>
           FSIC fills gaps, aligns stakeholders, and builds the connective infrastructure that no single organization can create alone.
         </p>
-        <p class="mt-8 pt-6 border-t border-navy/15 mb-4">
+        <p class="mt-8 pt-6 border-t border-rule mb-4">
           FSIC is intentionally designed to amplify, not compete with, existing institutions. It:
         </p>
         <DashList
@@ -126,7 +126,7 @@ const metrics = [
   <!-- 02 · STRUCTURE: one row per governing body, so they can be compared down the page (Master Plan pp. 15–17) -->
   <Section id="structure" index={2} total={total} spacing="stacked" heading="Governance and Organizational Structure">
     <Grid>
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-navy leading-snug">
+      <p slot="label" class="mb-0 text-statement text-navy">
         The governance model ensures that no single individual, partner, or sector can dominate decision-making.
       </p>
       <div>
@@ -135,17 +135,17 @@ const metrics = [
         </p>
         <dl>
           {bodies.map((body, i) => (
-            <Row label={body.name} class={i === bodies.length - 1 ? 'border-b border-navy/15' : undefined}>
+            <Row label={body.name} class={i === bodies.length - 1 ? 'border-b border-rule' : undefined}>
               <p class="mb-5">{body.purpose}</p>
               {body.lists.map((list) => (
                 <div class="mt-5 first:mt-0">
-                  <p class="mb-2 font-sans text-sm font-semibold text-navy">{list.label}</p>
+                  <p class="mb-2 text-label text-navy">{list.label}</p>
                   <DashList items={list.items} class="text-gray-dark" />
                 </div>
               ))}
               {body.duties && (
-                <Disclosure class="mt-5 border-t border-navy/15" summaryClass="items-center gap-4 pt-3">
-                  <span slot="summary" class="font-sans text-sm font-semibold text-navy">
+                <Disclosure class="mt-5 border-t border-rule" summaryClass="items-center gap-4 pt-3">
+                  <span slot="summary" class="text-label text-navy">
                     {body.duties.label}<span class="font-medium text-gray"> · {body.duties.items.length}</span>
                   </span>
                   <DashList items={body.duties.items} class="pt-3 text-gray-dark" />
@@ -161,7 +161,7 @@ const metrics = [
   <!-- 03 · PUBLIC REPORTING AND TRANSPARENCY (Master Plan pp. 17, 31) -->
   <Section id="reporting" index={3} total={total} spacing="stacked" heading="Public Reporting and Transparency">
     <Grid>
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-navy leading-snug">
+      <p slot="label" class="mb-0 text-statement text-navy">
         Transparent reporting strengthens credibility, supports fundraising, and ensures FSIC remains accountable to the region it serves.
       </p>
       <div>
@@ -175,7 +175,7 @@ const metrics = [
           <Row label="Compliance">
             <DashList items={['Annual audits', 'Conflict-of-interest disclosures', 'Public reporting and transparency', 'Grant compliance and reporting', 'Ethical fundraising policies']} class="text-gray-dark" />
           </Row>
-          <Row label="Evaluation principles" class="border-b border-navy/15">
+          <Row label="Evaluation principles" class="border-b border-rule">
             <DashList items={['Measure what matters most to employers, educators, funders, and the community', 'Use data to drive continuous improvement', 'Report outcomes transparently and consistently', 'Align metrics with state and federal funding requirements', 'Demonstrate clear return on investment']} class="text-gray-dark" />
           </Row>
         </dl>
@@ -194,15 +194,15 @@ const metrics = [
   >
     <div>
       <div class="hidden lg:grid lg:grid-cols-12 lg:gap-x-8 border-b-2 border-navy pb-3" aria-hidden="true">
-        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Area</p>
-        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Key metrics</p>
-        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Reporting cadence</p>
+        <p class="lg:col-span-4 mb-0 text-label text-navy">Area</p>
+        <p class="lg:col-span-4 mb-0 text-label text-navy">Key metrics</p>
+        <p class="lg:col-span-4 mb-0 text-label text-navy">Reporting cadence</p>
       </div>
       {metrics.map((m) => (
-        <div class="grid gap-y-4 py-7 border-b border-navy/15 lg:grid-cols-12 lg:gap-x-8">
+        <div class="grid gap-y-4 py-7 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
           <div class="lg:col-span-4">
             {m.number !== null && (
-              <p class="font-sans text-sm text-gray tabular-nums flex items-center gap-2 mb-2">
+              <p class="text-caption text-gray tabular-nums flex items-center gap-2 mb-2">
                 <span class:list={['w-2.5 h-2.5 rounded-full', m.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']} aria-hidden="true"></span>
                 {pad2(m.number)}
               </p>
@@ -210,11 +210,11 @@ const metrics = [
             <h3 class="text-xl mb-0">{m.name}</h3>
           </div>
           <div class:list={['lg:col-span-4', m.number !== null && 'lg:pt-7']}>
-            <p class="lg:sr-only mb-2 font-sans text-sm font-semibold text-navy">Key metrics</p>
+            <p class="lg:sr-only mb-2 text-label text-navy">Key metrics</p>
             <DashList items={[...m.items]} class="text-gray-dark" />
           </div>
           <div class:list={['lg:col-span-4', m.number !== null && 'lg:pt-7']}>
-            <p class="lg:sr-only mb-2 font-sans text-sm font-semibold text-navy">Reporting cadence</p>
+            <p class="lg:sr-only mb-2 text-label text-navy">Reporting cadence</p>
             <DashList items={[...m.cadence]} class="text-navy" />
           </div>
         </div>
@@ -225,7 +225,7 @@ const metrics = [
   <!-- 05 · THE ROLE OF DEVELOPERS (fsic.space FAQ): the trust statement, on night -->
   <Section id="developers" index={5} total={total} dark heading="What Is the Role of Developers?">
     <Grid>
-      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-white leading-snug">
+      <p slot="label" class="mb-0 text-statement text-white">
         Developers play a collaborative — not controlling — role in FSIC's work.
       </p>
       <div class="max-w-3xl text-lg text-white/85">
