@@ -8,16 +8,17 @@ interface Props {
 const { href, variant = 'primary', class: className = '' } = Astro.props;
 const resolvedHref = href.startsWith('/') ? `${import.meta.env.BASE_URL}${href}` : href;
 
+// Primary uses night text on orange: white on orange is only 2.97:1 and fails WCAG AA.
 const variants = {
-  primary: 'bg-orange text-white hover:bg-orange-dark',
+  primary: 'bg-orange text-night hover:bg-[#F08F48]',
   secondary: 'border-2 border-navy text-navy hover:bg-navy hover:text-white',
-  'secondary-light': 'border-2 border-white text-white hover:bg-white hover:text-navy',
+  'secondary-light': 'border-2 border-white/70 text-white hover:border-white hover:bg-white hover:text-night',
 };
 ---
 <a
   href={resolvedHref}
   class:list={[
-    'inline-block px-8 py-3.5 text-base font-semibold rounded-md transition-all duration-200 text-center',
+    'inline-block px-7 py-3.5 text-base font-semibold rounded-sm transition-colors duration-200 text-center',
     variants[variant],
     className,
   ]}

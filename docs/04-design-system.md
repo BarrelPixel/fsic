@@ -1,5 +1,7 @@
 # 04 — Design System
 
+> **Superseded in part by `/DESIGN.md`** (November 2026: the "Within Sight of the Cape" direction). For colors, type (Barlow Semi Condensed and Archivo), layout and motion, follow `DESIGN.md`. The specs below are from the first build. Some no longer apply: the system font, white-on-orange buttons, StatBlock and EngineCard.
+
 ## Color Tokens
 
 All colors are defined as CSS custom properties on `:root` and mapped to Tailwind via `@theme`.

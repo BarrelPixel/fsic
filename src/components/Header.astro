@@ -9,14 +9,23 @@ const navItems = [
   { label: 'Contact', href: `${base}/contact` },
 ];
 
-const currentPath = Astro.url.pathname;
+const stripSlash = (path: string) => (path.length > 1 ? path.replace(/\/+$/, '') : path);
+const currentPath = stripSlash(Astro.url.pathname);
+const homePath = stripSlash(base);
+
+// Home matches only itself; other items also match their sub-pages.
+const isActive = (href: string) => {
+  const target = stripSlash(href);
+  if (target === homePath) return currentPath === homePath;
+  return currentPath === target || currentPath.startsWith(`${target}/`);
+};
 ---
-<header class="bg-navy text-white relative z-50">
+<header class="bg-night text-white relative z-50 border-b border-white/10">
   <div class="container">
     <nav class="flex items-center justify-between py-4" aria-label="Main navigation">
-      <a href={base} class="text-lg font-bold tracking-tight hover:opacity-90 transition-opacity leading-tight">
-        <span class="block">Florida Space</span>
-        <span class="block text-sm font-medium text-orange">Innovation Center</span>
+      <a href={base} class="leading-tight hover:opacity-90 transition-opacity">
+        <span class="block text-xl font-bold font-display">Florida Space</span>
+        <span class="block text-sm font-medium text-white/70 font-display">Innovation Center</span>
       </a>
 
       <!-- Desktop Nav -->
@@ -27,11 +36,11 @@ const currentPath = Astro.url.pathname;
               href={item.href}
               class:list={[
                 'px-3 py-2 text-sm font-medium rounded transition-colors',
-                currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
+                isActive(item.href)
                   ? 'bg-white/15 text-white'
                   : 'text-white/80 hover:text-white hover:bg-white/10',
               ]}
-              aria-current={currentPath === item.href ? 'page' : undefined}
+              aria-current={isActive(item.href) ? 'page' : undefined}
             >
               {item.label}
             </a>
@@ -56,7 +65,7 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-navy border-t border-white/10">
+  <div id="mobile-menu" class="hidden lg:hidden bg-night border-t border-white/10">
     <div class="container py-4">
       <ul class="flex flex-col gap-1" role="list">
         {navItems.map((item) => (
@@ -65,11 +74,11 @@ const currentPath = Astro.url.pathname;
               href={item.href}
               class:list={[
                 'block px-3 py-2.5 text-sm font-medium rounded transition-colors',
-                currentPath === item.href
+                isActive(item.href)
                   ? 'bg-white/15 text-white'
                   : 'text-white/80 hover:text-white hover:bg-white/10',
               ]}
-              aria-current={currentPath === item.href ? 'page' : undefined}
+              aria-current={isActive(item.href) ? 'page' : undefined}
             >
               {item.label}
             </a>
