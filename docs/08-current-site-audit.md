@@ -94,6 +94,8 @@ These figures describe different areas (all of Southeast Volusia versus Deering 
 
 The built page doesn't match the approved copy, and it doesn't follow the content guidelines (figures must match the PDFs). Either show the ranges, or label the figures as "up to" and add the disclaimer.
 
+**Status (November 2026): resolved.** The home page now shows the full ranges with range bars, the source and the disclaimer. The Economic Impact page does the same. See §3.10 for a related open question about which scenario the figures describe.
+
 ### 3.3 Location and Deering Park (high priority)
 - **Current FAQ:** "FSIC is a virtual organization located in New Smyrna Beach. A specific future site in Volusia County will be determined through a collaborative process."
 - **Current FAQ (developers):** "FSIC does not endorse specific projects or drive development."
@@ -130,10 +132,19 @@ The FAQ page has a formal **mission statement** and **vision statement**. The ne
 - The founder bio and service pages show `info@mysite.com` and `123-456-7890`.
 - The source PDFs list a personal email and phone number for John Joaquin. Decide whether these are public or whether all contact goes to `info@fsic.space`.
 
+### 3.10 Which scenario the headline figures describe (high priority)
+- The chart on Master Plan p. 8 compares three 25-year scenarios: **Baseline (No FSIC)**, **FSIC 1.0** (the foundational program phase) and **FSIC 2.0** (a full innovation district anchored by NASA, universities, employers and a convention and performing arts center).
+- The headline figures used everywhere ($10.2–$12.4B output, 74,500–79,500 job-years, $1.35–$1.55B wages, $690–$910M fiscal, $800M–$1.56B funding) are the **FSIC 2.0** values. FSIC 1.0 is $8.1–$9.7B output, $250–$500M funding, $420–$520M fiscal, $1.05–$1.25B wages.
+- The approved home page introduces them as "Independent 25-year analysis projects that FSIC will generate:" without naming the scenario. The current FAQ says "with full implementation", which fits FSIC 2.0.
+- The Economic Impact page labels them "Extended FSIC (FSIC 2.0) scenario" and shows all three scenarios.
+- Two possible errors in the same chart: **job-years** are 18k–22k for both Baseline and FSIC 1.0, and **fiscal impact** is labeled "City + County" while the text (p. 7) says "local and state governments".
+
+Decide whether the home page should name the scenario, and confirm the two chart values with whoever produced the analysis.
+
 ### 3.9 Things the current site has that the new build does not
-- **Social links:** LinkedIn, Facebook, X (@FLSpaceCenter). These are missing from the new footer.
+- **Social links:** LinkedIn, Facebook, X (@FLSpaceCenter). Now in the new footer.
 - **Newsletter signup** (email and opt-in). Already an open question in `07-open-questions.md`.
-- **Logo** (shown in the Wix footer). Ask for the source file (see `07-open-questions.md`, Branding).
+- **Logo:** now in the header and footer from a PNG (314×148). Still ask for an SVG or larger source (see `07-open-questions.md`, Branding).
 
 ---
 

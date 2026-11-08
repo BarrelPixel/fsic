@@ -3,9 +3,9 @@
 Items requiring stakeholder input or decisions before full launch.
 
 ## Branding & Identity
-- [ ] **Logo:** No FSIC logo has been provided. Need final logo in SVG format (plus PNG fallback).
+- [ ] **Logo:** A PNG (314×148) was provided and is in use (`public/images/fsic-logo.png`, plus a dark-background version). Still need an SVG or a larger source so it stays sharp at larger sizes.
 - [ ] **Favicon:** Derived from logo. Need source file.
-- [ ] **Typography:** Currently using system font stack. Should we license Inter or another typeface?
+- [x] **Typography:** Resolved. Barlow Semi Condensed, Source Serif 4 and Archivo from Google Fonts (see `DESIGN.md`).
 - [ ] **Photography / Imagery:** No approved photos provided. Need hero images, section backgrounds, campus renderings if available. What are the usage rights for conceptual renderings referenced in the PDFs?
 - [ ] **Brand guidelines:** Are there existing brand guidelines beyond the color palette provided?
 
@@ -15,6 +15,7 @@ Items requiring stakeholder input or decisions before full launch.
 - [ ] **News / Updates section:** Should the site include a blog or news feed at launch?
 - [ ] **Partner logos:** Are there approved partner organizations whose logos can be displayed? (Do not fabricate.)
 - [ ] **Testimonials / Endorsements:** Are there approved quotes from stakeholders to include?
+- [ ] **Economic scenario:** The headline economic figures are the Master Plan's FSIC 2.0 scenario. Should the home page say so? And are two chart values right: job-years for FSIC 1.0 (same as Baseline) and "City + County" fiscal impact? See `08-current-site-audit.md` §3.10.
 
 ## Technical & Infrastructure
 - [ ] **Hosting provider:** Where will the site be hosted? (Vercel, Netlify, AWS, other?)

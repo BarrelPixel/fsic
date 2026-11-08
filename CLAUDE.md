@@ -22,7 +22,7 @@ There is no linter or test suite. `npm run build` is the check.
 ## Layout
 
 ```
-src/pages/           One .astro file per route. index.astro and model.astro are built out; the rest use <ComingSoon>
+src/pages/           One .astro file per route. index, model and economic-impact are built out; the rest use <ComingSoon>
 src/components/      Grid components (Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead),
                      Button, CoastlineMap, Header, Footer, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)

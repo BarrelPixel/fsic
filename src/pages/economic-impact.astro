@@ -1,10 +1,284 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComingSoon from '../components/ComingSoon.astro';
+import Button from '../components/Button.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Row from '../components/Row.astro';
+import DashList from '../components/DashList.astro';
+
+// Copy: src/content/copy/economic-impact.md (Draft). Wording is verbatim from the copy deck.
+// Open review items (see the ⚠ notes there): the headline figures are the FSIC 2.0 scenario;
+// the job-years row repeats 18k–22k for Baseline and FSIC 1.0; "city + county" vs "local and state".
+
+const SOURCE = 'Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.';
+
+// 01 · 25-year impact at a glance (Extended FSIC / FSIC 2.0), Master Plan pp. 7–8
+const glance = [
+  { metric: 'Economic output', display: '$10.2–$12.4 billion', low: 10.2, high: 12.4, body: 'FSIC generates several times the economic output of the Baseline scenario by accelerating development, increasing operational activity, and expanding visitor spending.' },
+  { metric: 'Job-years supported', display: '74,500–79,500', low: 74500, high: 79500, body: 'Jobs span construction, operations, research, training, and the broader supply chain — creating sustained employment across the region.' },
+  { metric: 'New wages', display: '$1.35–$1.55 billion', low: 1.35, high: 1.55, body: 'FSIC strengthens the regional workforce and expands access to higher-wage career pathways in aerospace, engineering, advanced manufacturing, and technology.' },
+  { metric: 'Fiscal revenue', display: '$690–$910 million', low: 690, high: 910, body: 'Local governments benefit from increased property tax, sales tax, and tourism-related revenue — supporting infrastructure, public services, and community investments.' },
+  { metric: 'External funding potential', display: '$800 million–$1.56 billion', low: 0.8, high: 1.56, body: 'FSIC aligns with federal, state, private, and philanthropic funding streams tied to workforce development, innovation, research, and economic competitiveness.' },
+];
+
+// 02 · Three scenarios, Master Plan pp. 8–9.
+// Scenarios are ordered, so they use one hue stepping light to dark (validated as an ordinal ramp on
+// white with the dataviz validator: #9DB0C8 → #4E6F99 → #1E4370, the last is the navy-light token).
+const scenarios = [
+  {
+    name: 'Baseline (No FSIC)',
+    short: 'Baseline',
+    color: '#9DB0C8',
+    body: 'The Baseline scenario reflects a slow growth future with limited job creation, modest fiscal gains, and a decades long buildout of Deering Park.',
+  },
+  {
+    name: 'FSIC 1.0',
+    short: 'FSIC 1.0',
+    color: '#4E6F99',
+    body: "FSIC 1.0 is the foundational phase of the Florida Space Innovation Center, designed to activate the region's economic engine through four coordinated program areas: Talent, Innovation, Market, and Civic Advancement. This phase establishes the structure, partnerships, and programming needed to convene a regional space ecosystem and align with federal, state, and private funding sources. It is a low-risk, high-leverage platform that organizes the region, attracts early partners, and prepares the groundwork for larger capital investments in FSIC 2.0.",
+  },
+  {
+    name: 'FSIC 2.0',
+    short: 'FSIC 2.0',
+    color: '#1E4370',
+    body: 'FSIC 2.0 represents a transformational path: a fully realized innovation district anchored by NASA, university partners, high tech employers, and a convention and performing arts center. This expanded model generates the strongest economic output, highest wage job creation, and the largest influx of external funding, while establishing New Smyrna Beach as a statewide hub for space related research, education, and tourism.',
+  },
+];
+
+type Cell = { display: string; low: number; high: number };
+// low/high are in the row's own unit; bars are scaled within each row (one scale per row, never shared).
+const comparison: { metric: string; cells: [Cell, Cell, Cell] }[] = [
+  { metric: 'Economic output', cells: [{ display: '$1.8–$2.4B', low: 1.8, high: 2.4 }, { display: '$8.1–$9.7B', low: 8.1, high: 9.7 }, { display: '$10.2–$12.4B', low: 10.2, high: 12.4 }] },
+  { metric: 'Net-new external funding', cells: [{ display: 'Minimal', low: 0, high: 0 }, { display: '$250–$500M', low: 250, high: 500 }, { display: '$800M–$1.56B', low: 800, high: 1560 }] },
+  { metric: 'Fiscal impact (city + county)', cells: [{ display: '$110–$160M', low: 110, high: 160 }, { display: '$420–$520M', low: 420, high: 520 }, { display: '$690–$910M', low: 690, high: 910 }] },
+  { metric: 'Job-years supported', cells: [{ display: '18,000–22,000', low: 18000, high: 22000 }, { display: '18,000–22,000', low: 18000, high: 22000 }, { display: '74,500–79,500', low: 74500, high: 79500 }] },
+  { metric: 'Total wage impact', cells: [{ display: '$450–$600M', low: 450, high: 600 }, { display: '$1.05–$1.25B', low: 1050, high: 1250 }, { display: '$1.35–$1.55B', low: 1350, high: 1550 }] },
+  { metric: 'Annual visitor volume', cells: [{ display: 'Under 10,000', low: 0, high: 10000 }, { display: '40,000–60,000', low: 40000, high: 60000 }, { display: '150,000–210,000', low: 150000, high: 210000 }] },
+  { metric: 'Deering Park absorption (shorter is better)', cells: [{ display: '20–25 years', low: 20, high: 25 }, { display: '12–16 years', low: 12, high: 16 }, { display: '10–13 years', low: 10, high: 13 }] },
+];
+
+// 04 · Return on investment, Master Plan pp. 28–29
+const roi = [
+  {
+    area: 'Workforce & Talent',
+    outcomes: ['Increased number of job ready graduates', 'Higher placement rates in high value careers', 'Reduced hiring friction for employers', 'Expanded access to STEM pathways for students', 'Increased adult upskilling and reskilling'],
+    implications: ['Higher regional wages', 'Stronger employer retention', 'Increased attractiveness for new employers', 'Reduced reliance on imported labor'],
+  },
+  {
+    area: 'Employer & Industry',
+    outcomes: ['Access to a reliable talent pipeline', 'Reduced recruitment and training costs', 'Increased productivity and innovation capacity', 'Stronger partnerships with education and research institutions'],
+    implications: ['Increased employer investment', 'Higher job creation', 'Stronger regional competitiveness', 'Expanded tax base'],
+  },
+  {
+    area: 'Small Business & Supplier',
+    outcomes: ['Increased SBIR/STTR submissions and awards', 'More local companies entering aerospace and defense supply chains', 'Stronger startup formation and growth', 'Expanded access to capital and mentorship'],
+    implications: ['Increased contract wins', 'Higher business revenue', 'Greater economic diversification', 'Stronger regional resilience'],
+  },
+  {
+    area: 'Innovation & Research',
+    outcomes: ['Increased number of prototypes and research projects', 'Stronger university partnerships', 'Expanded dual-use technology development', 'Greater participation in federal innovation programs'],
+    implications: ['Increased federal research funding', 'Stronger intellectual property generation', 'Enhanced regional reputation for innovation', 'Attraction of high-value employers and researchers'],
+  },
+  {
+    area: 'Community & Civic',
+    outcomes: ['Increased participation in STEM events', 'Expanded access to hands-on learning', 'Stronger regional storytelling and identity', 'Greater civic engagement and pride'],
+    implications: ['Increased community vitality', 'Stronger support for regional development', 'Enhanced quality of life', 'Attraction of families and talent'],
+  },
+];
+
+const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10 : 0);
 ---
-<BaseLayout title="Economic Impact" description="FSIC's 25-year economic analysis: $10.2–$12.4 billion in output, 74,500–79,500 job-years, and $1.35–$1.55 billion in new wages.">
-  <ComingSoon
-    title="Economic Impact"
-    description="The full 25-year economic analysis including three-scenario comparison, absorption timeline acceleration, external funding potential, and return on investment framework."
-  />
+<BaseLayout title="Economic Impact" description="The 25-year economic and fiscal impact of the Florida Space Innovation Center: output, jobs, wages, fiscal revenue and external funding, across three scenarios.">
+
+  <!-- Interior page template (DESIGN.md): PageHero, numbered narrative sections, closing -->
+  <PageHero title="Transformational, Long-Term Regional Impact">
+    <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
+      These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at
+      <a href="mailto:info@fsic.space" class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">info@fsic.space</a>.
+    </p>
+    <p class="text-2xl text-white/90 leading-snug mb-6">
+      The Florida Space Innovation Center (FSIC) is a regional platform designed to ensure that the growth of Florida's space economy directly benefits the people who live and work in Volusia County.
+    </p>
+    <p class="text-lg text-white/75 mb-0 max-w-3xl">
+      By coordinating workforce training, research partnerships, business attraction, and community programming, FSIC strengthens the region's economic foundation and expands access to high-skill, high-wage career pathways. It accelerates development, attracts new employers, and brings in substantial external investment—creating long-term economic stability and opportunity.
+    </p>
+  </PageHero>
+
+  <!-- 01 · AT A GLANCE: figure (cols 1–4) | what it means (5–8) | range bar (9–12) -->
+  <Section id="at-a-glance" index={1} total={4} heading="25-Year Impact at a Glance" intro="Extended FSIC (FSIC 2.0) scenario, over 25 years:">
+    <ul class="border-t border-navy/15" role="list">
+      {glance.map((row) => (
+        <li class="grid gap-y-3 py-6 border-b border-navy/15 lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
+          <div class="lg:col-span-4">
+            <p class="mb-1 text-3xl md:text-4xl font-bold text-navy font-display leading-tight tabular-nums">{row.display}</p>
+            <p class="mb-0 font-sans text-sm font-semibold text-navy">{row.metric}</p>
+          </div>
+          <p class="lg:col-span-5 mb-0 text-base text-gray-dark">{row.body}</p>
+          <div class="lg:col-span-3 lg:self-center flex gap-0.5 h-2.5" aria-hidden="true">
+            <div class="h-full bg-orange" style={`width:${pct(row.low, row.high)}%`}></div>
+            <div class="h-full bg-orange/40 flex-1"></div>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <Grid class="mt-10">
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-navy leading-snug">
+        This is not a short-term program. It is a durable economic backbone.
+      </p>
+      <p class="font-sans text-sm text-gray-dark mb-2 flex items-center gap-3">
+        <span class="inline-flex gap-0.5" aria-hidden="true"><span class="w-4 h-2 bg-orange"></span><span class="w-4 h-2 bg-orange/40"></span></span>
+        Solid bar: low estimate. Lighter extension: range to the high estimate.
+      </p>
+      <p class="font-sans text-sm text-gray-dark mb-0">{SOURCE}</p>
+    </Grid>
+  </Section>
+
+  <!-- 02 · THREE SCENARIOS: the scenarios as rows, then one comparison table on the page grid -->
+  <Section id="scenarios" index={2} total={4} spacing="stacked" heading="Three-Scenario Economic Impact Analysis" intro="This analysis evaluates FSIC's projected 25-year impact under three scenarios: Baseline (No FSIC), Basic FSIC (FSIC 1.0), and Extended FSIC (FSIC 2.0).">
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <dl>
+        {scenarios.map((s, i) => (
+          <div class:list={['grid gap-y-2 md:grid-cols-8 md:gap-x-8 py-5', i === 0 ? 'pt-0 border-b' : 'border-b', 'border-navy/15']}>
+            <dt class="md:col-span-2 md:pt-[0.3rem] font-sans text-sm font-semibold text-navy flex items-start gap-2">
+              <span class="mt-[0.3rem] w-3 h-3 shrink-0" style={`background:${s.color}`} aria-hidden="true"></span>
+              {s.name}
+            </dt>
+            <dd class="md:col-span-6 text-base text-gray-dark">{s.body}</dd>
+          </div>
+        ))}
+      </dl>
+    </Grid>
+
+    <!-- Comparison: metric in the label column, the three scenarios across the content column.
+         Each row has its own scale (bars scaled to the row's highest value); values are always printed. -->
+    <!-- Below md each row restacks: the metric across the top, the three scenarios side by side under it -->
+    <div class="mt-14">
+      <table class="w-full font-sans border-collapse md:table-fixed">
+        <caption class="sr-only">25-year projections by scenario, Master Plan p. 8</caption>
+        <!-- Metric column = label column (cols 1–4 + one third of a gap ≈ 34.2%; tables ignore mixed calc()), so the scenarios start on the content column line -->
+        <colgroup>
+          <col style="width: 34.2%" />
+          <col /><col /><col />
+        </colgroup>
+        <thead>
+          <tr class="grid grid-cols-3 gap-x-3 md:table-row border-b-2 border-navy">
+            <th scope="col" class="hidden md:table-cell text-left text-sm font-semibold text-navy pb-3 pr-4 align-bottom">Metric</th>
+            {scenarios.map((s) => (
+              <th scope="col" class="text-left text-sm font-semibold text-navy pb-3 pr-4 align-bottom">
+                <span class="flex items-center gap-2">
+                  <span class="w-3 h-3 shrink-0" style={`background:${s.color}`} aria-hidden="true"></span>
+                  {s.short}
+                </span>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {comparison.map((row) => {
+            const max = Math.max(...row.cells.map((c) => c.high));
+            return (
+              <tr class="grid grid-cols-3 gap-x-3 md:table-row border-b border-navy/15 py-4 md:py-0">
+                <th scope="row" class="col-span-3 md:table-cell text-left font-medium text-navy pb-2 md:py-4 md:pr-4 align-top">{row.metric}</th>
+                {row.cells.map((cell, i) => (
+                  <td class="md:py-4 md:pr-4 align-top">
+                    <span class="block text-sm md:text-base text-navy tabular-nums mb-2">{cell.display}</span>
+                    <span class="flex gap-0.5 h-2" aria-hidden="true">
+                      {cell.low > 0 && <span class="h-full" style={`width:${pct(cell.low, max)}%;background:${scenarios[i].color}`}></span>}
+                      {cell.high > cell.low && <span class="h-full opacity-40" style={`width:${pct(cell.high - cell.low, max)}%;background:${scenarios[i].color}`}></span>}
+                    </span>
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+
+    <Grid class="mt-6">
+      <Fragment slot="label"></Fragment>
+      <p class="font-sans text-sm text-gray-dark mb-2">
+        Bars are scaled within each row. Solid: low estimate. Lighter: range to the high estimate.
+      </p>
+      <p class="font-sans text-sm text-gray-dark mb-0">{SOURCE}</p>
+    </Grid>
+  </Section>
+
+  <!-- 03 · DEERING PARK: thesis, context, then the before/after pair as adjacent rows -->
+  <Section id="deering-park" index={3} total={4} label="Deering Park" dark heading="Absorption Timeline Cut Nearly in Half">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-white leading-snug">
+        FSIC accelerates Deering Park's development from 20–25 years to 10–13 years, increasing taxable value earlier and attracting anchor tenants sooner.
+      </p>
+      <p class="text-lg text-white/85 mb-10 max-w-3xl">
+        Deering Park's master-planned development will add more than 10,000 homes and over 10 million square feet of industrial and commercial space. This growth will reshape the region's workforce needs, employer mix, and long-term economic trajectory.
+      </p>
+      <dl>
+        <Row label="Risks without FSIC" dark>
+          <DashList items={['Becoming a commuter corridor', 'Low-wage service-sector concentration', 'Limited employer recruitment', 'Weak regional identity']} marker="gray" class="text-white/75" />
+        </Row>
+        <Row label="Opportunities with FSIC" dark class="border-b border-white/25">
+          <DashList items={['High-value employer attraction', 'Innovation district development', 'Stronger workforce alignment', 'Expanded economic mobility', 'A shared regional identity rooted in innovation']} marker="lagoon-light" class="text-white" />
+        </Row>
+      </dl>
+    </Grid>
+  </Section>
+
+  <!-- 04 · RETURN ON INVESTMENT: area (cols 1–4) | key outcomes (5–8) | economic implications (9–12) -->
+  <Section id="roi" index={4} total={4} heading="Economic Impact and Return on Investment">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-navy leading-snug">
+        The return on investment is both immediate and long-term, with measurable impacts across job creation, wage growth, business development, and community vitality.
+      </p>
+      <p class="text-lg max-w-3xl mb-0">
+        By aligning talent development, innovation, commercialization, and civic engagement, FSIC strengthens the region's competitiveness, attracts employers, and expands economic mobility.
+      </p>
+    </Grid>
+
+    <div class="mt-14">
+      <div class="hidden lg:grid lg:grid-cols-12 lg:gap-x-8 border-b-2 border-navy pb-3" aria-hidden="true">
+        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Impact</p>
+        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Key outcomes</p>
+        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Economic implications</p>
+      </div>
+      {roi.map((row) => (
+        <div class="grid gap-y-4 py-6 border-b border-navy/15 lg:grid-cols-12 lg:gap-x-8">
+          <h3 class="lg:col-span-4 text-xl mb-0">{row.area}</h3>
+          <div class="lg:col-span-4">
+            <p class="lg:sr-only mb-2 font-sans text-sm font-semibold text-navy">Key outcomes</p>
+            <DashList items={row.outcomes} marker="gray" class="text-gray-dark" />
+          </div>
+          <div class="lg:col-span-4">
+            <p class="lg:sr-only mb-2 font-sans text-sm font-semibold text-navy">Economic implications</p>
+            <DashList items={row.implications} marker="navy" class="text-navy" />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <Grid class="mt-10">
+      <Fragment slot="label"></Fragment>
+      <p class="text-lg max-w-3xl mb-0">
+        The combined impact of workforce development, innovation, commercialization, and civic engagement generates a high return on investment for funders, employers, and the community.
+      </p>
+    </Grid>
+  </Section>
+
+  <!-- CLOSING (Master Plan p. 29) -->
+  <Section rule={false} spacing="stacked">
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10">
+        FSIC positions Southeast Volusia as a full participant in the Space Coast's next decade of growth.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <Button href="/partnership-funding">Become a Partner</Button>
+        <Button href="/deployment" variant="secondary">View the Deployment Timeline</Button>
+      </div>
+    </Grid>
+  </Section>
+
 </BaseLayout>

@@ -144,6 +144,9 @@ Don't put the coastline map or the launch arc on interior pages.
 - Economic figures always appear as **ranges**, matching the Master Plan (`docs/03-content-guidelines.md`).
 - Range bars: the solid orange part is the low estimate, and the lighter part extends to the high estimate. Include the legend.
 - Always show the source and the disclaimer near the figures.
+- **Name the scenario.** The Master Plan's headline figures are its FSIC 2.0 scenario. Where figures appear with room to say so, name it (see `docs/08-current-site-audit.md` §3.10).
+- **Comparing ordered scenarios** (Baseline → FSIC 1.0 → FSIC 2.0) uses one hue stepping light to dark: `#9DB0C8`, `#4E6F99`, `#1E4370` (the last is `navy-light`). This ramp passes the dataviz validator's ordinal checks on white. Don't use orange for a scenario; orange stays the industry color.
+- **Comparison tables** put the metric in the label column and the series across the content column. In a `<table>`, set the first `<col>` to `34.2%` so the series start on the content column line (tables ignore `calc()` that mixes % and rem). Give each row its own scale for the inline bars, always print the values, and say "Bars are scaled within each row" in the note. Below `md`, restack each row: metric across the top, series side by side underneath. The Economic Impact page is the reference.
 
 ## Imagery
 
