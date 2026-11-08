@@ -99,14 +99,14 @@ Defined once in `src/lib/nav.ts` and shared by the header and footer. Pages are 
 - Why FSIC ▾ — The Strategic Moment, Economic Impact, (Long-Term Vision when built)
 - The Model ▾ — The FSIC Model, Phased Deployment, Programs & Facilities
 - Governance
-- Get Involved ▾ — Partnership & Funding, Contact
+- Get Involved (links to Partnership & Funding)
 - News (News & Media)
 - FAQ
 - Contact
 
-The logo links to Home. On phones, the menu lists each group under its name and shows each page once (Contact only under Get Involved).
+The logo links to Home. Each page appears once in the menu. On phones, the menu lists each group under its name.
 
-**Footer:** one column per group (Why FSIC, The Model, Get Involved), then a column "FSIC" with Home, Governance, News and FAQ. Each page appears once.
+**Footer:** one column per group (Why FSIC, The Model), then a column "FSIC" with Home, Governance, Get Involved, News, FAQ and Contact. Each page appears once.
 
 ## Implementation Note
 Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, FAQ, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.

@@ -34,13 +34,8 @@ const nav: NavItem[] = [
     ],
   },
   { label: 'Governance', path: '/governance' },
-  {
-    label: 'Get Involved',
-    links: [
-      { label: 'Partnership & Funding', path: '/partnership-funding' },
-      { label: 'Contact', path: '/contact' },
-    ],
-  },
+  // Get Involved is the Partnership & Funding page. Contact has its own link below; each page appears once.
+  { label: 'Get Involved', path: '/partnership-funding' },
   { label: 'News', path: '/news' },
   { label: 'FAQ', path: '/faq' },
   { label: 'Contact', path: '/contact' },
