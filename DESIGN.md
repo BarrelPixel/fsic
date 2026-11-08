@@ -12,12 +12,13 @@ What to avoid: starfields, rockets, planets, glowing "space tech" gradients. Eve
 
 ## Signature element
 
-**The coastline and the launch arc** (`src/components/CoastlineMap.astro`). The map is a schematic line drawing of the coast from Cape Canaveral north to Edgewater and New Smyrna Beach. An orange launch arc rises from the Cape and bends north to land on Southeast Volusia.
+**The homepage hero photo**: a launch plume seen from the dunes, the region watching the Cape (see "Imagery"). It's the one bold element on the homepage, and everything around it stays quiet. Interior pages open with `PageHero` (see "Interior page template"). Don't add a second signature element.
 
-- It's the one bold element on the page, and everything around it stays quiet.
-- It's the **only** automatic animation. The arc draws once when the map scrolls into view. Without JS, or with reduced motion, it appears fully drawn.
+**Not currently used: the coastline and launch arc** (`src/components/CoastlineMap.astro`). A schematic line drawing of the coast from Cape Canaveral north to Edgewater and New Smyrna Beach, with an orange launch arc between the Cape and Southeast Volusia. It was the homepage's signature element until November 2026, when the hero photo replaced it and it was removed from the page. The component (and its arc animation in `global.css`) is kept in case it returns. If it does:
+- It's drawn for a `night` background.
 - It's labeled "Schematic, not to scale." Don't add distances or figures to the map unless they're sourced.
-- It appears on the homepage only. Interior pages open with `PageHero` (see "Interior page template"), not a smaller copy of the arc. Don't add a second signature element.
+- The arc draws once when the map scrolls into view. Without JS, or with reduced motion, it appears fully drawn. It would be the site's only automatic animation.
+- Don't put it on interior pages.
 
 ## Color
 
@@ -53,7 +54,7 @@ Three families, each with one job:
 | Reading: paragraphs and lists | **Source Serif 4** (`font-serif`, the body default), 18px, line-height 1.7, optical sizing on. Gives the steady, established voice of an anchor institution and reads well over long pages |
 | UI: nav, buttons, captions, labels, data, map, small print | **Archivo** (`font-sans`), weights 400–700 |
 
-- **Reading text is serif by default.** Add `font-sans` to UI elements. Header, Footer, Button and CoastlineMap already do this at their root.
+- **Reading text is serif by default.** Add `font-sans` to UI elements. Header, Footer and Button already do this at their root.
 - All three load from Google Fonts in `BaseLayout.astro`. Barlow loads 500, 600 and 700 only, so don't ask for 400 in display type.
 - Headline sizes use `clamp()` in `global.css`. Condensed type looks smaller at the same size, so display text outside headings uses one step up (`text-2xl` for emphasis lines, `text-3xl`/`text-4xl` for figures).
 - Use `font-display` for non-heading display text (wordmark, figures, closing lines). Don't hard-code heading sizes in pages without a reason.
@@ -109,7 +110,7 @@ Headline across cols 1–9 (max-w-4xl)
 - The hero and the page's final call to action skip the running head.
 - **Running-head labels only when the headline doesn't already name the topic.** "02 / 07 The economic case" above "Transformational, Long-Term Regional Impact" helps; "Governance and transparency" above "Governance & Transparency" is noise, so that section shows the number alone.
 - **Columns share one top line.** The first line of the label column and the first line of the content column start at the same height. Check it by measuring, not by eye (the first-line tops should be within the difference between the two type sizes).
-  - Hang columns from the top (`lg:items-start`). Don't vertically center text against a taller neighbour, including the hero text against the map.
+  - Hang columns from the top (`lg:items-start`). Don't vertically center text against a taller neighbour.
   - Don't open a column with a rule when the column beside it has none. Put the rule below the row, use rules between items (`divide-y`, first item `pt-0`), or, where the content opens with peer rules (the 2×2 value grid), give the label column the same offset (`lg:pt-[1.375rem]` for `border-t-2` + `pt-5`).
   - In tables, align figure and label on a shared baseline (`lg:items-baseline`); center only non-text marks such as range bars (`lg:self-center`).
   - A closing row puts the statement in the label column and the action (button) in the content column, both hung from the rule above. Don't push buttons to the right edge; everything is flush left.
@@ -139,7 +140,7 @@ Every interior page uses the same frame. The Model page (`src/pages/model.astro`
 3. **Optional principles or context section** on `night`, `h2` in the label column.
 4. **Closing**: one statement (`font-display text-3xl`–`4xl`) and the next steps in the content column, `rule={false}`.
 
-Don't put the coastline map or the launch arc on interior pages.
+Don't put the hero photo, the coastline map or the launch arc on interior pages.
 
 ## Data
 
@@ -154,11 +155,12 @@ Don't put the coastline map or the launch arc on interior pages.
 
 - The campus rendering (`public/images/fsic-concept.jpg`) is a **concept**. It always carries the caption "Concept rendering. Design and location to be determined." It belongs in the vision section, not the hero.
 - Prefer real photographs of the region (lagoon, beach launch viewing, local classrooms and shops) when they become available. Don't use stock rockets or astronauts.
+- **Homepage hero photo** (`src/assets/fsic-hero.png`, through `astro:assets` so it's resized per screen; owned by FSIC, confirmed November 2026, so no credit or caption): a launch plume seen from the dunes, full-bleed behind the hero text. The text sits over the open sky on the left; a `night` gradient keeps it readable (left to right at `lg`, top to bottom below, stronger on phones because the text spans the plume there). The photo always shows its full height, plume tip to dunes: it is anchored right at the hero's height and never scaled to the width, so wide screens don't crop the top. On screens wider than the photo, its left edge fades into `night` (`.hero-photo` mask in `global.css`); below `md` it shifts right (`-right-36`) so the plume sits beside the text. Check contrast against the lightest pixel under each text block when changing the photo or the gradient (it measured 6.0:1 or better at 375, 640, 768, 1024, 1280, 1600 and 2328 px). The source is 1440×900; a larger original would look sharper on large and high-density screens. It's the homepage's signature element (see above).
 - **Press release graphics** (`src/content/news/images/`) are shown as FSIC published them, only on the News pages: beside the text in the label column of a release page (after the text on small screens, `max-w-xs`, so the first paragraph isn't pushed below the fold), and as a thumbnail under the date on the list at `lg`, all at one height (`h-32`, width follows the graphic) so rows keep one rhythm. The thumbnail links to the release but is hidden from keyboard and screen readers (the headline is the same link). They are the one exception to the color and imagery rules above, because they are part of the published release. Don't crop them, add text over them, or reuse them elsewhere on the site.
 
 ## Motion
 
-- One automatic animation on the whole site: the launch arc on the homepage. Interior pages have none.
+- No automatic animations on the site at present. (The launch arc was the only one; see "Signature element".)
 - No fade-in on scroll, no hover lift on cards, no count-up numbers.
 - Interaction feedback (hover color, focus ring, menu open) is fine.
 - Always respect `prefers-reduced-motion`.
@@ -168,7 +170,7 @@ Don't put the coastline map or the launch arc on interior pages.
 | Component | Notes |
 |-----------|-------|
 | `Button` | `primary` (orange with night text), `secondary` (navy outline), `secondary-light` (white outline on dark). Small 2px radius. Joins `BASE_URL` for internal hrefs |
-| `CoastlineMap` | The signature element. Scripted only for the visibility trigger |
+| `CoastlineMap` | Not currently used (see "Signature element"). Scripted only for the visibility trigger |
 | `Header` / `Footer` | `night` background, FSIC logo (`public/images/fsic-logo-reverse.png`, the dark-background version), social links in the footer. Both read `src/lib/nav.ts`. Header groups are dropdowns: a flat `night` panel with a hairline border under the trigger, opened by click (disclosure buttons, not ARIA menus), closed by Escape, an outside click or focus leaving; without JS they open on hover and focus. The phone menu lists each group under its name, with rules between entries and each page once. The footer shows one column per group |
 | `RunningHead` | Section index above the heavy rule: `01 / 07`, an optional label, an optional engine-color `dot`, and `dark` for night sections. Decorative, so `aria-hidden` |
 | `Section`, `Grid`, `Row`, `DashList`, `PageHero`, `SectionBar` | The grid components. See "Grid" for props and when to use each |
@@ -177,7 +179,7 @@ Don't put the coastline map or the launch arc on interior pages.
 ## Accessibility floor
 
 - Visible focus: a 3px orange outline with a 3px offset (set globally).
-- Skip link, logical heading order, and descriptive `alt` text. The map has `<title>` and `<desc>`.
+- Skip link, logical heading order, and descriptive `alt` text. (The unused map has `<title>` and `<desc>`.)
 - Check pages at 375px wide. Nothing should scroll horizontally.
 
 ## Checklist for new pages

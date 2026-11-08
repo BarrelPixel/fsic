@@ -95,6 +95,19 @@ html {
 }
 
 /* ============================================
+   Homepage hero photo (index.astro)
+   The photo keeps its full height and sits at the right; its left edge fades out so that on screens
+   wider than the photo it blends into the night background instead of ending in a seam.
+   ============================================ */
+
+@layer components {
+  .hero-photo {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30%);
+    mask-image: linear-gradient(to right, transparent 0, #000 30%);
+  }
+}
+
+/* ============================================
    Navigation dropdowns (Header.astro)
    Panels are closed by default and open when the group has data-open (set by the script).
    Without JS (no .js on <html>), they open on hover and when focus is inside the group.
