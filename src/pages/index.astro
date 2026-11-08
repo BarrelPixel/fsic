@@ -145,16 +145,18 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     heading="Transformational, Long-Term Regional Impact"
     intro="Independent 25-year analysis projects that FSIC will generate:"
   >
-    <ul class="border-t border-rule-on-dark" role="list">
-      {impact.map((row) => {
+    <!-- The range bars are the site's one automatic animation: they draw once when the list scrolls into
+         view (global.css "The one automatic animation"; the script at the end of this file). -->
+    <ul class="range-bars border-t border-rule-on-dark" role="list" data-range-bars>
+      {impact.map((row, i) => {
         const lowPct = Math.round((row.low / row.high) * 100);
         return (
-          <li class="grid gap-y-3 py-6 border-b border-rule-on-dark lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
+          <li class="grid gap-y-3 py-6 border-b border-rule-on-dark lg:grid-cols-12 lg:gap-x-8 lg:items-baseline" style={`--row:${i}`}>
             <p class="lg:col-span-4 mb-0 text-3xl md:text-4xl font-bold text-white font-display leading-tight tabular-nums">{row.display}</p>
             <p class="lg:col-span-4 mb-0 font-sans text-white/75">{row.label}</p>
             <div class="lg:col-span-4 lg:self-center h-2.5 bg-white/10 flex" aria-hidden="true">
-              <div class="h-full bg-orange" style={`width:${lowPct}%`}></div>
-              <div class="h-full bg-orange/40" style={`width:${100 - lowPct}%`}></div>
+              <div class="range-low h-full bg-orange" style={`width:${lowPct}%`}></div>
+              <div class="range-high h-full bg-orange/40" style={`width:${100 - lowPct}%`}></div>
             </div>
           </li>
         );
@@ -344,3 +346,26 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   </Section>
 
 </BaseLayout>
+
+<script>
+  // Draw the range bars once, when at least a third of the list is in view. Browsers without
+  // IntersectionObserver get the bars drawn straight away.
+  const bars = document.querySelector<HTMLElement>('[data-range-bars]');
+  if (bars) {
+    const draw = () => bars.classList.add('is-drawn');
+    if (!('IntersectionObserver' in window)) {
+      draw();
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            draw();
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.35 },
+      );
+      observer.observe(bars);
+    }
+  }
+</script>

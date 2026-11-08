@@ -33,12 +33,21 @@
   --spacing-label-offset: 0.3rem;
   --spacing-rule-offset: 1.375rem;
 
+  /* Motion (DESIGN.md "Motion"): one easing curve, a few durations. `ease-standard` is also a utility. */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
   --font-display: 'Barlow Semi Condensed', 'Arial Narrow', system-ui, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --font-sans: 'Archivo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 :root {
+  --motion-fast: 150ms;    /* hover and focus feedback, menus */
+  --motion-medium: 250ms;  /* expanding items */
+  --motion-draw: 700ms;    /* the range bars: low estimate */
+  --motion-extend: 450ms;  /* the range bars: extension to the high estimate */
+  --motion-stagger: 120ms; /* the range bars: delay between rows */
+
   --section-py: 6rem;
   --section-py-lg: 8rem;
   --container-max: 76rem;
@@ -139,6 +148,7 @@ html {
 
 @utility link {
   @apply text-navy underline underline-offset-4 decoration-navy/30;
+  transition: text-decoration-color var(--motion-fast) var(--ease-standard);
   @variant hover {
     @apply decoration-navy;
   }
@@ -146,6 +156,7 @@ html {
 
 @utility link-on-dark {
   @apply text-white underline underline-offset-4 decoration-white/40;
+  transition: text-decoration-color var(--motion-fast) var(--ease-standard);
   @variant hover {
     @apply decoration-white;
   }
@@ -155,6 +166,7 @@ html {
 @utility links-in {
   & a {
     @apply text-navy underline underline-offset-4 decoration-navy/30;
+    transition: text-decoration-color var(--motion-fast) var(--ease-standard);
   }
   & a {
     @variant hover {
@@ -183,14 +195,30 @@ html {
    ============================================ */
 
 @layer components {
+  /* Closed: hidden. Opening fades in and settles 4px down; closing reverses. `display` transitions
+     with allow-discrete, and @starting-style gives the first frame; browsers without them just
+     show and hide the panel, as before. */
   .nav-panel {
     display: none;
+    opacity: 0;
+    translate: 0 -4px;
+    transition:
+      opacity var(--motion-fast) var(--ease-standard),
+      translate var(--motion-fast) var(--ease-standard),
+      display var(--motion-fast) allow-discrete;
   }
 
   [data-nav-group][data-open] .nav-panel,
   html:not(.js) [data-nav-group]:hover .nav-panel,
   html:not(.js) [data-nav-group]:focus-within .nav-panel {
     display: block;
+    opacity: 1;
+    translate: 0 0;
+
+    @starting-style {
+      opacity: 0;
+      translate: 0 -4px;
+    }
   }
 
   [data-nav-group][data-open] .nav-chevron {
@@ -230,6 +258,71 @@ html {
     width: 0.75rem;
     height: 2px;
     background: var(--color-navy);
+  }
+}
+
+/* ============================================
+   Expanding items (Disclosure.astro): the content opens and closes with a height transition where
+   the browser can animate to `auto` (::details-content and interpolate-size). Elsewhere it opens
+   instantly, as before.
+   ============================================ */
+
+@supports (interpolate-size: allow-keywords) and selector(::details-content) {
+  .disclosure {
+    interpolate-size: allow-keywords;
+  }
+
+  .disclosure::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      block-size var(--motion-medium) var(--ease-standard),
+      content-visibility var(--motion-medium) allow-discrete;
+  }
+
+  .disclosure[open]::details-content {
+    block-size: auto;
+  }
+}
+
+/* ============================================
+   The one automatic animation (DESIGN.md "Motion"): the homepage's range bars draw once when they
+   scroll into view. Each row's low estimate grows from the left, then the lighter extension
+   continues to the high estimate; rows follow one another. The script in index.astro adds
+   .is-drawn. Without JS (no .js on <html>), with reduced motion, and in print, the bars are drawn.
+   ============================================ */
+
+.js .range-bars .range-low,
+.js .range-bars .range-high {
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* Drawn bars rest at transform: none. The animation runs from scaleX(0) with `backwards` fill (hidden
+   while waiting for its delay) and then lets go, so nothing stays on a compositing layer afterwards. */
+.js .range-bars.is-drawn .range-low,
+.js .range-bars.is-drawn .range-high {
+  transform: none;
+}
+
+.js .range-bars.is-drawn .range-low {
+  animation: range-grow var(--motion-draw) var(--ease-standard) backwards;
+  animation-delay: calc(var(--row, 0) * var(--motion-stagger));
+}
+
+.js .range-bars.is-drawn .range-high {
+  animation: range-grow var(--motion-extend) var(--ease-standard) backwards;
+  animation-delay: calc(var(--row, 0) * var(--motion-stagger) + var(--motion-draw));
+}
+
+@keyframes range-grow {
+  from { transform: scaleX(0); }
+}
+
+@media print {
+  .js .range-bars .range-low,
+  .js .range-bars .range-high {
+    transform: none;
   }
 }
 
@@ -281,9 +374,24 @@ html {
   top: 0;
 }
 
-/* Reduced motion: no smooth scrolling. */
+/* Reduced motion: no smooth scrolling, no transitions, and the range bars are already drawn. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after,
+  .disclosure::details-content {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+
+  .js .range-bars .range-low,
+  .js .range-bars .range-high {
+    transform: none;
+    animation: none !important;
   }
 }
