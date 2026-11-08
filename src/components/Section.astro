@@ -8,6 +8,8 @@
 //   <slot />                  ← usually a <Grid> (label | content)
 //
 // The `media` slot renders full-bleed before the container (the vision section's rendering).
+// A section with an `id` gets scroll-mt-20, so in-page links land below the sticky SectionBar.
+// On a page with a sections list (src/lib/sections.ts), pass id, index and total as {...at('id')}.
 import RunningHead from './RunningHead.astro';
 
 interface Props {
@@ -59,7 +61,7 @@ const padding = {
 <section
   id={id}
   aria-labelledby={labelledby}
-  class:list={[dark ? 'bg-night text-white' : 'bg-white', className]}
+  class:list={[dark ? 'bg-night text-white' : 'bg-white', id && 'scroll-mt-20', className]}
 >
   <slot name="media" />
   <div class:list={['container', padding]}>

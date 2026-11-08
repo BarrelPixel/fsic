@@ -36,6 +36,7 @@ src/lib/news.ts      Press release helpers
 src/lib/nav.ts       Site navigation (groups and links), shared by Header and Footer
 src/lib/site.ts      EMAIL, mailto(), SOCIAL_LINKS: use these, don't retype the address or links
 src/lib/format.ts    pad2() for 01, 02… numbering
+src/lib/sections.ts  A page's sections listed once (hero index, SectionBar, running heads)
 src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
                      ranges, read by home, Economic Impact, Partnership & Funding and the FAQ), phases,
                      engines, programs, faq, partnership, governance

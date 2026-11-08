@@ -14,6 +14,7 @@ import { FIGURES } from '../data/economics';
 import { benefits, partners, streams } from '../data/partnership';
 import Disclosure from '../components/Disclosure.astro';
 import SectionBar from '../components/SectionBar.astro';
+import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 
 // Copy: src/content/copy/partnership-funding.md (Draft). Partner table: Master Plan pp. 22–24;
 // funding streams: pp. 25–26; benefits: May 25, 2026 launch release; get involved: FAQ.
@@ -23,6 +24,14 @@ import SectionBar from '../components/SectionBar.astro';
 const YEARS = [1, 2, 3, 4, 5];
 const yearsLabel = (s: { start: number | null; end: number | null }) =>
   s.start === null ? 'Years not stated' : s.start === s.end ? `Year ${s.start}` : `Years ${s.start}–${s.end}`;
+
+const sections: PageSection[] = [
+  { id: 'why-partner', name: 'Three Core Benefits for Florida Stakeholders', short: 'Why partner' },
+  { id: 'partners', name: 'Partnership Strategy and Regional Alignment', short: 'Partners' },
+  { id: 'funding', name: 'How Is FSIC Funded?', short: 'Funding' },
+  { id: 'get-involved', name: 'How Can the Public Get Involved?', short: 'Get involved' },
+];
+const at = (id: string) => sectionProps(sections, id);
 ---
 <BaseLayout title="Partnership & Funding" description="How employers, schools, universities, governments, agencies and community organizations partner with FSIC, and how FSIC is funded.">
 
@@ -44,16 +53,11 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
     <SectionBar
       ariaLabel="Sections on this page"
       numbered
-      items={[
-        { id: 'why-partner', label: 'Why partner' },
-        { id: 'partners', label: 'Partners' },
-        { id: 'funding', label: 'Funding' },
-        { id: 'get-involved', label: 'Get involved' },
-      ]}
+      items={sectionBarItems(sections)}
     />
 
   <!-- 01 · WHY PARTNER: three peers on the grid (4 cols each) -->
-  <Section id="why-partner" class="scroll-mt-20" index={1} total={4} label="Why partner" heading="Three Core Benefits for Florida Stakeholders">
+  <Section {...at('why-partner')} label="Why partner" heading="Three Core Benefits for Florida Stakeholders">
     <ol class="grid gap-y-10 lg:grid-cols-12 lg:gap-x-8">
       {benefits.map((b, i) => (
         <li class="lg:col-span-4 border-t-2 border-navy pt-5">
@@ -74,9 +78,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
 
   <!-- 02 · PARTNERS: one row per partner type; roles and benefits open in place -->
   <Section
-    id="partners" class="scroll-mt-20"
-    index={2}
-    total={4}
+    {...at('partners')}
     spacing="stacked"
     heading="Partnership Strategy and Regional Alignment"
     intro="The Florida Space Innovation Center is designed as a regional backbone organization that aligns employers, educators, governments, and community partners around a shared economic future."
@@ -108,7 +110,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
   </Section>
 
   <!-- 03 · FUNDING: the blend, then the streams on a Years 1–5 axis -->
-  <Section id="funding" class="scroll-mt-20" index={3} total={4} label="Funding" heading="How Is FSIC Funded?">
+  <Section {...at('funding')} label="Funding" heading="How Is FSIC Funded?">
     <Grid>
       <div slot="label">
         <p class="text-xl text-navy leading-snug mb-4">FSIC uses a proven public-private funding model that blends:</p>
@@ -166,7 +168,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
   </Section>
 
   <!-- 04 · GET INVOLVED -->
-  <Section id="get-involved" class="scroll-mt-20" index={4} total={4} label="Get involved" dark heading="How Can the Public Get Involved?">
+  <Section {...at('get-involved')} label="Get involved" dark heading="How Can the Public Get Involved?">
     <Grid>
       <p slot="label" class="mb-0 text-xl text-white/90 leading-snug">
         FSIC is designed to be a community-powered movement, and there are many ways for residents, educators, businesses, and civic partners to participate from the very beginning.

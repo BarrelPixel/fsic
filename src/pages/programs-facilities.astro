@@ -12,6 +12,7 @@ import HeroIndex from '../components/HeroIndex.astro';
 import Closing from '../components/Closing.astro';
 import { phases as phaseData } from '../data/phases';
 import SectionBar from '../components/SectionBar.astro';
+import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 
 // Copy: src/content/copy/programs-facilities.md (Draft). Audiences: fsic.space FAQ (verbatim). Portfolio
 // (src/data/programs.ts, shared with the Model page):
@@ -20,11 +21,12 @@ import SectionBar from '../components/SectionBar.astro';
 
 const base = import.meta.env.BASE_URL;
 
-const sections = [
-  { id: 'audiences', name: 'Programs by Audience' },
-  { id: 'portfolio', name: 'Program Portfolio and Core Offerings' },
-  { id: 'facilities', name: 'Facilities and Infrastructure Plan' },
+const sections: PageSection[] = [
+  { id: 'audiences', name: 'Programs by Audience', short: 'Audiences' },
+  { id: 'portfolio', name: 'Program Portfolio and Core Offerings', short: 'Portfolio' },
+  { id: 'facilities', name: 'Facilities and Infrastructure Plan', short: 'Facilities' },
 ];
+const at = (id: string) => sectionProps(sections, id);
 
 const audiences = [
   { label: 'For students and families', items: ['Hands-on STEM learning and maker experiences', 'Dual-enrollment pathways', 'Micro-credentials tied to real jobs', 'Community STEM and arts events'] },
@@ -60,15 +62,11 @@ const link = 'link';
     <SectionBar
       ariaLabel="Sections on this page"
       numbered
-      items={[
-        { id: 'audiences', label: 'Audiences' },
-        { id: 'portfolio', label: 'Portfolio' },
-        { id: 'facilities', label: 'Facilities' },
-      ]}
+      items={sectionBarItems(sections)}
     />
 
   <!-- 01 · Programs by audience: who each set of programs is for (FAQ, verbatim) -->
-  <Section id="audiences" index={1} total={3} heading="Programs by Audience" class="scroll-mt-20">
+  <Section {...at('audiences')} heading="Programs by Audience">
     <Grid>
       <Fragment slot="label"></Fragment>
       <dl>
@@ -90,13 +88,10 @@ const link = 'link';
   <!-- 02 · Program portfolio (Master Plan pp. 19–21): one row per engine, each program opening in
        place (+ turns to ×), and a link to that engine on the Model page -->
   <Section
-    id="portfolio"
-    index={2}
-    total={3}
+    {...at('portfolio')}
     spacing="stacked"
     heading="Program Portfolio and Core Offerings"
     intro="The Florida Space Innovation Center delivers a comprehensive portfolio of programs across the Talent, Innovation, Market, and Civic Engines. Each offering is designed to meet a specific regional need, align with employer demand, and create measurable impact for students, educators, businesses, and the community."
-    class="scroll-mt-20"
   >
     <Grid>
       <Fragment slot="label"></Fragment>
@@ -116,7 +111,7 @@ const link = 'link';
 
   <!-- 03 · Facilities (FAQ and Master Plan pp. 17–19): today's status as the thesis, then the plan,
        the principles and the planned core spaces by phase. No development is named (docs/08 §3.3). -->
-  <Section id="facilities" index={3} total={3} spacing="stacked" heading="Facilities and Infrastructure Plan" class="scroll-mt-20">
+  <Section {...at('facilities')} spacing="stacked" heading="Facilities and Infrastructure Plan">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         FSIC is a virtual organization located in New Smyrna Beach.

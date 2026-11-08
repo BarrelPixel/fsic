@@ -13,19 +13,20 @@ import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
 import { bodies, metrics, reportingCalendar } from '../data/governance';
 import SectionBar from '../components/SectionBar.astro';
+import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
 // Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
 
 
-const sections = [
-  { id: 'backbone', name: 'A neutral backbone organization' },
-  { id: 'structure', name: 'Governance and organizational structure' },
-  { id: 'reporting', name: 'Public reporting and transparency' },
-  { id: 'metrics', name: 'Key metrics and reporting cadence' },
-  { id: 'developers', name: 'The role of developers' },
+const sections: PageSection[] = [
+  { id: 'backbone', name: 'A neutral backbone organization', short: 'Backbone' },
+  { id: 'structure', name: 'Governance and organizational structure', short: 'Structure' },
+  { id: 'reporting', name: 'Public reporting and transparency', short: 'Reporting' },
+  { id: 'metrics', name: 'Key metrics and reporting cadence', short: 'Metrics' },
+  { id: 'developers', name: 'The role of developers', short: 'Developers' },
 ];
-const total = sections.length;
+const at = (id: string) => sectionProps(sections, id);
 
 ---
 <BaseLayout title="Governance & Transparency" description="How the Florida Space Innovation Center is governed: an independent board, executive leadership, advisory councils, committees, public reporting and key metrics.">
@@ -47,17 +48,11 @@ const total = sections.length;
     <SectionBar
       ariaLabel="Sections on this page"
       numbered
-      items={[
-        { id: 'backbone', label: 'Backbone' },
-        { id: 'structure', label: 'Structure' },
-        { id: 'reporting', label: 'Reporting' },
-        { id: 'metrics', label: 'Metrics' },
-        { id: 'developers', label: 'Developers' },
-      ]}
+      items={sectionBarItems(sections)}
     />
 
   <!-- 01 · A NEUTRAL BACKBONE ORGANIZATION (fsic.space FAQ) -->
-  <Section id="backbone" class="scroll-mt-20" index={1} total={total} heading="A Neutral Backbone Organization">
+  <Section {...at('backbone')} heading="A Neutral Backbone Organization">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         FSIC's role is to coordinate, align, and accelerate — not duplicate.
@@ -81,7 +76,7 @@ const total = sections.length;
   </Section>
 
   <!-- 02 · STRUCTURE: one row per governing body, its purpose visible and its lists opening in place (Master Plan pp. 15–17) -->
-  <Section id="structure" class="scroll-mt-20" index={2} total={total} spacing="stacked" heading="Governance and Organizational Structure">
+  <Section {...at('structure')} spacing="stacked" heading="Governance and Organizational Structure">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         The governance model ensures that no single individual, partner, or sector can dominate decision-making.
@@ -116,7 +111,7 @@ const total = sections.length;
   </Section>
 
   <!-- 03 · PUBLIC REPORTING AND TRANSPARENCY (Master Plan pp. 17, 31) -->
-  <Section id="reporting" class="scroll-mt-20" index={3} total={total} spacing="stacked" heading="Public Reporting and Transparency">
+  <Section {...at('reporting')} spacing="stacked" heading="Public Reporting and Transparency">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         Transparent reporting strengthens credibility, supports fundraising, and ensures FSIC remains accountable to the region it serves.
@@ -143,9 +138,7 @@ const total = sections.length;
   <!-- 04 · METRICS (Master Plan pp. 31–32): one row per area, its metrics one per line; then the
        reporting calendar, every area's reports grouped by frequency (derived in src/data/governance.ts) -->
   <Section
-    id="metrics" class="scroll-mt-20"
-    index={4}
-    total={total}
+    {...at('metrics')}
     spacing="stacked"
     heading="Key Metrics and Reporting Cadence"
     intro="FSIC's evaluation framework is designed to be comprehensive, transparent, and aligned with national best practices for workforce and innovation ecosystems."
@@ -186,7 +179,7 @@ const total = sections.length;
   </Section>
 
   <!-- 05 · THE ROLE OF DEVELOPERS (fsic.space FAQ): the trust statement, on night -->
-  <Section id="developers" class="scroll-mt-20" index={5} total={total} dark heading="What Is the Role of Developers?">
+  <Section {...at('developers')} dark heading="What Is the Role of Developers?">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-white">
         Developers play a collaborative — not controlling — role in FSIC's work.

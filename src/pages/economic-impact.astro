@@ -11,6 +11,7 @@ import Closing from '../components/Closing.astro';
 import { SOURCE, glance, scenarios, comparison, roi } from '../data/economics';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 import SectionBar from '../components/SectionBar.astro';
+import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 import HeroIndex from '../components/HeroIndex.astro';
 
 // Copy: src/content/copy/economic-impact.md (Draft). Wording is verbatim from the copy deck.
@@ -18,6 +19,14 @@ import HeroIndex from '../components/HeroIndex.astro';
 // the job-years row repeats 18k–22k for Baseline and FSIC 1.0; "city + county" vs "local and state".
 
 const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10 : 0);
+
+const sections: PageSection[] = [
+  { id: 'at-a-glance', name: '25-Year Impact at a Glance', short: 'At a glance' },
+  { id: 'scenarios', name: 'Three-Scenario Analysis', short: 'Scenarios' },
+  { id: 'risks-opportunities', name: 'Risks and Opportunities', short: 'Risks' },
+  { id: 'roi', name: 'Return on Investment', short: 'Return on investment' },
+];
+const at = (id: string) => sectionProps(sections, id);
 ---
 <BaseLayout title="Economic Impact" description="The 25-year economic and fiscal impact of the Florida Space Innovation Center: output, jobs, wages, fiscal revenue and external funding, across three scenarios.">
 
@@ -34,12 +43,7 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
     <p class="text-white/75 mb-10 max-w-3xl">
       By coordinating workforce training, research partnerships, business attraction, and community programming, FSIC strengthens the region's economic foundation and expands access to high-skill, high-wage career pathways. It accelerates development, attracts new employers, and brings in substantial external investment—creating long-term economic stability and opportunity.
     </p>
-    <HeroIndex label="Sections on this page" size="large" items={[
-      { id: 'at-a-glance', name: '25-Year Impact at a Glance' },
-      { id: 'scenarios', name: 'Three-Scenario Analysis' },
-      { id: 'risks-opportunities', name: 'Risks and Opportunities' },
-      { id: 'roi', name: 'Return on Investment' },
-    ]} />
+    <HeroIndex label="Sections on this page" size="large" items={sections} />
   </PageHero>
 
   <!-- The wrapper bounds the sticky section bar to the numbered sections; it scrolls away before the closing -->
@@ -47,16 +51,11 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
     <SectionBar
       ariaLabel="Sections on this page"
       numbered
-      items={[
-        { id: 'at-a-glance', label: 'At a glance' },
-        { id: 'scenarios', label: 'Scenarios' },
-        { id: 'risks-opportunities', label: 'Risks' },
-        { id: 'roi', label: 'Return on investment' },
-      ]}
+      items={sectionBarItems(sections)}
     />
 
   <!-- 01 · AT A GLANCE: figure (cols 1–4) | what it means (5–8) | range bar (9–12) -->
-  <Section id="at-a-glance" class="scroll-mt-20" index={1} total={4} heading="25-Year Impact at a Glance" intro="Extended FSIC (FSIC 2.0) scenario, over 25 years:">
+  <Section {...at('at-a-glance')} heading="25-Year Impact at a Glance" intro="Extended FSIC (FSIC 2.0) scenario, over 25 years:">
     <!-- The range bars draw in once when the list is in view (global.css "Range bars draw in") -->
     <ul class="range-bars border-t border-rule" role="list" data-range-bars>
       {glance.map((row, r) => (
@@ -87,7 +86,7 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
   </Section>
 
   <!-- 02 · THREE SCENARIOS: the scenarios as rows, then one comparison table on the page grid -->
-  <Section id="scenarios" class="scroll-mt-20" index={2} total={4} spacing="stacked" heading="Three-Scenario Economic Impact Analysis" intro="This analysis evaluates FSIC's projected 25-year impact under three scenarios: Baseline (No FSIC), Basic FSIC (FSIC 1.0), and Extended FSIC (FSIC 2.0).">
+  <Section {...at('scenarios')} spacing="stacked" heading="Three-Scenario Economic Impact Analysis" intro="This analysis evaluates FSIC's projected 25-year impact under three scenarios: Baseline (No FSIC), Basic FSIC (FSIC 1.0), and Extended FSIC (FSIC 2.0).">
     <Grid>
       <Fragment slot="label"></Fragment>
       <dl>
@@ -161,7 +160,7 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
   </Section>
 
   <!-- 03 · RISKS AND OPPORTUNITIES: the before/after pair as adjacent rows -->
-  <Section id="risks-opportunities" class="scroll-mt-20" index={3} total={4} dark heading="Risks and Opportunities">
+  <Section {...at('risks-opportunities')} dark heading="Risks and Opportunities">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-white">
         Without coordination, growth concentrates elsewhere.
@@ -178,7 +177,7 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
   </Section>
 
   <!-- 04 · RETURN ON INVESTMENT: area (cols 1–4) | key outcomes (5–8) | economic implications (9–12) -->
-  <Section id="roi" class="scroll-mt-20" index={4} total={4} heading="Economic Impact and Return on Investment">
+  <Section {...at('roi')} heading="Economic Impact and Return on Investment">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         The return on investment is both immediate and long-term, with measurable impacts across job creation, wage growth, business development, and community vitality.

@@ -9,12 +9,19 @@ import List from '../components/List.astro';
 import Closing from '../components/Closing.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 import SectionBar from '../components/SectionBar.astro';
+import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 
 // Copy: src/content/copy/strategic-moment.md (Draft). Sections are verbatim from fsic.space/about-4,
 // except the lead (Master Plan p. 4) and the development figures (Master Plan pp. 4 and 6, unnamed:
 // the site does not name the development, docs/08 §3.3).
 
-const total = 4;
+const sections: PageSection[] = [
+  { id: 'inflection-point', name: 'A Region at an Inflection Point', short: 'Inflection point' },
+  { id: 'place-based-innovation', name: 'A National Shift Toward Place-Based Innovation', short: 'Place-based innovation' },
+  { id: 'catalyst', name: 'A Once-in-a-Generation Catalyst', short: 'Catalyst' },
+  { id: 'window', name: 'The Window Is Open', short: 'The window' },
+];
+const at = (id: string) => sectionProps(sections, id);
 
 const capacity = ['workforce development', 'applied research', 'entrepreneurship', 'enabling infrastructure', 'cross-sector governance'];
 
@@ -30,12 +37,7 @@ const figures = [
     <p class="text-lead text-white/90 mb-10">
       Southeast Volusia is entering one of the most consequential economic windows in its modern history.
     </p>
-    <HeroIndex label="Sections on this page" size="large" items={[
-      { id: 'inflection-point', name: 'A Region at an Inflection Point' },
-      { id: 'place-based-innovation', name: 'A National Shift Toward Place-Based Innovation' },
-      { id: 'catalyst', name: 'A Once-in-a-Generation Catalyst' },
-      { id: 'window', name: 'The Window Is Open' },
-    ]} />
+    <HeroIndex label="Sections on this page" size="large" items={sections} />
   </PageHero>
 
   <!-- The wrapper bounds the sticky section bar to the sections; it scrolls away before the closing -->
@@ -43,16 +45,11 @@ const figures = [
     <SectionBar
       ariaLabel="Sections on this page"
       numbered
-      items={[
-        { id: 'inflection-point', label: 'Inflection point' },
-        { id: 'place-based-innovation', label: 'Place-based innovation' },
-        { id: 'catalyst', label: 'Catalyst' },
-        { id: 'window', label: 'The window' },
-      ]}
+      items={sectionBarItems(sections)}
     />
 
   <!-- 01 · Narrative: the consequence as the thesis (cols 1–4), the situation (cols 5–12) -->
-  <Section id="inflection-point" class="scroll-mt-20" index={1} total={total} heading="A Region at an Inflection Point">
+  <Section {...at('inflection-point')} heading="A Region at an Inflection Point">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         Without intervention, we risk absorbing population growth without gaining the high-wage jobs and employer investment that should accompany it.
@@ -69,7 +66,7 @@ const figures = [
   </Section>
 
   <!-- 02 · Narrative: the five areas of capacity as a list, as in the Master Plan (p. 4) -->
-  <Section id="place-based-innovation" class="scroll-mt-20" index={2} total={total} spacing="stacked" heading="A National Shift Toward Place-Based Innovation">
+  <Section {...at('place-based-innovation')} spacing="stacked" heading="A National Shift Toward Place-Based Innovation">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         Southeast Volusia can fill that gap — but only if we organize now.
@@ -89,7 +86,7 @@ const figures = [
   <!-- 03 · The catalyst on night: the figures, introduced by the first half of the sentence (cols 1–4); the
        consequence and the before/after pair as
        adjacent rows on one axis (Master Plan pp. 4 and 6; the development is not named) -->
-  <Section id="catalyst" class="scroll-mt-20" index={3} total={total} dark heading="Southeast Volusia County: A Once-in-a-Generation Catalyst">
+  <Section {...at('catalyst')} dark heading="Southeast Volusia County: A Once-in-a-Generation Catalyst">
     <Grid>
       <div slot="label">
         <p class="mb-5 font-sans text-white/75">A master-planned development in Southeast Volusia will add:</p>
@@ -120,7 +117,7 @@ const figures = [
   </Section>
 
   <!-- 04 · The two possible outcomes, then FSIC's role -->
-  <Section id="window" class="scroll-mt-20" index={4} total={total} heading="The Window Is Open — But Not for Long">
+  <Section {...at('window')} heading="The Window Is Open — But Not for Long">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         The next five years will determine whether Southeast Volusia becomes:
