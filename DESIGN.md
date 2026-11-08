@@ -160,10 +160,10 @@ Don't put the hero photo on interior pages.
 
 ## Motion
 
-- No automatic animations on the site.
-- No fade-in on scroll, no hover lift on cards, no count-up numbers.
-- Interaction feedback (hover color, focus ring, menu open) is fine.
-- Always respect `prefers-reduced-motion`.
+- **One automatic animation on the whole site: the homepage's range bars.** In "Transformational, Long-Term Regional Impact", each bar draws once when the list scrolls into view: the solid low estimate grows from the left, then the lighter extension continues to the high estimate, rows following one another (`--motion-stagger`). It shows how to read a range; the figures themselves never move. Without JS, with reduced motion and in print, the bars are fully drawn. Don't add a second automatic animation.
+- No fade-in on scroll, no hover lift on cards, no count-up numbers, no parallax, nothing that loops.
+- Interaction feedback is fine and shares the motion tokens in `global.css` (`--ease-standard`; `--motion-fast` 150ms, `--motion-medium` 250ms): link underlines darken, the menu dropdowns fade in and settle 4px down, expanding items (`Disclosure`) open with a height transition where the browser supports it (others open instantly).
+- Always respect `prefers-reduced-motion`: it turns every transition and the range-bar animation off, and the page then looks exactly as it does at rest.
 
 ## Components
 

@@ -12,7 +12,7 @@ interface Props {
 
 const { id, class: className, summaryClass, iconClass } = Astro.props;
 ---
-<details id={id} class:list={['group', className]}>
+<details id={id} class:list={['disclosure group', className]}>
   <summary class:list={['flex justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden', summaryClass]}>
     <slot name="summary" />
     <svg class:list={['w-5 h-5 shrink-0 text-navy transition-transform group-open:rotate-45', iconClass]} viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
