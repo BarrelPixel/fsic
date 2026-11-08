@@ -270,4 +270,4 @@ The Civic Engine is FSIC's community-anchoring platform, building public trust, 
 
 **CTAs:** View the Deployment Timeline → /deployment; Explore Programs & Facilities → /programs-facilities
 
-> **⚠ Review:** Both destinations are still "Coming soon" pages.
+> **⚠ Review:** /deployment is built (November 2026). /programs-facilities is still a "Coming soon" page.

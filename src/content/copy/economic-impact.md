@@ -167,4 +167,4 @@ These are estimates based upon assumptions that may or may not be accurate over 
 
 **CTAs:** Become a Partner → /partnership-funding; View the Deployment Timeline → /deployment
 
-> **⚠ Review:** Both destinations are still "Coming soon" pages.
+> **⚠ Review:** /deployment is built (November 2026). /partnership-funding is still a "Coming soon" page.

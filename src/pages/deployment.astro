@@ -1,10 +1,216 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComingSoon from '../components/ComingSoon.astro';
+import Button from '../components/Button.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionBar from '../components/SectionBar.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Row from '../components/Row.astro';
+import DashList from '../components/DashList.astro';
+
+// Copy: src/content/copy/deployment.md (Draft). Five-phase model from the Master Plan (pp. 13–14),
+// chosen by the project lead; facilities lines from p. 18. Open review items: facilities/location
+// (audit §3.3) and the year-by-year milestones, which the page leaves out (see the copy deck).
+
+type Tone = 'orange' | 'lagoon' | 'navy';
+type Phase = {
+  id: string;
+  short: string;
+  name: string;
+  timeframe: string;
+  /** Years on the 1–5 axis. */
+  start: number;
+  end: number;
+  /** Engine color: orange for the industry engines, lagoon for Civic, navy for integration. */
+  tone: Tone;
+  overview: string;
+  activities: string[];
+  outcomes: string[];
+  facilities: string;
+};
+
+const phases: Phase[] = [
+  {
+    id: 'phase-1',
+    short: 'Talent',
+    name: 'Foundation & Talent Engine Launch',
+    timeframe: 'Year 1',
+    start: 1,
+    end: 1,
+    tone: 'orange',
+    overview: "Establishes FSIC's operational foundation and launches the Talent Engine, the first and most critical component of the model. This phase focuses on building credibility, demonstrating early wins, and establishing the partnerships required for long-term success.",
+    activities: ['Launch micro-credential academies', 'Establish dual-enrollment STEM pathways', 'Begin teacher upskilling programs', 'Deploy the Regional Talent Marketplace', 'Form employer advisory councils', 'Secure initial philanthropic and public funding', 'Establish governance, bylaws, and board independence'],
+    outcomes: ['First cohort of students enrolled in micro-credentials', 'Employer-validated curriculum in place', 'Teacher professional development underway', 'Regional Talent Marketplace operational', 'Strong early partnerships with K–12, colleges, and employers', "FSIC recognized as the region's workforce backbone"],
+    facilities: 'Focuses on establishing a functional, cost-efficient startup facility that enables immediate program delivery.',
+  },
+  {
+    id: 'phase-2',
+    short: 'Innovation',
+    name: 'Innovation Engine Activation',
+    timeframe: 'Years 1–2',
+    start: 1,
+    end: 2,
+    tone: 'orange',
+    overview: "Introduces the Innovation Engine, creating the region's first civilian-facing applied innovation hub. This phase expands FSIC's impact beyond workforce development into applied research, prototyping, and dual-use technology development.",
+    activities: ['Launch challenge labs and innovation sprints', 'Establish rapid prototyping studio', 'Form university and federal research partnerships', 'Host community innovation events', 'Begin dual-use technology development programs', 'Expand employer engagement'],
+    outcomes: ['First prototypes developed through challenge labs', 'University partnerships formalized', 'Applied research projects underway', 'Increased visibility and community engagement', 'Stronger employer recruitment and retention'],
+    facilities: 'Enables FSIC to support applied innovation, dual-use technology development, and deeper employer engagement.',
+  },
+  {
+    id: 'phase-3',
+    short: 'Market',
+    name: 'Market Engine Deployment',
+    timeframe: 'Years 2–3',
+    start: 2,
+    end: 3,
+    tone: 'orange',
+    overview: 'Activates the Market Engine, supporting local businesses, startups, and entrepreneurs through commercialization, supplier readiness, and federal funding pathways.',
+    activities: ['Launch supplier-readiness bootcamps', 'Provide certification support (AS9100, ITAR, CMMC)', 'Establish SBIR/STTR navigation services', 'Create startup acceleration programs', 'Build contract matchmaking and procurement pathways'],
+    outcomes: ['Local companies entering aerospace and defense supply chains', 'Increased SBIR/STTR submissions and awards', 'Startups accelerated and supported', 'Stronger local supplier base', 'Increased economic diversification and resilience'],
+    facilities: 'Introduces facilities that support commercialization, supplier readiness, and startup acceleration.',
+  },
+  {
+    id: 'phase-4',
+    short: 'Civic',
+    name: 'Civic Engine Expansion',
+    timeframe: 'Years 2–4',
+    start: 2,
+    end: 4,
+    tone: 'lagoon',
+    overview: 'Expands the Civic Engine, strengthening community engagement, regional identity, and public trust. This phase ensures that innovation is visible, accessible, and meaningful to residents.',
+    activities: ['Host community STEM nights and exhibitions', 'Integrate arts and space programming', 'Launch regional storytelling and branding initiatives', 'Expand public events and convenings', 'Strengthen transparent governance and reporting'],
+    outcomes: ['Increased community participation', 'Stronger regional identity', 'Expanded access to STEM experiences', 'Greater civic trust and transparency', 'Broad public support for innovation-driven growth'],
+    facilities: "Expands FSIC's public-facing spaces to support community engagement, exhibitions, and regional identity building.",
+  },
+  {
+    id: 'phase-5',
+    short: 'Integration',
+    name: 'Full Ecosystem Integration',
+    timeframe: 'Years 3–5',
+    start: 3,
+    end: 5,
+    tone: 'navy',
+    overview: 'Integrates all four engines into a cohesive regional innovation ecosystem capable of competing for major federal and state investments. This phase positions FSIC as a durable regional institution.',
+    activities: ['Integrate Talent, Innovation, Market, and Civic Engines', 'Expand facilities and programming', 'Pursue major federal funding (EDA, NSF, DoD, NASA)', 'Strengthen employer recruitment and retention', 'Support innovation district development at Deering Park'],
+    outcomes: ['Fully integrated regional innovation ecosystem', 'Strong federal and state funding pipeline', 'Increased employer attraction and expansion', 'Sustainable operating model with diversified revenue', 'FSIC recognized as a regional anchor institution'],
+    facilities: "Positions FSIC as the anchor institution within Deering Park's emerging innovation district.",
+  },
+];
+
+const YEARS = [1, 2, 3, 4, 5];
+// Bar colors on night (hero) and as list markers on white (sections)
+const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lagoon-light', navy: 'bg-white/80' };
 ---
-<BaseLayout title="Phased Deployment" description="FSIC's structured, risk-managed rollout — from Talent Engine launch through full ecosystem integration over five years.">
-  <ComingSoon
-    title="Phased Deployment"
-    description="The structured, risk-managed rollout plan showing how FSIC scales from Talent Engine launch through full ecosystem integration, with milestones, expected outcomes, and facilities plan per phase."
-  />
+<BaseLayout title="Phased Deployment" description="How the Florida Space Innovation Center scales in five phases over five years, from the Talent Engine launch to full ecosystem integration.">
+
+  <!-- Interior page template (DESIGN.md): PageHero with a phase timeline as the index, spec sections, closing -->
+  <PageHero title="Start Small. Deliver Early Wins. Scale with Readiness.">
+    <div slot="aside" class="max-w-sm">
+      <p class="font-sans text-sm font-semibold text-white mb-3">This phased approach:</p>
+      <DashList items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} marker="lagoon-light" class="font-sans text-sm text-white/75" />
+    </div>
+
+    <p class="text-2xl text-white/90 leading-snug mb-10">
+      The Florida Space Innovation Center is intentionally designed as a phased, scalable model that reduces risk, builds early momentum, and aligns with regional capacity. Each phase strengthens the next, ensuring that FSIC grows in a financially responsible, strategically aligned, and operationally sustainable manner.
+    </p>
+
+    <!-- Phase timeline: name (left) | Years 1–5 track (right). Each row links to its phase. -->
+    <nav aria-label="The five phases" class="font-sans">
+      <div class="hidden md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)] md:gap-x-6 border-b border-white/25 pb-2" aria-hidden="true">
+        <span></span>
+        <span class="grid grid-cols-5 text-sm text-white/60 tabular-nums">
+          {YEARS.map((y) => <span>Year {y}</span>)}
+        </span>
+      </div>
+      <ol class="border-t border-white/25 md:border-t-0">
+        {phases.map((phase, i) => (
+          <li class="border-b border-white/25">
+            <a href={`#${phase.id}`} class="group grid gap-y-2 md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)] md:gap-x-6 md:items-center py-3.5 rounded-sm">
+              <span class="flex items-baseline gap-3">
+                <span class="text-sm text-white/60 tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+                <span>
+                  <span class="block font-display text-xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2 leading-tight">{phase.name}</span>
+                  <span class="block text-sm text-white/70">{phase.timeframe}</span>
+                </span>
+              </span>
+              <span class="grid grid-cols-5 h-3 bg-white/[0.06]" aria-hidden="true">
+                <span
+                  class:list={['h-full', barOnNight[phase.tone]]}
+                  style={`grid-column: ${phase.start} / ${phase.end + 1}`}
+                ></span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-3 mb-0 text-sm text-white/60">Timeframes: FSIC Master Plan 2026–2031.</p>
+    </nav>
+  </PageHero>
+
+  <!-- The wrapper bounds the sticky bar to the phase sections -->
+  <div>
+    <SectionBar
+      ariaLabel="Phases on this page"
+      numbered
+      items={phases.map((phase, i) => ({ id: phase.id, label: phase.short, srSuffix: `: Phase ${i + 1}` }))}
+    />
+
+    {phases.map((phase, i) => (
+      <Section
+        id={phase.id}
+        index={i + 1}
+        total={phases.length}
+        dot={phase.tone === 'navy' ? undefined : phase.tone}
+        labelledby={`${phase.id}-title`}
+        class="scroll-mt-12"
+      >
+        <Grid labelAs="header" stickyLabel>
+          <Fragment slot="label">
+            <p class="font-sans text-sm font-semibold text-navy mb-2">Phase {i + 1} · {phase.timeframe}</p>
+            <h2 id={`${phase.id}-title`} class="mb-0">{phase.name}</h2>
+          </Fragment>
+
+          <p class="text-2xl text-navy leading-snug mb-10 max-w-3xl lg:pt-1">{phase.overview}</p>
+
+          <dl>
+            <Row label="Core activities">
+              <DashList items={phase.activities} marker="navy" class="text-gray-dark" />
+            </Row>
+            <Row label="Key outcomes">
+              <DashList items={phase.outcomes} marker={phase.tone} class="text-navy" />
+            </Row>
+            <Row label="Facilities" class="border-b border-navy/15">
+              <p class="mb-0 text-gray-dark">{phase.facilities}</p>
+            </Row>
+          </dl>
+        </Grid>
+      </Section>
+    ))}
+  </div>
+
+  <!-- SUSTAINABILITY (fsic.space/about-4; 30–50% confirmed in Master Plan pp. 2, 27) -->
+  <Section dark>
+    <Grid>
+      <h2 slot="label" class="text-white mb-0">A Phased Model That Reduces Risk and Builds Momentum</h2>
+      <p class="text-2xl text-white/85 leading-snug mb-8 max-w-3xl">
+        FSIC launches with a lean operational model supported by philanthropic investment, in-kind contributions, and early public-private partnerships. Over three years, FSIC transitions from startup to full Talent Engine activation, supported by diversified revenue streams including grants, employer partnerships, earned revenue, and corporate sponsorships.
+      </p>
+      <p class="text-lg text-white/80 mb-0 max-w-3xl pt-6 border-t border-white/25">
+        By Year 3, FSIC is positioned to sustain 30–50% of its operating budget through recurring earned revenue and employer partnerships, with grants and philanthropy fueling innovation and growth.
+      </p>
+    </Grid>
+  </Section>
+
+  <!-- CLOSING -->
+  <Section rule={false}>
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10">Growth is structured. Not speculative.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <Button href="/model">Learn More About the FSIC Model</Button>
+        <Button href="/economic-impact" variant="secondary">Explore the Full Economic Analysis</Button>
+      </div>
+    </Grid>
+  </Section>
+
 </BaseLayout>

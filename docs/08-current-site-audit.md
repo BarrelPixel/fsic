@@ -110,6 +110,8 @@ The current site appears to have moved away from naming Deering Park on purpose.
 
 Use one model across the deployment page, the FAQ, and the home page.
 
+**Decision (November 2026):** the project lead chose the Master Plan's **five phases**. The Deployment page uses them, with the Master Plan's timeframes (Year 1; Years 1–2; 2–3; 2–4; 3–5). Still to do: rewrite the FAQ answer (`faq.md`). The home page's two-stage summary ("First: the Talent Engine" / "Then: Innovation, Market, and Civic") is compatible and can stay. Open: the Master Plan's year-by-year milestones (pp. 33–34) sequence the phases one per year, which doesn't match the overlapping phase table; the page leaves the milestones out until FSIC confirms which is current.
+
 ### 3.5 Claims not in the source PDFs
 Under the content guidelines, these need a citation before they are used:
 - "The global space economy is projected to grow from roughly $630 billion today to more than $1 trillion within the next decade" (FAQ)
