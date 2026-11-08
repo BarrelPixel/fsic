@@ -64,7 +64,7 @@ Southeast Volusia County is poised for transformative growth, with more than 20,
 - a regional anchor for economic mobility and identity
 
 > **Source:** fsic.space/about-4 (verbatim).
-> **⚠ Review:** These figures (20,000 homes, 12M sq ft, region-wide) conflict with the Master Plan and the older draft (Deering Park: 10,000+ homes, 10M+ sq ft). Choose one framing and cite it. See audit §3.1 and §3.3.
+> **⚠ Review:** These figures (20,000 homes, 12M sq ft, region-wide) conflict with the Master Plan and the older draft (a single development: 10,000+ homes, 10M+ sq ft). Choose one framing and cite it. The site no longer names that development. See audit §3.1 and §3.3.
 
 ---
 

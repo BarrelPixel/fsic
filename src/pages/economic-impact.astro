@@ -30,7 +30,7 @@ const scenarios = [
     name: 'Baseline (No FSIC)',
     short: 'Baseline',
     color: '#9DB0C8',
-    body: 'The Baseline scenario reflects a slow growth future with limited job creation, modest fiscal gains, and a decades long buildout of Deering Park.',
+    body: 'The Baseline scenario reflects a slow growth future with limited job creation, modest fiscal gains, and a decades long buildout.',
   },
   {
     name: 'FSIC 1.0',
@@ -55,7 +55,6 @@ const comparison: { metric: string; cells: [Cell, Cell, Cell] }[] = [
   { metric: 'Job-years supported', cells: [{ display: '18,000–22,000', low: 18000, high: 22000 }, { display: '18,000–22,000', low: 18000, high: 22000 }, { display: '74,500–79,500', low: 74500, high: 79500 }] },
   { metric: 'Total wage impact', cells: [{ display: '$450–$600M', low: 450, high: 600 }, { display: '$1.05–$1.25B', low: 1050, high: 1250 }, { display: '$1.35–$1.55B', low: 1350, high: 1550 }] },
   { metric: 'Annual visitor volume', cells: [{ display: 'Under 10,000', low: 0, high: 10000 }, { display: '40,000–60,000', low: 40000, high: 60000 }, { display: '150,000–210,000', low: 150000, high: 210000 }] },
-  { metric: 'Deering Park absorption (shorter is better)', cells: [{ display: '20–25 years', low: 20, high: 25 }, { display: '12–16 years', low: 12, high: 16 }, { display: '10–13 years', low: 10, high: 13 }] },
 ];
 
 // 04 · Return on investment, Master Plan pp. 28–29
@@ -207,20 +206,17 @@ const pct = (n: number, max: number) => (max ? Math.round((n / max) * 1000) / 10
     </Grid>
   </Section>
 
-  <!-- 03 · DEERING PARK: thesis, context, then the before/after pair as adjacent rows -->
-  <Section id="deering-park" index={3} total={4} label="Deering Park" dark heading="Absorption Timeline Cut Nearly in Half">
+  <!-- 03 · RISKS AND OPPORTUNITIES: the before/after pair as adjacent rows -->
+  <Section id="risks-opportunities" index={3} total={4} dark heading="Risks and Opportunities">
     <Grid>
       <p slot="label" class="mb-0 font-display text-2xl font-semibold text-white leading-snug">
-        FSIC accelerates Deering Park's development from 20–25 years to 10–13 years, increasing taxable value earlier and attracting anchor tenants sooner.
-      </p>
-      <p class="text-lg text-white/85 mb-10 max-w-3xl">
-        Deering Park's master-planned development will add more than 10,000 homes and over 10 million square feet of industrial and commercial space. This growth will reshape the region's workforce needs, employer mix, and long-term economic trajectory.
+        Without coordination, growth concentrates elsewhere.
       </p>
       <dl>
-        <Row label="Risks without FSIC" dark>
+        <Row label="Risks without FSIC" rule="bottom" dark>
           <DashList items={['Becoming a commuter corridor', 'Low-wage service-sector concentration', 'Limited employer recruitment', 'Weak regional identity']} marker="gray" class="text-white/75" />
         </Row>
-        <Row label="Opportunities with FSIC" dark class="border-b border-white/25">
+        <Row label="Opportunities with FSIC" rule="bottom" dark class="pt-5">
           <DashList items={['High-value employer attraction', 'Innovation district development', 'Stronger workforce alignment', 'Expanded economic mobility', 'A shared regional identity rooted in innovation']} marker="lagoon-light" class="text-white" />
         </Row>
       </dl>

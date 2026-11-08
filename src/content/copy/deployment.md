@@ -126,7 +126,6 @@ For each phase: name, timeframe, overview, core activities, key outcomes, and th
 - Expand facilities and programming
 - Pursue major federal funding (EDA, NSF, DoD, NASA)
 - Strengthen employer recruitment and retention
-- Support innovation district development at Deering Park
 
 **Key outcomes:**
 - Fully integrated regional innovation ecosystem
@@ -135,9 +134,10 @@ For each phase: name, timeframe, overview, core activities, key outcomes, and th
 - Sustainable operating model with diversified revenue
 - FSIC recognized as a regional anchor institution
 
-**Facilities:** Positions FSIC as the anchor institution within Deering Park's emerging innovation district.
+**Facilities:** Positions FSIC as a permanent anchor institution for Southeast Volusia.
 
-> **⚠ Review — facilities and location:** The current FAQ says FSIC is a virtual organization and a site is not yet chosen; Phase 5 names Deering Park. See audit §3.3. The page describes facilities as phase plans, not as an existing building.
+> **Change — facilities and location:** The project lead decided (November 2026) that the site does not name a specific campus site or development. See `docs/08-current-site-audit.md` §3.3. The Master Plan's Phase 5 activity about supporting a named innovation district is removed, and the facilities line reuses "a permanent anchor institution for Southeast Volusia" from home.md. The page describes facilities as phase plans, not as an existing building.
+> **⚠ Review:** Confirm the reworded facilities line.
 > **⚠ Review — milestones:** The Master Plan's year-by-year milestones (pp. 33–34) put Market in Year 3, Civic in Year 4 and integration in Year 5, one per year. The phase table (pp. 13–14) overlaps them (Years 2–3, 2–4, 3–5). The page uses the phase table only, so it doesn't show two different sequences. Ask FSIC which is current before adding the milestones.
 
 ---

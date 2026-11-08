@@ -24,9 +24,9 @@
 **Primary CTAs:** Explore the Vision, View Economic Impact, Become a Partner, Contact FSIC.
 
 ### The Strategic Moment (`/strategic-moment`) — STUB
-**Goal:** Explain why now — the convergence of Space Coast growth, Deering Park development, and federal funding shifts.
+**Goal:** Explain why now — the convergence of Space Coast growth, regional development, and federal funding shifts.
 **Audience:** Policymakers, economic development professionals, funders.
-**Key content:** Regional inflection point analysis, national shift toward place-based innovation, Deering Park as catalyst, the window of opportunity.
+**Key content:** Regional inflection point analysis, national shift toward place-based innovation, regional development as catalyst, the window of opportunity.
 **Source:** Master Plan Pages 4–6.
 
 ### The FSIC Model (`/model`) — IMPLEMENTED
@@ -68,7 +68,7 @@
 ### Long-Term Vision (`/long-term-vision`) — STUB
 **Goal:** Inspire with the 2032–2040 vision of a landmark campus.
 **Audience:** All stakeholders; especially community members and long-term funders.
-**Key content:** Multi-university consortium, performing arts center, landmark campus at Deering Park.
+**Key content:** Multi-university consortium, performing arts center, a landmark campus for Southeast Volusia (no site named).
 **Source:** Overview Page 3; Master Plan Pages 36–38.
 
 ### Contact (`/contact`) — STUB

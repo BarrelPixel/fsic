@@ -70,7 +70,7 @@ This creates a pipeline of supplier-ready companies capable of competing in high
 FSIC is a virtual organization located in New Smyrna Beach. A specific future site in Volusia County will be determined through a collaborative process with community members, civic leaders, industry partners, and other stakeholders. This ensures the final location reflects community priorities, long-term economic strategy, and the needs of partners.
 
 > **Source:** fsic.space FAQ, "Where will FSIC be located?" (verbatim)
-> **⚠ Review:** This conflicts with the Deering Park campus language in the Master Plan and home.md. See audit §3.3.
+> **Note:** This matches the site's position. The project lead decided (November 2026) that the site does not name a specific campus site or development. See `docs/08-current-site-audit.md` §3.3.
 
 **Facilities vision:** [TODO: facilities per phase from Master Plan pp. 17–21]
 

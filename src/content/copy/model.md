@@ -216,7 +216,8 @@ The Civic Engine is FSIC's community-anchoring platform, building public trust, 
 - Strengthens civic trust and transparency
 - Expands access to STEM opportunities
 - Creates a shared narrative around regional growth
-- Anchors Deering Park as a community destination
+
+> **Change:** The Master Plan's fifth impact item named a specific site and has been removed. The project lead decided (November 2026) that the site does not name a specific campus site or development. See `docs/08-current-site-audit.md` §3.3.
 
 > **Source:** What it solves and Regional impact: Master Plan pp. 9–11, engine tables (verbatim).
 > **⚠ Review:** "Brings together" is drawn from the overview above and is new for the page. The page shows Brings together, What it solves and Regional impact in place of the overview paragraph.

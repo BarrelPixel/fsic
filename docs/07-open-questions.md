@@ -3,7 +3,7 @@
 Items requiring stakeholder input or decisions before full launch.
 
 ## Branding & Identity
-- [ ] **Logo:** A PNG (314×148) was provided and is in use (`public/images/fsic-logo.png`, plus a dark-background version). Still need an SVG or a larger source so it stays sharp at larger sizes.
+- [ ] **Logo:** A PNG (300×128) was provided and is in use (`public/images/fsic-logo.png`, plus a dark-background version). Still need an SVG or a larger source so it stays sharp at larger sizes.
 - [ ] **Favicon:** Derived from logo. Need source file.
 - [x] **Typography:** Resolved. Barlow Semi Condensed, Source Serif 4 and Archivo from Google Fonts (see `DESIGN.md`).
 - [ ] **Photography / Imagery:** No approved photos provided. Need hero images, section backgrounds, campus renderings if available. What are the usage rights for conceptual renderings referenced in the PDFs?
@@ -18,7 +18,7 @@ Items requiring stakeholder input or decisions before full launch.
 - [ ] **Economic scenario:** The headline economic figures are the Master Plan's FSIC 2.0 scenario. Should the home page say so? And are two chart values right: job-years for FSIC 1.0 (same as Baseline) and "City + County" fiscal impact? See `08-current-site-audit.md` §3.10.
 
 ## Technical & Infrastructure
-- [ ] **Hosting provider:** Where will the site be hosted? (Vercel, Netlify, AWS, other?)
+- [ ] **Hosting provider:** Where will the production site be hosted? (The build currently deploys to GitHub Pages under `/fsic` for review. Vercel, Netlify, AWS, other?)
 - [ ] **Domain:** What is the production domain? (e.g., `fsic.org`, `floridaspaceinnovation.org`, etc.)
 - [ ] **Analytics:** Google Analytics 4? Plausible? Other?
 - [ ] **Form backend:** What service for contact form submissions? (Netlify Forms, Formspree, custom API?)
@@ -44,9 +44,9 @@ Items requiring stakeholder input or decisions before full launch.
 
 ## Content Conflicts from the Current Site Audit
 Decisions needed before copy can be approved. Details are in `08-current-site-audit.md` §3.
-- [ ] **Development figures:** regional (20,000 homes, 12M sq ft) or Deering Park (10,000 homes, 10M sq ft)?
+- [ ] **Development figures:** regional (20,000 homes, 12M sq ft, unsourced) or the Master Plan's single-development figures (10,000 homes, 10M sq ft)? The site no longer names that development.
 - [x] **Economic figures:** resolved. The home and Economic Impact pages show ranges. (Related open item: which scenario the figures describe, under Content & Copy.)
-- [ ] **Location:** name Deering Park as the campus site, or keep the current "site to be determined collaboratively" position?
+- [x] **Location:** resolved (November 2026). The site does not name a campus site; it keeps the current "site to be determined collaboratively" position.
 - [x] **Phases:** resolved. Five phases (Master Plan), used on the Deployment page. The FAQ answer still needs rewriting.
 - [ ] **Unsourced claims:** citations for the $630B→$1T market size and the SpaceX S-1 "$28.5T" figure. (30–50% earned revenue by Year 3 is confirmed in the Master Plan, pp. 2 and 27.)
 - [ ] **Titles:** confirm current titles for John Joaquin and Erik Ahlgren, and the full seated board.

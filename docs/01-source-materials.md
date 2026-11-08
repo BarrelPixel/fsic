@@ -17,6 +17,8 @@
 
 ## Extracted Notes
 
+> The Master Plan names a specific site for the campus and the development around it. The site does not name it (decision November 2026, `08-current-site-audit.md` §3.3), so these notes don't either.
+
 ### Four-Engine Model
 *Sources: Overview Page 1–2; Master Plan Pages 9–11*
 
@@ -45,7 +47,7 @@ Independent 25-year analysis projects FSIC will generate:
 Additional highlights:
 - Jobs span construction, operations, research, training, and supply chain (Master Plan Page 7)
 - Wages expand access to higher-wage career pathways in aerospace, engineering, advanced manufacturing, and technology (Master Plan Page 7)
-- FSIC accelerates Deering Park's development absorption timeline from 20–25 years to 10–13 years (Master Plan Page 8)
+- FSIC accelerates the planned development's absorption timeline from 20–25 years to 10–13 years (Master Plan Page 8)
 - Three-scenario analysis: Baseline (No FSIC), Basic FSIC (FSIC 1.0), Extended FSIC (FSIC 2.0) (Master Plan Page 8)
 
 ### Phased Deployment Timeline (Year 1–5)
@@ -57,7 +59,7 @@ Additional highlights:
 | Phase 2: Innovation Engine Activation | Years 1–2 | Launch challenge labs, rapid prototyping studio, university/federal research partnerships, innovation events |
 | Phase 3: Market Engine Deployment | Years 2–3 | Supplier-readiness bootcamps, SBIR/STTR navigation, certification support, startup acceleration, contract matchmaking |
 | Phase 4: Civic Engine Expansion | Years 2–4 | Public exhibitions, arts-and-space programs, community STEM nights, regional storytelling, transparent reporting |
-| Phase 5: Full Ecosystem Integration | Years 3–5 | Integrate all four engines, expand facilities at Deering Park, pursue major federal/state funding, formalize long-term employer partnerships |
+| Phase 5: Full Ecosystem Integration | Years 3–5 | Integrate all four engines, expand facilities, pursue major federal/state funding, formalize long-term employer partnerships |
 
 Year-by-year milestones are detailed on Master Plan Pages 33–34.
 
@@ -77,11 +79,11 @@ Year-by-year milestones are detailed on Master Plan Pages 33–34.
 
 Three major pillars beyond the 2026–2031 master plan:
 
-1. **Multi-University Consortium** — Multiple universities with permanent physical presence at Deering Park, shared research labs, joint faculty appointments, cross-institutional degree pathways in aerospace, robotics, AI, materials, and systems engineering. Modeled on Houston Spaceport, NSF Engines hubs. (Master Plan Page 36–37)
+1. **Multi-University Consortium** — Multiple universities with a permanent physical presence on the campus, shared research labs, joint faculty appointments, cross-institutional degree pathways in aerospace, robotics, AI, materials, and systems engineering. Modeled on Houston Spaceport, NSF Engines hubs. (Master Plan Page 36–37)
 
 2. **Multi-Purpose Auditorium & Performing Arts Center** — Dual-role facility for large-scale convenings, industry summits, STEM showcases, and community performing arts (concerts, theater, dance, film festivals, school performances, cultural events). Financed through Space Florida tools. (Master Plan Page 37)
 
-3. **Landmark Campus at Deering Park** — Signature architectural identity including multi-university research complex, performing arts center, innovation labs, Talent Engine pavilion, public plazas, green spaces, and community gathering areas. Positions New Smyrna Beach as leader in space-industry innovation and education. (Master Plan Page 38)
+3. **Landmark Campus** — Signature architectural identity including multi-university research complex, performing arts center, innovation labs, Talent Engine pavilion, public plazas, green spaces, and community gathering areas. Positions New Smyrna Beach as leader in space-industry innovation and education. (Master Plan Page 38)
 
 ### Strategic Context
 *Sources: Master Plan Pages 4–6*
@@ -89,7 +91,7 @@ Three major pillars beyond the 2026–2031 master plan:
 - The Space Coast is the busiest launch corridor in the world (Page 4)
 - Southeast Volusia risks becoming a commuter community to Brevard and Orlando without coordinated action (Page 4)
 - Federal policy is shifting toward place-based innovation ecosystems (CHIPS & Science Act, Build Back Better, EDA Tech Hubs, NSF Engines) (Page 4)
-- Deering Park: 10,000+ new homes, 10M+ sq ft industrial/commercial space — "once-in-a-generation" catalyst (Pages 4, 6)
+- A planned development of 10,000+ new homes and 10M+ sq ft of industrial/commercial space — "once-in-a-generation" catalyst (Pages 4, 6)
 - No civilian-facing innovation hub exists on the Space Coast (Page 4)
 
 ### Key Contact

@@ -5,7 +5,7 @@
 **Route:** /economic-impact
 **Sources:** Master Plan pp. 6–9, 28–29; Overview p. 1; fsic.space/copy-of-news-media (FAQ)
 
-> **⚠ Review — scenario attribution (see `docs/08-current-site-audit.md` §3.6):** The Master Plan's chart (p. 8) shows that the headline figures ($10.2–$12.4B output, 74,500–79,500 job-years, $1.35–$1.55B wages, $690–$910M fiscal, $800M–$1.56B funding) are the **Extended FSIC (FSIC 2.0)** scenario. The foundational FSIC 1.0 scenario is lower ($8.1–$9.7B output). This page labels the headline figures as FSIC 2.0 and shows all three scenarios. The approved home page says "Independent 25-year analysis projects that FSIC will generate:" above the same figures, without naming the scenario. Decide whether the home page should name it.
+> **⚠ Review — scenario attribution (see `docs/08-current-site-audit.md` §3.10):** The Master Plan's chart (p. 8) shows that the headline figures ($10.2–$12.4B output, 74,500–79,500 job-years, $1.35–$1.55B wages, $690–$910M fiscal, $800M–$1.56B funding) are the **Extended FSIC (FSIC 2.0)** scenario. The foundational FSIC 1.0 scenario is lower ($8.1–$9.7B output). This page labels the headline figures as FSIC 2.0 and shows all three scenarios. The approved home page says "Independent 25-year analysis projects that FSIC will generate:" above the same figures, without naming the scenario. Decide whether the home page should name it.
 
 ---
 
@@ -57,7 +57,7 @@
 **Intro:** This analysis evaluates FSIC's projected 25-year impact under three scenarios: Baseline (No FSIC), Basic FSIC (FSIC 1.0), and Extended FSIC (FSIC 2.0).
 
 **Scenarios:**
-- **Baseline (No FSIC)** — The Baseline scenario reflects a slow growth future with limited job creation, modest fiscal gains, and a decades long buildout of Deering Park.
+- **Baseline (No FSIC)** — The Baseline scenario reflects a slow growth future with limited job creation, modest fiscal gains, and a decades long buildout.
 - **FSIC 1.0** — FSIC 1.0 is the foundational phase of the Florida Space Innovation Center, designed to activate the region's economic engine through four coordinated program areas: Talent, Innovation, Market, and Civic Advancement. This phase establishes the structure, partnerships, and programming needed to convene a regional space ecosystem and align with federal, state, and private funding sources. It is a low-risk, high-leverage platform that organizes the region, attracts early partners, and prepares the groundwork for larger capital investments in FSIC 2.0.
 - **FSIC 2.0** — FSIC 2.0 represents a transformational path: a fully realized innovation district anchored by NASA, university partners, high tech employers, and a convention and performing arts center. This expanded model generates the strongest economic output, highest wage job creation, and the largest influx of external funding, while establishing New Smyrna Beach as a statewide hub for space related research, education, and tourism.
 
@@ -74,27 +74,21 @@
 | Job-years supported | 18,000–22,000 | 18,000–22,000 | 74,500–79,500 |
 | Total wage impact | $450–$600M | $1.05–$1.25B | $1.35–$1.55B |
 | Annual visitor volume | Under 10,000 | 40,000–60,000 | 150,000–210,000 |
-| Deering Park absorption | 20–25 years | 12–16 years | 10–13 years |
 
-> **Source:** Master Plan p. 8, chart (values as printed; "k" written out, "M"/"B" kept).
+> **Source:** Master Plan p. 8, chart (values as printed; "k" written out, "M"/"B" kept). The chart's absorption-timeline row is left out because it is about a named development. The project lead decided (November 2026) that the site does not name a specific campus site or development. See `docs/08-current-site-audit.md` §3.3.
 > **⚠ Review — job-years:** The chart gives Baseline and FSIC 1.0 the same range (18k–22k). That looks like an error in the source. Confirm the FSIC 1.0 figure before approval.
 > **⚠ Review — fiscal impact:** The chart labels this "City + County". The text on p. 7 says "local and state governments". Confirm which is right.
 
 ---
 
-## 03 · ACCELERATING DEERING PARK
+## 03 · RISKS AND OPPORTUNITIES
 
-**Running-head label:** Deering Park
+**Headline:** Risks and Opportunities
 
-**Headline:** Absorption Timeline Cut Nearly in Half
+**Thesis (label column):** Without coordination, growth concentrates elsewhere.
 
-**Thesis (label column):** FSIC accelerates Deering Park's development from 20–25 years to 10–13 years, increasing taxable value earlier and attracting anchor tenants sooner.
-
-> **Source:** Master Plan p. 8 (verbatim).
-
-**Context:** Deering Park's master-planned development will add more than 10,000 homes and over 10 million square feet of industrial and commercial space. This growth will reshape the region's workforce needs, employer mix, and long-term economic trajectory.
-
-> **Source:** Master Plan p. 6 (verbatim).
+> **Source:** Thesis from home.md (approved).
+> **⚠ Review:** New for this page. The section was "Accelerating [the Master Plan's named development]" with the absorption timeline (20–25 years to 10–13 years) and the development's size (10,000+ homes, 10M+ sq ft). Both are about a named development and were removed. The project lead decided (November 2026) that the site does not name a specific campus site or development. See `docs/08-current-site-audit.md` §3.3. The headline and thesis replace them.
 
 **Risks without FSIC:**
 - Becoming a commuter corridor
@@ -110,7 +104,6 @@
 - A shared regional identity rooted in innovation
 
 > **Source:** Master Plan pp. 6–7 (verbatim).
-> **⚠ Review:** Depends on the Deering Park decision (audit §3.3). The approved home page already names Deering Park.
 
 ---
 

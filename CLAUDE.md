@@ -50,7 +50,8 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - Follow `docs/03-content-guidelines.md`: institutional tone, no hype words, no exclamation marks.
 - **Economic figures must match the Master Plan exactly, shown as ranges** ("$10.2–$12.4 billion"), never only the upper bound.
 - Don't invent partners, quotes, testimonials, logos or statistics. When unsure, leave it out.
-- Open content conflicts (development figures, Deering Park naming, unsourced claims, which economic scenario the headline figures describe) are listed in `docs/08-current-site-audit.md` §3 and `docs/07-open-questions.md`. Don't settle them in copy without the user.
+- Don't name a specific campus site or the development the Master Plan proposes for it, anywhere on the site or in the docs (decided November 2026; `docs/08-current-site-audit.md` §3.3). Say "Southeast Volusia" or "the region".
+- Open content conflicts (development figures, unsourced claims, which economic scenario the headline figures describe) are listed in `docs/08-current-site-audit.md` §3 and `docs/07-open-questions.md`. Don't settle them in copy without the user.
 
 ### Code
 - **Base path:** internal links must include `import.meta.env.BASE_URL` (currently `/fsic`, no trailing slash). `Button` handles this for hrefs starting with `/`. Elsewhere, write `` `${base}/path` ``. A bare `/path` breaks on GitHub Pages.
