@@ -72,10 +72,10 @@
 **Key content:** Multi-university consortium, performing arts center, a landmark campus for Southeast Volusia (no site named).
 **Source:** Overview Page 3; Master Plan Pages 36–38.
 
-### Contact (`/contact`) — STUB
-**Goal:** Enable stakeholders to reach FSIC.
-**Audience:** All.
-**Key content:** Contact form, email, phone, physical location (TBD), partner inquiry routing.
+### Contact (`/contact`) — IMPLEMENTED (no form)
+**Goal:** Route inquiries to FSIC.
+**Audience:** Partners, volunteers, media, the public.
+**Key content:** Email, location, social links, and four topics (Partnerships, Volunteering and leadership, Media, General), each opening an email to info@fsic.space with the subject set. The contact form waits on a backend and routing decision (`07-open-questions.md`). No phone number is published.
 
 ### News & Media (`/news`) — IMPLEMENTED
 **Goal:** Publish FSIC's press releases as issued.
@@ -104,4 +104,4 @@ The current site (fsic.space) has substantial FAQ and founder bio content with n
 - The Strategic Moment
 
 ## Implementation Note
-Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, and News & Media. The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
+Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
