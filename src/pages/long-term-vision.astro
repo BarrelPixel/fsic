@@ -8,6 +8,7 @@ import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import List from '../components/List.astro';
 import Closing from '../components/Closing.astro';
+import SectionBar from '../components/SectionBar.astro';
 
 // Copy: src/content/copy/long-term-vision.md (Draft). Master Plan pp. 36–38, framed by the FAQ's caveat.
 // The Master Plan names the development throughout; the page says "Southeast Volusia" instead and
@@ -39,8 +40,20 @@ const total = sections.length;
     <HeroIndex label="Sections on this page" size="large" items={sections} />
   </PageHero>
 
+  <!-- The wrapper bounds the sticky section bar to the sections; it scrolls away before the closing -->
+  <div>
+    <SectionBar
+      ariaLabel="Sections on this page"
+      numbered
+      items={[
+        { id: 'consortium', label: 'Consortium' },
+        { id: 'performing-arts', label: 'Performing arts' },
+        { id: 'campus', label: 'Campus' },
+      ]}
+    />
+
   <!-- 01 · The consortium (Master Plan pp. 36–37) -->
-  <Section id="consortium" index={1} total={total} heading="The Multi-University Consortium & Shared Facilities" class="scroll-mt-12">
+  <Section id="consortium" index={1} total={total} heading="The Multi-University Consortium & Shared Facilities" class="scroll-mt-20">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         This is the moment when FSIC stops being a programmatic initiative and becomes a permanent academic and research institution.
@@ -73,7 +86,7 @@ const total = sections.length;
   </Section>
 
   <!-- 02 · The auditorium and performing arts center (Master Plan p. 37) -->
-  <Section id="performing-arts" index={2} total={total} spacing="stacked" heading="A Performing Arts Center for the Space Coast" class="scroll-mt-12">
+  <Section id="performing-arts" index={2} total={total} spacing="stacked" heading="A Performing Arts Center for the Space Coast" class="scroll-mt-20">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         The long-term plan includes a multi-purpose auditorium that serves dual roles.
@@ -99,7 +112,7 @@ const total = sections.length;
   </Section>
 
   <!-- 03 · The landmark campus (Master Plan p. 38), with the concept rendering and its required caption -->
-  <Section id="campus" index={3} total={total} dark heading="A Landmark Campus for Southeast Volusia" class="scroll-mt-12">
+  <Section id="campus" index={3} total={total} dark heading="A Landmark Campus for Southeast Volusia" class="scroll-mt-20">
     <figure slot="media" class="relative">
       <img
         src={`${base}/images/fsic-concept.jpg`}
@@ -142,6 +155,7 @@ const total = sections.length;
       </div>
     </Grid>
   </Section>
+  </div>
 
   <Closing statement="The future is built in phases. The commitment begins now.">
     <Button href="/partnership-funding">Become a Partner</Button>

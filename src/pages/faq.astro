@@ -8,6 +8,7 @@ import Disclosure from '../components/Disclosure.astro';
 import List from '../components/List.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 import { faqs, topics } from '../data/faq';
+import SectionBar from '../components/SectionBar.astro';
 
 // Copy: src/content/copy/faq.md (Draft). Answers are as published on fsic.space, except where the
 // copy deck notes a change: ranges for the economic figures, the five phases, the sourced
@@ -41,6 +42,14 @@ const link = 'links-in';
     <HeroIndex label="Topics on this page" size="large" items={topics.map((t) => ({ id: t.id, name: t.name, note: count(t.faqs.length) }))} />
   </PageHero>
 
+  <!-- The wrapper bounds the sticky section bar to the sections; it scrolls away before the closing -->
+  <div>
+    <SectionBar
+      ariaLabel="Sections on this page"
+      numbered
+      items={topics.map((t) => ({ id: t.id, label: t.name }))}
+    />
+
   <!-- One spec section per topic: the topic pinned in the label column, its questions in the content
        column. Each answer opens from its question (<details>, + turns to ×); /faq#<question> opens it. -->
   {topics.map((t, i) => (
@@ -50,7 +59,7 @@ const link = 'links-in';
       total={topics.length}
       spacing={i === 0 ? 'default' : 'stacked'}
       labelledby={`${t.id}-title`}
-      class="scroll-mt-12"
+      class="scroll-mt-20"
     >
       <Grid labelAs="header" stickyLabel>
         <Fragment slot="label">
@@ -82,6 +91,7 @@ const link = 'links-in';
       </Grid>
     </Section>
   ))}
+  </div>
 
 </BaseLayout>
 

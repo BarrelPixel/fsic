@@ -49,7 +49,7 @@ scripts/             check-links.mjs (run via `npm run check-links`)
 
 ### Design
 Read **`DESIGN.md`** before changing any UI. In short:
-- Every page sits on one 12-column grid: framing in cols 1–4, detail in cols 5–12. Build sections from the grid components (`Section`, `Grid`, `Row`, `List`), and interior pages from the template in DESIGN.md "Interior page template" (`PageHero` first; `src/pages/model.astro` is the reference). Don't hand-write grid classes.
+- Every page sits on one 12-column grid: framing in cols 1–4, detail in cols 5–12. Build sections from the grid components (`Section`, `Grid`, `Row`, `List`), and interior pages from the template in DESIGN.md "Interior page template" (`PageHero` first; `src/pages/model.astro` is the reference). Don't hand-write grid classes. An interior page that lists its sections in `PageHero` also gets a sticky `SectionBar`.
 - The homepage hero photo (`src/assets/fsic-hero.png`, a launch plume seen from the dunes) is the only signature element (DESIGN.md "Signature element" and "Imagery"). Range bars drawing in (homepage, Economic Impact) are the site's only automatic animation (DESIGN.md "Motion"); reuse that pattern for new range bars, but don't add a different one, and use the motion tokens in `global.css` for interaction feedback.
 - Orange means the space industry. Lagoon green means the community. Don't use either as decoration.
 - Never put white text on the brand orange, and never use orange text on light backgrounds (contrast). Primary buttons are white on `orange-deep` (the `Button` component handles this).
