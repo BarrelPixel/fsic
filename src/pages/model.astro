@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import RunningHead from '../components/RunningHead.astro';
 
 // Copy: src/content/copy/model.md (Draft). Wording is verbatim from the copy deck.
 // Open review items (see model.md ⚠): the "Brings together" lists, the Civic shift line, and the
@@ -245,10 +246,7 @@ const engines: Engine[] = [
       <section id={engine.id} aria-labelledby={`${engine.id}-title`} class="scroll-mt-12">
         <div class="container pt-14 pb-16 md:pt-20 md:pb-24">
           <!-- Running head: the index sits on the section rule, so the name and summary share one top line below it -->
-          <p class="font-sans text-sm text-gray tabular-nums flex items-center gap-2 mb-2" aria-hidden="true">
-            <span class:list={['w-2.5 h-2.5 rounded-full', engine.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']}></span>
-            {String(i + 1).padStart(2, '0')} / {String(engines.length).padStart(2, '0')}
-          </p>
+          <RunningHead index={i + 1} total={engines.length} dot={engine.tone} />
           <div class="grid gap-y-8 lg:grid-cols-12 lg:gap-x-8 border-t-2 border-navy pt-6 md:pt-8">
 
             <!-- LABEL COLUMN: name, what it transforms, launch position. Pinned on wide screens so the

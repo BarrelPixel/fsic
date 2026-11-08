@@ -22,8 +22,8 @@ There is no linter or test suite. `npm run build` is the check.
 ## Layout
 
 ```
-src/pages/           One .astro file per route. Only index.astro is built out; the rest use <ComingSoon>
-src/components/      Button, CoastlineMap, Header, Footer, ComingSoon
+src/pages/           One .astro file per route. index.astro and model.astro are built out; the rest use <ComingSoon>
+src/components/      Button, CoastlineMap, Header, Footer, ComingSoon, RunningHead
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, arc animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
@@ -36,10 +36,11 @@ mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
 
 ### Design
 Read **`DESIGN.md`** before changing any UI. In short:
+- Every page sits on one 12-column grid: framing in cols 1–4, detail in cols 5–12, sections opened by a `RunningHead` on a heavy rule. See DESIGN.md "Grid".
 - The coastline and launch arc is the only signature element and the only automatic animation.
 - Orange means the space industry. Lagoon green means the community. Don't use either as decoration.
 - Never put white text on orange, and never use orange text on light backgrounds (contrast).
-- Barlow Semi Condensed for headings (`font-display`), Source Serif 4 for reading text (the body default), Archivo for UI (`font-sans`: nav, buttons, captions, labels, data). No all-caps eyebrow labels, no fade-in on scroll, no identical shadowed cards.
+- Barlow Semi Condensed for headings (`font-display`), Source Serif 4 for reading text (the body default), Archivo for UI (`font-sans`: nav, buttons, captions, labels, data). No all-caps eyebrow labels, no fade-in on scroll, no identical shadowed cards, no chips or pills.
 
 ### Copy
 - Wording comes from `src/content/copy/<page>.md`. Write and approve copy there first, then build it into the page. The workflow and markers (`> Source`, `⚠ Review`, `[TODO]`) are in `docs/09-copy-deck.md`.
