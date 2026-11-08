@@ -88,7 +88,7 @@ The site uses one Swiss-style modular grid. Every section shares the same vertic
 | `Row` | A label \| content row inside the content column, for use in a `<dl>`. `rule="bottom"` when it opens the content column, `count` for "Programs · 5", `list` when the content is a list of `<details>`. `dot` (gray, navy, orange, lagoon, lagoon-light) puts a small dot after the label to say what the list beside it is: gray for problems, the engine or phase color for impact |
 | `List` | Items with a small round dot on the column edge, text 16px in, 8px apart on the 28px leading (`.list` in `global.css`; on-dark dots inside night sections). `spacious` (12px) for items that run to several lines, `columns` for short items, `html` for items with links |
 | `PageHero` | Interior page opening (below) |
-| `SectionBar` | Sticky in-page navigation with the current section marked. Use it on long pages with four or more numbered sections (Model, Governance, Partnership & Funding, Economic Impact): wrap the numbered sections in an element whose first child is the bar, and give each section `scroll-mt-20` so links land below it |
+| `SectionBar` | Sticky in-page navigation with the current section marked. **Every page whose `PageHero` lists its sections gets one** (all interior pages with sections; not the homepage, News or Contact), so the opening's section list follows you down the page. Wrap the sections in an element whose first child is the bar (it scrolls away before the closing), and give each section `scroll-mt-20` so links land below it |
 | `RunningHead` | Used by `Section`; use directly only in custom layouts |
 
 - **12 columns** at `lg` (`lg:grid-cols-12 lg:gap-x-8`) inside the container (max 76rem, 1.5rem gutter).
