@@ -58,7 +58,7 @@ The Wix sitemap lists 33 URLs. Only five are linked from the navigation. The res
 | New page | Copy file | Copy taken from fsic.space | Remaining gaps |
 |----------|-----------|----------------------------|----------------|
 | Home `/` | `home.md` (approved, unchanged) | — | Consider adding the mission statement (§3.7) |
-| The Strategic Moment (built) | `strategic-moment.md` | About → "Why Now" (whole section) | Mentioning the unnamed development's size (see `strategic-moment.md` review note) |
+| The Strategic Moment (built) | `strategic-moment.md` | About → "Why Now" (whole section) | — (showing the unnamed development's size was confirmed, November 2026) |
 | The FSIC Model | `model.md` | Engine definition, About engine summaries, all 24 engine components | Guiding principles, how the engines reinforce each other |
 | Economic Impact | `economic-impact.md` | FAQ economic answer and disclaimer | Three-scenario comparison, ROI framework (Master Plan) |
 | Phased Deployment | `deployment.md` | About → phased model, FAQ → first programs | Milestones, facilities per phase (Master Plan) |
@@ -87,7 +87,7 @@ These conflicts are between the current site, the source PDFs, and the new site 
 
 These figures describe different areas (all of Southeast Volusia versus one development). Decide which framing the new site uses and give a source for the regional figure, which is not in the PDFs.
 
-**Decision (November 2026):** use the Master Plan's figures. The FAQ's history answer no longer gives a regional figure. The Strategic Moment page says "A master-planned development in Southeast Volusia will add" more than 10,000 homes and over 10 million square feet of industrial and commercial space, citing pp. 4 and 6. The development is not named (§3.3).
+**Decision (November 2026):** use the Master Plan's figures. The FAQ's history answer no longer gives a regional figure. The Strategic Moment page says "A master-planned development in Southeast Volusia will add" more than 10,000 homes and over 10 million square feet of industrial and commercial space, citing pp. 4 and 6. The development is not named (§3.3); showing its size unnamed was confirmed by the project lead.
 
 ### 3.2 Economic impact: ranges versus upper bound (high priority)
 - `home.md` (approved) and the Master Plan give **ranges**: $10.2–$12.4B, 74,500–79,500 job-years, $1.35–$1.55B, $690–$910M.
