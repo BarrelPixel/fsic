@@ -10,9 +10,11 @@ import List from '../components/List.astro';
 import heroImage from '../assets/fsic-hero.png';
 import conceptImage from '../assets/fsic-concept.jpg';
 import { pad2 } from '../lib/format';
-import { FIGURES } from '../data/economics';
+import { FIGURES, SOURCE } from '../data/economics';
 import { engines } from '../data/engines';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
+import RangeBar from '../components/RangeBar.astro';
+import RangeLegend from '../components/RangeLegend.astro';
 
 // 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
@@ -124,27 +126,16 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     <!-- The range bars are the site's one automatic animation: they draw once when the list scrolls into
          view (global.css "Range bars draw in"; RangeBarsDraw). -->
     <ul class="range-bars border-t border-rule-on-dark" role="list" data-range-bars>
-      {impact.map((row, i) => {
-        const lowPct = Math.round((row.low / row.high) * 100);
-        return (
-          <li class="grid gap-y-3 py-6 border-b border-rule-on-dark lg:grid-cols-12 lg:gap-x-8 lg:items-baseline" style={`--row:${i}`}>
-            <p class="lg:col-span-4 mb-0 text-3xl md:text-4xl font-bold text-white font-display leading-tight tabular-nums">{row.display}</p>
-            <p class="lg:col-span-4 mb-0 font-sans text-white/75">{row.label}</p>
-            <div class="lg:col-span-4 lg:self-center h-2.5 bg-white/10 flex" aria-hidden="true">
-              <div class="range-low h-full bg-orange" style={`width:${lowPct}%`}></div>
-              <div class="range-high h-full bg-orange/40" style={`width:${100 - lowPct}%`}></div>
-            </div>
-          </li>
-        );
-      })}
+      {impact.map((row, i) => (
+        <li class="grid gap-y-3 py-6 border-b border-rule-on-dark lg:grid-cols-12 lg:gap-x-8 lg:items-baseline" style={`--row:${i}`}>
+          <p class="lg:col-span-4 mb-0 text-3xl md:text-4xl font-bold text-white font-display leading-tight tabular-nums">{row.display}</p>
+          <p class="lg:col-span-4 mb-0 font-sans text-white/75">{row.label}</p>
+          <RangeBar low={row.low} high={row.high} class="lg:col-span-4 lg:self-center" />
+        </li>
+      ))}
     </ul>
     <div class="grid lg:grid-cols-12 lg:gap-x-8 mt-4">
-      <p class="lg:col-start-9 lg:col-span-4 text-caption text-white/60 flex items-center gap-3 mb-0">
-        <span class="inline-flex gap-1" aria-hidden="true">
-          <span class="w-4 h-2 bg-orange"></span><span class="w-4 h-2 bg-orange/40"></span>
-        </span>
-        Solid bar: low estimate. Lighter extension: range to the high estimate.
-      </p>
+      <RangeLegend dark class="lg:col-start-9 lg:col-span-4 mb-0" />
     </div>
 
     <Grid class="mt-16">
@@ -155,7 +146,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         </p>
         <Button href="/economic-impact" variant="secondary-light">Explore the Full Economic Analysis</Button>
         <p class="text-caption text-white/60 mt-10 mb-0">
-          Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.
+          {SOURCE}
         </p>
       </div>
     </Grid>

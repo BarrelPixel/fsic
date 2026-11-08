@@ -1,0 +1,16 @@
+---
+// The legend that goes with range bars (DESIGN.md "Data": "Include the legend").
+interface Props {
+  /** On a night background. */
+  dark?: boolean;
+  class?: string;
+}
+
+const { dark = false, class: className } = Astro.props;
+---
+<p class:list={['text-caption flex items-center gap-3', dark ? 'text-white/60' : 'text-gray-dark', className]}>
+  <span class="inline-flex gap-0.5" aria-hidden="true">
+    <span class="w-4 h-2 bg-orange"></span><span class="w-4 h-2 bg-orange/40"></span>
+  </span>
+  Solid bar: low estimate. Lighter extension: range to the high estimate.
+</p>

@@ -10,7 +10,7 @@ import { mailto } from '../lib/site';
 import HeroIndex from '../components/HeroIndex.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
-import { FIGURES } from '../data/economics';
+import { FIGURES, SOURCE } from '../data/economics';
 import { benefits, partners, streams } from '../data/partnership';
 import Disclosure from '../components/Disclosure.astro';
 import SectionBar from '../components/SectionBar.astro';
@@ -162,7 +162,7 @@ const at = (id: string) => sectionProps(sections, id);
         <p class="mb-1 text-3xl md:text-4xl font-bold text-navy font-display leading-tight tabular-nums">{FIGURES.externalFunding.display}</p>
         <p class="mb-6 text-label text-navy">External funding potential · Extended FSIC (FSIC 2.0) scenario, over 25 years</p>
         <Button href="/economic-impact" variant="secondary">Explore the Full Economic Analysis</Button>
-        <p class="text-caption text-gray-dark mt-6 mb-0">Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.</p>
+        <p class="text-caption text-gray-dark mt-6 mb-0">{SOURCE}</p>
       </div>
     </Grid>
   </Section>

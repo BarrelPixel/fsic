@@ -10,6 +10,8 @@ import { EMAIL, mailto } from '../lib/site';
 import Closing from '../components/Closing.astro';
 import { SOURCE, glance, scenarios, comparison, roi } from '../data/economics';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
+import RangeBar from '../components/RangeBar.astro';
+import RangeLegend from '../components/RangeLegend.astro';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 import HeroIndex from '../components/HeroIndex.astro';
@@ -65,10 +67,7 @@ const at = (id: string) => sectionProps(sections, id);
             <p class="mb-0 text-label text-navy">{row.metric}</p>
           </div>
           <p class="lg:col-span-5 mb-0 text-base text-gray-dark">{row.body}</p>
-          <div class="lg:col-span-3 lg:self-center flex gap-0.5 h-2.5" aria-hidden="true">
-            <div class="range-low h-full bg-orange" style={`width:${pct(row.low, row.high)}%`}></div>
-            <div class="range-high h-full bg-orange/40 flex-1"></div>
-          </div>
+          <RangeBar low={row.low} high={row.high} class="lg:col-span-3 lg:self-center" />
         </li>
       ))}
     </ul>
@@ -77,10 +76,7 @@ const at = (id: string) => sectionProps(sections, id);
       <p slot="label" class="mb-0 text-statement text-navy">
         This is not a short-term program. It is a durable economic backbone.
       </p>
-      <p class="text-caption text-gray-dark mb-2 flex items-center gap-3">
-        <span class="inline-flex gap-0.5" aria-hidden="true"><span class="w-4 h-2 bg-orange"></span><span class="w-4 h-2 bg-orange/40"></span></span>
-        Solid bar: low estimate. Lighter extension: range to the high estimate.
-      </p>
+      <RangeLegend class="mb-2" />
       <p class="text-caption text-gray-dark mb-0">{SOURCE}</p>
     </Grid>
   </Section>

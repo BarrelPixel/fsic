@@ -1,0 +1,18 @@
+---
+// One estimate range as a bar (DESIGN.md "Data"): solid orange to the low estimate, lighter orange
+// from there to the high one, so the bar always spans the full high estimate. Decorative (the figure
+// is in the text beside it), so hidden from screen readers. Inside a `range-bars` group it draws in
+// with RangeBarsDraw; give its row `--row` for the stagger. Pair it with RangeLegend.
+interface Props {
+  low: number;
+  high: number;
+  class?: string;
+}
+
+const { low, high, class: className } = Astro.props;
+const lowPct = high ? Math.round((low / high) * 1000) / 10 : 0;
+---
+<div class:list={['flex gap-0.5 h-2.5', className]} aria-hidden="true">
+  <div class="range-low h-full bg-orange" style={`width:${lowPct}%`}></div>
+  <div class="range-high h-full bg-orange/40 flex-1"></div>
+</div>

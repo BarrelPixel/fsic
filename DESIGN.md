@@ -177,6 +177,7 @@ Don't put the hero photo on interior pages.
 | `Disclosure` | An item that opens in place: `<details>` with the + that turns to ×. Summary in the `summary` slot; callers set spacing |
 | `ProgramList` | An engine's programs from `src/data/programs.ts`, each a `Disclosure` |
 | `Closing` | A page's closing: `statement` in display type and the buttons in the default slot, no heavy rule |
+| `RangeBar` / `RangeLegend` | One estimate range as a bar (solid orange to the low estimate, lighter to the high one; `low`, `high`), and the legend that goes with it (`dark` on night). The Economic Impact scenario comparison draws its own bars in the scenario colors |
 | `RangeBarsDraw` | Draws every `data-range-bars` group on the page once when it scrolls into view (see "Motion"). Include once per page with range bars |
 | `ComingSoon` | Placeholder for interior pages until they're built |
 
