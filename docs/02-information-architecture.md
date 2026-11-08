@@ -67,10 +67,10 @@
 **Key content:** Stakeholder value propositions, partnership roles, funding strategy, five-year financial outlook.
 **Source:** Master Plan Pages 11–12, 22–27.
 
-### Long-Term Vision (`/long-term-vision`) — STUB
+### Long-Term Vision (`/long-term-vision`) — IMPLEMENTED
 **Goal:** Inspire with the 2032–2040 vision of a landmark campus.
 **Audience:** All stakeholders; especially community members and long-term funders.
-**Key content:** Multi-university consortium, performing arts center, a landmark campus for Southeast Volusia (no site named).
+**Key content:** The Master Plan's 2032–2040 vision (pp. 36–38), framed by the FAQ's caveat: multi-university consortium, performing arts center, a landmark campus for Southeast Volusia with the concept rendering (no site named).
 **Source:** Overview Page 3; Master Plan Pages 36–38.
 
 ### Contact (`/contact`) — IMPLEMENTED (no form)
@@ -93,10 +93,10 @@ The current site (fsic.space) has founder bio content with no place in this site
 
 ## Navigation Structure
 
-Defined once in `src/lib/nav.ts` and shared by the header and footer. Pages are grouped by the question they answer. Pages that still use `<ComingSoon>` (Long-Term Vision) are listed with `built: false` and stay out of both menus until they ship.
+Defined once in `src/lib/nav.ts` and shared by the header and footer. Pages are grouped by the question they answer. A page that still uses `<ComingSoon>` is listed with `built: false` and stays out of both menus until it ships (none at present).
 
 **Header (desktop):** dropdown groups and plain links.
-- Why FSIC ▾ — The Strategic Moment, Economic Impact, (Long-Term Vision when built)
+- Why FSIC ▾ — The Strategic Moment, Economic Impact, Long-Term Vision
 - The Model ▾ — The FSIC Model, Phased Deployment, Programs & Facilities
 - Governance
 - Get Involved (links to Partnership & Funding)
@@ -109,4 +109,4 @@ The logo links to Home. Each page appears once in the menu. On phones, the menu 
 **Footer:** one column per group (Why FSIC, The Model), then a column "FSIC" with Home, Governance, Get Involved, News, FAQ and Contact. Each page appears once.
 
 ## Implementation Note
-Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, FAQ, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
+Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, Long-Term Vision, FAQ, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.

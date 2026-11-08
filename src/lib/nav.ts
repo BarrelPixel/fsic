@@ -22,7 +22,7 @@ const nav: NavItem[] = [
     links: [
       { label: 'The Strategic Moment', path: '/strategic-moment' },
       { label: 'Economic Impact', path: '/economic-impact' },
-      { label: 'Long-Term Vision', path: '/long-term-vision', built: false },
+      { label: 'Long-Term Vision', path: '/long-term-vision' },
     ],
   },
   {

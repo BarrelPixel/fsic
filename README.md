@@ -61,9 +61,9 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
 
 ## Current Status
 
-**Built:** Home (`/`), The FSIC Model (`/model`), Economic Impact (`/economic-impact`), Phased Deployment (`/deployment`), Governance & Transparency (`/governance`), Partnership & Funding (`/partnership-funding`), The Strategic Moment (`/strategic-moment`), Programs & Facilities (`/programs-facilities`), FAQ (`/faq`), News & Media (`/news`, one page per press release), Contact (`/contact`, email links by topic; no form yet).
+**Built:** Home (`/`), The FSIC Model (`/model`), Economic Impact (`/economic-impact`), Phased Deployment (`/deployment`), Governance & Transparency (`/governance`), Partnership & Funding (`/partnership-funding`), The Strategic Moment (`/strategic-moment`), Programs & Facilities (`/programs-facilities`), Long-Term Vision (`/long-term-vision`), FAQ (`/faq`), News & Media (`/news`, one page per press release), Contact (`/contact`, email links by topic; no form yet).
 
-**Coming Soon stub:** Long-Term Vision. It uses `<ComingSoon>` until its copy is ready.
+**Coming Soon stubs:** none. Every page in the IA is built; `<ComingSoon>` remains for future pages.
 
 **Proposed pages** (copy drafted, not yet in the IA): Leadership.
 

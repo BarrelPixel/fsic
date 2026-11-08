@@ -1,10 +1,151 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComingSoon from '../components/ComingSoon.astro';
+import Button from '../components/Button.astro';
+import PageHero from '../components/PageHero.astro';
+import HeroIndex from '../components/HeroIndex.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Row from '../components/Row.astro';
+import List from '../components/List.astro';
+import Closing from '../components/Closing.astro';
+
+// Copy: src/content/copy/long-term-vision.md (Draft). Master Plan pp. 36–38, framed by the FAQ's caveat.
+// The Master Plan names the development throughout; the page says "Southeast Volusia" instead and
+// leaves out the line about the family's legacy (docs/08 §3.3). Period: 2032–2040 (project lead).
+
+const base = import.meta.env.BASE_URL;
+
+const sections = [
+  { id: 'consortium', name: 'The Multi-University Consortium & Shared Facilities' },
+  { id: 'performing-arts', name: 'A Performing Arts Center for the Space Coast' },
+  { id: 'campus', name: 'A Landmark Campus for Southeast Volusia' },
+];
+const total = sections.length;
 ---
-<BaseLayout title="Long-Term Vision" description="FSIC's 2032–2040 vision: a multi-university consortium, performing arts center, and a landmark campus for Southeast Volusia.">
-  <ComingSoon
-    title="Long-Term Vision (2032–2040)"
-    description="The vision beyond the master plan — a multi-university consortium with shared research facilities, a multipurpose auditorium and performing arts center, and a landmark campus for Southeast Volusia."
-  />
+<BaseLayout title="Long-Term Vision" description="The long-term vision for the Florida Space Innovation Center, 2032–2040: a multi-university consortium, a performing arts center for the Space Coast, and a landmark campus for Southeast Volusia.">
+
+  <!-- Interior page template (DESIGN.md): PageHero with the caveat as the aside and an index of the sections -->
+  <PageHero title="The Long-Term Vision">
+    <p slot="aside">
+      <strong class="font-semibold text-white">2032–2040.</strong>
+      While no outcomes are guaranteed, these concepts reflect the direction FSIC is planning toward, and we are building our partnerships, programs, and strategy to make these possibilities achievable.
+    </p>
+    <p class="text-lead text-white/90 mb-6 max-w-3xl">
+      A Permanent, Multi-University, Cultural, and Innovation Anchor for the Space Coast
+    </p>
+    <p class="text-white/75 mb-10 max-w-3xl">
+      The long-term vision for the Florida Space Innovation Center extends well beyond the 2026–2031 master plan. The early years establish credibility, partnerships, and momentum. The next decade transforms FSIC into a landmark institution — a place where education, research, culture, and community converge in a way that defines the Space Coast for generations.
+    </p>
+    <HeroIndex label="Sections on this page" size="large" items={sections} />
+  </PageHero>
+
+  <!-- 01 · The consortium (Master Plan pp. 36–37) -->
+  <Section id="consortium" index={1} total={total} heading="The Multi-University Consortium & Shared Facilities" class="scroll-mt-12">
+    <Grid>
+      <p slot="label" class="mb-0 text-statement text-navy">
+        This is the moment when FSIC stops being a programmatic initiative and becomes a permanent academic and research institution.
+      </p>
+      <div>
+        <p class="max-w-3xl mb-10">
+          By the early 2030s, FSIC evolves into a formal multi-university consortium — a coordinated academic alliance modeled on the Houston Spaceport, the NSF Engines hubs, and major research collaboratives.
+        </p>
+        <dl>
+          <Row label="Core elements" rule="bottom">
+            <List items={[
+              'Multiple universities with permanent physical presence',
+              'Shared research labs, testing facilities, and applied R&D spaces',
+              'Joint faculty appointments and rotating scholar-in-residence programs',
+              'Cross-institutional degree pathways in aerospace, robotics, AI, materials, and systems engineering',
+              'A unified governance and funding model that ensures independence and academic credibility',
+            ]} class="text-gray-dark" />
+          </Row>
+          <Row label="Why this matters" rule="bottom" class="pt-5">
+            <List items={[
+              'It anchors Southeast Volusia as the intellectual center of the Space Coast',
+              'It attracts faculty, researchers, graduate students, and industry partners',
+              'It drives long-term economic development and employer retention',
+              'It positions FSIC as a nationally recognized hub for space-industry talent and innovation',
+            ]} class="text-navy" />
+          </Row>
+        </dl>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- 02 · The auditorium and performing arts center (Master Plan p. 37) -->
+  <Section id="performing-arts" index={2} total={total} spacing="stacked" heading="A Performing Arts Center for the Space Coast" class="scroll-mt-12">
+    <Grid>
+      <p slot="label" class="mb-0 text-statement text-navy">
+        The long-term plan includes a multi-purpose auditorium that serves dual roles.
+      </p>
+      <dl>
+        <Row label="A functional asset for FSIC" rule="bottom">
+          <List columns items={['Large-scale convenings', 'Industry summits', 'University consortium events', 'Public exhibitions', 'STEM showcases', 'Space-industry demonstrations']} class="text-gray-dark" />
+        </Row>
+        <Row label="A community-anchored Performing Arts Center" rule="bottom" class="pt-5">
+          <p class="mb-3 text-gray-dark">This is where the vision becomes transformational. The auditorium evolves into a regional performing arts center offering:</p>
+          <List columns items={['Concerts', 'Theater', 'Dance', 'Film festivals', 'Community arts programming', 'School performances', 'Cultural events tied to space, science, and innovation']} class="text-gray-dark" />
+        </Row>
+        <Row label="Why this matters" rule="bottom" class="pt-5">
+          <List items={[
+            'It gives Southeast Volusia a cultural anchor that elevates the entire community',
+            'It becomes a gathering place for residents, families, and visitors',
+            'It strengthens the Civic Engine and deepens community identity',
+            'It positions FSIC as not just an innovation hub, but a cultural and civic destination',
+          ]} class="text-navy" />
+        </Row>
+      </dl>
+    </Grid>
+  </Section>
+
+  <!-- 03 · The landmark campus (Master Plan p. 38), with the concept rendering and its required caption -->
+  <Section id="campus" index={3} total={total} dark heading="A Landmark Campus for Southeast Volusia" class="scroll-mt-12">
+    <figure slot="media" class="relative">
+      <img
+        src={`${base}/images/fsic-concept.jpg`}
+        alt="Concept rendering of a future campus: research buildings, a tower, and a glass dome set among wetlands, palms, and a boardwalk."
+        width="1536"
+        height="1024"
+        loading="lazy"
+        decoding="async"
+        class="w-full h-[50vh] min-h-[320px] max-h-[640px] object-cover"
+      />
+      <figcaption class="text-caption container text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>
+    </figure>
+    <Grid>
+      <p slot="label" class="mb-0 text-statement text-white">
+        This is the endgame: a place where innovation, education, and culture converge — financed through state tools, supported by the community, and anchored by a multi-university presence.
+      </p>
+      <div>
+        <p class="max-w-3xl mb-10 text-white/90">
+          By the mid-2030s, FSIC becomes a signature campus — a place that people recognize instantly.
+        </p>
+        <dl>
+          <Row label="Campus elements" rule="bottom" dark>
+            <List items={[
+              'The multi-university research complex',
+              'The performing arts center',
+              'The innovation labs and testing facilities',
+              'The Talent Engine pavilion',
+              'Public plazas, green spaces, and community gathering areas',
+              "A visible architectural identity that symbolizes the Space Coast's future",
+            ]} class="text-white/75" />
+          </Row>
+          <Row label="What this achieves" rule="bottom" dark class="pt-5">
+            <List items={[
+              'A permanent anchor that drives foot traffic, economic activity, and cultural life',
+              'A destination that attracts families, employers, and visitors',
+              'A regional hub that positions Southeast Volusia as a leader in space-industry innovation and education',
+            ]} class="text-white/90" />
+          </Row>
+        </dl>
+      </div>
+    </Grid>
+  </Section>
+
+  <Closing statement="The future is built in phases. The commitment begins now.">
+    <Button href="/partnership-funding">Become a Partner</Button>
+    <Button href="/deployment" variant="secondary">View Phased Deployment</Button>
+  </Closing>
+
 </BaseLayout>

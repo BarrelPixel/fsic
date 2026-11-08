@@ -118,7 +118,9 @@ Growth is structured. Not speculative.
 
 ---
 
-## LONG-RANGE VISION (2031–2040)
+## LONG-RANGE VISION (2032–2040)
+
+> **Changed (November 2026):** the period follows the Master Plan (p. 36), 2032–2040; it was 2031–2040, from the Overview PDF. Decided with the Long-Term Vision page.
 
 **Headline:** A Landmark Campus for Southeast Volusia
 

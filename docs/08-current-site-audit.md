@@ -65,7 +65,7 @@ The Wix sitemap lists 33 URLs. Only five are linked from the navigation. The res
 | Programs & Facilities (built) | `programs-facilities.md` | FAQ → residents, businesses, location | — (both review items decided, November 2026) |
 | Governance | `governance.md` | FAQ → leadership, neutrality, developers; board members from press releases; structure, reporting and metrics from the Master Plan | Confirmed board roster, bios and photos; founder transition wording |
 | Partnership & Funding | `partnership-funding.md` | FAQ → funding, get involved; launch release → three core benefits | Stakeholder value propositions, financial outlook |
-| Long-Term Vision | `long-term-vision.md` | FAQ → "What could FSIC look like" | Visuals; location wording (§3.3) |
+| Long-Term Vision (built) | `long-term-vision.md` | FAQ → caveat; Master Plan pp. 36–38 | Period settled as 2032–2040 (November 2026) |
 | Contact (built, no form) | `contact.md` | Email, location, social links; topic links replace the form for now | Routing, form backend |
 | FAQ (built) | `faq.md` | Entire FAQ page | "Who leads FSIC?" answer is out of date (§3.6) |
 | News & Media (built) | `news.md`, `src/content/news/` | All four press releases | Graphics copied from the live page (see `news.md` review note); one standard boilerplate |
