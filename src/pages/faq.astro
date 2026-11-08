@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
+import { EMAIL, mailto } from '../lib/site';
 
 // Copy: src/content/copy/faq.md (Draft). Answers are as published on fsic.space, except where the
 // copy deck notes a change: ranges for the economic figures, the five phases, the sourced
@@ -10,8 +11,7 @@ import Grid from '../components/Grid.astro';
 // Several answers also appear on other pages (see the note at the top of faq.md).
 
 const base = import.meta.env.BASE_URL;
-const email = 'info@fsic.space';
-const mail = `<a href="mailto:${email}">${email}</a>`;
+const mail = `<a href="${mailto()}">${EMAIL}</a>`;
 const page = (path: string, text: string) => `<a href="${base}${path}">${text}</a>`;
 
 /** An answer is a list of blocks. Strings are trusted, hand-written HTML (links and <strong>). */
@@ -195,7 +195,7 @@ const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:dec
   <PageHero title="Frequently Asked Questions">
     <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
       Other questions:
-      <a href={`mailto:${email}`} class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">{email}</a>
+      <a href={mailto()} class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">{EMAIL}</a>
     </p>
 
     <p class="mb-2 font-sans text-sm font-semibold text-white/60">Mission</p>

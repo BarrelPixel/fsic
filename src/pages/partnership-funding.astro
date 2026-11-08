@@ -6,6 +6,7 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
+import { mailto } from '../lib/site';
 
 // Copy: src/content/copy/partnership-funding.md (Draft). Partner table: Master Plan pp. 22–24;
 // funding streams: pp. 25–26; benefits: May 25, 2026 launch release; get involved: FAQ.
@@ -260,7 +261,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
         The partnership strategy ensures that FSIC is not duplicating existing efforts but instead coordinating, amplifying, and accelerating them.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
-        <Button href="mailto:info@fsic.space">Contact FSIC</Button>
+        <Button href={mailto()}>Contact FSIC</Button>
         <Button href="/model" variant="secondary">Learn More About the FSIC Model</Button>
       </div>
     </Grid>

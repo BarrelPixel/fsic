@@ -6,6 +6,7 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
+import { mailto } from '../lib/site';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
 // Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
@@ -263,7 +264,7 @@ const metrics = [
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <Button href="/partnership-funding">Become a Partner</Button>
-        <Button href="mailto:info@fsic.space" variant="secondary">Contact FSIC</Button>
+        <Button href={mailto()} variant="secondary">Contact FSIC</Button>
       </div>
     </Grid>
   </Section>

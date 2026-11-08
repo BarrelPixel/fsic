@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import { getReleases, formatDate, firstSentence } from '../../lib/news';
+import { EMAIL, mailto } from '../../lib/site';
 
 // Copy: src/content/copy/news.md (page wording); releases: src/content/news/ (as published).
 const base = import.meta.env.BASE_URL;
@@ -15,7 +16,7 @@ const releases = await getReleases();
   <PageHero title="News & Media">
     <p slot="aside" class="mb-0 font-sans text-sm text-white/70 max-w-sm">
       Media inquiries:
-      <a href="mailto:info@fsic.space" class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">info@fsic.space</a>
+      <a href={mailto()} class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">{EMAIL}</a>
     </p>
     <p class="text-2xl text-white/90 leading-snug mb-0">
       Press releases from the Florida Space Innovation Center, newest first.
