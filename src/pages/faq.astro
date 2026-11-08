@@ -5,6 +5,7 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import { EMAIL, mailto } from '../lib/site';
 import Disclosure from '../components/Disclosure.astro';
+import DashList from '../components/DashList.astro';
 
 // Copy: src/content/copy/faq.md (Draft). Answers are as published on fsic.space, except where the
 // copy deck notes a change: ranges for the economic figures, the five phases, the sourced
@@ -254,14 +255,7 @@ const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:dec
                   ) : (
                     <div class="mb-4">
                       {b.label && <p class="mb-2 font-sans text-sm font-semibold text-navy" set:html={b.label} />}
-                      <ul class="flex flex-col gap-2" role="list">
-                        {b.list.map((item) => (
-                          <li class="flex gap-3 leading-snug">
-                            <span class="mt-[0.6em] w-3 h-0.5 shrink-0 bg-navy" aria-hidden="true"></span>
-                            <span set:html={item} />
-                          </li>
-                        ))}
-                      </ul>
+                      <DashList items={b.list} html />
                     </div>
                   ),
                 )}
