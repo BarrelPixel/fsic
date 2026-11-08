@@ -30,7 +30,7 @@ const nav: NavItem[] = [
     links: [
       { label: 'The FSIC Model', path: '/model' },
       { label: 'Phased Deployment', path: '/deployment' },
-      { label: 'Programs & Facilities', path: '/programs-facilities', built: false },
+      { label: 'Programs & Facilities', path: '/programs-facilities' },
     ],
   },
   { label: 'Governance', path: '/governance' },

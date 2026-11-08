@@ -23,7 +23,7 @@ There is no linter or test suite. `npm run build` and `npm run check-links` are 
 ## Layout
 
 ```
-src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding, strategic-moment, faq, news and contact are built out; the rest use <ComingSoon>
+src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding, strategic-moment, programs-facilities, faq, news and contact are built out; long-term-vision uses <ComingSoon>
 src/components/      Grid components (Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead),
                      Button, CoastlineMap (unused), Header, Footer, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)

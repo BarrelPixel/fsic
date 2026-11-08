@@ -1,10 +1,187 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComingSoon from '../components/ComingSoon.astro';
+import Button from '../components/Button.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Row from '../components/Row.astro';
+import DashList from '../components/DashList.astro';
+import { engines } from '../lib/programs';
+
+// Copy: src/content/copy/programs-facilities.md (Draft). Audiences: fsic.space FAQ (verbatim). Portfolio
+// (src/lib/programs.ts, shared with the Model page):
+// Master Plan pp. 19–21. Facilities: FAQ (status) and Master Plan pp. 17–19, without the named
+// development (docs/08 §3.3).
+
+const base = import.meta.env.BASE_URL;
+const pad = (n: number) => String(n).padStart(2, '0');
+
+const sections = [
+  { id: 'audiences', name: 'Programs by Audience' },
+  { id: 'portfolio', name: 'Program Portfolio and Core Offerings' },
+  { id: 'facilities', name: 'Facilities and Infrastructure Plan' },
+];
+
+const audiences = [
+  { label: 'For students and families', items: ['Hands-on STEM learning and maker experiences', 'Dual-enrollment pathways', 'Micro-credentials tied to real jobs', 'Community STEM and arts events'] },
+  { label: 'For adults and career-switchers', items: ['Short, employer-validated training programs', 'Job placement, apprenticeships, and upskilling', 'Clear pathways into high-wage technical careers'] },
+  { label: 'For the community', items: ['Higher wages and economic mobility', 'A stronger regional identity tied to innovation', 'More opportunities for youth and families to engage in STEM'] },
+];
+
+const principles = [
+  'Flexible, modular spaces that adapt to evolving needs',
+  'Co-location of education, industry, and community functions',
+  'Accessibility for students, educators, employers, and residents',
+  'Cost-effective phased build-out aligned with funding and demand',
+  'Spaces that inspire creativity, collaboration, and civic pride',
+];
+
+// Phase names and timeframes as on the Deployment page; core spaces from Master Plan p. 18.
+const phases = [
+  { n: 1, name: 'Foundation & Talent Engine Launch', when: 'Year 1', spaces: ['Classrooms and training labs for micro-credentials', 'Flexible multipurpose space for workshops and events', 'Small prototyping and fabrication area', 'Office space for staff and partners', 'Meeting rooms for employer and advisory council engagement'] },
+  { n: 2, name: 'Innovation Engine Activation', when: 'Years 1–2', spaces: ['Challenge labs for student and industry collaboration', 'Rapid prototyping studio with fabrication tools', 'Small research and testing labs', 'Collaboration zones for university and industry partners', 'Expanded multipurpose space for innovation events'] },
+  { n: 3, name: 'Market Engine Deployment', when: 'Years 2–3', spaces: ['Small business resource center', 'Certification and compliance training rooms', 'Startup incubation and co-working space', 'Meeting rooms for procurement and contracting support', 'Expanded prototyping and testing capacity'] },
+  { n: 4, name: 'Civic Engine Expansion', when: 'Years 2–4', spaces: ['Public exhibition gallery', 'Community event space', 'Arts-and-space integration areas', 'STEM exploration zones for families and youth', 'Outdoor gathering and placemaking spaces'] },
+  { n: 5, name: 'Full Ecosystem Integration', when: 'Years 3–5', spaces: ['Full-scale innovation center', 'Expanded research and prototyping labs', 'Large multipurpose event and conference space', 'Co-located university and industry partner suites', 'Outdoor innovation plaza and community spaces'] },
+];
+
+const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:decoration-navy';
 ---
-<BaseLayout title="Programs & Facilities" description="FSIC's comprehensive program portfolio across Talent, Innovation, Market, and Civic engines, plus facilities vision.">
-  <ComingSoon
-    title="Programs & Facilities"
-    description="Detailed program offerings across all four engines — from micro-credential academies and challenge labs to supplier bootcamps and community STEM nights — plus the phased facilities vision."
-  />
+<BaseLayout title="Programs & Facilities" description="FSIC's programs for students, adults, businesses, and the community, the program portfolio across the Talent, Innovation, Market, and Civic Engines, and the phased facilities plan.">
+
+  <!-- Interior page template (DESIGN.md): PageHero with an index of the three sections -->
+  <PageHero title="Programs & Facilities">
+    <p class="text-2xl text-white/90 leading-snug mb-10 max-w-3xl">
+      FSIC expands opportunity for residents of all ages by making the space economy accessible and visible.
+    </p>
+    <nav aria-label="Sections on this page" class="font-sans">
+      <ol class="border-t border-white/25">
+        {sections.map((s, i) => (
+          <li class="border-b border-white/25">
+            <a href={`#${s.id}`} class="group grid grid-cols-[2.5rem_minmax(0,1fr)] items-baseline gap-x-4 py-4 rounded-sm">
+              <span class="text-sm text-white/60 tabular-nums">{pad(i + 1)}</span>
+              <span class="font-display text-2xl font-semibold text-white group-hover:underline underline-offset-4 decoration-2">{s.name}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </PageHero>
+
+  <!-- 01 · Programs by audience: who each set of programs is for (FAQ, verbatim) -->
+  <Section id="audiences" index={1} total={3} heading="Programs by Audience" class="scroll-mt-12">
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <dl>
+        {audiences.map((a, i) => (
+          <Row label={`${a.label}:`} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
+            <DashList items={a.items} class="text-gray-dark" />
+          </Row>
+        ))}
+        <Row label="For businesses and entrepreneurs:" rule="bottom" class="pt-5">
+          <p class="mb-4 text-gray-dark">FSIC helps small businesses and startups participate in aerospace and advanced manufacturing supply chains — opportunities that are currently difficult to access.</p>
+          <p class="mb-2 font-sans text-sm font-semibold text-navy">Support includes:</p>
+          <DashList items={['Supplier-readiness bootcamps', 'Certification and contracting navigation', 'SBIR/STTR proposal support', 'Startup incubation and acceleration', 'Access to prototyping labs and applied research partners']} class="mb-4 text-gray-dark" />
+          <p class="mb-0 text-gray-dark">This creates a pipeline of supplier-ready companies capable of competing in high-value markets.</p>
+        </Row>
+      </dl>
+    </Grid>
+  </Section>
+
+  <!-- 02 · Program portfolio (Master Plan pp. 19–21): one row per engine, each program opening in
+       place (+ turns to ×), and a link to that engine on the Model page -->
+  <Section
+    id="portfolio"
+    index={2}
+    total={3}
+    spacing="stacked"
+    heading="Program Portfolio and Core Offerings"
+    intro="The Florida Space Innovation Center delivers a comprehensive portfolio of programs across the Talent, Innovation, Market, and Civic Engines. Each offering is designed to meet a specific regional need, align with employer demand, and create measurable impact for students, educators, businesses, and the community."
+    class="scroll-mt-12"
+  >
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <dl>
+        {engines.map((e, i) => (
+          <Row label={e.name} count={e.programs.length} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
+            <p class="mb-3 text-gray-dark">{e.line}</p>
+            <ul role="list" class="border-t border-navy/15">
+              {e.programs.map((p) => (
+                <li class="border-b border-navy/15">
+                  <details class="group">
+                    <summary class="flex items-start justify-between gap-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                      <span class="font-sans font-semibold text-navy leading-snug">{p.name}</span>
+                      <svg class="w-5 h-5 mt-px shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M10 4v12M4 10h12" stroke-linecap="round" />
+                      </svg>
+                    </summary>
+                    <div class="pb-5 pr-9 text-base text-gray-dark">
+                      <p class:list={[p.items || p.outcome ? 'mb-2' : 'mb-0']}>{p.lead}</p>
+                      {p.items && <DashList items={p.items} class:list={[p.outcome ? 'mb-3' : '']} />}
+                      {p.outcome && <p class="mb-0">{p.outcome}</p>}
+                    </div>
+                  </details>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-3 mb-0 font-sans text-sm">
+              <a href={`${base}/model#${e.id}`} class={link}>The {e.name} on the Model page</a>
+            </p>
+          </Row>
+        ))}
+      </dl>
+    </Grid>
+  </Section>
+
+  <!-- 03 · Facilities (FAQ and Master Plan pp. 17–19): today's status as the thesis, then the plan,
+       the principles and the planned core spaces by phase. No development is named (docs/08 §3.3). -->
+  <Section id="facilities" index={3} total={3} spacing="stacked" heading="Facilities and Infrastructure Plan" class="scroll-mt-12">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold leading-snug text-navy">
+        FSIC is a virtual organization located in New Smyrna Beach.
+      </p>
+      <div>
+        <div class="max-w-3xl text-lg">
+          <p>
+            A specific future site in Volusia County will be determined through a collaborative process with community members, civic leaders, industry partners, and other stakeholders. This ensures the final location reflects community priorities, long-term economic strategy, and the needs of partners.
+          </p>
+          <p class="mb-10">
+            FSIC's facilities strategy is designed to scale with regional demand and support the phased deployment of the Talent, Innovation, Market, and Civic Engines. The infrastructure plan emphasizes flexibility, cost efficiency, and the creation of spaces that foster collaboration, hands-on learning, applied research, and community engagement.
+          </p>
+        </div>
+        <dl>
+          <Row label="Guiding principles" rule="bottom">
+            <DashList items={principles} class="text-gray-dark" />
+          </Row>
+          {phases.map((ph) => (
+            <Row label={`Phase ${ph.n} · ${ph.when}`} rule="bottom" class="pt-5">
+              <p class="mb-2 font-sans font-semibold text-navy">{ph.name}</p>
+              <p class="mb-2 font-sans text-sm text-gray-dark">Planned core spaces:</p>
+              <DashList items={ph.spaces} class="text-gray-dark" />
+            </Row>
+          ))}
+        </dl>
+        <p class="mt-6 mb-0 font-sans text-sm">
+          Each phase's activities and outcomes are on the <a href={`${base}/deployment`} class={link}>Phased Deployment</a> page.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- CLOSING: statement and next steps on the content axis -->
+  <Section rule={false}>
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <div>
+        <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10 max-w-3xl">
+          The program portfolio is intentionally modular and scalable, enabling FSIC to grow responsibly while maintaining high quality and strong outcomes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <Button href="/partnership-funding">Get Involved</Button>
+          <Button href="/contact" variant="secondary">Contact FSIC</Button>
+        </div>
+      </div>
+    </Grid>
+  </Section>
+
 </BaseLayout>
