@@ -12,7 +12,7 @@ Items requiring stakeholder input or decisions before full launch.
 
 ## Content & Copy
 - [ ] **Stakeholder CTA priorities:** Which call-to-action should be most prominent — partner inquiry, general contact, or specific program interest?
-- [ ] **Contact handling:** How should contact form submissions be routed? Email? CRM? Which email addresses?
+- [ ] **Contact handling:** How should contact form submissions be routed? Email? CRM? Which email addresses? (Until decided, `/contact` opens an email to info@fsic.space with a subject per topic.)
 - [x] **News / Updates section:** resolved. `/news` publishes the press releases, one file per release. The old Wix blog posts are not migrated.
 - [ ] **Partner logos:** Are there approved partner organizations whose logos can be displayed? (Do not fabricate.)
 - [ ] **Testimonials / Endorsements:** Are there approved quotes from stakeholders to include?

@@ -66,7 +66,7 @@ The Wix sitemap lists 33 URLs. Only five are linked from the navigation. The res
 | Governance | `governance.md` | FAQ → leadership, neutrality, developers; board members from press releases; structure, reporting and metrics from the Master Plan | Confirmed board roster, bios and photos; founder transition wording |
 | Partnership & Funding | `partnership-funding.md` | FAQ → funding, get involved; launch release → three core benefits | Stakeholder value propositions, financial outlook |
 | Long-Term Vision | `long-term-vision.md` | FAQ → "What could FSIC look like" | Visuals; location wording (§3.3) |
-| Contact | `contact.md` | Contact form, email, location, social links | Routing, form backend |
+| Contact (built, no form) | `contact.md` | Email, location, social links; topic links replace the form for now | Routing, form backend |
 | *Proposed:* FAQ | `faq.md` | Entire FAQ page | — |
 | News & Media (built) | `news.md`, `src/content/news/` | All four press releases | Graphics copied from the live page (see `news.md` review note); one standard boilerplate |
 | *Proposed:* Leadership | `leadership.md` | John Joaquin bio | Board member bios |
