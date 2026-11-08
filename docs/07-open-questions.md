@@ -45,10 +45,10 @@ Items requiring stakeholder input or decisions before full launch.
 ## Content Conflicts from the Current Site Audit
 Decisions needed before copy can be approved. Details are in `08-current-site-audit.md` §3.
 - [ ] **Development figures:** regional (20,000 homes, 12M sq ft) or Deering Park (10,000 homes, 10M sq ft)?
-- [ ] **Economic figures:** show ranges (as in the approved `home.md`) rather than the upper bound shown on the built home page.
+- [x] **Economic figures:** resolved. The home and Economic Impact pages show ranges. (Related open item: which scenario the figures describe, under Content & Copy.)
 - [ ] **Location:** name Deering Park as the campus site, or keep the current "site to be determined collaboratively" position?
-- [ ] **Phases:** five-phase (Master Plan) or three-phase (current FAQ) model?
-- [ ] **Unsourced claims:** citations for the $630B→$1T market size, the SpaceX S-1 "$28.5T" figure, and 30–50% earned revenue by Year 3.
+- [x] **Phases:** resolved. Five phases (Master Plan), used on the Deployment page. The FAQ answer still needs rewriting.
+- [ ] **Unsourced claims:** citations for the $630B→$1T market size and the SpaceX S-1 "$28.5T" figure. (30–50% earned revenue by Year 3 is confirmed in the Master Plan, pp. 2 and 27.)
 - [ ] **Titles:** confirm current titles for John Joaquin and Erik Ahlgren, and the full seated board.
 - [ ] **Mission and vision:** where do they appear on the new site?
 - [ ] **New pages:** add FAQ, News, and Leadership to the IA?

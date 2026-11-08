@@ -15,14 +15,15 @@ Public website for the **Florida Space Innovation Center (FSIC)**, a regional wo
 npm run dev       # dev server at http://localhost:4321/fsic
 npm run build     # static build to dist/ (run before finishing any change)
 npm run preview   # serve the built site
+npm run check-links  # build, then check every internal link and anchor (fails on broken ones)
 ```
 
-There is no linter or test suite. `npm run build` is the check.
+There is no linter or test suite. `npm run build` and `npm run check-links` are the checks.
 
 ## Layout
 
 ```
-src/pages/           One .astro file per route. index, model, economic-impact and deployment are built out; the rest use <ComingSoon>
+src/pages/           One .astro file per route. index, model, economic-impact, deployment and partnership-funding are built out; the rest use <ComingSoon>
 src/components/      Grid components (Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead),
                      Button, CoastlineMap, Header, Footer, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
@@ -31,6 +32,7 @@ src/content/copy/    Copy deck: one Markdown file per page (see below)
 docs/                Project docs 00–09 (IA, content guidelines, site audit, copy-deck workflow)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
+scripts/             check-links.mjs (run via `npm run check-links`)
 ```
 
 ## Rules
@@ -58,6 +60,6 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - The `<html>` element gets a `js` class from an inline script in `BaseLayout`. Use it to gate JS-only states so the page still works without JS.
 
 ## Before finishing a change
-1. `npm run build` succeeds.
+1. `npm run build` succeeds, and `npm run check-links` reports no broken links.
 2. Check the page at desktop width and at 375px. Nothing scrolls horizontally, and keyboard focus is visible.
 3. If copy changed, update the copy file's status, and the status table in `docs/09-copy-deck.md` if needed.

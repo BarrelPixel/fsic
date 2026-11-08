@@ -29,19 +29,19 @@
 **Key content:** Regional inflection point analysis, national shift toward place-based innovation, Deering Park as catalyst, the window of opportunity.
 **Source:** Master Plan Pages 4–6.
 
-### The FSIC Model (`/model`) — STUB
+### The FSIC Model (`/model`) — IMPLEMENTED
 **Goal:** Deep-dive into the four-engine architecture with detailed program descriptions.
 **Audience:** Education partners, employers, university leaders.
 **Key content:** Full Talent/Innovation/Market/Civic engine descriptions, program tables, guiding principles, how engines reinforce each other.
 **Source:** Master Plan Pages 9–14.
 
-### Economic Impact (`/economic-impact`) — STUB
+### Economic Impact (`/economic-impact`) — IMPLEMENTED
 **Goal:** Present the full 25-year economic analysis with three-scenario comparison.
 **Audience:** Funders, policymakers, local government, employers.
 **Key content:** Impact summary table, three-scenario comparison (Baseline vs FSIC 1.0 vs FSIC 2.0), absorption timeline acceleration, external funding potential, ROI framework.
 **Source:** Master Plan Pages 7–8, 28–29.
 
-### Phased Deployment (`/deployment`) — STUB
+### Phased Deployment (`/deployment`) — IMPLEMENTED
 **Goal:** Show the structured, risk-managed rollout plan.
 **Audience:** Partners evaluating commitment, funders evaluating feasibility.
 **Key content:** Phase-by-phase timeline, milestones, expected outcomes, facilities plan per phase.
@@ -59,7 +59,7 @@
 **Key content:** Board structure, advisory councils, committees, compliance framework, founder transition plan, evaluation metrics.
 **Source:** Master Plan Pages 15–17, 29–32.
 
-### Partnership & Funding (`/partnership-funding`) — STUB
+### Partnership & Funding (`/partnership-funding`) — IMPLEMENTED
 **Goal:** Show the partnership model and funding strategy. Invite prospective partners.
 **Audience:** Employers, universities, government agencies, philanthropic organizations.
 **Key content:** Stakeholder value propositions, partnership roles, funding strategy, five-year financial outlook.
@@ -97,4 +97,4 @@ The current site (fsic.space) has substantial FAQ, press release, and founder bi
 - The Strategic Moment
 
 ## Implementation Note
-For Phase 1, all pages except Home are implemented as route stubs using the global layout with a "Coming Soon" placeholder and a brief description from this IA document.
+Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment and Partnership & Funding. Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.

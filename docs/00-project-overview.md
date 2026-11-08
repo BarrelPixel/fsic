@@ -16,9 +16,9 @@ A production-quality, static-first institutional website that communicates FSIC'
 FSIC is a long-horizon initiative spanning a 2026–2031 master plan with a 2032–2040 extended vision. The website must reflect this institutional scale while launching with a focused initial page set.
 
 ### Phase 1 (Current — Launch)
-- Home page (fully built)
-- Route stubs for all future pages
-- Complete design system and component library
+- Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Partnership & Funding
+- Route stubs (`<ComingSoon>`) for the remaining pages
+- Design system (`DESIGN.md`) and the grid component library (`src/components/`)
 - Full documentation suite
 
 ### Phase 2 (Post-Launch)

@@ -24,7 +24,7 @@
 
 **Proposed addition — inquiry type:** [TODO: e.g. Partnership; Employer / Workforce; Education; Volunteer / Leadership interest; Media; General]
 
-> **⚠ Review:** Routing and form backend are still open (see `07-open-questions.md`). The volunteer interest promised in the FAQ should route here.
+> **⚠ Review:** Routing and form backend are still open (see `07-open-questions.md`). The volunteer interest promised in the FAQ should route here. Until this page is built, the "Contact FSIC" button on /partnership-funding opens an email to info@fsic.space; point it to /contact once the form exists.
 
 ---
 
