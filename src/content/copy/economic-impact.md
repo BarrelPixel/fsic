@@ -11,7 +11,11 @@
 
 ## HERO
 
-**Headline:** Transformational, Long-Term Regional Impact
+**Headline:** Economic Impact
+**Statement (first line under the rule):** Transformational, Long-Term Regional Impact
+**Index:** the four sections.
+
+> **Changed (November 2026):** the page title was "Transformational, Long-Term Regional Impact", the same words as a homepage section heading. The title is now "Economic Impact" (the menu label) and the line opens the hero as a statement. A sticky section bar follows the page.
 
 > **Source:** home.md (approved), Economic Case headline.
 

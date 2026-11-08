@@ -12,6 +12,7 @@ import HeroIndex from '../components/HeroIndex.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
 import { bodies, metrics, reportingCalendar } from '../data/governance';
+import SectionBar from '../components/SectionBar.astro';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
 // Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
@@ -41,8 +42,22 @@ const total = sections.length;
     <HeroIndex label="On this page" items={sections} />
   </PageHero>
 
+  <!-- The wrapper bounds the sticky section bar to the numbered sections; it scrolls away before the closing -->
+  <div>
+    <SectionBar
+      ariaLabel="Sections on this page"
+      numbered
+      items={[
+        { id: 'backbone', label: 'Backbone' },
+        { id: 'structure', label: 'Structure' },
+        { id: 'reporting', label: 'Reporting' },
+        { id: 'metrics', label: 'Metrics' },
+        { id: 'developers', label: 'Developers' },
+      ]}
+    />
+
   <!-- 01 · A NEUTRAL BACKBONE ORGANIZATION (fsic.space FAQ) -->
-  <Section id="backbone" index={1} total={total} heading="A Neutral Backbone Organization">
+  <Section id="backbone" class="scroll-mt-20" index={1} total={total} heading="A Neutral Backbone Organization">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         FSIC's role is to coordinate, align, and accelerate — not duplicate.
@@ -65,8 +80,8 @@ const total = sections.length;
     </Grid>
   </Section>
 
-  <!-- 02 · STRUCTURE: one row per governing body, so they can be compared down the page (Master Plan pp. 15–17) -->
-  <Section id="structure" index={2} total={total} spacing="stacked" heading="Governance and Organizational Structure">
+  <!-- 02 · STRUCTURE: one row per governing body, its purpose visible and its lists opening in place (Master Plan pp. 15–17) -->
+  <Section id="structure" class="scroll-mt-20" index={2} total={total} spacing="stacked" heading="Governance and Organizational Structure">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         The governance model ensures that no single individual, partner, or sector can dominate decision-making.
@@ -78,21 +93,21 @@ const total = sections.length;
         <dl>
           {bodies.map((body, i) => (
             <Row label={body.name} class={i === bodies.length - 1 ? 'border-b border-rule' : undefined}>
-              <p class="mb-5">{body.purpose}</p>
-              {body.lists.map((list) => (
-                <div class="mt-5 first:mt-0">
-                  <p class="mb-2 text-label text-navy">{list.label}</p>
-                  <List items={list.items} class="text-gray-dark" />
-                </div>
-              ))}
-              {body.duties && (
-                <Disclosure class="mt-5 border-t border-rule" summaryClass="items-center gap-4 pt-3">
-                  <span slot="summary" class="text-label text-navy">
-                    {body.duties.label}<span class="font-medium text-gray"> · {body.duties.items.length}</span>
-                  </span>
-                  <List items={body.duties.items} class="pt-3 text-gray-dark" />
-                </Disclosure>
-              )}
+              <p class="mb-4">{body.purpose}</p>
+              <div>
+                {body.lists.map((list) => (
+                  <Disclosure class="border-t border-rule" summaryClass="items-center gap-4 py-3">
+                    <span slot="summary" class="text-label text-navy">{list.label}<span class="font-medium text-gray"> · {list.items.length}</span></span>
+                    <List items={list.items} class="pb-4 text-gray-dark" />
+                  </Disclosure>
+                ))}
+                {body.duties && (
+                  <Disclosure class="border-t border-rule" summaryClass="items-center gap-4 py-3">
+                    <span slot="summary" class="text-label text-navy">{body.duties.label}<span class="font-medium text-gray"> · {body.duties.items.length}</span></span>
+                    <List items={body.duties.items} class="pb-4 text-gray-dark" />
+                  </Disclosure>
+                )}
+              </div>
             </Row>
           ))}
         </dl>
@@ -101,7 +116,7 @@ const total = sections.length;
   </Section>
 
   <!-- 03 · PUBLIC REPORTING AND TRANSPARENCY (Master Plan pp. 17, 31) -->
-  <Section id="reporting" index={3} total={total} spacing="stacked" heading="Public Reporting and Transparency">
+  <Section id="reporting" class="scroll-mt-20" index={3} total={total} spacing="stacked" heading="Public Reporting and Transparency">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
         Transparent reporting strengthens credibility, supports fundraising, and ensures FSIC remains accountable to the region it serves.
@@ -128,7 +143,7 @@ const total = sections.length;
   <!-- 04 · METRICS (Master Plan pp. 31–32): one row per area, its metrics one per line; then the
        reporting calendar, every area's reports grouped by frequency (derived in src/data/governance.ts) -->
   <Section
-    id="metrics"
+    id="metrics" class="scroll-mt-20"
     index={4}
     total={total}
     spacing="stacked"
@@ -171,7 +186,7 @@ const total = sections.length;
   </Section>
 
   <!-- 05 · THE ROLE OF DEVELOPERS (fsic.space FAQ): the trust statement, on night -->
-  <Section id="developers" index={5} total={total} dark heading="What Is the Role of Developers?">
+  <Section id="developers" class="scroll-mt-20" index={5} total={total} dark heading="What Is the Role of Developers?">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-white">
         Developers play a collaborative — not controlling — role in FSIC's work.
@@ -189,6 +204,7 @@ const total = sections.length;
       </div>
     </Grid>
   </Section>
+  </div>
 
   <!-- CLOSING (home.md). "Contact FSIC" opens an email until the Contact page has a form. -->
   <Closing statement="Neutral convener. Clear structure. Long-term accountability.">

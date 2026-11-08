@@ -12,6 +12,8 @@ import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
 import { FIGURES } from '../data/economics';
 import { benefits, partners, streams } from '../data/partnership';
+import Disclosure from '../components/Disclosure.astro';
+import SectionBar from '../components/SectionBar.astro';
 
 // Copy: src/content/copy/partnership-funding.md (Draft). Partner table: Master Plan pp. 22–24;
 // funding streams: pp. 25–26; benefits: May 25, 2026 launch release; get involved: FAQ.
@@ -37,8 +39,21 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
     <HeroIndex label="Partner types" items={partners} columns />
   </PageHero>
 
+  <!-- The wrapper bounds the sticky section bar to the numbered sections; it scrolls away before the closing -->
+  <div>
+    <SectionBar
+      ariaLabel="Sections on this page"
+      numbered
+      items={[
+        { id: 'why-partner', label: 'Why partner' },
+        { id: 'partners', label: 'Partners' },
+        { id: 'funding', label: 'Funding' },
+        { id: 'get-involved', label: 'Get involved' },
+      ]}
+    />
+
   <!-- 01 · WHY PARTNER: three peers on the grid (4 cols each) -->
-  <Section id="why-partner" index={1} total={4} label="Why partner" heading="Three Core Benefits for Florida Stakeholders">
+  <Section id="why-partner" class="scroll-mt-20" index={1} total={4} label="Why partner" heading="Three Core Benefits for Florida Stakeholders">
     <ol class="grid gap-y-10 lg:grid-cols-12 lg:gap-x-8">
       {benefits.map((b, i) => (
         <li class="lg:col-span-4 border-t-2 border-navy pt-5">
@@ -57,35 +72,35 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
     </Grid>
   </Section>
 
-  <!-- 02 · PARTNERS: partner (cols 1–4) | partnership roles (5–8) | strategic benefits (9–12) -->
+  <!-- 02 · PARTNERS: one row per partner type; roles and benefits open in place -->
   <Section
-    id="partners"
+    id="partners" class="scroll-mt-20"
     index={2}
     total={4}
     spacing="stacked"
     heading="Partnership Strategy and Regional Alignment"
     intro="The Florida Space Innovation Center is designed as a regional backbone organization that aligns employers, educators, governments, and community partners around a shared economic future."
   >
-    <div>
-      <div class="hidden lg:grid lg:grid-cols-12 lg:gap-x-8 border-b-2 border-navy pb-3" aria-hidden="true">
-        <p class="lg:col-span-4 mb-0 text-label text-navy">Partner</p>
-        <p class="lg:col-span-4 mb-0 text-label text-navy">Partnership roles</p>
-        <p class="lg:col-span-4 mb-0 text-label text-navy">Strategic benefits</p>
-      </div>
+    <!-- Each partner type: number and name (cols 1–4) | overview, then its roles and benefits, each opening in place (cols 5–12) -->
+    <div class="border-t-2 border-navy">
       {partners.map((p, i) => (
-        <div id={p.id} class="scroll-mt-4 grid gap-y-4 py-7 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
-          <div class="lg:col-span-4">
-            <p class="text-caption text-gray tabular-nums mb-2">{pad2(i + 1)}</p>
-            <h3 class="text-xl mb-2">{p.name}</h3>
-            <p class="mb-0 text-base text-gray-dark">{p.overview}</p>
-          </div>
-          <div class="lg:col-span-4 lg:pt-7">
-            <p class="lg:sr-only mb-2 text-label text-navy">Partnership roles</p>
-            <List items={p.roles} class="text-gray-dark" />
-          </div>
-          <div class="lg:col-span-4 lg:pt-7">
-            <p class="lg:sr-only mb-2 text-label text-navy">Strategic benefits</p>
-            <List items={p.benefits} class="text-navy" />
+        <div id={p.id} class="scroll-mt-16 grid gap-y-3 py-6 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
+          <h3 class="lg:col-span-4 mb-0 text-xl flex items-baseline gap-2">
+            <span class="w-6 shrink-0 text-caption text-gray tabular-nums font-normal">{pad2(i + 1)}</span>
+            {p.name}
+          </h3>
+          <div class="lg:col-span-8 max-w-3xl">
+            <p class="mb-4 text-gray-dark">{p.overview}</p>
+            <div>
+              <Disclosure class="border-t border-rule" summaryClass="items-center gap-4 py-3">
+                <span slot="summary" class="text-label text-navy">Partnership roles<span class="font-medium text-gray"> · {p.roles.length}</span></span>
+                <List items={p.roles} class="pb-4 text-gray-dark" />
+              </Disclosure>
+              <Disclosure class="border-t border-rule" summaryClass="items-center gap-4 py-3">
+                <span slot="summary" class="text-label text-navy">Strategic benefits<span class="font-medium text-gray"> · {p.benefits.length}</span></span>
+                <List items={p.benefits} class="pb-4 text-navy" />
+              </Disclosure>
+            </div>
           </div>
         </div>
       ))}
@@ -93,7 +108,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
   </Section>
 
   <!-- 03 · FUNDING: the blend, then the streams on a Years 1–5 axis -->
-  <Section id="funding" index={3} total={4} label="Funding" heading="How Is FSIC Funded?">
+  <Section id="funding" class="scroll-mt-20" index={3} total={4} label="Funding" heading="How Is FSIC Funded?">
     <Grid>
       <div slot="label">
         <p class="text-xl text-navy leading-snug mb-4">FSIC uses a proven public-private funding model that blends:</p>
@@ -151,7 +166,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
   </Section>
 
   <!-- 04 · GET INVOLVED -->
-  <Section id="get-involved" index={4} total={4} label="Get involved" dark heading="How Can the Public Get Involved?">
+  <Section id="get-involved" class="scroll-mt-20" index={4} total={4} label="Get involved" dark heading="How Can the Public Get Involved?">
     <Grid>
       <p slot="label" class="mb-0 text-xl text-white/90 leading-snug">
         FSIC is designed to be a community-powered movement, and there are many ways for residents, educators, businesses, and civic partners to participate from the very beginning.
@@ -176,6 +191,7 @@ const yearsLabel = (s: { start: number | null; end: number | null }) =>
       </p>
     </Grid>
   </Section>
+  </div>
 
   <!-- CLOSING (Master Plan p. 22). "Contact FSIC" opens an email until the Contact page has a form. -->
   <Closing statement="The partnership strategy ensures that FSIC is not duplicating existing efforts but instead coordinating, amplifying, and accelerating them.">
