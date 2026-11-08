@@ -9,8 +9,11 @@ export interface PageSection {
   short: string;
 }
 
-/** Props for <Section {...sectionProps(sections, id)}>: its id and running-head index and total. */
-export function sectionProps(sections: PageSection[], id: string) {
+/**
+ * Props for <Section {...sectionProps(sections, id)}>: its id and running-head index and total.
+ * Takes any list of ids in page order, so a page without a hero index (the homepage) can use it too.
+ */
+export function sectionProps(sections: { id: string }[], id: string) {
   const i = sections.findIndex((s) => s.id === id);
   if (i < 0) throw new Error(`No section "${id}" in this page's sections list`);
   return { id, index: i + 1, total: sections.length };

@@ -10,6 +10,7 @@ import List from '../components/List.astro';
 import heroImage from '../assets/fsic-hero.png';
 import conceptImage from '../assets/fsic-concept.jpg';
 import { pad2 } from '../lib/format';
+import { sectionProps } from '../lib/sections';
 import { FIGURES, SOURCE } from '../data/economics';
 import { engines } from '../data/engines';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
@@ -43,6 +44,10 @@ const value = [
     body: 'FSIC is positioned to pursue and coordinate funding through NSF Engines, regional innovation grants, state workforce programs, and Space Florida tools — bringing outside dollars into the region.',
   },
 ];
+
+// The numbered sections in page order: their running heads (01 / 07…) follow this list.
+const sections = ['strategic-moment', 'economic-impact', 'model', 'deployment', 'value', 'governance', 'vision'].map((id) => ({ id }));
+const at = (id: string) => sectionProps(sections, id);
 
 const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce partners', 'Community members'];
 ---
@@ -92,7 +97,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   </section>
 
   <!-- 01 THE STRATEGIC MOMENT -->
-  <Section id="strategic-moment" index={1} total={7} label="The strategic moment">
+  <Section {...at('strategic-moment')} label="The strategic moment">
     <Fragment slot="heading">
       The Question Is Not Whether the Space Coast Will Grow.
       <span class="block mt-3 font-medium text-gray-dark">It Is Whether Southeast Volusia Will Participate in That Growth.</span>
@@ -115,9 +120,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
 
   <!-- 02 THE ECONOMIC CASE: a table on the page grid. Figure (cols 1–4) | what it measures (5–8) | range bar (9–12) -->
   <Section
-    id="economic-impact"
-    index={2}
-    total={7}
+    {...at('economic-impact')}
     label="The economic case"
     dark
     heading="Transformational, Long-Term Regional Impact"
@@ -154,9 +157,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
 
   <!-- 03 THE FOUR-ENGINE MODEL: four numbered columns on the grid (3 cols each) -->
   <Section
-    id="model"
-    index={3}
-    total={7}
+    {...at('model')}
     label="The four-engine model"
     heading="One Coordinated Platform. Four Integrated Engines."
     intro="FSIC operates through a structured, phased model designed for early activation and long-term scale."
@@ -182,7 +183,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   </Section>
 
   <!-- 04 PHASED DEPLOYMENT -->
-  <Section id="deployment" index={4} total={7} label="Phased deployment" spacing="stacked" heading="Start Small. Deliver Early Wins. Scale with Readiness.">
+  <Section {...at('deployment')} label="Phased deployment" spacing="stacked" heading="Start Small. Deliver Early Wins. Scale with Readiness.">
     <Grid class="gap-y-10">
       <p slot="label" class="mb-0 text-statement text-navy">Growth is structured. Not speculative.</p>
       <p class="max-w-3xl">
@@ -213,7 +214,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   </Section>
 
   <!-- 05 STRATEGIC VALUE: community value, so lagoon rules. Peers as a 2×2 grid in the content column. -->
-  <Section id="value" index={5} total={7} dot="lagoon" spacing="stacked" heading="Strategic Value to Volusia County">
+  <Section {...at('value')} dot="lagoon" spacing="stacked" heading="Strategic Value to Volusia County">
     <Grid class="gap-y-10" labelOffset>
       <p slot="label" class="mb-0 text-statement text-navy">This is a coordinated regional investment — not a standalone facility.</p>
       <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">
@@ -228,7 +229,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   </Section>
 
   <!-- 06 GOVERNANCE & TRANSPARENCY -->
-  <Section id="governance" index={6} total={7} spacing="stacked" heading="Governance & Transparency">
+  <Section {...at('governance')} spacing="stacked" heading="Governance & Transparency">
     <Grid class="gap-y-10">
       <p slot="label" class="mb-0 text-xl text-navy leading-snug">
         FSIC operates under a partner-first, coalition-driven governance structure.
@@ -252,7 +253,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   </Section>
 
   <!-- 07 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
-  <Section id="vision" index={7} total={7} label="Long-range vision" dark heading="A Landmark Campus for Southeast Volusia">
+  <Section {...at('vision')} label="Long-range vision" dark heading="A Landmark Campus for Southeast Volusia">
     <figure slot="media" class="relative">
       <Image
         src={conceptImage}
