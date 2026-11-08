@@ -43,12 +43,15 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
     ├── assets/                  # Images processed by astro:assets (homepage hero photo)
     ├── components/
     │   ├── Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead   # grid components
-    │   ├── Button, CoastlineMap (not currently used), Header, Footer
+    │   ├── Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing
     │   └── ComingSoon           # placeholder for unbuilt pages
     ├── content/copy/            # Copy deck: one Markdown file per page (docs/09)
     ├── content/news/            # Press releases, one Markdown file each (as published); images/ holds their graphics
     ├── lib/news.ts              # Press release helpers (sorting, dates, excerpts)
     ├── lib/nav.ts               # Site navigation, shared by Header and Footer
+    ├── lib/site.ts              # Email address and social links
+    ├── lib/programs.ts          # Master Plan program portfolio
+    ├── lib/format.ts            # pad2() numbering helper
     ├── layouts/BaseLayout.astro # Meta tags, fonts, header and footer
     ├── pages/                   # One .astro file per route; pages/news/ holds the list and [slug] pages
     └── styles/global.css        # Design tokens (@theme), base styles, arc animation

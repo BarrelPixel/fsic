@@ -25,7 +25,7 @@ There is no linter or test suite. `npm run build` and `npm run check-links` are 
 ```
 src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding, strategic-moment, programs-facilities, faq, news and contact are built out; long-term-vision uses <ComingSoon>
 src/components/      Grid components (Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead),
-                     Button, CoastlineMap (unused), Header, Footer, ComingSoon
+                     Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, arc animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
@@ -33,6 +33,9 @@ src/content/news/    Press releases, one Markdown file each, wording as publishe
                      images/ holds the graphic published with each release
 src/lib/news.ts      Press release helpers
 src/lib/nav.ts       Site navigation (groups and links), shared by Header and Footer
+src/lib/site.ts      EMAIL, mailto(), SOCIAL_LINKS: use these, don't retype the address or links
+src/lib/programs.ts  The Master Plan's program portfolio (Model and Programs & Facilities pages)
+src/lib/format.ts    pad2() for 01, 02… numbering
 docs/                Project docs 00–09 (IA, content guidelines, site audit, copy-deck workflow)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
@@ -44,7 +47,7 @@ scripts/             check-links.mjs (run via `npm run check-links`)
 ### Design
 Read **`DESIGN.md`** before changing any UI. In short:
 - Every page sits on one 12-column grid: framing in cols 1–4, detail in cols 5–12. Build sections from the grid components (`Section`, `Grid`, `Row`, `DashList`), and interior pages from the template in DESIGN.md "Interior page template" (`PageHero` first; `src/pages/model.astro` is the reference). Don't hand-write grid classes.
-- The homepage hero photo (`src/assets/fsic-hero.png`, a launch plume seen from the dunes) is the only signature element (DESIGN.md "Signature element" and "Imagery"). The site has no automatic animations. The coastline map (`CoastlineMap`) is kept but not used on any page.
+- The homepage hero photo (`src/assets/fsic-hero.png`, a launch plume seen from the dunes) is the only signature element (DESIGN.md "Signature element" and "Imagery"). The site has no automatic animations.
 - Orange means the space industry. Lagoon green means the community. Don't use either as decoration.
 - Never put white text on orange, and never use orange text on light backgrounds (contrast).
 - Barlow Semi Condensed for headings (`font-display`), Source Serif 4 for reading text (the body default), Archivo for UI (`font-sans`: nav, buttons, captions, labels, data). No all-caps eyebrow labels, no fade-in on scroll, no identical shadowed cards, no chips or pills.
