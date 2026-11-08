@@ -86,8 +86,8 @@ import { pad2 } from '../lib/format';
         labelledby={`${engine.id}-title`}
         class="scroll-mt-20"
       >
-        <Grid labelAs="header" stickyLabel>
-          <!-- Label column: name, what it transforms, launch position (pinned while the rows scroll) -->
+        <Grid labelAs="header">
+          <!-- Label column: name, what it transforms, launch position -->
           <Fragment slot="label">
             <h2 id={`${engine.id}-title`} class="mb-4">{engine.name}</h2>
             <p class:list={['font-sans font-medium mb-0', engine.tone === 'lagoon' ? 'text-lagoon' : 'text-gray-dark']}>{engine.shift}</p>

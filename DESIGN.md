@@ -84,11 +84,11 @@ The site uses one Swiss-style modular grid. Every section shares the same vertic
 | Component | What it does |
 |-----------|--------------|
 | `Section` | Section shell: `RunningHead`, heavy rule, headline across cols 1–9, optional intro line. Props: `index`/`total`/`label`/`dot` for the running head, `heading` (or a `heading` slot), `intro`, `dark`, `spacing` (`default`, `stacked` for a white section under another white one, `large` for the final call to action), `rule={false}` for a closing statement, a `media` slot for a full-bleed image before the container |
-| `Grid` | The label \| content split (cols 1–4 \| 5–12), hung from one top line. `labelOffset` for content that opens with a peer rule, `stickyLabel` + `labelAs="header"` for spec sections, `labelLast` for a note that should follow the content on mobile |
+| `Grid` | The label \| content split (cols 1–4 \| 5–12), hung from one top line. `labelOffset` for content that opens with a peer rule, `labelAs="header"` for spec sections, `stickyLabel` to pin the label column on a page without a `SectionBar` (the press release page), `labelLast` for a note that should follow the content on mobile |
 | `Row` | A label \| content row inside the content column, for use in a `<dl>`. `rule="bottom"` when it opens the content column, `count` for "Programs · 5", `list` when the content is a list of `<details>`. `dot` (gray, navy, orange, lagoon, lagoon-light) puts a small dot after the label to say what the list beside it is: gray for problems, the engine or phase color for impact |
 | `List` | Items with a small round dot on the column edge, text 16px in, 8px apart on the 28px leading (`.list` in `global.css`; on-dark dots inside night sections). `spacious` (12px) for items that run to several lines, `columns` for short items, `html` for items with links |
 | `PageHero` | Interior page opening (below) |
-| `SectionBar` | Sticky in-page navigation with the current section marked. **Every page whose `PageHero` lists its sections gets one** (all interior pages with sections; not the homepage, News or Contact), so the opening's section list follows you down the page. Wrap the sections in an element whose first child is the bar (it scrolls away before the closing), and give each section `scroll-mt-20` so links land below it |
+| `SectionBar` | Sticky in-page navigation with the current section marked. **Every page whose `PageHero` lists its sections gets one** (all interior pages with sections; not the homepage, News or Contact), so the opening's section list follows you down the page. Wrap the sections in an element whose first child is the bar (it scrolls away before the closing), and give each section `scroll-mt-20` so links land below it. It is the only sticky element on an interior page: section headings and label columns scroll with their content |
 | `RunningHead` | Used by `Section`; use directly only in custom layouts |
 
 - **12 columns** at `lg` (`lg:grid-cols-12 lg:gap-x-8`) inside the container (max 76rem, 1.5rem gutter).
@@ -106,7 +106,7 @@ Headline across cols 1–9 (max-w-4xl)
 [cols 1–4] thesis / intro   [cols 5–12] body, rows, data, button
 ```
 
-- Narrative sections (homepage) put the headline above the grid. Spec sections (Model page engines) put the name in the label column, pinned with `lg:sticky lg:top-20 lg:self-start`.
+- Narrative sections (homepage) put the headline above the grid. Spec sections (Model page engines) put the name in the label column. The label column scrolls with its section; the `SectionBar` does the wayfinding.
 - The hero and the page's final call to action skip the running head.
 - **Running-head labels only when the headline doesn't already name the topic.** "02 / 07 The economic case" above "Transformational, Long-Term Regional Impact" helps; "Governance and transparency" above "Governance & Transparency" is noise, so that section shows the number alone.
 - **Columns share one top line.** The first line of the label column and the first line of the content column start at the same height. Check it by measuring, not by eye (the first-line tops should be within the difference between the two type sizes).
@@ -136,7 +136,7 @@ Every interior page uses the same frame. The Model page (`src/pages/model.astro`
 1. **`PageHero`** on `night`: the page title across the full measure, a rule, then label | content. The `aside` slot (label column) holds a short note such as a definition. It moves below the content on mobile. The default slot holds the lead (serif `text-2xl`) and, when the page has parallel sections, a numbered index of them (number, name, one line), linking to each.
 2. **The body sections**, each a `Section` with a `RunningHead`:
    - *Narrative sections* (an argument told in order): headline above the grid, thesis in the label column, detail in the content column. This is the homepage pattern.
-   - *Spec sections* (several items with the same shape, such as the four engines): no headline above the grid. The item's name is the `h2` in a sticky label column, and the content column is a summary followed by `Row`s, so items can be compared row by row. Wrap the run in an element whose first child is a `SectionBar`.
+   - *Spec sections* (several items with the same shape, such as the four engines): no headline above the grid. The item's name is the `h2` in the label column (not sticky: the `SectionBar` marks the current item), and the content column is a summary followed by `Row`s, so items can be compared row by row. Wrap the run in an element whose first child is a `SectionBar`.
 3. **Optional principles or context section** on `night`, `h2` in the label column.
 4. **Closing** (`Closing` component): one statement (`font-display text-3xl`–`4xl`) and the next steps in the content column, `rule={false}`.
 

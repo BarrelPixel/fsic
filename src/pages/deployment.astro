@@ -83,7 +83,7 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
         labelledby={`${phase.id}-title`}
         class="scroll-mt-20"
       >
-        <Grid labelAs="header" stickyLabel>
+        <Grid labelAs="header">
           <Fragment slot="label">
             <p class="text-label text-navy mb-2">Phase {i + 1} · {phase.timeframe}</p>
             <h2 id={`${phase.id}-title`} class="mb-0">{phase.name}</h2>
