@@ -52,9 +52,9 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
 
 ## Current Status
 
-**Built:** Home (`/`), The FSIC Model (`/model`), Economic Impact (`/economic-impact`), Phased Deployment (`/deployment`), Partnership & Funding (`/partnership-funding`).
+**Built:** Home (`/`), The FSIC Model (`/model`), Economic Impact (`/economic-impact`), Phased Deployment (`/deployment`), Governance & Transparency (`/governance`), Partnership & Funding (`/partnership-funding`).
 
-**Coming Soon stubs:** The Strategic Moment, Programs & Facilities, Governance, Long-Term Vision, Contact. Each uses `<ComingSoon>` until its copy is ready.
+**Coming Soon stubs:** The Strategic Moment, Programs & Facilities, Long-Term Vision, Contact. Each uses `<ComingSoon>` until its copy is ready.
 
 **Proposed pages** (copy drafted, not yet in the IA): FAQ, News, Leadership.
 

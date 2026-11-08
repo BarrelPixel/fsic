@@ -1,10 +1,271 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ComingSoon from '../components/ComingSoon.astro';
+import Button from '../components/Button.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Row from '../components/Row.astro';
+import DashList from '../components/DashList.astro';
+
+// Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
+// Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
+
+const pad = (n: number) => String(n).padStart(2, '0');
+
+const sections = [
+  { id: 'backbone', name: 'A neutral backbone organization' },
+  { id: 'structure', name: 'Governance and organizational structure' },
+  { id: 'reporting', name: 'Public reporting and transparency' },
+  { id: 'metrics', name: 'Key metrics and reporting cadence' },
+  { id: 'developers', name: 'The role of developers' },
+];
+const total = sections.length;
+
+// 02 · Governing bodies, Master Plan pp. 15–17
+type Body = {
+  name: string;
+  purpose: string;
+  lists: { label: string; items: string[] }[];
+  duties?: { label: string; items: string[] };
+};
+
+const bodies: Body[] = [
+  {
+    name: 'Board of Directors',
+    purpose: 'The Board of Directors serves as the governing body responsible for strategic oversight, fiduciary stewardship, and organizational accountability. The board is intentionally structured to ensure independence, diversity of expertise, and representation across key regional sectors.',
+    lists: [
+      { label: 'Composition', items: ['Independent community leaders', 'Industry and employer representatives', 'Education and workforce leaders', 'Economic development partners', 'Philanthropic and civic leaders', 'Non-voting ex officio roles for key partners'] },
+      { label: 'Board independence', items: ['Independent board chair', 'Term limits', 'Conflict-of-interest policies', 'Balanced representation across sectors', 'Clear separation between governance and operations'] },
+    ],
+    duties: { label: 'Responsibilities', items: ['Strategic direction and mission alignment', 'Fiscal oversight and budget approval', 'CEO hiring, evaluation, and succession planning', 'Policy development and compliance', 'Oversight of major partnerships and agreements', 'Ensuring transparency and public accountability'] },
+  },
+  {
+    name: 'Executive Leadership',
+    purpose: 'The executive team is responsible for day-to-day operations, program execution, partnership management, and organizational growth. The CEO leads the organization with support from directors overseeing each engine.',
+    lists: [
+      { label: 'Key roles', items: ['Chief Executive Officer', 'Director of Talent Engine', 'Director of Innovation Engine', 'Director of Market Engine', 'Director of Civic Engine', 'Director of Operations and Finance'] },
+    ],
+    duties: { label: 'Responsibilities', items: ['Implementing board-approved strategy', 'Managing staff and operations', 'Building partnerships with employers, schools, and universities', 'Securing funding and managing grants', 'Ensuring program quality and impact', 'Reporting outcomes to the board and public'] },
+  },
+  {
+    name: 'Advisory Councils',
+    purpose: 'Advisory councils provide specialized expertise, employer input, and community insight. They ensure that FSIC remains aligned with industry needs, educational priorities, and community expectations.',
+    lists: [
+      { label: 'Councils', items: ['Employer Advisory Council', 'Education and Workforce Advisory Council', 'Innovation and Research Advisory Council', 'Community and Civic Advisory Council', 'Small Business and Supplier Advisory Council'] },
+    ],
+    duties: { label: 'Functions', items: ['Provide technical expertise', 'Validate curriculum and program design', 'Identify emerging industry needs', 'Support employer recruitment and partnerships', 'Strengthen community engagement'] },
+  },
+  {
+    name: 'Board of Advisors',
+    purpose: 'The Board of Advisors provides high-level guidance, strategic insight, and relationship-driven support to the CEO and leadership team.',
+    lists: [
+      { label: 'Composition', items: ['Influential community and regional leaders', 'Senior executives from key industries', 'Philanthropic and civic influencers', 'University, research, and innovation partners', 'Entrepreneurs, founders, and small-business leaders', 'Former elected officials and policy influencers', 'Strategic connectors who open networks and opportunities', "Subject-matter experts aligned to FSIC's four engines"] },
+    ],
+    duties: { label: 'Responsibilities', items: ['Open doors to employers, funders, and institutional partners', 'Support resource development and philanthropic outreach', 'Offer insight on regional trends, opportunities, and risks', 'Serve as ambassadors for FSIC in the community and across sectors', "Strengthen FSIC's visibility, credibility, and influence", 'Advise on program relevance and emerging industry needs', 'Support special initiatives, events, and public engagement'] },
+  },
+  {
+    name: 'Committees',
+    purpose: 'Committees support board governance and ensure compliance with nonprofit regulations, funder requirements, and best practices.',
+    lists: [
+      { label: 'Standing committees', items: ['Finance and Audit Committee', 'Governance and Nominating Committee', 'Programs and Impact Committee', 'Development and Partnerships Committee'] },
+    ],
+  },
+];
+
+// 04 · Metrics by area, Master Plan p. 32. Engines keep their site-wide numbers and colors.
+const metrics = [
+  { name: 'Talent Engine', number: 1, tone: 'orange', items: ['Number of students enrolled in micro-credentials', 'Completion and certification rates', 'Dual-enrollment participation and credit attainment', 'Teacher upskilling participation', 'Internship, apprenticeship, and job placement rates', 'Employer satisfaction and alignment'], cadence: ['Quarterly program dashboards', 'Annual workforce impact report', 'Employer advisory council reviews'] },
+  { name: 'Innovation Engine', number: 2, tone: 'orange', items: ['Number of challenge labs conducted', 'Prototypes developed and tested', 'University and federal research partnerships', 'Innovation sprint and hackathon participation', 'Dual-use technology projects initiated'], cadence: ['Semiannual innovation reports', 'Annual research and development summary', 'Partner feedback sessions'] },
+  { name: 'Market Engine', number: 3, tone: 'orange', items: ['Number of businesses supported', 'SBIR/STTR submissions and awards', 'Certifications achieved (AS9100, ITAR, CMMC)', 'Startup acceleration participation', 'Contract matchmaking outcomes', 'Revenue growth among participating companies'], cadence: ['Quarterly business impact dashboards', 'Annual supplier readiness report', 'Federal grant reporting as required'] },
+  { name: 'Civic Engine', number: 4, tone: 'lagoon', items: ['Attendance at community STEM nights', 'Participation in exhibitions and public events', 'Arts-and-space program engagement', 'Public awareness and perception metrics', 'Volunteer and mentorship participation'], cadence: ['Quarterly community engagement summaries', 'Annual civic impact report', 'Public presentations and exhibitions'] },
+  { name: 'Organizational Health', number: null, tone: null, items: ['Financial performance and revenue diversification', 'Board engagement and governance effectiveness', 'Staff retention and professional development', 'Partnership growth and satisfaction', 'Compliance and audit outcomes'], cadence: ['Monthly internal dashboards', 'Quarterly board reports', 'Annual audit and compliance review'] },
+] as const;
 ---
-<BaseLayout title="Governance & Transparency" description="FSIC's partner-first governance model ensures independence, accountability, and transparent oversight.">
-  <ComingSoon
-    title="Governance & Transparency"
-    description="FSIC's governance model — board structure, advisory councils, standing committees, compliance framework, founder transition plan, and evaluation metrics — designed for independence, accountability, and long-term credibility."
-  />
+<BaseLayout title="Governance & Transparency" description="How the Florida Space Innovation Center is governed: an independent board, executive leadership, advisory councils, committees, public reporting and key metrics.">
+
+  <!-- Interior page template (DESIGN.md): PageHero with an index of sections, narrative sections, closing -->
+  <PageHero title="Governance & Transparency">
+    <p class="text-2xl text-white/90 leading-snug mb-6">
+      FSIC operates under a partner-first, coalition-driven governance structure.
+    </p>
+    <p class="text-lg text-white/75 mb-10 max-w-3xl">
+      The Florida Space Innovation Center is designed with a governance model that ensures independence, transparency, accountability, and long-term institutional credibility. The structure reflects national best practices for nonprofit innovation hubs and aligns with expectations from philanthropic funders, state agencies, federal partners, and major employers.
+    </p>
+
+    <nav aria-label="On this page" class="font-sans">
+      <ol class="border-t border-white/25">
+        {sections.map((s, i) => (
+          <li class="border-b border-white/25">
+            <a href={`#${s.id}`} class="group flex items-baseline gap-3 py-3 rounded-sm">
+              <span class="text-sm text-white/60 tabular-nums">{pad(i + 1)}</span>
+              <span class="text-white group-hover:underline underline-offset-4">{s.name}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </PageHero>
+
+  <!-- 01 · A NEUTRAL BACKBONE ORGANIZATION (fsic.space FAQ) -->
+  <Section id="backbone" index={1} total={total} heading="A Neutral Backbone Organization">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-navy leading-snug">
+        FSIC's role is to coordinate, align, and accelerate — not duplicate.
+      </p>
+      <div class="max-w-3xl text-lg">
+        <p>
+          FSIC is a neutral backbone organization that coordinates the work of schools, colleges, universities, employers, and civic partners. It does not replace existing institutions — it strengthens them.
+        </p>
+        <p>
+          FSIC fills gaps, aligns stakeholders, and builds the connective infrastructure that no single organization can create alone.
+        </p>
+        <p class="mt-8 pt-6 border-t border-navy/15 mb-4">
+          FSIC is intentionally designed to amplify, not compete with, existing institutions. It:
+        </p>
+        <DashList
+          items={['Co-brands programs with partners', 'Shares credit, curriculum, and facilities', 'Strengthens enrollment in partner institutions', 'Builds pathways that benefit all stakeholders']}
+          class="text-navy"
+        />
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- 02 · STRUCTURE: one row per governing body, so they can be compared down the page (Master Plan pp. 15–17) -->
+  <Section id="structure" index={2} total={total} spacing="stacked" heading="Governance and Organizational Structure">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-navy leading-snug">
+        The governance model ensures that no single individual, partner, or sector can dominate decision-making.
+      </p>
+      <div>
+        <p class="text-lg max-w-3xl mb-10">
+          FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — will be featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution.
+        </p>
+        <dl>
+          {bodies.map((body, i) => (
+            <Row label={body.name} class={i === bodies.length - 1 ? 'border-b border-navy/15' : undefined}>
+              <p class="mb-5">{body.purpose}</p>
+              {body.lists.map((list) => (
+                <div class="mt-5 first:mt-0">
+                  <p class="mb-2 font-sans text-sm font-semibold text-navy">{list.label}</p>
+                  <DashList items={list.items} class="text-gray-dark" />
+                </div>
+              ))}
+              {body.duties && (
+                <details class="group mt-5 border-t border-navy/15">
+                  <summary class="flex items-center justify-between gap-4 pt-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span class="font-sans text-sm font-semibold text-navy">
+                      {body.duties.label}<span class="font-medium text-gray"> · {body.duties.items.length}</span>
+                    </span>
+                    <svg class="w-5 h-5 shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M10 4v12M4 10h12" stroke-linecap="round" />
+                    </svg>
+                  </summary>
+                  <DashList items={body.duties.items} class="pt-3 text-gray-dark" />
+                </details>
+              )}
+            </Row>
+          ))}
+        </dl>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- 03 · PUBLIC REPORTING AND TRANSPARENCY (Master Plan pp. 17, 31) -->
+  <Section id="reporting" index={3} total={total} spacing="stacked" heading="Public Reporting and Transparency">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-navy leading-snug">
+        Transparent reporting strengthens credibility, supports fundraising, and ensures FSIC remains accountable to the region it serves.
+      </p>
+      <div>
+        <p class="text-lg max-w-3xl mb-10">
+          The Florida Space Innovation Center is committed to rigorous evaluation, transparent reporting, and continuous improvement. The evaluation framework measures outcomes across workforce development, innovation, commercialization, and community engagement. This approach ensures accountability to funders, partners, and the public while enabling data-driven decision-making and long-term impact.
+        </p>
+        <dl>
+          <Row label="Public reporting">
+            <DashList items={['Annual Impact Report', "Public dashboards on FSIC's website", 'Community presentations and exhibitions', 'Grant-specific reporting for funders', 'Regular updates to local governments and partners']} class="text-gray-dark" />
+          </Row>
+          <Row label="Compliance">
+            <DashList items={['Annual audits', 'Conflict-of-interest disclosures', 'Public reporting and transparency', 'Grant compliance and reporting', 'Ethical fundraising policies']} class="text-gray-dark" />
+          </Row>
+          <Row label="Evaluation principles" class="border-b border-navy/15">
+            <DashList items={['Measure what matters most to employers, educators, funders, and the community', 'Use data to drive continuous improvement', 'Report outcomes transparently and consistently', 'Align metrics with state and federal funding requirements', 'Demonstrate clear return on investment']} class="text-gray-dark" />
+          </Row>
+        </dl>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- 04 · METRICS: area (cols 1–4) | key metrics (5–8) | reporting cadence (9–12) (Master Plan pp. 31–32) -->
+  <Section
+    id="metrics"
+    index={4}
+    total={total}
+    spacing="stacked"
+    heading="Key Metrics and Reporting Cadence"
+    intro="FSIC's evaluation framework is designed to be comprehensive, transparent, and aligned with national best practices for workforce and innovation ecosystems."
+  >
+    <div>
+      <div class="hidden lg:grid lg:grid-cols-12 lg:gap-x-8 border-b-2 border-navy pb-3" aria-hidden="true">
+        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Area</p>
+        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Key metrics</p>
+        <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-navy">Reporting cadence</p>
+      </div>
+      {metrics.map((m) => (
+        <div class="grid gap-y-4 py-7 border-b border-navy/15 lg:grid-cols-12 lg:gap-x-8">
+          <div class="lg:col-span-4">
+            {m.number !== null && (
+              <p class="font-sans text-sm text-gray tabular-nums flex items-center gap-2 mb-2">
+                <span class:list={['w-2.5 h-2.5 rounded-full', m.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']} aria-hidden="true"></span>
+                {pad(m.number)}
+              </p>
+            )}
+            <h3 class="text-xl mb-0">{m.name}</h3>
+          </div>
+          <div class:list={['lg:col-span-4', m.number !== null && 'lg:pt-7']}>
+            <p class="lg:sr-only mb-2 font-sans text-sm font-semibold text-navy">Key metrics</p>
+            <DashList items={[...m.items]} class="text-gray-dark" />
+          </div>
+          <div class:list={['lg:col-span-4', m.number !== null && 'lg:pt-7']}>
+            <p class="lg:sr-only mb-2 font-sans text-sm font-semibold text-navy">Reporting cadence</p>
+            <DashList items={[...m.cadence]} class="text-navy" />
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- 05 · THE ROLE OF DEVELOPERS (fsic.space FAQ): the trust statement, on night -->
+  <Section id="developers" index={5} total={total} dark heading="What Is the Role of Developers?">
+    <Grid>
+      <p slot="label" class="mb-0 font-display text-2xl font-semibold text-white leading-snug">
+        Developers play a collaborative — not controlling — role in FSIC's work.
+      </p>
+      <div class="max-w-3xl text-lg text-white/85">
+        <p>
+          FSIC is an independent, community-aligned organization, and we recognize that many residents value slow growth or prefer no additional growth at all. Large developments in the region have already been approved, and FSIC does not influence or promote those decisions.
+        </p>
+        <p>
+          Our role is to help ensure that what happens within that approved growth reflects community priorities by steering opportunities toward high-wage, future-focused industries rather than low-value or high-impact uses. Developers may help create spaces that support training, innovation, and community engagement, but FSIC does not endorse specific projects or drive development.
+        </p>
+        <p>
+          Our focus is protecting community character while shaping the future economy in ways that benefit the people who already live here.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- CLOSING (home.md). "Contact FSIC" opens an email until the Contact page has a form. -->
+  <Section rule={false}>
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10">
+        Neutral convener. Clear structure. Long-term accountability.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <Button href="/partnership-funding">Become a Partner</Button>
+        <Button href="mailto:info@fsic.space" variant="secondary">Contact FSIC</Button>
+      </div>
+    </Grid>
+  </Section>
+
 </BaseLayout>

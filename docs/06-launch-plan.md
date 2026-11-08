@@ -2,7 +2,7 @@
 
 **Target Launch Date:** May 25, 2026
 
-> **Out of date (November 2026):** the target date has passed and the weekly plan below no longer reflects progress. Built so far: Home, The FSIC Model, Economic Impact, Phased Deployment, Partnership & Funding. A new target date is needed before this plan is rewritten. The QA checklist below still applies.
+> **Out of date (November 2026):** the target date has passed and the weekly plan below no longer reflects progress. Built so far: Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding. A new target date is needed before this plan is rewritten. The QA checklist below still applies.
 
 ## 3-Month Weekly Plan
 
