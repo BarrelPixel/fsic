@@ -11,7 +11,7 @@ import Disclosure from '../components/Disclosure.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
-import { bodies, metrics } from '../data/governance';
+import { bodies, metrics, reportingCalendar } from '../data/governance';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
 // Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
@@ -125,7 +125,8 @@ const total = sections.length;
     </Grid>
   </Section>
 
-  <!-- 04 · METRICS: area (cols 1–4) | key metrics (5–8) | reporting cadence (9–12) (Master Plan pp. 31–32) -->
+  <!-- 04 · METRICS (Master Plan pp. 31–32): one row per area, its metrics one per line; then the
+       reporting calendar, every area's reports grouped by frequency (derived in src/data/governance.ts) -->
   <Section
     id="metrics"
     index={4}
@@ -134,34 +135,39 @@ const total = sections.length;
     heading="Key Metrics and Reporting Cadence"
     intro="FSIC's evaluation framework is designed to be comprehensive, transparent, and aligned with national best practices for workforce and innovation ecosystems."
   >
-    <div>
-      <div class="hidden lg:grid lg:grid-cols-12 lg:gap-x-8 border-b-2 border-navy pb-3" aria-hidden="true">
-        <p class="lg:col-span-4 mb-0 text-label text-navy">Area</p>
-        <p class="lg:col-span-4 mb-0 text-label text-navy">Key metrics</p>
-        <p class="lg:col-span-4 mb-0 text-label text-navy">Reporting cadence</p>
-      </div>
+    <div class="border-t-2 border-navy">
       {metrics.map((m) => (
-        <div class="grid gap-y-4 py-7 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
-          <div class="lg:col-span-4">
-            {m.number !== null && (
-              <p class="text-caption text-gray tabular-nums flex items-center gap-2 mb-2">
-                <span class:list={['w-2.5 h-2.5 rounded-full', m.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']} aria-hidden="true"></span>
-                {pad2(m.number)}
-              </p>
-            )}
-            <h3 class="text-xl mb-0">{m.name}</h3>
-          </div>
-          <div class:list={['lg:col-span-4', m.number !== null && 'lg:pt-7']}>
-            <p class="lg:sr-only mb-2 text-label text-navy">Key metrics</p>
+        <div class="grid gap-y-3 py-6 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
+          <h3 class="lg:col-span-4 lg:self-start mb-0 text-xl flex items-center gap-2">
+            <span class:list={['w-2.5 h-2.5 shrink-0 rounded-full', m.tone === 'lagoon' ? 'bg-lagoon' : m.tone === 'orange' ? 'bg-orange' : 'bg-transparent']} aria-hidden="true"></span>
+            <span class="w-6 shrink-0 text-caption text-gray tabular-nums font-normal">{m.number !== null ? pad2(m.number) : ''}</span>
+            {m.name}
+          </h3>
+          <div class="lg:col-span-8 lg:pt-1">
+            <p class="sr-only">Key metrics</p>
             <List items={[...m.items]} class="text-gray-dark" />
-          </div>
-          <div class:list={['lg:col-span-4', m.number !== null && 'lg:pt-7']}>
-            <p class="lg:sr-only mb-2 text-label text-navy">Reporting cadence</p>
-            <List items={[...m.cadence]} class="text-navy" />
           </div>
         </div>
       ))}
     </div>
+
+    <Grid class="mt-16">
+      <div slot="label">
+        <h3 class="text-xl mb-2">Reporting calendar</h3>
+        <p class="mb-0 text-caption text-gray-dark">Every area's reports, by how often they come out.</p>
+      </div>
+      <dl>
+        {reportingCalendar.map((group, i) => (
+          <Row label={group.frequency} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
+            <List
+              html
+              items={group.reports.map((r) => `${r.report} <span class="block sm:inline text-caption text-gray leading-snug whitespace-nowrap"><span class="hidden sm:inline">· </span>${r.area}</span>`)}
+              class="text-navy"
+            />
+          </Row>
+        ))}
+      </dl>
+    </Grid>
   </Section>
 
   <!-- 05 · THE ROLE OF DEVELOPERS (fsic.space FAQ): the trust statement, on night -->
