@@ -8,12 +8,11 @@ import Row from '../components/Row.astro';
 import List from '../components/List.astro';
 
 import heroImage from '../assets/fsic-hero.png';
+import conceptImage from '../assets/fsic-concept.jpg';
 import { pad2 } from '../lib/format';
 import { FIGURES } from '../data/economics';
 import { engines } from '../data/engines';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
-
-const base = import.meta.env.BASE_URL;
 
 // 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
@@ -264,13 +263,11 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   <!-- 07 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
   <Section id="vision" index={7} total={7} label="Long-range vision" dark heading="A Landmark Campus for Southeast Volusia">
     <figure slot="media" class="relative">
-      <img
-        src={`${base}/images/fsic-concept.jpg`}
+      <Image
+        src={conceptImage}
         alt="Concept rendering of a future campus: research buildings, a tower, and a glass dome set among wetlands, palms, and a boardwalk."
-        width="1536"
-        height="1024"
-        loading="lazy"
-        decoding="async"
+        widths={[640, 960, 1280, 1536]}
+        sizes="100vw"
         class="w-full h-[50vh] min-h-[320px] max-h-[640px] object-cover"
       />
       <figcaption class="text-caption container text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>

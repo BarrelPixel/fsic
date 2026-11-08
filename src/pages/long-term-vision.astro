@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import conceptImage from '../assets/fsic-concept.jpg';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import PageHero from '../components/PageHero.astro';
@@ -14,8 +16,6 @@ import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections
 // Copy: src/content/copy/long-term-vision.md (Draft). Master Plan pp. 36–38, framed by the FAQ's caveat.
 // The Master Plan names the development throughout; the page says "Southeast Volusia" instead and
 // leaves out the line about the family's legacy (docs/08 §3.3). Period: 2032–2040 (project lead).
-
-const base = import.meta.env.BASE_URL;
 
 const sections: PageSection[] = [
   { id: 'consortium', name: 'The Multi-University Consortium & Shared Facilities', short: 'Consortium' },
@@ -111,13 +111,11 @@ const at = (id: string) => sectionProps(sections, id);
   <!-- 03 · The landmark campus (Master Plan p. 38), with the concept rendering and its required caption -->
   <Section {...at('campus')} dark heading="A Landmark Campus for Southeast Volusia">
     <figure slot="media" class="relative">
-      <img
-        src={`${base}/images/fsic-concept.jpg`}
+      <Image
+        src={conceptImage}
         alt="Concept rendering of a future campus: research buildings, a tower, and a glass dome set among wetlands, palms, and a boardwalk."
-        width="1536"
-        height="1024"
-        loading="lazy"
-        decoding="async"
+        widths={[640, 960, 1280, 1536]}
+        sizes="100vw"
         class="w-full h-[50vh] min-h-[320px] max-h-[640px] object-cover"
       />
       <figcaption class="text-caption container text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>

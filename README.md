@@ -37,12 +37,12 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
 ├── mnt/data/                    # Source PDFs (Master Plan, Overview). Not deployed
 ├── public/
 │   ├── favicon.svg, favicon.ico
-│   └── images/                  # Logo (light and reverse), campus concept rendering
+│   └── images/                  # Logo (light and reverse)
 ├── scripts/
 │   ├── check-links.mjs          # Run via `npm run check-links`
 │   └── review-items.mjs         # Run via `npm run review-items`
 └── src/
-    ├── assets/                  # Images processed by astro:assets (homepage hero photo)
+    ├── assets/                  # Images processed by astro:assets (homepage hero photo, campus concept rendering)
     ├── components/
     │   ├── Section, Grid, Row, List, PageHero, SectionBar, RunningHead   # grid components
     │   ├── Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBarsDraw
