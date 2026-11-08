@@ -87,21 +87,19 @@ The current site (fsic.space) has substantial FAQ and founder bio content with n
 
 ## Navigation Structure
 
-**Primary Nav (Header):**
-- Home
-- Why Now (The Strategic Moment; the short label keeps the menu on one line at 1024px)
-- The Model
-- Economic Impact
-- Deployment
+Defined once in `src/lib/nav.ts` and shared by the header and footer. Pages are grouped by the question they answer. Pages that still use `<ComingSoon>` (Programs & Facilities, Long-Term Vision) are listed with `built: false` and stay out of both menus until they ship.
+
+**Header (desktop):** dropdown groups and plain links.
+- Why FSIC ▾ — The Strategic Moment, Economic Impact, (Long-Term Vision when built)
+- The Model ▾ — The FSIC Model, Phased Deployment, (Programs & Facilities when built)
 - Governance
+- Get Involved ▾ — Partnership & Funding, Contact
 - News (News & Media)
 - Contact
 
-**Secondary Nav (Footer):**
-- All primary nav items plus:
-- Programs & Facilities
-- Partnership & Funding
-- Long-Term Vision
+The logo links to Home. On phones, the menu lists each group under its name and shows each page once (Contact only under Get Involved).
+
+**Footer:** one column per group (Why FSIC, The Model, Get Involved), then a column "FSIC" with Home, Governance and News. Each page appears once.
 
 ## Implementation Note
 Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.

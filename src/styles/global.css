@@ -95,6 +95,28 @@ html {
 }
 
 /* ============================================
+   Navigation dropdowns (Header.astro)
+   Panels are closed by default and open when the group has data-open (set by the script).
+   Without JS (no .js on <html>), they open on hover and when focus is inside the group.
+   ============================================ */
+
+@layer components {
+  .nav-panel {
+    display: none;
+  }
+
+  [data-nav-group][data-open] .nav-panel,
+  html:not(.js) [data-nav-group]:hover .nav-panel,
+  html:not(.js) [data-nav-group]:focus-within .nav-panel {
+    display: block;
+  }
+
+  [data-nav-group][data-open] .nav-chevron {
+    transform: rotate(180deg);
+  }
+}
+
+/* ============================================
    Press release text (rendered Markdown, src/content/news/)
    Lists use the same short dash marker as DashList.
    ============================================ */
