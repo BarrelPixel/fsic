@@ -11,7 +11,7 @@
   --color-night: #0D2138;
   --color-white: #FFFFFF;
   --color-orange: #E37A2D;
-  --color-orange-dark: #c96820;
+  --color-orange-light: #F08F48;
   --color-lagoon: #3E7F74;
   --color-lagoon-light: #7FB8AC;
   --color-salt: #EEF2F3;
@@ -139,7 +139,7 @@ html {
 }
 
 /* ============================================
-   Signature moment: the launch arc draws once on load.
+   Signature moment: the launch arc draws once when the map scrolls into view.
    The only automatic animation on the site (see DESIGN.md).
    ============================================ */
 

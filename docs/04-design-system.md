@@ -1,6 +1,6 @@
 # 04 — Design System
 
-> **Superseded in part by `/DESIGN.md`** (November 2026: the "Within Sight of the Cape" direction). For colors, type (Barlow Semi Condensed, Source Serif 4 and Archivo), the 12-column grid and section anatomy, layout and motion, follow `DESIGN.md`. The specs below are from the first build. Some no longer apply: the system font, white-on-orange buttons, and the component specifications (retired below).
+> **Superseded in part by `/DESIGN.md`** (November 2026: the "Within Sight of the Cape" direction). For colors, type (Barlow Semi Condensed, Source Serif 4 and Archivo), the 12-column grid and section anatomy, layout and motion, follow `DESIGN.md`. The specs below are from the first build. Some no longer apply: the system font and type scale, white-on-orange buttons, and the component specifications (retired below). The color and spacing tables have been updated to match `src/styles/global.css`.
 
 ## Color Tokens
 
@@ -11,11 +11,15 @@ All colors are defined as CSS custom properties on `:root` and mapped to Tailwin
 | Navy | `--color-navy` | `#163256` | Primary backgrounds, headings, nav |
 | White | `--color-white` | `#FFFFFF` | Page backgrounds, text on dark |
 | Orange | `--color-orange` | `#E37A2D` | CTAs, accents, stat highlights, hover states |
-| Gray | `--color-gray` | `#7F7F7F` | Body text, borders, muted elements |
+| Gray | `--color-gray` | `#6B7280` | Running heads, counts, muted UI text |
 | Navy Light | `--color-navy-light` | `#1e4370` | Hover states on navy backgrounds |
-| Orange Dark | `--color-orange-dark` | `#c96820` | Hover/active states for orange CTAs |
+| Orange Light | `--color-orange-light` | `#F08F48` | Hover state for primary (orange) buttons |
+| Night | `--color-night` | `#0D2138` | Dark sections, header, footer (see `DESIGN.md`) |
+| Lagoon | `--color-lagoon` | `#3E7F74` | Community and coast (see `DESIGN.md`) |
+| Lagoon Light | `--color-lagoon-light` | `#7FB8AC` | Lagoon on dark backgrounds |
+| Salt | `--color-salt` | `#EEF2F3` | Light fill, used sparingly |
 | Gray Light | `--color-gray-light` | `#F5F5F5` | Alternating section backgrounds |
-| Gray Dark | `--color-gray-dark` | `#4A4A4A` | Headings on light backgrounds |
+| Gray Dark | `--color-gray-dark` | `#3F4A56` | Body text on light backgrounds |
 
 ## Typography Scale
 
@@ -44,9 +48,9 @@ Base unit: `0.25rem` (4px). Use Tailwind's default spacing scale, supplemented b
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--section-py` | `5rem` (80px) | Vertical padding for page sections |
-| `--section-py-lg` | `7rem` (112px) | Vertical padding for hero/CTA sections |
-| `--container-max` | `72rem` (1152px) | Max-width for content container |
+| `--section-py` | `6rem` (96px; `4rem` up to 768px) | Vertical padding for page sections |
+| `--section-py-lg` | `8rem` (128px; `5rem` up to 768px) | Vertical padding for the final call to action |
+| `--container-max` | `76rem` (1216px) | Max-width for content container |
 | `--container-px` | `1.5rem` (24px) | Horizontal padding for container |
 
 ## Component Specifications
@@ -66,5 +70,5 @@ Retired. The first build's components (StatBlock, EngineCard, TimelineRow, Secti
 - All text-on-background combinations must meet WCAG 2.1 AA contrast (4.5:1 normal, 3:1 large).
 - Navy (#163256) on White (#FFFFFF): **11.6:1** — passes AAA.
 - White (#FFFFFF) on Navy (#163256): **11.6:1** — passes AAA.
-- Orange (#E37A2D) on White (#FFFFFF): **3.2:1** — passes AA for large text only. Use orange for accents/CTAs with sufficient size, not body text.
-- Gray (#7F7F7F) on White (#FFFFFF): **4.0:1** — borderline. Use for large text or non-essential decorative text only. Body text should use `--color-gray-dark` (#4A4A4A) on white for **8.6:1**.
+- Orange (#E37A2D) on White (#FFFFFF): **2.97:1** — fails AA even for large text. Never use orange text on light backgrounds, and never put white text on orange. Primary buttons use night text on orange (5.5:1). See `DESIGN.md` "Contrast rules".
+- Gray (#6B7280) on White (#FFFFFF): **4.8:1** — passes AA. Body text uses `--color-gray-dark` (#3F4A56).

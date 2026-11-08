@@ -32,6 +32,8 @@ Each color has a meaning. Don't use them as decoration.
 | `lagoon-light` | `#7FB8AC` | Lagoon on dark backgrounds |
 | `salt` | `#EEF2F3` | Light fill, used sparingly (a cool coastal white, not cream). Prefer white with rules |
 | `gray-dark` | `#3F4A56` | Body text on light backgrounds |
+| `gray` | `#6B7280` | Muted UI text: running heads, counts, problem markers (4.8:1 on white) |
+| `orange-light` | `#F08F48` | Hover state of primary buttons only |
 
 Example: in the four-engine sections, Talent, Innovation and Market get orange markers, and Civic gets lagoon green.
 

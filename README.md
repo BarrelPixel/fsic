@@ -1,124 +1,78 @@
 # Florida Space Innovation Center — Website
 
-Public website for the Florida Space Innovation Center (FSIC), a coordinated regional platform strengthening workforce, innovation, and economic growth for Southeast Volusia and the Space Coast.
+Public website for the Florida Space Innovation Center (FSIC), a coordinated regional platform strengthening workforce, innovation, and economic growth for Southeast Volusia and the Space Coast. It will replace the current Wix site at https://www.fsic.space.
 
-**Launch date:** May 25, 2026
 **Built by:** Barrel & Pixel
+**Launch date:** to be set (the original May 25, 2026 target has passed; see `docs/06-launch-plan.md`)
 
 ## Tech Stack
 
-- **Framework:** [Astro](https://astro.build/) with TypeScript
-- **Styling:** Tailwind CSS v4 + CSS custom properties (design tokens)
+- **Framework:** [Astro](https://astro.build/) 5 with TypeScript
+- **Styling:** Tailwind CSS v4 (via `@tailwindcss/vite`), design tokens in `src/styles/global.css`
 - **Output:** Static HTML (SSG)
+- **Hosting:** GitHub Pages under the `/fsic` base path, deployed by `.github/workflows/deploy.yml` on push to `main`. Production hosting and domain are still open (`docs/07-open-questions.md`).
 
 ## Getting Started
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-# → http://localhost:4321
-
-# Production build
-npm run build
-
-# Preview production build
-npm run preview
+npm install          # install dependencies
+npm run dev          # dev server at http://localhost:4321/fsic
+npm run build        # static build to dist/
+npm run preview      # serve the built site
+npm run check-links  # build, then check every internal link and anchor
 ```
+
+There is no linter or test suite. `npm run build` and `npm run check-links` are the checks.
+
+Internal links must include the base path (`import.meta.env.BASE_URL`). `Button` adds it for hrefs starting with `/`.
 
 ## Project Structure
 
 ```
 /
-├── docs/                        # Project documentation
-│   ├── 00-project-overview.md
-│   ├── 01-source-materials.md   # PDF extracts with page references
-│   ├── 02-information-architecture.md
-│   ├── 03-content-guidelines.md
-│   ├── 04-design-system.md
-│   ├── 05-seo-accessibility.md
-│   ├── 06-launch-plan.md
-│   └── 07-open-questions.md
+├── DESIGN.md                    # Visual design direction (source of truth for design)
+├── CLAUDE.md                    # Working rules for this repo
+├── docs/                        # Project documentation (00–09, listed below)
+├── mnt/data/                    # Source PDFs (Master Plan, Overview). Not deployed
 ├── public/
-│   ├── images/                  # Static images
-│   └── docs/                    # Downloadable documents (if any)
-├── src/
-│   ├── assets/                  # Processed assets
-│   ├── components/              # Reusable Astro components
-│   │   ├── Header.astro
-│   │   ├── Footer.astro
-│   │   ├── Button.astro
-│   │   ├── Section.astro
-│   │   ├── SectionHeader.astro
-│   │   ├── StatBlock.astro
-│   │   ├── EngineCard.astro
-│   │   ├── Callout.astro
-│   │   ├── ValueItem.astro
-│   │   └── ComingSoon.astro
-│   ├── content/
-│   │   └── copy/
-│   │       └── home.md          # Approved Home page copy
-│   ├── layouts/
-│   │   └── BaseLayout.astro     # Global layout (head, header, footer)
-│   ├── pages/                   # File-based routing
-│   │   ├── index.astro          # Home (fully implemented)
-│   │   ├── model.astro          # Coming Soon stub
-│   │   ├── economic-impact.astro
-│   │   ├── deployment.astro
-│   │   ├── governance.astro
-│   │   ├── contact.astro
-│   │   ├── strategic-moment.astro
-│   │   ├── programs-facilities.astro
-│   │   ├── partnership-funding.astro
-│   │   └── long-term-vision.astro
-│   └── styles/
-│       └── global.css           # Design tokens + base styles
-└── package.json
+│   ├── favicon.svg, favicon.ico
+│   └── images/                  # Logo (light and reverse), campus concept rendering
+├── scripts/
+│   └── check-links.mjs          # Run via `npm run check-links`
+└── src/
+    ├── components/
+    │   ├── Section, Grid, Row, DashList, PageHero, SectionBar, RunningHead   # grid components
+    │   ├── Button, CoastlineMap, Header, Footer
+    │   └── ComingSoon           # placeholder for unbuilt pages
+    ├── content/copy/            # Copy deck: one Markdown file per page (docs/09)
+    ├── layouts/BaseLayout.astro # Meta tags, fonts, header and footer
+    ├── pages/                   # One .astro file per route
+    └── styles/global.css        # Design tokens (@theme), base styles, arc animation
 ```
 
 ## Current Status
 
-### Implemented
-- Home page (`/`) — fully built with all approved sections
-- Global layout with responsive header/nav and footer
-- Design system (color tokens, typography, spacing)
-- Reusable component library (Button, Section, StatBlock, EngineCard, Callout, ValueItem)
-- Complete project documentation in `/docs`
+**Built:** Home (`/`), The FSIC Model (`/model`), Economic Impact (`/economic-impact`), Phased Deployment (`/deployment`), Partnership & Funding (`/partnership-funding`).
 
-### Route Stubs
-All future pages are implemented as route stubs using the global layout with a "Coming Soon" placeholder and a description from the information architecture document. This approach was chosen (Option A from the spec) to ensure:
-- All routes are navigable and return proper HTTP 200 responses
-- Navigation works end-to-end
-- SEO meta tags are in place for all pages
-- No 404s for internal links from the Home page
+**Coming Soon stubs:** The Strategic Moment, Programs & Facilities, Governance, Long-Term Vision, Contact. Each uses `<ComingSoon>` until its copy is ready.
 
-### Not Yet Built
-See `docs/02-information-architecture.md` for full page specifications. Interior page content will be built in Phase 2.
+**Proposed pages** (copy drafted, not yet in the IA): FAQ, News, Leadership.
 
-## Design Tokens
+Copy status for every page is tracked in `docs/09-copy-deck.md`. Open content decisions are in `docs/07-open-questions.md` and `docs/08-current-site-audit.md` §3.
 
-Colors are defined as CSS custom properties and integrated with Tailwind:
+## Design
 
-| Token | Hex | Usage |
-|-------|-----|-------|
-| `navy` | `#163256` | Primary backgrounds, headings |
-| `white` | `#FFFFFF` | Page backgrounds |
-| `orange` | `#E37A2D` | CTAs, accents, stat highlights |
-| `gray` | `#7F7F7F` | Body text, borders |
-| `gray-light` | `#F5F5F5` | Alternating section backgrounds |
-| `gray-dark` | `#4A4A4A` | Primary body text |
+See `DESIGN.md` for colors, type (Barlow Semi Condensed, Source Serif 4, Archivo), the 12-column grid, the interior page template and the component list. `docs/04-design-system.md` holds the earlier specs and is superseded where they disagree.
 
 ## Documentation
-
-All project documentation is in the `/docs` directory:
 
 - **00** — Project overview and scope
 - **01** — Source material extracts with PDF page references
 - **02** — Information architecture and sitemap
 - **03** — Content and tone guidelines
-- **04** — Design system specification
+- **04** — Design system (earlier specs; superseded in part by `DESIGN.md`)
 - **05** — SEO and accessibility requirements
-- **06** — 3-month launch plan with QA checklist
+- **06** — Launch plan and QA checklist
 - **07** — Open questions requiring stakeholder input
+- **08** — Audit of the current site (fsic.space) and content conflicts
+- **09** — Copy deck workflow
