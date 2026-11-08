@@ -61,7 +61,7 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - **CSS layers:** base element styles in `global.css` live inside `@layer base`. Keep them there. Styles outside a layer override Tailwind utilities.
 - Use the theme tokens (`bg-night`, `text-lagoon`, `bg-salt`…) rather than raw hex values.
 - Header nav highlighting uses the `isActive()` helper in `Header.astro`. Home matches only itself. The footer's Navigation list mirrors the header nav; keep them in sync.
-- **Press releases:** add `src/content/news/<YYYY-MM-DD>-<slug>.md` with `title` and `date`. If the release was published with a graphic, put it in `src/content/news/images/` and set `image` and `imageAlt` (required with `image`; transcribe the words in the graphic). The release page uses it as the share image.
+- **Press releases:** add `src/content/news/<YYYY-MM-DD>-<slug>.md` with `title` and `date`. If the release was published with a graphic, put it in `src/content/news/images/` and set `image` and `imageAlt` (required with `image`; transcribe the words in the graphic). The release page uses it as the share image. If `npm run dev` is running when you add a release with an image, restart it: until then the dev server shows `LocalImageUsedWrongly` for that image (the build is fine).
 - `BaseLayout` takes an optional `image` (a built image `src`, e.g. from `getImage()`) for `og:image` and `twitter:image`. Pages without one have no share image yet.
 - The `<html>` element gets a `js` class from an inline script in `BaseLayout`. Use it to gate JS-only states so the page still works without JS.
 
