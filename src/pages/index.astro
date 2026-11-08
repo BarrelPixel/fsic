@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
-import CoastlineMap from '../components/CoastlineMap.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
@@ -79,7 +78,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
   <!-- HERO: the launch photo. It always shows its full height (plume tip to dunes), anchored right,
        never cropped at the top: on screens wider than the photo, its left edge fades into night under
        the text. The text sits over the sky on the left; a night gradient keeps it readable (left to
-       right on lg, top to bottom below). The coastline map is in section 01. -->
+       right on lg, top to bottom below). -->
   <section class="relative bg-night text-white overflow-hidden">
     <Image
       src={heroImage}
@@ -131,11 +130,6 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         <p class="mt-8 pt-6 border-t border-navy/15 text-navy font-medium">
           FSIC is designed to align education, industry, and community in one coordinated regional platform.
         </p>
-        <!-- The coastline and launch arc, the signature element (DESIGN.md), drawn for night: shown on a
-             night plate so it keeps its colors on this white section. -->
-        <div class="mt-12 max-w-[35rem] bg-night px-6 py-8 md:px-10 md:py-10">
-          <CoastlineMap />
-        </div>
       </div>
     </Grid>
   </Section>
