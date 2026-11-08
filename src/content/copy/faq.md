@@ -87,11 +87,11 @@ Support includes:
 This creates a pipeline of supplier-ready companies capable of competing in high-value markets.
 
 ### What economic impact will FSIC have on the region?
-Independent economic modeling shows that FSIC dramatically improves the region's long-term economic trajectory. With full implementation over 25 years, FSIC is projected to help the region generate $10.2–$12.4 billion in economic output, support 74,500–79,500 job-years, increase local wages by $1.35–$1.55 billion, and generate $690–$910 million in fiscal revenue for local and state governments. It also positions the region to attract $800 million to $1.56 billion in external funding tied to workforce development, innovation, and research. These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at info@fsic.space.
+Independent economic modeling shows that FSIC dramatically improves the region's long-term economic trajectory. With full implementation over 25 years (the Master Plan's Extended FSIC, or FSIC 2.0, scenario), FSIC is projected to help the region generate $10.2–$12.4 billion in economic output, support 74,500–79,500 job-years, increase local wages by $1.35–$1.55 billion, and generate $690–$910 million in fiscal revenue for local and state governments. It also positions the region to attract $800 million to $1.56 billion in external funding tied to workforce development, innovation, and research. These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at info@fsic.space.
 
 **Link:** The full analysis is on the Economic Impact page.
 
-> **Changed (November 2026):** the live site's rounded figures ("over $10 billion", "tens of thousands of job-years", "more than $1 billion", "hundreds of millions") are replaced with the Master Plan's ranges (pp. 7–8), as the content guidelines require. These are the Extended FSIC (FSIC 2.0) scenario figures, the same as on the home and Economic Impact pages (audit §3.10).
+> **Changed (November 2026):** the live site's rounded figures ("over $10 billion", "tens of thousands of job-years", "more than $1 billion", "hundreds of millions") are replaced with the Master Plan's ranges (pp. 7–8), as the content guidelines require. These are the Extended FSIC (FSIC 2.0) scenario figures, the same as on the home and Economic Impact pages (audit §3.10); the answer names the scenario, as DESIGN.md ("Name the scenario") requires.
 
 ### What is the role of developers in the FSIC?
 Developers play a collaborative — not controlling — role in FSIC's work.
