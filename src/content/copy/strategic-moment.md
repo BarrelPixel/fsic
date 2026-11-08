@@ -72,7 +72,7 @@ A master-planned development in Southeast Volusia will add more than 10,000 home
 
 > **Source:** headline and lists: fsic.space/about-4 (verbatim). Paragraph and figures: Master Plan pp. 4 and 6, with the development's name replaced by "A master-planned development in Southeast Volusia" (the site does not name it; audit §3.3).
 > **Decision (November 2026):** use the Master Plan's figures (10,000+ homes, 10M+ sq ft, one development), not the current site's unsourced regional figures (20,000 homes, 12M sq ft). See audit §3.1.
-> **⚠ Review:** The Economic Impact page left out this development's size when the site stopped naming it. This page mentions it, unnamed. Confirm that is acceptable.
+> **Decision (November 2026):** the project lead confirmed that this page shows the development's size (Master Plan pp. 4 and 6) without naming it, although the Economic Impact page left the size out.
 
 ---
 
