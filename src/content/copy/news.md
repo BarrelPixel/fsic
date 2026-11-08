@@ -21,7 +21,10 @@ Keep the wording as published, including quotes. Fix only obvious formatting (bo
 | May 25, 2026 | `2026-05-25-fsic-launches-on-may-25.md` |
 
 > **Source:** fsic.space/news (verbatim). Checked November 8, 2026: no releases newer than July 29.
-> **Note:** The releases use words the content guidelines avoid ("proud to announce", "premier hub"). They stay as published. Images from the live page are not used until their source files and usage rights are confirmed.
+> **Note:** The releases use words the content guidelines avoid ("proud to announce", "premier hub"). They stay as published.
+> **Images:** each release shows the graphic published with it on fsic.space/news (November 2026). The files are in `src/content/news/images/`, set by `image` and `imageAlt` in each release's frontmatter. The alt text transcribes the words in the graphic.
+
+> **⚠ Review:** The Jessie Thompson graphic says "Executive Board"; the release says "Board of Directors". The Trine and DePew graphics show a building signed "Florida Space Innovation Center" next to a rocket, and FSIC has no building yet. Confirm these graphics should stay.
 
 ---
 
@@ -35,13 +38,13 @@ Keep the wording as published, including quotes. Fix only obvious formatting (bo
 
 > **⚠ Review:** Lead and aside are new. The media contact uses the general address rather than a named person until titles are confirmed (audit §3.6, §3.8).
 
-Each row shows the date, the headline (linking to the release) and the release's first paragraph without its dateline.
+Each row shows the date, the headline (linking to the release) and the release's first paragraph without its dateline. On wide screens, a thumbnail of the release graphic sits under the date.
 
 ---
 
 ## RELEASE PAGE
 
-Headline, then "<date> · Press release", the release text, a link back to "All news and media", and a "More news" list of the other releases. The meta description is the first paragraph, shortened to about 155 characters.
+Headline, then "<date> · Press release", the release graphic beside the text (above it on small screens; also the page's share image), the release text, a link back to "All news and media", and a "More news" list of the other releases. The meta description is the first paragraph, shortened to about 155 characters.
 
 ---
 

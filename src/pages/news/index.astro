@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
@@ -21,14 +22,20 @@ const releases = await getReleases();
     </p>
   </PageHero>
 
-  <!-- Releases: date (cols 1–4) | headline and first paragraph (cols 5–12), on a shared baseline -->
+  <!-- Releases: date and thumbnail (cols 1–4) | headline and first paragraph (cols 5–12) -->
   <Section>
     <ol class="divide-y divide-navy/15 border-b border-navy/15">
       {releases.map((r) => (
         <li class="grid gap-y-2 py-8 first:pt-0 lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
-          <p class="lg:col-span-4 mb-0 font-sans text-sm font-semibold text-gray-dark">
-            <time datetime={r.data.date.toISOString().slice(0, 10)}>{formatDate(r.data.date)}</time>
-          </p>
+          <div class="lg:col-span-4">
+            <p class="mb-0 font-sans text-sm font-semibold text-gray-dark">
+              <time datetime={r.data.date.toISOString().slice(0, 10)}>{formatDate(r.data.date)}</time>
+            </p>
+            {/* Thumbnail of the release graphic. Decorative here: the headline is the link, and the release page carries the alt text. */}
+            {r.data.image && (
+              <Image src={r.data.image} alt="" widths={[160, 320]} sizes="10rem" class="hidden lg:block mt-4 w-40 h-auto" />
+            )}
+          </div>
           <div class="lg:col-span-8 max-w-3xl">
             <h2 class="text-2xl md:text-3xl mb-3">
               <a href={`${base}/news/${r.id}`} class="hover:underline underline-offset-4 decoration-2">{r.data.title}</a>

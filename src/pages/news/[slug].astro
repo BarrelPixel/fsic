@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
@@ -23,9 +24,11 @@ interface Props {
 const { release, others } = Astro.props;
 const { Content } = await render(release);
 const base = import.meta.env.BASE_URL;
+const { image, imageAlt } = release.data;
+const shareImage = image ? await getImage({ src: image, width: 1200, format: 'jpg' }) : undefined;
 const isoDate = (d: Date) => d.toISOString().slice(0, 10);
 ---
-<BaseLayout title={release.data.title} description={truncate(firstParagraph(release))}>
+<BaseLayout title={release.data.title} description={truncate(firstParagraph(release))} image={shareImage?.src}>
 
   <PageHero title={release.data.title} titleClass="text-4xl md:text-5xl">
     <p class="mb-0 font-sans text-white/75">
@@ -34,12 +37,23 @@ const isoDate = (d: Date) => d.toISOString().slice(0, 10);
     </p>
   </PageHero>
 
-  <!-- The release (cols 5–12), with the way back in the label column -->
+  <!-- The release (cols 5–12). The label column holds the way back and the graphic published with the release. -->
   <Section>
-    <Grid>
-      <p slot="label" class="mb-0 font-sans text-sm font-semibold md:pt-[0.3rem]">
-        <a href={`${base}/news`} class="text-navy hover:underline underline-offset-4">All news and media</a>
-      </p>
+    <Grid stickyLabel>
+      <div slot="label">
+        <p class="mb-0 font-sans text-sm font-semibold md:pt-[0.3rem]">
+          <a href={`${base}/news`} class="text-navy hover:underline underline-offset-4">All news and media</a>
+        </p>
+        {image && imageAlt && (
+          <Image
+            src={image}
+            alt={imageAlt}
+            widths={[320, 480, 720]}
+            sizes="(min-width: 1024px) 22rem, 20rem"
+            class="mt-6 w-full max-w-xs lg:max-w-sm h-auto"
+          />
+        )}
+      </div>
       <article class="release max-w-3xl">
         <Content />
       </article>

@@ -1,6 +1,8 @@
 ---
 title: "Florida Space Innovation Center Appoints School Board Member Jessie Thompson to Board of Directors"
 date: 2026-07-07
+image: ./images/2026-07-07-jessie-thompson-joins-board.jpg
+imageAlt: "Announcement graphic: “Congratulations! Jessie Thompson named to the Executive Board of the Florida Space Innovation Center.” Three people stand outdoors, with an inset portrait. Tagline: Innovate, Collaborate, Elevate."
 ---
 
 **Southeast Volusia, FL** — The Florida Space Innovation Center (FSIC) announced today that Jessie Thompson, a member of the Volusia County School Board, has been appointed to its Board of Directors. Thompson will serve as an education and community representative, helping ensure FSIC's programs align with the needs of students, families, and educators across Volusia County.
