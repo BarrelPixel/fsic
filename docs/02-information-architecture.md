@@ -76,6 +76,9 @@
 **Audience:** All.
 **Key content:** Contact form, email, phone, physical location (TBD), partner inquiry routing.
 
+## Proposed Additions
+The current site (fsic.space) has substantial FAQ, press release, and founder bio content with no place in this sitemap. Proposed: `/faq`, `/news`, `/leadership`. Copy for these is drafted in `src/content/copy/`. See `08-current-site-audit.md`.
+
 ## Navigation Structure
 
 **Primary Nav (Header):**
