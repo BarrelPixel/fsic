@@ -7,6 +7,7 @@ import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
 import { mailto } from '../lib/site';
+import Disclosure from '../components/Disclosure.astro';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
 // Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
@@ -152,17 +153,12 @@ const metrics = [
                 </div>
               ))}
               {body.duties && (
-                <details class="group mt-5 border-t border-navy/15">
-                  <summary class="flex items-center justify-between gap-4 pt-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <span class="font-sans text-sm font-semibold text-navy">
-                      {body.duties.label}<span class="font-medium text-gray"> · {body.duties.items.length}</span>
-                    </span>
-                    <svg class="w-5 h-5 shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path d="M10 4v12M4 10h12" stroke-linecap="round" />
-                    </svg>
-                  </summary>
+                <Disclosure class="mt-5 border-t border-navy/15" summaryClass="items-center gap-4 pt-3">
+                  <span slot="summary" class="font-sans text-sm font-semibold text-navy">
+                    {body.duties.label}<span class="font-medium text-gray"> · {body.duties.items.length}</span>
+                  </span>
                   <DashList items={body.duties.items} class="pt-3 text-gray-dark" />
-                </details>
+                </Disclosure>
               )}
             </Row>
           ))}

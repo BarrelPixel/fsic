@@ -1,0 +1,32 @@
+---
+// The Master Plan's programs for one engine (src/lib/programs.ts), each opening in place to its
+// description: lead, the listed items, and the outcome line. Used on the Model page (each engine's
+// "Programs" row) and on Programs & Facilities (the portfolio).
+import Disclosure from './Disclosure.astro';
+import DashList from './DashList.astro';
+import type { Program } from '../lib/programs';
+
+interface Props {
+  programs: Program[];
+  /** Classes for the <ul> (e.g. a top rule). */
+  class?: string;
+  /** Classes for each <li> (the rules between programs). */
+  itemClass?: string;
+}
+
+const { programs, class: className, itemClass = 'border-b border-navy/15' } = Astro.props;
+---
+<ul role="list" class={className}>
+  {programs.map((p) => (
+    <li class={itemClass}>
+      <Disclosure summaryClass="items-start gap-4 py-3" iconClass="mt-px">
+        <span slot="summary" class="font-sans font-semibold text-navy leading-snug">{p.name}</span>
+        <div class="pb-5 pr-9 text-base text-gray-dark">
+          <p class:list={[p.items || p.outcome ? 'mb-2' : 'mb-0']}>{p.lead}</p>
+          {p.items && <DashList items={p.items} class:list={[p.outcome ? 'mb-3' : '']} />}
+          {p.outcome && <p class="mb-0">{p.outcome}</p>}
+        </div>
+      </Disclosure>
+    </li>
+  ))}
+</ul>

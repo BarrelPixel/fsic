@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import { EMAIL, mailto } from '../lib/site';
+import Disclosure from '../components/Disclosure.astro';
 
 // Copy: src/content/copy/faq.md (Draft). Answers are as published on fsic.space, except where the
 // copy deck notes a change: ranges for the economic figures, the five phases, the sourced
@@ -242,13 +243,8 @@ const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:dec
 
         <div class="divide-y divide-navy/15 border-b border-navy/15">
           {t.faqs.map((f) => (
-            <details id={f.id} class="group py-5 first:pt-0 scroll-mt-24">
-              <summary class="flex items-start justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                <h3 class="mb-0 text-xl">{f.q}</h3>
-                <svg class="mt-1 w-5 h-5 shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M10 4v12M4 10h12" stroke-linecap="round" />
-                </svg>
-              </summary>
+            <Disclosure id={f.id} class="py-5 first:pt-0 scroll-mt-24" summaryClass="items-start gap-6" iconClass="mt-1">
+              <h3 slot="summary" class="mb-0 text-xl">{f.q}</h3>
               <div class:list={['pt-4 max-w-3xl text-gray-dark', link]}>
                 {f.a.map((b) =>
                   'p' in b ? (
@@ -270,7 +266,7 @@ const link = '[&_a]:text-navy [&_a]:underline [&_a]:underline-offset-4 [&_a]:dec
                   ),
                 )}
               </div>
-            </details>
+            </Disclosure>
           ))}
         </div>
       </Grid>

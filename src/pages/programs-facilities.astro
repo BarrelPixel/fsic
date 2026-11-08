@@ -7,6 +7,7 @@ import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import DashList from '../components/DashList.astro';
 import { engines } from '../lib/programs';
+import ProgramList from '../components/ProgramList.astro';
 
 // Copy: src/content/copy/programs-facilities.md (Draft). Audiences: fsic.space FAQ (verbatim). Portfolio
 // (src/lib/programs.ts, shared with the Model page):
@@ -105,25 +106,7 @@ const link = 'text-navy underline underline-offset-4 decoration-navy/30 hover:de
         {engines.map((e, i) => (
           <Row label={e.name} count={e.programs.length} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
             <p class="mb-3 text-gray-dark">{e.line}</p>
-            <ul role="list" class="border-t border-navy/15">
-              {e.programs.map((p) => (
-                <li class="border-b border-navy/15">
-                  <details class="group">
-                    <summary class="flex items-start justify-between gap-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                      <span class="font-sans font-semibold text-navy leading-snug">{p.name}</span>
-                      <svg class="w-5 h-5 mt-px shrink-0 text-navy transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M10 4v12M4 10h12" stroke-linecap="round" />
-                      </svg>
-                    </summary>
-                    <div class="pb-5 pr-9 text-base text-gray-dark">
-                      <p class:list={[p.items || p.outcome ? 'mb-2' : 'mb-0']}>{p.lead}</p>
-                      {p.items && <DashList items={p.items} class:list={[p.outcome ? 'mb-3' : '']} />}
-                      {p.outcome && <p class="mb-0">{p.outcome}</p>}
-                    </div>
-                  </details>
-                </li>
-              ))}
-            </ul>
+            <ProgramList programs={e.programs} class="border-t border-navy/15" />
             <p class="mt-3 mb-0 font-sans text-sm">
               <a href={`${base}/model#${e.id}`} class={link}>The {e.name} on the Model page</a>
             </p>
