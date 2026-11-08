@@ -10,7 +10,7 @@ Public website for the Florida Space Innovation Center (FSIC), a coordinated reg
 - **Framework:** [Astro](https://astro.build/) 5 with TypeScript
 - **Styling:** Tailwind CSS v4 (via `@tailwindcss/vite`), design tokens in `src/styles/global.css`
 - **Output:** Static HTML (SSG)
-- **Hosting:** GitHub Pages under the `/fsic` base path, deployed by `.github/workflows/deploy.yml` on push to `main` (Node 24, from `.nvmrc`). The deploy runs `npm run check-links`, so a broken internal link stops it. Production hosting and domain are still open (`docs/07-open-questions.md`).
+- **Hosting:** GitHub Pages under the `/fsic` base path, deployed by `.github/workflows/deploy.yml` on push to `main` (Node 24, from `.nvmrc`). The deploy runs `npm run check` and `npm run check-links`, so a type error or broken internal link stops it. Production hosting and domain are still open (`docs/07-open-questions.md`).
 
 ## Getting Started
 
@@ -19,11 +19,12 @@ npm install          # install dependencies
 npm run dev          # dev server at http://localhost:4321/fsic
 npm run build        # static build to dist/
 npm run preview      # serve the built site
+npm run check        # type-check .astro and .ts files
 npm run check-links  # build, then check every internal link and anchor
 npm run review-items # list every open "⚠ Review" note and open question
 ```
 
-There is no linter or test suite. `npm run build` and `npm run check-links` are the checks.
+There is no linter or test suite. `npm run check` and `npm run check-links` are the checks.
 
 Internal links must include the base path (`import.meta.env.BASE_URL`). `Button` adds it for hrefs starting with `/`.
 

@@ -68,7 +68,7 @@ const padding = {
     {index !== undefined && total !== undefined && (
       <RunningHead index={index} total={total} label={label} dot={dot} dark={dark} />
     )}
-    <div class:list={rule && ['border-t-2 pt-6 md:pt-8', dark ? 'border-white' : 'border-navy']}>
+    <div class:list={[rule && ['border-t-2 pt-6 md:pt-8', dark ? 'border-white' : 'border-navy']]}>
       {hasHeading && (
         <h2 class:list={['max-w-4xl', intro ? 'mb-4' : 'mb-12', dark && 'text-white']}>
           {heading ?? <slot name="heading" />}

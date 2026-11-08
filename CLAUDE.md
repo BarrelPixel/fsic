@@ -7,7 +7,7 @@ Guidance for Claude Code when working in this repository.
 Public website for the **Florida Space Innovation Center (FSIC)**, a regional workforce and innovation initiative based in New Smyrna Beach, Southeast Volusia County, Florida. Built by Barrel & Pixel. It will replace the current Wix site at https://www.fsic.space.
 
 - **Stack:** Astro 5 (static) + Tailwind CSS v4 (via `@tailwindcss/vite`), TypeScript.
-- **Hosting:** GitHub Pages under the `/fsic` base path (`astro.config.mjs`), deployed by `.github/workflows/deploy.yml` on push to `main`. The deploy runs `npm run check-links`, so a broken link fails it.
+- **Hosting:** GitHub Pages under the `/fsic` base path (`astro.config.mjs`), deployed by `.github/workflows/deploy.yml` on push to `main`. The deploy runs `npm run check` and `npm run check-links`, so a type error or broken link fails it.
 
 ## Commands
 
@@ -15,11 +15,12 @@ Public website for the **Florida Space Innovation Center (FSIC)**, a regional wo
 npm run dev       # dev server at http://localhost:4321/fsic
 npm run build     # static build to dist/ (run before finishing any change)
 npm run preview   # serve the built site
+npm run check        # type-check .astro and .ts files (astro check)
 npm run check-links  # build, then check every internal link and anchor (fails on broken ones)
 npm run review-items # list every open "⚠ Review" note in the copy deck and every open question
 ```
 
-There is no linter or test suite. `npm run build` and `npm run check-links` are the checks.
+There is no linter or test suite. `npm run check` (types) and `npm run check-links` (build and links) are the checks; the deploy runs both.
 
 ## Layout
 
@@ -75,6 +76,6 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - The `<html>` element gets a `js` class from an inline script in `BaseLayout`. Use it to gate JS-only states so the page still works without JS.
 
 ## Before finishing a change
-1. `npm run build` succeeds, and `npm run check-links` reports no broken links.
+1. `npm run check` reports no errors, and `npm run check-links` builds and reports no broken links.
 2. Check the page at desktop width and at 375px. Nothing scrolls horizontally, and keyboard focus is visible.
 3. If copy changed, update the copy file's status, and the status table in `docs/09-copy-deck.md` if needed.

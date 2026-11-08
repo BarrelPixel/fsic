@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Type check
+        run: npm run check
+
       # Builds the site, then fails the deploy on a broken internal link or anchor.
       - name: Build and check links
         run: npm run check-links
