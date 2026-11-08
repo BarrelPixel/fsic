@@ -244,14 +244,16 @@ const engines: Engine[] = [
     {engines.map((engine, i) => (
       <section id={engine.id} aria-labelledby={`${engine.id}-title`} class="scroll-mt-12">
         <div class="container pt-14 pb-16 md:pt-20 md:pb-24">
+          <!-- Running head: the index sits on the section rule, so the name and summary share one top line below it -->
+          <p class="font-sans text-sm text-gray tabular-nums flex items-center gap-2 mb-2" aria-hidden="true">
+            <span class:list={['w-2.5 h-2.5 rounded-full', engine.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']}></span>
+            {String(i + 1).padStart(2, '0')} / {String(engines.length).padStart(2, '0')}
+          </p>
           <div class="grid gap-y-8 lg:grid-cols-12 lg:gap-x-8 border-t-2 border-navy pt-6 md:pt-8">
 
-            <!-- LABEL COLUMN: index, name, what it transforms, launch position -->
-            <header class="lg:col-span-4">
-              <p class="font-sans text-sm text-gray tabular-nums flex items-center gap-2 mb-3">
-                <span class:list={['w-2.5 h-2.5 rounded-full', engine.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']} aria-hidden="true"></span>
-                {String(i + 1).padStart(2, '0')}
-              </p>
+            <!-- LABEL COLUMN: name, what it transforms, launch position. Pinned on wide screens so the
+                 engine stays named while its rows scroll past (below the 3.25rem engine bar). -->
+            <header class="lg:col-span-4 lg:sticky lg:top-20 lg:self-start">
               <h2 id={`${engine.id}-title`} class="mb-4">{engine.name}</h2>
               <p class:list={['font-sans font-medium mb-0', engine.tone === 'lagoon' ? 'text-lagoon' : 'text-gray-dark']}>{engine.shift}</p>
               {engine.launchesFirst && (
@@ -261,17 +263,17 @@ const engines: Engine[] = [
 
             <!-- CONTENT COLUMN -->
             <div class="lg:col-span-8">
-              <p class="text-2xl text-navy leading-snug mb-10 max-w-3xl">{engine.summary.join(' ')}</p>
+              <p class="text-2xl text-navy leading-snug mb-10 max-w-3xl lg:pt-1">{engine.summary.join(' ')}</p>
 
               <dl>
                 <div class="grid gap-y-2 md:grid-cols-8 md:gap-x-8 border-t border-navy/15 py-5">
-                  <dt class="md:col-span-2 font-sans text-sm font-semibold text-navy">Brings together</dt>
+                  <dt class="md:col-span-2 md:pt-[0.3rem] font-sans text-sm font-semibold text-navy">Brings together</dt>
                   <dd class="md:col-span-6 font-sans text-gray-dark">{engine.together.join(' · ')}</dd>
                 </div>
 
                 <!-- The before/after pair: adjacent rows on the same axis -->
                 <div class="grid gap-y-3 md:grid-cols-8 md:gap-x-8 border-t border-navy/15 py-5">
-                  <dt class="md:col-span-2 font-sans text-sm font-semibold text-navy">What it solves</dt>
+                  <dt class="md:col-span-2 md:pt-[0.3rem] font-sans text-sm font-semibold text-navy">What it solves</dt>
                   <dd class="md:col-span-6">
                     <ul class="flex flex-col gap-2" role="list">
                       {engine.solves.map((gap) => (
@@ -285,7 +287,7 @@ const engines: Engine[] = [
                 </div>
 
                 <div class="grid gap-y-3 md:grid-cols-8 md:gap-x-8 border-t border-navy/15 py-5">
-                  <dt class="md:col-span-2 font-sans text-sm font-semibold text-navy">Regional impact</dt>
+                  <dt class="md:col-span-2 md:pt-[0.3rem] font-sans text-sm font-semibold text-navy">Regional impact</dt>
                   <dd class="md:col-span-6">
                     <ul class="flex flex-col gap-2" role="list">
                       {engine.impact.map((result) => (
@@ -300,7 +302,7 @@ const engines: Engine[] = [
 
                 <!-- The program catalogue: one column on the same axis; each item opens in place -->
                 <div class="grid gap-y-1 md:grid-cols-8 md:gap-x-8 border-t border-navy/15 pt-5">
-                  <dt class="md:col-span-2 font-sans text-sm font-semibold text-navy">
+                  <dt class="md:col-span-2 md:pt-[0.3rem] font-sans text-sm font-semibold text-navy">
                     Components <span class="font-medium text-gray">· {engine.components.length}</span>
                   </dt>
                   <dd class="md:col-span-6 md:-mt-3">
