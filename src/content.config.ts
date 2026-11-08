@@ -1,11 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-const copy = defineCollection({
-  type: 'content',
-  schema: z.object({}),
-});
-
 // Press releases: one Markdown file per release, wording as published (see src/content/copy/news.md).
 // The file name (without .md) is the URL slug: /news/<slug>.
 const news = defineCollection({
@@ -22,4 +17,5 @@ const news = defineCollection({
       .refine((d) => !d.image || d.imageAlt, { message: 'imageAlt is required when image is set' }),
 });
 
-export const collections = { copy, news };
+// src/content/copy/ is the copy deck: Markdown documents for people, not a collection the site reads.
+export const collections = { news };

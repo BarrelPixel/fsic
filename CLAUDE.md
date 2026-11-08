@@ -16,6 +16,7 @@ npm run dev       # dev server at http://localhost:4321/fsic
 npm run build     # static build to dist/ (run before finishing any change)
 npm run preview   # serve the built site
 npm run check-links  # build, then check every internal link and anchor (fails on broken ones)
+npm run review-items # list every open "⚠ Review" note in the copy deck and every open question
 ```
 
 There is no linter or test suite. `npm run build` and `npm run check-links` are the checks.
@@ -34,8 +35,10 @@ src/content/news/    Press releases, one Markdown file each, wording as publishe
 src/lib/news.ts      Press release helpers
 src/lib/nav.ts       Site navigation (groups and links), shared by Header and Footer
 src/lib/site.ts      EMAIL, mailto(), SOCIAL_LINKS: use these, don't retype the address or links
-src/lib/programs.ts  The Master Plan's program portfolio (Model and Programs & Facilities pages)
 src/lib/format.ts    pad2() for 01, 02… numbering
+src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
+                     ranges, read by home, Economic Impact, Partnership & Funding and the FAQ), phases,
+                     engines, programs, faq, partnership, governance
 docs/                Project docs 00–09 (IA, content guidelines, site audit, copy-deck workflow)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
@@ -56,7 +59,7 @@ Read **`DESIGN.md`** before changing any UI. In short:
 ### Copy
 - Wording comes from `src/content/copy/<page>.md`. Press releases are the exception: each is a file in `src/content/news/`, kept as published. Write and approve copy there first, then build it into the page. The workflow and markers (`> Source`, `⚠ Review`, `[TODO]`) are in `docs/09-copy-deck.md`.
 - Follow `docs/03-content-guidelines.md`: institutional tone, no hype words, no exclamation marks.
-- **Economic figures must match the Master Plan exactly, shown as ranges** ("$10.2–$12.4 billion"), never only the upper bound.
+- **Economic figures must match the Master Plan exactly, shown as ranges** ("$10.2–$12.4 billion"), never only the upper bound. They are defined once, in `src/data/economics.ts` (`FIGURES`); pages read them from there.
 - Don't invent partners, quotes, testimonials, logos or statistics. When unsure, leave it out.
 - Don't name a specific campus site or the development the Master Plan proposes for it, anywhere on the site or in the docs (decided November 2026; `docs/08-current-site-audit.md` §3.3). Say "Southeast Volusia" or "the region".
 - Open content conflicts (development figures, unsourced claims, which economic scenario the headline figures describe) are listed in `docs/08-current-site-audit.md` §3 and `docs/07-open-questions.md`. Don't settle them in copy without the user.

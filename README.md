@@ -20,6 +20,7 @@ npm run dev          # dev server at http://localhost:4321/fsic
 npm run build        # static build to dist/
 npm run preview      # serve the built site
 npm run check-links  # build, then check every internal link and anchor
+npm run review-items # list every open "⚠ Review" note and open question
 ```
 
 There is no linter or test suite. `npm run build` and `npm run check-links` are the checks.
@@ -38,7 +39,8 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
 │   ├── favicon.svg, favicon.ico
 │   └── images/                  # Logo (light and reverse), campus concept rendering
 ├── scripts/
-│   └── check-links.mjs          # Run via `npm run check-links`
+│   ├── check-links.mjs          # Run via `npm run check-links`
+│   └── review-items.mjs         # Run via `npm run review-items`
 └── src/
     ├── assets/                  # Images processed by astro:assets (homepage hero photo)
     ├── components/
@@ -50,8 +52,8 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
     ├── lib/news.ts              # Press release helpers (sorting, dates, excerpts)
     ├── lib/nav.ts               # Site navigation, shared by Header and Footer
     ├── lib/site.ts              # Email address and social links
-    ├── lib/programs.ts          # Master Plan program portfolio
     ├── lib/format.ts            # pad2() numbering helper
+    ├── data/                    # Page content as typed data (economics, phases, engines, programs, faq, …)
     ├── layouts/BaseLayout.astro # Meta tags, fonts, header and footer
     ├── pages/                   # One .astro file per route; pages/news/ holds the list and [slug] pages
     └── styles/global.css        # Design tokens (@theme), base styles, arc animation
