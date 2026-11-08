@@ -43,16 +43,17 @@ Example: in the four-engine section, Talent, Innovation and Market get orange ma
 
 ## Typography
 
-One family: **Archivo** (variable, loaded from Google Fonts with the width and weight axes).
+Two families with clearly separate jobs:
 
 | Role | Setting |
 |------|---------|
-| H1, H2, wordmark, key figures | `font-stretch: 125%` (expanded), weight 700–750. The wide letterforms recall 1960s launch-era signage and tie into the May 25, 1961 founding story |
-| H3, H4, emphasis lines | `font-stretch: 112%`, weight 650 |
-| Body | Normal width, 17px, line-height 1.65 |
+| H1–H4, wordmark, key figures, emphasis lines | **Barlow Semi Condensed** (`font-display`), weights 600–700. Tall, compact, engineered signage: launch-control directness, and it fits more text per line on phones |
+| Body, UI, labels | **Archivo** (`font-sans`), weights 400–700, 17px, line-height 1.65 |
 
-- Headline sizes use `clamp()` in `global.css`. Don't hard-code heading sizes in pages without a reason.
-- Set expanded type in title case or sentence case. **No all-caps labels and no tracked-out eyebrow text.**
+- Both load from Google Fonts in `BaseLayout.astro`. Barlow loads 500, 600 and 700 only, so don't ask for 400 in display type.
+- Headline sizes use `clamp()` in `global.css`. Condensed type looks smaller at the same size, so display text outside headings uses one step up (`text-2xl` for emphasis lines, `text-3xl`/`text-4xl` for figures).
+- Use `font-display` for non-heading display text (wordmark, figures, closing lines). Don't hard-code heading sizes in pages without a reason.
+- Set display type in title case or sentence case. **No all-caps labels and no tracked-out eyebrow text.**
 - Don't color a single word or phrase inside a headline. Emphasis comes from a change of weight or a separate line.
 - Keep lines under about 75 characters (`max-w-3xl` or a grid column).
 
@@ -92,7 +93,7 @@ One family: **Archivo** (variable, loaded from Google Fonts with the width and w
 |-----------|-------|
 | `Button` | `primary` (orange with night text), `secondary` (navy outline), `secondary-light` (white outline on dark). Small 2px radius. Joins `BASE_URL` for internal hrefs |
 | `CoastlineMap` | The signature element. Scripted only for the visibility trigger |
-| `Header` / `Footer` | `night` background, expanded wordmark, social links in the footer |
+| `Header` / `Footer` | `night` background, Barlow wordmark, social links in the footer |
 | `ComingSoon` | Placeholder for interior pages until they're built |
 
 ## Accessibility floor

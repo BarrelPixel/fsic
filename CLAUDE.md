@@ -39,7 +39,7 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - The coastline and launch arc is the only signature element and the only automatic animation.
 - Orange means the space industry. Lagoon green means the community. Don't use either as decoration.
 - Never put white text on orange, and never use orange text on light backgrounds (contrast).
-- Archivo, with expanded width for headings. No all-caps eyebrow labels, no fade-in on scroll, no identical shadowed cards.
+- Barlow Semi Condensed for headings and display text (`font-display`), Archivo for body. No all-caps eyebrow labels, no fade-in on scroll, no identical shadowed cards.
 
 ### Copy
 - Wording comes from `src/content/copy/<page>.md`. Write and approve copy there first, then build it into the page. The workflow and markers (`> Source`, `⚠ Review`, `[TODO]`) are in `docs/09-copy-deck.md`.
