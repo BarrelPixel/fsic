@@ -15,12 +15,15 @@ Keep the wording as published, including quotes. Fix only obvious formatting (bo
 
 | Date | File |
 |------|------|
+| August 3, 2026 | `2026-08-03-jake-johansson-joins-founders-council.md` |
 | July 29, 2026 | `2026-07-29-ryan-trine-joins-board.md` |
 | July 13, 2026 | `2026-07-13-diezel-depew-joins-board.md` |
 | July 7, 2026 | `2026-07-07-jessie-thompson-joins-board.md` |
 | May 25, 2026 | `2026-05-25-fsic-launches-on-may-25.md` |
 
 > **Source:** fsic.space/news (verbatim). Checked November 8, 2026: no releases newer than July 29.
+> **August 3 release (Jake Johansson, Founders Council):** text and graphic supplied by the project lead (November 8, 2026), not taken from fsic.space. Added as supplied; the only changes are the bold dateline and ordinary hyphens in place of non-breaking ones ("county-level", "fastest-growing", "long-term", "forward-looking").
+> **⚠ Review:** The site doesn't describe a Founders Council anywhere else. The Governance page names a Board of Directors and a Multi-Institution Advisory Council. Add the Founders Council to the governance copy (`governance.md`) if it is a standing body.
 > **Note:** The releases use words the content guidelines avoid ("proud to announce", "premier hub"). They stay as published.
 > **Images:** each release shows the graphic published with it on fsic.space/news (November 2026). The files are in `src/content/news/images/`, set by `image` and `imageAlt` in each release's frontmatter. The alt text transcribes the words in the graphic.
 
@@ -38,13 +41,13 @@ Keep the wording as published, including quotes. Fix only obvious formatting (bo
 
 > **⚠ Review:** Lead and aside are new. The media contact uses the general address rather than a named person until titles are confirmed (audit §3.6, §3.8).
 
-Each row shows the date, the headline (linking to the release) and the release's first paragraph without its dateline. On wide screens, a thumbnail of the release graphic sits under the date.
+Each row shows the date, the headline (linking to the release) and the release's first sentence, without its dateline (`firstSentence()` in `src/lib/news.ts`; initials such as "U.S." don't end a sentence). On wide screens, a thumbnail of the release graphic, all at one height, sits under the date and also links to the release.
 
 ---
 
 ## RELEASE PAGE
 
-Headline, then "<date> · Press release", the release graphic beside the text (above it on small screens; also the page's share image), the release text, a link back to "All news and media", and a "More news" list of the other releases. The meta description is the first paragraph, shortened to about 155 characters.
+Headline, then "<date> · Press release", the release graphic beside the text (after it on small screens, so the text comes first; also the page's share image), the release text, a link back to "All news and media", and a "More news" list of the other releases. The meta description is the first paragraph, shortened to about 155 characters.
 
 ---
 
