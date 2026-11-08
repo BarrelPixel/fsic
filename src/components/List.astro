@@ -1,14 +1,13 @@
 ---
-// A list as lines flush with the column like a paragraph, on the 28px reading leading, with hairline
-// rules between items and no markers (DESIGN.md "Structure should show what the content is"). The
-// rules come from `.list` in global.css: a rule above the list unless it opens its column, none under
-// the last item, and the on-dark rule color inside night sections. When a list's meaning matters
-// (problems vs. impact), say it on the list's label: Row's `dot`.
+// A list with a small chevron on the column edge and the text 16px in, on the 28px reading leading,
+// items separated by space (DESIGN.md "Structure should show what the content is"). The chevron comes
+// from `.list` in global.css. When a list's meaning matters (problems vs. impact), say it on the
+// list's label: Row's `dot`.
 interface Props {
   items: string[];
   /** Two columns from sm (short items only). */
   columns?: boolean;
-  /** More room around each item (12px instead of 8px), for items that run to several lines. */
+  /** 12px between items instead of 8px, for items that run to several lines. */
   spacious?: boolean;
   /** Items are trusted, hand-written HTML (links, <strong>), rendered with set:html. */
   html?: boolean;
@@ -18,7 +17,7 @@ interface Props {
 const { items, columns = false, spacious = false, html = false, class: className } = Astro.props;
 ---
 <ul
-  class:list={['list', columns ? 'list-columns grid gap-x-8 sm:grid-cols-2' : 'flex flex-col', spacious && 'list-spacious', className]}
+  class:list={['list', columns ? 'grid gap-x-8 gap-y-2 sm:grid-cols-2' : ['flex flex-col', spacious ? 'gap-3' : 'gap-2'], className]}
   role="list"
 >
   {items.map((item) => (html ? <li set:html={item} /> : <li>{item}</li>))}
