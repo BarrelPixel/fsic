@@ -23,6 +23,9 @@ interface Props {
 
 const { title, image, description = 'The Florida Space Innovation Center is a coordinated regional platform strengthening workforce, innovation, and economic growth for Southeast Volusia and the Space Coast.' } = Astro.props;
 const ogImage = image ? new URL(image, Astro.site).href : undefined;
+// The page's own address on the deployed site (astro.config.mjs `site` + base path). Every page is built
+// as a directory (…/page/index.html), so its address ends in a slash; the homepage would otherwise lack one.
+const canonical = new URL(Astro.url.pathname.replace(/\/?$/, '/'), Astro.site).href;
 const pageTitle = title === 'Florida Space Innovation Center' ? title : `${title} | Florida Space Innovation Center`;
 ---
 <!DOCTYPE html>
@@ -33,11 +36,13 @@ const pageTitle = title === 'Florida Space Innovation Center' ? title : `${title
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Florida Space Innovation Center" />
     {ogImage && <meta property="og:image" content={ogImage} />}
 

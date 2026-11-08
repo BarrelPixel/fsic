@@ -95,6 +95,7 @@ const itemClass = (active: boolean) => [
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-toggle"
+        type="button"
         class="lg:hidden p-2 text-white hover:bg-white/10 transition-colors"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -146,12 +147,21 @@ const itemClass = (active: boolean) => [
   const menuIcon = document.getElementById('menu-icon');
   const closeIcon = document.getElementById('close-icon');
 
-  toggle?.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    menu?.classList.toggle('hidden');
-    menuIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
+  const setMenu = (open: boolean) => {
+    toggle?.setAttribute('aria-expanded', String(open));
+    menu?.classList.toggle('hidden', !open);
+    menuIcon?.classList.toggle('hidden', open);
+    closeIcon?.classList.toggle('hidden', !open);
+  };
+  const menuOpen = () => toggle?.getAttribute('aria-expanded') === 'true';
+
+  toggle?.addEventListener('click', () => setMenu(!menuOpen()));
+  // Escape closes the phone menu and returns focus to its button, as with the dropdowns.
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menuOpen()) {
+      setMenu(false);
+      toggle?.focus();
+    }
   });
 
   // Desktop dropdowns (disclosure pattern)
