@@ -76,18 +76,19 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     Copy is verbatim from src/content/copy/home.md.
   -->
 
-  <!-- HERO: the launch photo, full-bleed. The text sits over the open sky on the left; a night gradient
-       keeps it readable (left to right on lg, top to bottom below). The plume and coastline stay clear
-       on the right. The coastline map is in section 01. -->
+  <!-- HERO: the launch photo. It always shows its full height (plume tip to dunes), anchored right,
+       never cropped at the top: on screens wider than the photo, its left edge fades into night under
+       the text. The text sits over the sky on the left; a night gradient keeps it readable (left to
+       right on lg, top to bottom below). The coastline map is in section 01. -->
   <section class="relative bg-night text-white overflow-hidden">
     <Image
       src={heroImage}
       alt="A rocket's exhaust plume climbs into a clear sky above the ocean, seen from the dunes along the coast."
-      widths={[640, 960, 1280, 1440]}
-      sizes="100vw"
+      widths={[1440]}
+      sizes="1440px"
       loading="eager"
       fetchpriority="high"
-      class="absolute inset-0 w-full h-full object-cover object-[80%_100%]"
+      class="hero-photo absolute -right-36 md:right-0 top-0 h-full w-auto max-w-none"
     />
     <div class="absolute inset-0 bg-linear-to-b from-night/90 via-night/80 to-night/50 lg:bg-linear-to-r lg:from-night/90 lg:via-night/65 lg:via-45% lg:to-night/0 lg:to-75%" aria-hidden="true"></div>
     <div class="relative container pt-16 pb-40 md:pt-24 md:pb-48 lg:pb-56 grid lg:grid-cols-12 lg:gap-x-8">
