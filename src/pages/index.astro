@@ -13,6 +13,7 @@ import { pad2 } from '../lib/format';
 import { sectionProps } from '../lib/sections';
 import { FIGURES, SOURCE } from '../data/economics';
 import { engines } from '../data/engines';
+import { phases, type Tone } from '../data/phases';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 import RangeBar from '../components/RangeBar.astro';
 import RangeLegend from '../components/RangeLegend.astro';
@@ -50,6 +51,8 @@ const value = [
 // The numbered sections in page order: their running heads (01 / 07…) follow this list.
 const sections = ['strategic-moment', 'economic-impact', 'news', 'model', 'deployment', 'value', 'governance', 'vision'].map((id) => ({ id }));
 const at = (id: string) => sectionProps(sections, id);
+
+const toneDot: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lagoon', navy: 'bg-navy' };
 
 // The three newest press releases (src/content/news/), as published.
 const latest = (await getReleases()).slice(0, 3);
@@ -254,15 +257,28 @@ const audiences = [
         As partnerships deepen and demand grows, the Innovation, Market, and Civic Engines scale in alignment with regional development timelines.
       </p>
 
-      <ol class="grid gap-y-6 md:grid-cols-2 md:gap-x-8 mb-10">
-        <li class="border-t-2 border-orange pt-4">
-          <h3 class="mb-1">First: the Talent Engine</h3>
-          <p class="mb-0">Minimal physical footprint. Immediate workforce and employer-support outcomes.</p>
-        </li>
-        <li class="border-t-2 border-navy/25 pt-4">
-          <h3 class="mb-1">Then: Innovation, Market, and Civic</h3>
-          <p class="mb-0">Each scales as partnerships deepen and demand grows.</p>
-        </li>
+      <!-- The five phases (src/data/phases.ts) as rows: phase and timeframe (2 of 8 cols) | name (6 of 8).
+           Phase 1 names the Talent Engine programs it launches (Master Plan p. 13). The dot is
+           the phase's engine color (orange industry, lagoon Civic, navy integration). -->
+      <ol class="border-t border-rule" aria-label="The five phases">
+        {phases.map((phase, i) => (
+          <li class="grid gap-y-1 py-4 border-b border-rule last:border-b-0 md:grid-cols-8 md:gap-x-8 md:items-baseline">
+            <p class="md:col-span-2 mb-0 text-label text-gray-dark tabular-nums flex items-center gap-2">
+              <span class:list={['w-2 h-2 rounded-full shrink-0', toneDot[phase.tone]]} aria-hidden="true"></span>
+              Phase {i + 1} · {phase.timeframe}
+            </p>
+            <div class="md:col-span-6">
+              <h3 class="text-xl mb-0">
+                <a href={url(`/deployment#${phase.id}`)} class="underline-reveal underline-offset-4 decoration-2">{phase.name}</a>
+              </h3>
+              {i === 0 && (
+                <p class="mt-2 mb-0 text-gray-dark">
+                  Micro-credential academies, dual-enrollment STEM pathways, teacher upskilling, and the Regional Talent Marketplace.
+                </p>
+              )}
+            </div>
+          </li>
+        ))}
       </ol>
 
       <dl class="mb-8">

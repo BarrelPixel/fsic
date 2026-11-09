@@ -125,6 +125,11 @@ This phased approach:
 
 Growth is structured. Not speculative.
 
+**Phases:** the five phases from `src/data/phases.ts`, each as "Phase N · timeframe" and its name, linking to that phase on the Deployment page. Phase 1 adds:
+Micro-credential academies, dual-enrollment STEM pathways, teacher upskilling, and the Regional Talent Marketplace.
+
+> **Changed (November 2026):** the two blocks that repeated the body ("First: the Talent Engine / Then: Innovation, Market, and Civic") are replaced by the five phases with their timeframes, so the section shows the sequence and what comes first (homepage review). Phase names and timeframes are the Deployment page's (Master Plan pp. 13–14). **⚠ Review:** the Phase 1 line is new, drawn from the Master Plan's Phase 1 activities (p. 13).
+
 **CTA:** View the Deployment Timeline
 
 ---
