@@ -28,8 +28,25 @@ const items = nav.map((item, i) =>
         label: item.label,
         links: item.links.map((l) => ({ label: l.label, href: navHref(l.path), active: isActive(navHref(l.path)) })),
       }
-    : { kind: 'link' as const, label: item.label, href: navHref(item.path), active: isActive(navHref(item.path)) },
+    : { kind: 'link' as const, label: item.label, href: navHref(item.path), active: isActive(navHref(item.path)), cta: item.cta === true },
 );
+
+// Phone menu: the groups, then the single links together, then the call to action as a button.
+type Item = (typeof items)[number];
+type GroupItem = Extract<Item, { kind: 'group' }>;
+type LinkItem = Extract<Item, { kind: 'link' }>;
+const mobileGroups = items.filter((item): item is GroupItem => item.kind === 'group');
+const singles = items.filter((item): item is LinkItem => item.kind === 'link');
+const mobileLinks = singles.filter((item) => !item.cta);
+const mobileCta = singles.find((item) => item.cta);
+
+// Phone menu links: larger than the group names, so the names read as headings. The current page has
+// a white bar just outside the text's left edge (-ml-3.5 = the 2px bar + 12px padding), so the text
+// stays aligned with the group names. Rows are 44px, the minimum touch target.
+const mobileLinkClass = (active: boolean) => [
+  'block -ml-3.5 pl-3 pr-3 py-2 text-lg border-l-2 transition-colors',
+  active ? 'border-white bg-white/10 text-white font-semibold' : 'border-transparent font-medium text-white/85 hover:text-white hover:bg-white/10',
+];
 const groupActive = (links: { active: boolean }[]) => links.some((l) => l.active);
 
 const itemClass = (active: boolean) => [
@@ -108,33 +125,44 @@ const itemClass = (active: boolean) => [
     </nav>
   </div>
 
-  <!-- Mobile Menu: groups listed under their names (no nested toggles), rules between entries -->
+  <!-- Mobile Menu (DESIGN.md "Components", Header): each group under its name, a small label; the single
+       links together after them, in two columns (their labels are short); then Get Involved as the
+       menu's one button. Pages are larger than the
+       group names, so the groups read as headings over their pages. -->
   <div id="mobile-menu" class="mobile-menu hidden lg:hidden bg-night border-t border-white/10">
-    <div class="container py-2">
-      <ul class="divide-y divide-white/10" role="list">
-        {items.map((item) =>
-          item.kind === 'group' ? (
-            <li class="py-2">
-              <p id={`${item.id}-m`} class="px-3 pt-2 pb-1 mb-0 text-sm font-semibold text-white/60">{item.label}</p>
-              <ul class="flex flex-col gap-1" role="list" aria-labelledby={`${item.id}-m`}>
-                {item.links.map((link) => (
-                  <li>
-                    <a href={link.href} class:list={['block py-2.5', itemClass(link.active)]} aria-current={link.active ? 'page' : undefined}>
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ) : (
-            <li class="py-2">
-              <a href={item.href} class:list={['block py-2.5', itemClass(item.active)]} aria-current={item.active ? 'page' : undefined}>
-                {item.label}
-              </a>
-            </li>
-          ),
-        )}
+    <div class="container pt-1 pb-5">
+      {mobileGroups.map((group) => (
+        <div class="py-2.5 border-b border-white/10">
+          <p id={`${group.id}-m`} class="mb-1 text-label text-white/60">{group.label}</p>
+          <ul role="list" aria-labelledby={`${group.id}-m`}>
+            {group.links.map((link) => (
+              <li>
+                <a href={link.href} class:list={mobileLinkClass(link.active)} aria-current={link.active ? 'page' : undefined}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <ul class="py-2.5 grid grid-cols-2 gap-x-8" role="list">
+        {mobileLinks.map((link) => (
+          <li>
+            <a href={link.href} class:list={mobileLinkClass(link.active)} aria-current={link.active ? 'page' : undefined}>
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
+      {mobileCta && (
+        <a
+          href={mobileCta.href}
+          class="flex items-center justify-center w-full px-7 py-3.5 font-semibold border-2 border-orange-deep bg-orange-deep text-white hover:bg-orange-deeper hover:border-orange-deeper transition-colors"
+          aria-current={mobileCta.active ? 'page' : undefined}
+        >
+          {mobileCta.label}
+        </a>
+      )}
     </div>
   </div>
 </header>
