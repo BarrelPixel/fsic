@@ -13,6 +13,7 @@ import { pad2 } from '../lib/format';
 import { sectionProps } from '../lib/sections';
 import { FIGURES, SOURCE } from '../data/economics';
 import { engines } from '../data/engines';
+import { faqs } from '../data/faq';
 import { phases, type Tone } from '../data/phases';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 import RangeBar from '../components/RangeBar.astro';
@@ -52,6 +53,13 @@ const latest = (await getReleases()).slice(0, 3);
 
 // Who can take part, each linking to what FSIC offers them: the stakeholder rows on Partnership &
 // Funding (src/data/partnership.ts ids), and for residents the programs by audience.
+// Residents' common questions, linking to their answers on /faq (questions as published there).
+const commonQuestions = ['residents-and-families', 'compete', 'funding', 'location'].map((id) => {
+  const f = faqs.find((faq) => faq.id === id);
+  if (!f) throw new Error(`index.astro: no FAQ question "${id}"`);
+  return f;
+});
+
 const audiences = [
   { label: 'Employers', href: '/partnership-funding#employers' },
   { label: 'University leaders', href: '/partnership-funding#higher-ed' },
@@ -379,6 +387,11 @@ const audiences = [
           <Button href="/partnership-funding" variant="primary">Become a Partner</Button>
           <Button href="/contact" variant="secondary">Contact FSIC</Button>
         </div>
+        <dl class="mt-14 mb-0">
+          <Row label="Common questions" class="pb-0">
+            <List items={commonQuestions.map((f) => `<a href="${url(`/faq#${f.id}`)}" class="link">${f.q}</a>`)} html />
+          </Row>
+        </dl>
       </div>
     </Grid>
   </Section>

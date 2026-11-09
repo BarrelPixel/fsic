@@ -204,4 +204,8 @@ Whether you are an employer, university leader, policymaker, workforce partner, 
 
 **CTAs:** Become a Partner; Contact FSIC
 
+**Common questions:** four FAQ questions, as published on `/faq`, each linking to its answer: How will FSIC benefit local residents and families? Will FSIC compete with local schools, colleges, or nonprofits? How is FSIC funded? Where will FSIC be located?
+
+> **Added (November 2026):** the questions residents ask most, linked from the close so they reach the answers without writing in (homepage review). **⚠ Review:** the label "Common questions" and the choice of questions are new.
+
 > **Links (November 2026):** each audience in the list beside the body links to what FSIC offers it: Employers → Partnership & Funding, Employers & Industry; University leaders → State College & Universities; Policymakers → Local Government; Workforce partners → Economic Development & Workforce Agencies; Community members → Programs & Facilities, Programs by Audience (homepage review). Wording unchanged.
