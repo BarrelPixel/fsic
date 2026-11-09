@@ -68,6 +68,10 @@ FSIC is designed to align education, industry, and community in one coordinated 
 - $1.35–$1.55 Billion in new wages for Florida workers
 - $690–$910 Million in fiscal revenue for local and state governments
 
+**Note under the figures:** A job-year is one job held for one year.
+
+> **Added (November 2026):** the least familiar of the four measures, explained in one line (homepage review). **⚠ Review:** new line; check it against the Master Plan's usage.
+
 **Body outro:**
 In addition, FSIC positions the region to attract $800 million to $1.56 billion in external federal, state, private, and philanthropic investment tied to research, innovation, and workforce development.
 
