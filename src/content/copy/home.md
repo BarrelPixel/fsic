@@ -4,7 +4,7 @@
 **Last Updated:** February 2026
 
 > **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
-> - "Southeast Volusia launches" (hero) → the May 25, 2026 launch press release
+> - "Southeast Volusia launched" (hero) → the May 25, 2026 launch press release
 > - "local career pathways" (05, Talent Attraction & Retention) → Programs & Facilities, Audiences
 > - "pursue and coordinate funding" (05, Alignment with Major Funding Channels) → Partnership & Funding, Funding
 
@@ -21,9 +21,11 @@
 **Body:**
 On May 25, 1961, the United States committed to landing a man on the Moon — not because it was easy, but because it demanded coordination, capability, and national resolve.
 
-Sixty-five years later, Southeast Volusia launches its own coordinated commitment: to strengthen our regional workforce, accelerate innovation, support industry growth, and ensure that the Space Coast's expansion directly benefits the people who live and work here.
+Sixty-five years later, Southeast Volusia launched its own coordinated commitment: to strengthen our regional workforce, accelerate innovation, support industry growth, and ensure that the Space Coast's expansion directly benefits the people who live and work here.
 
 The Florida Space Innovation Center is that commitment in action.
+
+> **Changed (November 2026):** "launches" → "launched". The copy was written for launch day, May 25, 2026; the launch has happened (homepage review). **⚠ Review:** one-word change to approved copy.
 
 **CTAs:** Get Involved; View Economic Impact
 
