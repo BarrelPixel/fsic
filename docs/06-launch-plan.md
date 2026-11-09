@@ -88,4 +88,4 @@
 - [ ] DNS propagation is complete
 - [x] 404 page is styled and helpful (`src/pages/404.astro`; its copy in `site-wide.md` still needs review)
 - [ ] Analytics tracking is active
-- [ ] Redirects are configured (if migrating from existing site). Old fsic.space addresses (`08-current-site-audit.md` §2) land on the 404 page until redirects are set up; GitHub Pages can't do server redirects, so this depends on the production host
+- [ ] Redirects are configured (if migrating from existing site). Old fsic.space addresses (`08-current-site-audit.md` §1) land on the 404 page until redirects are set up; GitHub Pages can't do server redirects, so this depends on the production host

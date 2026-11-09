@@ -22,7 +22,7 @@ Items requiring stakeholder input or decisions before full launch.
 - [ ] **Hosting provider:** Where will the production site be hosted? (The build currently deploys to GitHub Pages under `/fsic` for review. Vercel, Netlify, AWS, other?)
 - [ ] **Domain:** What is the production domain? (e.g., `fsic.org`, `floridaspaceinnovation.org`, etc.)
 - [ ] **Analytics:** Google Analytics 4? Plausible? Other?
-- [ ] **Redirects from fsic.space:** map the old Wix addresses (`08-current-site-audit.md` §2, e.g. `/about-4`) to their new pages. Needs a host that supports redirects; until then they land on the 404 page.
+- [ ] **Redirects from fsic.space:** map the old Wix addresses (`08-current-site-audit.md` §1, e.g. `/about-4`) to their new pages. Needs a host that supports redirects; until then they land on the 404 page.
 - [ ] **Search indexing before launch:** should the GitHub Pages preview be kept out of search results? When to add the sitemap (`@astrojs/sitemap`) and `robots.txt`? (Both depend on the production domain.)
 - [ ] **Default share image:** pages other than press releases have no `og:image`. Which image should represent the site when a page is shared?
 - [ ] **Form backend:** What service for contact form submissions? (Netlify Forms, Formspree, custom API?)
