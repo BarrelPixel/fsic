@@ -5,6 +5,9 @@
 **Route:** /strategic-moment (built November 2026)
 **Sources:** fsic.space/about-4 ("Why Now — The Strategic Moment"); Master Plan pp. 4–6
 
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged.
+> - "Billions in funding" (02) → Partnership & Funding, Funding
+
 ---
 
 ## HERO

@@ -5,6 +5,9 @@
 **Route:** /governance
 **Sources:** fsic.space FAQ; fsic.space/news (board appointments); Master Plan pp. 15–17, 29–32
 
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged.
+> - "each engine" (Executive Leadership) → The FSIC Model
+
 > **Built (November 2026)** from this file. Left out until confirmed: the names of board members and the founder transition (see the ⚠ notes below). Master Plan text is from a PDF text extraction; obvious extraction errors are corrected ("Oficer" → "Officer", "SIC's" → "FSIC's", "certihcation" → "certification", "diversihcation" → "diversification").
 
 ---

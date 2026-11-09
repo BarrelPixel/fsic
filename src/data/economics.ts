@@ -2,6 +2,8 @@
 // exactly and appear as ranges. Every page that shows them reads this file (home, Economic Impact,
 // Partnership & Funding, the FAQ), so a correction is made once.
 // Copy: src/content/copy/economic-impact.md and home.md.
+// Scenario bodies are trusted, hand-written HTML (they may hold a link).
+import { url } from '../lib/url';
 
 /** The headline ranges: the Master Plan's Extended FSIC (FSIC 2.0) scenario. `short` is for tables;
  *  `words` is the range in running text ("… to …"). */
@@ -41,13 +43,13 @@ export const scenarios = [
     name: 'FSIC 1.0',
     short: 'FSIC 1.0',
     color: 'var(--color-scenario-1)',
-    body: "FSIC 1.0 is the foundational phase of the Florida Space Innovation Center, designed to activate the region's economic engine through four coordinated program areas: Talent, Innovation, Market, and Civic Advancement. This phase establishes the structure, partnerships, and programming needed to convene a regional space ecosystem and align with federal, state, and private funding sources. It is a low-risk, high-leverage platform that organizes the region, attracts early partners, and prepares the groundwork for larger capital investments in FSIC 2.0.",
+    body: `FSIC 1.0 is the foundational phase of the Florida Space Innovation Center, designed to activate the region's economic engine through <a href="${url('/model')}" class="link">four coordinated program areas</a>: Talent, Innovation, Market, and Civic Advancement. This phase establishes the structure, partnerships, and programming needed to convene a regional space ecosystem and align with federal, state, and private funding sources. It is a low-risk, high-leverage platform that organizes the region, attracts early partners, and prepares the groundwork for larger capital investments in FSIC 2.0.`,
   },
   {
     name: 'FSIC 2.0',
     short: 'FSIC 2.0',
     color: 'var(--color-scenario-2)',
-    body: 'FSIC 2.0 represents a transformational path: a fully realized innovation district anchored by NASA, university partners, high tech employers, and a convention and performing arts center. This expanded model generates the strongest economic output, highest wage job creation, and the largest influx of external funding, while establishing New Smyrna Beach as a statewide hub for space related research, education, and tourism.',
+    body: `FSIC 2.0 represents a transformational path: a fully realized innovation district anchored by NASA, university partners, high tech employers, and a convention and <a href="${url('/long-term-vision#performing-arts')}" class="link">performing arts center</a>. This expanded model generates the strongest economic output, highest wage job creation, and the largest influx of external funding, while establishing New Smyrna Beach as a statewide hub for space related research, education, and tourism.`,
   },
 ];
 

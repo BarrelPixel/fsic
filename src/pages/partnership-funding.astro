@@ -95,7 +95,7 @@ const at = (id: string) => sectionProps(sections, id);
             <div>
               <Disclosure class="border-t border-rule" summaryClass="items-center gap-4 py-3">
                 <span slot="summary" class="text-label text-navy">Partnership roles<span class="font-medium text-gray"> · {p.roles.length}</span></span>
-                <List items={p.roles} class="pb-4 text-gray-dark" />
+                <List items={p.roles} html class="pb-4 text-gray-dark" />
               </Disclosure>
               <Disclosure class="border-t border-rule" summaryClass="items-center gap-4 py-3">
                 <span slot="summary" class="text-label text-navy">Strategic benefits<span class="font-medium text-gray"> · {p.benefits.length}</span></span>

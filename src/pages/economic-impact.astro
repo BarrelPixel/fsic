@@ -92,7 +92,7 @@ const at = (id: string) => sectionProps(sections, id);
               <span class="mt-[0.3rem] w-3 h-3 shrink-0" style={`background:${s.color}`} aria-hidden="true"></span>
               {s.name}
             </dt>
-            <dd class="md:col-span-6 text-base text-gray-dark">{s.body}</dd>
+            <dd class="md:col-span-6 text-base text-gray-dark" set:html={s.body} />
           </div>
         ))}
       </dl>

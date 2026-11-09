@@ -87,7 +87,7 @@ const at = (id: string) => sectionProps(sections, id);
         <dl>
           {bodies.map((body, i) => (
             <Row label={body.name} class={i === bodies.length - 1 ? 'border-b border-rule' : undefined}>
-              <p class="mb-4">{body.purpose}</p>
+              <p class="mb-4" set:html={body.purpose} />
               <div>
                 {body.lists.map((list) => (
                   <Disclosure class="border-t border-rule" summaryClass="items-center gap-4 py-3">

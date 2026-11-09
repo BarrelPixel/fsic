@@ -12,6 +12,7 @@ import List from '../components/List.astro';
 import Closing from '../components/Closing.astro';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
+import { url } from '../lib/url';
 
 // Copy: src/content/copy/long-term-vision.md (Draft). Master Plan pp. 36–38, framed by the FAQ's caveat.
 // The Master Plan names the development throughout; the page says "Southeast Volusia" instead and
@@ -36,7 +37,7 @@ const at = (id: string) => sectionProps(sections, id);
       A Permanent, Multi-University, Cultural, and Innovation Anchor for the Space Coast
     </p>
     <p class="text-white/75 mb-10 max-w-3xl">
-      The long-term vision for the Florida Space Innovation Center extends well beyond the 2026–2031 master plan. The early years establish credibility, partnerships, and momentum. The next decade transforms FSIC into a landmark institution — a place where education, research, culture, and community converge in a way that defines the Space Coast for generations.
+      The long-term vision for the Florida Space Innovation Center extends well beyond the <a href={url('/deployment')} class="link-on-dark">2026–2031 master plan</a>. The early years establish credibility, partnerships, and momentum. The next decade transforms FSIC into a landmark institution — a place where education, research, culture, and community converge in a way that defines the Space Coast for generations.
     </p>
     <HeroIndex label="Page contents" size="large" items={sections} />
   </PageHero>
@@ -100,9 +101,9 @@ const at = (id: string) => sectionProps(sections, id);
           <List items={[
             'It gives Southeast Volusia a cultural anchor that elevates the entire community',
             'It becomes a gathering place for residents, families, and visitors',
-            'It strengthens the Civic Engine and deepens community identity',
+            `It strengthens the <a href="${url('/model#civic')}" class="link">Civic Engine</a> and deepens community identity`,
             'It positions FSIC as not just an innovation hub, but a cultural and civic destination',
-          ]} class="text-navy" />
+          ]} html class="text-navy" />
         </Row>
       </dl>
     </Grid>

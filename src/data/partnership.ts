@@ -1,6 +1,8 @@
 // Partnership & Funding: the three benefits (May 25, 2026 launch release), the seven partner types
 // (Master Plan pp. 22–24) and the funding streams (pp. 25–26).
 // Copy: src/content/copy/partnership-funding.md (Draft).
+// Partner roles are trusted, hand-written HTML (they may hold a link).
+import { url } from '../lib/url';
 
 export const benefits = [
   { title: 'Ecosystem Building & Convening Power', body: 'FSIC aligns schools, employers, civic organizations, and industry partners around shared priorities — reducing fragmentation and accelerating progress.' },
@@ -13,7 +15,7 @@ export const partners = [
     id: 'employers',
     name: 'Employers & Industry',
     overview: "Employers are central to FSIC's mission. Their involvement ensures that programs remain aligned with real workforce needs, emerging technologies, and industry standards.",
-    roles: ['Validate curriculum and micro-credentials', 'Provide challenge lab problems and innovation projects', 'Host internships, apprenticeships, and job shadowing', 'Participate in advisory councils'],
+    roles: ['Validate curriculum and micro-credentials', 'Provide challenge lab problems and innovation projects', 'Host internships, apprenticeships, and job shadowing', `Participate in <a href="${url('/governance#structure')}" class="link">advisory councils</a>`],
     benefits: ['Stronger talent pipelines', 'Reduced hiring friction', 'Increased employer retention and expansion', 'Enhanced competitiveness for federal funding'],
   },
   {

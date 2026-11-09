@@ -5,6 +5,9 @@
 **Route:** /partnership-funding
 **Sources:** home.md (approved); fsic.space FAQ; fsic.space/news (May 25, 2026 launch release); Master Plan pp. 22–26
 
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged.
+> - "advisory councils" (Employers & Industry, partnership roles) → Governance, Structure
+
 ---
 
 ## HERO

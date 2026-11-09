@@ -1,5 +1,7 @@
 // Governance & Transparency: the governing bodies (Master Plan pp. 15–17) and the metrics by area (p. 32).
 // Copy: src/content/copy/governance.md (Draft).
+// `purpose` is trusted, hand-written HTML (it may hold a link).
+import { url } from '../lib/url';
 
 // 02 · Governing bodies, Master Plan pp. 15–17
 export type Body = {
@@ -21,7 +23,7 @@ export const bodies: Body[] = [
   },
   {
     name: 'Executive Leadership',
-    purpose: 'The executive team is responsible for day-to-day operations, program execution, partnership management, and organizational growth. The CEO leads the organization with support from directors overseeing each engine.',
+    purpose: `The executive team is responsible for day-to-day operations, program execution, partnership management, and organizational growth. The CEO leads the organization with support from directors overseeing <a href="${url('/model')}" class="link">each engine</a>.`,
     lists: [
       { label: 'Key roles', items: ['Chief Executive Officer', 'Director of Talent Engine', 'Director of Innovation Engine', 'Director of Market Engine', 'Director of Civic Engine', 'Director of Operations and Finance'] },
     ],
