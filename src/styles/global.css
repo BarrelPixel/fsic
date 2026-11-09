@@ -167,13 +167,7 @@ html {
 /* For HTML you don't write tag by tag (set:html answers): styles every link inside. */
 @utility links-in {
   & a {
-    @apply text-navy underline underline-offset-4 decoration-navy/30;
-    transition: text-decoration-color var(--motion-fast) var(--ease-standard);
-  }
-  & a {
-    @variant hover {
-      @apply decoration-navy;
-    }
+    @apply link;
   }
 }
 
