@@ -52,5 +52,16 @@ export function getNav(): NavItem[] {
     .filter((item) => (isGroup(item) ? item.links.length > 0 : isBuilt(item)));
 }
 
+/**
+ * The menu as columns, for the footer and the 404 page: one column per group, then the single links,
+ * with Home first, as "FSIC". Each page appears once.
+ */
+export function getNavColumns(): { label: string; links: NavLink[] }[] {
+  const nav = getNav();
+  const groups = nav.filter(isGroup);
+  const singles = nav.filter((item): item is NavLink => !isGroup(item));
+  return [...groups.map((g) => ({ label: g.label, links: g.links })), { label: 'FSIC', links: [{ label: 'Home', path: '/' }, ...singles] }];
+}
+
 /** Joins the base path (import.meta.env.BASE_URL, no trailing slash) to a nav path. */
 export const href = (base: string, path: string) => (path === '/' ? base || '/' : `${base}${path}`);

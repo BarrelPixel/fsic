@@ -1,16 +1,11 @@
 ---
 // Footer navigation reads the same structure as the header (src/lib/nav.ts): one column per group,
 // then the single links. Each page appears once.
-import { getNav, isGroup, href as navHref, type NavLink } from '../lib/nav';
+import { getNavColumns, href as navHref } from '../lib/nav';
 import { EMAIL, mailto, SOCIAL_LINKS } from '../lib/site';
 
 const base = import.meta.env.BASE_URL;
-const nav = getNav();
-
-const groups = nav.filter(isGroup);
-const grouped = new Set(groups.flatMap((g) => g.links.map((l) => l.path)));
-const singles: NavLink[] = [{ label: 'Home', path: '/' }, ...nav.filter((i): i is NavLink => !isGroup(i) && !grouped.has(i.path))];
-const columns = [...groups.map((g) => ({ label: g.label, links: g.links })), { label: 'FSIC', links: singles }];
+const columns = getNavColumns();
 
 ---
 <footer class="font-sans bg-night text-white/75 border-t border-white/10" role="contentinfo">

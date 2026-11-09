@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Row from '../components/Row.astro';
+import List from '../components/List.astro';
+import { getNavColumns, href as navHref } from '../lib/nav';
+import { EMAIL, mailto } from '../lib/site';
+
+// Copy: src/content/copy/site-wide.md, "PAGE NOT FOUND (404)" (Draft). Built to dist/404.html, which
+// GitHub Pages serves for any address under the site that has no page. Links are absolute (base path
+// included), so the page works at whatever address it is shown. Kept out of search results.
+
+const base = import.meta.env.BASE_URL;
+// Every page in the menus, grouped as in the footer (src/lib/nav.ts), as links for List.
+const columns = getNavColumns().map((col) => ({
+  label: col.label,
+  links: col.links.map((l) => `<a href="${navHref(base, l.path)}" class="link">${l.label.replace(/&/g, '&amp;')}</a>`),
+}));
+---
+<BaseLayout
+  title="Page Not Found"
+  description="The page you were looking for could not be found on the Florida Space Innovation Center website."
+  noindex
+>
+
+  <PageHero title="Page Not Found">
+    <p slot="aside">
+      If you followed a link to fsic.space, the site has been rebuilt and some addresses have changed.
+    </p>
+    <p class="text-lead text-white/90 mb-0">
+      The page you were looking for may have moved, or the address may be mistyped.
+    </p>
+  </PageHero>
+
+  <!-- Where to go: every page in the menus, one row per group (cols 5–12), then the way out -->
+  <Section rule={false}>
+    <Grid>
+      <p slot="label" class="mb-0 text-statement text-navy">Where to go from here</p>
+      <div>
+        <dl class="border-b border-rule mb-10">
+          {columns.map((col) => (
+            <Row label={col.label}>
+              <List items={col.links} columns html />
+            </Row>
+          ))}
+        </dl>
+        <p class="max-w-3xl mb-8">
+          Still can't find it? Email <a href={mailto()} class="link">{EMAIL}</a> and we will point you in the right direction.
+        </p>
+        <Button href="/">Return to the Homepage</Button>
+      </div>
+    </Grid>
+  </Section>
+
+</BaseLayout>

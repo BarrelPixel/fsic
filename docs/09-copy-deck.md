@@ -19,7 +19,7 @@ All website copy lives in `src/content/copy/`, with one Markdown file per page. 
 | `faq.md` | `/faq` | Draft |
 | `news.md` | `/news` (releases in `src/content/news/`, one file each) | Draft |
 | `leadership.md` | `/leadership` (proposed) | Draft |
-| `site-wide.md` | Header, footer, metadata | Draft |
+| `site-wide.md` | Header, footer, metadata, 404 page | Draft |
 
 Update the table when a file's status changes.
 

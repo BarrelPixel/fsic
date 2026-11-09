@@ -25,7 +25,7 @@ There is no linter or test suite. `npm run check` (types) and `npm run check-lin
 ## Layout
 
 ```
-src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding, strategic-moment, programs-facilities, long-term-vision, faq, news and contact: every page is built (<ComingSoon> remains for future pages)
+src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding, strategic-moment, programs-facilities, long-term-vision, faq, news and contact: every page is built (<ComingSoon> remains for future pages). 404.astro is the not-found page (noindex; links from getNavColumns())
 src/components/      Grid components (Section, Grid, Row, List, PageHero, SectionBar, RunningHead),
                      Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBarsDraw, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
@@ -34,7 +34,7 @@ src/content/copy/    Copy deck: one Markdown file per page (see below)
 src/content/news/    Press releases, one Markdown file each, wording as published (built into /news and /news/<slug>);
                      images/ holds the graphic published with each release
 src/lib/news.ts      Press release helpers
-src/lib/nav.ts       Site navigation (groups and links), shared by Header and Footer
+src/lib/nav.ts       Site navigation (groups and links), shared by Header, Footer and the 404 page
 src/lib/site.ts      EMAIL, mailto(), SOCIAL_LINKS: use these, don't retype the address or links
 src/lib/format.ts    pad2() for 01, 02… numbering
 src/lib/sections.ts  A page's sections listed once (hero index, SectionBar, running heads)

@@ -2,7 +2,7 @@
 
 **Status:** Draft
 **Last Updated:** November 2026
-**Applies to:** Header, footer, default metadata, legal pages
+**Applies to:** Header, footer, default metadata, 404 page, legal pages
 **Sources:** Current new-site components (`Header.astro`, `Footer.astro`, `BaseLayout.astro`); fsic.space footer
 
 ---
@@ -32,6 +32,25 @@ The Florida Space Innovation Center is a coordinated regional platform strengthe
 **Credit:** Built by Barrel & Pixel
 
 > **Source:** New-site footer, plus contact and social details from the fsic.space footer.
+
+---
+
+## PAGE NOT FOUND (404)
+
+Shown for any address on the site that has no page, including old fsic.space addresses once the new site replaces it.
+
+**Meta title:** Page Not Found
+**Meta description:** The page you were looking for could not be found on the Florida Space Innovation Center website.
+**Headline:** Page Not Found
+**Lead:** The page you were looking for may have moved, or the address may be mistyped.
+**Aside:** If you followed a link to fsic.space, the site has been rebuilt and some addresses have changed.
+
+**Section statement (label column):** Where to go from here
+**Links:** every page in the site navigation, grouped as in the menus (read from `src/lib/nav.ts`, so it stays in sync).
+**Closing line:** Still can't find it? Email info@fsic.space and we will point you in the right direction.
+**CTA:** Return to the Homepage
+
+> **⚠ Review:** New copy, written for the rebuilt site. The aside assumes the new site replaces fsic.space at the same domain; adjust it if the domain or launch plan changes.
 
 ---
 
