@@ -194,3 +194,5 @@ The Florida Space Innovation Center represents a coordinated investment in the r
 Whether you are an employer, university leader, policymaker, workforce partner, or community member, there is a role to play in shaping Southeast Volusia's place in the global space economy.
 
 **CTAs:** Become a Partner; Contact FSIC
+
+> **Links (November 2026):** each audience in the list beside the body links to what FSIC offers it: Employers → Partnership & Funding, Employers & Industry; University leaders → State College & Universities; Policymakers → Local Government; Workforce partners → Economic Development & Workforce Agencies; Community members → Programs & Facilities, Programs by Audience (homepage review). Wording unchanged.

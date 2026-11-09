@@ -54,7 +54,15 @@ const at = (id: string) => sectionProps(sections, id);
 // The three newest press releases (src/content/news/), as published.
 const latest = (await getReleases()).slice(0, 3);
 
-const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce partners', 'Community members'];
+// Who can take part, each linking to what FSIC offers them: the stakeholder rows on Partnership &
+// Funding (src/data/partnership.ts ids), and for residents the programs by audience.
+const audiences = [
+  { label: 'Employers', href: '/partnership-funding#employers' },
+  { label: 'University leaders', href: '/partnership-funding#higher-ed' },
+  { label: 'Policymakers', href: '/partnership-funding#local-government' },
+  { label: 'Workforce partners', href: '/partnership-funding#workforce-agencies' },
+  { label: 'Community members', href: '/programs-facilities#audiences' },
+];
 ---
 <BaseLayout title="Florida Space Innovation Center">
 
@@ -341,12 +349,14 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Grid>
   </Section>
 
-  <!-- FINAL CTA: the page's close, so no running head. Who can take part sits in the label column as a plain list. -->
+  <!-- FINAL CTA: the page's close, so no running head. Who can take part sits in the label column, each linking to what FSIC offers them. -->
   <Section spacing="large" heading="Partner. Collaborate. Participate.">
     <Grid class="gap-y-10">
       <ul slot="label" class="font-sans flex flex-col divide-y divide-rule border-b border-rule" aria-label="Who can take part">
         {audiences.map((a) => (
-          <li class="py-2.5 first:pt-0 text-lagoon">{a}</li>
+          <li class="py-2.5 first:pt-0">
+            <a href={url(a.href)} class="link-lagoon">{a.label}</a>
+          </li>
         ))}
       </ul>
       <div class="max-w-3xl">

@@ -164,6 +164,16 @@ html {
   }
 }
 
+/* A link that names a community audience (the homepage's "who can take part" list): lagoon, since
+   it points to what FSIC offers the community and its partners (DESIGN.md "Color"). */
+@utility link-lagoon {
+  @apply text-lagoon underline underline-offset-4 decoration-lagoon/30;
+  transition: text-decoration-color var(--motion-fast) var(--ease-standard);
+  @variant hover {
+    @apply decoration-lagoon;
+  }
+}
+
 /* For HTML you don't write tag by tag (set:html answers): styles every link inside. */
 @utility links-in {
   & a {
