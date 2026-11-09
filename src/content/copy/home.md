@@ -22,6 +22,8 @@ The Florida Space Innovation Center is that commitment in action.
 
 **CTAs:** Explore the Vision; View Economic Impact
 
+> **Link (November 2026):** "Explore the Vision" goes to the Long-Term Vision page; it went to the Model page, set when the site was first scaffolded (March 2026), before the vision page existed. The label names that page, and the hero's "commitment" carries through to the vision's close ("The future is built in phases. The commitment begins now."). The Model page keeps its own button in section 03. Wording unchanged.
+
 ---
 
 ## THE STRATEGIC MOMENT
