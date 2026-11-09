@@ -1,7 +1,9 @@
 # Home Page Copy
 
 **Status:** Approved
-**Last Updated:** February 2026
+**Last Updated:** November 2026
+
+> **Homepage review (November 2026):** new lines and changes are marked **⚠ Review** below (latest news, phases, strategic value, hero button and tense, job-year note, common questions). The rest of the file stays as approved.
 
 > **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
 > - "Southeast Volusia launched" (hero) → the May 25, 2026 launch press release
