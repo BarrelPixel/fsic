@@ -9,6 +9,8 @@ export interface NavLink {
   /** Path without the base, starting with '/' ('/' for home). */
   path: string;
   built?: boolean;
+  /** The phone menu shows this link as its one button, after the list (Header.astro). */
+  cta?: boolean;
 }
 
 export interface NavGroup {
@@ -37,7 +39,7 @@ const nav: NavItem[] = [
   },
   { label: 'Governance', path: '/governance' },
   // Get Involved is the Partnership & Funding page. Contact has its own link below; each page appears once.
-  { label: 'Get Involved', path: '/partnership-funding' },
+  { label: 'Get Involved', path: '/partnership-funding', cta: true },
   { label: 'News', path: '/news' },
   { label: 'FAQ', path: '/faq' },
   { label: 'Contact', path: '/contact' },
