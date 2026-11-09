@@ -5,6 +5,10 @@
 **Route:** /long-term-vision (built November 2026; in the Why FSIC menu)
 **Sources:** Master Plan pp. 36–38 ("The Long-Term Vision (2032–2040)"); fsic.space FAQ ("What could FSIC look like in the future?"); home.md (closing line, campus headline)
 
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged.
+> - "2026–2031 master plan" (intro) → Phased Deployment
+> - "Civic Engine" (02, Why this matters) → The FSIC Model, Civic Engine
+
 > **Decisions (November 2026):** the period is **2032–2040** (Master Plan p. 36; the Overview PDF and home.md said 2031–2040, and home.md is corrected). The page takes the **Master Plan's** content, framed by the **FAQ's caveat** as its opening note.
 > **The unnamed development (audit §3.3):** the Master Plan names it throughout. "Deering Park" becomes "Southeast Volusia"; "at Deering Park" is dropped from the consortium's first element; "A legacy asset that reflects the Deering family's values and vision" is left out; "positions New Smyrna Beach as a leader" becomes "Southeast Volusia", because a city implies a campus location.
 

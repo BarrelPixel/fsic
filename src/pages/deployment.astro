@@ -10,6 +10,7 @@ import List from '../components/List.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
 import { phases, type Tone } from '../data/phases';
+import { url } from '../lib/url';
 
 // Copy: src/content/copy/deployment.md (Draft). Five-phase model from the Master Plan (pp. 13–14),
 // chosen by the project lead; facilities lines from p. 18. Open review items: facilities/location
@@ -97,7 +98,8 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
               <List items={phase.outcomes} class="text-navy" />
             </Row>
             <Row label="Facilities" class="border-b border-rule">
-              <p class="mb-0 text-gray-dark">{phase.facilities}</p>
+              <p class="mb-2 text-gray-dark">{phase.facilities}</p>
+              <p class="mb-0 text-caption"><a href={url('/programs-facilities#facilities')} class="link">Planned spaces for each phase</a></p>
             </Row>
           </dl>
         </Grid>
@@ -110,7 +112,7 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
     <Grid>
       <h2 slot="label" class="text-white mb-0">A Phased Model That Reduces Risk and Builds Momentum</h2>
       <p class="text-lead text-white/90 mb-8 max-w-3xl">
-        FSIC launches with a lean operational model supported by philanthropic investment, in-kind contributions, and early public-private partnerships. Over three years, FSIC transitions from startup to full Talent Engine activation, supported by diversified revenue streams including grants, employer partnerships, earned revenue, and corporate sponsorships.
+        FSIC launches with a lean operational model supported by philanthropic investment, in-kind contributions, and early public-private partnerships. Over three years, FSIC transitions from startup to full Talent Engine activation, supported by <a href={url('/partnership-funding#funding')} class="link-on-dark">diversified revenue streams</a> including grants, employer partnerships, earned revenue, and corporate sponsorships.
       </p>
       <p class="text-white/75 mb-0 max-w-3xl pt-6 border-t border-rule-on-dark">
         By Year 3, FSIC is positioned to sustain 30–50% of its operating budget through recurring earned revenue and employer partnerships, with grants and philanthropy fueling innovation and growth.

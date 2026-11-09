@@ -10,6 +10,7 @@ import Closing from '../components/Closing.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
+import { url } from '../lib/url';
 
 // Copy: src/content/copy/strategic-moment.md (Draft). Sections are verbatim from fsic.space/about-4,
 // except the lead (Master Plan p. 4) and the development figures (Master Plan pp. 4 and 6, unnamed:
@@ -73,7 +74,7 @@ const figures = [
       </p>
       <div class="max-w-3xl">
         <p>
-          Federal and state policy is moving decisively toward regional innovation ecosystems. Billions in funding — CHIPS and Science Act, EDA Tech Hubs, NSF Engines, and state programs — are flowing to regions that can demonstrate coordinated capacity across:
+          Federal and state policy is moving decisively toward regional innovation ecosystems. <a href={url('/partnership-funding#funding')} class="link">Billions in funding</a> — CHIPS and Science Act, EDA Tech Hubs, NSF Engines, and state programs — are flowing to regions that can demonstrate coordinated capacity across:
         </p>
         <List items={capacity} class="mb-6 text-gray-dark" />
         <p class="mb-0">

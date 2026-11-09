@@ -11,6 +11,7 @@ import { programsFor } from '../data/programs';
 import { engines } from '../data/engines';
 import ProgramList from '../components/ProgramList.astro';
 import { pad2 } from '../lib/format';
+import { url } from '../lib/url';
 
 // Copy: src/content/copy/model.md (Draft). Wording is verbatim from the copy deck.
 // Open review items (see model.md ⚠): the "Brings together" lists and the Civic shift line.
@@ -56,7 +57,7 @@ import { pad2 } from '../lib/format';
               <li class="border-b border-rule-on-dark grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 py-4">
                 <span></span>
                 <p class="mb-0 text-sm text-white/75 max-w-xl">
-                  <span class="text-white font-semibold">Talent launches first.</span>
+                  <a href={url('/deployment#phase-1')} class="link-on-dark text-white font-semibold">Talent launches first.</a>
                   As partnerships deepen and demand grows, the Innovation, Market, and Civic Engines scale in alignment with regional development timelines.
                 </p>
               </li>
@@ -131,7 +132,7 @@ import { pad2 } from '../lib/format';
       </p>
       <ul role="list">
         <li class="border-t border-rule-on-dark py-5 text-white/75">The strategy starts small, delivers visible early wins, and scales only when partners signal readiness.</li>
-        <li class="border-y border-rule-on-dark py-5 text-white/75">Every partnership is structured for low operational burden, high shared value, and clear governance.</li>
+        <li class="border-y border-rule-on-dark py-5 text-white/75">Every partnership is structured for low operational burden, high shared value, and <a href={url('/governance#structure')} class="link-on-dark">clear governance</a>.</li>
       </ul>
     </Grid>
   </Section>

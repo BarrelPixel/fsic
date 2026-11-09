@@ -5,6 +5,11 @@
 **Route:** /deployment
 **Sources:** Master Plan pp. 2, 13–14, 18, 27, 33–34; home.md (approved); fsic.space/about-4, fsic.space FAQ
 
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
+> - "Planned spaces for each phase" (new link line under each phase's Facilities) → Programs & Facilities, Facilities
+> - "diversified revenue streams" (closing section) → Partnership & Funding, Funding
+> **⚠ Review:** "Planned spaces for each phase" is new.
+
 > **Decision (November 2026):** The page uses the Master Plan's **five-phase** model (pp. 13–14), chosen by the project lead. This settles audit §3.4 for this page. The FAQ's three-phase answer and the home page's two-stage summary ("First: the Talent Engine" / "Then: Innovation, Market, and Civic") should be brought in line when those are next edited. The home page summary is compatible: Talent is Phase 1, and the other engines follow.
 
 ---
