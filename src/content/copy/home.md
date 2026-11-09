@@ -39,6 +39,10 @@ The Florida Space Innovation Center (FSIC) ensures that Southeast Volusia is not
 
 FSIC is designed to align education, industry, and community in one coordinated regional platform.
 
+**CTA:** Explore the Strategic Moment
+
+> **Added (November 2026):** a link to the Strategic Moment page, which no other page linked to (internal-linking review). **⚠ Review:** button label is new.
+
 ---
 
 ## THE ECONOMIC CASE
@@ -153,6 +157,10 @@ The long-term vision includes:
 **Close:**
 The future is built in phases.
 The commitment begins now.
+
+**CTA:** View the Long-Term Vision
+
+> **Added (November 2026):** a link to the Long-Term Vision page, which no other page linked to (internal-linking review). **⚠ Review:** button label is new.
 
 ---
 
