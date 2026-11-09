@@ -148,6 +148,8 @@ Micro-credential academies, dual-enrollment STEM pathways, teacher upskilling, a
 
 **Close:** This is a coordinated regional investment — not a standalone facility.
 
+> **Changed (November 2026):** the page shows two of the four points: Talent Attraction & Retention and Alignment with Major Funding Channels. Year-Round Activation and Employer Attraction & Higher-Wage Growth are left off because the economic case just above already makes them (economic activity, jobs and wages), and the page was long (homepage review). Their wording stays here. **⚠ Review:** confirm, or restore them.
+
 ---
 
 ## GOVERNANCE & TRANSPARENCY

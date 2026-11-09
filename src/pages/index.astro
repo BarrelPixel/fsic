@@ -28,19 +28,12 @@ const impact = [
   { label: 'Fiscal revenue for local and state governments', ...FIGURES.fiscal },
 ];
 
-// Bodies are trusted, hand-written HTML (they may hold a link).
+// What FSIC brings Volusia County beyond the figures above: the two points the economic case doesn't
+// already make (homepage review, November 2026; home.md). Bodies are trusted, hand-written HTML (they may hold a link).
 const value = [
-  {
-    title: 'Year-Round Activation',
-    body: 'Daily activity from students, educators, employers, and events supports small businesses and drives regional economic circulation.',
-  },
   {
     title: 'Talent Attraction & Retention',
     body: `Integrated programming strengthens <a href="${url('/programs-facilities#audiences')}" class="link">local career pathways</a> and helps retain young professionals who want opportunity close to home.`,
-  },
-  {
-    title: 'Employer Attraction & Higher-Wage Growth',
-    body: "By strengthening workforce alignment and innovation capacity, FSIC enhances Volusia County's competitiveness for aerospace and technology employers.",
   },
   {
     title: 'Alignment with Major Funding Channels',
@@ -290,7 +283,7 @@ const audiences = [
     </Grid>
   </Section>
 
-  <!-- 06 STRATEGIC VALUE: community value, so lagoon rules. Peers as a 2×2 grid in the content column. -->
+  <!-- 06 STRATEGIC VALUE: community value, so lagoon rules. Two peers side by side in the content column. -->
   <Section {...at('value')} dot="lagoon" spacing="stacked" heading="Strategic Value to Volusia County">
     <Grid class="gap-y-10" labelOffset>
       <p slot="label" class="mb-0 text-statement text-navy">This is a coordinated regional investment — not a standalone facility.</p>
