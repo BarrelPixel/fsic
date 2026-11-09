@@ -25,7 +25,9 @@ Sixty-five years later, Southeast Volusia launches its own coordinated commitmen
 
 The Florida Space Innovation Center is that commitment in action.
 
-**CTAs:** Explore the Vision; View Economic Impact
+**CTAs:** Get Involved; View Economic Impact
+
+> **Changed (November 2026):** the primary button is "Get Involved" (Partnership & Funding, the page the menu's Get Involved button opens); it was "Explore the Vision" (Long-Term Vision). A first-time employer, partner or resident is better served by how to take part now than by the 2032–2040 campus; the vision keeps its own section and button (08). **⚠ Review:** confirm with the client; this is the open question "Stakeholder CTA priorities" (`docs/07-open-questions.md`).
 
 > **Link (November 2026):** "Explore the Vision" goes to the Long-Term Vision page; it went to the Model page, set when the site was first scaffolded (March 2026), before the vision page existed. The label names that page, and the hero's "commitment" carries through to the vision's close ("The future is built in phases. The commitment begins now."). The Model page keeps its own button in section 03. Wording unchanged.
 

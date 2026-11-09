@@ -24,7 +24,7 @@
 **Goal:** Establish credibility, convey institutional gravity, and orient visitors.
 **Audience:** All stakeholders (first visit).
 **Key content:** Hero with founding parallel, strategic moment summary, economic impact stats, four-engine model overview, phased deployment summary, strategic value to Volusia County, governance summary, long-range vision teaser, partnership CTA. (Governance comes before the vision, November 2026, so the page alternates white and dark sections down to the footer and ends on a white call to action.)
-**Primary CTAs:** Explore the Vision, View Economic Impact, Become a Partner, Contact FSIC.
+**Primary CTAs:** Get Involved (hero; was Explore the Vision until November 2026, pending the client's call on CTA priorities), View Economic Impact, Become a Partner, Contact FSIC.
 
 ### The Strategic Moment (`/strategic-moment`) — IMPLEMENTED
 **Goal:** Explain why now — the convergence of Space Coast growth, regional development, and federal funding shifts.

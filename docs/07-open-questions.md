@@ -11,7 +11,7 @@ Items requiring stakeholder input or decisions before full launch.
 - [ ] **Brand guidelines:** Are there existing brand guidelines beyond the color palette provided?
 
 ## Content & Copy
-- [ ] **Stakeholder CTA priorities:** Which call-to-action should be most prominent — partner inquiry, general contact, or specific program interest?
+- [ ] **Stakeholder CTA priorities:** Which call-to-action should be most prominent — partner inquiry, general contact, or specific program interest? (November 2026: the home hero's primary button is now Get Involved, to Partnership & Funding, in place of Explore the Vision; confirm.)
 - [ ] **Contact handling:** How should contact form submissions be routed? Email? CRM? Which email addresses? (Until decided, `/contact` opens an email to info@fsic.space with a subject per topic.)
 - [x] **News / Updates section:** resolved. `/news` publishes the press releases, one file per release. The old Wix blog posts are not migrated.
 - [ ] **Partner logos:** Are there approved partner organizations whose logos can be displayed? (Do not fabricate.)
