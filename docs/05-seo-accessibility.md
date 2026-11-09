@@ -17,7 +17,7 @@ Every page must include:
 - `og:title` — Same as page title
 - `og:description` — Same as meta description
 - `og:type` — `website`
-- `og:url` — Canonical URL
+- `og:url` — Canonical URL (set by `BaseLayout` on every page, with `<link rel="canonical">`, from `site` and `base` in `astro.config.mjs`; each address ends in a slash, as served)
 - `og:image` — Press release pages use the release graphic (1200px JPEG, absolute URL from `site` in `astro.config.mjs`), passed to `BaseLayout` as `image`. Other pages: TBD (placeholder until brand imagery is finalized)
 - `og:site_name` — `Florida Space Innovation Center`
 
@@ -29,7 +29,9 @@ Every page must include:
 Astro generates a sitemap automatically when configured. Enable `@astrojs/sitemap` before launch.
 
 ### Robots
-Allow full indexing. No pages should be `noindex` at launch.
+Allow full indexing. No content page should be `noindex` at launch. The 404 page is `noindex` and has no canonical URL (`BaseLayout`'s `noindex` prop).
+
+Open: whether the preview build on GitHub Pages should be kept out of search results until launch, and when to add the sitemap and `robots.txt` (`07-open-questions.md`).
 
 ### Structured Data
 Consider adding `Organization` schema markup for the homepage:
@@ -51,7 +53,7 @@ Target **WCAG 2.1 Level AA** compliance.
 - [ ] Page language is declared (`lang="en"`)
 - [ ] Skip-to-content link is present
 - [ ] Forms have associated labels
-- [ ] ARIA landmarks are used correctly (`main`, `nav`, `footer`)
+- [ ] ARIA landmarks are used correctly (`main`, `nav`, `footer`), and each `nav` on a page has its own name (the `PageHero` index is "Page contents" or names its items; the `SectionBar` is "… on this page")
 - [ ] Mobile touch targets are at least 44x44px
 
 ### Testing Tools

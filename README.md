@@ -46,18 +46,20 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
     ├── assets/                  # Images processed by astro:assets (homepage hero photo, campus concept rendering)
     ├── components/
     │   ├── Section, Grid, Row, List, PageHero, SectionBar, RunningHead   # grid components
-    │   ├── Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBarsDraw
+    │   ├── Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing
+    │   ├── RangeBar, RangeLegend, RangeBarsDraw   # estimate ranges and their draw-in
     │   └── ComingSoon           # placeholder for unbuilt pages
     ├── content/copy/            # Copy deck: one Markdown file per page (docs/09)
     ├── content/news/            # Press releases, one Markdown file each (as published); images/ holds their graphics
     ├── lib/news.ts              # Press release helpers (sorting, dates, excerpts)
-    ├── lib/nav.ts               # Site navigation, shared by Header and Footer
+    ├── lib/nav.ts               # Site navigation, shared by Header, Footer and the 404 page
+    ├── lib/sections.ts          # A page's sections listed once (hero index, SectionBar, running heads)
     ├── lib/site.ts              # Email address and social links
     ├── lib/format.ts            # pad2() numbering helper
     ├── data/                    # Page content as typed data (economics, phases, engines, programs, faq, …)
-    ├── layouts/BaseLayout.astro # Meta tags, fonts, header and footer
-    ├── pages/                   # One .astro file per route; pages/news/ holds the list and [slug] pages
-    └── styles/global.css        # Design tokens (@theme), base styles, arc animation
+    ├── layouts/BaseLayout.astro # Meta tags (canonical, Open Graph, noindex), self-hosted fonts, header and footer
+    ├── pages/                   # One .astro file per route (404.astro is the not-found page); pages/news/ holds the list and [slug] pages
+    └── styles/global.css        # Design tokens (@theme), base styles, range-bar animation
 ```
 
 ## Current Status

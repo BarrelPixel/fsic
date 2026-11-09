@@ -15,6 +15,7 @@
 /contact                    Contact
 /news                       News & Media (and /news/<slug> per press release)
 /faq                        FAQ
+/404                        Page Not Found (404.html: shown for any missing address; noindex)
 ```
 
 ## Page Goals
@@ -22,7 +23,7 @@
 ### Home (`/`) — IMPLEMENTED
 **Goal:** Establish credibility, convey institutional gravity, and orient visitors.
 **Audience:** All stakeholders (first visit).
-**Key content:** Hero with founding parallel, strategic moment summary, economic impact stats, four-engine model overview, phased deployment summary, strategic value to Volusia County, long-range vision teaser, governance summary, partnership CTA.
+**Key content:** Hero with founding parallel, strategic moment summary, economic impact stats, four-engine model overview, phased deployment summary, strategic value to Volusia County, governance summary, long-range vision teaser, partnership CTA. (Governance comes before the vision, November 2026, so the page alternates white and dark sections down to the footer and ends on a white call to action.)
 **Primary CTAs:** Explore the Vision, View Economic Impact, Become a Partner, Contact FSIC.
 
 ### The Strategic Moment (`/strategic-moment`) — IMPLEMENTED
@@ -106,7 +107,7 @@ Defined once in `src/lib/nav.ts` and shared by the header and footer. Pages are 
 
 The logo links to Home. Each page appears once in the menu. On phones, the menu lists each group under its name.
 
-**Footer:** one column per group (Why FSIC, The Model), then a column "FSIC" with Home, Governance, Get Involved, News, FAQ and Contact. Each page appears once.
+**Footer:** one column per group (Why FSIC, The Model), then a column "FSIC" with Home, Governance, Get Involved, News, FAQ and Contact. Each page appears once. The 404 page lists the same columns (`getNavColumns()` in `src/lib/nav.ts`).
 
 ## Implementation Note
-Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, Long-Term Vision, FAQ, News & Media, and Contact (no form yet). The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. The remaining pages are route stubs using `<ComingSoon>` until their copy decks are filled. Run `npm run check-links` after building a page.
+Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, Long-Term Vision, FAQ, News & Media, and Contact (no form yet), plus the 404 page. The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. No page uses `<ComingSoon>` at present; it remains for future pages. After building a page, run `npm run check` and `npm run check-links` (the deploy runs both and stops on a type error or broken link).

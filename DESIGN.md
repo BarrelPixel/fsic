@@ -186,6 +186,7 @@ Don't put the hero photo on interior pages.
 - Visible focus: a 3px orange outline with a 3px offset (set globally).
 - Skip link, logical heading order, and descriptive `alt` text.
 - Check pages at 375px wide. Nothing should scroll horizontally.
+- Give each `nav` on a page its own name: the `PageHero` index is "Page contents" (or names its items, such as "The four engines"), the `SectionBar` "… on this page".
 
 ## Checklist for new pages
 

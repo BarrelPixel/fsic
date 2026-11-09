@@ -16,7 +16,7 @@ A production-quality, static-first institutional website that communicates FSIC'
 FSIC is a long-horizon initiative spanning a 2026–2031 master plan with a 2032–2040 extended vision. The website must reflect this institutional scale while launching with a focused initial page set.
 
 ### Phase 1 (Current — Launch)
-- Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, Long-Term Vision, FAQ, News & Media, Contact (no form yet)
+- Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, Long-Term Vision, FAQ, News & Media, Contact (no form yet), and a 404 page for missing addresses
 - Every page in the IA is built (`<ComingSoon>` remains for future pages)
 - Design system (`DESIGN.md`) and the grid component library (`src/components/`)
 - Full documentation suite
@@ -27,7 +27,7 @@ FSIC is a long-horizon initiative spanning a 2026–2031 master plan with a 2032
 - Add dynamic content (dashboards, events, news)
 
 ## Tech Stack
-- **Framework:** Astro (static-first, TypeScript)
+- **Framework:** Astro 7 (static-first, TypeScript, type-checked with `astro check`)
 - **Styling:** Tailwind CSS v4 + CSS custom properties for design tokens
 - **Hosting:** GitHub Pages under the `/fsic` base path for now (`.github/workflows/deploy.yml`). Production hosting and domain are open (see `07-open-questions.md`)
 - **Content:** Markdown-based copy files

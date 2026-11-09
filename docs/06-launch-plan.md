@@ -2,7 +2,7 @@
 
 **Target Launch Date:** May 25, 2026
 
-> **Out of date (November 2026):** the target date has passed and the weekly plan below no longer reflects progress. Built so far: Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, Long-Term Vision, FAQ, News & Media, Contact (no form yet). A new target date is needed before this plan is rewritten. The QA checklist below still applies.
+> **Out of date (November 2026):** the target date has passed and the weekly plan below no longer reflects progress. Built so far: Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, Long-Term Vision, FAQ, News & Media, Contact (no form yet), and the 404 page. A new target date is needed before this plan is rewritten. The QA checklist below still applies.
 
 ## 3-Month Weekly Plan
 
@@ -52,7 +52,7 @@
 - [ ] Dark-on-light and light-on-dark text is legible
 
 ### Functionality
-- [ ] All internal links work (no 404s)
+- [ ] All internal links work (no 404s). Checked on every deploy by `npm run check-links`; a broken link stops the deploy
 - [ ] All CTAs link to correct destinations
 - [ ] Navigation highlights current page
 - [ ] Mobile menu opens/closes correctly
@@ -65,12 +65,12 @@
 - [ ] Cumulative Layout Shift < 0.1
 - [ ] First Input Delay < 100ms
 - [ ] Images use modern formats (WebP/AVIF) where supported
-- [ ] No render-blocking resources
+- [ ] No render-blocking resources (fonts are self-hosted and preloaded; only the site's own stylesheet blocks rendering)
 
 ### SEO
 - [ ] Every page has unique `<title>` and `<meta name="description">`
 - [ ] Open Graph tags are present on all pages
-- [ ] Canonical URLs are set
+- [x] Canonical URLs are set (`BaseLayout`, from `site` in `astro.config.mjs`: update `site` and `base` for the production domain)
 - [ ] Sitemap is generated and accessible
 - [ ] robots.txt allows indexing
 - [ ] Structured data validates in Google's Rich Results Test
@@ -86,6 +86,6 @@
 ### Infrastructure
 - [ ] SSL certificate is active
 - [ ] DNS propagation is complete
-- [ ] 404 page is styled and helpful
+- [x] 404 page is styled and helpful (`src/pages/404.astro`; its copy in `site-wide.md` still needs review)
 - [ ] Analytics tracking is active
-- [ ] Redirects are configured (if migrating from existing site)
+- [ ] Redirects are configured (if migrating from existing site). Old fsic.space addresses (`08-current-site-audit.md` §2) land on the 404 page until redirects are set up; GitHub Pages can't do server redirects, so this depends on the production host
