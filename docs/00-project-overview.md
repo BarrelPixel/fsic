@@ -29,7 +29,7 @@ FSIC is a long-horizon initiative spanning a 2026–2031 master plan with a 2032
 ## Tech Stack
 - **Framework:** Astro 7 (static-first, TypeScript, type-checked with `astro check`)
 - **Styling:** Tailwind CSS v4 + CSS custom properties for design tokens
-- **Hosting:** GitHub Pages under the `/fsic` base path for now (`.github/workflows/deploy.yml`). Production hosting and domain are open (see `07-open-questions.md`)
+- **Hosting:** GitHub Pages (`.github/workflows/deploy.yml`), under the `/fsic` base path until the domain fsic.space points here (`06-launch-plan.md`, "Switching to fsic.space")
 - **Content:** Markdown-based copy files
 
 ## Brand Palette

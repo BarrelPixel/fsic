@@ -10,7 +10,7 @@ Public website for the Florida Space Innovation Center (FSIC), a coordinated reg
 - **Framework:** [Astro](https://astro.build/) 7 with TypeScript
 - **Styling:** Tailwind CSS v4 (via `@tailwindcss/vite`), design tokens in `src/styles/global.css`
 - **Output:** Static HTML (SSG)
-- **Hosting:** GitHub Pages under the `/fsic` base path, deployed by `.github/workflows/deploy.yml` on push to `main` (Node 24, from `.nvmrc`). The deploy runs `npm run check` and `npm run check-links`, so a type error or broken internal link stops it. Production hosting and domain are still open (`docs/07-open-questions.md`).
+- **Hosting:** GitHub Pages under the `/fsic` base path, deployed by `.github/workflows/deploy.yml` on push to `main` (Node 24, from `.nvmrc`). The deploy runs `npm run check` and `npm run check-links`, so a type error or broken internal link stops it. fsic.space will point to this site; the steps are in `docs/06-launch-plan.md` ("Switching to fsic.space").
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ npm run review-items # list every open "⚠ Review" note and open question
 
 There is no linter or test suite. `npm run check` and `npm run check-links` are the checks.
 
-Internal links must include the base path (`import.meta.env.BASE_URL`). `Button` adds it for hrefs starting with `/`.
+Internal links must include the base path: write `url('/path')` from `src/lib/url.ts` (`Button` does it for hrefs starting with `/`). Don't join `import.meta.env.BASE_URL` by hand: at the root of fsic.space it is `/`, which would give `//path`.
 
 ## Project Structure
 
@@ -55,6 +55,7 @@ Internal links must include the base path (`import.meta.env.BASE_URL`). `Button`
     ├── lib/nav.ts               # Site navigation, shared by Header, Footer and the 404 page
     ├── lib/sections.ts          # A page's sections listed once (hero index, SectionBar, running heads)
     ├── lib/site.ts              # Email address and social links
+    ├── lib/url.ts               # url('/path'): site paths with the base path
     ├── lib/format.ts            # pad2() numbering helper
     ├── data/                    # Page content as typed data (economics, phases, engines, programs, faq, …)
     ├── layouts/BaseLayout.astro # Meta tags (canonical, Open Graph, noindex), self-hosted fonts, header and footer

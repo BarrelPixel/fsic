@@ -7,7 +7,7 @@ Guidance for Claude Code when working in this repository.
 Public website for the **Florida Space Innovation Center (FSIC)**, a regional workforce and innovation initiative based in New Smyrna Beach, Southeast Volusia County, Florida. Built by Barrel & Pixel. It will replace the current Wix site at https://www.fsic.space.
 
 - **Stack:** Astro 7 (static, `compressHTML: true` to keep HTML whitespace between inline elements) + Tailwind CSS v4 (via `@tailwindcss/vite`), TypeScript.
-- **Hosting:** GitHub Pages under the `/fsic` base path (`astro.config.mjs`), deployed by `.github/workflows/deploy.yml` on push to `main`. The deploy runs `npm run check` and `npm run check-links`, so a type error or broken link fails it.
+- **Hosting:** GitHub Pages under the `/fsic` base path for now (`astro.config.mjs`); fsic.space will point here (steps in `docs/06-launch-plan.md`, "Switching to fsic.space"). Deployed by `.github/workflows/deploy.yml` on push to `main`. The deploy runs `npm run check` and `npm run check-links`, so a type error or broken link fails it.
 
 ## Commands
 
@@ -37,6 +37,7 @@ src/content/news/    Press releases, one Markdown file each, wording as publishe
 src/lib/news.ts      Press release helpers
 src/lib/nav.ts       Site navigation (groups and links), shared by Header, Footer and the 404 page
 src/lib/site.ts      EMAIL, mailto(), SOCIAL_LINKS: use these, don't retype the address or links
+src/lib/url.ts       url('/path'): a site path with the base path (works under /fsic and at the root)
 src/lib/format.ts    pad2() for 01, 02… numbering
 src/lib/sections.ts  A page's sections listed once (hero index, SectionBar, running heads)
 src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
@@ -68,7 +69,7 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - Open content conflicts (development figures, unsourced claims, which economic scenario the headline figures describe) are listed in `docs/08-current-site-audit.md` §3 and `docs/07-open-questions.md`. Don't settle them in copy without the user.
 
 ### Code
-- **Base path:** internal links must include `import.meta.env.BASE_URL` (currently `/fsic`, no trailing slash). `Button` handles this for hrefs starting with `/`. Elsewhere, write `` `${base}/path` ``. A bare `/path` breaks on GitHub Pages.
+- **Base path:** internal links must include the base path (`/fsic` on the GitHub Pages preview; none once the site is at the root of fsic.space). Write `url('/path')` (`src/lib/url.ts`); `Button` and the nav helpers do this for you. Never write `` `${import.meta.env.BASE_URL}/path` ``: at the root `BASE_URL` is `/`, which gives `//path`, a link to another host. A bare `/path` breaks on the preview.
 - **CSS layers:** base element styles in `global.css` live inside `@layer base`. Keep them there. Styles outside a layer override Tailwind utilities.
 - Use the theme tokens (`bg-night`, `text-lagoon`, `border-rule`…) rather than raw hex values, and the type-scale classes (`text-statement`, `text-lead`, `text-label`, `text-caption`) and link classes (`link`, `link-on-dark`, `links-in`) rather than re-typing their Tailwind classes (DESIGN.md "Type scale").
 - **Navigation** lives in `src/lib/nav.ts`; Header and Footer both read it, so change menus there, not in the components. Pages are grouped by question in two dropdowns (Why FSIC, The Model), with plain links for the rest; "Get Involved" is the Partnership & Funding page. Each page appears once in the menu. A page still on `<ComingSoon>` has `built: false` and stays out of both menus; set it to `true` (or remove the flag) when the page ships. Header highlighting uses `isActive()` in `Header.astro` (Home matches only itself); a group is highlighted when one of its pages is current.

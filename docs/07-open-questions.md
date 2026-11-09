@@ -19,11 +19,12 @@ Items requiring stakeholder input or decisions before full launch.
 - [ ] **Economic scenario:** The headline economic figures are the Master Plan's FSIC 2.0 scenario. Should the home page say so? And are two chart values right: job-years for FSIC 1.0 (same as Baseline) and "City + County" fiscal impact? See `08-current-site-audit.md` §3.10.
 
 ## Technical & Infrastructure
-- [ ] **Hosting provider:** Where will the production site be hosted? (The build currently deploys to GitHub Pages under `/fsic` for review. Vercel, Netlify, AWS, other?)
-- [ ] **Domain:** What is the production domain? (e.g., `fsic.org`, `floridaspaceinnovation.org`, etc.)
+- [x] **Domain:** resolved (November 2026). fsic.space, the current Wix site's domain, will point to this site. Steps in `06-launch-plan.md` ("Switching to fsic.space").
+- [ ] **Hosting provider:** GitHub Pages, where the build deploys now, unless decided otherwise. Confirm, since it can't do server redirects (see Redirects below).
+- [ ] **When to switch:** the date fsic.space moves from Wix to this site.
 - [ ] **Analytics:** Google Analytics 4? Plausible? Other?
-- [ ] **Redirects from fsic.space:** map the old Wix addresses (`08-current-site-audit.md` §1, e.g. `/about-4`) to their new pages. Needs a host that supports redirects; until then they land on the 404 page.
-- [ ] **Search indexing before launch:** should the GitHub Pages preview be kept out of search results? When to add the sitemap (`@astrojs/sitemap`) and `robots.txt`? (Both depend on the production domain.)
+- [ ] **Redirects from fsic.space:** map the old Wix addresses (`08-current-site-audit.md` §1, e.g. `/about-4`) to their new pages. GitHub Pages can't send server redirects, but Astro's `redirects` setting can build a small page at each old address that forwards to the new one. Needs the mapping confirmed; until then old addresses land on the 404 page.
+- [ ] **Search indexing before launch:** should the GitHub Pages preview be kept out of search results? When to add the sitemap (`@astrojs/sitemap`) and `robots.txt`? (The domain is now settled: fsic.space.)
 - [ ] **Default share image:** pages other than press releases have no `og:image`. Which image should represent the site when a page is shared?
 - [ ] **Form backend:** What service for contact form submissions? (Netlify Forms, Formspree, custom API?)
 - [ ] **Email newsletter:** Will there be a mailing list signup? If so, which provider? (Mailchimp, ConvertKit, etc.)
