@@ -76,6 +76,20 @@ It is a durable economic backbone.
 
 ---
 
+## LATEST NEWS
+
+> **Added (November 2026):** a section showing the three newest press releases, so the page shows FSIC is active, not only planned (homepage review). The release titles and dates come from `src/content/news/` as published and update when a release is added. **⚠ Review:** the headline, the label line and the button label are new.
+
+**Headline:** FSIC Is Underway
+
+**Label:** Launched May 25, 2026. Building its leadership and partnerships now.
+
+**List:** the three newest press releases: date and title, each linking to the release.
+
+**CTA:** All News & Media
+
+---
+
 ## THE FOUR-ENGINE MODEL
 
 **Headline:** One Coordinated Platform. Four Integrated Engines.

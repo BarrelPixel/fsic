@@ -17,6 +17,7 @@ import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 import RangeBar from '../components/RangeBar.astro';
 import RangeLegend from '../components/RangeLegend.astro';
 import { url } from '../lib/url';
+import { getReleases, formatDate, isoDate, releaseHref } from '../lib/news';
 
 // 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
@@ -47,8 +48,11 @@ const value = [
 ];
 
 // The numbered sections in page order: their running heads (01 / 07…) follow this list.
-const sections = ['strategic-moment', 'economic-impact', 'model', 'deployment', 'value', 'governance', 'vision'].map((id) => ({ id }));
+const sections = ['strategic-moment', 'economic-impact', 'news', 'model', 'deployment', 'value', 'governance', 'vision'].map((id) => ({ id }));
 const at = (id: string) => sectionProps(sections, id);
+
+// The three newest press releases (src/content/news/), as published.
+const latest = (await getReleases()).slice(0, 3);
 
 const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce partners', 'Community members'];
 ---
@@ -180,10 +184,34 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Grid>
   </Section>
 
-  <!-- 03 THE FOUR-ENGINE MODEL: four numbered columns on the grid (3 cols each) -->
+  <!-- 03 LATEST NEWS: proof that FSIC is active. The three newest press releases (date, then headline,
+       as published) in the content column; no release graphics here (DESIGN.md "Imagery"). -->
+  <Section {...at('news')} label="Latest news" heading="FSIC Is Underway">
+    <Grid labelOffset>
+      <p slot="label" class="mb-0 text-statement text-navy">Launched May 25, 2026. Building its leadership and partnerships now.</p>
+      <div class="max-w-3xl">
+        <ol class="divide-y divide-rule border-y border-rule mb-10">
+          {latest.map((r) => (
+            <li class="py-5">
+              <p class="mb-1 text-label text-gray-dark">
+                <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
+              </p>
+              <h3 class="text-xl md:text-2xl mb-0">
+                <a href={releaseHref(r)} class="underline-reveal underline-offset-4 decoration-2">{r.data.title}</a>
+              </h3>
+            </li>
+          ))}
+        </ol>
+        <Button href="/news" variant="secondary">All News & Media</Button>
+      </div>
+    </Grid>
+  </Section>
+
+  <!-- 04 THE FOUR-ENGINE MODEL: four numbered columns on the grid (3 cols each) -->
   <Section
     {...at('model')}
     label="The four-engine model"
+    spacing="stacked"
     heading="One Coordinated Platform. Four Integrated Engines."
     intro="FSIC operates through a structured, phased model designed for early activation and long-term scale."
   >
@@ -207,7 +235,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Grid>
   </Section>
 
-  <!-- 04 PHASED DEPLOYMENT -->
+  <!-- 05 PHASED DEPLOYMENT -->
   <Section {...at('deployment')} label="Phased deployment" spacing="stacked" heading="Start Small. Deliver Early Wins. Scale with Readiness.">
     <Grid class="gap-y-10">
       <p slot="label" class="mb-0 text-statement text-navy">Growth is structured. Not speculative.</p>
@@ -238,7 +266,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Grid>
   </Section>
 
-  <!-- 05 STRATEGIC VALUE: community value, so lagoon rules. Peers as a 2×2 grid in the content column. -->
+  <!-- 06 STRATEGIC VALUE: community value, so lagoon rules. Peers as a 2×2 grid in the content column. -->
   <Section {...at('value')} dot="lagoon" spacing="stacked" heading="Strategic Value to Volusia County">
     <Grid class="gap-y-10" labelOffset>
       <p slot="label" class="mb-0 text-statement text-navy">This is a coordinated regional investment — not a standalone facility.</p>
@@ -253,7 +281,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Grid>
   </Section>
 
-  <!-- 06 GOVERNANCE & TRANSPARENCY -->
+  <!-- 07 GOVERNANCE & TRANSPARENCY -->
   <Section {...at('governance')} spacing="stacked" heading="Governance & Transparency">
     <Grid class="gap-y-10">
       <p slot="label" class="mb-0 text-xl text-navy leading-snug">
@@ -277,7 +305,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
     </Grid>
   </Section>
 
-  <!-- 07 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
+  <!-- 08 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
   <Section {...at('vision')} label="Long-range vision" dark heading="A Landmark Campus for Southeast Volusia">
     <figure slot="media" class="relative">
       <Image
