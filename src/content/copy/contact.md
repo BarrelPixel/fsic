@@ -24,15 +24,16 @@
 
 No section headline: the hero names the page. The four topics are peers in a 2×2 grid, each with its name, one line on who it is for, and an email link with the subject set.
 
-| Topic | Line | Link text | Email subject |
-|------|------|------|------|
-| Partnerships | Employers, school districts, colleges and universities, local government, workforce agencies, and civic organizations. | Email about a partnership | Partnership inquiry |
-| Volunteering and leadership | FSIC is actively seeking leaders and volunteers with relevant experience across the Center's four core engines — Talent, Innovation, Market, and Civic. | Email about volunteering | Volunteer or leadership interest |
-| Media | Press inquiries. | Email a media inquiry | Media inquiry |
-| General | Questions about FSIC and its plans. | Email FSIC | General inquiry |
+| Topic | Line | Page link | Link text | Email subject |
+|------|------|------|------|------|
+| Partnerships | Employers, school districts, colleges and universities, local government, workforce agencies, and civic organizations. | How each partner takes part (Partnership & Funding, Partners) | Email about a partnership | Partnership inquiry |
+| Volunteering and leadership | FSIC is actively seeking leaders and volunteers with relevant experience across the Center's four core engines — Talent, Innovation, Market, and Civic. | Ways to get involved (Partnership & Funding, Get involved) | Email about volunteering | Volunteer or leadership interest |
+| Media | Press inquiries. | Press releases (News) | Email a media inquiry | Media inquiry |
+| General | Questions about FSIC and its plans. | Frequently asked questions (FAQ) | Email FSIC | General inquiry |
 
 > **Source:** partner list from `partnership-funding.md`; volunteer line from the FAQ ("How can the public get involved?", verbatim). The FAQ promises "a simple way to express interest in volunteering, advising, or serving in a leadership capacity"; this row is that way until a form exists.
 > **⚠ Review:** Media and General lines are new.
+> **Added (November 2026):** each topic links to the page that answers it, above its email link (internal-linking review). **⚠ Review:** the page-link texts are new.
 
 ---
 

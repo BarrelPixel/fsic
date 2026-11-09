@@ -4,33 +4,39 @@ import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import { EMAIL, mailto, SOCIAL_LINKS } from '../lib/site';
+import { url } from '../lib/url';
 
 // Copy: src/content/copy/contact.md (Draft). No form until a backend and routing are chosen
 // (docs/07-open-questions.md); each topic opens an email to info@fsic.space with the subject set.
+// Each topic also links to the page that answers it, before the email link.
 // Not on the page until confirmed: a phone number, a named media contact.
 
 const topics = [
   {
     name: 'Partnerships',
     line: 'Employers, school districts, colleges and universities, local government, workforce agencies, and civic organizations.',
+    page: { path: '/partnership-funding#partners', text: 'How each partner takes part' },
     linkText: 'Email about a partnership',
     subject: 'Partnership inquiry',
   },
   {
     name: 'Volunteering and leadership',
     line: "FSIC is actively seeking leaders and volunteers with relevant experience across the Center's four core engines — Talent, Innovation, Market, and Civic.",
+    page: { path: '/partnership-funding#get-involved', text: 'Ways to get involved' },
     linkText: 'Email about volunteering',
     subject: 'Volunteer or leadership interest',
   },
   {
     name: 'Media',
     line: 'Press inquiries.',
+    page: { path: '/news', text: 'Press releases' },
     linkText: 'Email a media inquiry',
     subject: 'Media inquiry',
   },
   {
     name: 'General',
     line: 'Questions about FSIC and its plans.',
+    page: { path: '/faq', text: 'Frequently asked questions' },
     linkText: 'Email FSIC',
     subject: 'General inquiry',
   },
@@ -77,6 +83,7 @@ const topics = [
           <div class="flex flex-col border-t-2 border-navy pt-5">
             <h2 class="text-2xl mb-3">{t.name}</h2>
             <p class="mb-4 text-gray-dark">{t.line}</p>
+            <p class="mb-4 text-caption"><a href={url(t.page.path)} class="link">{t.page.text}</a></p>
             <p class="mt-auto mb-0 font-sans font-semibold">
               <a href={mailto(t.subject)} class="link">{t.linkText}</a>
             </p>
