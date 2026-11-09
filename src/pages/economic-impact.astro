@@ -15,6 +15,7 @@ import RangeLegend from '../components/RangeLegend.astro';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 import HeroIndex from '../components/HeroIndex.astro';
+import { url } from '../lib/url';
 
 // Copy: src/content/copy/economic-impact.md (Draft). Wording is verbatim from the copy deck.
 // Open review items (see the ⚠ notes there): the headline figures are the FSIC 2.0 scenario;
@@ -169,6 +170,9 @@ const at = (id: string) => sectionProps(sections, id);
           <List items={['High-value employer attraction', 'Innovation district development', 'Stronger workforce alignment', 'Expanded economic mobility', 'A shared regional identity rooted in innovation']} class="text-white" />
         </Row>
       </dl>
+      <p class="mt-6 mb-0 text-caption text-white/75">
+        Why the region must act now is on the <a href={url('/strategic-moment')} class="link-on-dark">Strategic Moment</a> page.
+      </p>
     </Grid>
   </Section>
 
@@ -179,7 +183,7 @@ const at = (id: string) => sectionProps(sections, id);
         The return on investment is both immediate and long-term, with measurable impacts across job creation, wage growth, business development, and community vitality.
       </p>
       <p class="max-w-3xl mb-0">
-        By aligning talent development, innovation, commercialization, and civic engagement, FSIC strengthens the region's competitiveness, attracts employers, and expands economic mobility.
+        By aligning <a href={url('/model')} class="link">talent development, innovation, commercialization, and civic engagement</a>, FSIC strengthens the region's competitiveness, attracts employers, and expands economic mobility.
       </p>
     </Grid>
 

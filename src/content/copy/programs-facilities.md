@@ -5,6 +5,9 @@
 **Route:** /programs-facilities (built November 2026; in The Model menu)
 **Sources:** fsic.space FAQ; Master Plan pp. 17–21
 
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
+> - Each phase name in the facilities plan (03) → that phase on Phased Deployment
+
 ---
 
 ## HERO

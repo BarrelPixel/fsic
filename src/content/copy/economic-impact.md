@@ -5,9 +5,11 @@
 **Route:** /economic-impact
 **Sources:** Master Plan pp. 6–9, 28–29; Overview p. 1; fsic.space/copy-of-news-media (FAQ)
 
-> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged.
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
 > - "four coordinated program areas" (FSIC 1.0) → The FSIC Model
 > - "performing arts center" (FSIC 2.0) → Long-Term Vision, Performing arts
+> - "talent development, innovation, commercialization, and civic engagement" (04) → The FSIC Model
+> - New line after Risks and Opportunities (03): "Why the region must act now is on the Strategic Moment page." → The Strategic Moment. **⚠ Review:** new wording
 
 > **⚠ Review — scenario attribution (see `docs/08-current-site-audit.md` §3.10):** The Master Plan's chart (p. 8) shows that the headline figures ($10.2–$12.4B output, 74,500–79,500 job-years, $1.35–$1.55B wages, $690–$910M fiscal, $800M–$1.56B funding) are the **Extended FSIC (FSIC 2.0)** scenario. The foundational FSIC 1.0 scenario is lower ($8.1–$9.7B output). This page labels the headline figures as FSIC 2.0 and shows all three scenarios. The approved home page says "Independent 25-year analysis projects that FSIC will generate:" above the same figures, without naming the scenario. Decide whether the home page should name it.
 

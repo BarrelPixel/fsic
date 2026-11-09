@@ -5,9 +5,10 @@
 **Route:** /model
 **Sources:** fsic.space/ (engine definition), /about-4 (engine summaries), /talent, /innovation, /market, /civic (engine overviews); Master Plan pp. 9–14, 19–21 (programs)
 
-> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged.
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
 > - "Talent launches first." (engine list) → Phased Deployment, Phase 1
 > - "clear governance" (Guiding Principles) → Governance, Structure
+> - New line under each engine's Regional impact: "Return on investment by area" → Economic Impact, Return on investment. **⚠ Review:** new wording
 
 ---
 

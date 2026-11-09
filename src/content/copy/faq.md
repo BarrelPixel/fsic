@@ -5,6 +5,9 @@
 **Route:** /faq (built November 2026; in the header menu)
 **Sources:** fsic.space/copy-of-news-media (the live FAQ page), copied verbatim
 
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
+> - "Economic Impact" (economic impact answer) now goes to Economic Impact, At a glance
+
 The page is built from this file (`src/pages/faq.astro`). Several answers are also used on other pages: governance, partnership-funding, programs-facilities, deployment, long-term-vision, and economic-impact. If you edit an answer here, update those pages too, or have the build read from a single source.
 
 ---
