@@ -12,6 +12,7 @@ import HeroIndex from '../components/HeroIndex.astro';
 import Closing from '../components/Closing.astro';
 import { phases as phaseData } from '../data/phases';
 import SectionBar from '../components/SectionBar.astro';
+import { url } from '../lib/url';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 
 // Copy: src/content/copy/programs-facilities.md (Draft). Audiences: fsic.space FAQ (verbatim). Portfolio
@@ -19,7 +20,6 @@ import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections
 // Master Plan pp. 19–21. Facilities: FAQ (status) and Master Plan pp. 17–19, without the named
 // development (docs/08 §3.3).
 
-const base = import.meta.env.BASE_URL;
 
 const sections: PageSection[] = [
   { id: 'audiences', name: 'Programs by Audience', short: 'Audiences' },
@@ -99,7 +99,7 @@ const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timefr
             <p class="mb-3 text-gray-dark">{e.line}</p>
             <ProgramList programs={e.programs} class="border-t border-rule" />
             <p class="mt-3 mb-0 text-caption">
-              <a href={`${base}/model#${e.id}`} class="link">The {e.name} on the Model page</a>
+              <a href={url(`/model#${e.id}`)} class="link">The {e.name} on the Model page</a>
             </p>
           </Row>
         ))}
@@ -136,7 +136,7 @@ const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timefr
           ))}
         </dl>
         <p class="mt-6 mb-0 text-caption">
-          Each phase's activities and outcomes are on the <a href={`${base}/deployment`} class="link">Phased Deployment</a> page.
+          Each phase's activities and outcomes are on the <a href={url('/deployment')} class="link">Phased Deployment</a> page.
         </p>
       </div>
     </Grid>

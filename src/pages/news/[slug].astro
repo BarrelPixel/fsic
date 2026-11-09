@@ -6,6 +6,7 @@ import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import Grid from '../../components/Grid.astro';
 import { getReleases, formatDate, firstParagraph, truncate, isoDate, releaseHref, type Release } from '../../lib/news';
+import { url } from '../../lib/url';
 
 // One page per press release (src/content/news/<slug>.md). The text is shown as published.
 export async function getStaticPaths() {
@@ -23,7 +24,6 @@ interface Props {
 
 const { release, others } = Astro.props;
 const { Content } = await render(release);
-const base = import.meta.env.BASE_URL;
 const { image, imageAlt } = release.data;
 const shareImage = image ? await getImage({ src: image, width: 1200, format: 'jpg' }) : undefined;
 ---
@@ -41,7 +41,7 @@ const shareImage = image ? await getImage({ src: image, width: 1200, format: 'jp
     <Grid stickyLabel>
       <div slot="label">
         <p class="mb-0 text-label md:pt-label-offset">
-          <a href={`${base}/news`} class="text-navy underline-reveal underline-offset-4">All news and media</a>
+          <a href={url('/news')} class="text-navy underline-reveal underline-offset-4">All news and media</a>
         </p>
         {image && imageAlt && (
           <Image
@@ -78,7 +78,7 @@ const shareImage = image ? await getImage({ src: image, width: 1200, format: 'jp
               <p class="mb-1 text-caption text-gray-dark">
                 <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
               </p>
-              <a href={releaseHref(base, r)} class="font-display text-xl font-semibold text-navy leading-snug underline-reveal underline-offset-4">{r.data.title}</a>
+              <a href={releaseHref(r)} class="font-display text-xl font-semibold text-navy leading-snug underline-reveal underline-offset-4">{r.data.title}</a>
             </li>
           ))}
         </ul>

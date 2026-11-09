@@ -3,13 +3,12 @@
 // copy deck notes a change (economic ranges, the five phases, the sourced space-economy figures, the
 // removed regional housing figure).
 import { EMAIL, mailto } from '../lib/site';
+import { url } from '../lib/url';
 import { FIGURES } from './economics';
 import { phases, phaseLabel } from './phases';
 
-const base = import.meta.env.BASE_URL;
-
 const mail = `<a href="${mailto()}">${EMAIL}</a>`;
-const page = (path: string, text: string) => `<a href="${base}${path}">${text}</a>`;
+const page = (path: string, text: string) => `<a href="${url(path)}">${text}</a>`;
 
 /** An answer is a list of blocks. Strings are trusted, hand-written HTML (links and <strong>). */
 export type Block =

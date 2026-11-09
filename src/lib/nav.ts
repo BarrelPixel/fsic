@@ -1,3 +1,5 @@
+import { url } from './url';
+
 // Site navigation, shared by the header and the footer (docs/02-information-architecture.md).
 // Pages are grouped by the question they answer. Set `built: false` for a page that still uses
 // <ComingSoon>: it stays out of both menus until it ships, so no menu leads to a placeholder.
@@ -63,5 +65,5 @@ export function getNavColumns(): { label: string; links: NavLink[] }[] {
   return [...groups.map((g) => ({ label: g.label, links: g.links })), { label: 'FSIC', links: [{ label: 'Home', path: '/' }, ...singles] }];
 }
 
-/** Joins the base path (import.meta.env.BASE_URL, no trailing slash) to a nav path. */
-export const href = (base: string, path: string) => (path === '/' ? base || '/' : `${base}${path}`);
+/** A nav path with the base path (see src/lib/url.ts). */
+export const href = (path: string) => url(path);

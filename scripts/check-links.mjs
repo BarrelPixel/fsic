@@ -7,8 +7,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import config from '../astro.config.mjs';
 
-const dist = process.argv[2] ?? 'dist';
-const BASE = (config.base ?? '').replace(/\/+$/, ''); // '' when the site is at the root
+// Usage: node scripts/check-links.mjs [dist] [--base <path>]  (--base overrides the config, e.g. --base / to
+// check a build made for the root of a domain)
+const args = process.argv.slice(2);
+const baseArg = args.indexOf('--base');
+const dist = args.find((a, i) => !a.startsWith("--") && (baseArg < 0 || i !== baseArg + 1)) ?? "dist";
+const BASE = (baseArg >= 0 ? args[baseArg + 1] : config.base ?? '').replace(/\/+$/, ''); // '' when the site is at the root
 const ROOT = BASE || '/';
 
 // Every built page, keyed by its URL without a trailing slash (the homepage is ROOT).

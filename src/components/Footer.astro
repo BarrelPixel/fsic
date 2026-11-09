@@ -3,8 +3,8 @@
 // then the single links. Each page appears once.
 import { getNavColumns, href as navHref } from '../lib/nav';
 import { EMAIL, mailto, SOCIAL_LINKS } from '../lib/site';
+import { url } from '../lib/url';
 
-const base = import.meta.env.BASE_URL;
 const columns = getNavColumns();
 
 ---
@@ -14,7 +14,7 @@ const columns = getNavColumns();
       <!-- Brand -->
       <div>
         <img
-          src={`${base}/images/fsic-logo-reverse.png`}
+          src={url('/images/fsic-logo-reverse.png')}
           alt="Florida Space Innovation Center"
           width="300"
           height="128"
@@ -47,7 +47,7 @@ const columns = getNavColumns();
             <ul class="flex flex-col gap-2" role="list">
               {col.links.map((link) => (
                 <li>
-                  <a href={navHref(base, link.path)} class="text-sm text-white/75 hover:text-white transition-colors">
+                  <a href={navHref(link.path)} class="text-sm text-white/75 hover:text-white transition-colors">
                     {link.label}
                   </a>
                 </li>

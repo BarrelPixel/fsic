@@ -5,13 +5,13 @@
 // (global.css, "Navigation dropdowns"). The script adds aria-expanded and aria-controls when it runs,
 // so without JS the buttons don't announce a collapsed state while their panel is showing.
 import { getNav, isGroup, href as navHref } from '../lib/nav';
+import { url } from '../lib/url';
 
-const base = import.meta.env.BASE_URL;
 const nav = getNav();
 
 const stripSlash = (path: string) => (path.length > 1 ? path.replace(/\/+$/, '') : path);
 const currentPath = stripSlash(Astro.url.pathname);
-const homePath = stripSlash(base);
+const homePath = stripSlash(url('/'));
 
 // Home matches only itself; other items also match their sub-pages.
 const isActive = (href: string) => {
@@ -26,9 +26,9 @@ const items = nav.map((item, i) =>
         kind: 'group' as const,
         id: `nav-group-${i}`,
         label: item.label,
-        links: item.links.map((l) => ({ label: l.label, href: navHref(base, l.path), active: isActive(navHref(base, l.path)) })),
+        links: item.links.map((l) => ({ label: l.label, href: navHref(l.path), active: isActive(navHref(l.path)) })),
       }
-    : { kind: 'link' as const, label: item.label, href: navHref(base, item.path), active: isActive(navHref(base, item.path)) },
+    : { kind: 'link' as const, label: item.label, href: navHref(item.path), active: isActive(navHref(item.path)) },
 );
 const groupActive = (links: { active: boolean }[]) => links.some((l) => l.active);
 
@@ -40,9 +40,9 @@ const itemClass = (active: boolean) => [
 <header class="font-sans bg-night text-white relative z-50 border-b border-white/10 [view-transition-name:site-header]">
   <div class="container">
     <nav class="flex items-center justify-between py-3" aria-label="Main navigation">
-      <a href={base} class="block shrink-0 hover:opacity-90 transition-opacity">
+      <a href={url('/')} class="block shrink-0 hover:opacity-90 transition-opacity">
         <img
-          src={`${base}/images/fsic-logo-reverse.png`}
+          src={url('/images/fsic-logo-reverse.png')}
           alt="Florida Space Innovation Center"
           width="300"
           height="128"

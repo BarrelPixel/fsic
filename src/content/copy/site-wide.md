@@ -50,7 +50,7 @@ Shown for any address on the site that has no page, including old fsic.space add
 **Closing line:** Still can't find it? Email info@fsic.space and we will point you in the right direction.
 **CTA:** Return to the Homepage
 
-> **⚠ Review:** New copy, written for the rebuilt site. The aside assumes the new site replaces fsic.space at the same domain; adjust it if the domain or launch plan changes.
+> **⚠ Review:** New copy, written for the rebuilt site. The aside fits the plan to point fsic.space at the new site (confirmed November 2026).
 
 ---
 

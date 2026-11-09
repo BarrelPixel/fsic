@@ -13,11 +13,10 @@ import { EMAIL, mailto } from '../lib/site';
 // GitHub Pages serves for any address under the site that has no page. Links are absolute (base path
 // included), so the page works at whatever address it is shown. Kept out of search results.
 
-const base = import.meta.env.BASE_URL;
 // Every page in the menus, grouped as in the footer (src/lib/nav.ts), as links for List.
 const columns = getNavColumns().map((col) => ({
   label: col.label,
-  links: col.links.map((l) => `<a href="${navHref(base, l.path)}" class="link">${l.label.replace(/&/g, '&amp;')}</a>`),
+  links: col.links.map((l) => `<a href="${navHref(l.path)}" class="link">${l.label.replace(/&/g, '&amp;')}</a>`),
 }));
 ---
 <BaseLayout

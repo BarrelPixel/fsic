@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { url } from './url';
 
 export type Release = CollectionEntry<'news'>;
 
@@ -9,7 +10,7 @@ export async function getReleases(): Promise<Release[]> {
 }
 
 /** The release page's address: /news/<slug>, with the base path. */
-export const releaseHref = (base: string, release: Release) => `${base}/news/${release.id}`;
+export const releaseHref = (release: Release) => url(`/news/${release.id}`);
 
 /** "2026-07-29", for <time datetime>. */
 export const isoDate = (date: Date) => date.toISOString().slice(0, 10);
