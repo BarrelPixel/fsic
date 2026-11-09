@@ -7,7 +7,7 @@ Public website for the Florida Space Innovation Center (FSIC), a coordinated reg
 
 ## Tech Stack
 
-- **Framework:** [Astro](https://astro.build/) 5 with TypeScript
+- **Framework:** [Astro](https://astro.build/) 7 with TypeScript
 - **Styling:** Tailwind CSS v4 (via `@tailwindcss/vite`), design tokens in `src/styles/global.css`
 - **Output:** Static HTML (SSG)
 - **Hosting:** GitHub Pages under the `/fsic` base path, deployed by `.github/workflows/deploy.yml` on push to `main` (Node 24, from `.nvmrc`). The deploy runs `npm run check` and `npm run check-links`, so a type error or broken internal link stops it. Production hosting and domain are still open (`docs/07-open-questions.md`).

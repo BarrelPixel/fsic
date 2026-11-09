@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 // Press releases: one Markdown file per release, wording as published (see src/content/copy/news.md).
@@ -14,7 +15,7 @@ const news = defineCollection({
         image: image().optional(),
         imageAlt: z.string().optional(),
       })
-      .refine((d) => !d.image || d.imageAlt, { message: 'imageAlt is required when image is set' }),
+      .refine((d) => !d.image || d.imageAlt, { error: 'imageAlt is required when image is set' }),
 });
 
 // src/content/copy/ is the copy deck: Markdown documents for people, not a collection the site reads.
