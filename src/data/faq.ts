@@ -86,7 +86,7 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     id: 'economic-impact',
     a: [
       { p: `Independent economic modeling shows that FSIC dramatically improves the region's long-term economic trajectory. With full implementation over 25 years (the Master Plan's Extended FSIC, or FSIC 2.0, scenario), FSIC is projected to help the region generate ${FIGURES.output.display} in economic output, support ${FIGURES.jobYears.display} job-years, increase local wages by ${FIGURES.wages.display}, and generate ${FIGURES.fiscal.display} in fiscal revenue for local and state governments. It also positions the region to attract ${FIGURES.externalFunding.words} in external funding tied to workforce development, innovation, and research. These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at ${mail}.` },
-      { p: `The full analysis is on the ${page('/economic-impact', 'Economic Impact')} page.` },
+      { p: `The full analysis is on the ${page('/economic-impact#at-a-glance', 'Economic Impact')} page.` },
       { source: 'Source: FSIC Master Plan 2026–2031, pp. 7–8.' },
     ],
   },

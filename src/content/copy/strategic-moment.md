@@ -7,6 +7,8 @@
 
 > **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged.
 > - "Billions in funding" (02) → Partnership & Funding, Funding
+> - "civilian-facing innovation hub" (02) → The FSIC Model, Innovation Engine
+> - "long-term economic trajectory" (03) → Economic Impact, Risks and Opportunities
 
 ---
 

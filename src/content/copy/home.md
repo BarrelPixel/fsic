@@ -3,6 +3,11 @@
 **Status:** Approved
 **Last Updated:** February 2026
 
+> **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
+> - "Southeast Volusia launches" (hero) → the May 25, 2026 launch press release
+> - "local career pathways" (05, Talent Attraction & Retention) → Programs & Facilities, Audiences
+> - "pursue and coordinate funding" (05, Alignment with Major Funding Channels) → Partnership & Funding, Funding
+
 > **Layout note (November 2026):** The page is set on the 12-column grid in DESIGN.md. Wording is unchanged, but some lines moved into each section's label column, so on the page they read before the body text: "Without coordination, growth concentrates elsewhere.", "This is not a short-term program…", "Growth is structured. Not speculative.", and "This is a coordinated regional investment…". Sections 01–07 carry small running-head numbers, and where the headline doesn't already name the topic, a label taken from this file's section names (for example "The strategic moment"). They are wayfinding, not copy, and are hidden from screen readers.
 
 > **Change (November 2026):** The project lead decided the site does not name a campus site. The Long-Range Vision headline changed from naming the Master Plan's proposed site to "A Landmark Campus for Southeast Volusia". See `docs/08-current-site-audit.md` §3.3.

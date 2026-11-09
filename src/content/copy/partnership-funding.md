@@ -7,6 +7,7 @@
 
 > **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged.
 > - "advisory councils" (Employers & Industry, partnership roles) → Governance, Structure
+> - "Explore the Full Economic Analysis" (Funding) now goes to Economic Impact, At a glance
 
 ---
 

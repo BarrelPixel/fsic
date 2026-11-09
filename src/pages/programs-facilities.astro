@@ -129,7 +129,7 @@ const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timefr
           </Row>
           {phases.map((ph) => (
             <Row label={`Phase ${ph.n} · ${ph.when}`} rule="bottom" class="pt-5">
-              <p class="mb-2 font-sans font-semibold text-navy">{ph.name}</p>
+              <p class="mb-2 font-sans font-semibold text-navy"><a href={url(`/deployment#phase-${ph.n}`)} class="link">{ph.name}</a></p>
               <p class="mb-2 text-caption text-gray-dark">Planned core spaces:</p>
               <List items={ph.spaces} class="text-gray-dark" />
             </Row>

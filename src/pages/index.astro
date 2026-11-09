@@ -16,6 +16,7 @@ import { engines } from '../data/engines';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 import RangeBar from '../components/RangeBar.astro';
 import RangeLegend from '../components/RangeLegend.astro';
+import { url } from '../lib/url';
 
 // 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
@@ -25,6 +26,7 @@ const impact = [
   { label: 'Fiscal revenue for local and state governments', ...FIGURES.fiscal },
 ];
 
+// Bodies are trusted, hand-written HTML (they may hold a link).
 const value = [
   {
     title: 'Year-Round Activation',
@@ -32,7 +34,7 @@ const value = [
   },
   {
     title: 'Talent Attraction & Retention',
-    body: 'Integrated programming strengthens local career pathways and helps retain young professionals who want opportunity close to home.',
+    body: `Integrated programming strengthens <a href="${url('/programs-facilities#audiences')}" class="link">local career pathways</a> and helps retain young professionals who want opportunity close to home.`,
   },
   {
     title: 'Employer Attraction & Higher-Wage Growth',
@@ -40,7 +42,7 @@ const value = [
   },
   {
     title: 'Alignment with Major Funding Channels',
-    body: 'FSIC is positioned to pursue and coordinate funding through NSF Engines, regional innovation grants, state workforce programs, and Space Florida tools — bringing outside dollars into the region.',
+    body: `FSIC is positioned to <a href="${url('/partnership-funding#funding')}" class="link">pursue and coordinate funding</a> through NSF Engines, regional innovation grants, state workforce programs, and Space Florida tools — bringing outside dollars into the region.`,
   },
 ];
 
@@ -81,7 +83,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
             On May 25, 1961, the United States committed to landing a man on the Moon — not because it was easy, but because it demanded coordination, capability, and national resolve.
           </p>
           <p>
-            Sixty-five years later, Southeast Volusia launches its own coordinated commitment: to strengthen our regional workforce, accelerate innovation, support industry growth, and ensure that the Space Coast's expansion directly benefits the people who live and work here.
+            Sixty-five years later, <a href={url('/news/2026-05-25-fsic-launches-on-may-25')} class="link-on-dark">Southeast Volusia launches</a> its own coordinated commitment: to strengthen our regional workforce, accelerate innovation, support industry growth, and ensure that the Space Coast's expansion directly benefits the people who live and work here.
           </p>
           <p class="text-white font-semibold">
             The Florida Space Innovation Center is that commitment in action.
@@ -221,7 +223,7 @@ const audiences = ['Employers', 'University leaders', 'Policymakers', 'Workforce
         {value.map((item) => (
           <div class="border-t-2 border-lagoon pt-5">
             <h3 class="mb-3">{item.title}</h3>
-            <p class="mb-0">{item.body}</p>
+            <p class="mb-0" set:html={item.body} />
           </div>
         ))}
       </div>
