@@ -1,0 +1,19 @@
+---
+// Florida's required disclosure for charitable solicitations (s. 496.411, Florida Statutes), shown wherever the
+// site discusses contributions. It renders nothing until FSIC's registration number is set (ORG.floridaRegistration
+// in src/lib/site.ts). The statement is set as the statute gives it, in capitals; confirm the wording with FSIC's
+// counsel when the number is added. `dark` on night (the footer).
+import { ORG } from '../lib/site';
+
+interface Props {
+  dark?: boolean;
+  class?: string;
+}
+const { dark = false, class: className } = Astro.props;
+const reg = ORG.floridaRegistration;
+---
+{reg && (
+  <p class:list={['text-caption mb-0', dark ? 'text-white/60' : 'text-gray-dark', className]}>
+    Florida registration number {reg}. A COPY OF THE OFFICIAL REGISTRATION AND FINANCIAL INFORMATION MAY BE OBTAINED FROM THE DIVISION OF CONSUMER SERVICES BY CALLING TOLL-FREE (800-435-7352) WITHIN THE STATE. REGISTRATION DOES NOT IMPLY ENDORSEMENT, APPROVAL, OR RECOMMENDATION BY THE STATE.
+  </p>
+)}

@@ -22,4 +22,18 @@ export const ORG = {
   legalName: 'Florida Space Innovation Center Inc.',
   status: '501(c)(3) nonprofit organization',
   ein: '43-2277165',
+  /** IRS classification and dates, from the determination letter. */
+  publicCharity: '509(a)(2)',
+  exemptSince: 'July 1, 2026',
+  determinationDate: 'October 20, 2026',
+  fiscalYear: 'July 1 to June 30',
+  /**
+   * Florida charitable-solicitation registration number (FDACS, Chapter 496, Florida Statutes). Set it once FSIC
+   * is registered: the state's disclosure then appears wherever the site discusses contributions
+   * (SolicitationDisclosure). Until then the site must not ask the public for donations.
+   */
+  floridaRegistration: null as string | null,
 };
+
+/** The IRS's public search for tax-exempt organizations, where anyone can confirm FSIC's status by its EIN. */
+export const IRS_EXEMPT_SEARCH = 'https://apps.irs.gov/app/eos/';

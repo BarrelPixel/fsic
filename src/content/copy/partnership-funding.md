@@ -85,6 +85,8 @@ For each partner type: who they are (overview), partnership roles, strategic ben
 
 > **Source:** Master Plan p. 25 (verbatim).
 
+**Florida disclosure** (under the tax status, and in the footer): shown automatically once FSIC's Florida charitable-solicitation registration number is set (`ORG.floridaRegistration`, `src/lib/site.ts`; `SolicitationDisclosure`). Wording from s. 496.411, Florida Statutes: "Florida registration number [number]. A COPY OF THE OFFICIAL REGISTRATION AND FINANCIAL INFORMATION MAY BE OBTAINED FROM THE DIVISION OF CONSUMER SERVICES BY CALLING TOLL-FREE (800-435-7352) WITHIN THE STATE. REGISTRATION DOES NOT IMPLY ENDORSEMENT, APPROVAL, OR RECOMMENDATION BY THE STATE." **⚠ Review:** counsel confirms the wording when the number is added.
+
 **Tax status** (after the body, set off by a rule): Florida Space Innovation Center Inc. is a 501(c)(3) public charity (EIN 43-2277165). Contributions are tax-deductible to the extent allowed by law.
 
 > **Source:** IRS determination letter (Letter 947), October 20, 2026. **⚠ Review:** new line. If FSIC asks the public for donations on the site, Florida's Solicitation of Contributions Act may also require a registration disclosure statement; see `docs/07-open-questions.md`.

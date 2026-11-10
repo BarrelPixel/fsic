@@ -53,6 +53,9 @@ fsic.space, now the Wix site's domain, will point to this site on GitHub Pages. 
 - [ ] No placeholder text ("Lorem ipsum", "Coming soon" on live pages)
 - [ ] All economic figures match source PDFs exactly
 - [ ] No fabricated logos, quotes, or partner names
+- [ ] Nonprofit rules (`03-content-guidelines.md`, "Nonprofit Rules (501(c)(3))"): no campaign content or campaign links, no unapproved lobbying asks, sponsor recognition without advertising
+- [ ] No donation request on the site unless FSIC's Florida charitable-solicitation registration number is set (`ORG.floridaRegistration`); with it, the state's disclosure shows in the footer and on Partnership & Funding
+- [ ] Governance "Tax-Exempt Status and Public Filings" is current (latest Form 990 posted once filed)
 - [ ] Contact information is correct and functional
 
 ### Visual & Responsive

@@ -229,6 +229,22 @@ Master Plan p. 17: the founder serves as unpaid CEO during the startup phase, th
 > **Source:** Master Plan pp. 17 (compliance framework) and 31 (verbatim)
 > **⚠ Review:** "Public dashboards on FSIC's website" is a commitment the site doesn't meet yet (see `07-open-questions.md`, Public dashboards). Confirm FSIC wants to state it.
 
+### Tax-Exempt Status and Public Filings (closing row of 03)
+
+**Heading (label column):** Tax-Exempt Status and Public Filings
+**Label line:** Documents any member of the public may see.
+
+**Tax-exempt status:** Florida Space Innovation Center Inc. is a 501(c)(3) public charity (509(a)(2)), exempt from federal income tax since July 1, 2026 (EIN 43-2277165). Contributions are tax-deductible to the extent allowed by law.
+**Link:** Confirm FSIC's status with the IRS (the IRS Tax Exempt Organization Search)
+
+**Determination letter and application:** FSIC's IRS determination letter (October 20, 2026) and its application for exemption are available on request.
+**Link:** Request a copy (email, subject "Public disclosure request")
+
+**Annual returns (Form 990):** FSIC's fiscal year runs July 1 to June 30. Each Form 990 will be posted here once filed; the first covers the year ending June 30, 2027.
+
+> **Source:** IRS determination letter (Letter 947), October 20, 2026. A 501(c)(3) must provide its determination letter, its exemption application (Form 1023) and its three most recent annual returns to anyone who asks (IRC 6104); posting them on the site makes them "widely available". The letter itself is not posted because its address is in care of an individual; it is sent on request.
+> **Added (November 10, 2026).** **⚠ Review:** new wording. Confirm with FSIC's CPA that the first return covers the year ending June 30, 2027 (the exemption is effective July 1, 2026), and decide whether to post the letter with the address redacted instead of sending it on request.
+
 ---
 
 ## 04 · KEY METRICS AND REPORTING CADENCE
