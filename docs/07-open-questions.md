@@ -30,6 +30,8 @@ Items requiring stakeholder input or decisions before full launch.
 - [ ] **Email newsletter:** Will there be a mailing list signup? If so, which provider? (Mailchimp, ConvertKit, etc.)
 
 ## Legal & Compliance
+- [x] **Tax status:** resolved (November 2026). The IRS determination letter (October 20, 2026) confirms Florida Space Innovation Center Inc is a 501(c)(3) public charity, effective July 1, 2026, with deductible contributions. The footer and Partnership & Funding now state the status and EIN (`src/lib/site.ts`, `ORG`).
+- [ ] **Charitable solicitation disclosure:** before the site asks the public for donations, confirm with FSIC (or its counsel) whether it is registered under Florida's Solicitation of Contributions Act (Chapter 496) and whether the site must carry the state's disclosure statement. FSIC's fiscal year ends June 30 (from the IRS letter); its Form 990 filings could later be linked for transparency.
 - [ ] **Privacy policy:** Required if collecting any user data (analytics, forms).
 - [ ] **Terms of use:** Needed before launch?
 - [ ] **Cookie consent:** Required if using analytics cookies.

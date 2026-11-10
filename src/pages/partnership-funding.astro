@@ -6,7 +6,7 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import List from '../components/List.astro';
-import { mailto } from '../lib/site';
+import { mailto, ORG } from '../lib/site';
 import HeroIndex from '../components/HeroIndex.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
@@ -119,9 +119,15 @@ const at = (id: string) => sectionProps(sections, id);
           items={faqText.fundingBlend}
         />
       </div>
-      <p class="max-w-3xl mb-0 lg:pt-1">
-        The Florida Space Innovation Center is designed with a diversified, sustainable funding model that aligns with national best practices for nonprofit innovation hubs. The strategy balances philanthropy, public funding, employer partnerships, earned revenue, and federal grants. This approach reduces risk, strengthens long-term sustainability, and positions FSIC to scale responsibly as regional demand grows.
-      </p>
+      <div class="max-w-3xl lg:pt-1">
+        <p class="mb-6">
+          The Florida Space Innovation Center is designed with a diversified, sustainable funding model that aligns with national best practices for nonprofit innovation hubs. The strategy balances philanthropy, public funding, employer partnerships, earned revenue, and federal grants. This approach reduces risk, strengthens long-term sustainability, and positions FSIC to scale responsibly as regional demand grows.
+        </p>
+        <!-- Tax status (IRS determination letter, October 20, 2026; src/lib/site.ts ORG) -->
+        <p class="mb-0 pt-6 border-t border-rule text-navy">
+          {ORG.legalName} is a 501(c)(3) public charity (EIN {ORG.ein}). Contributions are tax-deductible to the extent allowed by law.
+        </p>
+      </div>
     </Grid>
 
     <!-- Streams: name + years (cols 1–4) | purpose and sources (5–8) | Years 1–5 track (9–12) -->

@@ -28,7 +28,9 @@ The Florida Space Innovation Center is a coordinated regional platform strengthe
 - Facebook — https://www.facebook.com/profile.php?id=61589280681125
 - X — https://x.com/FLSpaceCenter
 
-**Legal line:** © {year} Florida Space Innovation Center. All rights reserved.
+**Legal line:** © {year} Florida Space Innovation Center Inc. All rights reserved. A 501(c)(3) nonprofit organization, EIN 43-2277165.
+
+> **Source:** IRS determination letter (Letter 947), October 20, 2026: Florida Space Innovation Center Inc is exempt under IRC 501(c)(3) as a public charity (509(a)(2)), effective July 1, 2026; contributions are deductible under IRC 170. The name, status and EIN are defined once in `src/lib/site.ts` (`ORG`). The letter's mailing address (care of an individual) is not published. **⚠ Review:** new wording; confirm the legal name's form with FSIC (the IRS letter prints it without punctuation).
 **Credit:** Built by Barrel & Pixel
 
 > **Source:** New-site footer, plus contact and social details from the fsic.space footer.
