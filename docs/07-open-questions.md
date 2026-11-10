@@ -22,7 +22,7 @@ Items requiring stakeholder input or decisions before full launch.
 - [x] **Domain:** resolved (November 2026). fsic.space, the current Wix site's domain, will point to this site. Steps in `06-launch-plan.md` ("Switching to fsic.space").
 - [ ] **Hosting provider:** GitHub Pages, where the build deploys now, unless decided otherwise. Confirm, since it can't do server redirects (see Redirects below).
 - [ ] **When to switch:** the date fsic.space moves from Wix to this site.
-- [ ] **Analytics:** Google Analytics 4? Plausible? Other?
+- [ ] **Analytics:** Google Analytics 4? Plausible? Other? (November 2026: both are supported and switched off; Plausible is the default because it needs no cookies or consent banner. See `16-analytics-setup.md`.)
 - [ ] **Redirects from fsic.space:** built (November 2026): 17 old Wix addresses forward to their new pages (`redirects` in `astro.config.mjs`; `docs/13` B4). **⚠ Review the mapping:** /about-4 and /1-why-we-are-building-the-fsic → The Strategic Moment; /copy-of-news-media → FAQ; /about-7, /event-list → News; /blog is now the new blog's address; /talent, /innovation, /market, /civic → that engine on the Model page; /john-joaquin, /leadership → Governance; /book-online, /challenges → Programs & Facilities; /copy-of-home, /copy-of-home-1, /general-clean, /coming-soon-03 → Home. Not redirected: the Wix wildcard pages (/post/…, /service-page/…, /event-details/…, /challenge-page/…), whose slugs would need listing from the live site, and the template legal pages (/blank…). Those land on the 404 page.
 - [x] **Search indexing before launch:** resolved (November 2026). The preview is kept out of search and AI answers: every page is `noindex` and robots.txt disallows crawling, until `site` is https://fsic.space (`src/lib/seo.ts`, `INDEXABLE`). The sitemap (`/sitemap.xml`) and robots.txt are generated at build time.
 - [x] **Default share image:** resolved (November 2026). Pages without their own use the homepage hero photo (`BaseLayout`); press releases use their graphic.
@@ -37,10 +37,10 @@ Items requiring stakeholder input or decisions before full launch.
 - [ ] **Donor acknowledgments:** a written acknowledgment for each gift of $250 or more, and a disclosure of the deductible part for any payment over $75 that buys something (an event ticket).
 - [ ] **Board policies:** a written conflict-of-interest policy with recusal (the board includes elected officials and a company CEO), and documented approval of any officer pay, as Form 990 asks. The Governance page already lists "Conflict-of-interest disclosures" under Compliance.
 - [ ] **Public disclosure:** the determination letter, the exemption application and the three latest Form 990s must go to anyone who asks; the Governance page offers them by email. Decide whether to post the letter with the address redacted.
-- [ ] **Privacy policy:** Required if collecting any user data (analytics, forms).
+- [ ] **Privacy policy:** drafted (November 2026) at `/privacy` from `src/content/copy/privacy.md`: it says only what the site does today (no cookies, forms or analytics; server logs; email). Needs FSIC and counsel approval; then link it from the footer. Must be updated before analytics, a form, a newsletter or donations go live.
 - [ ] **Terms of use:** Needed before launch?
 - [ ] **Cookie consent:** Required if using analytics cookies.
-- [ ] **ADA compliance statement:** Should the site include an accessibility statement page?
+- [ ] **Accessibility statement:** drafted (November 2026) at `/accessibility` from `src/content/copy/accessibility.md`: the WCAG 2.1 AA target, what the site is built to do, and what hasn't been done (no formal audit or screen-reader testing yet). FSIC to approve, decide on a response time, and then link it from the footer.
 
 ## Future Features
 - [ ] **Public dashboards:** The Master Plan references public dashboards with program metrics (Page 31). What data will be available at launch?

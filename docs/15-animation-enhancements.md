@@ -3,7 +3,7 @@
 **Date:** November 10, 2026  
 **Branch:** `cursor/animation-enhancements-5766`  
 **Pull Request:** [#55](https://github.com/BarrelPixel/fsic/pull/55)  
-**Status:** ✅ Complete and Deployed
+**Status:** Revised November 10, 2026 after review. Kept: the phone menu overlay and backdrop, the menu icon's change to an X, the button press, the section-bar indicator, and the focus ring's fade-in. Removed: list items moving on hover (they aren't interactive) and the staggered menu items (decoration DESIGN.md doesn't allow). Fixed: the menu now opens directly under the header (it left a gap), the X is drawn correctly, the header isn't dimmed by the backdrop, and reduced motion covers every new transition. DESIGN.md "Motion" is the source of truth; where this document disagrees, DESIGN.md wins.
 
 ---
 

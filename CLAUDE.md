@@ -26,11 +26,11 @@ There is no linter or test suite. `npm run check` (types) and `npm run check-lin
 ## Layout
 
 ```
-src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding, strategic-moment, programs-facilities, long-term-vision, faq, news and contact: every page is built (<ComingSoon> remains for future pages). 404.astro is the not-found page (noindex; links from getNavColumns())
+src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding, strategic-moment, programs-facilities, long-term-vision, faq, news, contact and blog: every page is built (<ComingSoon> remains for future pages). privacy and accessibility are drafts: noindex and not linked until FSIC approves them. 404.astro is the not-found page (noindex; links from getNavColumns())
 src/components/      Grid components (Section, Grid, Row, List, PageHero, SectionBar, RunningHead),
                      Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBar, RangeLegend,
                      RangeBarsDraw, RangeTable, RangeRow, TableRow, YearScale, YearBar, Dot, MoreLink,
-                     ConceptRendering, HomeHero, BaseLinks, SolicitationDisclosure, ComingSoon
+                     ConceptRendering, HomeHero, BaseLinks, SolicitationDisclosure, Analytics, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, range-bar animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
