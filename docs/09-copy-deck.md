@@ -6,7 +6,7 @@ All website copy lives in `src/content/copy/`, with one Markdown file per page. 
 
 | File | Page | Status |
 |------|------|--------|
-| `home.md` | `/` | Approved (new lines from the November 2026 homepage review are marked ⚠ Review) |
+| `home.md` | `/` | Approved; the Track B changes (hero, Where You Fit, economic headline, people, follow line; `10-homepage-plan.md`) and the November 2026 review's new lines are marked ⚠ Review |
 | `strategic-moment.md` | `/strategic-moment` | Draft |
 | `model.md` | `/model` | Draft |
 | `economic-impact.md` | `/economic-impact` | Draft |

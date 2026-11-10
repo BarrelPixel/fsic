@@ -1,6 +1,6 @@
 # 10 — Homepage Presentation Plan
 
-**Status:** Track A built (November 10, 2026): A1–A4 are on the page. Tracks B and C are proposed.
+**Status:** Tracks A and B built (November 10, 2026). Track A changes layout only. Track B's wording is in `home.md` marked ⚠ Review and is on the page pending the client's approval. Track C waits on the client. Results so far are in §8.
 **Scope:** `src/pages/index.astro`, `src/content/copy/home.md`, and the data files the homepage reads.
 **Builds on:** the homepage review of November 2026 (latest news, the five phases, audience links, common questions). This plan is the next step, not a redo.
 
@@ -25,7 +25,7 @@ The design idea in `DESIGN.md` is "from spectator to participant": opportunity f
 
 ## 3. Findings
 
-Ordered by how much each one costs the page with its audience. Measurements are from the current build at 1440 px and 375 px.
+Ordered by how much each one costs the page with its audience. Measurements are from the build before Track A, at 1440 px and 375 px. What each finding led to is in §8.
 
 ### 3.1 The first screen doesn't say what FSIC is (high)
 The headline, "A New Commitment to the Space Coast", doesn't name the region or say what FSIC does. The first paragraph is about 1961. The definition ("a coordinated regional platform…") is in the meta description but not on the page; "Southeast Volusia" first appears in the second paragraph. On a 375 × 812 phone the two buttons start about 1,070 px down, below the first screen, after three paragraphs. The 1961 parallel was written for the May 25 launch; six months later it reads as a history lesson before the point.
@@ -71,11 +71,11 @@ Same grid, components and design rules. Eight numbered sections become six, and 
 
 Dark/white rhythm stays: night hero → white band and 01 → night 02 → white 03–05 → night 06 → white close → night footer.
 
-Expected effect: the definition and both buttons inside the first phone screen; each audience's next step within the first two screens on desktop; page length down by roughly a fifth.
+Expected effect: the definition and both buttons at the first phone screen; each audience's next step within the first two screens on desktop instead of near the end. The page does not get much shorter: Track A removes two sections, but Where You Fit adds one (see §8).
 
 ## 5. Execution
 
-Three tracks. Track A can start now. Tracks B and C wait on copy approval and client input, and each item lands as its own commit so it can be reviewed or reverted alone.
+Three tracks. Track A changes layout only. Track B's wording is approved in `home.md`. Track C needs the client. (Revised after Track A: B2, B4 and the order below.)
 
 ### Track A — structure and code, no new wording
 
@@ -91,17 +91,17 @@ Three tracks. Track A can start now. Tracks B and C wait on copy approval and cl
 | Step | Work | Depends on |
 |------|------|------------|
 | B1 | **Hero**: a headline that names Southeast Volusia and the idea (draft options in `home.md`, e.g. built from the live site's "opportunity flows into Southeast Volusia — not past it"), the definition already used as the meta description as the lead, buttons directly after. Move the 1961 paragraph to open 01. | Client approval of the hero copy |
-| B2 | **Where you fit** band: five rows, each a one-line offer drawn from `partnership.ts` (no new claims), linked as the close's audience list is now. Add `homeLine` to the partner data so the line is defined once. | B1 (they share the first screen) |
+| B2 | **Where you fit** band: five rows, each a one-line offer summarizing Partnership & Funding and Programs by Audience (no new claims), linked as the close's audience list was. The residents' line names programs, not talent retention, which the engines' closing row already says (A4). The close's audience list goes; its common questions take that place. The lines live in `index.astro` (only the homepage uses them). | B1 (they share the first screen) |
 | B3 | **"Under way" on Phase 1**, read from `phases.ts` (a `current` flag), so it moves when the phase does. | Client confirms which phase(s) are active |
-| B4 | **Who's involved** row: names and roles exactly as in the releases, each linking to its release. | Client confirms titles and the seated board (open question "Titles") |
+| B4 | **Who's involved**: in the governance block (A3), not the news, since "partner-first, coalition-driven governance" is about these people: Board of Directors and Founders Council rows, names and roles exactly as in the releases, each linking to its release. | Client confirms titles and the seated board (open question "Titles") |
 | B5 | **Economic headline and scenario**: replace "Transformational" (draft options in `home.md`); name the scenario in the intro if decided. | Open question "Economic scenario" |
-| B6 | **Follow FSIC** line in the news section from `SOCIAL_LINKS` (and a newsletter sign-up, if one is chosen). | Newsletter decision for the sign-up part only |
+| B6 | **Follow FSIC** line under "All News & Media", from `SOCIAL_LINKS` (and a newsletter sign-up, if one is chosen). | Newsletter decision for the sign-up part only |
 
 ### Track C — inputs from the client
 
 - **Regional photography** (lagoon, beach launch viewing, classrooms, shops, people at FSIC events), with rights. When it exists, one photo could open the "Where you fit" band or sit with the engines; until then, none.
 - **Hero source image** larger than 1440×900 (it's soft on large and high-density screens).
-- **Analytics choice**, so the effect of these changes (button clicks, scroll depth, which audience links are used) can be measured rather than assumed.
+- **Analytics choice**, so the effect of these changes (button clicks, scroll depth, which audience links are used) can be measured rather than assumed. Track B went live before analytics, so there is no baseline for the old hero; measure from launch on fsic.space instead.
 - **Approvals**: B1, B5 and the remaining ⚠ Review items already in `home.md`.
 
 ### For every step
@@ -116,12 +116,30 @@ Three tracks. Track A can start now. Tracks B and C wait on copy approval and cl
 - No cards, chips, pills, all-caps labels, scroll fade-ins or new animations; the range bars stay the only automatic animation and the hero photo the only signature element.
 - Economic figures stay ranges from `src/data/economics.ts`.
 - No campus site named. No invented partners, quotes, logos or statistics: the "Where you fit" lines come from the Master Plan wording already in `partnership.ts`, and names come only from FSIC's own releases.
-- The Governance page leaves board names out until the roster is confirmed, so B4 waits for the same confirmation rather than putting names on the homepage first.
+- The Governance page leaves board names out until the roster is confirmed. B4 names only the people FSIC's own releases announced, with the releases' roles, and is marked ⚠ Review until the roster is confirmed.
 - Orange stays industry, lagoon stays community: the "Where you fit" community row and the residents' links use lagoon; nothing new is colored for decoration.
 
 ## 7. Suggested order
 
-1. A1–A4 in one pull request (structure only; existing approved wording).
-2. B1–B2 drafted in `home.md` and sent for approval together, since they are the first screen.
-3. B3–B6 as their open questions are answered.
-4. Track C as assets and decisions arrive.
+1. ~~A1–A4 in one pull request (structure only; existing approved wording).~~ Done.
+2. ~~B1–B6 drafted in `home.md` and built.~~ Done; the client approves or revises the ⚠ Review items in `home.md` (`npm run review-items` lists them). B1 and B2 first, since they are the first screen.
+3. Analytics, then Track C as assets and decisions arrive.
+
+## 8. Results (November 10, 2026)
+
+Measured on the built page at 1440 × 900 and 375 × 812.
+
+| Measure | Before | After A | After A + B |
+|---------|--------|---------|-------------|
+| Numbered sections | 8 | 6 | 6, plus the Where You Fit band |
+| Page height, desktop | 9,582 px | 9,167 px | 10,137 px |
+| Page height, phone | 13,621 px | 13,113 px | 14,514 px |
+| Hero buttons, phone (top) | 1,071 px | 1,071 px | 815 px: at the first screen's edge on 375 × 812, inside it on taller phones |
+| Audience links, desktop | 8,503 px | not measured | 1,103 px (Where You Fit heading) |
+| Audience links, phone | 11,530 px | not measured | 1,089 px |
+
+Notes:
+- §3.1 and §3.2 are addressed (hero, Where You Fit). The hero lead is body size on phones (the lead size from `md` up) to bring the buttons up. A shorter headline (dropping "— Not Past It") would put them fully inside a 375 × 812 screen, if the client prefers.
+- §3.3: the order is fixed, but the page is about 6% longer than before, because Where You Fit adds a section. That's the cost of putting the audiences first.
+- §3.4–3.7 are addressed, pending the ⚠ Review items. §3.8 (photography) is Track C.
+- The engines' talent-retention row has no dot: `Row`'s dot says what a list is, and that row holds a paragraph.
