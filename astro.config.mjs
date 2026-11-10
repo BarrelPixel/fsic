@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // The site's base path: '/fsic' on the GitHub Pages preview, '' at fsic.space (docs/06-launch-plan.md).
 const BASE = '/fsic';
 // Redirect destinations don't get the base path from Astro, so add it here.
+/** @param {string} path */
 const to = (path) => `${BASE}${path}`;
 
 // https://astro.build/config
