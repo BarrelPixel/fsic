@@ -91,7 +91,7 @@ export const blogPosting = (p: {
   date: Date;
   updated?: Date;
   section: string;
-  author: { name: string; role: string; kind: 'person' | 'organization' };
+  author: { name: string; role: string; kind: 'person' | 'organization'; image?: string; description?: string };
   sources: { title: string; publisher: string; url?: string }[];
   image?: string;
 }) => ({
@@ -104,7 +104,17 @@ export const blogPosting = (p: {
   dateModified: (p.updated ?? p.date).toISOString().slice(0, 10),
   articleSection: p.section,
   inLanguage: 'en-US',
-  author: p.author.kind === 'person' ? { '@type': 'Person', name: p.author.name, jobTitle: p.author.role, worksFor: { '@id': ORG_ID } } : { '@id': ORG_ID },
+  author:
+    p.author.kind === 'person'
+      ? {
+          '@type': 'Person',
+          name: p.author.name,
+          jobTitle: p.author.role,
+          ...(p.author.description ? { description: p.author.description } : {}),
+          ...(p.author.image ? { image: new URL(p.author.image, SITE).href } : {}),
+          worksFor: { '@id': ORG_ID },
+        }
+      : { '@id': ORG_ID },
   publisher: { '@id': ORG_ID },
   citation: p.sources.map((s) => ({ '@type': 'CreativeWork', name: s.title, publisher: s.publisher, ...(s.url ? { url: s.url } : {}) })),
   ...(p.image ? { image: new URL(p.image, SITE).href } : {}),

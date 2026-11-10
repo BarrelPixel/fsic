@@ -4,7 +4,7 @@ description: "Micro-credentials are short credentials tied to skills employers n
 question: "What is a micro-credential, and how will FSIC offer them?"
 summary: "A micro-credential is a short, focused credential that shows someone has a specific skill employers need. FSIC’s Master Plan describes its micro-credential academies as “short, stackable credentials aligned to employer needs,” in fields such as robotics and automation, avionics and precision machining. They are part of the Talent Engine, the first part of FSIC to launch."
 date: 2026-11-10
-author: org
+author: erik-ahlgren
 topic: talent
 audiences: [students-families, job-seekers, employers, educators]
 faqs:
