@@ -13,6 +13,7 @@
     {"slug":"how-the-space-economy-is-growing","question":"How is the space economy growing, and what does it mean for Southeast Volusia?","topic":"region","audiences":"Residents, policymakers","sources":"WEF and McKinsey (April 2024); Strategic Moment"},
     {"slug":"what-the-civic-engine-offers","question":"What will the Civic Engine offer residents?","topic":"civic","audiences":"Residents, families","sources":"Master Plan pp. 19–21; Programs & Facilities"},
     {"slug":"how-fsic-is-governed","question":"How is FSIC governed, and how is it kept independent?","topic":"organization","audiences":"Funders, residents","sources":"Governance page; Master Plan pp. 15–17"},
-    {"slug":"what-are-fsics-economic-scenarios","question":"What are the three scenarios in FSIC's economic analysis, and how do they differ?","topic":"economy","audiences":"","sources":"","from":"what-is-a-job-year"}
+    {"slug":"what-are-fsics-economic-scenarios","question":"What are the three scenarios in FSIC's economic analysis, and how do they differ?","topic":"economy","audiences":"","sources":"","from":"what-is-a-job-year"},
+    {"slug":"what-apprenticeships-will-fsic-offer","question":"What apprenticeships will FSIC offer for aerospace and advanced manufacturing?","topic":"talent","audiences":"","sources":"","from":"what-is-dual-enrollment"}
   ]
 }

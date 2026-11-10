@@ -7,8 +7,7 @@ date: 2026-11-10
 author: erik-ahlgren
 topic: talent
 audiences: [students-families, educators]
-status: draft
-publishDate: 2026-11-17
+status: published
 followUp:
   question: "What apprenticeships will FSIC offer for aerospace and advanced manufacturing?"
   slug: what-apprenticeships-will-fsic-offer
@@ -108,5 +107,5 @@ It depends on the receiving institution. Dual enrollment credits earned at Flori
 
 **Related FAQ answers:**
 
-- [What kinds of training will FSIC offer?](/faq#programs)
-- [Who can participate in FSIC's programs?](/faq#who)
+- [How will FSIC benefit local residents and families?](/faq#residents-and-families)
+- [How can I get involved with FSIC?](/faq#get-involved)
