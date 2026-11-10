@@ -60,8 +60,11 @@ const graph = [
     <meta charset="UTF-8" />
     <script is:inline>document.documentElement.classList.add('js');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0D2138" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Florida Space Innovation Center" />
+    <meta name="keywords" content="space innovation, Florida, New Smyrna Beach, workforce development, STEM education, aerospace, Space Coast, Southeast Volusia" />
     {robotsNoindex && <meta name="robots" content="noindex" />}
     {!noindex && <link rel="canonical" href={canonical} />}
 
@@ -72,7 +75,11 @@ const graph = [
     {article && <meta property="article:published_time" content={article.published.toISOString().slice(0, 10)} />}
     {!noindex && <meta property="og:url" content={canonical} />}
     <meta property="og:site_name" content="Florida Space Innovation Center" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -82,11 +89,17 @@ const graph = [
     <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')} />
 
     <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    <link rel="manifest" href={url('/manifest.json')} />
     {HAS_PUBLISHED_POSTS && <link rel="alternate" type="application/rss+xml" title="Florida Space Innovation Center: Blog" href={url('/blog/rss.xml')} />}
 
     {[serifLatin, displayLatin, sansLatin].map((href) => (
       <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />
     ))}
+    
+    <!-- Resource hints for external resources -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://plausible.io" />
+    
     <Analytics />
   </head>
   <body class="min-h-screen flex flex-col bg-white text-gray-dark">
