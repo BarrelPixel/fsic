@@ -43,7 +43,7 @@ src/lib/sections.ts  A page's sections listed once (hero index, SectionBar, runn
 src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
                      ranges, read by home, Economic Impact, Partnership & Funding and the FAQ), phases,
                      engines, programs, faq, partnership, governance
-docs/                Project docs 00–09 (IA, content guidelines, site audit, copy-deck workflow)
+docs/                Project docs 00–10 (IA, content guidelines, site audit, copy-deck workflow, homepage plan)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
 scripts/             check-links.mjs (run via `npm run check-links`)
