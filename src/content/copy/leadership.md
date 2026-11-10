@@ -75,7 +75,7 @@ That realization — and a lifelong commitment to serving where I'm needed — i
 
 ## BOARD OF DIRECTORS
 
-[TODO: approved bios and photos for each seated board member. Announced so far: Erik Ahlgren (Board Chair), Ryan Trine, Diezel DePew, Jessie Thompson. See `governance.md` and `news.md`.]
+[TODO: approved bios and photos for each seated board member. Announced so far: Erik Ahlgren (Board Chair), Beth Hamilton, Ryan Trine, Diezel DePew, Jessie Thompson. See `governance.md` and `news.md`.]
 
 ---
 
