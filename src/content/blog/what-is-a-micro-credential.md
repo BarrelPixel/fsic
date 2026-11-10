@@ -22,6 +22,10 @@ sources:
     publisher: "Florida Space Innovation Center"
     url: "https://fsic.space/faq/"
 status: draft
+followUp:
+  question: "What is dual enrollment, and how will FSIC expand STEM pathways?"
+  slug: what-is-dual-enrollment
+  topic: talent
 ---
 
 ## What is a micro-credential?

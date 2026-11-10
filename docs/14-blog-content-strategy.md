@@ -81,6 +81,7 @@ Answer engines quote short, self-contained passages that state facts plainly, an
 | **Questions and answers** (`faqs`) | 2–4 short follow-up questions, each answered in one to three sentences. Not copies of `/faq` entries: link to those instead | `FAQPage` structured data; quotable answers | Optional |
 | **Sources** (`sources`) | At least one, listed at the end with publisher and date or page; link when public | Answer engines and readers check sources; it's the attribution rule | ≥ 1 |
 | **Links** | At least three internal links: the pillar page, a related page or FAQ answer, and a related post when one exists. External links only to primary sources | Topical clusters; keeps readers on FSIC's answers | Review |
+| **Follow-up** (`followUp`) | The question a reader is likely to ask next, with its slug and topic. Required before review. Publishing the post adds it to the plan (§10) | Every post leads somewhere, and the plan grows from what readers of each post will want next | Required from review on |
 | **Author** (`author`) | A real person at FSIC with their role, or FSIC itself (`src/data/authors.ts`) | Experience and accountability (E-E-A-T) | Required |
 | **Dates** (`date`, `updated`) | Publication date; `updated` only when the substance changes | Freshness signals; honest dating | `updated` ≥ `date` |
 | **Image** (optional) | Only real, owned photographs or the post's own diagram, with descriptive alt text. No stock rockets or astronauts (DESIGN.md) | Share previews; accessibility | `imageAlt` with `image` |
@@ -142,7 +143,7 @@ Answer engines quote short, self-contained passages that state facts plainly, an
 | 2. Draft | B&P | `src/content/blog/<slug>.md` with `status: draft`. Readable in place with `npm run dev` (marked as a draft); not on the public site |
 | 3. Check | B&P | Every fact against its source. Figures exactly as in `FIGURES` (the build fails on a dollar or thousands range that isn't one of them). Links work (`npm run check-links`). Nonprofit rules |
 | 4. Review | FSIC (and counsel or the program lead where §7 says) | `status: review`, then approval in writing |
-| 5. Publish | B&P | `status: published`. The first published post adds Blog to the menu, the sitemap, the RSS feed and `llms.txt` automatically. Merge; the deploy checks types and links |
+| 5. Publish | B&P | `status: published`, then `npm run blog-plan`: the post's follow-up joins the plan and the calendar below (§10). Commit both. The first published post adds Blog to the menu, the sitemap, the RSS feed and `llms.txt` automatically. Merge; the deploy checks types and links, and fails if the plan is out of date |
 | 6. Share | FSIC | LinkedIn, Facebook and X, partner newsletters, and the RSS feed |
 | 7. Maintain | B&P, quarterly | §11 |
 
@@ -163,24 +164,52 @@ Targets are modest at first. Six months after launch: every published post index
 
 ---
 
-## 10. Calendar: the first twelve posts
+## 10. Calendar and connected posts
 
-Two posts a month is sustainable and enough to build topical depth. Each topic below can be written **from sources FSIC already has** (the Master Plan, the FAQ, approved copy, IRS and federal program pages), so nothing waits on new data. The first two are drafted.
+Two posts a month is sustainable and enough to build topical depth. The first twelve topics can all be written **from sources FSIC already has** (the Master Plan, the FAQ, approved copy, IRS and federal program pages), so nothing waits on new data.
 
-| # | Question (headline direction) | Topic | Audience | Sources | Status |
-|---|-------------------------------|-------|----------|---------|--------|
-| 1 | What is a job-year, and what does FSIC's projection mean? | economy | Policymakers, funders | Master Plan pp. 7–8 | **Drafted** (`what-is-a-job-year`) |
-| 2 | What is a micro-credential, and how will FSIC offer them? | talent | Students, job-seekers, employers | Master Plan pp. 13, 19–21; FAQ | **Drafted** (`what-is-a-micro-credential`) |
-| 3 | Why does FSIC start with the Talent Engine? | talent | Partners, funders | Master Plan p. 13; Deployment page | Brief |
-| 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | Brief |
-| 5 | How can a small business become a supplier to the space industry? | market | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | Brief |
-| 6 | What are SBIR and STTR, and how can a Volusia County business apply? | market | Employers, startups | SBIR.gov; Master Plan | Brief |
-| 7 | What is a challenge lab? | innovation | Universities, employers | Master Plan pp. 19–21 | Brief |
-| 8 | What is a "backbone organization", and why is FSIC one? | organization | Policymakers, partners | FAQ; Governance page | Brief |
-| 9 | What does FSIC's 501(c)(3) status mean for donors and partners? | organization | Funders | IRS determination letter; IRS Publication 4221-PC. Counsel review | Brief |
-| 10 | How is the space economy growing, and what does it mean for Southeast Volusia? | region | Residents, policymakers | WEF and McKinsey (April 2024); Strategic Moment | Brief |
-| 11 | What will the Civic Engine offer residents? | civic | Residents, families | Master Plan pp. 19–21; Programs & Facilities | Brief |
-| 12 | How is FSIC governed, and how is it kept independent? | organization | Funders, residents | Governance page; Master Plan pp. 15–17 | Brief |
+### Connected posts: each published post adds the next topic
+
+Every post names its **follow-up**: the question a reader of that post is most likely to ask next, with the slug the answering post will have and its topic. The follow-up is required before a post can go to review.
+
+When a post is published, `npm run blog-plan` adds its follow-up to the plan, marked as following that post. So the calendar grows by one topic with every post, and every topic comes from a question real readers of a real post will have.
+
+**What the script does:**
+- **No duplicates.** If the follow-up is already a planned question, the post claims that entry instead of adding a new one (the micro-credential post leads to the planned dual-enrollment post).
+- **Posts link both ways.** The post that answers a follow-up names its parent in `from`. The two then link to each other: the parent shows **Read next**, the follow-up shows **This follows**.
+- **Everything stays in the seven topics.** A follow-up must have one of them.
+- **Nothing drifts.** Two planned entries can't ask the same question, and every `from` must name a real post.
+- **The deploy enforces it.** It runs the same check, so a post can't go live without its follow-up being in the plan.
+
+**Choosing a follow-up:**
+- **Prefer the same topic,** which deepens one cluster around its pillar page. Move to another topic only when that is where the reader's next question really goes (job-years → the three economic scenarios, both in the regional economy).
+- **It must be answerable from sources FSIC has or can cite.** If it isn't yet, it waits in the plan until it is.
+- **It must not be already answered** by a page or the FAQ. If it is, choose a deeper question.
+
+**The plan itself:**
+- It lives in `src/data/blog-plan.json`: question, slug, topic, audience, sources, and which post it follows.
+- Edit that file to add, reword or reorder planned topics, then run `npm run blog-plan`.
+- The table below is generated from the plan and the posts' status, so don't edit the table itself.
+
+<!-- calendar:start -->
+<!-- Generated by `npm run blog-plan` from src/data/blog-plan.json and the posts. Edit the plan file, not this table. -->
+
+| # | Question | Topic | For | Sources | Follows | Status |
+|---|----------|-------|-----|---------|---------|--------|
+| 1 | What is a job-year, and what does FSIC's projection mean? | Regional economy | Policymakers, funders | Master Plan pp. 7–8 |  | **Drafted** (`what-is-a-job-year`) |
+| 2 | What is a micro-credential, and how will FSIC offer them? | Talent | Students, job-seekers, employers | Master Plan pp. 13, 19–21; FAQ |  | **Drafted** (`what-is-a-micro-credential`) |
+| 3 | Why does FSIC start with the Talent Engine? | Talent | Partners, funders | Master Plan p. 13; Deployment page |  | Planned |
+| 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) |  | Planned |
+| 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) |  | Planned |
+| 6 | What are SBIR and STTR, and how can a Volusia County business apply? | Business | Employers, startups | SBIR.gov; Master Plan |  | Planned |
+| 7 | What is a challenge lab? | Innovation | Universities, employers | Master Plan pp. 19–21 |  | Planned |
+| 8 | What is a "backbone organization", and why is FSIC one? | About FSIC | Policymakers, partners | FAQ; Governance page |  | Planned |
+| 9 | What does FSIC's 501(c)(3) status mean for donors and partners? | About FSIC | Funders | IRS determination letter; IRS Publication 4221-PC. Counsel review |  | Planned |
+| 10 | How is the space economy growing, and what does it mean for Southeast Volusia? | The region | Residents, policymakers | WEF and McKinsey (April 2024); Strategic Moment |  | Planned |
+| 11 | What will the Civic Engine offer residents? | Community | Residents, families | Master Plan pp. 19–21; Programs & Facilities |  | Planned |
+| 12 | How is FSIC governed, and how is it kept independent? | About FSIC | Funders, residents | Governance page; Master Plan pp. 15–17 |  | Planned |
+
+<!-- calendar:end -->
 
 **Timely posts**, alongside the calendar:
 - When a program opens: what it is, who it's for, how to apply.
@@ -233,4 +262,6 @@ Not in this post:  (what belongs on another page or post)
 | Links in Markdown | Written from the site root; `BaseLinks` adds the base path |
 | Authors | `src/data/authors.ts` |
 | Topics and pillars | `TOPICS` in `src/lib/blog.ts` |
+| Plan and follow-ups | `src/data/blog-plan.json`; `npm run blog-plan` adds each published post's follow-up and rewrites §10's calendar; the deploy runs `node scripts/blog-plan.mjs --check` (inside `npm run check-links`) |
+| Read next / This follows | The post page links a post to the post that answers its follow-up (`from`), both ways |
 | Old Wix blog | `/blog` now belongs to this blog (the old redirect to News is removed). The old `/post/*` addresses still go to the 404 page. Once their slugs are known, redirect any with a matching new post |
