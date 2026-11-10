@@ -14,6 +14,9 @@ import sansLatin from '@fontsource-variable/archivo/files/archivo-latin-wght-nor
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { url } from '../lib/url';
+import { getImage } from 'astro:assets';
+import heroImage from '../assets/fsic-hero.png';
+import { INDEXABLE, organization, website, breadcrumb } from '../lib/seo';
 
 interface Props {
   title: string;
@@ -22,14 +25,32 @@ interface Props {
   image?: string;
   /** Keep the page out of search results (the 404 page). It then has no canonical URL either. */
   noindex?: boolean;
+  /** A press release: og:type article with its publication date. */
+  article?: { published: Date };
+  /** Pages between Home and this one in the breadcrumb (a release: News & Media). */
+  parents?: { name: string; path: string }[];
+  /** Extra schema.org records for this page (FAQPage, NewsArticle), added to the Organization. */
+  jsonLd?: Record<string, unknown>[];
 }
 
-const { title, image, noindex = false, description = 'The Florida Space Innovation Center is a coordinated regional platform strengthening workforce, innovation, and economic growth for Southeast Volusia and the Space Coast.' } = Astro.props;
-const ogImage = image ? new URL(image, Astro.site).href : undefined;
+const { title, image, noindex = false, article, parents = [], jsonLd = [], description = 'The Florida Space Innovation Center is a coordinated regional platform strengthening workforce, innovation, and economic growth for Southeast Volusia and the Space Coast.' } = Astro.props;
+// Every page has a share image: its own, or the hero photo (docs/13 B5).
+const share = image ?? (await getImage({ src: heroImage, width: 1200, format: 'jpg' })).src;
+const ogImage = new URL(share, Astro.site).href;
+// The preview is never indexed (src/lib/seo.ts INDEXABLE); at fsic.space only noindex pages are left out.
+const robotsNoindex = noindex || !INDEXABLE;
 // The page's own address on the deployed site (astro.config.mjs `site` + base path). Every page is built
 // as a directory (…/page/index.html), so its address ends in a slash; the homepage would otherwise lack one.
 const canonical = new URL(Astro.url.pathname.replace(/\/?$/, '/'), Astro.site).href;
-const pageTitle = title === 'Florida Space Innovation Center' ? title : `${title} | Florida Space Innovation Center`;
+// Titles that already name FSIC (the homepage, press releases) don't repeat it (docs/13 B6).
+const pageTitle = title.includes('Florida Space Innovation Center') ? title : `${title} | Florida Space Innovation Center`;
+// schema.org (docs/13 B1): FSIC on every page; the site on the homepage; a breadcrumb on the rest.
+const isHome = Astro.url.pathname.replace(/\/+$/, '') === url('/').replace(/\/+$/, '');
+const graph = [
+  organization(),
+  ...(isHome ? [website()] : noindex ? [] : [breadcrumb([...parents, { name: title, path: Astro.url.pathname.slice(url('/').length - 1) || '/' }])]),
+  ...jsonLd,
+];
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -39,21 +60,24 @@ const pageTitle = title === 'Florida Space Innovation Center' ? title : `${title
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    {robotsNoindex && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
 
     <!-- Open Graph -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    {article && <meta property="article:published_time" content={article.published.toISOString().slice(0, 10)} />}
     {!noindex && <meta property="og:url" content={canonical} />}
     <meta property="og:site_name" content="Florida Space Innovation Center" />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image" content={ogImage} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
-    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')} />
 
     <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
 

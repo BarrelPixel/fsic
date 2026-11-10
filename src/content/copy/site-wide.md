@@ -15,6 +15,25 @@ The Florida Space Innovation Center is a coordinated regional platform strengthe
 
 ---
 
+## SEARCH AND ANSWER ENGINES
+
+> **Added (November 10, 2026, `docs/13-refactor-seo-aeo.md` Part B).** Not shown on the pages; read by search engines, answer engines and link previews. **⚠ Review:** all new wording below.
+
+**What FSIC is (one sentence; `WHAT_IS_FSIC` in `src/lib/seo.ts`):** A 501(c)(3) nonprofit in New Smyrna Beach building workforce, innovation and industry partnerships so the Space Coast's growth benefits Southeast Volusia.
+Used as: the homepage's meta description; the description in FSIC's structured data (schema.org NGO); the summary at the top of `/llms.txt`.
+
+**Homepage title:** Florida Space Innovation Center | Southeast Volusia, Space Coast (was "Florida Space Innovation Center").
+
+**Shorter descriptions (search results cut at about 155 characters):**
+- Long-Term Vision: FSIC's 2032–2040 vision: a multi-university consortium, a performing arts center, and a landmark campus for Southeast Volusia.
+- Programs & Facilities: FSIC's programs for students, adults, businesses and the community across four engines, and its phased facilities plan.
+
+**`/llms.txt`** (a guide for AI assistants): the sentence above, then key facts drawn from the site's data (legal name, status and EIN; New Smyrna Beach and the region served; the launch date; the four engines; the 25-year ranges with the scenario and the disclaimer; the email), then links to every page and FAQ answer.
+
+**Press release titles** no longer add " | Florida Space Innovation Center" (each headline already names FSIC).
+
+---
+
 ## FOOTER
 
 **Name:** Florida Space Innovation Center

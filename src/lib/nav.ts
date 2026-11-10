@@ -3,6 +3,7 @@ import { url } from './url';
 // Site navigation, shared by the header and the footer (docs/02-information-architecture.md).
 // Pages are grouped by the question they answer. Set `built: false` for a page that still uses
 // <ComingSoon>: it stays out of both menus until it ships, so no menu leads to a placeholder.
+// No page uses it at present (November 2026); it's kept, with <ComingSoon>, for pages the IA adds later.
 
 export interface NavLink {
   label: string;

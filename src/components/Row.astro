@@ -28,6 +28,8 @@ const words = label.split(' ');
 const last = words.pop();
 const head = words.join(' ');
 const line = dark ? 'border-rule-on-dark' : 'border-rule';
+// An optional marker before the label (slot "marker"), e.g. a scenario's color square on Economic Impact.
+const hasMarker = Astro.slots.has('marker');
 ---
 <div
   id={id}
@@ -38,7 +40,8 @@ const line = dark ? 'border-rule-on-dark' : 'border-rule';
     className,
   ]}
 >
-  <dt class:list={['md:col-span-2 md:pt-label-offset text-label', dark ? 'text-white' : 'text-navy']}>
+  <dt class:list={['md:col-span-2 md:pt-label-offset text-label', dark ? 'text-white' : 'text-navy', hasMarker && 'flex items-start gap-2']}>
+    <slot name="marker" />
     {dot ? (
       <>
         {head}{head && ' '}<span class="whitespace-nowrap">{last}<Dot tone={dot} dark={dark} class="inline-block ml-2 align-[0.05em]" /></span>

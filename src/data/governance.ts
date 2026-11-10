@@ -80,3 +80,20 @@ export const reportingCalendar = [...FREQUENCIES, 'Other' as const].map((frequen
       })),
   ),
 })).filter((group) => group.reports.length > 0);
+
+// The board and council (home.md): names and roles as FSIC's releases give them, each appointment linking to
+// the release that announced it. Erik Ahlgren (Board Chair, per the July 29 release) and Beth Hamilton were
+// added at the project lead's direction and have no appointment release, so they aren't links. Titles to be
+// confirmed (docs/07 "Titles").
+export const people: { group: string; members: { name: string; role: string; slug?: string }[] }[] = [
+  { group: 'Board of Directors', members: [
+    { name: 'Erik Ahlgren', role: 'Board Chair' },
+    { name: 'Beth Hamilton', role: '' },
+    { name: 'Jessie Thompson', role: 'School Board Member', slug: '2026-07-07-jessie-thompson-joins-board' },
+    { name: 'Diezel DePew', role: 'Mayor of Edgewater', slug: '2026-07-13-diezel-depew-joins-board' },
+    { name: 'Ryan Trine', role: 'CEO of R3Doubt', slug: '2026-07-29-ryan-trine-joins-board' },
+  ] },
+  { group: 'Founders Council', members: [
+    { name: 'Jake Johansson', role: '', slug: '2026-08-03-jake-johansson-joins-founders-council' },
+  ] },
+];

@@ -7,8 +7,9 @@ import { EMAIL, mailto } from '../lib/site';
 import Disclosure from '../components/Disclosure.astro';
 import List from '../components/List.astro';
 import HeroIndex from '../components/HeroIndex.astro';
-import { topics } from '../data/faq';
+import { faqs, topics } from '../data/faq';
 import SectionBar from '../components/SectionBar.astro';
+import { faqPage, answerText } from '../lib/seo';
 
 // Copy: src/content/copy/faq.md (Draft). Answers are as published on fsic.space, except where the
 // copy deck notes a change: ranges for the economic figures, the five phases, the sourced
@@ -17,7 +18,7 @@ import SectionBar from '../components/SectionBar.astro';
 
 const count = (n: number) => `${n} question${n === 1 ? '' : 's'}`;
 ---
-<BaseLayout title="Frequently Asked Questions" description="Answers to common questions about the Florida Space Innovation Center: what it is, why it is needed now, how it is funded, and how to get involved.">
+<BaseLayout title="Frequently Asked Questions" description="Answers to common questions about the Florida Space Innovation Center: what it is, why it is needed now, how it is funded, and how to get involved." jsonLd={[faqPage(faqs.map((f) => ({ q: f.q, answer: answerText(f.a) })))]}>
 
   <!-- Interior page template (DESIGN.md): PageHero with the mission (lead), the vision, and an index of
        the topics; then one spec section per topic. Hierarchy: topic (h2) > question (h3) > answer. -->

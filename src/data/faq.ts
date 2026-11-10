@@ -209,6 +209,13 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
   },
 ];
 
+/** A question by its id; a wrong id fails the build with the id in the message, rather than a blank answer. */
+export function faqById(id: string) {
+  const f = faqs.find((faq) => faq.id === id);
+  if (!f) throw new Error(`No FAQ question with id "${id}" (src/data/faq.ts)`);
+  return f;
+}
+
 // Topics group the questions (the published order is kept within each topic). Topic names are
 // new labels (faq.md, PAGE). Every question belongs to exactly one topic.
 export const topics = [
@@ -216,7 +223,7 @@ export const topics = [
   { id: 'why-fsic-now', name: 'Why Now', ids: ['why-now', 'market-opportunity', 'economic-impact'] },
   { id: 'programs-funding', name: 'Programs and Funding', ids: ['residents-and-families', 'businesses-and-entrepreneurs', 'first-programs', 'funding', 'developers'] },
   { id: 'getting-involved', name: 'Getting Involved', ids: ['get-involved', 'future'] },
-].map((t) => ({ ...t, faqs: t.ids.map((id) => faqs.find((f) => f.id === id)!) }));
+].map((t) => ({ ...t, faqs: t.ids.map(faqById) }));
 
 const assigned = topics.flatMap((t) => t.ids);
 if (assigned.length !== faqs.length || new Set(assigned).size !== faqs.length || topics.some((t) => t.faqs.includes(undefined as never))) {
