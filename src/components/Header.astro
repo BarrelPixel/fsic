@@ -126,10 +126,12 @@ const itemClass = (active: boolean) => [
     </nav>
   </div>
 
-  <!-- Mobile Menu (DESIGN.md "Components", Header): each group under its name, a small label; the single
-       links together after them, in two columns (their labels are short); then Get Involved as the
-       menu's one button. Pages are larger than the
-       group names, so the groups read as headings over their pages. -->
+  <!-- Mobile Menu Backdrop -->
+  <div id="mobile-menu-backdrop" class="mobile-menu-backdrop hidden lg:hidden"></div>
+
+  <!-- Mobile Menu (DESIGN.md "Components", Header): Overlays content instead of pushing it down.
+       Each group under its name (small label); single links in two columns; Get Involved as button.
+       Pages are larger than group names, so groups read as headings over their pages. -->
   <div id="mobile-menu" class="mobile-menu hidden lg:hidden bg-night border-t border-white/10">
     <div class="container pt-1 pb-5">
       {mobileGroups.map((group, groupIndex) => (
@@ -173,15 +175,28 @@ const itemClass = (active: boolean) => [
   // Mobile menu
   const toggle = document.getElementById('mobile-menu-toggle');
   const menu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
 
   const setMenu = (open: boolean) => {
     toggle?.setAttribute('aria-expanded', String(open));
     toggle?.classList.toggle('menu-open', open);
     menu?.classList.toggle('hidden', !open);
+    backdrop?.classList.toggle('hidden', !open);
+    
+    // Prevent body scroll when menu is open
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   };
   const menuOpen = () => toggle?.getAttribute('aria-expanded') === 'true';
 
   toggle?.addEventListener('click', () => setMenu(!menuOpen()));
+  
+  // Clicking backdrop closes menu
+  backdrop?.addEventListener('click', () => setMenu(false));
+  
   // Escape closes the phone menu and returns focus to its button, as with the dropdowns.
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && menuOpen()) {
