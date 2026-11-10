@@ -12,3 +12,14 @@ export const SOCIAL_LINKS = [
   { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61589280681125' },
   { label: 'X', href: 'https://x.com/FLSpaceCenter' },
 ];
+
+/**
+ * FSIC's legal and tax status, from its IRS determination letter (Letter 947, October 20, 2026): exempt under
+ * IRC 501(c)(3) as a public charity, effective July 1, 2026; contributions deductible under IRC 170.
+ * The EIN is public for charities and lets donors and grant-makers verify the status.
+ */
+export const ORG = {
+  legalName: 'Florida Space Innovation Center Inc.',
+  status: '501(c)(3) nonprofit organization',
+  ein: '43-2277165',
+};

@@ -85,6 +85,10 @@ For each partner type: who they are (overview), partnership roles, strategic ben
 
 > **Source:** Master Plan p. 25 (verbatim).
 
+**Tax status** (after the body, set off by a rule): Florida Space Innovation Center Inc. is a 501(c)(3) public charity (EIN 43-2277165). Contributions are tax-deductible to the extent allowed by law.
+
+> **Source:** IRS determination letter (Letter 947), October 20, 2026. **⚠ Review:** new line. If FSIC asks the public for donations on the site, Florida's Solicitation of Contributions Act may also require a registration disclosure statement; see `docs/07-open-questions.md`.
+
 **Funding streams over Years 1–5:**
 
 | Stream | Years | Purpose | Sources |

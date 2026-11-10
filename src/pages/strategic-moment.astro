@@ -11,6 +11,7 @@ import HeroIndex from '../components/HeroIndex.astro';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 import { url } from '../lib/url';
+import { stakes } from '../data/strategic';
 
 // Copy: src/content/copy/strategic-moment.md (Draft). Sections are verbatim from fsic.space/about-4,
 // except the lead (Master Plan p. 4) and the development figures (Master Plan pp. 4 and 6, unnamed:
@@ -106,11 +107,11 @@ const figures = [
           This growth will reshape the region's workforce needs, employer mix, and <a href={url('/economic-impact#risks-opportunities')} class="link-on-dark">long-term economic trajectory</a>.
         </p>
         <dl>
-          <Row label="Without FSIC, Volusia County risks becoming:" rule="bottom" dark dot="gray">
-            <List items={['a logistics corridor', 'a low-wage service economy', 'a commuter community for neighboring counties']} class="text-white/75" />
+          <Row label={stakes.without.label} rule="bottom" dark dot="gray">
+            <List items={stakes.without.items} class="text-white/75" />
           </Row>
-          <Row label="With FSIC, Volusia County becomes:" rule="bottom" dark dot="lagoon" class="pt-5">
-            <List items={['a magnet for high-value employers', 'a hub for space and advanced manufacturing', 'a destination for innovation, education, and community engagement', 'a regional anchor for economic mobility and identity']} class="text-white" />
+          <Row label={stakes.with.label} rule="bottom" dark dot="lagoon" class="pt-5">
+            <List items={stakes.with.items} class="text-white" />
           </Row>
         </dl>
       </div>

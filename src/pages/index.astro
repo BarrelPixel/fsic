@@ -18,9 +18,10 @@ import { phases } from '../data/phases';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 import RangeLegend from '../components/RangeLegend.astro';
 import { url } from '../lib/url';
-import { getReleases, formatDate, isoDate, releaseHref } from '../lib/news';
 import { SOCIAL_LINKS } from '../lib/site';
 import Dot from '../components/Dot.astro';
+import { toneBg } from '../lib/tones';
+import { stakes, SPACE_ECONOMY_SOURCE } from '../data/strategic';
 import RangeTable from '../components/RangeTable.astro';
 import RangeRow from '../components/RangeRow.astro';
 import TableRow from '../components/TableRow.astro';
@@ -37,17 +38,19 @@ const impact = [
 // The share image (og:image, twitter:image): the hero photo, 1200px wide (docs/10-homepage-plan.md A1).
 const shareImage = await getImage({ src: heroImage, width: 1200, format: 'jpg' });
 
+// The Years 1–5 track under the engines: the year FSIC is in now is the current phase's first year.
+const YEARS = [1, 2, 3, 4, 5];
+const currentYear = phases.find((p) => p.current)?.start;
+
 // The numbered sections in page order: their running heads (01 / 05…) follow this list. The page tells one
 // story (docs/11-homepage-story.md): why now → what it's worth → how it works → where it stands → where it
 // leads, then the visitor's part. The running-head labels are those questions.
 const sections = ['strategic-moment', 'economic-impact', 'model', 'news', 'vision'].map((id) => ({ id }));
 const at = (id: string) => sectionProps(sections, id);
 
-// The three newest press releases (src/content/news/), as published.
-const latest = (await getReleases()).slice(0, 3);
-
-// Residents' common questions, linking to their answers on /faq (questions as published there).
-const commonQuestions = ['residents-and-families', 'compete', 'funding', 'location'].map((id) => {
+// Residents' common questions, linking to their answers on /faq (questions as published there). The
+// developers question is the trust question in a region that values slow growth (docs/12 §2.7).
+const commonQuestions = ['residents-and-families', 'developers', 'compete', 'funding', 'location'].map((id) => {
   const f = faqs.find((faq) => faq.id === id);
   if (!f) throw new Error(`index.astro: no FAQ question "${id}"`);
   return f;
@@ -55,7 +58,7 @@ const commonQuestions = ['residents-and-families', 'compete', 'funding', 'locati
 
 // Each audience, what it does with FSIC, and where to read more: the stakeholder rows on Partnership &
 // Funding (src/data/partnership.ts ids), and for residents the programs by audience. Lines summarize those
-// pages (home.md). Shown in the close; the hero's "Find your part" links to each row (#part-…).
+// pages (home.md). Shown in the close; the hero's "Find your part" links to the same pages.
 // Residents are the community, so their link is lagoon.
 const fit = ([
   { label: 'Employers', line: 'Validate curriculum, host internships and apprenticeships, and shape a local talent pipeline.', link: 'How employers take part', href: '/partnership-funding#employers' },
@@ -63,7 +66,7 @@ const fit = ([
   { label: 'Policymakers', line: "Align economic development, infrastructure, and grant applications with the region's growth.", link: 'How local government takes part', href: '/partnership-funding#local-government' },
   { label: 'Workforce partners', line: 'Bring labor market data and employer engagement into one regional strategy.', link: 'How workforce agencies take part', href: '/partnership-funding#workforce-agencies' },
   { label: 'Residents and families', line: 'Hands-on STEM learning, dual-enrollment pathways, and micro-credentials tied to real jobs.', link: 'Programs for residents', href: '/programs-facilities#audiences', community: true },
-] as { label: string; line: string; link: string; href: string; community?: boolean }[]).map((a) => ({ ...a, id: `part-${a.label.split(' ')[0].toLowerCase()}` }));
+] as { label: string; line: string; link: string; href: string; community?: boolean }[]);
 
 // The board and council (home.md): names and roles as FSIC's releases give them, each appointment linking to
 // the release that announced it. Erik Ahlgren (Board Chair, per the July 29 release) and Beth Hamilton were
@@ -132,11 +135,11 @@ const people: { group: string; members: { name: string; role: string; slug?: str
           <Button href="/partnership-funding" variant="primary">Get Involved</Button>
           <Button href="/economic-impact" variant="secondary-light">View Economic Impact</Button>
         </div>
-        <!-- Find your part (docs/11 §3.1): routing from the first screen, one line; each name jumps to its
-             row in the close, where the story ends -->
+        <!-- Find your part: routing from the first screen, one line; each name goes straight to what FSIC
+             offers that audience (docs/12 §2.6). The close repeats them for readers who arrive by reading. -->
         <nav aria-label="Find your part" class="mt-8 font-sans text-sm text-white/75">
           Find your part: {fit.map((a, i) => (
-            <>{i > 0 && <span aria-hidden="true"> · </span>}<a href={`#${a.id}`} class="link-on-dark whitespace-nowrap">{a.label}</a></>
+            <>{i > 0 && <span aria-hidden="true"> · </span>}<a href={url(a.href)} class="link-on-dark whitespace-nowrap">{a.label}</a></>
           ))}
         </nav>
       </div>
@@ -149,21 +152,38 @@ const people: { group: string; members: { name: string; role: string; slug?: str
   <!-- Phones: the rest of the page slides up over the pinned hero photo (pulled up by the hero spacer's height) -->
   <div class="relative z-10 bg-white max-md:-mt-[100svh]">
 
-  <!-- 01 WHY NOW -->
+  <!-- 01 WHY NOW (docs/12 §2.1–2.3): a person (the Board Chair's words at the launch, from FSIC's release),
+       the scale (sourced), and the stakes (the Without / With pair, shared with The Strategic Moment). -->
   <Section {...at('strategic-moment')} label="Why now">
     <Fragment slot="heading">
       The Question Is Not Whether the Space Coast Will Grow.
       <span class="block mt-3 font-medium text-gray-dark">It Is Whether Southeast Volusia Will Participate in That Growth.</span>
     </Fragment>
     <Grid>
-      <p slot="label" class="mb-0 text-statement text-navy">Without coordination, growth concentrates elsewhere.</p>
+      <figure slot="label" class="mb-0">
+        <blockquote class="text-lead text-navy">
+          <p class="mb-0">&ldquo;I moved home to New Smyrna Beach and hoped to contribute to Florida&rsquo;s growing space industry. But the overwhelming majority of opportunities in the sector required long commutes to the Cape or Orlando.&rdquo;</p>
+        </blockquote>
+        <figcaption class="mt-4 text-caption text-gray-dark">
+          Erik Ahlgren, aerospace engineer and FSIC Board Chair, <a href={url('/news/2026-05-25-fsic-launches-on-may-25')} class="link">at FSIC&rsquo;s launch</a>
+        </figcaption>
+      </figure>
       <div class="max-w-3xl">
         <p>
-          Florida's space economy is expanding rapidly — driven by commercial launch activity, advanced manufacturing, aerospace engineering, and emerging technologies.
+          The Space Coast is now the busiest launch corridor in the world, and the global space economy is projected to grow from roughly $630 billion in 2023 to $1.8 trillion by 2035.
         </p>
         <p class="mb-8">
           The Florida Space Innovation Center (FSIC) ensures that Southeast Volusia is not a spectator to that growth, but an active participant — building the talent, infrastructure, and partnerships required to compete in a global innovation economy.
         </p>
+        <dl class="mb-6">
+          <Row label={stakes.without.label} rule="bottom" dot="gray">
+            <List items={stakes.without.items} class="text-gray-dark" />
+          </Row>
+          <Row label={stakes.with.label} rule="bottom" dot="lagoon" class="pt-5">
+            <List items={stakes.with.items} class="text-navy" />
+          </Row>
+        </dl>
+        <p class="mb-8 text-caption text-gray-dark" set:html={SPACE_ECONOMY_SOURCE} />
         <MoreLink href="/strategic-moment">Explore the Strategic Moment</MoreLink>
       </div>
     </Grid>
@@ -229,22 +249,39 @@ const people: { group: string; members: { name: string; role: string; slug?: str
           </p>
           <h3 class="mb-2">{engine.name}</h3>
           <p class:list={['font-sans font-medium mb-3', engine.tone === 'lagoon' ? 'text-lagoon' : 'text-gray-dark']}>{engine.shift}</p>
-          <p class="mb-3">{engine.homeSummary}</p>
-          <p class="mb-0 text-label text-gray-dark tabular-nums">
-            {phases[i].timeframe}{phases[i].current && <span class="text-navy"> · Underway</span>}
-          </p>
+          <p class="mb-0">{engine.homeSummary}</p>
         </li>
       ))}
     </ol>
+
+    <!-- When each starts (docs/12 §2.4): the five phases on a Years 1–5 track, as on Deployment and Partnership &
+         Funding. Engines 1–4 are phases 1–4; the fifth is full integration. Static (not the range-bar animation);
+         the bars are decorative, the timeframe beside each name carries the information. -->
+    <div class="mt-14">
+      <TableRow head spans={[4, 8]}>
+        <p slot="c1" class="mb-0 text-label text-navy">When each starts</p>
+        <p slot="c2" class="mb-0 grid grid-cols-5 text-caption text-gray tabular-nums">
+          {YEARS.map((y) => <span class:list={[y === currentYear && 'text-navy font-semibold']}>Year {y}{y === currentYear && ' · Now'}</span>)}
+        </p>
+      </TableRow>
+      {phases.map((phase, i) => (
+        <TableRow spans={[4, 8]} cellClass={[undefined, 'lg:self-center']} class="gap-y-2 py-3">
+          <p slot="c1" class="mb-0 font-sans text-navy flex items-baseline gap-2">
+            <span class="font-semibold">{i < engines.length ? engines[i].name : phase.name}</span>
+            <span class="text-caption text-gray-dark tabular-nums">{phase.timeframe}{phase.current && <span class="text-navy font-semibold"> · Underway</span>}</span>
+          </p>
+          <span slot="c2" class="grid grid-cols-5 h-2.5 bg-navy/[0.07]" aria-hidden="true">
+            <span class:list={['h-full', toneBg(phase.tone)]} style={`grid-column: ${phase.start} / ${phase.end + 1}`}></span>
+          </span>
+        </TableRow>
+      ))}
+    </div>
 
     <Grid class="mt-14 pt-6 border-t border-rule">
       <p slot="label" class="mb-0 text-statement text-navy">Each engine reinforces the others. Growth is structured. Not speculative.</p>
       <div>
         <dl class="mb-8">
-          <Row label={phases[4].timeframe} rule="bottom">
-            <p class="mb-0">{phases[4].name}: the four engines operate as one regional ecosystem.</p>
-          </Row>
-          <Row label="This phased approach:" rule="bottom" class="pt-5">
+          <Row label="This phased approach:" rule="bottom">
             <List columns items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} />
           </Row>
         </dl>
@@ -256,8 +293,7 @@ const people: { group: string; members: { name: string; role: string; slug?: str
     </Grid>
   </Section>
 
-  <!-- 04 WHERE IT STANDS: the launch (the founding parallel), the releases since, then how FSIC is run and
-       who has joined. No release graphics here (DESIGN.md "Imagery"). -->
+  <!-- 04 WHERE IT STANDS: the launch (the founding parallel) and who has joined since, then how FSIC is run -->
   <Section {...at('news')} label="Where it stands" spacing="stacked" heading="FSIC Is Underway">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">Launched May 25, 2026. Building its leadership and partnerships now.</p>
@@ -268,18 +304,17 @@ const people: { group: string; members: { name: string; role: string; slug?: str
         <p class="mb-8">
           Sixty-five years later, on the same date, <a href={url('/news/2026-05-25-fsic-launches-on-may-25')} class="link">Southeast Volusia launched</a> its own commitment: the Florida Space Innovation Center.
         </p>
-        <ol class="divide-y divide-rule border-y border-rule mb-8" aria-label="Latest news">
-          {latest.map((r) => (
-            <li class="py-5">
-              <p class="mb-1 text-label text-gray-dark">
-                <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
-              </p>
-              <h3 class="text-xl md:text-2xl mb-0">
-                <a href={releaseHref(r)} class="underline-reveal underline-offset-4 decoration-2">{r.data.title}</a>
-              </h3>
-            </li>
+        <!-- Who has joined (docs/12 §2.5): names link to the releases that announced them -->
+        <dl class="mb-8">
+          {people.map((g, i) => (
+            <Row label={g.group} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
+              <List
+                html
+                items={g.members.map((m) => `${m.slug ? `<a href="${url(`/news/${m.slug}`)}" class="link">${m.name}</a>` : m.name}${m.role ? `, ${m.role}` : ''}`)}
+              />
+            </Row>
           ))}
-        </ol>
+        </dl>
         <p class="mb-0 font-sans">
           <MoreLink href="/news">All News & Media</MoreLink>
           <span class="text-gray-dark"> · Follow FSIC on {SOCIAL_LINKS.map((s, i) => (
@@ -307,14 +342,6 @@ const people: { group: string; members: { name: string; role: string; slug?: str
               ]}
             />
           </Row>
-          {people.map((g) => (
-            <Row label={g.group} rule="bottom" class="pt-5">
-              <List
-                html
-                items={g.members.map((m) => `${m.slug ? `<a href="${url(`/news/${m.slug}`)}" class="link">${m.name}</a>` : m.name}${m.role ? `, ${m.role}` : ''}`)}
-              />
-            </Row>
-          ))}
         </dl>
         <p class="text-statement text-navy mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
         <MoreLink href="/governance">Review Governance & Structure</MoreLink>
@@ -361,7 +388,7 @@ const people: { group: string; members: { name: string; role: string; slug?: str
       <div class="max-w-3xl">
         <dl class="mb-10">
           {fit.map((a, i) => (
-            <Row id={a.id} label={a.label} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
+            <Row label={a.label} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
               <p class="mb-1">{a.line}</p>
               <a href={url(a.href)} class:list={['font-sans font-semibold', a.community ? 'link-lagoon' : 'link']}>{a.link}</a>
             </Row>
