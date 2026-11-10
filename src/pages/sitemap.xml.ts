@@ -6,12 +6,37 @@ import { getReleases, isoDate } from '../lib/news';
 import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async () => {
-  const pages = sitePages().map((p) => ({ loc: absolute(p.path.endsWith('/') ? p.path : `${p.path}/`) }));
-  const releases = (await getReleases()).map((r) => ({ loc: absolute(`/news/${r.id}/`), lastmod: isoDate(r.data.date) }));
-  const posts = (await getCollection('blog', (p) => p.data.status === 'published')).map((p) => ({ loc: absolute(`/blog/${p.id}/`), lastmod: isoDate(p.data.updated ?? p.data.date) }));
-  const body = [...pages, ...releases, ...posts]
-    .map((u) => `  <url><loc>${u.loc}</loc>${'lastmod' in u ? `<lastmod>${u.lastmod}</lastmod>` : ''}</url>`)
+  const homePage = { loc: absolute('/'), priority: '1.0', changefreq: 'weekly' };
+  const pages = sitePages().map((p) => ({ 
+    loc: absolute(p.path.endsWith('/') ? p.path : `${p.path}/`), 
+    priority: '0.8',
+    changefreq: 'monthly' 
+  }));
+  const releases = (await getReleases()).map((r) => ({ 
+    loc: absolute(`/news/${r.id}/`), 
+    lastmod: isoDate(r.data.date),
+    priority: '0.6',
+    changefreq: 'never'
+  }));
+  const posts = (await getCollection('blog', (p) => p.data.status === 'published')).map((p) => ({ 
+    loc: absolute(`/blog/${p.id}/`), 
+    lastmod: isoDate(p.data.updated ?? p.data.date),
+    priority: '0.7',
+    changefreq: 'monthly'
+  }));
+  
+  const urls = [homePage, ...pages, ...releases, ...posts];
+  const body = urls
+    .map((u) => 
+      `  <url>` +
+      `<loc>${u.loc}</loc>` +
+      ('lastmod' in u ? `<lastmod>${u.lastmod}</lastmod>` : '') +
+      `<changefreq>${u.changefreq}</changefreq>` +
+      `<priority>${u.priority}</priority>` +
+      `</url>`
+    )
     .join('\n');
+    
   return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`, {
     headers: { 'Content-Type': 'application/xml' },
   });
