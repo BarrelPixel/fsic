@@ -198,17 +198,17 @@ When a post is published, `npm run blog-plan` adds its follow-up to the plan, ma
 |---|----------|-------|-----|---------|---------|--------|
 | 1 | What is a job-year, and what does FSIC's projection mean? | Regional economy | Policymakers, funders | Master Plan pp. 7–8 |  | **Published** (`what-is-a-job-year`) |
 | 2 | What is a micro-credential, and how will FSIC offer them? | Talent | Students, job-seekers, employers | Master Plan pp. 13, 19–21; FAQ |  | **Published** (`what-is-a-micro-credential`) |
-| 3 | Why does FSIC start with the Talent Engine? | Talent | Partners, funders | Master Plan p. 13; Deployment page |  | **Published** (`why-fsic-starts-with-talent`) |
+| 3 | Why does FSIC start with the Talent Engine? | Talent | Partners, funders | Master Plan p. 13; Deployment page |  | **In review** (`why-fsic-starts-with-talent`) |
 | 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | What Is a Micro-Credential? FSIC’s Short, Job-Focused Training | **Published** (`what-is-dual-enrollment`) |
 | 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | What Are SBIR and STTR? Federal Grants for Innovation | Planned |
-| 6 | What are SBIR and STTR, and how can a Volusia County business apply? | Business | Employers, startups | SBIR.gov; Master Plan |  | **Published** (`what-are-sbir-and-sttr`) |
+| 6 | What are SBIR and STTR, and how can a Volusia County business apply? | Business | Employers, startups | SBIR.gov; Master Plan |  | **In review** (`what-are-sbir-and-sttr`) |
 | 7 | What is a challenge lab? | Innovation | Universities, employers | Master Plan pp. 19–21 |  | Planned |
 | 8 | What is a "backbone organization", and why is FSIC one? | About FSIC | Policymakers, partners | FAQ; Governance page |  | Planned |
 | 9 | What does FSIC's 501(c)(3) status mean for donors and partners? | About FSIC | Funders | IRS determination letter; IRS Publication 4221-PC. Counsel review |  | Planned |
 | 10 | How is the space economy growing, and what does it mean for Southeast Volusia? | The region | Residents, policymakers | WEF and McKinsey (April 2024); Strategic Moment |  | Planned |
 | 11 | What will the Civic Engine offer residents? | Community | Residents, families | Master Plan pp. 19–21; Programs & Facilities |  | Planned |
 | 12 | How is FSIC governed, and how is it kept independent? | About FSIC | Funders, residents | Governance page; Master Plan pp. 15–17 |  | Planned |
-| 13 | What are the three scenarios in FSIC's economic analysis, and how do they differ? | Regional economy |  |  | What Is a Job-Year? Reading FSIC’s 25-Year Projections | **Published** (`what-are-fsics-economic-scenarios`) |
+| 13 | What are the three scenarios in FSIC's economic analysis, and how do they differ? | Regional economy |  |  | What Is a Job-Year? Reading FSIC’s 25-Year Projections | **In review** (`what-are-fsics-economic-scenarios`) |
 | 14 | What apprenticeships will FSIC offer for aerospace and advanced manufacturing? | Talent |  |  | What Is Dual Enrollment? FSIC's STEM Pathways | Planned |
 | 15 | How will FSIC's economic impact be measured and reported over time? | Regional economy |  |  | What Are FSIC's Three Economic Scenarios? | Planned |
 | 16 | How will FSIC measure Talent Engine outcomes and report results? | About FSIC |  |  | Why Does FSIC Start with the Talent Engine? | Planned |

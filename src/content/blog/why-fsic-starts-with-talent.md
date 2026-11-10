@@ -7,7 +7,8 @@ date: 2026-11-10
 author: erik-ahlgren
 topic: talent
 audiences: [funders, policymakers]
-status: published
+status: review
+publishDate: 2026-11-24
 followUp:
   question: "How will FSIC measure Talent Engine outcomes and report results?"
   slug: how-fsic-measures-talent-outcomes
