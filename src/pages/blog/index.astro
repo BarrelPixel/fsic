@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import TableRow from '../../components/TableRow.astro';
+import { getPosts, postHref, readingMinutes, isPublished, TOPICS } from '../../lib/blog';
+import { formatDate, isoDate } from '../../lib/news';
+import { url } from '../../lib/url';
+
+// Copy: src/content/copy/blog.md. Posts: src/content/blog/ (docs/14-blog-content-strategy.md).
+// Until a post is published the page holds a short note and stays out of search (it is also out of the
+// menu and the sitemap until then).
+const posts = await getPosts();
+const anyPublished = posts.some(isPublished);
+---
+<BaseLayout
+  title="Blog"
+  description="Explainers and guides from the Florida Space Innovation Center on the Space Coast economy, workforce training and taking part in Southeast Volusia."
+  noindex={!anyPublished}
+>
+
+  <PageHero title="Blog">
+    <p class="text-lead text-white/90 mb-0">
+      Explainers and guides from the Florida Space Innovation Center: what the Space Coast’s growth means for Southeast Volusia, and how to take part.
+    </p>
+  </PageHero>
+
+  <!-- Posts: date, topic and reading time (cols 1–4) | headline and description (cols 5–12) -->
+  <Section>
+    {posts.length > 0 ? (
+      <ol class="divide-y divide-rule border-b border-rule">
+        {posts.map((p) => (
+          <TableRow as="li" spans={[4, 8]} rule={false} baseline cellClass={[undefined, 'max-w-3xl']} class="gap-y-2 py-8 first:pt-0">
+            <p slot="c1" class="mb-0 text-label text-gray-dark">
+              <time datetime={isoDate(p.data.date)}>{formatDate(p.data.date)}</time>
+              <span class="block font-normal text-gray">{TOPICS[p.data.topic].label} · {readingMinutes(p)} min read</span>
+              {!isPublished(p) && <span class="block text-navy">Draft ({p.data.status}): not on the public site</span>}
+            </p>
+            <Fragment slot="c2">
+              <h2 class="text-2xl md:text-3xl mb-3">
+                <a href={postHref(p)} class="underline-reveal underline-offset-4 decoration-2">{p.data.title}</a>
+              </h2>
+              <p class="mb-0 text-gray-dark">{p.data.description}</p>
+            </Fragment>
+          </TableRow>
+        ))}
+      </ol>
+    ) : (
+      <div class="max-w-3xl">
+        <p class="text-lead text-navy">The first posts are in preparation.</p>
+        <p class="mb-0">
+          Until then, the <a href={url('/faq')} class="link">FAQ</a> answers the questions people ask most, and <a href={url('/news')} class="link">News &amp; Media</a> has FSIC’s press releases.
+        </p>
+      </div>
+    )}
+  </Section>
+
+</BaseLayout>
