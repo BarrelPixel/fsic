@@ -89,13 +89,10 @@ const at = (id: string) => sectionProps(sections, id);
       <Fragment slot="label"></Fragment>
       <dl>
         {scenarios.map((s, i) => (
-          <div class:list={['grid gap-y-2 md:grid-cols-8 md:gap-x-8 py-5', i === 0 ? 'pt-0 border-b' : 'border-b', 'border-rule']}>
-            <dt class="md:col-span-2 md:pt-label-offset text-label text-navy flex items-start gap-2">
-              <span class="mt-[0.3rem] w-3 h-3 shrink-0" style={`background:${s.color}`} aria-hidden="true"></span>
-              {s.name}
-            </dt>
-            <dd class="md:col-span-6 text-gray-dark" set:html={s.body} />
-          </div>
+          <Row label={s.name} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
+            <span slot="marker" class="mt-[0.3rem] w-3 h-3 shrink-0" style={`background:${s.color}`} aria-hidden="true"></span>
+            <Fragment set:html={s.body} />
+          </Row>
         ))}
       </dl>
     </Grid>
