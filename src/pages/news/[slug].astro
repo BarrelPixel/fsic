@@ -7,6 +7,7 @@ import Section from '../../components/Section.astro';
 import Grid from '../../components/Grid.astro';
 import { getReleases, formatDate, firstParagraph, truncate, isoDate, releaseHref, type Release } from '../../lib/news';
 import { url } from '../../lib/url';
+import { newsArticle } from '../../lib/seo';
 
 // One page per press release (src/content/news/<slug>.md). The text is shown as published.
 export async function getStaticPaths() {
@@ -26,8 +27,16 @@ const { release, others } = Astro.props;
 const { Content } = await render(release);
 const { image, imageAlt } = release.data;
 const shareImage = image ? await getImage({ src: image, width: 1200, format: 'jpg' }) : undefined;
+const description = truncate(firstParagraph(release));
 ---
-<BaseLayout title={release.data.title} description={truncate(firstParagraph(release))} image={shareImage?.src}>
+<BaseLayout
+  title={release.data.title}
+  description={description}
+  image={shareImage?.src}
+  article={{ published: release.data.date }}
+  parents={[{ name: 'News & Media', path: '/news/' }]}
+  jsonLd={[newsArticle({ headline: release.data.title, path: `/news/${release.id}/`, date: release.data.date, description, image: shareImage?.src })]}
+>
 
   <PageHero title={release.data.title} titleClass="text-4xl md:text-5xl">
     <p class="mb-0 font-sans text-white/75">

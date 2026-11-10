@@ -6,7 +6,7 @@
 
 ## Switching to fsic.space
 
-fsic.space, now the Wix site's domain, will point to this site on GitHub Pages. The code is ready: every internal link goes through `url()` (`src/lib/url.ts`), and a build for the root of the domain passes the link check (`npx astro build --base / --site https://fsic.space`, then `node scripts/check-links.mjs dist --base /`).
+fsic.space, now the Wix site's domain, will point to this site on GitHub Pages. **Search indexing turns on with the switch:** while `site` is the GitHub Pages preview, every page is `noindex` and robots.txt disallows crawling (`src/lib/seo.ts`, `INDEXABLE`). Setting `site` to `https://fsic.space` makes the pages indexable, points robots.txt at the sitemap, and makes the canonical URLs, sitemap and structured data use fsic.space. After the switch, submit `https://fsic.space/sitemap.xml` in Google Search Console and Bing Webmaster Tools, and validate a page with the Rich Results Test. The code is ready: every internal link goes through `url()` (`src/lib/url.ts`), and a build for the root of the domain passes the link check (`npx astro build --base / --site https://fsic.space`, then `node scripts/check-links.mjs dist --base /`).
 
 1. **Before touching DNS:** note every DNS record on fsic.space, above all the **MX** (and any SPF, DKIM or verification TXT) records, so email to info@fsic.space keeps working. Export the Wix newsletter subscribers (`site-wide.md`).
 2. **GitHub:** in the organization settings, verify fsic.space (Pages → Verified domains), so no other repository can claim it. In the repository's Settings → Pages, set the custom domain to `fsic.space`. With the Actions deploy, no `CNAME` file is needed.
