@@ -8,7 +8,7 @@ author: erik-ahlgren
 topic: market
 audiences: [employers]
 status: review
-publishDate: 2026-11-17
+publishDate: 2026-11-14
 followUp:
   question: "How can a small business become a supplier to the space industry?"
   slug: how-to-become-a-space-supplier

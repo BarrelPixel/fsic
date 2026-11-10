@@ -8,7 +8,7 @@ author: erik-ahlgren
 topic: economy
 audiences: [policymakers, funders]
 status: review
-publishDate: 2026-12-01
+publishDate: 2026-11-25
 followUp:
   question: "How will FSIC's economic impact be measured and reported over time?"
   slug: how-fsic-measures-economic-impact
