@@ -200,11 +200,11 @@ When a post is published, `npm run blog-plan` adds its follow-up to the plan, ma
 | 2 | What is a micro-credential, and how will FSIC offer them? | Talent | Students, job-seekers, employers | Master Plan pp. 13, 19–21; FAQ |  | **Published** (`what-is-a-micro-credential`) |
 | 3 | Why does FSIC start with the Talent Engine? | Talent | Partners, funders | Master Plan p. 13; Deployment page |  | **In review** (`why-fsic-starts-with-talent`) |
 | 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | What Is a Micro-Credential? FSIC’s Short, Job-Focused Training | **Published** (`what-is-dual-enrollment`) |
-| 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | What Are SBIR and STTR? Federal Grants for Innovation | Planned |
+| 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | What Are SBIR and STTR? Federal Grants for Innovation | **In review** (`how-to-become-a-space-supplier`) |
 | 6 | What are SBIR and STTR, and how can a Volusia County business apply? | Business | Employers, startups | SBIR.gov; Master Plan |  | **In review** (`what-are-sbir-and-sttr`) |
-| 7 | What is a challenge lab? | Innovation | Universities, employers | Master Plan pp. 19–21 |  | Planned |
-| 8 | What is a "backbone organization", and why is FSIC one? | About FSIC | Policymakers, partners | FAQ; Governance page |  | Planned |
-| 9 | What does FSIC's 501(c)(3) status mean for donors and partners? | About FSIC | Funders | IRS determination letter; IRS Publication 4221-PC. Counsel review |  | Planned |
+| 7 | What is a challenge lab? | Innovation | Universities, employers | Master Plan pp. 19–21 |  | **In review** (`what-is-a-challenge-lab`) |
+| 8 | What is a "backbone organization", and why is FSIC one? | About FSIC | Policymakers, partners | FAQ; Governance page |  | **In review** (`what-is-a-backbone-organization`) |
+| 9 | What does FSIC's 501(c)(3) status mean for donors and partners? | About FSIC | Funders | IRS determination letter; IRS Publication 4221-PC. Counsel review |  | **In review** (`what-fsic-501c3-status-means`) |
 | 10 | How is the space economy growing, and what does it mean for Southeast Volusia? | The region | Residents, policymakers | WEF and McKinsey (April 2024); Strategic Moment |  | Planned |
 | 11 | What will the Civic Engine offer residents? | Community | Residents, families | Master Plan pp. 19–21; Programs & Facilities |  | Planned |
 | 12 | How is FSIC governed, and how is it kept independent? | About FSIC | Funders, residents | Governance page; Master Plan pp. 15–17 |  | Planned |
