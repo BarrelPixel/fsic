@@ -120,7 +120,7 @@ Answer engines quote short, self-contained passages that state facts plainly, an
 
 ## 7. Trust, authorship and compliance (E-E-A-T)
 
-- **Authors are real.** A person is added to `src/data/authors.ts` only with their approval, a role that gives them standing on the topic, and an approved one-line bio. Until then posts are by "Florida Space Innovation Center". Later: author pages with bios and links to their posts.
+- **Authors are real.** A person is added to `src/data/authors.ts` only with their approval, a role that gives them standing on the topic, an approved one-line bio and, optionally, an approved headshot. The post shows the author's photo, name and role under the headline and an "About the author" note at the end, and the structured data names them as a `Person` with their role, bio and photo. The first author is **Erik Ahlgren, Board Chair** (November 2026). Later: author pages with bios and links to their posts.
 - **Expert review:**
   - Posts on taxes, law or funding (501(c)(3), solicitation, grants) are reviewed by FSIC's counsel or CPA before publication.
   - Posts on training programs are reviewed by the program lead.

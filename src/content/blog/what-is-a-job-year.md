@@ -4,7 +4,7 @@ description: "A job-year is one job held for one year. How to read the Master Pl
 question: "What is a job-year, and what does FSIC’s job-year projection mean?"
 summary: "A job-year is one job held for one year. When FSIC’s Master Plan projects 74,500–79,500 job-years over 25 years, it counts the total years of work across that period, not the number of people employed at any one time. The range comes from the plan’s full-implementation scenario (FSIC 2.0) and is an estimate."
 date: 2026-11-10
-author: org
+author: erik-ahlgren
 topic: economy
 audiences: [policymakers, funders, community]
 faqs:

@@ -1,6 +1,6 @@
 ---
 import { render } from 'astro:content';
-import { getImage } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
@@ -34,6 +34,8 @@ const author = authorFor(d.author);
 const topic = TOPICS[d.topic];
 const shareImage = d.image ? await getImage({ src: d.image, width: 1200, format: 'jpg' }) : undefined;
 const path = `/blog/${post.id}/`;
+// The author's photo for the structured data (an absolute, built image).
+const authorImage = author.photo ? (await getImage({ src: author.photo.src, width: 400, format: 'jpg' })).src : undefined;
 ---
 <BaseLayout
   title={d.title}
@@ -43,15 +45,20 @@ const path = `/blog/${post.id}/`;
   parents={[{ name: 'Blog', path: '/blog/' }]}
   noindex={!isPublished(post)}
   jsonLd={[
-    blogPosting({ headline: d.title, description: d.description, path, date: d.date, updated: d.updated, section: topic.label, author, sources: d.sources, image: shareImage?.src }),
+    blogPosting({ headline: d.title, description: d.description, path, date: d.date, updated: d.updated, section: topic.label, author: { ...author, image: authorImage, description: author.bio }, sources: d.sources, image: shareImage?.src }),
     ...(d.faqs.length > 0 ? [faqPage(d.faqs.map((f) => ({ q: f.q, answer: f.a })))] : []),
   ]}
 >
 
   <PageHero title={d.title} titleClass="text-4xl md:text-5xl">
-    <div slot="aside">
-      <p class="mb-1 text-white/90">{author.name}</p>
-      <p class="mb-0">{author.role}</p>
+    <div slot="aside" class="flex items-start gap-4">
+      {author.photo && (
+        <Image src={author.photo.src} alt={author.photo.alt} widths={[64, 128]} sizes="4rem" class="w-16 h-20 shrink-0 object-cover object-top" />
+      )}
+      <div>
+        <p class="mb-1 text-white/90">{author.name}</p>
+        <p class="mb-0">{author.role}</p>
+      </div>
     </div>
     <p class="mb-6 font-sans text-white/75">
       <time datetime={isoDate(d.date)}>{formatDate(d.date)}</time>
@@ -92,6 +99,17 @@ const path = `/blog/${post.id}/`;
             </dl>
           </section>
         )}
+
+        <!-- About the author (E-E-A-T, docs/14 §7): who wrote it and why they can -->
+        <section class="mt-12 pt-6 border-t border-rule" aria-labelledby="author">
+          <h2 id="author" class="text-label text-navy mb-3">About the author</h2>
+          <div class="flex items-start gap-4">
+            {author.photo && (
+              <Image src={author.photo.src} alt="" widths={[64, 128]} sizes="4rem" class="w-16 h-20 shrink-0 object-cover object-top" />
+            )}
+            <p class="mb-0">{author.bio}</p>
+          </div>
+        </section>
 
         <section class="mt-12 pt-6 border-t border-rule" aria-labelledby="sources">
           <h2 id="sources" class="text-label text-navy mb-3">Sources</h2>

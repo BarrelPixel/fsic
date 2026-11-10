@@ -35,6 +35,17 @@ Until then, the FAQ answers the questions people ask most, and News & Media has 
 
 ---
 
+## AUTHOR
+
+**Erik Ahlgren** (`erik-ahlgren`, `src/data/authors.ts`), the author of both drafts.
+**Role:** Board Chair, Florida Space Innovation Center
+**Bio (end of each post, and in the structured data):** Erik Ahlgren is Board Chair of the Florida Space Innovation Center. He worked in California's aerospace sector before moving home to New Smyrna Beach, where he is a web developer.
+**Photo:** the headshot from barrelandpixel.com/about. Alt text: "Erik Ahlgren, smiling, in a dark suit and white open-collared shirt."
+
+> **Source:** FSIC's May 25, 2026 release (aerospace career in California, moved home to New Smyrna Beach); July 29, 2026 release (Board Chair); the project lead (web developer, November 10, 2026). **⚠ Review:** Erik Ahlgren approves the bio and the use of the photo.
+
+---
+
 ## DRAFT POSTS
 
 | Post | File | Status |
