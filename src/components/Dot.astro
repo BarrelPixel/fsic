@@ -1,0 +1,24 @@
+---
+// The small round marker (DESIGN.md: the only round shape). Its color says what it marks (src/lib/tones.ts).
+//   size  sm 8px (list labels, phase rows), md 10px (running heads, engine names)
+//   tone  'none' keeps the space without a mark, so a row without a tone still lines up with the others
+import { toneBg, type Tone } from '../lib/tones';
+
+interface Props {
+  tone: Tone | 'none';
+  dark?: boolean;
+  size?: 'sm' | 'md';
+  class?: string;
+}
+
+const { tone, dark = false, size = 'sm', class: className } = Astro.props;
+---
+<span
+  class:list={[
+    'shrink-0 rounded-full',
+    size === 'md' ? 'w-2.5 h-2.5' : 'w-2 h-2',
+    tone === 'none' ? 'bg-transparent' : toneBg(tone, dark),
+    className,
+  ]}
+  aria-hidden="true"
+></span>

@@ -8,19 +8,20 @@ import Row from '../components/Row.astro';
 import List from '../components/List.astro';
 
 import heroImage from '../assets/fsic-hero.png';
-import conceptImage from '../assets/fsic-concept.jpg';
+import ConceptRendering from '../components/ConceptRendering.astro';
 import { pad2 } from '../lib/format';
 import { sectionProps } from '../lib/sections';
 import { FIGURES, SOURCE } from '../data/economics';
 import { engines } from '../data/engines';
 import { faqs } from '../data/faq';
-import { phases, type Tone } from '../data/phases';
+import { phases } from '../data/phases';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 import RangeBar from '../components/RangeBar.astro';
 import RangeLegend from '../components/RangeLegend.astro';
 import { url } from '../lib/url';
 import { getReleases, formatDate, isoDate, releaseHref } from '../lib/news';
 import { SOCIAL_LINKS } from '../lib/site';
+import Dot from '../components/Dot.astro';
 
 // 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
@@ -37,8 +38,6 @@ const shareImage = await getImage({ src: heroImage, width: 1200, format: 'jpg' }
 // why → how big → what → when, then the proof that FSIC is underway (docs/10-homepage-plan.md A2–A4).
 const sections = ['strategic-moment', 'economic-impact', 'model', 'deployment', 'news', 'vision'].map((id) => ({ id }));
 const at = (id: string) => sectionProps(sections, id);
-
-const toneDot: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lagoon', navy: 'bg-navy' };
 
 // The three newest press releases (src/content/news/), as published.
 const latest = (await getReleases()).slice(0, 3);
@@ -236,7 +235,7 @@ const people = [
       {engines.map((engine, i) => (
         <li class="lg:col-span-3 border-t border-navy/25 pt-5">
           <p class="text-caption text-gray tabular-nums flex items-center gap-2 mb-3">
-            <span class:list={['w-2.5 h-2.5 rounded-full', engine.tone === 'lagoon' ? 'bg-lagoon' : 'bg-orange']} aria-hidden="true"></span>
+            <Dot tone={engine.tone} size="md" />
             {pad2(i + 1)}
           </p>
           <h3 class="mb-2">{engine.name}</h3>
@@ -280,7 +279,7 @@ const people = [
         {phases.map((phase, i) => (
           <li class="grid gap-y-1 py-4 border-b border-rule last:border-b-0 md:grid-cols-8 md:gap-x-8 md:items-baseline">
             <p class="md:col-span-2 mb-0 text-label text-gray-dark tabular-nums flex items-start gap-2">
-              <span class:list={['w-2 h-2 mt-1.5 rounded-full shrink-0', toneDot[phase.tone]]} aria-hidden="true"></span>
+              <Dot tone={phase.tone} class="mt-1.5" />
               <span>Phase {i + 1} · {phase.timeframe}{phase.current && <span class="block text-navy">Under way</span>}</span>
             </p>
             <div class="md:col-span-6">
@@ -369,16 +368,7 @@ const people = [
 
   <!-- 06 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
   <Section {...at('vision')} label="Long-range vision" dark heading="A Landmark Campus for Southeast Volusia">
-    <figure slot="media" class="relative">
-      <Image
-        src={conceptImage}
-        alt="Concept rendering of a future campus: research buildings, a tower, and a glass dome set among wetlands, palms, and a boardwalk."
-        widths={[640, 960, 1280, 1536]}
-        sizes="100vw"
-        class="w-full h-[50vh] min-h-[320px] max-h-[640px] object-cover"
-      />
-      <figcaption class="text-caption container text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>
-    </figure>
+    <ConceptRendering slot="media" />
     <Grid class="gap-y-10">
       <p slot="label" class="mb-0 text-xl text-white/90 leading-snug">
         As the model matures, FSIC evolves into a permanent anchor institution for Southeast Volusia.

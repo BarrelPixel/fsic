@@ -14,6 +14,7 @@ import { phases as phaseData } from '../data/phases';
 import SectionBar from '../components/SectionBar.astro';
 import { url } from '../lib/url';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
+import { faqText } from '../data/faq';
 
 // Copy: src/content/copy/programs-facilities.md (Draft). Audiences: fsic.space FAQ (verbatim). Portfolio
 // (src/data/programs.ts, shared with the Model page):
@@ -29,9 +30,9 @@ const sections: PageSection[] = [
 const at = (id: string) => sectionProps(sections, id);
 
 const audiences = [
-  { label: 'For students and families', items: ['Hands-on STEM learning and maker experiences', 'Dual-enrollment pathways', 'Micro-credentials tied to real jobs', 'Community STEM and arts events'] },
-  { label: 'For adults and career-switchers', items: ['Short, employer-validated training programs', 'Job placement, apprenticeships, and upskilling', 'Clear pathways into high-wage technical careers'] },
-  { label: 'For the community', items: ['Higher wages and economic mobility', 'A stronger regional identity tied to innovation', 'More opportunities for youth and families to engage in STEM'] },
+  { label: 'For students and families', items: faqText.forStudents },
+  { label: 'For adults and career-switchers', items: faqText.forAdults },
+  { label: 'For the community', items: faqText.forCommunity },
 ];
 
 const principles = [
@@ -50,7 +51,7 @@ const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timefr
   <!-- Interior page template (DESIGN.md): PageHero with an index of the three sections -->
   <PageHero title="Programs & Facilities">
     <p class="text-lead text-white/90 mb-10 max-w-3xl">
-      FSIC expands opportunity for residents of all ages by making the space economy accessible and visible.
+      {faqText.residentsLead}
     </p>
     <HeroIndex label="Page contents" size="large" items={sections} />
   </PageHero>
@@ -74,10 +75,10 @@ const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timefr
           </Row>
         ))}
         <Row label="For businesses and entrepreneurs:" rule="bottom" class="pt-5">
-          <p class="mb-4 text-gray-dark">FSIC helps small businesses and startups participate in aerospace and advanced manufacturing supply chains — opportunities that are currently difficult to access.</p>
+          <p class="mb-4 text-gray-dark">{faqText.businessesLead}</p>
           <p class="mb-2 text-label text-navy">Support includes:</p>
-          <List items={['Supplier-readiness bootcamps', 'Certification and contracting navigation', 'SBIR/STTR proposal support', 'Startup incubation and acceleration', 'Access to prototyping labs and applied research partners']} class="mb-4 text-gray-dark" />
-          <p class="mb-0 text-gray-dark">This creates a pipeline of supplier-ready companies capable of competing in high-value markets.</p>
+          <List items={faqText.businessSupport} class="mb-4 text-gray-dark" />
+          <p class="mb-0 text-gray-dark">{faqText.businessesPipeline}</p>
         </Row>
       </dl>
     </Grid>
@@ -112,12 +113,12 @@ const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timefr
   <Section {...at('facilities')} spacing="stacked" heading="Facilities and Infrastructure Plan">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
-        FSIC is a virtual organization located in New Smyrna Beach.
+        {faqText.locationNow}
       </p>
       <div>
         <div class="max-w-3xl">
           <p>
-            A specific future site in Volusia County will be determined through a collaborative process with community members, civic leaders, industry partners, and other stakeholders. This ensures the final location reflects community priorities, long-term economic strategy, and the needs of partners.
+            {faqText.locationSite}
           </p>
           <p class="mb-10">
             FSIC's facilities strategy is designed to scale with regional demand and support the phased deployment of the Talent, Innovation, Market, and Civic Engines. The infrastructure plan emphasizes flexibility, cost efficiency, and the creation of spaces that foster collaboration, hands-on learning, applied research, and community engagement.

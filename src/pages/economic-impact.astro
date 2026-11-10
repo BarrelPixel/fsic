@@ -8,7 +8,7 @@ import Row from '../components/Row.astro';
 import List from '../components/List.astro';
 import { EMAIL, mailto } from '../lib/site';
 import Closing from '../components/Closing.astro';
-import { SOURCE, glance, scenarios, comparison, roi } from '../data/economics';
+import { DISCLAIMER, SOURCE, glance, scenarios, comparison, roi } from '../data/economics';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 import RangeBar from '../components/RangeBar.astro';
 import RangeLegend from '../components/RangeLegend.astro';
@@ -36,7 +36,7 @@ const at = (id: string) => sectionProps(sections, id);
   <!-- Interior page template (DESIGN.md): PageHero, numbered narrative sections, closing -->
   <PageHero title="Economic Impact">
     <p slot="aside">
-      These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at
+      {DISCLAIMER} For the full analysis contact us at
       <a href={mailto()} class="link-on-dark">{EMAIL}</a>.
     </p>
     <p class="text-statement text-white mb-6">Transformational, Long-Term Regional Impact</p>
@@ -166,7 +166,7 @@ const at = (id: string) => sectionProps(sections, id);
         <Row label="Risks without FSIC" rule="bottom" dark dot="gray">
           <List items={['Becoming a commuter corridor', 'Low-wage service-sector concentration', 'Limited employer recruitment', 'Weak regional identity']} class="text-white/75" />
         </Row>
-        <Row label="Opportunities with FSIC" rule="bottom" dark dot="lagoon-light" class="pt-5">
+        <Row label="Opportunities with FSIC" rule="bottom" dark dot="lagoon" class="pt-5">
           <List items={['High-value employer attraction', 'Innovation district development', 'Stronger workforce alignment', 'Expanded economic mobility', 'A shared regional identity rooted in innovation']} class="text-white" />
         </Row>
       </dl>

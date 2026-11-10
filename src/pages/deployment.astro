@@ -9,8 +9,9 @@ import Row from '../components/Row.astro';
 import List from '../components/List.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
-import { phases, type Tone } from '../data/phases';
+import { phases } from '../data/phases';
 import { url } from '../lib/url';
+import { toneBg } from '../lib/tones';
 
 // Copy: src/content/copy/deployment.md (Draft). Five-phase model from the Master Plan (pp. 13–14),
 // chosen by the project lead; facilities lines from p. 18. Open review items: facilities/location
@@ -18,7 +19,6 @@ import { url } from '../lib/url';
 
 const YEARS = [1, 2, 3, 4, 5];
 // Bar colors on night (hero) and as list markers on white (sections)
-const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lagoon-light', navy: 'bg-white/80' };
 ---
 <BaseLayout title="Phased Deployment" description="How the Florida Space Innovation Center scales in five phases over five years, from the Talent Engine launch to full ecosystem integration.">
 
@@ -54,7 +54,7 @@ const barOnNight: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lago
               </span>
               <span class="grid grid-cols-5 h-3 bg-white/[0.06]" aria-hidden="true">
                 <span
-                  class:list={['h-full', barOnNight[phase.tone]]}
+                  class:list={['h-full', toneBg(phase.tone, true)]}
                   style={`grid-column: ${phase.start} / ${phase.end + 1}`}
                 ></span>
               </span>

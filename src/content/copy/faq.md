@@ -8,7 +8,7 @@
 > **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
 > - "Economic Impact" (economic impact answer) now goes to Economic Impact, At a glance
 
-The page is built from this file (`src/pages/faq.astro`). Several answers are also used on other pages: governance, partnership-funding, programs-facilities, deployment, long-term-vision, and economic-impact. If you edit an answer here, update those pages too, or have the build read from a single source.
+The page is built from this file (`src/pages/faq.astro`). Several answers are also used on other pages: governance, partnership-funding, programs-facilities, deployment, long-term-vision, and economic-impact. Sentences and lists that Governance, Programs & Facilities and Partnership & Funding show word for word are defined once, in `faqText` (`src/data/faq.ts`), so an edit there reaches every page. The economic disclaimer is `DISCLAIMER` in `src/data/economics.ts`.
 
 ---
 
