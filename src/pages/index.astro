@@ -65,10 +65,14 @@ const fit = ([
   { label: 'Residents and families', line: 'Hands-on STEM learning, dual-enrollment pathways, and micro-credentials tied to real jobs.', link: 'Programs for residents', href: '/programs-facilities#audiences', community: true },
 ] as { label: string; line: string; link: string; href: string; community?: boolean }[]).map((a) => ({ ...a, id: `part-${a.label.split(' ')[0].toLowerCase()}` }));
 
-// The people appointed so far (plan B4), as FSIC's releases announced them, each linking to its release.
-// Roles are the release headlines' (home.md; titles to be confirmed, docs/07 "Titles").
-const people = [
+// The board and council (home.md): names and roles as FSIC's releases give them, each appointment linking to
+// the release that announced it. Erik Ahlgren (Board Chair, per the July 29 release) and Beth Hamilton were
+// added at the project lead's direction and have no appointment release, so they aren't links. Titles to be
+// confirmed (docs/07 "Titles").
+const people: { group: string; members: { name: string; role: string; slug?: string }[] }[] = [
   { group: 'Board of Directors', members: [
+    { name: 'Erik Ahlgren', role: 'Board Chair' },
+    { name: 'Beth Hamilton', role: '' },
     { name: 'Jessie Thompson', role: 'School Board Member', slug: '2026-07-07-jessie-thompson-joins-board' },
     { name: 'Diezel DePew', role: 'Mayor of Edgewater', slug: '2026-07-13-diezel-depew-joins-board' },
     { name: 'Ryan Trine', role: 'CEO of R3Doubt', slug: '2026-07-29-ryan-trine-joins-board' },
@@ -307,7 +311,7 @@ const people = [
             <Row label={g.group} rule="bottom" class="pt-5">
               <List
                 html
-                items={g.members.map((m) => `<a href="${url(`/news/${m.slug}`)}" class="link">${m.name}</a>${m.role ? `, ${m.role}` : ''}`)}
+                items={g.members.map((m) => `${m.slug ? `<a href="${url(`/news/${m.slug}`)}" class="link">${m.name}</a>` : m.name}${m.role ? `, ${m.role}` : ''}`)}
               />
             </Row>
           ))}

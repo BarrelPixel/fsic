@@ -152,8 +152,10 @@ It is a durable economic backbone.
 > **Added (November 10, 2026, plan B6):** a next step for visitors not ready to partner. Links from `src/lib/site.ts`. **⚠ Review:** new line. A newsletter sign-up can join it once a provider is chosen.
 
 **Governance block** (from Governance & Transparency, below): after the governance list, the people appointed so far, each linking to the release that announced them, with the role as the release headline gives it:
-- Board of Directors: Jessie Thompson, School Board Member; Diezel DePew, Mayor of Edgewater; Ryan Trine, CEO of R3Doubt
+- Board of Directors: Erik Ahlgren, Board Chair; Beth Hamilton; Jessie Thompson, School Board Member; Diezel DePew, Mayor of Edgewater; Ryan Trine, CEO of R3Doubt
 - Founders Council: Jake Johansson
+
+> **Added (November 10, 2026):** Erik Ahlgren (Board Chair, the title the July 29 release gives him) and Beth Hamilton, at the project lead's direction. They have no appointment release, so their names don't link. **⚠ Review:** Beth Hamilton's role.
 
 > **Added (November 10, 2026, plan B4):** names and roles as published in FSIC's releases. **⚠ Review:** confirm current titles and whether this is the full seated board (open question "Titles"); the Governance page still leaves names out until then.
 

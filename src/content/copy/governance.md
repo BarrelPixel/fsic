@@ -175,6 +175,11 @@ Committees support board governance and ensure compliance with nonprofit regulat
 
 Announced in press releases:
 - **Erik Ahlgren** — Board Chair
+
+Confirmed by the project lead (November 10, 2026), no release:
+- **Beth Hamilton** — [TODO: role]
+
+Appointed by release:
 - **Ryan Trine** — R3Doubt CEO; retired U.S. Army Chief Warrant Officer; cybersecurity and technology leader (appointed July 29, 2026)
 - **Diezel DePew** — Mayor of Edgewater (appointed July 13, 2026)
 - **Jessie Thompson** — Member, Volusia County School Board; education and community representative (appointed July 7, 2026)
