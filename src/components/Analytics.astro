@@ -1,40 +1,38 @@
 ---
-// Analytics tracking component. Set ANALYTICS_ID in astro.config.mjs publicEnv to enable.
-// Supports Google Analytics 4 (GA4) or Plausible Analytics.
-// Privacy-friendly: respects Do Not Track and integrates with the Privacy Policy (/privacy).
+// Analytics (docs/16-analytics-setup.md). Off unless PUBLIC_ANALYTICS_ID is set, and only in production
+// builds. Which provider FSIC uses is an open question (docs/07): Plausible (no cookies) or GA4 (cookies,
+// so it needs a consent banner before use in the EU and a matching Privacy Policy).
+//   PUBLIC_ANALYTICS_PROVIDER  'plausible' or 'ga4' (default 'plausible')
+//   PUBLIC_ANALYTICS_ID        GA4: the measurement ID (G-…). Plausible: any non-empty value turns it on
+// GA4 loads only when the browser doesn't send Do Not Track or Global Privacy Control. Plausible sets no
+// cookies and collects no personal data; it is told the site's own domain.
+import { SITE } from '../lib/seo';
 
 const analyticsId = import.meta.env.PUBLIC_ANALYTICS_ID;
-const analyticsProvider = import.meta.env.PUBLIC_ANALYTICS_PROVIDER || 'ga4'; // 'ga4' or 'plausible'
+const provider = import.meta.env.PUBLIC_ANALYTICS_PROVIDER || 'plausible';
 const enabled = !!analyticsId && import.meta.env.PROD;
-
-// Plausible domain (defaults to current domain)
-const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN || undefined;
+const domain = new URL(SITE).hostname;
 ---
-
-{enabled && analyticsProvider === 'ga4' && (
+{enabled && provider === 'plausible' && (
   <>
-    <!-- Google Analytics 4 -->
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}></script>
-    <script is:inline define:vars={{ analyticsId }}>
+    <link rel="dns-prefetch" href="https://plausible.io" />
+    <script defer data-domain={domain} src="https://plausible.io/js/script.js"></script>
+  </>
+)}
+
+{enabled && provider === 'ga4' && (
+  <script is:inline define:vars={{ analyticsId }}>
+    (function () {
+      // Respect Do Not Track and Global Privacy Control: don't load GA4 at all.
+      if (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true) return;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(analyticsId);
+      document.head.appendChild(s);
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { window.dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', analyticsId, {
-        anonymize_ip: true,
-        cookie_flags: 'SameSite=None;Secure'
-      });
-    </script>
-  </>
+      gtag('config', analyticsId, { anonymize_ip: true });
+    })();
+  </script>
 )}
-
-{enabled && analyticsProvider === 'plausible' && (
-  <>
-    <!-- Plausible Analytics (privacy-friendly, no cookies) -->
-    <script 
-      defer 
-      data-domain={plausibleDomain} 
-      src="https://plausible.io/js/script.js"
-    ></script>
-  </>
-)}
-
