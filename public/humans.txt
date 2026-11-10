@@ -1,0 +1,19 @@
+# humanstxt.org
+
+/* TEAM */
+Developer: Barrel & Pixel
+Site: https://fsic.space
+Location: Florida, USA
+
+/* SITE */
+Last update: 2026/11/10
+Standards: HTML5, CSS3, Accessibility WCAG 2.1 AA
+Components: Astro, Tailwind CSS v4, TypeScript
+Software: Visual Studio Code, Git
+
+/* ORGANIZATION */
+Organization: Florida Space Innovation Center Inc.
+Type: 501(c)(3) Nonprofit
+Founded: May 25, 2026
+Location: New Smyrna Beach, Florida
+Email: info@fsic.space

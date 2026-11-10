@@ -1,0 +1,8 @@
+Contact: mailto:info@fsic.space
+Expires: 2027-11-10T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://fsic.space/.well-known/security.txt
+
+# Florida Space Innovation Center Inc. Security Policy
+# If you believe you've found a security vulnerability, please report it responsibly.
+# We appreciate your efforts to disclose your findings to us.

@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Grid from '../components/Grid.astro';
+import Button from '../components/Button.astro';
+import { EMAIL, mailto } from '../lib/site';
+
+const title = 'Accessibility Statement';
+const description = 'FSIC is committed to ensuring digital accessibility for people with disabilities. Learn about our accessibility features and how to report issues.';
+---
+<BaseLayout title={title} description={description} noindex={true}>
+  <Section>
+    <h1 class="mb-12">Accessibility Statement</h1>
+    
+    <Grid>
+      <div slot="label">
+        <p class="text-lead text-navy">Our Commitment</p>
+      </div>
+      <div>
+        <p class="text-lead mb-8">
+          The Florida Space Innovation Center is committed to ensuring digital accessibility for people with disabilities.
+        </p>
+        
+        <p class="mb-8">
+          We are continually improving the user experience for everyone and applying the relevant accessibility standards to 
+          ensure we provide equal access to all of our users.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <Section spacing="stacked">
+    <Grid labelAs="header">
+      <div slot="label">
+        <h2 class="text-2xl">Conformance Status</h2>
+      </div>
+      <div>
+        <p class="mb-6">
+          The <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" class="link" rel="noopener">Web Content Accessibility Guidelines (WCAG)</a> 
+          defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: 
+          Level A, Level AA, and Level AAA.
+        </p>
+
+        <p class="mb-6">
+          This website is <strong class="text-navy">partially conformant</strong> with <strong class="text-navy">WCAG 2.1 Level AA</strong>. 
+          Partially conformant means that some parts of the content do not fully conform to the accessibility standard.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <Section spacing="stacked">
+    <Grid labelAs="header">
+      <div slot="label">
+        <h2 class="text-2xl">Accessibility Features</h2>
+      </div>
+      <div>
+        <p class="mb-6">Our website includes the following accessibility features:</p>
+        
+        <ul class="list spacious mb-0">
+          <li><strong class="text-navy">Keyboard Navigation:</strong> All interactive elements can be accessed using a keyboard alone</li>
+          <li><strong class="text-navy">Skip Navigation:</strong> Skip-to-content link allows keyboard users to bypass repetitive navigation</li>
+          <li><strong class="text-navy">Color Contrast:</strong> Text and interactive elements meet WCAG AA contrast requirements (4.5:1 for normal text, 3:1 for large text)</li>
+          <li><strong class="text-navy">Focus Indicators:</strong> Visible focus indicators (3px orange outline) on all interactive elements</li>
+          <li><strong class="text-navy">Semantic HTML:</strong> Proper heading hierarchy and semantic HTML elements for screen reader navigation</li>
+          <li><strong class="text-navy">Alt Text:</strong> Descriptive alternative text for all meaningful images</li>
+          <li><strong class="text-navy">Responsive Design:</strong> Mobile-friendly design that works at 320px width and up</li>
+          <li><strong class="text-navy">Motion Preferences:</strong> Animations respect prefers-reduced-motion settings</li>
+          <li><strong class="text-navy">ARIA Labels:</strong> Appropriate ARIA labels and landmarks for screen reader users</li>
+          <li><strong class="text-navy">Readable Fonts:</strong> Clear, readable fonts with generous line height (28px for 18px text)</li>
+        </ul>
+      </div>
+    </Grid>
+  </Section>
+
+  <Section spacing="stacked">
+    <Grid labelAs="header">
+      <div slot="label">
+        <h2 class="text-2xl">Assistive Technologies</h2>
+      </div>
+      <div>
+        <p class="mb-6">Our website is designed to be compatible with the following assistive technologies:</p>
+        
+        <ul class="list mb-0">
+          <li>Screen readers (NVDA, JAWS, VoiceOver)</li>
+          <li>Screen magnification software</li>
+          <li>Speech recognition software</li>
+          <li>Keyboard-only navigation</li>
+          <li>Browser zoom up to 200%</li>
+        </ul>
+      </div>
+    </Grid>
+  </Section>
+
+  <Section spacing="stacked">
+    <Grid labelAs="header">
+      <div slot="label">
+        <h2 class="text-2xl">Known Limitations</h2>
+      </div>
+      <div>
+        <p class="mb-6">
+          While we strive for full accessibility, some limitations may exist:
+        </p>
+        
+        <ul class="list spacious mb-8">
+          <li>Some PDF documents linked from this site may not be fully accessible. We are working to update these documents</li>
+          <li>Third-party content (embedded videos, social media feeds) may have accessibility limitations beyond our control</li>
+          <li>Some complex data visualizations may require alternative text descriptions for full accessibility</li>
+        </ul>
+
+        <p class="mb-0">
+          We are actively working to address these limitations and improve accessibility across all content.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <Section spacing="stacked">
+    <Grid labelAs="header">
+      <div slot="label">
+        <h2 class="text-2xl">Feedback & Support</h2>
+      </div>
+      <div>
+        <p class="mb-6">
+          We welcome your feedback on the accessibility of this website. If you encounter accessibility barriers, please let us know:
+        </p>
+        
+        <dl class="mb-8">
+          <div class="mb-4">
+            <dt class="text-label text-navy mb-1">Email</dt>
+            <dd><a href={mailto()} class="link">{EMAIL}</a></dd>
+          </div>
+          <div>
+            <dt class="text-label text-navy mb-1">Response Time</dt>
+            <dd class="text-gray-dark">We aim to respond to accessibility feedback within 2 business days</dd>
+          </div>
+        </dl>
+
+        <p class="mb-8">
+          When reporting an accessibility issue, please include:
+        </p>
+
+        <ul class="list mb-8">
+          <li>The page URL where you encountered the issue</li>
+          <li>A description of the problem</li>
+          <li>The assistive technology you were using (if applicable)</li>
+          <li>Your browser and operating system</li>
+        </ul>
+
+        <Button href="/contact">Contact Us</Button>
+      </div>
+    </Grid>
+  </Section>
+
+  <Section spacing="stacked">
+    <Grid labelAs="header">
+      <div slot="label">
+        <h2 class="text-2xl">Technical Specifications</h2>
+      </div>
+      <div>
+        <p class="mb-6">
+          Accessibility of this website relies on the following technologies:
+        </p>
+        
+        <ul class="list mb-6">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript (progressive enhancement - site works without JavaScript)</li>
+          <li>ARIA (Accessible Rich Internet Applications)</li>
+        </ul>
+
+        <p class="mb-0">
+          These technologies are relied upon for conformance with the accessibility standards used.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <Section spacing="stacked">
+    <Grid labelAs="header">
+      <div slot="label">
+        <h2 class="text-2xl">Approval & Review</h2>
+      </div>
+      <div>
+        <p class="mb-6">
+          This accessibility statement was created on <strong class="text-navy">November 10, 2026</strong>.
+        </p>
+
+        <p class="mb-0">
+          We regularly review and update this website's accessibility. This statement is reviewed and updated as needed, 
+          typically when website features change or when we receive feedback.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+
+  <Section spacing="stacked">
+    <Grid labelAs="header">
+      <div slot="label">
+        <h2 class="text-2xl">Formal Complaints</h2>
+      </div>
+      <div>
+        <p class="mb-0">
+          If you are not satisfied with our response to your accessibility concern, you may contact us at <a href={mailto()} class="link">{EMAIL}</a> 
+          to escalate your feedback to our leadership team. You may also file a complaint with the <a href="https://www.ada.gov/filing_complaint.htm" class="link" rel="noopener">U.S. Department of Justice</a> 
+          if you believe your rights under the Americans with Disabilities Act have been violated.
+        </p>
+      </div>
+    </Grid>
+  </Section>
+</BaseLayout>
