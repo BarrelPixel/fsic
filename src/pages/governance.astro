@@ -6,7 +6,7 @@ import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import List from '../components/List.astro';
-import { mailto } from '../lib/site';
+import { mailto, ORG, IRS_EXEMPT_SEARCH } from '../lib/site';
 import Disclosure from '../components/Disclosure.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 import { pad2 } from '../lib/format';
@@ -134,6 +134,35 @@ const at = (id: string) => sectionProps(sections, id);
           </Row>
         </dl>
       </div>
+    </Grid>
+
+    <!-- Tax-exempt status and public filings: what a 501(c)(3) must make available to anyone who asks
+         (its determination letter, its exemption application and its three latest Form 990s). Facts from
+         ORG (src/lib/site.ts). Copy: governance.md. -->
+    <Grid class="mt-14 pt-6 border-t border-rule">
+      <div slot="label">
+        <h3 class="mb-3">Tax-Exempt Status and Public Filings</h3>
+        <p class="mb-0 text-navy">Documents any member of the public may see.</p>
+      </div>
+      <dl class="max-w-3xl">
+        <Row id="tax-status" label="Tax-exempt status" rule="bottom">
+          <p class="mb-2">
+            {ORG.legalName} is a 501(c)(3) public charity ({ORG.publicCharity}), exempt from federal income tax since {ORG.exemptSince} (EIN <span class="whitespace-nowrap">{ORG.ein}</span>). Contributions are tax-deductible to the extent allowed by law.
+          </p>
+          <a href={IRS_EXEMPT_SEARCH} class="font-sans font-semibold link" rel="noopener">Confirm FSIC's status with the IRS</a>
+        </Row>
+        <Row label="Determination letter and application" rule="bottom" class="pt-5">
+          <p class="mb-2">
+            FSIC's IRS determination letter ({ORG.determinationDate}) and its application for exemption are available on request.
+          </p>
+          <a href={mailto('Public disclosure request')} class="font-sans font-semibold link">Request a copy</a>
+        </Row>
+        <Row label="Annual returns (Form 990)" rule="bottom" class="pt-5">
+          <p class="mb-0">
+            FSIC's fiscal year runs {ORG.fiscalYear}. Each Form 990 will be posted here once filed; the first covers the year ending June 30, 2027.
+          </p>
+        </Row>
+      </dl>
     </Grid>
   </Section>
 

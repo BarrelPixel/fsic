@@ -19,6 +19,7 @@ import { faqText } from '../data/faq';
 import TableRow from '../components/TableRow.astro';
 import YearScale from '../components/YearScale.astro';
 import YearBar from '../components/YearBar.astro';
+import SolicitationDisclosure from '../components/SolicitationDisclosure.astro';
 
 // Copy: src/content/copy/partnership-funding.md (Draft). Partner table: Master Plan pp. 22–24;
 // funding streams: pp. 25–26; benefits: May 25, 2026 launch release; get involved: FAQ.
@@ -126,8 +127,9 @@ const at = (id: string) => sectionProps(sections, id);
         </p>
         <!-- Tax status (IRS determination letter, October 20, 2026; src/lib/site.ts ORG) -->
         <p class="mb-0 pt-6 border-t border-rule text-navy">
-          {ORG.legalName} is a 501(c)(3) public charity (EIN {ORG.ein}). Contributions are tax-deductible to the extent allowed by law.
+          {ORG.legalName} is a 501(c)(3) public charity (EIN <span class="whitespace-nowrap">{ORG.ein}</span>). Contributions are tax-deductible to the extent allowed by law.
         </p>
+        <SolicitationDisclosure class="mt-4" />
       </div>
     </Grid>
 

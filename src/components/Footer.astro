@@ -4,6 +4,7 @@
 import { getNavColumns, href as navHref } from '../lib/nav';
 import { EMAIL, mailto, SOCIAL_LINKS, ORG } from '../lib/site';
 import { url } from '../lib/url';
+import SolicitationDisclosure from './SolicitationDisclosure.astro';
 
 const columns = getNavColumns();
 
@@ -59,10 +60,11 @@ const columns = getNavColumns();
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row sm:flex-wrap justify-between items-center gap-4">
       <p class="text-xs text-white/60">
-        &copy; {new Date().getFullYear()} {ORG.legalName} All rights reserved. A {ORG.status}, EIN {ORG.ein}.
+        &copy; {new Date().getFullYear()} {ORG.legalName} All rights reserved. A {ORG.status}, EIN <span class="whitespace-nowrap">{ORG.ein}</span>.
       </p>
+      <SolicitationDisclosure dark class="sm:order-last sm:basis-full" />
       <p class="text-xs text-white/60">
         Built by <span class="text-white/75">Barrel &amp; Pixel</span>
       </p>

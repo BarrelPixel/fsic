@@ -39,6 +39,32 @@
 - Primary CTAs: action-oriented, tied to next logical step.
 - Secondary CTAs: softer, informational ("Learn More About…").
 
+## Nonprofit Rules (501(c)(3))
+
+FSIC is a 501(c)(3) public charity (IRS determination letter, October 20, 2026). What the site says is FSIC speaking, so these rules apply to every page, release and post. When in doubt, ask FSIC's counsel before publishing.
+
+### Political campaigns: never
+- No support for or opposition to any candidate for public office, in words, links, images or event listings. This is an absolute ban; there is no small amount that is allowed.
+- No links to candidates' campaign sites. Link to an official's government page instead.
+- Board members who hold office (a mayor, a school board member) are named by their public role only. Don't feature them in the run-up to their own elections, and don't use their FSIC role to promote a campaign.
+- Voter education is allowed only if it is non-partisan and covers all candidates; check with counsel first.
+
+### Lobbying: limited and tracked
+- Asking a legislative body (Congress, the Legislature, a city or county commission) to pass or defeat specific legislation, or asking the public to contact officials about it, is lobbying. A public charity may lobby only as an insubstantial part of its activity, so every instance is approved and tracked.
+- Describing what partners do ("local government aligns zoning and infrastructure") and sharing non-partisan analysis (the Master Plan's figures) is not lobbying.
+
+### No private benefit
+- The site serves FSIC's charitable purpose, not any business, developer or individual. Don't promote a partner's products, a specific development or a board member's company. Name an affiliation (Ryan Trine, CEO of R3Doubt) as a fact, not as an endorsement.
+
+### Recognizing sponsors and funders
+- A sponsor may be thanked by name, logo, neutral description of what they do, and a link to their site (a "qualified sponsorship payment").
+- Don't add qualitative or comparative language ("the region's best employer"), prices, endorsements, or calls to buy or visit: that turns recognition into advertising, and the payment can become taxable business income.
+- Logos appear only with the partner's written permission (see Attribution).
+
+### Asking for money
+- No donation request (a donate button, "support our work", a giving page) until FSIC's Florida charitable-solicitation registration is confirmed. The site then shows the state's disclosure automatically (`ORG.floridaRegistration` in `src/lib/site.ts`).
+- Say "tax-deductible to the extent allowed by law", never "fully deductible": a gift that comes with a benefit (an event ticket, a meal) is deductible only above the benefit's value.
+
 ## Attribution
 - Do not fabricate partner logos, testimonials, or quotes.
 - All economic data must be traceable to the source PDFs.
