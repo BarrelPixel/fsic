@@ -20,6 +20,7 @@ import RangeBar from '../components/RangeBar.astro';
 import RangeLegend from '../components/RangeLegend.astro';
 import { url } from '../lib/url';
 import { getReleases, formatDate, isoDate, releaseHref } from '../lib/news';
+import { SOCIAL_LINKS } from '../lib/site';
 
 // 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
@@ -42,8 +43,6 @@ const toneDot: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lagoon'
 // The three newest press releases (src/content/news/), as published.
 const latest = (await getReleases()).slice(0, 3);
 
-// Who can take part, each linking to what FSIC offers them: the stakeholder rows on Partnership &
-// Funding (src/data/partnership.ts ids), and for residents the programs by audience.
 // Residents' common questions, linking to their answers on /faq (questions as published there).
 const commonQuestions = ['residents-and-families', 'compete', 'funding', 'location'].map((id) => {
   const f = faqs.find((faq) => faq.id === id);
@@ -51,12 +50,28 @@ const commonQuestions = ['residents-and-families', 'compete', 'funding', 'locati
   return f;
 });
 
-const audiences = [
-  { label: 'Employers', href: '/partnership-funding#employers' },
-  { label: 'University leaders', href: '/partnership-funding#higher-ed' },
-  { label: 'Policymakers', href: '/partnership-funding#local-government' },
-  { label: 'Workforce partners', href: '/partnership-funding#workforce-agencies' },
-  { label: 'Community members', href: '/programs-facilities#audiences' },
+// Where You Fit (plan B2): each audience, what it does with FSIC, and where to read more: the stakeholder
+// rows on Partnership & Funding (src/data/partnership.ts ids), and for residents the programs by audience.
+// Lines summarize those pages (home.md). Residents are the community, so their link is lagoon.
+const fit = [
+  { label: 'Employers', line: 'Validate curriculum, host internships and apprenticeships, and shape a local talent pipeline.', link: 'How employers take part', href: '/partnership-funding#employers' },
+  { label: 'University leaders', line: 'Co-develop pathways, collaborate on applied research, and pursue joint federal funding.', link: 'How universities take part', href: '/partnership-funding#higher-ed' },
+  { label: 'Policymakers', line: "Align economic development, infrastructure, and grant applications with the region's growth.", link: 'How local government takes part', href: '/partnership-funding#local-government' },
+  { label: 'Workforce partners', line: 'Bring labor market data and employer engagement into one regional strategy.', link: 'How workforce agencies take part', href: '/partnership-funding#workforce-agencies' },
+  { label: 'Residents and families', line: 'Hands-on STEM learning, dual-enrollment pathways, and micro-credentials tied to real jobs.', link: 'Programs for residents', href: '/programs-facilities#audiences', community: true },
+];
+
+// The people appointed so far (plan B4), as FSIC's releases announced them, each linking to its release.
+// Roles are the release headlines' (home.md; titles to be confirmed, docs/07 "Titles").
+const people = [
+  { group: 'Board of Directors', members: [
+    { name: 'Jessie Thompson', role: 'School Board Member', slug: '2026-07-07-jessie-thompson-joins-board' },
+    { name: 'Diezel DePew', role: 'Mayor of Edgewater', slug: '2026-07-13-diezel-depew-joins-board' },
+    { name: 'Ryan Trine', role: 'CEO of R3Doubt', slug: '2026-07-29-ryan-trine-joins-board' },
+  ] },
+  { group: 'Founders Council', members: [
+    { name: 'Jake Johansson', role: '', slug: '2026-08-03-jake-johansson-joins-founders-council' },
+  ] },
 ];
 ---
 <BaseLayout title="Florida Space Innovation Center" image={shareImage.src}>
@@ -101,18 +116,10 @@ const audiences = [
     <div class="relative z-10 max-md:bg-[linear-gradient(to_bottom,transparent_calc(max(46svh,62.5vw,16rem)-6.5rem),var(--color-night)_calc(max(46svh,62.5vw,16rem)+1rem))]">
     <div class="relative container pt-[calc(max(46svh,62.5vw,16rem)-3rem)] pb-14 md:pt-24 md:pb-48 lg:pb-56 grid lg:grid-cols-12 lg:gap-x-8">
       <div class="lg:col-span-6 max-w-2xl">
-        <h1 class="text-white mb-8">A New Commitment to the Space Coast</h1>
-        <div class="text-white/75 space-y-5 mb-10">
-          <p>
-            On May 25, 1961, the United States committed to landing a man on the Moon — not because it was easy, but because it demanded coordination, capability, and national resolve.
-          </p>
-          <p>
-            Sixty-five years later, <a href={url('/news/2026-05-25-fsic-launches-on-may-25')} class="link-on-dark">Southeast Volusia launched</a> its own coordinated commitment: to strengthen our regional workforce, accelerate innovation, support industry growth, and ensure that the Space Coast's expansion directly benefits the people who live and work here.
-          </p>
-          <p class="text-white font-semibold">
-            The Florida Space Innovation Center is that commitment in action.
-          </p>
-        </div>
+        <h1 class="text-white mb-8">Opportunity That Flows Into Southeast Volusia — Not Past It</h1>
+        <p class="md:text-lead text-white/90 mb-8 md:mb-10">
+          The Florida Space Innovation Center is a coordinated regional platform for workforce, innovation, and industry growth, so that the Space Coast's expansion directly benefits the people who live and work here.
+        </p>
         <div class="flex flex-wrap gap-4">
           <Button href="/partnership-funding" variant="primary">Get Involved</Button>
           <Button href="/economic-impact" variant="secondary-light">View Economic Impact</Button>
@@ -127,8 +134,24 @@ const audiences = [
   <!-- Phones: the rest of the page slides up over the pinned hero photo (pulled up by the hero spacer's height) -->
   <div class="relative z-10 bg-white max-md:-mt-[100svh]">
 
-  <!-- 01 THE STRATEGIC MOMENT -->
-  <Section {...at('strategic-moment')} label="The strategic moment">
+  <!-- WHERE YOU FIT (plan B2): unnumbered, like the hero and the close. Each audience is a Row: who |
+       what they do with FSIC and a link to their part of the site. -->
+  <Section heading="Where You Fit">
+    <Grid>
+      <p slot="label" class="mb-0 text-statement text-navy">FSIC is a coordinated platform. Each part of the region has a role in it.</p>
+      <dl class="max-w-3xl">
+        {fit.map((a, i) => (
+          <Row label={a.label} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
+            <p class="mb-1">{a.line}</p>
+            <a href={url(a.href)} class:list={['font-sans font-semibold', a.community ? 'link-lagoon' : 'link']}>{a.link}</a>
+          </Row>
+        ))}
+      </dl>
+    </Grid>
+  </Section>
+
+  <!-- 01 THE STRATEGIC MOMENT: opens with the founding parallel (moved from the hero, plan B1) -->
+  <Section {...at('strategic-moment')} label="The strategic moment" spacing="stacked">
     <Fragment slot="heading">
       The Question Is Not Whether the Space Coast Will Grow.
       <span class="block mt-3 font-medium text-gray-dark">It Is Whether Southeast Volusia Will Participate in That Growth.</span>
@@ -136,6 +159,12 @@ const audiences = [
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">Without coordination, growth concentrates elsewhere.</p>
       <div class="max-w-3xl">
+        <p>
+          On May 25, 1961, the United States committed to landing a man on the Moon — not because it was easy, but because it demanded coordination, capability, and national resolve.
+        </p>
+        <p>
+          Sixty-five years later, on the same date, <a href={url('/news/2026-05-25-fsic-launches-on-may-25')} class="link">Southeast Volusia launched</a> its own coordinated commitment: the Florida Space Innovation Center.
+        </p>
         <p>
           Florida's space economy is expanding rapidly — driven by commercial launch activity, advanced manufacturing, aerospace engineering, and emerging technologies.
         </p>
@@ -155,8 +184,8 @@ const audiences = [
     {...at('economic-impact')}
     label="The economic case"
     dark
-    heading="Transformational, Long-Term Regional Impact"
-    intro="Independent 25-year analysis projects that FSIC will generate:"
+    heading="Long-Term Impact for the Region"
+    intro="Independent 25-year analysis projects that FSIC will generate, with full implementation (the Master Plan's FSIC 2.0 scenario):"
   >
     <!-- The range bars are the site's one automatic animation: they draw once when the list scrolls into
          view (global.css "Range bars draw in"; RangeBarsDraw). -->
@@ -220,10 +249,9 @@ const audiences = [
     <Grid class="mt-14 pt-6 border-t border-rule">
       <p slot="label" class="mb-0 text-statement text-navy">Each engine reinforces the others. Together, they create a coordinated regional ecosystem.</p>
       <div>
-        <!-- From Strategic Value to Volusia County (folded in here, docs/10-homepage-plan.md A4): the
-             community outcome of the engines, so lagoon. -->
+        <!-- From Strategic Value to Volusia County (folded in here, docs/10-homepage-plan.md A4) -->
         <dl class="mb-8">
-          <Row label="Talent Attraction & Retention" rule="bottom" dot="lagoon">
+          <Row label="Talent Attraction & Retention" rule="bottom">
             <p class="mb-0">
               Integrated programming strengthens <a href={url('/programs-facilities#audiences')} class="link">local career pathways</a> and helps retain young professionals who want opportunity close to home.
             </p>
@@ -251,9 +279,9 @@ const audiences = [
       <ol class="border-t border-rule" aria-label="The five phases">
         {phases.map((phase, i) => (
           <li class="grid gap-y-1 py-4 border-b border-rule last:border-b-0 md:grid-cols-8 md:gap-x-8 md:items-baseline">
-            <p class="md:col-span-2 mb-0 text-label text-gray-dark tabular-nums flex items-center gap-2">
-              <span class:list={['w-2 h-2 rounded-full shrink-0', toneDot[phase.tone]]} aria-hidden="true"></span>
-              Phase {i + 1} · {phase.timeframe}
+            <p class="md:col-span-2 mb-0 text-label text-gray-dark tabular-nums flex items-start gap-2">
+              <span class:list={['w-2 h-2 mt-1.5 rounded-full shrink-0', toneDot[phase.tone]]} aria-hidden="true"></span>
+              <span>Phase {i + 1} · {phase.timeframe}{phase.current && <span class="block text-navy">Under way</span>}</span>
             </p>
             <div class="md:col-span-6">
               <h3 class="text-xl mb-0">
@@ -298,6 +326,11 @@ const audiences = [
           ))}
         </ol>
         <Button href="/news" variant="secondary">All News & Media</Button>
+        <p class="mt-6 mb-0 font-sans">
+          Follow FSIC on {SOCIAL_LINKS.map((s, i) => (
+            <>{i > 0 && (i === SOCIAL_LINKS.length - 1 ? ', and ' : ', ')}<a href={s.href} class="link" rel="noopener">{s.label}</a></>
+          ))}.
+        </p>
       </div>
     </Grid>
 
@@ -319,6 +352,14 @@ const audiences = [
               ]}
             />
           </Row>
+          {people.map((g) => (
+            <Row label={g.group} rule="bottom" class="pt-5">
+              <List
+                html
+                items={g.members.map((m) => `<a href="${url(`/news/${m.slug}`)}" class="link">${m.name}</a>${m.role ? `, ${m.role}` : ''}`)}
+              />
+            </Row>
+          ))}
         </dl>
         <p class="text-statement text-navy mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
         <Button href="/governance" variant="secondary">Review Governance & Structure</Button>
@@ -362,16 +403,13 @@ const audiences = [
     </Grid>
   </Section>
 
-  <!-- FINAL CTA: the page's close, so no running head. Who can take part sits in the label column, each linking to what FSIC offers them. -->
+  <!-- FINAL CTA: the page's close, so no running head. Residents' common questions sit in the label column, each linking to its FAQ answer (who can take part is Where You Fit, under the hero). -->
   <Section spacing="large" heading="Partner. Collaborate. Participate.">
     <Grid class="gap-y-10">
-      <ul slot="label" class="font-sans flex flex-col divide-y divide-rule border-b border-rule" aria-label="Who can take part">
-        {audiences.map((a) => (
-          <li class="py-2.5 first:pt-0">
-            <a href={url(a.href)} class="link-lagoon">{a.label}</a>
-          </li>
-        ))}
-      </ul>
+      <div slot="label">
+        <p class="text-label text-navy mb-3">Common questions</p>
+        <List items={commonQuestions.map((f) => `<a href="${url(`/faq#${f.id}`)}" class="link">${f.q}</a>`)} html />
+      </div>
       <div class="max-w-3xl">
         <p>
           The Florida Space Innovation Center represents a coordinated investment in the region's future.
@@ -383,11 +421,6 @@ const audiences = [
           <Button href="/partnership-funding" variant="primary">Become a Partner</Button>
           <Button href="/contact" variant="secondary">Contact FSIC</Button>
         </div>
-        <dl class="mt-14 mb-0">
-          <Row label="Common questions" class="pb-0">
-            <List items={commonQuestions.map((f) => `<a href="${url(`/faq#${f.id}`)}" class="link">${f.q}</a>`)} html />
-          </Row>
-        </dl>
       </div>
     </Grid>
   </Section>

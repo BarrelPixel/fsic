@@ -16,7 +16,7 @@ Items requiring stakeholder input or decisions before full launch.
 - [x] **News / Updates section:** resolved. `/news` publishes the press releases, one file per release. The old Wix blog posts are not migrated.
 - [ ] **Partner logos:** Are there approved partner organizations whose logos can be displayed? (Do not fabricate.)
 - [ ] **Testimonials / Endorsements:** Are there approved quotes from stakeholders to include?
-- [ ] **Economic scenario:** The headline economic figures are the Master Plan's FSIC 2.0 scenario. Should the home page say so? And are two chart values right: job-years for FSIC 1.0 (same as Baseline) and "City + County" fiscal impact? See `08-current-site-audit.md` §3.10.
+- [ ] **Economic scenario:** The headline economic figures are the Master Plan's FSIC 2.0 scenario. Should the home page say so? (November 10, 2026: the homepage now says so, "with full implementation (the Master Plan's FSIC 2.0 scenario)", marked ⚠ Review in `home.md`; confirm or remove.) And are two chart values right: job-years for FSIC 1.0 (same as Baseline) and "City + County" fiscal impact? See `08-current-site-audit.md` §3.10.
 
 ## Technical & Infrastructure
 - [x] **Domain:** resolved (November 2026). fsic.space, the current Wix site's domain, will point to this site. Steps in `06-launch-plan.md` ("Switching to fsic.space").
@@ -54,6 +54,6 @@ Decisions needed before copy can be approved. Details are in `08-current-site-au
 - [x] **Location:** resolved (November 2026). The site does not name a campus site; it keeps the current "site to be determined collaboratively" position.
 - [x] **Phases:** resolved. Five phases (Master Plan), used on the Deployment page and in the FAQ answer.
 - [x] **Unsourced claims:** resolved (November 2026). The space-economy figure is cited to WEF and McKinsey (April 2024: $630B in 2023, $1.8T by 2035) and the FAQ uses those figures. The SpaceX S-1 "$28.5T" sentence is removed: it is SpaceX's own addressable market, mostly AI, not a space-economy projection. 30–50% earned revenue by Year 3 and "billions" in federal funding are confirmed in the Master Plan. Confirm the FAQ wording (`faq.md`).
-- [ ] **Titles:** confirm current titles for John Joaquin and Erik Ahlgren, and the full seated board.
+- [ ] **Titles:** confirm current titles for John Joaquin and Erik Ahlgren, and the full seated board. (November 10, 2026: the homepage lists the board and Founders Council members FSIC's releases announced, with the releases' roles; confirm.)
 - [x] **Mission and vision:** they open the FAQ page, as on the live site (November 2026). They can move later.
 - [ ] **New pages:** News and FAQ are built (November 2026). Still to decide: Leadership (its own page or part of Governance)?
