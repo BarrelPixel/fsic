@@ -4,7 +4,7 @@
     {"slug":"what-is-a-job-year","question":"What is a job-year, and what does FSIC's projection mean?","topic":"economy","audiences":"Policymakers, funders","sources":"Master Plan pp. 7–8"},
     {"slug":"what-is-a-micro-credential","question":"What is a micro-credential, and how will FSIC offer them?","topic":"talent","audiences":"Students, job-seekers, employers","sources":"Master Plan pp. 13, 19–21; FAQ"},
     {"slug":"why-fsic-starts-with-talent","question":"Why does FSIC start with the Talent Engine?","topic":"talent","audiences":"Partners, funders","sources":"Master Plan p. 13; Deployment page"},
-    {"slug":"what-is-dual-enrollment","question":"What is dual enrollment, and how will FSIC expand STEM pathways?","topic":"talent","audiences":"Students and families, educators","sources":"Master Plan; Florida Department of Education (dual enrollment)"},
+    {"slug":"what-is-dual-enrollment","question":"What is dual enrollment, and how will FSIC expand STEM pathways?","topic":"talent","audiences":"Students and families, educators","sources":"Master Plan; Florida Department of Education (dual enrollment)","from":"what-is-a-micro-credential"},
     {"slug":"how-to-become-a-space-supplier","question":"How can a small business become a supplier to the space industry?","topic":"market","audiences":"Employers","sources":"Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC)"},
     {"slug":"what-are-sbir-and-sttr","question":"What are SBIR and STTR, and how can a Volusia County business apply?","topic":"market","audiences":"Employers, startups","sources":"SBIR.gov; Master Plan"},
     {"slug":"what-is-a-challenge-lab","question":"What is a challenge lab?","topic":"innovation","audiences":"Universities, employers","sources":"Master Plan pp. 19–21"},
@@ -12,6 +12,7 @@
     {"slug":"what-fsic-501c3-status-means","question":"What does FSIC's 501(c)(3) status mean for donors and partners?","topic":"organization","audiences":"Funders","sources":"IRS determination letter; IRS Publication 4221-PC. Counsel review"},
     {"slug":"how-the-space-economy-is-growing","question":"How is the space economy growing, and what does it mean for Southeast Volusia?","topic":"region","audiences":"Residents, policymakers","sources":"WEF and McKinsey (April 2024); Strategic Moment"},
     {"slug":"what-the-civic-engine-offers","question":"What will the Civic Engine offer residents?","topic":"civic","audiences":"Residents, families","sources":"Master Plan pp. 19–21; Programs & Facilities"},
-    {"slug":"how-fsic-is-governed","question":"How is FSIC governed, and how is it kept independent?","topic":"organization","audiences":"Funders, residents","sources":"Governance page; Master Plan pp. 15–17"}
+    {"slug":"how-fsic-is-governed","question":"How is FSIC governed, and how is it kept independent?","topic":"organization","audiences":"Funders, residents","sources":"Governance page; Master Plan pp. 15–17"},
+    {"slug":"what-are-fsics-economic-scenarios","question":"What are the three scenarios in FSIC's economic analysis, and how do they differ?","topic":"economy","audiences":"","sources":"","from":"what-is-a-job-year"}
   ]
 }

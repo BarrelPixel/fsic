@@ -21,7 +21,7 @@ sources:
   - title: "Frequently Asked Questions"
     publisher: "Florida Space Innovation Center"
     url: "https://fsic.space/faq/"
-status: draft
+status: published
 followUp:
   question: "What is dual enrollment, and how will FSIC expand STEM pathways?"
   slug: what-is-dual-enrollment
