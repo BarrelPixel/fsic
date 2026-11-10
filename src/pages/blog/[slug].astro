@@ -1,0 +1,126 @@
+---
+import { render } from 'astro:content';
+import { getImage } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import Grid from '../../components/Grid.astro';
+import MoreLink from '../../components/MoreLink.astro';
+import BaseLinks from '../../components/BaseLinks.astro';
+import { getPosts, postHref, readingMinutes, isPublished, checkFigures, TOPICS, type Post } from '../../lib/blog';
+import { authorFor } from '../../data/authors';
+import { formatDate, isoDate } from '../../lib/news';
+import { blogPosting, faqPage } from '../../lib/seo';
+import { url } from '../../lib/url';
+
+// One blog post (docs/14-blog-content-strategy.md §4, the post anatomy): the question as the headline, the
+// answer first (the summary, under the headline), the body, questions and answers, sources, and the pillar
+// page it supports. Structured data: BlogPosting (with its citations) and, when it has questions, FAQPage.
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post, others: posts.filter((p) => p.id !== post.id).slice(0, 3) } }));
+}
+
+interface Props {
+  post: Post;
+  others: Post[];
+}
+
+const { post, others } = Astro.props;
+checkFigures(post);
+const { Content } = await render(post);
+const d = post.data;
+const author = authorFor(d.author);
+const topic = TOPICS[d.topic];
+const shareImage = d.image ? await getImage({ src: d.image, width: 1200, format: 'jpg' }) : undefined;
+const path = `/blog/${post.id}/`;
+---
+<BaseLayout
+  title={d.title}
+  description={d.description}
+  image={shareImage?.src}
+  article={{ published: d.date }}
+  parents={[{ name: 'Blog', path: '/blog/' }]}
+  noindex={!isPublished(post)}
+  jsonLd={[
+    blogPosting({ headline: d.title, description: d.description, path, date: d.date, updated: d.updated, section: topic.label, author, sources: d.sources, image: shareImage?.src }),
+    ...(d.faqs.length > 0 ? [faqPage(d.faqs.map((f) => ({ q: f.q, answer: f.a })))] : []),
+  ]}
+>
+
+  <PageHero title={d.title} titleClass="text-4xl md:text-5xl">
+    <div slot="aside">
+      <p class="mb-1 text-white/90">{author.name}</p>
+      <p class="mb-0">{author.role}</p>
+    </div>
+    <p class="mb-6 font-sans text-white/75">
+      <time datetime={isoDate(d.date)}>{formatDate(d.date)}</time>
+      {d.updated && <><span aria-hidden="true"> · </span>Updated <time datetime={isoDate(d.updated)}>{formatDate(d.updated)}</time></>}
+      <span aria-hidden="true"> · </span>{readingMinutes(post)} min read
+      <span aria-hidden="true"> · </span>{topic.label}
+      {!isPublished(post) && <span class="block mt-2 text-white">Draft ({d.status}): shown in development only, not on the public site</span>}
+    </p>
+    <!-- The answer first (docs/14 §4): a self-contained summary under the headline, for readers who stop here
+         and for answer engines that quote one passage. -->
+    <p class="md:text-lead text-white/90 mb-0 max-w-3xl">{d.summary}</p>
+  </PageHero>
+
+  <Section>
+    <Grid stickyLabel>
+      <div slot="label" class="font-sans">
+        <p class="mb-4 text-label md:pt-label-offset">
+          <a href={url('/blog')} class="text-navy underline-reveal underline-offset-4">All posts</a>
+        </p>
+        <p class="mb-1 text-caption text-gray-dark">More on this topic</p>
+        <MoreLink href={topic.pillar.path}>{topic.pillar.name}</MoreLink>
+      </div>
+      <div class="max-w-3xl">
+        <article class="post links-in">
+          <BaseLinks><Content /></BaseLinks>
+        </article>
+
+        {d.faqs.length > 0 && (
+          <section class="mt-12 pt-6 border-t border-rule" aria-labelledby="questions">
+            <h2 id="questions" class="text-2xl mb-6">Questions and answers</h2>
+            <dl>
+              {d.faqs.map((f) => (
+                <div class="mb-6 last:mb-0">
+                  <dt class="font-display text-xl font-semibold text-navy leading-snug mb-2">{f.q}</dt>
+                  <dd>{f.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
+
+        <section class="mt-12 pt-6 border-t border-rule" aria-labelledby="sources">
+          <h2 id="sources" class="text-label text-navy mb-3">Sources</h2>
+          <ol class="list-decimal pl-5 text-caption text-gray-dark space-y-2">
+            {d.sources.map((s) => (
+              <li>
+                {s.url ? <a href={s.url} class="link" rel="noopener"><cite>{s.title}</cite></a> : <cite>{s.title}</cite>}, {s.publisher}{s.date && `, ${s.date}`}.
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+    </Grid>
+
+    {others.length > 0 && (
+      <Grid class="mt-16 pt-6 border-t border-rule">
+        <h2 slot="label" class="mb-0 text-label text-navy md:pt-label-offset">More from the blog</h2>
+        <ul role="list" class="divide-y divide-rule">
+          {others.map((p) => (
+            <li class="py-4 first:pt-0">
+              <p class="mb-1 text-caption text-gray-dark">
+                <time datetime={isoDate(p.data.date)}>{formatDate(p.data.date)}</time>
+              </p>
+              <a href={postHref(p)} class="font-display text-xl font-semibold text-navy leading-snug underline-reveal underline-offset-4">{p.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </Grid>
+    )}
+  </Section>
+
+</BaseLayout>

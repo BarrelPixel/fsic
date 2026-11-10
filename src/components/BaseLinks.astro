@@ -1,0 +1,14 @@
+---
+// Rendered Markdown (a blog post's body) can't call url(), so its links to the site are written from the root
+// ("/economic-impact/"). This adds the base path to them, as url() does for pages, so they work on the
+// /fsic preview and at fsic.space. External ("https://…"), protocol-relative ("//…") and in-page ("#…") links
+// are left alone.
+import { url } from '../lib/url';
+
+const base = url('/').replace(/\/$/, '');
+const html = await Astro.slots.render('default');
+// Root-relative links not already under the base: href="/x" → href="/fsic/x" (and not "//x" or "/fsic/x").
+const rootLink = new RegExp(`href="/(?!/|${base.slice(1).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/)`, 'g');
+const out = base ? html.replace(rootLink, `href="${base}/`) : html;
+---
+<Fragment set:html={out} />

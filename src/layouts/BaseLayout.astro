@@ -17,6 +17,7 @@ import { url } from '../lib/url';
 import { getImage } from 'astro:assets';
 import heroImage from '../assets/fsic-hero.png';
 import { INDEXABLE, organization, website, breadcrumb } from '../lib/seo';
+import { HAS_PUBLISHED_POSTS } from '../lib/blog-status';
 
 interface Props {
   title: string;
@@ -80,6 +81,7 @@ const graph = [
     <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')} />
 
     <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    {HAS_PUBLISHED_POSTS && <link rel="alternate" type="application/rss+xml" title="Florida Space Innovation Center: Blog" href={url('/blog/rss.xml')} />}
 
     {[serifLatin, displayLatin, sansLatin].map((href) => (
       <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />

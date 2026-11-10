@@ -1,4 +1,5 @@
 import { url } from './url';
+import { HAS_PUBLISHED_POSTS } from './blog-status';
 
 // Site navigation, shared by the header and the footer (docs/02-information-architecture.md).
 // Pages are grouped by the question they answer. Set `built: false` for a page that still uses
@@ -42,6 +43,8 @@ const nav: NavItem[] = [
   // Get Involved is the Partnership & Funding page. Contact has its own link below; each page appears once.
   { label: 'Get Involved', path: '/partnership-funding', cta: true },
   { label: 'News', path: '/news' },
+  // In the menu once a post is published (src/lib/blog-status.ts); until then /blog is a noindex holding page.
+  { label: 'Blog', path: '/blog', built: HAS_PUBLISHED_POSTS },
   { label: 'FAQ', path: '/faq' },
   { label: 'Contact', path: '/contact' },
 ];

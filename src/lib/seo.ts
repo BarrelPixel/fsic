@@ -83,6 +83,33 @@ export const newsArticle = (a: { headline: string; path: string; date: Date; des
   publisher: { '@id': ORG_ID },
 });
 
+/** A blog post (schema.org BlogPosting). A person author is named with their role; otherwise FSIC is the author. */
+export const blogPosting = (p: {
+  headline: string;
+  description: string;
+  path: string;
+  date: Date;
+  updated?: Date;
+  section: string;
+  author: { name: string; role: string; kind: 'person' | 'organization' };
+  sources: { title: string; publisher: string; url?: string }[];
+  image?: string;
+}) => ({
+  '@type': 'BlogPosting',
+  headline: p.headline,
+  description: p.description,
+  url: absolute(p.path),
+  mainEntityOfPage: absolute(p.path),
+  datePublished: p.date.toISOString().slice(0, 10),
+  dateModified: (p.updated ?? p.date).toISOString().slice(0, 10),
+  articleSection: p.section,
+  inLanguage: 'en-US',
+  author: p.author.kind === 'person' ? { '@type': 'Person', name: p.author.name, jobTitle: p.author.role, worksFor: { '@id': ORG_ID } } : { '@id': ORG_ID },
+  publisher: { '@id': ORG_ID },
+  citation: p.sources.map((s) => ({ '@type': 'CreativeWork', name: s.title, publisher: s.publisher, ...(s.url ? { url: s.url } : {}) })),
+  ...(p.image ? { image: new URL(p.image, SITE).href } : {}),
+});
+
 /** HTML (the FAQ's trusted, hand-written answers) to plain text for structured data and llms.txt. */
 export const toText = (html: string) =>
   html

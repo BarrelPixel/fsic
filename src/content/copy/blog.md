@@ -1,0 +1,43 @@
+# Blog Copy
+
+**Status:** Draft
+**Last Updated:** November 10, 2026
+**Applies to:** `/blog` (the index) and the parts of each post page that aren't the post itself. The posts are in `src/content/blog/`, one file each, with their own `status` (draft, review, published). The strategy, post anatomy and workflow are in `docs/14-blog-content-strategy.md`.
+
+> **⚠ Review:** all wording below is new (November 10, 2026).
+
+---
+
+## INDEX (`/blog`)
+
+**Title:** Blog
+**Meta description:** Explainers and guides from the Florida Space Innovation Center on the Space Coast economy, workforce training and taking part in Southeast Volusia.
+**Lead:** Explainers and guides from the Florida Space Innovation Center: what the Space Coast's growth means for Southeast Volusia, and how to take part.
+
+**Each post in the list:** date; topic and reading time ("Talent and workforce · 4 min read"); headline (links to the post); meta description.
+
+**Before any post is published** (the page is then out of the menu and out of search):
+The first posts are in preparation.
+Until then, the FAQ answers the questions people ask most, and News & Media has FSIC's press releases.
+
+---
+
+## POST PAGE (around each post)
+
+**Under the headline:** date · "Updated" date when set · reading time ("4 min read") · topic.
+**Beside it (label column of the opening):** the author's name and role.
+**Under that:** the post's summary (the answer first).
+**Label column beside the text:** "All posts"; "More on this topic", then the pillar page's name as a link.
+**After the text:** "Questions and answers" (when the post has them); "Sources" (always); "More from the blog" (up to three other posts).
+**Drafts (development only):** "Draft (draft): shown in development only, not on the public site".
+
+**Topic names** (`TOPICS`, `src/lib/blog.ts`): Talent and workforce · Innovation and research · Business and supply chains · Community · The regional economy · The Space Coast and Southeast Volusia · About FSIC.
+
+---
+
+## DRAFT POSTS
+
+| Post | File | Status |
+|------|------|--------|
+| What Is a Job-Year? Reading FSIC's 25-Year Projections | `src/content/blog/what-is-a-job-year.md` | Draft. **⚠ Review:** the job-year definition (also on the homepage, in review there) and the five-year example |
+| What Is a Micro-Credential? FSIC's Short, Job-Focused Training | `src/content/blog/what-is-a-micro-credential.md` | Draft. **⚠ Review:** the general definition of a micro-credential and of "stackable" (not from the Master Plan); the FAQ answer "Do micro-credentials replace a degree?" |

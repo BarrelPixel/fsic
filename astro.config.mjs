@@ -9,6 +9,7 @@ const BASE = '/fsic';
 /** @param {string} path */
 const to = (path) => `${BASE}${path}`;
 
+
 // https://astro.build/config
 export default defineConfig({
   // GitHub Pages preview. When fsic.space points here (docs/06-launch-plan.md, "Switching to fsic.space"),
@@ -29,7 +30,6 @@ export default defineConfig({
     '/1-why-we-are-building-the-fsic': to('/strategic-moment'),
     '/copy-of-news-media': to('/faq'),
     '/about-7': to('/news'),
-    '/blog': to('/news'),
     '/event-list': to('/news'),
     '/talent': to('/model#talent'),
     '/innovation': to('/model#innovation'),

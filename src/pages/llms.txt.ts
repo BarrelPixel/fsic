@@ -7,8 +7,10 @@ import { EMAIL, ORG } from '../lib/site';
 import { FIGURES, DISCLAIMER } from '../data/economics';
 import { faqs } from '../data/faq';
 import { engines } from '../data/engines';
+import { getCollection } from 'astro:content';
 
-export const GET: APIRoute = () => {
+export const GET: APIRoute = async () => {
+  const posts = (await getCollection('blog', (p) => p.data.status === 'published')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
   const lines = [
     '# Florida Space Innovation Center (FSIC)',
     '',
@@ -31,6 +33,7 @@ export const GET: APIRoute = () => {
     '',
     ...faqs.map((f) => `- [${toText(f.q)}](${absolute('/faq/')}#${f.id})`),
     '',
+    ...(posts.length > 0 ? ['## Blog', '', ...posts.map((p) => `- [${p.data.title}](${absolute(`/blog/${p.id}/`)}): ${p.data.description}`), ''] : []),
   ];
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/markdown; charset=utf-8' } });
 };

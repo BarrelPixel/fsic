@@ -14,6 +14,7 @@
 /long-term-vision           Long-Term Vision
 /contact                    Contact
 /news                       News & Media (and /news/<slug> per press release)
+/blog                       Blog (and /blog/<slug> per post; in the menu once a post is published)
 /faq                        FAQ
 /404                        Page Not Found (404.html: shown for any missing address; noindex)
 ```
@@ -83,6 +84,11 @@
 **Goal:** Answer common questions about FSIC in one place.
 **Audience:** All, especially residents.
 **Key content:** Mission and vision in the hero with an index of four topics (About FSIC, Why Now, Programs and Funding, Getting Involved), then one section per topic holding the 16 questions from the live FAQ page, each opening from its question with its own link (`/faq#<id>`). Answers are as published except where `faq.md` notes a change (economic ranges, five phases, sourced space-economy figures).
+
+### Blog (`/blog`) — IMPLEMENTED (no post published yet)
+**Goal:** Answer the questions people bring to search engines and AI assistants (training, jobs, the space economy, taking part), and show FSIC's expertise and momentum between press releases.
+**Audience:** All, by post: students and families, job-seekers, employers, educators, policymakers, funders, residents.
+**Key content:** Explainers and guides, one question per post, each tied to a pillar page (the engines, Economic Impact, The Strategic Moment, Governance). Strategy, post anatomy, workflow and the first twelve topics are in `14-blog-content-strategy.md`. Until the first post is published, the page is a `noindex` holding note, out of the menu and sitemap.
 
 ### News & Media (`/news`) — IMPLEMENTED
 **Goal:** Publish FSIC's press releases as issued.

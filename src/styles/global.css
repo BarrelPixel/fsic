@@ -262,13 +262,15 @@ html {
   }
 
   .list > li,
-  .release li {
+  .release li,
+  .post ul > li {
     position: relative;
     padding-left: 1rem;
   }
 
   .list > li::before,
-  .release li::before {
+  .release li::before,
+  .post ul > li::before {
     content: '';
     position: absolute;
     /* On the column edge; centered vertically on the lowercase letters (0.5lh + 0.1em). */
@@ -298,6 +300,60 @@ html {
 
   /* As List: dots (see "Lists" above), items separated by space. */
   .release li + li {
+    margin-top: 0.5rem;
+  }
+}
+
+/* ============================================
+   Blog post text (rendered Markdown, src/content/blog/)
+   Headings step down inside an article: a post's h2 is set as h3 (1.5rem) and its h3 as h4, so a
+   section heading in the text never competes with the page's h1. Lists use dots, as in List;
+   numbered lists (steps) use tabular numerals on the column edge. Links come from `links-in`.
+   ============================================ */
+
+@layer components {
+  .post h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .post h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post > :first-child {
+    margin-top: 0;
+  }
+
+  .post strong {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+
+  .post ul,
+  .post ol {
+    margin-bottom: 1rem;
+  }
+
+  .post ol {
+    padding-left: 1.5rem;
+    list-style: decimal;
+  }
+
+  .post ol > li::marker {
+    font-family: var(--font-sans);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-gray);
+  }
+
+  .post li + li {
     margin-top: 0.5rem;
   }
 }

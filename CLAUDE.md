@@ -29,12 +29,15 @@ src/pages/           One .astro file per route. index, model, economic-impact, d
 src/components/      Grid components (Section, Grid, Row, List, PageHero, SectionBar, RunningHead),
                      Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBar, RangeLegend,
                      RangeBarsDraw, RangeTable, RangeRow, TableRow, YearScale, YearBar, Dot, MoreLink,
-                     ConceptRendering, HomeHero, ComingSoon
+                     ConceptRendering, HomeHero, BaseLinks, SolicitationDisclosure, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, range-bar animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
 src/content/news/    Press releases, one Markdown file each, wording as published (built into /news and /news/<slug>);
                      images/ holds the graphic published with each release
+src/content/blog/    Blog posts, one Markdown file each (/blog/<slug>), with status draft | review | published;
+                     the schema enforces the post anatomy in docs/14 (question, answer-first summary, sources)
+src/lib/blog.ts      Blog helpers: getPosts (drafts in dev only), TOPICS (pillar pages), checkFigures
 src/lib/news.ts      Press release helpers
 src/lib/nav.ts       Site navigation (groups and links), shared by Header, Footer and the 404 page
 src/lib/site.ts      EMAIL, mailto(), SOCIAL_LINKS: use these, don't retype the address or links
@@ -46,7 +49,7 @@ src/lib/seo.ts       Indexing switch, absolute URLs, schema.org builders, the on
 src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
                      ranges, read by home, Economic Impact, Partnership & Funding and the FAQ), phases,
                      engines, programs, faq, partnership, governance
-docs/                Project docs 00–13 (IA, content guidelines, site audit, copy-deck workflow, homepage reviews, refactor/SEO/AEO review)
+docs/                Project docs 00–14 (IA, content guidelines, site audit, copy-deck workflow, homepage reviews, refactor/SEO/AEO review, blog content strategy)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
 scripts/             check-links.mjs (run via `npm run check-links`)
@@ -79,6 +82,7 @@ Read **`DESIGN.md`** before changing any UI. In short:
 - **Press releases:** add `src/content/news/<YYYY-MM-DD>-<slug>.md` with `title` and `date`. If the release was published with a graphic, put it in `src/content/news/images/` and set `image` and `imageAlt` (required with `image`; transcribe the words in the graphic). The release page uses it as the share image. If `npm run dev` is running when you add a release with an image, restart it: until then the dev server shows `LocalImageUsedWrongly` for that image (the build is fine).
 - `BaseLayout` takes an optional `image` (a built image `src`, e.g. from `getImage()`) for `og:image` and `twitter:image`; pages without one share the hero photo. It also writes the page's schema.org JSON-LD (FSIC as an `NGO` on every page, a breadcrumb or the `WebSite`); pages add their own with `jsonLd` (the FAQ's `FAQPage`, a release's `NewsArticle`), and a release passes `article` and `parents`. The builders are in `src/lib/seo.ts`.
 - **Indexing:** the GitHub Pages preview is `noindex` and robots.txt disallows crawling; both switch on automatically when `site` becomes https://fsic.space (`INDEXABLE` in `src/lib/seo.ts`). `sitemap.xml` and `robots.txt` are generated (`src/pages/*.ts`). A title that already names FSIC gets no " | Florida Space Innovation Center" suffix.
+- **Blog posts:** add `src/content/blog/<slug>.md` following `docs/14-blog-content-strategy.md` (§4 anatomy, §8 workflow). Start at `status: draft` (visible only in `npm run dev`); set `published` only after FSIC approves. Write site links from the root ("/economic-impact/"); `BaseLinks` adds the base path. Quote Master Plan figures exactly as in `FIGURES`, or the build fails. The first published post adds Blog to the menu, sitemap, RSS and `llms.txt`.
 - The `<html>` element gets a `js` class from an inline script in `BaseLayout`. Use it to gate JS-only states so the page still works without JS.
 
 ## Before finishing a change
