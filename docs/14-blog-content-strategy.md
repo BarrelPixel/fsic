@@ -143,7 +143,7 @@ Answer engines quote short, self-contained passages that state facts plainly, an
 | 2. Draft | B&P | `src/content/blog/<slug>.md` with `status: draft`. Readable in place with `npm run dev` (marked as a draft); not on the public site |
 | 3. Check | B&P | Every fact against its source. Figures exactly as in `FIGURES` (the build fails on a dollar or thousands range that isn't one of them). Links work (`npm run check-links`). Nonprofit rules |
 | 4. Review | FSIC (and counsel or the program lead where §7 says) | `status: review`, then approval in writing |
-| 5. Publish | B&P | `status: published`, then `npm run blog-plan`: the post's follow-up joins the plan and the calendar below (§10). Commit both. The first published post adds Blog to the menu, the sitemap, the RSS feed and `llms.txt` automatically. Merge; the deploy checks types and links, and fails if the plan is out of date |
+| 5. Publish | B&P | **Manual:** `status: published`, then `npm run blog-plan`: the post's follow-up joins the plan and the calendar below (§10). Commit both. **Scheduled:** set `status: review` and add `publishDate: YYYY-MM-DD` in frontmatter; the post publishes automatically on that date. The first published post adds Blog to the menu, the sitemap, the RSS feed and `llms.txt` automatically. Merge; the deploy checks types and links, and fails if the plan is out of date |
 | 6. Share | FSIC | LinkedIn, Facebook and X, partner newsletters, and the RSS feed |
 | 7. Maintain | B&P, quarterly | §11 |
 
@@ -255,6 +255,7 @@ Not in this post:  (what belongs on another page or post)
 |------|-------|
 | Posts | `src/content/blog/<slug>.md`, validated by the `blog` collection (`src/content.config.ts`) |
 | Statuses | `draft` and `review` show only in `npm run dev` (marked) and are `noindex`; `published` goes live |
+| Scheduled publishing | Posts with `status: review` and a `publishDate` are automatically published on that date by `.github/workflows/publish-scheduled-posts.yml` (daily at 9 AM EST). The workflow changes their status to `published`, runs `npm run blog-plan`, verifies checks, and commits. Also triggerable manually via GitHub Actions |
 | Pages | `/blog` (index; a `noindex` holding note until a post is published), `/blog/<slug>` (the post anatomy in §4) |
 | Menu | "Blog" appears with the first published post (`src/lib/blog-status.ts`, `nav.ts`) |
 | Structured data | `BlogPosting` with author, dates, section and citations; `FAQPage` from `faqs`; breadcrumb Home › Blog › post (`src/lib/seo.ts`) |

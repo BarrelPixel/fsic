@@ -53,6 +53,11 @@ const blog = defineCollection({
         sources: z.array(z.object({ title: z.string(), publisher: z.string(), url: z.url().optional(), date: z.string().optional() })).min(1),
         status: z.enum(['draft', 'review', 'published']).default('draft'),
         /**
+         * The date to publish this post (YYYY-MM-DD). When set, a post with status 'review' will be automatically
+         * published on this date by the scheduled publishing workflow. Optional: omit to publish manually.
+         */
+        publishDate: z.coerce.date().optional(),
+        /**
          * The question a reader of this post is likely to ask next (docs/14 §10, "Connected posts"). Required from
          * review on: publishing a post adds its follow-up to the plan (src/data/blog-plan.json) by
          * `npm run blog-plan`, so the calendar grows with every post and every post leads somewhere. `slug` may
@@ -67,6 +72,7 @@ const blog = defineCollection({
       })
       .refine((d) => !d.image || d.imageAlt, { error: 'imageAlt is required when image is set' })
       .refine((d) => !d.updated || d.updated >= d.date, { error: 'updated must be on or after date' })
+      .refine((d) => !d.publishDate || d.publishDate >= d.date, { error: 'publishDate must be on or after date' })
       .refine((d) => d.status === 'draft' || d.followUp, { error: 'followUp is required before a post goes to review or is published (docs/14 §10)' }),
 });
 
