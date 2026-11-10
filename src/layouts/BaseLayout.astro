@@ -13,6 +13,7 @@ import displayLatin from '@fontsource/barlow-semi-condensed/files/barlow-semi-co
 import sansLatin from '@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
 import { url } from '../lib/url';
 import { getImage } from 'astro:assets';
 import heroImage from '../assets/fsic-hero.png';
@@ -86,6 +87,7 @@ const graph = [
     {[serifLatin, displayLatin, sansLatin].map((href) => (
       <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />
     ))}
+    <Analytics />
   </head>
   <body class="min-h-screen flex flex-col bg-white text-gray-dark">
     <a href="#main-content" class="skip-link">Skip to main content</a>

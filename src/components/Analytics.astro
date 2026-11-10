@@ -1,0 +1,40 @@
+---
+// Analytics tracking component. Set ANALYTICS_ID in astro.config.mjs publicEnv to enable.
+// Supports Google Analytics 4 (GA4) or Plausible Analytics.
+// Privacy-friendly: respects Do Not Track and integrates with the Privacy Policy (/privacy).
+
+const analyticsId = import.meta.env.PUBLIC_ANALYTICS_ID;
+const analyticsProvider = import.meta.env.PUBLIC_ANALYTICS_PROVIDER || 'ga4'; // 'ga4' or 'plausible'
+const enabled = !!analyticsId && import.meta.env.PROD;
+
+// Plausible domain (defaults to current domain)
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN || undefined;
+---
+
+{enabled && analyticsProvider === 'ga4' && (
+  <>
+    <!-- Google Analytics 4 -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}></script>
+    <script is:inline define:vars={{ analyticsId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', analyticsId, {
+        anonymize_ip: true,
+        cookie_flags: 'SameSite=None;Secure'
+      });
+    </script>
+  </>
+)}
+
+{enabled && analyticsProvider === 'plausible' && (
+  <>
+    <!-- Plausible Analytics (privacy-friendly, no cookies) -->
+    <script 
+      defer 
+      data-domain={plausibleDomain} 
+      src="https://plausible.io/js/script.js"
+    ></script>
+  </>
+)}
+
