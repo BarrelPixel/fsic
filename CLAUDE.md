@@ -44,7 +44,7 @@ src/lib/tones.ts     Marker colors by meaning (toneBg), on white and on night; u
 src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
                      ranges, read by home, Economic Impact, Partnership & Funding and the FAQ), phases,
                      engines, programs, faq, partnership, governance
-docs/                Project docs 00–11 (IA, content guidelines, site audit, copy-deck workflow, homepage plan and story review)
+docs/                Project docs 00–12 (IA, content guidelines, site audit, copy-deck workflow, homepage plan, story and engagement reviews)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
 scripts/             check-links.mjs (run via `npm run check-links`)
