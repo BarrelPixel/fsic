@@ -1,6 +1,6 @@
 # 11 — Homepage Story Review
 
-**Status:** Proposed (November 10, 2026). Nothing in this review is built yet.
+**Status:** Built (November 10, 2026): S1–S7 are on the page. New copy is in `home.md`, marked ⚠ Review. Result: 10,135 → 8,523 px on desktop (−16%), 14,555 → 12,540 px on a phone (−14%), 11 buttons → 4. The phone hero buttons are unchanged (815 px on 375 × 812); see §3.9.
 **Builds on:** `10-homepage-plan.md` (Tracks A and B are on the page). That plan fixed what the first screen says and where each audience finds its part. This review is about the **story**: whether a visitor who keeps scrolling is carried from one section to the next, and whether someone who only skims the headlines gets the argument.
 
 Measured on the built page (`main`, November 10, 2026) at 1440 × 900 and 375 × 812: 10,135 px tall on desktop (11 screens), 14,555 px on a phone (18 screens), about 1,080 words, 11 buttons.
