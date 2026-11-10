@@ -17,10 +17,12 @@ interface Props {
   /** A dot after the label (so every label starts on the column edge) that says what the list beside it is: gray for problems, the engine
    *  color for impact, navy for neutral (DESIGN.md). */
   dot?: Tone;
+  /** Anchor for links to this row (lands 1.5rem below the top of the screen). */
+  id?: string;
   class?: string;
 }
 
-const { label, count, rule = 'top', list = false, dark = false, dot, class: className } = Astro.props;
+const { label, count, rule = 'top', list = false, dark = false, dot, id, class: className } = Astro.props;
 // The dot stays on the line with the label's last word, so it never wraps onto a line of its own.
 const words = label.split(' ');
 const last = words.pop();
@@ -28,7 +30,9 @@ const head = words.join(' ');
 const line = dark ? 'border-rule-on-dark' : 'border-rule';
 ---
 <div
+  id={id}
   class:list={[
+    id && 'scroll-mt-6',
     'grid gap-y-3 md:grid-cols-8 md:gap-x-8',
     rule === 'top' ? ['border-t', line, list ? 'pt-5' : 'py-5'] : ['border-b', line, 'pb-6'],
     className,

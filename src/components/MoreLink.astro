@@ -1,0 +1,13 @@
+---
+// A "read more" link to an interior page, for the end of a homepage section. Inside the story the page
+// keeps readers moving with text links; buttons are kept for actions (the hero and the close).
+import { url } from '../lib/url';
+
+interface Props {
+  href: string;
+  dark?: boolean;
+  class?: string;
+}
+const { href, dark = false, class: className } = Astro.props;
+---
+<a href={url(href)} class:list={['font-sans font-semibold', dark ? 'link-on-dark' : 'link', className]}><slot /></a>
