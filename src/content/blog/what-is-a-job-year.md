@@ -19,6 +19,10 @@ sources:
     publisher: "Florida Space Innovation Center"
     date: "pp. 7–8"
 status: draft
+followUp:
+  question: "What are the three scenarios in FSIC's economic analysis, and how do they differ?"
+  slug: what-are-fsics-economic-scenarios
+  topic: economy
 ---
 
 ## What does “job-year” mean?

@@ -18,15 +18,24 @@ import { url } from '../../lib/url';
 // page it supports. Structured data: BlogPosting (with its citations) and, when it has questions, FAQPage.
 export async function getStaticPaths() {
   const posts = await getPosts();
-  return posts.map((post) => ({ params: { slug: post.id }, props: { post, others: posts.filter((p) => p.id !== post.id).slice(0, 3) } }));
+  return posts.map((post) => {
+    // Connected posts (docs/14 §10): the post this one follows, and the post that answers its follow-up.
+    const follows = post.data.from ? posts.find((p) => p.id === post.data.from) : undefined;
+    const next = posts.find((p) => p.data.from === post.id);
+    const linked = new Set([follows?.id, next?.id]);
+    const others = posts.filter((p) => p.id !== post.id && !linked.has(p.id)).slice(0, 3);
+    return { params: { slug: post.id }, props: { post, others, follows, next } };
+  });
 }
 
 interface Props {
   post: Post;
   others: Post[];
+  follows?: Post;
+  next?: Post;
 }
 
-const { post, others } = Astro.props;
+const { post, others, follows, next } = Astro.props;
 checkFigures(post);
 const { Content } = await render(post);
 const d = post.data;
@@ -80,6 +89,12 @@ const authorImage = author.photo ? (await getImage({ src: author.photo.src, widt
         </p>
         <p class="mb-1 text-caption text-gray-dark">More on this topic</p>
         <MoreLink href={topic.pillar.path}>{topic.pillar.name}</MoreLink>
+        {follows && (
+          <>
+            <p class="mt-4 mb-1 text-caption text-gray-dark">This follows</p>
+            <a href={postHref(follows)} class="link font-semibold">{follows.data.title}</a>
+          </>
+        )}
       </div>
       <div class="max-w-3xl">
         <article class="post links-in">
@@ -97,6 +112,15 @@ const authorImage = author.photo ? (await getImage({ src: author.photo.src, widt
                 </div>
               ))}
             </dl>
+          </section>
+        )}
+
+        <!-- Read next (docs/14 §10): the post that answers this one's follow-up question, once it exists -->
+        {next && (
+          <section class="mt-12 pt-6 border-t border-rule" aria-labelledby="read-next">
+            <h2 id="read-next" class="text-label text-navy mb-2">Read next</h2>
+            <p class="mb-1 text-gray-dark">{next.data.question}</p>
+            <a href={postHref(next)} class="font-display text-xl font-semibold text-navy leading-snug underline-reveal underline-offset-4">{next.data.title}</a>
           </section>
         )}
 
