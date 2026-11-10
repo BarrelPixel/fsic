@@ -11,7 +11,7 @@ fsic.space, now the Wix site's domain, will point to this site on GitHub Pages. 
 1. **Before touching DNS:** note every DNS record on fsic.space, above all the **MX** (and any SPF, DKIM or verification TXT) records, so email to info@fsic.space keeps working. Export the Wix newsletter subscribers (`site-wide.md`).
 2. **GitHub:** in the organization settings, verify fsic.space (Pages → Verified domains), so no other repository can claim it. In the repository's Settings → Pages, set the custom domain to `fsic.space`. With the Actions deploy, no `CNAME` file is needed.
 3. **DNS** (at the registrar, or wherever Wix manages the zone): for `fsic.space`, A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (and AAAA `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`); for `www`, a CNAME to `barrelpixel.github.io`. Keep the MX and TXT records. Disconnect the domain from the Wix site.
-4. **`astro.config.mjs`:** set `site` to `'https://fsic.space'` and remove `base`. Commit and push to `main`; the deploy checks types and links.
+4. **`astro.config.mjs`:** set `site` to `'https://fsic.space'` and `BASE` to `''` (the redirects from the old Wix addresses use it too). This also turns on search indexing (`src/lib/seo.ts`). Commit and push to `main`; the deploy checks types and links.
 5. **After the certificate is issued** (minutes to a day): tick "Enforce HTTPS" in Settings → Pages. Check `https://fsic.space`, `https://www.fsic.space`, a page, a press release and a missing address (the 404 page).
 6. **Old Wix addresses:** until redirects are added (`07-open-questions.md`), they land on the 404 page, which points visitors onward.
 

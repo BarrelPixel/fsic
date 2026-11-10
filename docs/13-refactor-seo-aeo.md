@@ -1,6 +1,6 @@
 # 13 — Refactor, SEO and AEO Review
 
-**Status:** Proposed (November 10, 2026). Nothing in this review is built yet.
+**Status:** Built (November 10, 2026): A1–A5 and B1–B8, with B4 for 18 exact addresses. Open: the redirect mapping and the new copy (⚠ Review), Search Console and a Google Business Profile at launch (B9).
 **Reviewed:** `main` after PR #49, from the source and the built site (`dist/`).
 
 Part A is code that can be simpler or harder to get wrong. Part B is how well search engines (SEO) and answer engines such as ChatGPT, Perplexity, Gemini and Google's AI Overviews (AEO) can find, understand and quote the site.
