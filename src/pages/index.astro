@@ -21,6 +21,7 @@ import { url } from '../lib/url';
 import { SOCIAL_LINKS } from '../lib/site';
 import Dot from '../components/Dot.astro';
 import { toneBg } from '../lib/tones';
+import { stakes, SPACE_ECONOMY_SOURCE } from '../data/strategic';
 import RangeTable from '../components/RangeTable.astro';
 import RangeRow from '../components/RangeRow.astro';
 import TableRow from '../components/TableRow.astro';
@@ -151,21 +152,38 @@ const people: { group: string; members: { name: string; role: string; slug?: str
   <!-- Phones: the rest of the page slides up over the pinned hero photo (pulled up by the hero spacer's height) -->
   <div class="relative z-10 bg-white max-md:-mt-[100svh]">
 
-  <!-- 01 WHY NOW -->
+  <!-- 01 WHY NOW (docs/12 §2.1–2.3): a person (the Board Chair's words at the launch, from FSIC's release),
+       the scale (sourced), and the stakes (the Without / With pair, shared with The Strategic Moment). -->
   <Section {...at('strategic-moment')} label="Why now">
     <Fragment slot="heading">
       The Question Is Not Whether the Space Coast Will Grow.
       <span class="block mt-3 font-medium text-gray-dark">It Is Whether Southeast Volusia Will Participate in That Growth.</span>
     </Fragment>
     <Grid>
-      <p slot="label" class="mb-0 text-statement text-navy">Without coordination, growth concentrates elsewhere.</p>
+      <figure slot="label" class="mb-0">
+        <blockquote class="text-lead text-navy">
+          <p class="mb-0">&ldquo;I moved home to New Smyrna Beach and hoped to contribute to Florida&rsquo;s growing space industry. But the overwhelming majority of opportunities in the sector required long commutes to the Cape or Orlando.&rdquo;</p>
+        </blockquote>
+        <figcaption class="mt-4 text-caption text-gray-dark">
+          Erik Ahlgren, aerospace engineer and FSIC Board Chair, <a href={url('/news/2026-05-25-fsic-launches-on-may-25')} class="link">at FSIC&rsquo;s launch</a>
+        </figcaption>
+      </figure>
       <div class="max-w-3xl">
         <p>
-          Florida's space economy is expanding rapidly — driven by commercial launch activity, advanced manufacturing, aerospace engineering, and emerging technologies.
+          The Space Coast is now the busiest launch corridor in the world, and the global space economy is projected to grow from roughly $630 billion in 2023 to $1.8 trillion by 2035.
         </p>
         <p class="mb-8">
           The Florida Space Innovation Center (FSIC) ensures that Southeast Volusia is not a spectator to that growth, but an active participant — building the talent, infrastructure, and partnerships required to compete in a global innovation economy.
         </p>
+        <dl class="mb-6">
+          <Row label={stakes.without.label} rule="bottom" dot="gray">
+            <List items={stakes.without.items} class="text-gray-dark" />
+          </Row>
+          <Row label={stakes.with.label} rule="bottom" dot="lagoon" class="pt-5">
+            <List items={stakes.with.items} class="text-navy" />
+          </Row>
+        </dl>
+        <p class="mb-8 text-caption text-gray-dark" set:html={SPACE_ECONOMY_SOURCE} />
         <MoreLink href="/strategic-moment">Explore the Strategic Moment</MoreLink>
       </div>
     </Grid>

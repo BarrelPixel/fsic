@@ -1,6 +1,6 @@
 # 12 — Homepage Engagement Review
 
-**Status:** Proposed (November 10, 2026). Nothing in this review is built yet.
+**Status:** Built (November 10, 2026): 2.1–2.7 are on the page. 2.8 waits for the client's copy review. New copy is in `home.md`, marked ⚠ Review.
 **Builds on:** `11-homepage-story.md` (built). That review put the sections in story order. This one asks two other questions:
 1. **Does the page hold attention?** Does each section give a reason to read the next?
 2. **Can a visitor find what they came for** without reading the whole story?

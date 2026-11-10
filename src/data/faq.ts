@@ -6,6 +6,7 @@ import { EMAIL, mailto } from '../lib/site';
 import { url } from '../lib/url';
 import { DISCLAIMER, FIGURES } from './economics';
 import { phases, phaseLabel } from './phases';
+import { SPACE_ECONOMY_SOURCE } from './strategic';
 
 const mail = `<a href="${mailto()}">${EMAIL}</a>`;
 const page = (path: string, text: string) => `<a href="${url(path)}">${text}</a>`;
@@ -88,7 +89,7 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
       { p: 'The global space economy is projected to grow from roughly $630 billion in 2023 to $1.8 trillion by 2035, driven by lower launch costs, mass-produced satellites, AI-enabled applications, and rising demand for space-based data across nearly every industry. Industry leaders now see the space economy growing far beyond rockets and satellites, opening the door to whole new industries.' },
       { p: 'FSIC positions the region to seize this opportunity by building the talent pipeline employers need, connecting local businesses to space-related supply chains, and creating a hub for innovation and commercialization. It aligns K-12 schools, colleges, workforce agencies, employers, and civic partners into a coordinated system that can produce skilled workers, support entrepreneurs, and attract new industry. FSIC also serves as the backbone organization that organizes partners, secures funding, and accelerates pilot programs that prepare residents and businesses for space-driven economic growth.' },
       { p: 'FSIC ensures that Florida — starting with Southeast Volusia — has the structure, strategy, and community alignment needed to compete for the next wave of jobs, investment, and innovation. It transforms the space economy from something happening "near us" into something that directly benefits local families, students, and businesses.' },
-      { source: 'Source: World Economic Forum and McKinsey &amp; Company, <cite>Space: The $1.8 Trillion Opportunity for Global Economic Growth</cite> (April 2024).' },
+      { source: SPACE_ECONOMY_SOURCE },
     ],
   },
   {
