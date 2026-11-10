@@ -28,6 +28,7 @@ import YearBar from '../components/YearBar.astro';
 import { people } from '../data/governance';
 import { audiences } from '../data/partnership';
 import HomeHero from '../components/HomeHero.astro';
+import { WHAT_IS_FSIC } from '../lib/seo';
 
 // 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
@@ -52,7 +53,7 @@ const commonQuestions = ['residents-and-families', 'developers', 'compete', 'fun
 
 
 ---
-<BaseLayout title="Florida Space Innovation Center">
+<BaseLayout title="Florida Space Innovation Center | Southeast Volusia, Space Coast" description={WHAT_IS_FSIC}>
 
   <!--
     GRID (DESIGN.md "Grid"): one 12-column grid. Label column = cols 1–4, content column = cols 5–12.
