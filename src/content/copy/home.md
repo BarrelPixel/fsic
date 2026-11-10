@@ -12,6 +12,12 @@
 
 > **Layout note (November 2026):** The page is set on the 12-column grid in DESIGN.md. Wording is unchanged, but some lines moved into each section's label column, so on the page they read before the body text: "Without coordination, growth concentrates elsewhere.", "This is not a short-term program…", "Growth is structured. Not speculative.", and "This is a coordinated regional investment…". Sections 01–07 carry small running-head numbers, and where the headline doesn't already name the topic, a label taken from this file's section names (for example "The strategic moment"). They are wayfinding, not copy, and are hidden from screen readers.
 
+> **Layout change (November 2026, `docs/10-homepage-plan.md` Track A):** wording unchanged; the page has six numbered sections instead of eight.
+> - Latest News moved after Phased Deployment, so the argument runs why → how big → what → when → proof.
+> - Governance & Transparency is no longer its own section: it closes the Latest News section, with "Governance & Transparency" as its heading and the same body, list, close and button.
+> - Strategic Value to Volusia County is no longer its own section. "Alignment with Major Funding Channels" sits in the economic case under the external-funding sentence; "Talent Attraction & Retention" sits in the four-engine model's closing row. Each keeps its title and body. The section's headline and its close ("This is a coordinated regional investment — not a standalone facility.") are not shown; their wording stays below. **⚠ Review:** confirm, or restore the section.
+> - The hero photo is the page's share image (open question "Default share image").
+
 > **Change (November 2026):** The project lead decided the site does not name a campus site. The Long-Range Vision headline changed from naming the Master Plan's proposed site to "A Landmark Campus for Southeast Volusia". See `docs/08-current-site-audit.md` §3.3.
 
 ---
