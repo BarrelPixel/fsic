@@ -16,6 +16,7 @@ import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 import { faqText } from '../data/faq';
 import Dot from '../components/Dot.astro';
+import TableRow from '../components/TableRow.astro';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
 // Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
@@ -146,17 +147,17 @@ const at = (id: string) => sectionProps(sections, id);
   >
     <div class="border-t-2 border-navy">
       {metrics.map((m) => (
-        <div class="grid gap-y-3 py-6 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
-          <h3 class="lg:col-span-4 lg:self-start mb-0 text-xl flex items-center gap-2">
+        <TableRow spans={[4, 8]} cellClass={['lg:self-start', 'lg:pt-1']} class="gap-y-3 py-6">
+          <h3 slot="c1" class="mb-0 text-xl flex items-center gap-2">
             <Dot tone={m.tone ?? 'none'} size="md" />
             <span class="w-6 shrink-0 text-caption text-gray tabular-nums font-normal">{m.number !== null ? pad2(m.number) : ''}</span>
             {m.name}
           </h3>
-          <div class="lg:col-span-8 lg:pt-1">
+          <Fragment slot="c2">
             <p class="sr-only">Key metrics</p>
             <List items={[...m.items]} class="text-gray-dark" />
-          </div>
-        </div>
+          </Fragment>
+        </TableRow>
       ))}
     </div>
 

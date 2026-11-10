@@ -16,12 +16,14 @@ import { engines } from '../data/engines';
 import { faqs } from '../data/faq';
 import { phases } from '../data/phases';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
-import RangeBar from '../components/RangeBar.astro';
 import RangeLegend from '../components/RangeLegend.astro';
 import { url } from '../lib/url';
 import { getReleases, formatDate, isoDate, releaseHref } from '../lib/news';
 import { SOCIAL_LINKS } from '../lib/site';
 import Dot from '../components/Dot.astro';
+import RangeTable from '../components/RangeTable.astro';
+import RangeRow from '../components/RangeRow.astro';
+import TableRow from '../components/TableRow.astro';
 
 // 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
@@ -188,19 +190,18 @@ const people = [
   >
     <!-- The range bars are the site's one automatic animation: they draw once when the list scrolls into
          view (global.css "Range bars draw in"; RangeBarsDraw). -->
-    <ul class="range-bars border-t border-rule-on-dark" role="list" data-range-bars>
+    <RangeTable dark>
       {impact.map((row, i) => (
-        <li class="grid gap-y-3 py-6 border-b border-rule-on-dark lg:grid-cols-12 lg:gap-x-8 lg:items-baseline" style={`--row:${i}`}>
-          <p class="lg:col-span-4 mb-0 text-3xl md:text-4xl font-bold text-white font-display leading-tight tabular-nums">{row.display}</p>
-          <p class="lg:col-span-4 mb-0 font-sans text-white/75">{row.label}</p>
-          <RangeBar low={row.low} high={row.high} class="lg:col-span-4 lg:self-center" />
-        </li>
+        <RangeRow low={row.low} high={row.high} index={i} dark>
+          <p slot="figure" class="mb-0 text-3xl md:text-4xl font-bold text-white font-display leading-tight tabular-nums">{row.display}</p>
+          <p slot="detail" class="mb-0 font-sans text-white/75">{row.label}</p>
+        </RangeRow>
       ))}
-    </ul>
-    <div class="grid gap-y-3 lg:grid-cols-12 lg:gap-x-8 mt-4">
-      <p class="lg:col-span-8 mb-0 text-caption text-white/60">A job-year is one job held for one year.</p>
-      <RangeLegend dark class="lg:col-span-4 mb-0" />
-    </div>
+    </RangeTable>
+    <TableRow spans={[8, 4]} rule={false} class="gap-y-3 mt-4">
+      <p slot="c1" class="mb-0 text-caption text-white/60">A job-year is one job held for one year.</p>
+      <RangeLegend slot="c2" dark class="mb-0" />
+    </TableRow>
 
     <Grid class="mt-16">
       <p slot="label" class="mb-0 text-statement text-white">This is not a short-term program. It is a durable economic backbone.</p>

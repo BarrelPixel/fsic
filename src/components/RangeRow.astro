@@ -1,0 +1,21 @@
+---
+// One figure in a RangeTable: the figure (slot "figure"), what it measures (slot "detail") and its range
+// bar, on the page grid. `spans` sets the figure and detail widths; the bar takes the rest of the 12
+// columns. `index` staggers the draw-in (rows follow one another).
+import TableRow from './TableRow.astro';
+import RangeBar from './RangeBar.astro';
+
+interface Props {
+  low: number;
+  high: number;
+  index: number;
+  spans?: [number, number];
+  dark?: boolean;
+}
+const { low, high, index, spans = [4, 4], dark = false } = Astro.props;
+---
+<TableRow as="li" spans={[spans[0], spans[1], 12 - spans[0] - spans[1]]} baseline dark={dark} cellClass={[undefined, undefined, 'lg:self-center']} style={`--row:${index}`} class="gap-y-3 py-6">
+  <slot name="figure" slot="c1" />
+  <slot name="detail" slot="c2" />
+  <RangeBar slot="c3" low={low} high={high} />
+</TableRow>

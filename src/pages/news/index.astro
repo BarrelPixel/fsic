@@ -5,6 +5,7 @@ import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import { getReleases, formatDate, firstSentence, isoDate, releaseHref } from '../../lib/news';
 import { EMAIL, mailto } from '../../lib/site';
+import TableRow from '../../components/TableRow.astro';
 
 // Copy: src/content/copy/news.md (page wording); releases: src/content/news/ (as published).
 const releases = await getReleases();
@@ -27,8 +28,8 @@ const releases = await getReleases();
   <Section>
     <ol class="divide-y divide-rule border-b border-rule">
       {releases.map((r) => (
-        <li class="grid gap-y-2 py-8 first:pt-0 lg:grid-cols-12 lg:gap-x-8 lg:items-baseline">
-          <div class="lg:col-span-4">
+        <TableRow as="li" spans={[4, 8]} rule={false} baseline cellClass={[undefined, 'max-w-3xl']} class="gap-y-2 py-8 first:pt-0">
+          <Fragment slot="c1">
             <p class="mb-0 text-label text-gray-dark">
               <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
             </p>
@@ -40,14 +41,14 @@ const releases = await getReleases();
                 <Image src={r.data.image} alt="" widths={[128, 256]} sizes="8rem" class="block h-32 w-auto" />
               </a>
             )}
-          </div>
-          <div class="lg:col-span-8 max-w-3xl">
+          </Fragment>
+          <Fragment slot="c2">
             <h2 class="text-2xl md:text-3xl mb-3">
               <a href={releaseHref(r)} class="underline-reveal underline-offset-4 decoration-2">{r.data.title}</a>
             </h2>
             <p class="mb-0 text-gray-dark">{firstSentence(r)}</p>
-          </div>
-        </li>
+          </Fragment>
+        </TableRow>
       ))}
     </ol>
   </Section>

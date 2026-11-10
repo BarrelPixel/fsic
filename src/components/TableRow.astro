@@ -1,0 +1,46 @@
+---
+// One row of a table set on the page grid (DESIGN.md "Grid"): up to three cells across the 12 columns
+// at lg, stacked in order below it. The cells are the slots c1, c2, c3; `spans` gives each one's width
+// in columns (they should add up to 12). Use it for every full-width table row, so pages don't
+// hand-write grid classes.
+//   head      the table's column labels: lg only, heavy navy rule under it, hidden from screen readers
+//             (each row repeats what a reader needs)
+//   rule      hairline under the row (default); false when the list draws its own (divide-y)
+//   baseline  align the cells on a shared baseline (figure and label); otherwise they hang from the top
+//   cellClass extra classes per cell, e.g. 'lg:self-center' for a range bar
+// Padding and the gap between stacked cells vary by table, so pass them in `class` (e.g. "gap-y-3 py-6").
+interface Props {
+  spans: number[];
+  as?: 'div' | 'li';
+  head?: boolean;
+  rule?: boolean;
+  dark?: boolean;
+  baseline?: boolean;
+  cellClass?: (string | undefined)[];
+  id?: string;
+  style?: string;
+  class?: string;
+}
+
+const { spans, as: Tag = 'div', head = false, rule = true, dark = false, baseline = false, cellClass = [], id, style, class: className } = Astro.props;
+
+// Literal classes, so Tailwind generates them.
+const SPAN: Record<number, string> = { 2: 'lg:col-span-2', 3: 'lg:col-span-3', 4: 'lg:col-span-4', 5: 'lg:col-span-5', 6: 'lg:col-span-6', 8: 'lg:col-span-8', 12: 'lg:col-span-12' };
+const cell = (i: number) => [SPAN[spans[i]], cellClass[i]];
+---
+<Tag
+  id={id}
+  style={style}
+  aria-hidden={head ? 'true' : undefined}
+  class:list={[
+    head ? 'hidden lg:grid border-b-2 border-navy pb-3' : 'grid',
+    'lg:grid-cols-12 lg:gap-x-8',
+    !head && rule && ['border-b', dark ? 'border-rule-on-dark' : 'border-rule'],
+    baseline && 'lg:items-baseline',
+    className,
+  ]}
+>
+  {spans.length > 0 && <div class:list={cell(0)}><slot name="c1" /></div>}
+  {spans.length > 1 && <div class:list={cell(1)}><slot name="c2" /></div>}
+  {spans.length > 2 && <div class:list={cell(2)}><slot name="c3" /></div>}
+</Tag>
