@@ -15,6 +15,7 @@ import { benefits, partners, streams } from '../data/partnership';
 import Disclosure from '../components/Disclosure.astro';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
+import { faqText } from '../data/faq';
 
 // Copy: src/content/copy/partnership-funding.md (Draft). Partner table: Master Plan pp. 22–24;
 // funding streams: pp. 25–26; benefits: May 25, 2026 launch release; get involved: FAQ.
@@ -112,9 +113,9 @@ const at = (id: string) => sectionProps(sections, id);
   <Section {...at('funding')} label="Funding" heading="How Is FSIC Funded?">
     <Grid>
       <div slot="label">
-        <p class="text-xl text-navy leading-snug mb-4">FSIC uses a proven public-private funding model that blends:</p>
+        <p class="text-xl text-navy leading-snug mb-4">{faqText.fundingLead}</p>
         <List
-          items={['Philanthropic and private investment', 'State and federal workforce grants', 'Space Florida and economic development programs', 'Earned revenue from training, partnerships, events and other activities.']}
+          items={faqText.fundingBlend}
         />
       </div>
       <p class="max-w-3xl mb-0 lg:pt-1">
@@ -170,25 +171,19 @@ const at = (id: string) => sectionProps(sections, id);
   <Section {...at('get-involved')} label="Get involved" dark heading="How Can the Public Get Involved?">
     <Grid>
       <p slot="label" class="mb-0 text-xl text-white/90 leading-snug">
-        FSIC is designed to be a community-powered movement, and there are many ways for residents, educators, businesses, and civic partners to participate from the very beginning.
+        {faqText.getInvolvedLead}
       </p>
       <dl class="mb-8">
         <Row label="Residents can get involved through:" rule="bottom" dark>
           <List
             spacious
             class="text-white/90"
-            items={[
-              'Community STEM nights that bring families together around hands-on learning',
-              'Public exhibitions and arts-and-space events that celebrate creativity and innovation',
-              'Student programs and camps that spark curiosity and build early skills',
-              'Volunteer and mentorship opportunities supporting learners, educators, and small businesses',
-              'Employer councils and advisory groups that help shape training, innovation challenges, and regional strategy',
-            ]}
+            items={faqText.getInvolvedResidents}
           />
         </Row>
       </dl>
       <p class="text-white/75 max-w-3xl mb-0">
-        In addition, FSIC is actively seeking leaders and volunteers with relevant experience across the Center's four core engines — Talent, Innovation, Market, and Civic. Individuals with backgrounds in STEM education, engineering, advanced manufacturing, entrepreneurship, arts and culture, workforce development, community engagement, or related fields are encouraged to step forward. These early contributors will help shape programs, guide partnerships, and build the foundation for FSIC's long-term impact.
+        {faqText.getInvolvedSeeking}
       </p>
     </Grid>
   </Section>

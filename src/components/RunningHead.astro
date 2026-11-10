@@ -1,5 +1,6 @@
 ---
 import { pad2 } from '../lib/format';
+import Dot from './Dot.astro';
 // Section running head (Swiss layout, DESIGN.md "Grid"): a small index and optional label that sit
 // just above a section's heavy top rule. Decorative wayfinding, so hidden from screen readers;
 // the section's own heading carries the meaning.
@@ -23,12 +24,7 @@ const { index, total, label, dot, dark = false } = Astro.props;
   aria-hidden="true"
 >
   {dot && (
-    <span
-      class:list={[
-        'w-2.5 h-2.5 rounded-full',
-        dot === 'lagoon' ? (dark ? 'bg-lagoon-light' : 'bg-lagoon') : 'bg-orange',
-      ]}
-    ></span>
+    <Dot tone={dot} dark={dark} size="md" />
   )}
   <span>{pad2(index)} / {pad2(total)}</span>
   {label && <span class:list={['ml-2', dark ? 'text-white/75' : 'text-gray-dark']}>{label}</span>}

@@ -14,6 +14,8 @@ import Closing from '../components/Closing.astro';
 import { bodies, metrics, reportingCalendar } from '../data/governance';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
+import { faqText } from '../data/faq';
+import Dot from '../components/Dot.astro';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
 // Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
@@ -54,20 +56,20 @@ const at = (id: string) => sectionProps(sections, id);
   <Section {...at('backbone')} heading="A Neutral Backbone Organization">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-navy">
-        FSIC's role is to coordinate, align, and accelerate — not duplicate.
+        {faqText.coordinate}
       </p>
       <div class="max-w-3xl">
         <p>
-          FSIC is a neutral backbone organization that coordinates the work of schools, colleges, universities, employers, and civic partners. It does not replace existing institutions — it strengthens them.
+          {faqText.backbone}
         </p>
         <p>
-          FSIC fills gaps, aligns stakeholders, and builds the connective infrastructure that no single organization can create alone.
+          {faqText.fillsGaps}
         </p>
         <p class="mt-8 pt-6 border-t border-rule mb-4">
-          FSIC is intentionally designed to amplify, not compete with, existing institutions. It:
+          {faqText.competeLead}
         </p>
         <List
-          items={['Co-brands programs with partners', 'Shares credit, curriculum, and facilities', 'Strengthens enrollment in partner institutions', 'Builds pathways that benefit all stakeholders']}
+          items={faqText.competeList}
           class="text-navy"
         />
       </div>
@@ -82,7 +84,7 @@ const at = (id: string) => sectionProps(sections, id);
       </p>
       <div>
         <p class="max-w-3xl mb-10">
-          FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — will be featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution.
+          {faqText.leadershipBroad}
         </p>
         <dl>
           {bodies.map((body, i) => (
@@ -146,7 +148,7 @@ const at = (id: string) => sectionProps(sections, id);
       {metrics.map((m) => (
         <div class="grid gap-y-3 py-6 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
           <h3 class="lg:col-span-4 lg:self-start mb-0 text-xl flex items-center gap-2">
-            <span class:list={['w-2.5 h-2.5 shrink-0 rounded-full', m.tone === 'lagoon' ? 'bg-lagoon' : m.tone === 'orange' ? 'bg-orange' : 'bg-transparent']} aria-hidden="true"></span>
+            <Dot tone={m.tone ?? 'none'} size="md" />
             <span class="w-6 shrink-0 text-caption text-gray tabular-nums font-normal">{m.number !== null ? pad2(m.number) : ''}</span>
             {m.name}
           </h3>
@@ -181,17 +183,17 @@ const at = (id: string) => sectionProps(sections, id);
   <Section {...at('developers')} dark heading="What Is the Role of Developers?">
     <Grid>
       <p slot="label" class="mb-0 text-statement text-white">
-        Developers play a collaborative — not controlling — role in FSIC's work.
+        {faqText.developersRole}
       </p>
       <div class="max-w-3xl text-white/90">
         <p>
-          FSIC is an independent, community-aligned organization, and we recognize that many residents value slow growth or prefer no additional growth at all. Large developments in the region have already been approved, and FSIC does not influence or promote those decisions.
+          {faqText.developersIndependent}
         </p>
         <p>
-          Our role is to help ensure that what happens within that approved growth reflects community priorities by steering opportunities toward high-wage, future-focused industries rather than low-value or high-impact uses. Developers may help create spaces that support training, innovation, and community engagement, but FSIC does not endorse specific projects or drive development.
+          {faqText.developersApproved}
         </p>
         <p>
-          Our focus is protecting community character while shaping the future economy in ways that benefit the people who already live here.
+          {faqText.developersFocus}
         </p>
       </div>
     </Grid>

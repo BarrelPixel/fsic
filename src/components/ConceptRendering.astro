@@ -1,0 +1,16 @@
+---
+// The campus concept rendering, full bleed, with the caption it must always carry (DESIGN.md "Imagery").
+// Used in a dark Section's media slot: <ConceptRendering slot="media" />.
+import { Image } from 'astro:assets';
+import conceptImage from '../assets/fsic-concept.jpg';
+---
+<figure class="relative">
+  <Image
+    src={conceptImage}
+    alt="Concept rendering of a future campus: research buildings, a tower, and a glass dome set among wetlands, palms, and a boardwalk."
+    widths={[640, 960, 1280, 1536]}
+    sizes="100vw"
+    class="w-full h-[50vh] min-h-[320px] max-h-[640px] object-cover"
+  />
+  <figcaption class="text-caption container text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>
+</figure>

@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import conceptImage from '../assets/fsic-concept.jpg';
+import ConceptRendering from '../components/ConceptRendering.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import PageHero from '../components/PageHero.astro';
@@ -111,16 +110,7 @@ const at = (id: string) => sectionProps(sections, id);
 
   <!-- 03 · The landmark campus (Master Plan p. 38), with the concept rendering and its required caption -->
   <Section {...at('campus')} dark heading="A Landmark Campus for Southeast Volusia">
-    <figure slot="media" class="relative">
-      <Image
-        src={conceptImage}
-        alt="Concept rendering of a future campus: research buildings, a tower, and a glass dome set among wetlands, palms, and a boardwalk."
-        widths={[640, 960, 1280, 1536]}
-        sizes="100vw"
-        class="w-full h-[50vh] min-h-[320px] max-h-[640px] object-cover"
-      />
-      <figcaption class="text-caption container text-white/60 pt-3">Concept rendering. Design and location to be determined.</figcaption>
-    </figure>
+    <ConceptRendering slot="media" />
     <Grid>
       <p slot="label" class="mb-0 text-statement text-white">
         This is the endgame: a place where innovation, education, and culture converge — financed through state tools, supported by the community, and anchored by a multi-university presence.

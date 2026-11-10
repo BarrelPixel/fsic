@@ -18,7 +18,10 @@ export const FIGURES = {
 /** display, low and high of a headline figure, for the at-a-glance rows. */
 const pick = (f: { display: string; low: number; high: number }) => ({ display: f.display, low: f.low, high: f.high });
 
-export const SOURCE = 'Source: FSIC Master Plan 2026–2031. These are estimates based upon assumptions that may or may not be accurate over time.';
+/** The Master Plan's caveat on every projection. Shown with the figures wherever they appear. */
+export const DISCLAIMER = 'These are estimates based upon assumptions that may or may not be accurate over time.';
+
+export const SOURCE = `Source: FSIC Master Plan 2026–2031. ${DISCLAIMER}`;
 
 // 01 · 25-year impact at a glance (Extended FSIC / FSIC 2.0), Master Plan pp. 7–8
 export const glance = [

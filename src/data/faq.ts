@@ -4,7 +4,7 @@
 // removed regional housing figure).
 import { EMAIL, mailto } from '../lib/site';
 import { url } from '../lib/url';
-import { FIGURES } from './economics';
+import { DISCLAIMER, FIGURES } from './economics';
 import { phases, phaseLabel } from './phases';
 
 const mail = `<a href="${mailto()}">${EMAIL}</a>`;
@@ -15,6 +15,37 @@ export type Block =
   | { p: string }
   | { list: string[]; label?: string }
   | { source: string };
+
+/**
+ * Sentences and lists that other pages show word for word (Governance, Programs & Facilities, Partnership &
+ * Funding). Defined once here, so an edit to the FAQ wording reaches every page. Plain text, no HTML.
+ */
+export const faqText = {
+  residentsLead: 'FSIC expands opportunity for residents of all ages by making the space economy accessible and visible.',
+  businessesLead: 'FSIC helps small businesses and startups participate in aerospace and advanced manufacturing supply chains — opportunities that are currently difficult to access.',
+  businessesPipeline: 'This creates a pipeline of supplier-ready companies capable of competing in high-value markets.',
+  developersRole: "Developers play a collaborative — not controlling — role in FSIC's work.",
+  developersIndependent: 'FSIC is an independent, community-aligned organization, and we recognize that many residents value slow growth or prefer no additional growth at all. Large developments in the region have already been approved, and FSIC does not influence or promote those decisions.',
+  developersApproved: 'Our role is to help ensure that what happens within that approved growth reflects community priorities by steering opportunities toward high-wage, future-focused industries rather than low-value or high-impact uses. Developers may help create spaces that support training, innovation, and community engagement, but FSIC does not endorse specific projects or drive development.',
+  developersFocus: 'Our focus is protecting community character while shaping the future economy in ways that benefit the people who already live here.',
+  backbone: 'FSIC is a neutral backbone organization that coordinates the work of schools, colleges, universities, employers, and civic partners. It does not replace existing institutions — it strengthens them.',
+  fillsGaps: 'FSIC fills gaps, aligns stakeholders, and builds the connective infrastructure that no single organization can create alone.',
+  competeLead: 'FSIC is intentionally designed to amplify, not compete with, existing institutions. It:',
+  coordinate: "FSIC's role is to coordinate, align, and accelerate — not duplicate.",
+  locationNow: 'FSIC is a virtual organization located in New Smyrna Beach.',
+  locationSite: 'A specific future site in Volusia County will be determined through a collaborative process with community members, civic leaders, industry partners, and other stakeholders. This ensures the final location reflects community priorities, long-term economic strategy, and the needs of partners.',
+  fundingLead: 'FSIC uses a proven public-private funding model that blends:',
+  leadershipBroad: "FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — will be featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution.",
+  getInvolvedLead: 'FSIC is designed to be a community-powered movement, and there are many ways for residents, educators, businesses, and civic partners to participate from the very beginning.',
+  getInvolvedSeeking: "In addition, FSIC is actively seeking leaders and volunteers with relevant experience across the Center's four core engines — Talent, Innovation, Market, and Civic. Individuals with backgrounds in STEM education, engineering, advanced manufacturing, entrepreneurship, arts and culture, workforce development, community engagement, or related fields are encouraged to step forward. These early contributors will help shape programs, guide partnerships, and build the foundation for FSIC's long-term impact.",
+  forStudents: ['Hands-on STEM learning and maker experiences', 'Dual-enrollment pathways', 'Micro-credentials tied to real jobs', 'Community STEM and arts events'],
+  forAdults: ['Short, employer-validated training programs', 'Job placement, apprenticeships, and upskilling', 'Clear pathways into high-wage technical careers'],
+  forCommunity: ['Higher wages and economic mobility', 'A stronger regional identity tied to innovation', 'More opportunities for youth and families to engage in STEM'],
+  businessSupport: ['Supplier-readiness bootcamps', 'Certification and contracting navigation', 'SBIR/STTR proposal support', 'Startup incubation and acceleration', 'Access to prototyping labs and applied research partners'],
+  competeList: ['Co-brands programs with partners', 'Shares credit, curriculum, and facilities', 'Strengthens enrollment in partner institutions', 'Builds pathways that benefit all stakeholders'],
+  getInvolvedResidents: ['Community STEM nights that bring families together around hands-on learning', 'Public exhibitions and arts-and-space events that celebrate creativity and innovation', 'Student programs and camps that spark curiosity and build early skills', 'Volunteer and mentorship opportunities supporting learners, educators, and small businesses', 'Employer councils and advisory groups that help shape training, innovation challenges, and regional strategy'],
+  fundingBlend: ['Philanthropic and private investment', 'State and federal workforce grants', 'Space Florida and economic development programs', 'Earned revenue from training, partnerships, events and other activities.'],
+};
 
 export const faqs: { q: string; id: string; a: Block[] }[] = [
   {
@@ -64,10 +95,10 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     q: 'How will FSIC benefit local residents and families?',
     id: 'residents-and-families',
     a: [
-      { p: 'FSIC expands opportunity for residents of all ages by making the space economy accessible and visible.' },
-      { label: 'For students and families:', list: ['Hands-on STEM learning and maker experiences', 'Dual-enrollment pathways', 'Micro-credentials tied to real jobs', 'Community STEM and arts events'] },
-      { label: 'For adults and career-switchers:', list: ['Short, employer-validated training programs', 'Job placement, apprenticeships, and upskilling', 'Clear pathways into high-wage technical careers'] },
-      { label: 'For the community:', list: ['Higher wages and economic mobility', 'A stronger regional identity tied to innovation', 'More opportunities for youth and families to engage in STEM'] },
+      { p: faqText.residentsLead },
+      { label: 'For students and families:', list: faqText.forStudents },
+      { label: 'For adults and career-switchers:', list: faqText.forAdults },
+      { label: 'For the community:', list: faqText.forCommunity },
       { p: `Programs for each audience are on the ${page('/programs-facilities#audiences', 'Programs &amp; Facilities')} page.` },
     ],
   },
@@ -75,9 +106,9 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     q: 'How does FSIC support local businesses and entrepreneurs?',
     id: 'businesses-and-entrepreneurs',
     a: [
-      { p: 'FSIC helps small businesses and startups participate in aerospace and advanced manufacturing supply chains — opportunities that are currently difficult to access.' },
-      { label: 'Support includes:', list: ['Supplier-readiness bootcamps', 'Certification and contracting navigation', 'SBIR/STTR proposal support', 'Startup incubation and acceleration', 'Access to prototyping labs and applied research partners'] },
-      { p: 'This creates a pipeline of supplier-ready companies capable of competing in high-value markets.' },
+      { p: faqText.businessesLead },
+      { label: 'Support includes:', list: faqText.businessSupport },
+      { p: faqText.businessesPipeline },
       { p: `These are the Market Engine's programs, on the ${page('/model#market', 'FSIC Model')} page.` },
     ],
   },
@@ -85,7 +116,7 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     q: 'What economic impact will FSIC have on the region?',
     id: 'economic-impact',
     a: [
-      { p: `Independent economic modeling shows that FSIC dramatically improves the region's long-term economic trajectory. With full implementation over 25 years (the Master Plan's Extended FSIC, or FSIC 2.0, scenario), FSIC is projected to help the region generate ${FIGURES.output.display} in economic output, support ${FIGURES.jobYears.display} job-years, increase local wages by ${FIGURES.wages.display}, and generate ${FIGURES.fiscal.display} in fiscal revenue for local and state governments. It also positions the region to attract ${FIGURES.externalFunding.words} in external funding tied to workforce development, innovation, and research. These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at ${mail}.` },
+      { p: `Independent economic modeling shows that FSIC dramatically improves the region's long-term economic trajectory. With full implementation over 25 years (the Master Plan's Extended FSIC, or FSIC 2.0, scenario), FSIC is projected to help the region generate ${FIGURES.output.display} in economic output, support ${FIGURES.jobYears.display} job-years, increase local wages by ${FIGURES.wages.display}, and generate ${FIGURES.fiscal.display} in fiscal revenue for local and state governments. It also positions the region to attract ${FIGURES.externalFunding.words} in external funding tied to workforce development, innovation, and research. ${DISCLAIMER} For the full analysis contact us at ${mail}.` },
       { p: `The full analysis is on the ${page('/economic-impact#at-a-glance', 'Economic Impact')} page.` },
       { source: 'Source: FSIC Master Plan 2026–2031, pp. 7–8.' },
     ],
@@ -94,10 +125,10 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     q: 'What is the role of developers in the FSIC?',
     id: 'developers',
     a: [
-      { p: "Developers play a collaborative — not controlling — role in FSIC's work." },
-      { p: 'FSIC is an independent, community-aligned organization, and we recognize that many residents value slow growth or prefer no additional growth at all. Large developments in the region have already been approved, and FSIC does not influence or promote those decisions.' },
-      { p: 'Our role is to help ensure that what happens within that approved growth reflects community priorities by steering opportunities toward high-wage, future-focused industries rather than low-value or high-impact uses. Developers may help create spaces that support training, innovation, and community engagement, but FSIC does not endorse specific projects or drive development.' },
-      { p: 'Our focus is protecting community character while shaping the future economy in ways that benefit the people who already live here.' },
+      { p: faqText.developersRole },
+      { p: faqText.developersIndependent },
+      { p: faqText.developersApproved },
+      { p: faqText.developersFocus },
       { p: `FSIC's governance is set out on the ${page('/governance#developers', 'Governance &amp; Transparency')} page.` },
     ],
   },
@@ -105,8 +136,8 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     q: 'Is FSIC a school, a research center, or an economic development agency?',
     id: 'what-kind-of-organization',
     a: [
-      { p: 'FSIC is a neutral backbone organization that coordinates the work of schools, colleges, universities, employers, and civic partners. It does not replace existing institutions — it strengthens them.' },
-      { p: 'FSIC fills gaps, aligns stakeholders, and builds the connective infrastructure that no single organization can create alone.' },
+      { p: faqText.backbone },
+      { p: faqText.fillsGaps },
       { p: `FSIC's role as a backbone organization is set out on the ${page('/governance#backbone', 'Governance &amp; Transparency')} page.` },
     ],
   },
@@ -114,8 +145,8 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     q: 'Will FSIC compete with local schools, colleges, or nonprofits?',
     id: 'compete',
     a: [
-      { label: 'No. FSIC is intentionally designed to amplify, not compete with, existing institutions. It:', list: ['Co-brands programs with partners', 'Shares credit, curriculum, and facilities', 'Strengthens enrollment in partner institutions', 'Builds pathways that benefit all stakeholders'] },
-      { p: "FSIC's role is to coordinate, align, and accelerate — not duplicate." },
+      { label: `No. ${faqText.competeLead}`, list: faqText.competeList },
+      { p: faqText.coordinate },
     ],
   },
   {
@@ -132,7 +163,7 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     q: 'Where will FSIC be located?',
     id: 'location',
     a: [
-      { p: 'FSIC is a virtual organization located in New Smyrna Beach. A specific future site in Volusia County will be determined through a collaborative process with community members, civic leaders, industry partners, and other stakeholders. This ensures the final location reflects community priorities, long-term economic strategy, and the needs of partners.' },
+      { p: `${faqText.locationNow} ${faqText.locationSite}` },
       { p: `The facilities planned for each phase are on the ${page('/programs-facilities#facilities', 'Programs &amp; Facilities')} page.` },
     ],
   },
@@ -140,7 +171,7 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     q: 'How is FSIC funded?',
     id: 'funding',
     a: [
-      { label: 'FSIC uses a proven public-private funding model that blends:', list: ['Philanthropic and private investment', 'State and federal workforce grants', 'Space Florida and economic development programs', 'Earned revenue from training, partnerships, events and other activities.'] },
+      { label: faqText.fundingLead, list: faqText.fundingBlend },
       { p: "Long-term projections show significant external funding potential aligned with FSIC's mission and program areas." },
       { p: `Each funding stream is on the ${page('/partnership-funding#funding', 'Partnership &amp; Funding')} page.` },
     ],
@@ -151,7 +182,7 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     a: [
       { p: 'The Florida Space Innovation Center is founded by John Joaquin, a technology industry leader and civic strategist with more than four decades of experience driving large-scale innovation, workforce, and modernization initiatives across government, healthcare, and advanced technology sectors. He has held executive roles at Adobe, ADP, IBM, and Ernst &amp; Young (EY) and has led major ecosystem-building efforts, including one of the nation\'s earliest regional quantum innovation ecosystems.' },
       { p: "In addition, he served as chair of the City of New Smyrna Beach's Economic Development Task Force (EDTF) and the Southeast Volusia Chamber of Commerce's Advocacy &amp; Economic Development (A&amp;ED) committee, where the idea of the FSIC was developed." },
-      { p: "FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — will be featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution." },
+      { p: faqText.leadershipBroad },
       { p: `The board, councils and committees are described on the ${page('/governance#structure', 'Governance &amp; Transparency')} page.` },
     ],
   },
@@ -159,9 +190,9 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     q: 'How can the public get involved?',
     id: 'get-involved',
     a: [
-      { p: 'FSIC is designed to be a community-powered movement, and there are many ways for residents, educators, businesses, and civic partners to participate from the very beginning.' },
-      { label: 'Residents can get involved through:', list: ['Community STEM nights that bring families together around hands-on learning', 'Public exhibitions and arts-and-space events that celebrate creativity and innovation', 'Student programs and camps that spark curiosity and build early skills', 'Volunteer and mentorship opportunities supporting learners, educators, and small businesses', 'Employer councils and advisory groups that help shape training, innovation challenges, and regional strategy'] },
-      { p: "In addition, FSIC is actively seeking leaders and volunteers with relevant experience across the Center's four core engines — Talent, Innovation, Market, and Civic. Individuals with backgrounds in STEM education, engineering, advanced manufacturing, entrepreneurship, arts and culture, workforce development, community engagement, or related fields are encouraged to step forward. These early contributors will help shape programs, guide partnerships, and build the foundation for FSIC's long-term impact." },
+      { p: faqText.getInvolvedLead },
+      { label: 'Residents can get involved through:', list: faqText.getInvolvedResidents },
+      { p: faqText.getInvolvedSeeking },
       { p: 'The FSIC website will include updates, program announcements, and a simple way to express interest in volunteering, advising, or serving in a leadership capacity.' },
       { p: `Each way to take part is on the ${page('/partnership-funding#get-involved', 'Get Involved')} page.` },
     ],

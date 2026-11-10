@@ -28,7 +28,7 @@ There is no linter or test suite. `npm run check` (types) and `npm run check-lin
 src/pages/           One .astro file per route. index, model, economic-impact, deployment, governance, partnership-funding, strategic-moment, programs-facilities, long-term-vision, faq, news and contact: every page is built (<ComingSoon> remains for future pages). 404.astro is the not-found page (noindex; links from getNavColumns())
 src/components/      Grid components (Section, Grid, Row, List, PageHero, SectionBar, RunningHead),
                      Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBar, RangeLegend,
-                     RangeBarsDraw, ComingSoon
+                     RangeBarsDraw, Dot, ConceptRendering, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, range-bar animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
@@ -40,6 +40,7 @@ src/lib/site.ts      EMAIL, mailto(), SOCIAL_LINKS: use these, don't retype the 
 src/lib/url.ts       url('/path'): a site path with the base path (works under /fsic and at the root)
 src/lib/format.ts    pad2() for 01, 02… numbering
 src/lib/sections.ts  A page's sections listed once (hero index, SectionBar, running heads)
+src/lib/tones.ts     Marker colors by meaning (toneBg), on white and on night; used by Dot and bars
 src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
                      ranges, read by home, Economic Impact, Partnership & Funding and the FAQ), phases,
                      engines, programs, faq, partnership, governance
