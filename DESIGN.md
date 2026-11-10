@@ -39,7 +39,7 @@ Example: in the four-engine sections, Talent, Innovation and Market get orange m
 - **Never put white text on the brand `orange`** (2.96:1). Primary buttons use white text on `orange-deep` (4.68:1), so the brand orange is never a button fill.
 - **Never use orange for text on a light background** (it fails). Orange text is fine on `night` (5.5:1).
 - `lagoon` on white is 4.7:1, fine for text. On `night`, use `lagoon-light` (7.2:1).
-- White text on dark backgrounds uses three tints only: `white/90` for main text, `white/75` for secondary text, `white/60` for captions.
+- White text on dark backgrounds uses three tints only: `white/90` for main text, `white/75` for secondary text, `white/60` for captions. The rule is for text. Non-text marks on night use their own values: hover and current-item fills (`white/10`, `/15`), hairlines (`rule-on-dark`, `white/10`), the light button's border (`white/70`), and navy-toned bars, which draw `white/80` (`src/lib/tones.ts`).
 
 ## Typography
 
@@ -72,6 +72,8 @@ Use these steps and no others. Hierarchy comes from scale, weight and position, 
 | Label | `text-label` | Archivo `text-sm` semibold | Row labels, running heads, legends |
 | Caption | `text-caption` | Archivo `text-sm` | Source lines, notes, small print, the PageHero aside |
 | UI | — | `font-sans` 16–18px, `font-semibold` for list items you open | Nav, buttons, component titles |
+
+Every paragraph and list item a reader reads as prose is Body, including text inside tables, disclosures and table rows: don't set it to `text-base` (16px) to fit a column. Shorten the copy or give the column more room. Smaller sans text is UI (data cells, nav, buttons) or Caption (sources, small print such as the footer blurb). A long sentence in a label column that is too long for Statement is Lead, not a size in between.
 
 Links in running text use `link` (navy), `link-on-dark` (on night), or `links-in` on a container whose HTML you don't write tag by tag (the FAQ answers).
 

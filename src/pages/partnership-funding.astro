@@ -114,7 +114,7 @@ const at = (id: string) => sectionProps(sections, id);
   <Section {...at('funding')} label="Funding" heading="How Is FSIC Funded?">
     <Grid>
       <div slot="label">
-        <p class="text-xl text-navy leading-snug mb-4">{faqText.fundingLead}</p>
+        <p class="text-lead text-navy mb-4">{faqText.fundingLead}</p>
         <List
           items={faqText.fundingBlend}
         />
@@ -140,7 +140,7 @@ const at = (id: string) => sectionProps(sections, id);
             <p class="mb-0 text-caption text-gray-dark">{yearsLabel(s)}</p>
           </Fragment>
           <Fragment slot="c2">
-            <p class="text-base text-gray-dark mb-2">{s.purpose}</p>
+            <p class="text-gray-dark mb-2">{s.purpose}</p>
             <p class="mb-0 text-caption text-gray-dark"><span class="font-semibold text-navy">Sources:</span> {s.sources.join(' · ')}</p>
           </Fragment>
           <span slot="c3" class="grid grid-cols-5 h-3 bg-navy/[0.07]" aria-hidden="true">
@@ -169,7 +169,7 @@ const at = (id: string) => sectionProps(sections, id);
   <!-- 04 · GET INVOLVED -->
   <Section {...at('get-involved')} label="Get involved" dark heading="How Can the Public Get Involved?">
     <Grid>
-      <p slot="label" class="mb-0 text-xl text-white/90 leading-snug">
+      <p slot="label" class="mb-0 text-lead text-white/90">
         {faqText.getInvolvedLead}
       </p>
       <dl class="mb-8">
