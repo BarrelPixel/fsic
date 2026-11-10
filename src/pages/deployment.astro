@@ -9,15 +9,15 @@ import Row from '../components/Row.astro';
 import List from '../components/List.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
-import { phases } from '../data/phases';
+import { phases, phasedApproach } from '../data/phases';
 import { url } from '../lib/url';
-import { toneBg } from '../lib/tones';
+import YearScale from '../components/YearScale.astro';
+import YearBar from '../components/YearBar.astro';
 
 // Copy: src/content/copy/deployment.md (Draft). Five-phase model from the Master Plan (pp. 13–14),
 // chosen by the project lead; facilities lines from p. 18. Open review items: facilities/location
 // (audit §3.3) and the year-by-year milestones, which the page leaves out (see the copy deck).
 
-const YEARS = [1, 2, 3, 4, 5];
 // Bar colors on night (hero) and as list markers on white (sections)
 ---
 <BaseLayout title="Phased Deployment" description="How the Florida Space Innovation Center scales in five phases over five years, from the Talent Engine launch to full ecosystem integration.">
@@ -26,7 +26,7 @@ const YEARS = [1, 2, 3, 4, 5];
   <PageHero title="Start Small. Deliver Early Wins. Scale with Readiness.">
     <div slot="aside" class="max-w-sm">
       <p class="text-label text-white mb-3">This phased approach:</p>
-      <List items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} class="text-caption text-white/75" />
+      <List items={phasedApproach} class="text-caption text-white/75" />
     </div>
 
     <p class="text-lead text-white/90 mb-10">
@@ -37,9 +37,7 @@ const YEARS = [1, 2, 3, 4, 5];
     <nav aria-label="The five phases" class="font-sans">
       <div class="hidden md:grid md:grid-cols-[minmax(0,3fr)_minmax(0,5fr)] md:gap-x-6 border-b border-rule-on-dark pb-2" aria-hidden="true">
         <span></span>
-        <span class="grid grid-cols-5 text-sm text-white/60 tabular-nums">
-          {YEARS.map((y) => <span>Year {y}</span>)}
-        </span>
+        <YearScale dark />
       </div>
       <ol class="border-t border-rule-on-dark md:border-t-0">
         {phases.map((phase, i) => (
@@ -52,12 +50,7 @@ const YEARS = [1, 2, 3, 4, 5];
                   <span class="block text-sm text-white/75">{phase.timeframe}</span>
                 </span>
               </span>
-              <span class="grid grid-cols-5 h-3 bg-white/[0.06]" aria-hidden="true">
-                <span
-                  class:list={['h-full', toneBg(phase.tone, true)]}
-                  style={`grid-column: ${phase.start} / ${phase.end + 1}`}
-                ></span>
-              </span>
+              <YearBar start={phase.start} end={phase.end} tone={phase.tone} dark />
             </a>
           </li>
         ))}

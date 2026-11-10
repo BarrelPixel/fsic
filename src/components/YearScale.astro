@@ -1,0 +1,14 @@
+---
+// The "Year 1 … Year 5" labels over a column of YearBars (the five-year plan, Master Plan 2026–2031).
+// `current` marks the year FSIC is in ("Year 1 · Now"); `dark` on night.
+interface Props {
+  current?: number;
+  dark?: boolean;
+  class?: string;
+}
+const { current, dark = false, class: className } = Astro.props;
+const YEARS = [1, 2, 3, 4, 5];
+---
+<span class:list={['grid grid-cols-5 tabular-nums', dark ? 'text-sm text-white/60' : 'text-caption text-gray', className]}>
+  {YEARS.map((y) => <span class:list={[y === current && 'text-navy font-semibold']}>Year {y}{y === current && ' · Now'}</span>)}
+</span>

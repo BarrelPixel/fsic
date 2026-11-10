@@ -71,3 +71,15 @@ export const streams = [
   { name: 'Federal Innovation & Research Funding', start: 2, end: 5, purpose: "FSIC's Innovation and Market Engines position the organization to compete for major federal innovation funding.", sources: ['SBIR/STTR partnerships', 'Dual-use technology development grants', 'Applied research funding from DoD, NASA, NSF', 'EDA innovation and entrepreneurship grants'] },
   { name: 'Long-Term Sustainability Model', start: 3, end: 5, purpose: 'A balanced, diversified funding model ensures FSIC remains resilient, adaptable, and capable of long-term regional impact.', sources: ['Recurring employer memberships', 'Contract training', 'Startup and supplier development programs', 'Federal and state grants', 'Philanthropic support for innovation and expansion'] },
 ] as { name: string; start: number | null; end: number | null; purpose: string; sources: string[] }[];
+
+// Each audience, what it does with FSIC, and where to read more: the stakeholder rows on Partnership &
+// Funding (src/data/partnership.ts ids), and for residents the programs by audience. Lines summarize those
+// pages (home.md). The homepage shows them in its close; the hero's "Find your part" links to the same pages.
+// Residents are the community, so their link is lagoon.
+export const audiences = ([
+  { label: 'Employers', line: 'Validate curriculum, host internships and apprenticeships, and shape a local talent pipeline.', link: 'How employers take part', href: '/partnership-funding#employers' },
+  { label: 'University leaders', line: 'Co-develop pathways, collaborate on applied research, and pursue joint federal funding.', link: 'How universities take part', href: '/partnership-funding#higher-ed' },
+  { label: 'Policymakers', line: "Align economic development, infrastructure, and grant applications with the region's growth.", link: 'How local government takes part', href: '/partnership-funding#local-government' },
+  { label: 'Workforce partners', line: 'Bring labor market data and employer engagement into one regional strategy.', link: 'How workforce agencies take part', href: '/partnership-funding#workforce-agencies' },
+  { label: 'Residents and families', line: 'Hands-on STEM learning, dual-enrollment pathways, and micro-credentials tied to real jobs.', link: 'Programs for residents', href: '/programs-facilities#audiences', community: true },
+] as { label: string; line: string; link: string; href: string; community?: boolean }[]);

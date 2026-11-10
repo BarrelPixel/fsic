@@ -1,5 +1,4 @@
 ---
-import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import Section from '../components/Section.astro';
@@ -7,25 +6,28 @@ import Grid from '../components/Grid.astro';
 import Row from '../components/Row.astro';
 import List from '../components/List.astro';
 
-import heroImage from '../assets/fsic-hero.png';
 import ConceptRendering from '../components/ConceptRendering.astro';
 import { pad2 } from '../lib/format';
 import { sectionProps } from '../lib/sections';
 import { FIGURES, SOURCE } from '../data/economics';
 import { engines } from '../data/engines';
-import { faqs } from '../data/faq';
-import { phases } from '../data/phases';
+import { faqById } from '../data/faq';
+import { phases, phasedApproach } from '../data/phases';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
 import RangeLegend from '../components/RangeLegend.astro';
 import { url } from '../lib/url';
 import { SOCIAL_LINKS } from '../lib/site';
 import Dot from '../components/Dot.astro';
-import { toneBg } from '../lib/tones';
 import { stakes, SPACE_ECONOMY_SOURCE } from '../data/strategic';
 import RangeTable from '../components/RangeTable.astro';
 import RangeRow from '../components/RangeRow.astro';
 import TableRow from '../components/TableRow.astro';
 import MoreLink from '../components/MoreLink.astro';
+import YearScale from '../components/YearScale.astro';
+import YearBar from '../components/YearBar.astro';
+import { people } from '../data/governance';
+import { audiences } from '../data/partnership';
+import HomeHero from '../components/HomeHero.astro';
 
 // 25-year projections, Master Plan pp. 7–8 (src/data/economics.ts). Always show the full range (docs/08 §3.2).
 const impact = [
@@ -35,11 +37,7 @@ const impact = [
   { label: 'Fiscal revenue for local and state governments', ...FIGURES.fiscal },
 ];
 
-// The share image (og:image, twitter:image): the hero photo, 1200px wide (docs/10-homepage-plan.md A1).
-const shareImage = await getImage({ src: heroImage, width: 1200, format: 'jpg' });
-
 // The Years 1–5 track under the engines: the year FSIC is in now is the current phase's first year.
-const YEARS = [1, 2, 3, 4, 5];
 const currentYear = phases.find((p) => p.current)?.start;
 
 // The numbered sections in page order: their running heads (01 / 05…) follow this list. The page tells one
@@ -50,42 +48,11 @@ const at = (id: string) => sectionProps(sections, id);
 
 // Residents' common questions, linking to their answers on /faq (questions as published there). The
 // developers question is the trust question in a region that values slow growth (docs/12 §2.7).
-const commonQuestions = ['residents-and-families', 'developers', 'compete', 'funding', 'location'].map((id) => {
-  const f = faqs.find((faq) => faq.id === id);
-  if (!f) throw new Error(`index.astro: no FAQ question "${id}"`);
-  return f;
-});
+const commonQuestions = ['residents-and-families', 'developers', 'compete', 'funding', 'location'].map(faqById);
 
-// Each audience, what it does with FSIC, and where to read more: the stakeholder rows on Partnership &
-// Funding (src/data/partnership.ts ids), and for residents the programs by audience. Lines summarize those
-// pages (home.md). Shown in the close; the hero's "Find your part" links to the same pages.
-// Residents are the community, so their link is lagoon.
-const fit = ([
-  { label: 'Employers', line: 'Validate curriculum, host internships and apprenticeships, and shape a local talent pipeline.', link: 'How employers take part', href: '/partnership-funding#employers' },
-  { label: 'University leaders', line: 'Co-develop pathways, collaborate on applied research, and pursue joint federal funding.', link: 'How universities take part', href: '/partnership-funding#higher-ed' },
-  { label: 'Policymakers', line: "Align economic development, infrastructure, and grant applications with the region's growth.", link: 'How local government takes part', href: '/partnership-funding#local-government' },
-  { label: 'Workforce partners', line: 'Bring labor market data and employer engagement into one regional strategy.', link: 'How workforce agencies take part', href: '/partnership-funding#workforce-agencies' },
-  { label: 'Residents and families', line: 'Hands-on STEM learning, dual-enrollment pathways, and micro-credentials tied to real jobs.', link: 'Programs for residents', href: '/programs-facilities#audiences', community: true },
-] as { label: string; line: string; link: string; href: string; community?: boolean }[]);
 
-// The board and council (home.md): names and roles as FSIC's releases give them, each appointment linking to
-// the release that announced it. Erik Ahlgren (Board Chair, per the July 29 release) and Beth Hamilton were
-// added at the project lead's direction and have no appointment release, so they aren't links. Titles to be
-// confirmed (docs/07 "Titles").
-const people: { group: string; members: { name: string; role: string; slug?: string }[] }[] = [
-  { group: 'Board of Directors', members: [
-    { name: 'Erik Ahlgren', role: 'Board Chair' },
-    { name: 'Beth Hamilton', role: '' },
-    { name: 'Jessie Thompson', role: 'School Board Member', slug: '2026-07-07-jessie-thompson-joins-board' },
-    { name: 'Diezel DePew', role: 'Mayor of Edgewater', slug: '2026-07-13-diezel-depew-joins-board' },
-    { name: 'Ryan Trine', role: 'CEO of R3Doubt', slug: '2026-07-29-ryan-trine-joins-board' },
-  ] },
-  { group: 'Founders Council', members: [
-    { name: 'Jake Johansson', role: '', slug: '2026-08-03-jake-johansson-joins-founders-council' },
-  ] },
-];
 ---
-<BaseLayout title="Florida Space Innovation Center" image={shareImage.src}>
+<BaseLayout title="Florida Space Innovation Center">
 
   <!--
     GRID (DESIGN.md "Grid"): one 12-column grid. Label column = cols 1–4, content column = cols 5–12.
@@ -93,61 +60,7 @@ const people: { group: string; members: { name: string; role: string; slug?: str
     Copy is verbatim from src/content/copy/home.md.
   -->
 
-  <!-- HERO: the launch photo.
-       Phones (below md): the photo is a band across the top, undimmed and cropped to the plume, with
-       its full height (plume tip to dunes); the text follows on night, the headline's whole first line
-       sitting on the photo (48px). Only the photo's bottom third darkens toward night, so that line
-       stays readable while the upper sky and plume stay undimmed.
-       Phones, on scroll (CSS only, no JS, no animation): the photo and the night below it are pinned
-       (sticky) while the text scrolls up over them. The text carries its own night backing, fading in
-       just above the headline, so it rises over the photo like a sheet and every line stays on dark
-       (6.2:1 or better at every scroll position, 320 and 390px). After the hero, the rest of the page
-       slides up over the pinned layer.
-       md and up: the photo always shows its full height (plume tip to dunes), anchored right, never
-       cropped at the top; on screens wider than the photo, its left edge fades into night under the
-       text. The text sits over the sky on the left; a night gradient keeps it readable (left to right
-       on lg, top to bottom at md). -->
-  <section class="relative bg-night text-white overflow-clip md:overflow-hidden">
-    <!-- Phones: the photo and the night below it are one layer, a screen tall, pinned while the text scrolls over it -->
-    <div class="sticky top-0 h-svh -mb-[100svh] md:static md:h-auto md:mb-0">
-    <div class="relative md:static">
-      <Image
-        src={heroImage}
-        alt="A rocket's exhaust plume climbs into a clear sky above the ocean, seen from the dunes along the coast."
-        widths={[1440]}
-        sizes="1440px"
-        loading="eager"
-        fetchpriority="high"
-        class="hero-photo block w-full h-[max(46svh,62.5vw)] min-h-64 object-cover object-[78%_center] md:absolute md:right-0 md:top-0 md:h-full md:min-h-0 md:w-auto md:max-w-none"
-      />
-      <div class="md:hidden absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-b from-night/0 via-night/70 via-55% to-night/90" aria-hidden="true"></div>
-    </div>
-    </div>
-    <div class="hidden md:block absolute inset-0 bg-linear-to-b from-night/90 via-night/80 to-night/50 lg:bg-linear-to-r lg:from-night/90 lg:via-night/65 lg:via-45% lg:to-night/0 lg:to-75%" aria-hidden="true"></div>
-    <div class="relative z-10 max-md:bg-[linear-gradient(to_bottom,transparent_calc(max(46svh,62.5vw,16rem)-6.5rem),var(--color-night)_calc(max(46svh,62.5vw,16rem)+1rem))]">
-    <div class="relative container pt-[calc(max(46svh,62.5vw,16rem)-3rem)] pb-14 md:pt-24 md:pb-48 lg:pb-56 grid lg:grid-cols-12 lg:gap-x-8">
-      <div class="lg:col-span-6 max-w-2xl">
-        <h1 class="text-white mb-8">Opportunity That Flows Into Southeast Volusia — Not Past It</h1>
-        <p class="md:text-lead text-white/90 mb-8 md:mb-10">
-          The Florida Space Innovation Center is a coordinated regional platform for workforce, innovation, and industry growth, so that the Space Coast's expansion directly benefits the people who live and work here.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <Button href="/partnership-funding" variant="primary">Get Involved</Button>
-          <Button href="/economic-impact" variant="secondary-light">View Economic Impact</Button>
-        </div>
-        <!-- Find your part: routing from the first screen, one line; each name goes straight to what FSIC
-             offers that audience (docs/12 §2.6). The close repeats them for readers who arrive by reading. -->
-        <nav aria-label="Find your part" class="mt-8 font-sans text-sm text-white/75">
-          Find your part: {fit.map((a, i) => (
-            <>{i > 0 && <span aria-hidden="true"> · </span>}<a href={url(a.href)} class="link-on-dark whitespace-nowrap">{a.label}</a></>
-          ))}
-        </nav>
-      </div>
-    </div>
-    </div>
-    <!-- Phones: keeps the photo pinned until the next section has covered it -->
-    <div class="h-svh md:hidden" aria-hidden="true"></div>
-  </section>
+  <HomeHero />
 
   <!-- Phones: the rest of the page slides up over the pinned hero photo (pulled up by the hero spacer's height) -->
   <div class="relative z-10 bg-white max-md:-mt-[100svh]">
@@ -260,9 +173,7 @@ const people: { group: string; members: { name: string; role: string; slug?: str
     <div class="mt-14">
       <TableRow head spans={[4, 8]}>
         <p slot="c1" class="mb-0 text-label text-navy">When each starts</p>
-        <p slot="c2" class="mb-0 grid grid-cols-5 text-caption text-gray tabular-nums">
-          {YEARS.map((y) => <span class:list={[y === currentYear && 'text-navy font-semibold']}>Year {y}{y === currentYear && ' · Now'}</span>)}
-        </p>
+        <YearScale slot="c2" current={currentYear} />
       </TableRow>
       {phases.map((phase, i) => (
         <TableRow spans={[4, 8]} cellClass={[undefined, 'lg:self-center']} class="gap-y-2 py-3">
@@ -270,9 +181,7 @@ const people: { group: string; members: { name: string; role: string; slug?: str
             <span class="font-semibold">{i < engines.length ? engines[i].name : phase.name}</span>
             <span class="text-caption text-gray-dark tabular-nums">{phase.timeframe}{phase.current && <span class="text-navy font-semibold"> · Underway</span>}</span>
           </p>
-          <span slot="c2" class="grid grid-cols-5 h-2.5 bg-navy/[0.07]" aria-hidden="true">
-            <span class:list={['h-full', toneBg(phase.tone)]} style={`grid-column: ${phase.start} / ${phase.end + 1}`}></span>
-          </span>
+          <YearBar slot="c2" start={phase.start} end={phase.end} tone={phase.tone} size="sm" />
         </TableRow>
       ))}
     </div>
@@ -282,7 +191,7 @@ const people: { group: string; members: { name: string; role: string; slug?: str
       <div>
         <dl class="mb-8">
           <Row label="This phased approach:" rule="bottom">
-            <List columns items={['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion']} />
+            <List columns items={phasedApproach} />
           </Row>
         </dl>
         <p class="mb-0 flex flex-wrap gap-x-8 gap-y-2">
@@ -387,7 +296,7 @@ const people: { group: string; members: { name: string; role: string; slug?: str
       </div>
       <div class="max-w-3xl">
         <dl class="mb-10">
-          {fit.map((a, i) => (
+          {audiences.map((a, i) => (
             <Row label={a.label} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
               <p class="mb-1">{a.line}</p>
               <a href={url(a.href)} class:list={['font-sans font-semibold', a.community ? 'link-lagoon' : 'link']}>{a.link}</a>

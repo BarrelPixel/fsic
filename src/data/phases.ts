@@ -99,3 +99,6 @@ export const phases: Phase[] = [
 
 /** "Phase 2: Innovation Engine Activation (Years 1–2)". */
 export const phaseLabel = (phase: Phase) => `Phase ${phases.indexOf(phase) + 1}: ${phase.name} (${phase.timeframe})`;
+
+/** Why phase it (Master Plan p. 13): shown on Deployment (hero aside) and the homepage (How it works). */
+export const phasedApproach = ['Reduces risk', 'Aligns with funding cycles', 'Ensures operational discipline', 'Builds momentum before expansion'];
