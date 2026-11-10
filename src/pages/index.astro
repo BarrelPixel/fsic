@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import Section from '../components/Section.astro';
@@ -29,21 +29,12 @@ const impact = [
   { label: 'Fiscal revenue for local and state governments', ...FIGURES.fiscal },
 ];
 
-// What FSIC brings Volusia County beyond the figures above: the two points the economic case doesn't
-// already make (homepage review, November 2026; home.md). Bodies are trusted, hand-written HTML (they may hold a link).
-const value = [
-  {
-    title: 'Talent Attraction & Retention',
-    body: `Integrated programming strengthens <a href="${url('/programs-facilities#audiences')}" class="link">local career pathways</a> and helps retain young professionals who want opportunity close to home.`,
-  },
-  {
-    title: 'Alignment with Major Funding Channels',
-    body: `FSIC is positioned to <a href="${url('/partnership-funding#funding')}" class="link">pursue and coordinate funding</a> through NSF Engines, regional innovation grants, state workforce programs, and Space Florida tools — bringing outside dollars into the region.`,
-  },
-];
+// The share image (og:image, twitter:image): the hero photo, 1200px wide (docs/10-homepage-plan.md A1).
+const shareImage = await getImage({ src: heroImage, width: 1200, format: 'jpg' });
 
-// The numbered sections in page order: their running heads (01 / 07…) follow this list.
-const sections = ['strategic-moment', 'economic-impact', 'news', 'model', 'deployment', 'value', 'governance', 'vision'].map((id) => ({ id }));
+// The numbered sections in page order: their running heads (01 / 06…) follow this list. The argument runs
+// why → how big → what → when, then the proof that FSIC is underway (docs/10-homepage-plan.md A2–A4).
+const sections = ['strategic-moment', 'economic-impact', 'model', 'deployment', 'news', 'vision'].map((id) => ({ id }));
 const at = (id: string) => sectionProps(sections, id);
 
 const toneDot: Record<Tone, string> = { orange: 'bg-orange', lagoon: 'bg-lagoon', navy: 'bg-navy' };
@@ -68,7 +59,7 @@ const audiences = [
   { label: 'Community members', href: '/programs-facilities#audiences' },
 ];
 ---
-<BaseLayout title="Florida Space Innovation Center">
+<BaseLayout title="Florida Space Innovation Center" image={shareImage.src}>
 
   <!--
     GRID (DESIGN.md "Grid"): one 12-column grid. Label column = cols 1–4, content column = cols 5–12.
@@ -189,6 +180,14 @@ const audiences = [
         <p class="text-white/90 mb-8">
           In addition, FSIC positions the region to attract <strong class="text-white">{FIGURES.externalFunding.words}</strong> in external federal, state, private, and philanthropic investment tied to research, innovation, and workforce development.
         </p>
+        <!-- From Strategic Value to Volusia County (folded in here, docs/10-homepage-plan.md A4) -->
+        <dl class="mb-8">
+          <Row label="Alignment with Major Funding Channels" dark>
+            <p class="mb-0 text-white/90">
+              FSIC is positioned to <a href={url('/partnership-funding#funding')} class="link-on-dark">pursue and coordinate funding</a> through NSF Engines, regional innovation grants, state workforce programs, and Space Florida tools — bringing outside dollars into the region.
+            </p>
+          </Row>
+        </dl>
         <Button href="/economic-impact" variant="secondary-light">Explore the Full Economic Analysis</Button>
         <p class="text-caption text-white/60 mt-10 mb-0">
           {SOURCE}
@@ -197,34 +196,10 @@ const audiences = [
     </Grid>
   </Section>
 
-  <!-- 03 LATEST NEWS: proof that FSIC is active. The three newest press releases (date, then headline,
-       as published) in the content column; no release graphics here (DESIGN.md "Imagery"). -->
-  <Section {...at('news')} label="Latest news" heading="FSIC Is Underway">
-    <Grid labelOffset>
-      <p slot="label" class="mb-0 text-statement text-navy">Launched May 25, 2026. Building its leadership and partnerships now.</p>
-      <div class="max-w-3xl">
-        <ol class="divide-y divide-rule border-y border-rule mb-10">
-          {latest.map((r) => (
-            <li class="py-5">
-              <p class="mb-1 text-label text-gray-dark">
-                <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
-              </p>
-              <h3 class="text-xl md:text-2xl mb-0">
-                <a href={releaseHref(r)} class="underline-reveal underline-offset-4 decoration-2">{r.data.title}</a>
-              </h3>
-            </li>
-          ))}
-        </ol>
-        <Button href="/news" variant="secondary">All News & Media</Button>
-      </div>
-    </Grid>
-  </Section>
-
-  <!-- 04 THE FOUR-ENGINE MODEL: four numbered columns on the grid (3 cols each) -->
+  <!-- 03 THE FOUR-ENGINE MODEL: four numbered columns on the grid (3 cols each) -->
   <Section
     {...at('model')}
     label="The four-engine model"
-    spacing="stacked"
     heading="One Coordinated Platform. Four Integrated Engines."
     intro="FSIC operates through a structured, phased model designed for early activation and long-term scale."
   >
@@ -244,11 +219,22 @@ const audiences = [
 
     <Grid class="mt-14 pt-6 border-t border-rule">
       <p slot="label" class="mb-0 text-statement text-navy">Each engine reinforces the others. Together, they create a coordinated regional ecosystem.</p>
-      <Button href="/model" variant="secondary">Learn More About the FSIC Model</Button>
+      <div>
+        <!-- From Strategic Value to Volusia County (folded in here, docs/10-homepage-plan.md A4): the
+             community outcome of the engines, so lagoon. -->
+        <dl class="mb-8">
+          <Row label="Talent Attraction & Retention" rule="bottom" dot="lagoon">
+            <p class="mb-0">
+              Integrated programming strengthens <a href={url('/programs-facilities#audiences')} class="link">local career pathways</a> and helps retain young professionals who want opportunity close to home.
+            </p>
+          </Row>
+        </dl>
+        <Button href="/model" variant="secondary">Learn More About the FSIC Model</Button>
+      </div>
     </Grid>
   </Section>
 
-  <!-- 05 PHASED DEPLOYMENT -->
+  <!-- 04 PHASED DEPLOYMENT -->
   <Section {...at('deployment')} label="Phased deployment" spacing="stacked" heading="Start Small. Deliver Early Wins. Scale with Readiness.">
     <Grid class="gap-y-10">
       <p slot="label" class="mb-0 text-statement text-navy">Growth is structured. Not speculative.</p>
@@ -292,46 +278,55 @@ const audiences = [
     </Grid>
   </Section>
 
-  <!-- 06 STRATEGIC VALUE: community value, so lagoon rules. Two peers side by side in the content column. -->
-  <Section {...at('value')} dot="lagoon" spacing="stacked" heading="Strategic Value to Volusia County">
-    <Grid class="gap-y-10" labelOffset>
-      <p slot="label" class="mb-0 text-statement text-navy">This is a coordinated regional investment — not a standalone facility.</p>
-      <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">
-        {value.map((item) => (
-          <div class="border-t-2 border-lagoon pt-5">
-            <h3 class="mb-3">{item.title}</h3>
-            <p class="mb-0" set:html={item.body} />
-          </div>
-        ))}
+  <!-- 05 UNDERWAY: proof that FSIC is active, then how it is run. The three newest press releases (date,
+       then headline, as published) in the content column; no release graphics here (DESIGN.md "Imagery").
+       Governance & Transparency follows as a closing row (its own section until docs/10-homepage-plan.md A3). -->
+  <Section {...at('news')} label="Latest news and governance" spacing="stacked" heading="FSIC Is Underway">
+    <Grid labelOffset>
+      <p slot="label" class="mb-0 text-statement text-navy">Launched May 25, 2026. Building its leadership and partnerships now.</p>
+      <div class="max-w-3xl">
+        <ol class="divide-y divide-rule border-y border-rule mb-10">
+          {latest.map((r) => (
+            <li class="py-5">
+              <p class="mb-1 text-label text-gray-dark">
+                <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
+              </p>
+              <h3 class="text-xl md:text-2xl mb-0">
+                <a href={releaseHref(r)} class="underline-reveal underline-offset-4 decoration-2">{r.data.title}</a>
+              </h3>
+            </li>
+          ))}
+        </ol>
+        <Button href="/news" variant="secondary">All News & Media</Button>
+      </div>
+    </Grid>
+
+    <Grid class="mt-14 pt-6 border-t border-rule gap-y-10">
+      <div slot="label">
+        <h3 class="mb-3">Governance & Transparency</h3>
+        <p class="mb-0 text-navy">FSIC operates under a partner-first, coalition-driven governance structure.</p>
+      </div>
+      <div class="max-w-3xl">
+        <dl class="mb-8">
+          <Row label="It is designed to:" rule="bottom">
+            <List
+              spacious
+              items={[
+                'Strengthen — not compete with — existing institutions',
+                'Maintain transparent oversight',
+                'Deliver shared value across education, industry, and community stakeholders',
+                'Scale only when readiness and demand are clear',
+              ]}
+            />
+          </Row>
+        </dl>
+        <p class="text-statement text-navy mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
+        <Button href="/governance" variant="secondary">Review Governance & Structure</Button>
       </div>
     </Grid>
   </Section>
 
-  <!-- 07 GOVERNANCE & TRANSPARENCY -->
-  <Section {...at('governance')} spacing="stacked" heading="Governance & Transparency">
-    <Grid class="gap-y-10">
-      <p slot="label" class="mb-0 text-xl text-navy leading-snug">
-        FSIC operates under a partner-first, coalition-driven governance structure.
-      </p>
-      <dl class="mb-8">
-        <Row label="It is designed to:" rule="bottom">
-          <List
-            spacious class=""
-            items={[
-              'Strengthen — not compete with — existing institutions',
-              'Maintain transparent oversight',
-              'Deliver shared value across education, industry, and community stakeholders',
-              'Scale only when readiness and demand are clear',
-            ]}
-          />
-        </Row>
-      </dl>
-      <p class="text-statement text-navy mb-8">Neutral convener. Clear structure. Long-term accountability.</p>
-      <Button href="/governance" variant="secondary">Review Governance & Structure</Button>
-    </Grid>
-  </Section>
-
-  <!-- 08 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
+  <!-- 06 LONG-RANGE VISION: the campus rendering, labeled as a concept -->
   <Section {...at('vision')} label="Long-range vision" dark heading="A Landmark Campus for Southeast Volusia">
     <figure slot="media" class="relative">
       <Image

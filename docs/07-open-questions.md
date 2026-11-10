@@ -25,7 +25,7 @@ Items requiring stakeholder input or decisions before full launch.
 - [ ] **Analytics:** Google Analytics 4? Plausible? Other?
 - [ ] **Redirects from fsic.space:** map the old Wix addresses (`08-current-site-audit.md` §1, e.g. `/about-4`) to their new pages. GitHub Pages can't send server redirects, but Astro's `redirects` setting can build a small page at each old address that forwards to the new one. Needs the mapping confirmed; until then old addresses land on the 404 page.
 - [ ] **Search indexing before launch:** should the GitHub Pages preview be kept out of search results? When to add the sitemap (`@astrojs/sitemap`) and `robots.txt`? (The domain is now settled: fsic.space.)
-- [ ] **Default share image:** pages other than press releases have no `og:image`. Which image should represent the site when a page is shared?
+- [ ] **Default share image:** pages other than press releases have no `og:image`. Which image should represent the site when a page is shared? (November 2026: the homepage uses the hero photo; confirm, and whether other pages should too.)
 - [ ] **Form backend:** What service for contact form submissions? (Netlify Forms, Formspree, custom API?)
 - [ ] **Email newsletter:** Will there be a mailing list signup? If so, which provider? (Mailchimp, ConvertKit, etc.)
 

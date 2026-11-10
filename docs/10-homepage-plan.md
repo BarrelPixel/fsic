@@ -1,6 +1,6 @@
 # 10 — Homepage Presentation Plan
 
-**Status:** Proposed (November 10, 2026). Nothing in this plan is built yet.
+**Status:** Track A built (November 10, 2026): A1–A4 are on the page. Tracks B and C are proposed.
 **Scope:** `src/pages/index.astro`, `src/content/copy/home.md`, and the data files the homepage reads.
 **Builds on:** the homepage review of November 2026 (latest news, the five phases, audience links, common questions). This plan is the next step, not a redo.
 

@@ -23,7 +23,7 @@
 ### Home (`/`) — IMPLEMENTED
 **Goal:** Establish credibility, convey institutional gravity, and orient visitors.
 **Audience:** All stakeholders (first visit).
-**Key content:** Hero with founding parallel, strategic moment summary, economic impact stats, latest news (the three newest press releases), four-engine model overview, phased deployment summary (the five phases), strategic value to Volusia County (two points), governance summary, long-range vision teaser, partnership CTA with each audience linked to what FSIC offers it and four common questions linked to the FAQ (homepage review, November 2026). (Governance comes before the vision, November 2026, so the page alternates white and dark sections down to the footer and ends on a white call to action.)
+**Key content:** Hero with founding parallel, strategic moment summary, economic impact stats (with the funding-channels point), four-engine model overview (with the talent-retention point), phased deployment summary (the five phases), latest news (the three newest press releases) closed by the governance summary, long-range vision teaser, partnership CTA with each audience linked to what FSIC offers it and four common questions linked to the FAQ. Six numbered sections (`10-homepage-plan.md` Track A, November 2026); the page alternates white and dark sections down to the footer and ends on a white call to action. The hero photo is the share image.
 **Primary CTAs:** Get Involved (hero; was Explore the Vision until November 2026, pending the client's call on CTA priorities), View Economic Impact, Become a Partner, Contact FSIC.
 
 ### The Strategic Moment (`/strategic-moment`) — IMPLEMENTED
