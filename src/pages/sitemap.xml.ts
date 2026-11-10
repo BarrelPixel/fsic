@@ -6,11 +6,11 @@ import { getReleases, isoDate } from '../lib/news';
 import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async () => {
-  const homePage = { loc: absolute('/'), priority: '1.0', changefreq: 'weekly' };
-  const pages = sitePages().map((p) => ({ 
-    loc: absolute(p.path.endsWith('/') ? p.path : `${p.path}/`), 
-    priority: '0.8',
-    changefreq: 'monthly' 
+  // sitePages() already includes the homepage (the menus list it), so it isn't added separately.
+  const pages = sitePages().map((p) => ({
+    loc: absolute(p.path.endsWith('/') ? p.path : `${p.path}/`),
+    priority: p.path === '/' ? '1.0' : '0.8',
+    changefreq: p.path === '/' ? 'weekly' : 'monthly',
   }));
   const releases = (await getReleases()).map((r) => ({ 
     loc: absolute(`/news/${r.id}/`), 
@@ -25,7 +25,7 @@ export const GET: APIRoute = async () => {
     changefreq: 'monthly'
   }));
   
-  const urls = [homePage, ...pages, ...releases, ...posts];
+  const urls = [...pages, ...releases, ...posts];
   const body = urls
     .map((u) => 
       `  <url>` +

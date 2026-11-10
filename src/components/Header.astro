@@ -55,7 +55,8 @@ const itemClass = (active: boolean) => [
 ];
 ---
 <header class="font-sans bg-night text-white relative z-50 border-b border-white/10 [view-transition-name:site-header]">
-  <div class="container">
+  <!-- Above the phone menu's backdrop (z-39), so the header and its close button stay bright and tappable -->
+  <div class="container relative z-[41]">
     <nav class="flex items-center justify-between py-3" aria-label="Main navigation">
       <a href={url('/')} class="block shrink-0 hover:opacity-90 transition-opacity">
         <img
@@ -134,8 +135,8 @@ const itemClass = (active: boolean) => [
        Pages are larger than group names, so groups read as headings over their pages. -->
   <div id="mobile-menu" class="mobile-menu hidden lg:hidden bg-night border-t border-white/10">
     <div class="container pt-1 pb-5">
-      {mobileGroups.map((group, groupIndex) => (
-        <div class="py-2.5 border-b border-white/10 mobile-menu-item" style={`--stagger-index: ${groupIndex}`}>
+      {mobileGroups.map((group) => (
+        <div class="py-2.5 border-b border-white/10">
           <p id={`${group.id}-m`} class="mb-1 text-label text-white/60">{group.label}</p>
           <ul role="list" aria-labelledby={`${group.id}-m`}>
             {group.links.map((link) => (
@@ -148,7 +149,7 @@ const itemClass = (active: boolean) => [
           </ul>
         </div>
       ))}
-      <ul class="py-2.5 grid grid-cols-2 gap-x-8 mobile-menu-item" style={`--stagger-index: ${mobileGroups.length}`} role="list">
+      <ul class="py-2.5 grid grid-cols-2 gap-x-8" role="list">
         {mobileLinks.map((link) => (
           <li>
             <a href={link.href} class:list={mobileLinkClass(link.active)} aria-current={link.active ? 'page' : undefined}>
@@ -160,8 +161,7 @@ const itemClass = (active: boolean) => [
       {mobileCta && (
         <a
           href={mobileCta.href}
-          class="mobile-menu-item flex items-center justify-center w-full px-7 py-3.5 font-semibold border-2 border-orange-deep bg-orange-deep text-white hover:bg-orange-deeper hover:border-orange-deeper transition-colors"
-          style={`--stagger-index: ${mobileGroups.length + 1}`}
+          class="flex items-center justify-center w-full px-7 py-3.5 font-semibold border-2 border-orange-deep bg-orange-deep text-white hover:bg-orange-deeper hover:border-orange-deeper transition-colors"
           aria-current={mobileCta.active ? 'page' : undefined}
         >
           {mobileCta.label}

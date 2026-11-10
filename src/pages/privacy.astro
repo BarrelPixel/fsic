@@ -1,225 +1,71 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
-import { EMAIL, ORG, mailto } from '../lib/site';
+import List from '../components/List.astro';
+import { EMAIL, mailto, ORG } from '../lib/site';
 
-const title = 'Privacy Policy';
-const description = 'How FSIC collects, uses, and protects your personal information when you visit our website.';
+// Copy: src/content/copy/privacy.md (Draft). It says only what the site does today; when the site changes
+// (analytics, a form, a newsletter, donations), the copy changes first. Kept out of search and out of the footer
+// until FSIC and its counsel approve it.
 ---
-<BaseLayout title={title} description={description} noindex={true}>
-  <Section>
-    <h1 class="mb-12">Privacy Policy</h1>
-    
+<BaseLayout title="Privacy Policy" description="What the Florida Space Innovation Center's website collects, and what FSIC does with it." noindex>
+
+  <PageHero title="Privacy Policy">
+    <p slot="aside">
+      Last updated November 10, 2026. Questions: <a href={mailto('Privacy')} class="link-on-dark">{EMAIL}</a>.
+    </p>
+    <p class="text-lead text-white/90 mb-0">What this website collects, and what FSIC does with it.</p>
+  </PageHero>
+
+  <Section heading="What the Site Collects">
     <Grid>
-      <div slot="label">
-        <p class="text-lead text-navy">Last Updated</p>
-      </div>
-      <div>
-        <p class="text-lead mb-8">November 10, 2026</p>
-        
-        <p class="mb-8">
-          The Florida Space Innovation Center Inc. ("FSIC," "we," "us," or "our") is committed to protecting your privacy. 
-          This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website 
-          <strong class="text-navy">fsic.space</strong> (the "Site").
-        </p>
-        
-        <p class="mb-8">
-          Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the Site.
-        </p>
+      <p slot="label" class="mb-0 text-statement text-navy">In short: very little.</p>
+      <div class="max-w-3xl">
+        <List
+          spacious
+          html
+          items={[
+            '<strong class="text-navy">No cookies.</strong> The site sets no cookies and has no accounts or sign-ins.',
+            `<strong class="text-navy">No forms.</strong> The site has no contact, newsletter or donation forms. To reach FSIC, you email ${EMAIL}.`,
+            '<strong class="text-navy">No analytics, for now.</strong> The site doesn’t measure visits. If FSIC adds website analytics, this policy will name the service and what it collects before it’s turned on.',
+            '<strong class="text-navy">No outside services on our pages.</strong> The site’s fonts and images are served from the site itself, so reading a page doesn’t send your information to other companies.',
+            '<strong class="text-navy">Server logs.</strong> Like any website, the site’s host keeps standard server logs, which include visitors’ IP addresses, for security and to keep the site running.',
+          ]}
+        />
       </div>
     </Grid>
   </Section>
 
-  <Section spacing="stacked">
-    <Grid labelAs="header">
-      <div slot="label">
-        <h2 class="text-2xl">Information We Collect</h2>
-      </div>
-      <div>
-        <h3 class="mb-3">Automatically Collected Information</h3>
-        <p class="mb-6">
-          When you visit our Site, we may automatically collect certain information about your device, including information about your 
-          web browser, IP address, time zone, and some of the cookies that are installed on your device. Additionally, as you browse 
-          the Site, we may collect information about the individual web pages that you view, what websites or search terms referred you 
-          to the Site, and information about how you interact with the Site.
+  <Section spacing="stacked" heading="When You Email FSIC">
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <div class="max-w-3xl">
+        <p>
+          When you email <a href={mailto()} class="link">{EMAIL}</a>, FSIC uses your name, address and message to reply and to follow up on what you asked about. FSIC doesn’t sell or rent your information, and shares it only when you ask us to (for example, to connect you with a partner) or when the law requires it.
         </p>
-
-        <h3 class="mb-3">Information You Provide</h3>
-        <p class="mb-6">
-          We may collect information that you voluntarily provide to us when you:
-        </p>
-        <ul class="list mb-8">
-          <li>Contact us via email at <a href={mailto()} class="link">{EMAIL}</a></li>
-          <li>Subscribe to our newsletter (if available)</li>
-          <li>Submit a contact form or inquiry</li>
-          <li>Register for events or programs</li>
-        </ul>
-
-        <p class="mb-0">
-          This information may include your name, email address, phone number, organization, and any other information you choose to provide.
-        </p>
+        <p class="mb-0">To ask what FSIC holds about you, or to have it corrected or deleted, email {EMAIL}.</p>
       </div>
     </Grid>
   </Section>
 
-  <Section spacing="stacked">
-    <Grid labelAs="header">
-      <div slot="label">
-        <h2 class="text-2xl">How We Use Your Information</h2>
-      </div>
-      <div>
-        <p class="mb-6">We use the information we collect to:</p>
-        <ul class="list mb-0">
-          <li>Respond to your inquiries and provide customer support</li>
-          <li>Send you information about our programs, events, and opportunities</li>
-          <li>Improve our website and user experience</li>
-          <li>Analyze how visitors use our Site to enhance our services</li>
-          <li>Prevent fraudulent activity and protect the security of our Site</li>
-          <li>Comply with legal obligations</li>
-        </ul>
+  <Section spacing="stacked" heading="Links, Children and Changes">
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <div class="max-w-3xl">
+        <p>
+          <strong class="text-navy">Links to other sites.</strong> The site links to other websites, such as FSIC’s LinkedIn, Facebook and X pages and the IRS’s search for tax-exempt organizations. Those sites have their own privacy policies.
+        </p>
+        <p>
+          <strong class="text-navy">Children.</strong> The site doesn’t collect information from anyone, including children. Programs for students will have their own notices, with parents’ consent where required.
+        </p>
+        <p>
+          <strong class="text-navy">Changes.</strong> When this policy changes, the date at the top changes. Significant changes, such as adding analytics or a form, are made here before they take effect on the site.
+        </p>
+        <p class="mb-0 text-caption text-gray-dark">{ORG.legalName}, New Smyrna Beach, Florida. {EMAIL}.</p>
       </div>
     </Grid>
   </Section>
 
-  <Section spacing="stacked">
-    <Grid labelAs="header">
-      <div slot="label">
-        <h2 class="text-2xl">Cookies & Tracking</h2>
-      </div>
-      <div>
-        <p class="mb-6">
-          We may use cookies, web beacons, and similar tracking technologies to collect information about your browsing activity. 
-          Cookies are small data files stored on your device that help us improve our Site and your experience.
-        </p>
-
-        <h3 class="mb-3">Types of Cookies We Use</h3>
-        <ul class="list mb-6">
-          <li><strong class="text-navy">Essential Cookies:</strong> Necessary for the Site to function properly</li>
-          <li><strong class="text-navy">Analytics Cookies:</strong> Help us understand how visitors interact with our Site</li>
-          <li><strong class="text-navy">Preference Cookies:</strong> Remember your settings and preferences</li>
-        </ul>
-
-        <p class="mb-0">
-          You can set your browser to refuse all cookies or to indicate when a cookie is being sent. However, some features of our 
-          Site may not function properly without cookies.
-        </p>
-      </div>
-    </Grid>
-  </Section>
-
-  <Section spacing="stacked">
-    <Grid labelAs="header">
-      <div slot="label">
-        <h2 class="text-2xl">Third-Party Services</h2>
-      </div>
-      <div>
-        <p class="mb-6">
-          We may use third-party service providers to help us operate our Site and analyze how it is used. These third parties 
-          may have access to your information only to perform these tasks on our behalf and are obligated not to disclose or use 
-          it for any other purpose.
-        </p>
-
-        <p class="mb-0">
-          Third-party services we may use include analytics providers (such as Google Analytics) and email service providers. 
-          These services have their own privacy policies governing the use of your information.
-        </p>
-      </div>
-    </Grid>
-  </Section>
-
-  <Section spacing="stacked">
-    <Grid labelAs="header">
-      <div slot="label">
-        <h2 class="text-2xl">Data Security</h2>
-      </div>
-      <div>
-        <p class="mb-0">
-          We use administrative, technical, and physical security measures to protect your personal information. However, no method 
-          of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means 
-          to protect your information, we cannot guarantee its absolute security.
-        </p>
-      </div>
-    </Grid>
-  </Section>
-
-  <Section spacing="stacked">
-    <Grid labelAs="header">
-      <div slot="label">
-        <h2 class="text-2xl">Your Rights</h2>
-      </div>
-      <div>
-        <p class="mb-6">You have the right to:</p>
-        <ul class="list mb-6">
-          <li>Access the personal information we hold about you</li>
-          <li>Request correction of inaccurate information</li>
-          <li>Request deletion of your personal information</li>
-          <li>Object to or restrict the processing of your information</li>
-          <li>Withdraw consent where we rely on consent to process your information</li>
-        </ul>
-
-        <p class="mb-0">
-          To exercise any of these rights, please contact us at <a href={mailto()} class="link">{EMAIL}</a>.
-        </p>
-      </div>
-    </Grid>
-  </Section>
-
-  <Section spacing="stacked">
-    <Grid labelAs="header">
-      <div slot="label">
-        <h2 class="text-2xl">Children's Privacy</h2>
-      </div>
-      <div>
-        <p class="mb-0">
-          Our Site is not intended for children under the age of 13. We do not knowingly collect personal information from children 
-          under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact 
-          us so we can delete such information.
-        </p>
-      </div>
-    </Grid>
-  </Section>
-
-  <Section spacing="stacked">
-    <Grid labelAs="header">
-      <div slot="label">
-        <h2 class="text-2xl">Changes to This Policy</h2>
-      </div>
-      <div>
-        <p class="mb-0">
-          We may update this Privacy Policy from time to time. The updated version will be indicated by an updated "Last Updated" date 
-          at the top of this Privacy Policy. We encourage you to review this Privacy Policy periodically for any changes. Your continued 
-          use of the Site after any modifications indicates your acceptance of the updated Privacy Policy.
-        </p>
-      </div>
-    </Grid>
-  </Section>
-
-  <Section spacing="stacked">
-    <Grid labelAs="header">
-      <div slot="label">
-        <h2 class="text-2xl">Contact Us</h2>
-      </div>
-      <div>
-        <p class="mb-6">
-          If you have questions or concerns about this Privacy Policy or our data practices, please contact us:
-        </p>
-        
-        <dl class="mb-0">
-          <div class="mb-4">
-            <dt class="text-label text-navy mb-1">Email</dt>
-            <dd><a href={mailto()} class="link">{EMAIL}</a></dd>
-          </div>
-          <div class="mb-4">
-            <dt class="text-label text-navy mb-1">Organization</dt>
-            <dd class="text-gray-dark">{ORG.legalName}</dd>
-          </div>
-          <div>
-            <dt class="text-label text-navy mb-1">EIN</dt>
-            <dd class="text-gray-dark">{ORG.ein}</dd>
-          </div>
-        </dl>
-      </div>
-    </Grid>
-  </Section>
 </BaseLayout>

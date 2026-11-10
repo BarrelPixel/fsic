@@ -15,7 +15,7 @@ const { id, class: className, summaryClass, iconClass } = Astro.props;
 <details id={id} class:list={['disclosure group', className]}>
   <summary class:list={['flex justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden', summaryClass]}>
     <slot name="summary" />
-    <svg class:list={['w-5 h-5 shrink-0 text-navy group-open:rotate-45', iconClass]} style="transition: transform 200ms cubic-bezier(0.2, 0, 0, 1)" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <svg class:list={['w-5 h-5 shrink-0 text-navy transition-transform duration-(--motion-fast) ease-standard group-open:rotate-45', iconClass]} viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M10 4v12M4 10h12" stroke-linecap="round" />
     </svg>
   </summary>

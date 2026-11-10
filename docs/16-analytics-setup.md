@@ -1,7 +1,8 @@
 # Analytics Setup Guide
 
 **Created:** November 10, 2026  
-**Status:** Framework Ready - Configuration Required
+**Status:** Framework ready, switched off. Which provider FSIC uses is an open question (`07-open-questions.md`, Analytics).
+**Revised:** November 10, 2026, after review (see "Corrections" below).
 
 ## Overview
 
@@ -9,10 +10,10 @@ The FSIC website includes a flexible analytics framework that supports both Goog
 
 ## Privacy-First Approach
 
-✅ **Privacy Policy Required**: The Privacy Policy page (`/privacy`) is live and linked in the footer  
-✅ **Do Not Track Support**: Automatically respects browser DNT settings  
-✅ **No Tracking Without Consent**: Analytics are disabled by default until configured  
-✅ **GDPR/CCPA Ready**: Framework supports privacy compliance
+- **Off by default.** Nothing loads unless `PUBLIC_ANALYTICS_ID` is set, and only in production builds. With analytics off, pages make no requests to analytics providers (not even DNS hints).
+- **Plausible is the default provider:** no cookies, no personal data, told the site's own domain automatically.
+- **GA4 respects Do Not Track and Global Privacy Control:** when the browser sends either, GA4 isn't loaded at all. GA4 sets cookies, so it also needs a consent banner (not built) before it's used for EU visitors.
+- **The Privacy Policy must change first.** `/privacy` is a draft that says the site has no analytics (`src/content/copy/privacy.md`). Before analytics is switched on, the policy names the service and what it collects, and is approved.
 
 ## Configuration
 
@@ -73,16 +74,16 @@ The FSIC website includes a flexible analytics framework that supports both Goog
 
 1. **Environment Check**: Analytics only loads in production (`import.meta.env.PROD`)
 2. **Provider Selection**: Framework automatically loads the correct provider based on `PUBLIC_ANALYTICS_PROVIDER`
-3. **DNT Respect**: Script checks for Do Not Track and disables tracking if enabled
-4. **Privacy Integration**: Privacy Policy page documents all tracking practices
+3. **DNT and GPC respect (GA4)**: the GA4 loader returns without loading Google's script when Do Not Track or Global Privacy Control is on
+4. **Privacy Policy first**: update `src/content/copy/privacy.md` and `/privacy` before switching analytics on
 
 ### Code Example
 
 ```typescript
 // Environment variables (set in GitHub Actions secrets or .env.production)
-PUBLIC_ANALYTICS_ID=G-XXXXXXXXXX  # GA4 Measurement ID or Plausible domain
-PUBLIC_ANALYTICS_PROVIDER=ga4     # 'ga4' or 'plausible'
-PUBLIC_PLAUSIBLE_DOMAIN=fsic.space # Optional: Plausible domain override
+PUBLIC_ANALYTICS_PROVIDER=plausible  # 'plausible' (default) or 'ga4'
+PUBLIC_ANALYTICS_ID=on               # GA4: the measurement ID (G-…). Plausible: any value turns it on
+# Plausible's domain comes from `site` in astro.config.mjs (fsic.space at launch)
 ```
 
 ## Testing Analytics
@@ -116,7 +117,7 @@ npm run preview
 
 - [x] Privacy Policy page created and accessible
 - [x] Privacy Policy link in footer
-- [x] Do Not Track support implemented
+- [x] Do Not Track and Global Privacy Control respected (GA4)
 - [ ] Cookie consent banner (if using GA4 with cookies)
 - [ ] Update Privacy Policy with specific analytics provider details
 - [ ] Configure data retention settings in analytics platform
@@ -175,3 +176,11 @@ Both implementations use `async` or `defer` to avoid blocking page render.
 ## Questions?
 
 Contact the development team or consult the Privacy Policy page for user-facing information about data collection.
+
+## Corrections (November 10, 2026)
+
+A review of the first version found:
+- **Do Not Track wasn't respected.** This document and the component's comment said it was, but nothing checked it. GA4 now isn't loaded when Do Not Track or Global Privacy Control is on.
+- **Plausible had no domain.** It needs the site's domain to record anything. It now comes from `site`.
+- **DNS hints for Google Tag Manager and Plausible were on every page** even with analytics off. They now appear only when analytics is on.
+- **The Privacy Policy described analytics and cookies the site doesn't use.** It's rewritten as a draft that matches the site, unlinked until approved.
