@@ -10,12 +10,14 @@ import { EMAIL, mailto } from '../lib/site';
 import Closing from '../components/Closing.astro';
 import { DISCLAIMER, SOURCE, glance, scenarios, comparison, roi } from '../data/economics';
 import RangeBarsDraw from '../components/RangeBarsDraw.astro';
-import RangeBar from '../components/RangeBar.astro';
 import RangeLegend from '../components/RangeLegend.astro';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 import HeroIndex from '../components/HeroIndex.astro';
 import { url } from '../lib/url';
+import RangeTable from '../components/RangeTable.astro';
+import RangeRow from '../components/RangeRow.astro';
+import TableRow from '../components/TableRow.astro';
 
 // Copy: src/content/copy/economic-impact.md (Draft). Wording is verbatim from the copy deck.
 // Open review items (see the ⚠ notes there): the headline figures are the FSIC 2.0 scenario;
@@ -60,18 +62,17 @@ const at = (id: string) => sectionProps(sections, id);
   <!-- 01 · AT A GLANCE: figure (cols 1–4) | what it means (5–8) | range bar (9–12) -->
   <Section {...at('at-a-glance')} heading="25-Year Impact at a Glance" intro="Extended FSIC (FSIC 2.0) scenario, over 25 years:">
     <!-- The range bars draw in once when the list is in view (global.css "Range bars draw in") -->
-    <ul class="range-bars border-t border-rule" role="list" data-range-bars>
+    <RangeTable>
       {glance.map((row, r) => (
-        <li class="grid gap-y-3 py-6 border-b border-rule lg:grid-cols-12 lg:gap-x-8 lg:items-baseline" style={`--row:${r}`}>
-          <div class="lg:col-span-4">
+        <RangeRow low={row.low} high={row.high} index={r} spans={[4, 5]}>
+          <div slot="figure">
             <p class="mb-1 text-3xl md:text-4xl font-bold text-navy font-display leading-tight tabular-nums">{row.display}</p>
             <p class="mb-0 text-label text-navy">{row.metric}</p>
           </div>
-          <p class="lg:col-span-5 mb-0 text-base text-gray-dark">{row.body}</p>
-          <RangeBar low={row.low} high={row.high} class="lg:col-span-3 lg:self-center" />
-        </li>
+          <p slot="detail" class="mb-0 text-base text-gray-dark">{row.body}</p>
+        </RangeRow>
       ))}
-    </ul>
+    </RangeTable>
 
     <Grid class="mt-10">
       <p slot="label" class="mb-0 text-statement text-navy">
@@ -188,23 +189,23 @@ const at = (id: string) => sectionProps(sections, id);
     </Grid>
 
     <div class="mt-14">
-      <div class="hidden lg:grid lg:grid-cols-12 lg:gap-x-8 border-b-2 border-navy pb-3" aria-hidden="true">
-        <p class="lg:col-span-4 mb-0 text-label text-navy">Impact</p>
-        <p class="lg:col-span-4 mb-0 text-label text-navy">Key outcomes</p>
-        <p class="lg:col-span-4 mb-0 text-label text-navy">Economic implications</p>
-      </div>
+      <TableRow head spans={[4, 4, 4]}>
+        <p slot="c1" class="mb-0 text-label text-navy">Impact</p>
+        <p slot="c2" class="mb-0 text-label text-navy">Key outcomes</p>
+        <p slot="c3" class="mb-0 text-label text-navy">Economic implications</p>
+      </TableRow>
       {roi.map((row) => (
-        <div class="grid gap-y-4 py-6 border-b border-rule lg:grid-cols-12 lg:gap-x-8">
-          <h3 class="lg:col-span-4 text-xl mb-0">{row.area}</h3>
-          <div class="lg:col-span-4">
+        <TableRow spans={[4, 4, 4]} class="gap-y-4 py-6">
+          <h3 slot="c1" class="text-xl mb-0">{row.area}</h3>
+          <Fragment slot="c2">
             <p class="lg:sr-only mb-2 text-label text-navy">Key outcomes</p>
             <List items={row.outcomes} class="text-gray-dark" />
-          </div>
-          <div class="lg:col-span-4">
+          </Fragment>
+          <Fragment slot="c3">
             <p class="lg:sr-only mb-2 text-label text-navy">Economic implications</p>
             <List items={row.implications} class="text-navy" />
-          </div>
-        </div>
+          </Fragment>
+        </TableRow>
       ))}
     </div>
 

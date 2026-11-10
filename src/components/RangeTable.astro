@@ -1,0 +1,11 @@
+---
+// A table of estimate ranges (DESIGN.md "Data"): one RangeRow per figure. The bars draw in once when the
+// table scrolls into view (global.css "Range bars draw in"); include RangeBarsDraw once on the page.
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+---
+<ul class:list={['range-bars border-t', dark ? 'border-rule-on-dark' : 'border-rule']} role="list" data-range-bars>
+  <slot />
+</ul>
