@@ -13,6 +13,8 @@ export type Phase = {
   end: number;
   /** Engine color: orange for the industry engines, lagoon for Civic, navy for integration. */
   tone: Tone;
+  /** The phase FSIC is in now (the homepage marks it "Under way"). Move it when the next phase starts. */
+  current?: boolean;
   overview: string;
   activities: string[];
   outcomes: string[];
@@ -27,6 +29,7 @@ export const phases: Phase[] = [
     short: 'Talent',
     name: 'Foundation & Talent Engine Launch',
     timeframe: 'Year 1',
+    current: true,
     start: 1,
     end: 1,
     tone: 'orange',

@@ -1,7 +1,7 @@
 # Home Page Copy
 
-**Status:** Approved
-**Last Updated:** November 2026
+**Status:** Approved, with Track B changes in review (`docs/10-homepage-plan.md`)
+**Last Updated:** November 10, 2026
 
 > **Homepage review (November 2026):** new lines and changes are marked **⚠ Review** below (latest news, phases, strategic value, hero button and tense, job-year note, common questions). The rest of the file stays as approved.
 
@@ -24,14 +24,18 @@
 
 ## HERO
 
-**Headline:** A New Commitment to the Space Coast
+**Headline:** Opportunity That Flows Into Southeast Volusia — Not Past It
 
-**Body:**
-On May 25, 1961, the United States committed to landing a man on the Moon — not because it was easy, but because it demanded coordination, capability, and national resolve.
+**Lead:**
+The Florida Space Innovation Center is a coordinated regional platform for workforce, innovation, and industry growth, so that the Space Coast's expansion directly benefits the people who live and work here.
 
-Sixty-five years later, Southeast Volusia launched its own coordinated commitment: to strengthen our regional workforce, accelerate innovation, support industry growth, and ensure that the Space Coast's expansion directly benefits the people who live and work here.
-
-The Florida Space Innovation Center is that commitment in action.
+> **Changed (November 10, 2026, plan B1):** the hero says what FSIC is and where, before anything else, and the buttons follow the lead (on phones they were below the first screen). The headline is the line the live site uses for the mission ("It ensures that opportunity flows into Southeast Volusia — not past it."; `strategic-moment.md`, DESIGN.md). The lead joins the site's description (the meta description) and the approved hero's "ensure that the Space Coast's expansion directly benefits the people who live and work here". The 1961 parallel moves to open The Strategic Moment, below. **⚠ Review:** new headline and lead.
+>
+> Previous (approved) hero, kept for reference:
+> **Headline:** A New Commitment to the Space Coast
+> On May 25, 1961, the United States committed to landing a man on the Moon — not because it was easy, but because it demanded coordination, capability, and national resolve.
+> Sixty-five years later, Southeast Volusia launched its own coordinated commitment: to strengthen our regional workforce, accelerate innovation, support industry growth, and ensure that the Space Coast's expansion directly benefits the people who live and work here.
+> The Florida Space Innovation Center is that commitment in action.
 
 > **Changed (November 2026):** "launches" → "launched". The copy was written for launch day, May 25, 2026; the launch has happened (homepage review). **⚠ Review:** one-word change to approved copy.
 
@@ -43,11 +47,35 @@ The Florida Space Innovation Center is that commitment in action.
 
 ---
 
+## WHERE YOU FIT
+
+> **Added (November 10, 2026, plan B2):** an unnumbered band directly under the hero, so each audience finds its part within the first screens instead of at the close. The lines summarize `partnership-funding.md` (partner roles) and `programs-facilities.md` (programs by audience); nothing new is claimed. The audience list beside the close is removed, since this band replaces it. **⚠ Review:** headline, label line and the five lines are new.
+
+**Headline:** Where You Fit
+
+**Label:** FSIC is a coordinated platform. Each part of the region has a role in it.
+
+**Rows** (audience — line — link):
+- Employers — Validate curriculum, host internships and apprenticeships, and shape a local talent pipeline. — How employers take part (Partnership & Funding, Employers & Industry)
+- University leaders — Co-develop pathways, collaborate on applied research, and pursue joint federal funding. — How universities take part (State College & Universities)
+- Policymakers — Align economic development, infrastructure, and grant applications with the region's growth. — How local government takes part (Local Government)
+- Workforce partners — Bring labor market data and employer engagement into one regional strategy. — How workforce agencies take part (Economic Development & Workforce Agencies)
+- Residents and families — Hands-on STEM learning, dual-enrollment pathways, and micro-credentials tied to real jobs. — Programs for residents (Programs & Facilities, Programs by Audience)
+
+---
+
 ## THE STRATEGIC MOMENT
 
 **Headline:**
 The Question Is Not Whether the Space Coast Will Grow.
 It Is Whether Southeast Volusia Will Participate in That Growth.
+
+**Opening** (moved from the hero, plan B1):
+On May 25, 1961, the United States committed to landing a man on the Moon — not because it was easy, but because it demanded coordination, capability, and national resolve.
+
+Sixty-five years later, on the same date, Southeast Volusia launched its own coordinated commitment: the Florida Space Innovation Center.
+
+> **⚠ Review:** the first paragraph is the approved hero's. The second is shortened from it (its list of aims is now the hero lead); "on the same date" is new.
 
 **Body:**
 Florida's space economy is expanding rapidly — driven by commercial launch activity, advanced manufacturing, aerospace engineering, and emerging technologies.
@@ -66,9 +94,11 @@ FSIC is designed to align education, industry, and community in one coordinated 
 
 ## THE ECONOMIC CASE
 
-**Headline:** Transformational, Long-Term Regional Impact
+**Headline:** Long-Term Impact for the Region
 
-**Body intro:** Independent 25-year analysis projects that FSIC will generate:
+**Body intro:** Independent 25-year analysis projects that FSIC will generate, with full implementation (the Master Plan's FSIC 2.0 scenario):
+
+> **Changed (November 10, 2026, plan B5):** the headline was "Transformational, Long-Term Regional Impact"; the content guidelines prefer measured words, and the figures make the point. The intro names the scenario, as the Economic Impact page does and as the FAQ's "with full implementation" implies. **⚠ Review:** both; naming the scenario answers the open question "Economic scenario" (`docs/07-open-questions.md`, audit §3.10).
 
 **Stats:**
 - $10.2–$12.4 Billion in total economic output
@@ -103,6 +133,16 @@ It is a durable economic backbone.
 **List:** the three newest press releases: date and title, each linking to the release.
 
 **CTA:** All News & Media
+
+**Follow line:** Follow FSIC on LinkedIn, Facebook, and X.
+
+> **Added (November 10, 2026, plan B6):** a next step for visitors not ready to partner. Links from `src/lib/site.ts`. **⚠ Review:** new line. A newsletter sign-up can join it once a provider is chosen.
+
+**Governance block** (from Governance & Transparency, below): after the governance list, the people appointed so far, each linking to the release that announced them, with the role as the release headline gives it:
+- Board of Directors: Jessie Thompson, School Board Member; Diezel DePew, Mayor of Edgewater; Ryan Trine, CEO of R3Doubt
+- Founders Council: Jake Johansson
+
+> **Added (November 10, 2026, plan B4):** names and roles as published in FSIC's releases. **⚠ Review:** confirm current titles and whether this is the full seated board (open question "Titles"); the Governance page still leaves names out until then.
 
 ---
 
@@ -141,7 +181,7 @@ This phased approach:
 
 Growth is structured. Not speculative.
 
-**Phases:** the five phases from `src/data/phases.ts`, each as "Phase N · timeframe" and its name, linking to that phase on the Deployment page. Phase 1 adds:
+**Phases:** the five phases from `src/data/phases.ts`, each as "Phase N · timeframe" and its name, linking to that phase on the Deployment page. The current phase adds "Under way" after its timeframe (plan B3; set by `current` in `phases.ts`). **⚠ Review:** confirm Phase 1 is the current phase. Phase 1 adds:
 Micro-credential academies, dual-enrollment STEM pathways, teacher upskilling, and the Regional Talent Marketplace.
 
 > **Changed (November 2026):** the two blocks that repeated the body ("First: the Talent Engine / Then: Innovation, Market, and Civic") are replaced by the five phases with their timeframes, so the section shows the sequence and what comes first (homepage review). Phase names and timeframes are the Deployment page's (Master Plan pp. 13–14). **⚠ Review:** the Phase 1 line is new, drawn from the Master Plan's Phase 1 activities (p. 13).
@@ -217,6 +257,8 @@ The Florida Space Innovation Center represents a coordinated investment in the r
 Whether you are an employer, university leader, policymaker, workforce partner, or community member, there is a role to play in shaping Southeast Volusia's place in the global space economy.
 
 **CTAs:** Become a Partner; Contact FSIC
+
+> **Changed (November 10, 2026, plan B2):** the list of audiences beside the body is removed: Where You Fit, under the hero, now does that job. The common questions move into its place. **⚠ Review.**
 
 **Common questions:** four FAQ questions, as published on `/faq`, each linking to its answer: How will FSIC benefit local residents and families? Will FSIC compete with local schools, colleges, or nonprofits? How is FSIC funded? Where will FSIC be located?
 
