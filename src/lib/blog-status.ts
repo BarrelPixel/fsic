@@ -10,7 +10,9 @@ type Status = { status?: string; publishDate?: Date | string };
 
 // Builds use today's date. BLOG_NOW=YYYY-MM-DD builds the site as it will be on that day (e.g. to check that a
 // coming release builds and links cleanly: BLOG_NOW=2027-03-09 npm run check-links).
-const NOW = typeof process !== 'undefined' && process.env?.BLOG_NOW ? new Date(`${process.env.BLOG_NOW}T15:00:00Z`) : new Date();
+// (Read through globalThis: the browser bundle has no `process`, and the project has no Node types.)
+const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env;
+const NOW = env?.BLOG_NOW ? new Date(`${env.BLOG_NOW}T15:00:00Z`) : new Date();
 
 export function isLive(d: Status, now: Date = NOW): boolean {
   if (d.status === 'published') return true;
