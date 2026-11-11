@@ -3,10 +3,23 @@
 // ("/economic-impact/"). This adds the base path to them, as url() does for pages, so they work on the
 // /fsic preview and at fsic.space. External ("https://…"), protocol-relative ("//…") and in-page ("#…") links
 // are left alone.
+//
+// A link to another post that isn't live yet (in review, or scheduled for a later date) is shown as its text
+// without the link, and becomes a link on the build after that post goes live. So a post can link ahead to one
+// published later, and the daily rebuild that releases it never meets a broken link.
 import { url } from '../lib/url';
+import { getPosts, isPublished } from '../lib/blog';
 
 const base = url('/').replace(/\/$/, '');
-const html = await Astro.slots.render('default');
+let html = await Astro.slots.render('default');
+
+// Posts not live in this build (in `npm run dev`, drafts are shown and stay linked).
+const live = new Set((await getPosts()).filter(isPublished).map((p) => p.id));
+const showAll = import.meta.env.DEV;
+html = html.replace(/<a href="\/blog\/([a-z0-9-]+)\/?(#[^"]*)?"[^>]*>([\s\S]*?)<\/a>/g, (link, slug, _hash, text) =>
+  showAll || live.has(slug) ? link : text,
+);
+
 // Root-relative links not already under the base: href="/x" → href="/fsic/x" (and not "//x" or "/fsic/x").
 const rootLink = new RegExp(`href="/(?!/|${base.slice(1).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/)`, 'g');
 const out = base ? html.replace(rootLink, `href="${base}/`) : html;

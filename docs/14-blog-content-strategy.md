@@ -213,6 +213,12 @@ When a post is published, `npm run blog-plan` adds its follow-up to the plan, ma
 | 14 | What apprenticeships will FSIC offer for aerospace and advanced manufacturing? | Talent |  |  | What Is Dual Enrollment? FSIC's STEM Pathways | **Drafted** (`what-apprenticeships-will-fsic-offer`) |
 | 15 | How will FSIC's economic impact be measured and reported over time? | Regional economy |  |  | What Are FSIC's Three Economic Scenarios? | **In review** (`how-fsic-measures-economic-impact`) |
 | 16 | How will FSIC measure Talent Engine outcomes and report results? | About FSIC |  |  | Why Does FSIC Start with the Talent Engine? | **In review** (`how-fsic-measures-talent-outcomes`) |
+| 17 | What is FSIC's relationship with developers and real estate interests? | About FSIC |  |  | How Is FSIC Governed and Kept Independent? | **In review** (`fsic-relationship-with-developers`) |
+| 18 | How does FSIC report its finances and outcomes to the public? | About FSIC |  |  | What Does FSIC's 501(c)(3) Status Mean? | **In review** (`how-fsic-reports-finances`) |
+| 19 | How can schools and community groups partner with FSIC's Civic Engine? | Community |  |  | What Will the Civic Engine Offer Residents? | **In review** (`how-to-partner-with-civic-engine`) |
+| 20 | What are industry-recognized credentials, and why do they matter? | Talent |  |  | How Will FSIC Measure Talent Engine Outcomes? | **In review** (`what-are-industry-recognized-credentials`) |
+| 21 | What is return on investment (ROI) for workforce development programs? | Regional economy |  |  | How Will FSIC Measure Its Economic Impact? | **In review** (`what-is-roi-for-workforce-programs`) |
+| 22 | What is teacher upskilling, and what does FSIC plan for educators? | Talent |  |  |  | **In review** (`what-is-teacher-upskilling`) |
 
 <!-- calendar:end -->
 
