@@ -1,15 +1,20 @@
 // When a blog post is live (docs/14 §8, docs/20). Pure functions on frontmatter, with no astro:content import,
 // so the menu (nav.ts), the page head, the sitemap and the feeds can all use the same rule:
-//   published  live now (approved and released)
-//   scheduled  approved by FSIC; goes live when publishDate has passed, at the next build. The deploy
-//              rebuilds every morning (.github/workflows/deploy.yml), so a scheduled post appears on its day
-//              without anyone committing anything.
-//   draft, review  never live. Review means waiting for FSIC's approval; nothing publishes it automatically.
+//   published            live now
+//   review or scheduled  live once its publishDate has passed, at the next build. The publish date is what
+//                        decides (project lead, November 2026); review is not an approval gate. The deploy
+//                        rebuilds every morning (.github/workflows/deploy.yml), so a post appears on its day
+//                        without anyone committing anything.
+//   draft                never live, whatever its date. Set a post to draft to hold it.
 type Status = { status?: string; publishDate?: Date | string };
 
-export function isLive(d: Status, now: Date = new Date()): boolean {
+// Builds use today's date. BLOG_NOW=YYYY-MM-DD builds the site as it will be on that day (e.g. to check that a
+// coming release builds and links cleanly: BLOG_NOW=2027-03-09 npm run check-links).
+const NOW = typeof process !== 'undefined' && process.env?.BLOG_NOW ? new Date(`${process.env.BLOG_NOW}T15:00:00Z`) : new Date();
+
+export function isLive(d: Status, now: Date = NOW): boolean {
   if (d.status === 'published') return true;
-  if (d.status !== 'scheduled' || !d.publishDate) return false;
+  if (d.status === 'draft' || !d.publishDate) return false;
   const day = typeof d.publishDate === 'string' ? new Date(`${d.publishDate}T00:00:00Z`) : d.publishDate;
   return day.getTime() <= now.getTime();
 }

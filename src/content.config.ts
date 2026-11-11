@@ -52,11 +52,11 @@ const blog = defineCollection({
         faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
         /** Every figure and claim traces to one of these (docs/03 "Attribution"). */
         sources: z.array(z.object({ title: z.string(), publisher: z.string(), url: z.url().optional(), date: z.string().optional() })).min(1),
-        /** draft → review (waiting for FSIC) → scheduled (approved; live on publishDate) or published (live now). */
+        /** draft (never live: a post on hold) · review or scheduled (live on publishDate) · published (live now). */
         status: z.enum(['draft', 'review', 'scheduled', 'published']).default('draft'),
         /**
-         * The date a scheduled post goes live (YYYY-MM-DD), at the deploy's daily rebuild (src/lib/blog-status.ts).
-         * Required with status 'scheduled'; ignored for review and draft, which never publish on their own.
+         * The date the post goes live (YYYY-MM-DD), at the deploy's daily rebuild (src/lib/blog-status.ts), whether its
+         * status is review or scheduled. Required with 'scheduled'. A draft never publishes, whatever its date.
          */
         publishDate: z.coerce.date().optional(),
         /**

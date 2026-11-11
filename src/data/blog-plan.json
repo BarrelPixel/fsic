@@ -28,6 +28,17 @@
     {"slug":"how-school-districts-partner-with-fsic","question":"How can school districts partner with FSIC?","topic":"talent","audiences":"","sources":"","from":"what-is-teacher-upskilling"},
     {"slug":"space-coast-aerospace-jobs-and-pay","question":"What aerospace and advanced manufacturing jobs exist on the Space Coast, and what do they pay?","topic":"region","audiences":"","sources":""},
     {"slug":"what-is-a-rapid-prototyping-studio","question":"What is a rapid prototyping studio, and what happens at an innovation sprint?","topic":"innovation","audiences":"","sources":""},
-    {"slug":"what-is-the-regional-talent-marketplace","question":"What is the Regional Talent Marketplace, and how will it connect employers and job seekers?","topic":"talent","audiences":"","sources":"","from":"how-employers-shape-fsic-training"}
+    {"slug":"what-is-the-regional-talent-marketplace","question":"What is the Regional Talent Marketplace, and how will it connect employers and job seekers?","topic":"talent","audiences":"","sources":"","from":"how-employers-shape-fsic-training"},
+    {"slug":"what-are-fsics-advisory-councils","question":"What are FSIC's advisory councils, and what do they do?","topic":"organization","audiences":"","sources":"","from":"fsic-relationship-with-developers"},
+    {"slug":"what-is-form-990","question":"What is a Form 990, and what does it show about a nonprofit?","topic":"organization","audiences":"","sources":"","from":"how-fsic-reports-finances"},
+    {"slug":"what-are-eda-tech-hubs-and-nsf-engines","question":"What are EDA Tech Hubs and NSF Engines, and why do they matter for regions like Southeast Volusia?","topic":"region","audiences":"","sources":"","from":"how-is-fsic-funded"},
+    {"slug":"what-is-k12-stem-exploration","question":"What is K–12 STEM exploration, and what will FSIC offer younger students?","topic":"talent","audiences":"","sources":"","from":"how-school-districts-partner-with-fsic"},
+    {"slug":"old-space-vs-new-space","question":"What is the difference between 'old space' and 'new space' companies?","topic":"region","audiences":"","sources":"","from":"how-the-space-economy-is-growing"},
+    {"slug":"what-is-as9100-certification","question":"What is AS9100 certification, and do all aerospace suppliers need it?","topic":"market","audiences":"","sources":"","from":"how-to-become-a-space-supplier"},
+    {"slug":"how-to-volunteer-with-fsic","question":"How can residents volunteer or mentor with FSIC?","topic":"civic","audiences":"","sources":"","from":"how-to-partner-with-civic-engine"},
+    {"slug":"where-southeast-volusia-residents-commute","question":"Where do Southeast Volusia residents work, and how far do they commute?","topic":"region","audiences":"","sources":"","from":"space-coast-aerospace-jobs-and-pay"},
+    {"slug":"how-to-sponsor-challenge-lab","question":"How can a business sponsor a challenge lab project at FSIC?","topic":"innovation","audiences":"","sources":"","from":"what-is-a-challenge-lab"},
+    {"slug":"what-is-dual-use-technology","question":"What is dual-use technology, and why does FSIC focus on it?","topic":"innovation","audiences":"","sources":"","from":"what-is-a-rapid-prototyping-studio"},
+    {"slug":"what-is-industry-embedded-learning","question":"What is industry-embedded learning, and how will students learn on the job?","topic":"talent","audiences":"","sources":"","from":"what-is-the-regional-talent-marketplace"}
   ]
 }
