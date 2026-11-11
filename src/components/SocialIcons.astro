@@ -1,0 +1,30 @@
+---
+// FSIC's social profiles as icons (src/lib/site.ts SOCIAL_LINKS): the platform marks in one color, at 24px, each in
+// a 44px square target (the minimum touch size). The link's name ("FSIC on LinkedIn") is its accessible label;
+// the mark is decorative. On night (dark) the marks are white at 75%, white on hover; on white, navy.
+import { SOCIAL_LINKS } from '../lib/site';
+
+interface Props {
+  dark?: boolean;
+  class?: string;
+}
+const { dark = false, class: className } = Astro.props;
+---
+<ul class:list={['flex -ml-2.5', className]} role="list">
+  {SOCIAL_LINKS.map((link) => (
+    <li>
+      <a
+        href={link.href}
+        rel="noopener"
+        aria-label={`FSIC on ${link.label}`}
+        title={`FSIC on ${link.label}`}
+        class:list={[
+          'flex size-11 items-center justify-center transition-colors duration-(--motion-fast)',
+          dark ? 'text-white/75 hover:text-white' : 'text-navy hover:text-navy-light',
+        ]}
+      >
+        <svg viewBox="0 0 24 24" class="size-6 fill-current" aria-hidden="true" focusable="false"><path d={link.icon} /></svg>
+      </a>
+    </li>
+  ))}
+</ul>
