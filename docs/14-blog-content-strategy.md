@@ -200,7 +200,7 @@ When a post is published, `npm run blog-plan` adds its follow-up to the plan, ma
 | 2 | What is a micro-credential, and how will FSIC offer them? | Talent | Students, job-seekers, employers | Master Plan pp. 13, 19–21; FAQ |  | **Published** (`what-is-a-micro-credential`) |
 | 3 | Why does FSIC start with the Talent Engine? | Talent | Partners, funders | Master Plan p. 13; Deployment page |  | **In review** (`why-fsic-starts-with-talent`) |
 | 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | What Is a Micro-Credential? FSIC’s Short, Job-Focused Training | **In review** (`what-is-dual-enrollment`) |
-| 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | What Are SBIR and STTR? Federal Grants for Innovation | **In review** (`how-to-become-a-space-supplier`) |
+| 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | What Are SBIR and STTR? Federal Funding for Small Business R&D | **In review** (`how-to-become-a-space-supplier`) |
 | 6 | What are SBIR and STTR, and how can a Volusia County business apply? | Business | Employers, startups | SBIR.gov; Master Plan |  | **In review** (`what-are-sbir-and-sttr`) |
 | 7 | What is a challenge lab? | Innovation | Universities, employers | Master Plan pp. 19–21 |  | **In review** (`what-is-a-challenge-lab`) |
 | 8 | What is a "backbone organization", and why is FSIC one? | About FSIC | Policymakers, partners | FAQ; Governance page |  | **In review** (`what-is-a-backbone-organization`) |
@@ -209,7 +209,7 @@ When a post is published, `npm run blog-plan` adds its follow-up to the plan, ma
 | 11 | What will the Civic Engine offer residents? | Community | Residents, families | Master Plan pp. 19–21; Programs & Facilities |  | **In review** (`what-the-civic-engine-offers`) |
 | 12 | How is FSIC governed, and how is it kept independent? | About FSIC | Funders, residents | Governance page; Master Plan pp. 15–17 | What Is a Backbone Organization? FSIC's Role | **In review** (`how-fsic-is-governed`) |
 | 13 | What are the three scenarios in FSIC's economic analysis, and how do they differ? | Regional economy |  |  | What Is a Job-Year? Reading FSIC’s 25-Year Projections | **In review** (`what-are-fsics-economic-scenarios`) |
-| 14 | What apprenticeships will FSIC offer for aerospace and advanced manufacturing? | Talent |  |  | What Is Dual Enrollment? FSIC's STEM Pathways | **In review** (`what-apprenticeships-will-fsic-offer`) |
+| 14 | What apprenticeships will FSIC offer for aerospace and advanced manufacturing? | Talent |  |  | What Is Dual Enrollment? FSIC's STEM Pathways | **Drafted** (`what-apprenticeships-will-fsic-offer`) |
 | 15 | How will FSIC's economic impact be measured and reported over time? | Regional economy |  |  | What Are FSIC's Three Economic Scenarios? | **In review** (`how-fsic-measures-economic-impact`) |
 | 16 | How will FSIC measure Talent Engine outcomes and report results? | About FSIC |  |  | Why Does FSIC Start with the Talent Engine? | **In review** (`how-fsic-measures-talent-outcomes`) |
 

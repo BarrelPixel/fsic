@@ -1,6 +1,6 @@
 # 23 — Site Elevation Plan (interior pages)
 
-**Status:** Proposed (November 11, 2026). Nothing in this plan is built yet.
+**Status:** Built (November 11, 2026): S1–S5 are on the pages; the S1 leads and S6 wording are drafts awaiting FSIC review (⚠ Review in each page's copy file). S7 is met by S1.
 **Builds on:** the homepage reviews (`10-homepage-plan.md`, `11-homepage-story.md`, `12-homepage-engagement.md`). The same lenses, applied to the twelve interior pages:
 1. **Story:** does each page, and the site as a whole, run in an order a reader can follow?
 2. **Answer first:** does the first screen answer the page's question?
