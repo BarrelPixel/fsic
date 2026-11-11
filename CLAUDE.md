@@ -31,7 +31,7 @@ src/pages/           One .astro file per route. index, model, economic-impact, d
 src/components/      Grid components (Section, Grid, Row, List, PageHero, SectionBar, RunningHead),
                      Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBar, RangeLegend,
                      RangeBarsDraw, RangeTable, RangeRow, TableRow, YearScale, YearBar, Dot, MoreLink,
-                     ConceptRendering, HomeHero, BaseLinks, PostVisual (a blog post's "at a glance" figure), SolicitationDisclosure, Analytics, ComingSoon
+                     ConceptRendering, HomeHero, BaseLinks, PostVisual (a blog post's "at a glance" figure), RegionMap (the homepage map and next launch), SolicitationDisclosure, Analytics, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, range-bar animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
@@ -51,7 +51,7 @@ src/lib/seo.ts       Indexing switch, absolute URLs, schema.org builders, the on
 src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
                      ranges, read by home, Economic Impact, Partnership & Funding and the FAQ), phases,
                      engines, programs, faq, partnership, governance
-docs/                Project docs 00–23 (IA, content guidelines, site audit, copy-deck workflow, homepage reviews, refactor/SEO/AEO review, blog strategy, site elevation plan)
+docs/                Project docs 00–24 (IA, content guidelines, site audit, copy-deck workflow, homepage reviews, refactor/SEO/AEO review, blog strategy, site elevation plan, narrative)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
 scripts/             check-links.mjs (run via `npm run check-links`)

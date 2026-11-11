@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { paths } from '../data/paths';
+import YearScale from '../components/YearScale.astro';
+import YearBar from '../components/YearBar.astro';
+import { pad2 } from '../lib/format';
 import Button from '../components/Button.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
@@ -24,6 +28,7 @@ import { faqText } from '../data/faq';
 
 const sections: PageSection[] = [
   { id: 'audiences', name: 'Programs by Audience', short: 'Audiences' },
+  { id: 'paths', name: 'Example Paths', short: 'Paths' },
   { id: 'portfolio', name: 'Program Portfolio and Core Offerings', short: 'Portfolio' },
   { id: 'facilities', name: 'Facilities and Infrastructure Plan', short: 'Facilities' },
 ];
@@ -88,7 +93,49 @@ const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timefr
     </Grid>
   </Section>
 
-  <!-- 02 · Program portfolio (Master Plan pp. 19–21): one row per engine, each program opening in
+  <!-- 02 · Example paths (docs/24): how a student, a career-switcher and a manufacturer could move through the
+       programs, each step a Master Plan program on the Years 1–5 track. Illustrations, not people (src/data/paths.ts). -->
+  <Section
+    {...at('paths')}
+    spacing="stacked"
+    heading="Example Paths"
+    intro="Three examples of how a person or a business could move through FSIC's programs. They are illustrations, not real people: each step is a program in the Master Plan, shown when it is planned to start."
+  >
+    <Grid>
+      <Fragment slot="label"></Fragment>
+      <div>
+        {paths.map((path, i) => (
+          <div class:list={[i > 0 && 'mt-12']} id={`path-${path.id}`}>
+            <h3 class="text-2xl mb-4">{path.who}</h3>
+            <div class="hidden sm:grid sm:grid-cols-[minmax(0,5fr)_minmax(0,3fr)] sm:gap-x-6 pb-2 font-sans" aria-hidden="true">
+              <span></span>
+              <YearScale />
+            </div>
+            <ol class="font-sans border-t border-rule">
+              {path.steps.map((step, n) => (
+                <li class="grid gap-y-2 sm:grid-cols-[minmax(0,5fr)_minmax(0,3fr)] sm:gap-x-6 sm:items-center py-3 border-b border-rule">
+                  <span class="flex items-baseline gap-3">
+                    <span class="text-caption text-gray tabular-nums">{pad2(n + 1)}</span>
+                    <span>
+                      <a href={url(step.href)} class="block font-display text-lg font-semibold text-navy leading-snug underline-reveal underline-offset-4">{step.program}</a>
+                      <span class="block mt-1 font-serif text-gray-dark">{step.what}</span>
+                    </span>
+                  </span>
+                  <span class="block pl-8 sm:pl-0">
+                    <span class="block mb-1.5 text-caption text-gray-dark">{step.when}</span>
+                    <YearBar start={step.start} end={step.end} tone={path.tone} size="sm" />
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </div>
+      <p class="mt-4 mb-0 text-caption text-gray-dark">Timing: the phase that starts each program (FSIC Master Plan 2026–2031, pp. 13–14). FSIC is in Year 1; programs are planned with partners and haven't been announced.</p>
+    </Grid>
+  </Section>
+
+  <!-- 03 · Program portfolio (Master Plan pp. 19–21): one row per engine, each program opening in
        place (+ turns to ×), and a link to that engine on the Model page -->
   <Section
     {...at('portfolio')}

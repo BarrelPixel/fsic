@@ -18,7 +18,8 @@ import RangeLegend from '../components/RangeLegend.astro';
 import { url } from '../lib/url';
 import { SOCIAL_LINKS } from '../lib/site';
 import Dot from '../components/Dot.astro';
-import { stakes, SPACE_ECONOMY_SOURCE } from '../data/strategic';
+import { stakes, SPACE_ECONOMY_SOURCE, COMMUTER_RISK } from '../data/strategic';
+import RegionMap from '../components/RegionMap.astro';
 import RangeTable from '../components/RangeTable.astro';
 import RangeRow from '../components/RangeRow.astro';
 import TableRow from '../components/TableRow.astro';
@@ -89,6 +90,10 @@ const commonQuestions = ['residents-and-families', 'developers', 'compete', 'fun
         <p class="mb-8">
           The Florida Space Innovation Center (FSIC) ensures that Southeast Volusia is not a spectator to that growth, but an active participant — building the talent, infrastructure, and partnerships required to compete in a global innovation economy.
         </p>
+        <!-- The stakes, made concrete: the region on a map, with the Master Plan's warning (docs/24) -->
+        <RegionMap>
+          <p class="mb-2">{COMMUTER_RISK.lead} The Master Plan&rsquo;s warning: &ldquo;{COMMUTER_RISK.quote}&rdquo; <span class="text-caption text-gray-dark">({COMMUTER_RISK.source})</span></p>
+        </RegionMap>
         <dl class="mb-6">
           <Row label={stakes.without.label} rule="bottom" dot="gray">
             <List items={stakes.without.items} class="text-gray-dark" />
