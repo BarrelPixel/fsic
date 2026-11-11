@@ -22,7 +22,9 @@ sources:
     publisher: "U.S. Department of Labor, Electronic Code of Federal Regulations"
     url: "https://www.ecfr.gov/current/title-20/chapter-V/part-677/subpart-A/section-677.155"
     date: "last amended March 25, 2024; checked November 11, 2026"
-status: draft
+image: ./images/what-is-roi-for-workforce-programs.png
+imageAlt: "What Is Return on Investment (ROI) for Workforce Programs? (FSIC Blog)"
+status: review
 followUp:
   question: "How will FSIC be funded over its first five years?"
   slug: how-is-fsic-funded

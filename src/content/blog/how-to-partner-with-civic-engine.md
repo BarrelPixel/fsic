@@ -23,7 +23,9 @@ sources:
     url: "https://fsic.space/partnership-funding/"
 visual:
   phases: [4]
-status: draft
+image: ./images/how-to-partner-with-civic-engine.png
+imageAlt: "How Can Schools and Community Groups Partner With the Civic Engine? (FSIC Blog)"
+status: review
 followUp:
   question: "How can residents volunteer or mentor with FSIC?"
   slug: how-to-volunteer-with-fsic

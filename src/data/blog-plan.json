@@ -16,6 +16,12 @@
     {"slug":"what-are-fsics-economic-scenarios","question":"What are the three scenarios in FSIC's economic analysis, and how do they differ?","topic":"economy","audiences":"","sources":"","from":"what-is-a-job-year"},
     {"slug":"what-apprenticeships-will-fsic-offer","question":"What apprenticeships will FSIC offer for aerospace and advanced manufacturing?","topic":"talent","audiences":"","sources":"","from":"what-is-dual-enrollment"},
     {"slug":"how-fsic-measures-economic-impact","question":"How will FSIC's economic impact be measured and reported over time?","topic":"economy","audiences":"","sources":"","from":"what-are-fsics-economic-scenarios"},
-    {"slug":"how-fsic-measures-talent-outcomes","question":"How will FSIC measure Talent Engine outcomes and report results?","topic":"organization","audiences":"","sources":"","from":"why-fsic-starts-with-talent"}
+    {"slug":"how-fsic-measures-talent-outcomes","question":"How will FSIC measure Talent Engine outcomes and report results?","topic":"organization","audiences":"","sources":"","from":"why-fsic-starts-with-talent"},
+    {"slug":"fsic-relationship-with-developers","question":"What is FSIC's relationship with developers and real estate interests?","topic":"organization","audiences":"","sources":"","from":"how-fsic-is-governed"},
+    {"slug":"how-fsic-reports-finances","question":"How does FSIC report its finances and outcomes to the public?","topic":"organization","audiences":"","sources":"","from":"what-fsic-501c3-status-means"},
+    {"slug":"how-to-partner-with-civic-engine","question":"How can schools and community groups partner with FSIC's Civic Engine?","topic":"civic","audiences":"","sources":"","from":"what-the-civic-engine-offers"},
+    {"slug":"what-are-industry-recognized-credentials","question":"What are industry-recognized credentials, and why do they matter?","topic":"talent","audiences":"","sources":"","from":"how-fsic-measures-talent-outcomes"},
+    {"slug":"what-is-roi-for-workforce-programs","question":"What is return on investment (ROI) for workforce development programs?","topic":"economy","audiences":"","sources":"","from":"how-fsic-measures-economic-impact"},
+    {"slug":"what-is-teacher-upskilling","question":"What is teacher upskilling, and what does FSIC plan for educators?","topic":"talent","audiences":"","sources":""}
   ]
 }

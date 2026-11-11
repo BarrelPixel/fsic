@@ -29,7 +29,9 @@ sources:
     url: "https://www.law.cornell.edu/uscode/text/20/7801"
 visual:
   phases: [1]
-status: draft
+image: ./images/what-is-teacher-upskilling.png
+imageAlt: "What Is Teacher Upskilling? FSIC's Plans for Educators (FSIC Blog)"
+status: review
 followUp:
   question: "How can school districts partner with FSIC?"
   slug: how-school-districts-partner-with-fsic

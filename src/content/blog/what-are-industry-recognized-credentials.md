@@ -35,7 +35,9 @@ sources:
     url: "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=1000-1099/1003/Sections/1003.4203.html"
 visual:
   phases: [1]
-status: draft
+image: ./images/what-are-industry-recognized-credentials.png
+imageAlt: "What Are Industry-Recognized Credentials, and Why Do They Matter? (FSIC Blog)"
+status: review
 followUp:
   question: "How do employers help shape FSIC's training programs?"
   slug: how-employers-shape-fsic-training

@@ -14,7 +14,9 @@ faqs:
     a: "No. FSIC is a virtual organization located in New Smyrna Beach. It states that a future site in Volusia County will be determined through a collaborative process with community members, civic leaders, industry partners and other stakeholders."
   - q: "Can a single partner control FSIC's decisions?"
     a: "FSIC's Master Plan designs its governance so that no single individual, partner or sector can dominate decision-making, with an independent board chair, term limits, conflict-of-interest policies and balanced representation across sectors."
-status: draft
+image: ./images/fsic-relationship-with-developers.png
+imageAlt: "What Is FSIC's Relationship With Developers? (FSIC Blog)"
+status: review
 followUp:
   question: "What are FSIC's advisory councils, and what do they do?"
   slug: what-are-fsics-advisory-councils

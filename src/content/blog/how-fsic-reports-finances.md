@@ -14,7 +14,9 @@ faqs:
     a: "No. Under IRS rules, an exempt organization other than a private foundation is not required to disclose the name and address of any contributor."
   - q: "Will FSIC publish an Annual Impact Report?"
     a: "The Master Plan lists an Annual Impact Report among FSIC's public reporting tools. FSIC is in its first year, and the report's timing and contents have not been announced."
-status: draft
+image: ./images/how-fsic-reports-finances.png
+imageAlt: "How Does FSIC Report Its Finances and Outcomes? (FSIC Blog)"
+status: review
 followUp:
   question: "What is a Form 990, and what does it show about a nonprofit?"
   slug: what-is-form-990
