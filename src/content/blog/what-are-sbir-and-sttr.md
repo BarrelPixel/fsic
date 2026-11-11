@@ -24,6 +24,10 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 3, 6, 10, 12, 14, 20–21, 32–34"
+visual:
+  phases: [3]
+image: ./images/what-are-sbir-and-sttr.png
+imageAlt: "What Are SBIR and STTR? Federal Funding for Small Business R&D (FSIC Blog)"
 status: review
 publishDate: 2026-11-14
 followUp:

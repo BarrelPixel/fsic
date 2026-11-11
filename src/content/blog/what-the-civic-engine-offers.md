@@ -21,6 +21,10 @@ sources:
   - title: "The FSIC Model"
     publisher: "Florida Space Innovation Center"
     url: "https://fsic.space/model/"
+visual:
+  phases: [4]
+image: ./images/what-the-civic-engine-offers.png
+imageAlt: "What Will the Civic Engine Offer Residents? (FSIC Blog)"
 status: review
 publishDate: 2026-12-30
 followUp:

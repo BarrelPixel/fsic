@@ -31,6 +31,10 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 6, 10, 14, 18, 20–21, 32–34"
+visual:
+  phases: [3]
+image: ./images/how-to-become-a-space-supplier.png
+imageAlt: "How Can a Small Business Become a Space Industry Supplier? (FSIC Blog)"
 status: review
 publishDate: 2026-11-30
 followUp:

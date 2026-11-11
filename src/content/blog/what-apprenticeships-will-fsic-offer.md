@@ -21,6 +21,8 @@ sources:
   - title: "What is a Registered Apprenticeship Program?"
     publisher: "U.S. Department of Labor, Apprenticeship.gov"
     url: "https://www.apprenticeship.gov/employers/registered-apprenticeship-program"
+image: ./images/what-apprenticeships-will-fsic-offer.png
+imageAlt: "What Apprenticeships Will FSIC Offer? (FSIC Blog)"
 status: draft
 publishDate: 2026-12-15
 followUp:

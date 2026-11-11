@@ -14,6 +14,10 @@ faqs:
     a: "The Master Plan's compliance framework includes annual audits, and the board has a standing Finance and Audit Committee."
   - q: "Do the metrics measure the 25-year projections directly?"
     a: "No. The metrics count program results, such as enrollments, placements and certifications. The 25-year figures are estimates based upon assumptions that may or may not be accurate over time."
+visual:
+  figures: [output, jobYears, wages, fiscal]
+image: ./images/how-fsic-measures-economic-impact.png
+imageAlt: "How Will FSIC Measure Its Economic Impact? (FSIC Blog)"
 status: review
 publishDate: 2026-12-18
 followUp:

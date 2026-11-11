@@ -14,6 +14,8 @@ faqs:
     a: "Erik Ahlgren is Board Chair, as FSIC's July 29, 2026 release states."
   - q: "Where can I see FSIC's IRS documents?"
     a: "The Governance & Transparency page explains how to request FSIC's IRS determination letter, and will post each annual return once filed. FSIC's fiscal year runs July 1 to June 30."
+image: ./images/how-fsic-is-governed.png
+imageAlt: "How Is FSIC Governed and Kept Independent? (FSIC Blog)"
 status: review
 publishDate: 2027-01-03
 followUp:

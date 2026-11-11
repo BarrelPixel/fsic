@@ -17,6 +17,8 @@
 
 **Headline:** Partner. Collaborate. Participate.
 
+> **Proposed (November 11, 2026, `docs/23` S6), not yet on the page:** headline "Get Involved", the menu label, so the page is named for what a visitor came to do. **⚠ Review.**
+
 **Lead:** The Florida Space Innovation Center represents a coordinated investment in the region's future.
 
 **Body:** Whether you are an employer, university leader, policymaker, workforce partner, or community member, there is a role to play in shaping Southeast Volusia's place in the global space economy.

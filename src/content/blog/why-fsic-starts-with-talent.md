@@ -21,6 +21,10 @@ sources:
   - title: "Frequently Asked Questions"
     publisher: "Florida Space Innovation Center"
     url: "https://fsic.space/faq/"
+visual:
+  phases: [1]
+image: ./images/why-fsic-starts-with-talent.png
+imageAlt: "Why Does FSIC Start with the Talent Engine? (FSIC Blog)"
 status: review
 publishDate: 2026-11-19
 followUp:

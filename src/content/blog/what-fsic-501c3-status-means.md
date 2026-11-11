@@ -14,6 +14,8 @@ faqs:
     a: "Yes. A public charity may earn revenue. Net income from a trade or business that is regularly carried on and not substantially related to its exempt purpose is taxable."
   - q: "How can I confirm FSIC's status?"
     a: "Search the IRS Tax Exempt Organization Search for EIN 43-2277165, or ask FSIC for a copy of its IRS determination letter."
+image: ./images/what-fsic-501c3-status-means.png
+imageAlt: "What Does FSIC's 501(c)(3) Status Mean? (FSIC Blog)"
 status: review
 publishDate: 2026-12-11
 followUp:

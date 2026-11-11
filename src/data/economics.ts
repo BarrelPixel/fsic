@@ -15,6 +15,10 @@ export const FIGURES = {
   externalFunding: { low: 0.8, high: 1.56, display: '$800 million–$1.56 billion', short: '$800M–$1.56B', words: '$800 million to $1.56 billion' },
 } as const;
 
+/** A key of FIGURES (a blog post's `visual.figures` names them). */
+export type FigureKey = keyof typeof FIGURES;
+export const FIGURE_KEYS = Object.keys(FIGURES) as [FigureKey, ...FigureKey[]];
+
 /** display, low and high of a headline figure, for the at-a-glance rows. */
 const pick = (f: { display: string; low: number; high: number }) => ({ display: f.display, low: f.low, high: f.high });
 

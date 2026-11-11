@@ -14,6 +14,10 @@ faqs:
     a: "No. The Baseline is the comparison case: the region's 25-year outlook without FSIC."
   - q: "Are the scenario figures guaranteed?"
     a: "No. They are estimates based upon assumptions that may or may not be accurate over time."
+visual:
+  diagram: scenarios
+image: ./images/what-are-fsics-economic-scenarios.png
+imageAlt: "What Are FSIC's Three Economic Scenarios? (FSIC Blog)"
 status: review
 publishDate: 2026-11-25
 followUp:

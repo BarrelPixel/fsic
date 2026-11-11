@@ -18,6 +18,8 @@
 
 **Headline:** One Coordinated Platform. Four Integrated Engines.
 
+> **Proposed (November 11, 2026, `docs/23` S6), not yet on the page:** headline "The FSIC Model" (the page's name, as the menu and title use), with the claim carried by the answer-first lead. The engines' "Transforming … into …" shift lines stay: they are the Master Plan's own wording (p. 11). **⚠ Review.**
+
 > **Source:** home.md (approved), Four-Engine Model headline.
 
 **Body:**

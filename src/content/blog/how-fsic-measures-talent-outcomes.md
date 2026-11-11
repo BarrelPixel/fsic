@@ -21,6 +21,10 @@ sources:
   - title: "Governance"
     publisher: "Florida Space Innovation Center"
     url: "https://fsic.space/governance/"
+visual:
+  phases: [1]
+image: ./images/how-fsic-measures-talent-outcomes.png
+imageAlt: "How Will FSIC Measure Talent Engine Outcomes? (FSIC Blog)"
 status: review
 publishDate: 2026-12-21
 followUp:
