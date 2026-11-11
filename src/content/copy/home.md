@@ -119,6 +119,8 @@ FSIC is designed to align education, industry, and community in one coordinated 
 
 ### Within sight of the Cape (map, in Why now)
 
+> **Removed from the page (November 11, 2026), at the project lead's direction.** The map, its caption and the next-launch line are off the homepage for now. The component (`RegionMap`), map data and launch helper stay in the code, so it can return without rebuilding. Nothing below needs FSIC's review until it does.
+
 **Placement:** after the two opening paragraphs, before Without / With.
 
 **Map:** Southeast Volusia (New Smyrna Beach, Edgewater, Oak Hill), Daytona Beach, Orlando and the launch complexes at Cape Canaveral, with straight-line distances from New Smyrna Beach (35 miles to Launch Complex 39A; 43 miles to Orlando). County outlines: U.S. Census Bureau. No campus site is marked.
@@ -131,7 +133,7 @@ FSIC is designed to align education, industry, and community in one coordinated 
 
 **Source line:** Straight-line distances from New Smyrna Beach. Map: U.S. Census Bureau county boundaries.
 
-> **⚠ Review (November 11, 2026, `docs/24`):** new: the map, its caption heading, the first two caption sentences and the launch line. The quotation is the Master Plan's (p. 3).
+> **On hold (November 11, 2026, `docs/24`):** new wording (the map, its caption heading, the first two caption sentences and the launch line) to review if the map returns. The quotation is the Master Plan's (p. 3).
 
 ## THE ECONOMIC CASE
 
