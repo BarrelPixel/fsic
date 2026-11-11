@@ -1,0 +1,73 @@
+---
+// "Within sight of the Cape" (DESIGN.md's idea, drawn): Southeast Volusia, the launch complexes at Cape Canaveral and
+// Orlando, with straight-line distances. County outlines are the Census Bureau's 1:500,000 boundaries
+// (src/data/region-map.json, made by scripts/region-map.mjs). Marker colors keep their meaning (src/lib/tones.ts):
+// lagoon for the community (Southeast Volusia's cities), orange for the space industry (the launch complexes), navy
+// for other places. No campus site is marked (CLAUDE.md). Labels are HTML over the drawing, so they keep their size
+// on phones; the drawing is decorative and the figure's caption says what it shows.
+import map from '../data/region-map.json';
+import Dot from './Dot.astro';
+import { nextLaunch, launchDay } from '../lib/launches';
+
+const next = await nextLaunch();
+
+const { width: W, height: H, counties, places: P, distances } = map;
+const pct = ([x, y]: number[]) => `left:${((x / W) * 100).toFixed(2)}%;top:${((y / H) * 100).toFixed(2)}%`;
+const mid = (a: number[], b: number[]) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+
+type Label = { at: number[]; text: string; tone: 'lagoon' | 'orange' | 'navy'; side?: 'left' | 'right'; strong?: boolean };
+const labels: Label[] = [
+  { at: P.newSmyrnaBeach, text: 'New Smyrna Beach', tone: 'lagoon', side: 'left', strong: true },
+  { at: P.edgewater, text: 'Edgewater', tone: 'lagoon', side: 'left' },
+  { at: P.oakHill, text: 'Oak Hill', tone: 'lagoon', side: 'left' },
+  { at: P.daytonaBeach, text: 'Daytona Beach', tone: 'navy', side: 'left' },
+  { at: P.orlando, text: 'Orlando', tone: 'navy', side: 'right' },
+  { at: P.lc39a, text: 'Launch complexes, Cape Canaveral', tone: 'orange', side: 'left', strong: true },
+];
+const dot = { lagoon: 'fill-lagoon', orange: 'fill-orange', navy: 'fill-navy' };
+const areas = [
+  { at: [150, 250], text: 'Volusia County' },
+  { at: [470, 420], text: 'Brevard County' },
+  { at: [560, 70], text: 'Atlantic Ocean' },
+];
+---
+<figure class="mb-8">
+  <div class="relative font-sans" aria-hidden="true">
+    <svg viewBox={`0 0 ${W} ${H}`} class="block w-full h-auto" focusable="false">
+      {counties.map((c) => (
+        <path d={c.d} class:list={[c.name === 'Volusia' ? 'fill-lagoon/15' : 'fill-navy/[0.06]', 'stroke-white']} stroke-width="1.5" />
+      ))}
+      <line x1={P.newSmyrnaBeach[0]} y1={P.newSmyrnaBeach[1]} x2={P.lc39a[0]} y2={P.lc39a[1]} class="stroke-navy" stroke-width="1.5" stroke-dasharray="5 4" />
+      <line x1={P.newSmyrnaBeach[0]} y1={P.newSmyrnaBeach[1]} x2={P.orlando[0]} y2={P.orlando[1]} class="stroke-gray" stroke-width="1.5" stroke-dasharray="5 4" />
+      {[P.slc40].map((p) => <circle cx={p[0]} cy={p[1]} r="5" class="fill-orange" />)}
+      {labels.map((l) => <circle cx={l.at[0]} cy={l.at[1]} r={l.strong ? 6 : 4.5} class={dot[l.tone]} />)}
+    </svg>
+    {areas.map((a) => (
+      <span class="absolute -translate-x-1/2 -translate-y-1/2 text-xs sm:text-caption text-gray italic whitespace-nowrap" style={pct(a.at)}>{a.text}</span>
+    ))}
+    {labels.map((l) => (
+      <span
+        class:list={[
+          'absolute -translate-y-1/2 whitespace-nowrap text-xs sm:text-caption leading-tight',
+          l.side === 'left' ? '-translate-x-full pr-2.5' : 'pl-2.5',
+          l.strong ? 'text-navy font-semibold' : 'text-gray-dark',
+        ]}
+        style={pct(l.at)}
+      >{l.text}</span>
+    ))}
+    <span class="absolute -translate-x-1/2 -translate-y-1/2 bg-white px-1 text-xs sm:text-caption font-semibold text-navy tabular-nums whitespace-nowrap" style={pct(mid(P.newSmyrnaBeach, P.lc39a))}>{distances.toLaunchComplex} miles</span>
+    <span class="absolute -translate-x-1/2 -translate-y-1/2 bg-white px-1 text-xs sm:text-caption text-gray-dark tabular-nums whitespace-nowrap" style={pct(mid(P.newSmyrnaBeach, P.orlando))}>{distances.toOrlando} miles</span>
+  </div>
+  <figcaption class="mt-4">
+    <p class="mb-2 font-display text-xl font-semibold text-navy leading-snug">Within sight of the Cape</p>
+    <slot />
+    {next && (
+      <p class="mb-0 font-sans text-navy">
+        <span class="inline-flex items-baseline gap-2"><Dot tone="orange" />Next scheduled launch from the Cape:</span>
+        <strong class="font-semibold">{next.rocket}{next.mission && <>, {next.mission}</>}</strong>, {launchDay(next.date)}.
+        <span class="text-caption text-gray-dark">Schedules change. Source: The Space Devs, Launch Library 2, updated daily.</span>
+      </p>
+    )}
+    <p class="mt-2 mb-0 text-caption text-gray-dark">Straight-line distances from New Smyrna Beach. Map: U.S. Census Bureau county boundaries.</p>
+  </figcaption>
+</figure>

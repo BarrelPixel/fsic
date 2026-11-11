@@ -81,5 +81,5 @@ export const audiences = ([
   { label: 'University leaders', line: 'Co-develop pathways, collaborate on applied research, and pursue joint federal funding.', link: 'How universities take part', href: '/partnership-funding#higher-ed' },
   { label: 'Policymakers', line: "Align economic development, infrastructure, and grant applications with the region's growth.", link: 'How local government takes part', href: '/partnership-funding#local-government' },
   { label: 'Workforce partners', line: 'Bring labor market data and employer engagement into one regional strategy.', link: 'How workforce agencies take part', href: '/partnership-funding#workforce-agencies' },
-  { label: 'Residents and families', line: 'Hands-on STEM learning, dual-enrollment pathways, and micro-credentials tied to real jobs.', link: 'Programs for residents', href: '/programs-facilities#audiences', community: true },
+  { label: 'Residents and families', line: 'Hands-on STEM learning, dual-enrollment pathways, and micro-credentials tied to real jobs.', link: 'See an example path', href: '/programs-facilities#paths', community: true },
 ] as { label: string; line: string; link: string; href: string; community?: boolean }[]);

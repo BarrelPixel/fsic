@@ -86,6 +86,9 @@ The Florida Space Innovation Center is a coordinated regional platform for workf
 
 ---
 
+
+> **⚠ Review (November 11, 2026):** the Residents and families link now reads "See an example path" and goes to Example Paths on Programs & Facilities (was "Programs for residents", to Programs by Audience).
+
 ## THE STRATEGIC MOMENT
 
 **Headline:**
@@ -113,6 +116,22 @@ FSIC is designed to align education, industry, and community in one coordinated 
 > **Added (November 2026):** a link to the Strategic Moment page, which no other page linked to (internal-linking review). **⚠ Review:** button label is new.
 
 ---
+
+### Within sight of the Cape (map, in Why now)
+
+**Placement:** after the two opening paragraphs, before Without / With.
+
+**Map:** Southeast Volusia (New Smyrna Beach, Edgewater, Oak Hill), Daytona Beach, Orlando and the launch complexes at Cape Canaveral, with straight-line distances from New Smyrna Beach (35 miles to Launch Complex 39A; 43 miles to Orlando). County outlines: U.S. Census Bureau. No campus site is marked.
+
+**Caption heading:** Within sight of the Cape
+
+**Caption:** Launches from Cape Canaveral can be seen from Southeast Volusia's beaches. The jobs behind them are a commute away. The Master Plan's warning: "Without intervention, the region risks becoming a commuter community to Brevard and Orlando—absorbing population growth without capturing the high-wage jobs, employer investment, and economic mobility that should accompany it." (FSIC Master Plan 2026–2031, p. 3)
+
+**Launch line** (refreshed by the daily rebuild; left out when the schedule can't be read): Next scheduled launch from the Cape: [rocket], [mission], [weekday, month day]. Schedules change. Source: The Space Devs, Launch Library 2, updated daily.
+
+**Source line:** Straight-line distances from New Smyrna Beach. Map: U.S. Census Bureau county boundaries.
+
+> **⚠ Review (November 11, 2026, `docs/24`):** new: the map, its caption heading, the first two caption sentences and the launch line. The quotation is the Master Plan's (p. 3).
 
 ## THE ECONOMIC CASE
 
