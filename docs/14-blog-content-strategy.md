@@ -167,6 +167,8 @@ Targets are modest at first. Six months after launch: every published post index
 
 ## 10. Calendar and connected posts
 
+**Cadence (set November 10, 2026):** one post every 3 to 7 days, at irregular intervals rather than on a fixed weekday, so the blog reads as edited, not automated. Every post in review carries a proposed `publishDate` on that rhythm; it takes effect only when FSIC approves the post and its status becomes `scheduled` (§8). A post never comes before the post it follows (`from`): `npm run blog-plan` fails if one does. When FSIC holds a post, the dates after it can stay as they are (a gap of up to a week is within the rhythm) or move up.
+
 Two posts a month is sustainable and enough to build topical depth. The first twelve topics can all be written **from sources FSIC already has** (the Master Plan, the FAQ, approved copy, IRS and federal program pages), so nothing waits on new data.
 
 ### Connected posts: each published post adds the next topic
@@ -199,32 +201,32 @@ When a post is published, `npm run blog-plan` adds its follow-up to the plan, ma
 |---|----------|-------|-----|---------|---------|--------|
 | 1 | What is a job-year, and what does FSIC's projection mean? | Regional economy | Policymakers, funders | Master Plan pp. 7–8 |  | **Published** (`what-is-a-job-year`) |
 | 2 | What is a micro-credential, and how will FSIC offer them? | Talent | Students, job-seekers, employers | Master Plan pp. 13, 19–21; FAQ |  | **Published** (`what-is-a-micro-credential`) |
-| 3 | Why does FSIC start with the Talent Engine? | Talent | Partners, funders | Master Plan p. 13; Deployment page |  | **In review** (`why-fsic-starts-with-talent`) |
-| 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | What Is a Micro-Credential? FSIC’s Short, Job-Focused Training | **In review** (`what-is-dual-enrollment`) |
-| 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | What Are SBIR and STTR? Federal Funding for Small Business R&D | **In review** (`how-to-become-a-space-supplier`) |
-| 6 | What are SBIR and STTR, and how can a Volusia County business apply? | Business | Employers, startups | SBIR.gov; Master Plan |  | **In review** (`what-are-sbir-and-sttr`) |
-| 7 | What is a challenge lab? | Innovation | Universities, employers | Master Plan pp. 19–21 |  | **In review** (`what-is-a-challenge-lab`) |
-| 8 | What is a "backbone organization", and why is FSIC one? | About FSIC | Policymakers, partners | FAQ; Governance page |  | **In review** (`what-is-a-backbone-organization`) |
-| 9 | What does FSIC's 501(c)(3) status mean for donors and partners? | About FSIC | Funders | IRS determination letter; IRS Publication 4221-PC. Counsel review |  | **In review** (`what-fsic-501c3-status-means`) |
-| 10 | How is the space economy growing, and what does it mean for Southeast Volusia? | The region | Residents, policymakers | WEF and McKinsey (April 2024); Strategic Moment |  | **In review** (`how-the-space-economy-is-growing`) |
-| 11 | What will the Civic Engine offer residents? | Community | Residents, families | Master Plan pp. 19–21; Programs & Facilities |  | **In review** (`what-the-civic-engine-offers`) |
-| 12 | How is FSIC governed, and how is it kept independent? | About FSIC | Funders, residents | Governance page; Master Plan pp. 15–17 | What Is a Backbone Organization? FSIC's Role | **In review** (`how-fsic-is-governed`) |
-| 13 | What are the three scenarios in FSIC's economic analysis, and how do they differ? | Regional economy |  |  | What Is a Job-Year? Reading FSIC’s 25-Year Projections | **In review** (`what-are-fsics-economic-scenarios`) |
+| 3 | Why does FSIC start with the Talent Engine? | Talent | Partners, funders | Master Plan p. 13; Deployment page |  | **In review**, proposed 2026-11-19 (`why-fsic-starts-with-talent`) |
+| 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | What Is a Micro-Credential? FSIC’s Short, Job-Focused Training | **In review**, proposed 2027-01-07 (`what-is-dual-enrollment`) |
+| 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | What Are SBIR and STTR? Federal Funding for Small Business R&D | **In review**, proposed 2026-11-30 (`how-to-become-a-space-supplier`) |
+| 6 | What are SBIR and STTR, and how can a Volusia County business apply? | Business | Employers, startups | SBIR.gov; Master Plan |  | **In review**, proposed 2026-11-14 (`what-are-sbir-and-sttr`) |
+| 7 | What is a challenge lab? | Innovation | Universities, employers | Master Plan pp. 19–21 |  | **In review**, proposed 2026-12-03 (`what-is-a-challenge-lab`) |
+| 8 | What is a "backbone organization", and why is FSIC one? | About FSIC | Policymakers, partners | FAQ; Governance page |  | **In review**, proposed 2026-12-07 (`what-is-a-backbone-organization`) |
+| 9 | What does FSIC's 501(c)(3) status mean for donors and partners? | About FSIC | Funders | IRS determination letter; IRS Publication 4221-PC. Counsel review |  | **In review**, proposed 2026-12-11 (`what-fsic-501c3-status-means`) |
+| 10 | How is the space economy growing, and what does it mean for Southeast Volusia? | The region | Residents, policymakers | WEF and McKinsey (April 2024); Strategic Moment |  | **In review**, proposed 2026-12-26 (`how-the-space-economy-is-growing`) |
+| 11 | What will the Civic Engine offer residents? | Community | Residents, families | Master Plan pp. 19–21; Programs & Facilities |  | **In review**, proposed 2026-12-30 (`what-the-civic-engine-offers`) |
+| 12 | How is FSIC governed, and how is it kept independent? | About FSIC | Funders, residents | Governance page; Master Plan pp. 15–17 | What Is a Backbone Organization? FSIC's Role | **In review**, proposed 2027-01-03 (`how-fsic-is-governed`) |
+| 13 | What are the three scenarios in FSIC's economic analysis, and how do they differ? | Regional economy |  |  | What Is a Job-Year? Reading FSIC’s 25-Year Projections | **In review**, proposed 2026-11-25 (`what-are-fsics-economic-scenarios`) |
 | 14 | What apprenticeships will FSIC offer for aerospace and advanced manufacturing? | Talent |  |  | What Is Dual Enrollment? FSIC's STEM Pathways | **Drafted** (`what-apprenticeships-will-fsic-offer`) |
-| 15 | How will FSIC's economic impact be measured and reported over time? | Regional economy |  |  | What Are FSIC's Three Economic Scenarios? | **In review** (`how-fsic-measures-economic-impact`) |
-| 16 | How will FSIC measure Talent Engine outcomes and report results? | About FSIC |  |  | Why Does FSIC Start with the Talent Engine? | **In review** (`how-fsic-measures-talent-outcomes`) |
-| 17 | What is FSIC's relationship with developers and real estate interests? | About FSIC |  |  | How Is FSIC Governed and Kept Independent? | **In review** (`fsic-relationship-with-developers`) |
-| 18 | How does FSIC report its finances and outcomes to the public? | About FSIC |  |  | What Does FSIC's 501(c)(3) Status Mean? | **In review** (`how-fsic-reports-finances`) |
-| 19 | How can schools and community groups partner with FSIC's Civic Engine? | Community |  |  | What Will the Civic Engine Offer Residents? | **In review** (`how-to-partner-with-civic-engine`) |
-| 20 | What are industry-recognized credentials, and why do they matter? | Talent |  |  | How Will FSIC Measure Talent Engine Outcomes? | **In review** (`what-are-industry-recognized-credentials`) |
-| 21 | What is return on investment (ROI) for workforce development programs? | Regional economy |  |  | How Will FSIC Measure Its Economic Impact? | **In review** (`what-is-roi-for-workforce-programs`) |
-| 22 | What is teacher upskilling, and what does FSIC plan for educators? | Talent |  |  |  | **In review** (`what-is-teacher-upskilling`) |
-| 23 | How do employers help shape FSIC's training programs? | Talent |  |  | What Are Industry-Recognized Credentials, and Why Do They Matter? | **In review** (`how-employers-shape-fsic-training`) |
-| 24 | How will FSIC be funded over its first five years? | About FSIC |  |  | What Is Return on Investment (ROI) for Workforce Programs? | **In review** (`how-is-fsic-funded`) |
-| 25 | How can school districts partner with FSIC? | Talent |  |  | What Is Teacher Upskilling? FSIC's Plans for Educators | **In review** (`how-school-districts-partner-with-fsic`) |
-| 26 | What aerospace and advanced manufacturing jobs exist on the Space Coast, and what do they pay? | The region |  |  |  | **In review** (`space-coast-aerospace-jobs-and-pay`) |
-| 27 | What is a rapid prototyping studio, and what happens at an innovation sprint? | Innovation |  |  |  | **In review** (`what-is-a-rapid-prototyping-studio`) |
-| 28 | What is the Regional Talent Marketplace, and how will it connect employers and job seekers? | Talent |  |  | How Do Employers Help Shape FSIC's Training Programs? | **In review** (`what-is-the-regional-talent-marketplace`) |
+| 15 | How will FSIC's economic impact be measured and reported over time? | Regional economy |  |  | What Are FSIC's Three Economic Scenarios? | **In review**, proposed 2026-12-18 (`how-fsic-measures-economic-impact`) |
+| 16 | How will FSIC measure Talent Engine outcomes and report results? | About FSIC |  |  | Why Does FSIC Start with the Talent Engine? | **In review**, proposed 2026-12-21 (`how-fsic-measures-talent-outcomes`) |
+| 17 | What is FSIC's relationship with developers and real estate interests? | About FSIC |  |  | How Is FSIC Governed and Kept Independent? | **In review**, proposed 2027-02-06 (`fsic-relationship-with-developers`) |
+| 18 | How does FSIC report its finances and outcomes to the public? | About FSIC |  |  | What Does FSIC's 501(c)(3) Status Mean? | **In review**, proposed 2027-01-16 (`how-fsic-reports-finances`) |
+| 19 | How can schools and community groups partner with FSIC's Civic Engine? | Community |  |  | What Will the Civic Engine Offer Residents? | **In review**, proposed 2027-02-15 (`how-to-partner-with-civic-engine`) |
+| 20 | What are industry-recognized credentials, and why do they matter? | Talent |  |  | How Will FSIC Measure Talent Engine Outcomes? | **In review**, proposed 2027-01-28 (`what-are-industry-recognized-credentials`) |
+| 21 | What is return on investment (ROI) for workforce development programs? | Regional economy |  |  | How Will FSIC Measure Its Economic Impact? | **In review**, proposed 2027-02-01 (`what-is-roi-for-workforce-programs`) |
+| 22 | What is teacher upskilling, and what does FSIC plan for educators? | Talent |  |  |  | **In review**, proposed 2027-02-12 (`what-is-teacher-upskilling`) |
+| 23 | How do employers help shape FSIC's training programs? | Talent |  |  | What Are Industry-Recognized Credentials, and Why Do They Matter? | **In review**, proposed 2027-02-27 (`how-employers-shape-fsic-training`) |
+| 24 | How will FSIC be funded over its first five years? | About FSIC |  |  | What Is Return on Investment (ROI) for Workforce Programs? | **In review**, proposed 2027-02-20 (`how-is-fsic-funded`) |
+| 25 | How can school districts partner with FSIC? | Talent |  |  | What Is Teacher Upskilling? FSIC's Plans for Educators | **In review**, proposed 2027-03-03 (`how-school-districts-partner-with-fsic`) |
+| 26 | What aerospace and advanced manufacturing jobs exist on the Space Coast, and what do they pay? | The region |  |  |  | **In review**, proposed 2027-01-21 (`space-coast-aerospace-jobs-and-pay`) |
+| 27 | What is a rapid prototyping studio, and what happens at an innovation sprint? | Innovation |  |  |  | **In review**, proposed 2027-01-13 (`what-is-a-rapid-prototyping-studio`) |
+| 28 | What is the Regional Talent Marketplace, and how will it connect employers and job seekers? | Talent |  |  | How Do Employers Help Shape FSIC's Training Programs? | **In review**, proposed 2027-03-08 (`what-is-the-regional-talent-marketplace`) |
 
 <!-- calendar:end -->
 
