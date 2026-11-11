@@ -1,23 +1,60 @@
 ---
-// A page's closing (DESIGN.md "Interior page template" step 4): one statement in display type and the
-// next steps (Buttons, in the default slot) on the content axis, with no heavy rule above.
+// A page's closing (DESIGN.md "Interior page template" step 4): one statement in display type and the next steps
+// (Buttons, in the default slot) on the content axis, with no heavy rule above. With `page` (its path), the
+// closing also leads on (docs/23 S2, S3, S5; data in src/data/onward.ts): the FAQ questions that belong to the
+// page, its published blog posts, and the next page in the site's story.
 import Section from './Section.astro';
 import Grid from './Grid.astro';
+import Row from './Row.astro';
+import List from './List.astro';
+import { onward } from '../data/onward';
+import { faqById } from '../data/faq';
+import { getPosts, isPublished, postHref } from '../lib/blog';
+import { getNavColumns } from '../lib/nav';
+import { url } from '../lib/url';
 
 interface Props {
   statement: string;
   /** Passed to Section, e.g. "stacked" when the closing follows another white section closely. */
   spacing?: 'default' | 'stacked' | 'large';
+  /** The page's path ("/model"), to lead on from it. */
+  page?: string;
 }
 
-const { statement, spacing } = Astro.props;
+const { statement, spacing, page } = Astro.props;
+const lead = page ? onward[page] : undefined;
+const questions = lead ? lead.questions.map(faqById) : [];
+const posts = lead && lead.topics.length > 0 ? (await getPosts()).filter((p) => isPublished(p) && lead.topics.includes(p.data.topic)).slice(0, 3) : [];
+const label = (path: string) => getNavColumns().flatMap((c) => c.links).find((l) => l.path === path)?.label ?? path;
+const next = lead?.next;
 ---
 <Section rule={false} spacing={spacing}>
   <Grid>
     <Fragment slot="label"></Fragment>
-    <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10 max-w-3xl">{statement}</p>
-    <div class="flex flex-col sm:flex-row gap-4">
-      <slot />
+    <div>
+      <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10 max-w-3xl">{statement}</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <slot />
+      </div>
+      {lead && (
+        <dl class="mt-14 max-w-3xl">
+          {questions.length > 0 && (
+            <Row label="Questions about this" rule="bottom">
+              <List html items={questions.map((f) => `<a href="${url(`/faq#${f.id}`)}" class="link">${f.q}</a>`)} />
+            </Row>
+          )}
+          {posts.length > 0 && (
+            <Row label="Read more" rule="bottom" class="pt-5">
+              <List html items={posts.map((p) => `<a href="${postHref(p)}" class="link">${p.data.title}</a>`)} />
+            </Row>
+          )}
+          {next && (
+            <Row label="Next" rule="bottom" class="pt-5">
+              <a href={url(next)} class="font-display text-2xl font-semibold text-navy leading-snug underline-reveal underline-offset-4 decoration-2">{label(next)} <span aria-hidden="true">→</span></a>
+            </Row>
+          )}
+        </dl>
+      )}
     </div>
   </Grid>
 </Section>

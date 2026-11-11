@@ -171,7 +171,7 @@ Committees support board governance and ensure compliance with nonprofit regulat
 
 > **Source:** Master Plan p. 17 (verbatim)
 
-### Board members (not on the page yet)
+### Board members (on the page since November 11, 2026, under 02 Structure, after the lead; same list as the homepage)
 
 Announced in press releases:
 - **Erik Ahlgren** — Board Chair

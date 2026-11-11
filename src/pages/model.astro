@@ -13,6 +13,7 @@ import ProgramList from '../components/ProgramList.astro';
 import { pad2 } from '../lib/format';
 import { url } from '../lib/url';
 import Dot from '../components/Dot.astro';
+import Closing from '../components/Closing.astro';
 
 // Copy: src/content/copy/model.md (Draft). Wording is verbatim from the copy deck.
 // Open review items (see model.md ⚠): the "Brings together" lists and the Civic shift line.
@@ -139,17 +140,10 @@ import Dot from '../components/Dot.astro';
     </Grid>
   </Section>
 
-  <!-- CLOSING (Master Plan p. 11): statement and next steps on the content axis -->
-  <Section rule={false}>
-    <Grid>
-      <p class="font-display text-3xl md:text-4xl font-semibold text-navy leading-tight mb-10">
-        This architecture ensures FSIC is not just a program—but a durable regional institution capable of driving workforce development, innovation, economic mobility, and civic cohesion for decades.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <Button href="/deployment">View the Deployment Timeline</Button>
-        <Button href="/programs-facilities" variant="secondary">Explore Programs &amp; Facilities</Button>
-      </div>
-    </Grid>
-  </Section>
+  <!-- CLOSING (Master Plan p. 11): statement and next steps, then where the page leads (Closing, src/data/onward.ts) -->
+  <Closing page="/model" statement="This architecture ensures FSIC is not just a program—but a durable regional institution capable of driving workforce development, innovation, economic mobility, and civic cohesion for decades.">
+    <Button href="/deployment">View the Deployment Timeline</Button>
+    <Button href="/programs-facilities" variant="secondary">Explore Programs &amp; Facilities</Button>
+  </Closing>
 
 </BaseLayout>

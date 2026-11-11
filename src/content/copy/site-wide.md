@@ -34,6 +34,16 @@ Used as: the homepage's meta description; the description in FSIC's structured d
 
 ---
 
+## PAGE ENDINGS (interior pages)
+
+> **Added (November 11, 2026, `docs/23` S2, S3, S5).** Under each interior page's closing buttons (`Closing`, `src/data/onward.ts`). **⚠ Review:** the three labels.
+
+**Questions about this:** two FAQ questions that belong to the page, each linking to its answer.
+**Read more:** up to three published blog posts on the page's topics.
+**Next:** the next page in the site's story, with an arrow: The Strategic Moment → Economic Impact → The FSIC Model → Phased Deployment → Programs & Facilities → Governance → Get Involved; Long-Term Vision → Get Involved.
+
+---
+
 ## FOOTER
 
 **Name:** Florida Space Innovation Center
