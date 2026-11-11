@@ -219,6 +219,12 @@ When a post is published, `npm run blog-plan` adds its follow-up to the plan, ma
 | 20 | What are industry-recognized credentials, and why do they matter? | Talent |  |  | How Will FSIC Measure Talent Engine Outcomes? | **In review** (`what-are-industry-recognized-credentials`) |
 | 21 | What is return on investment (ROI) for workforce development programs? | Regional economy |  |  | How Will FSIC Measure Its Economic Impact? | **In review** (`what-is-roi-for-workforce-programs`) |
 | 22 | What is teacher upskilling, and what does FSIC plan for educators? | Talent |  |  |  | **In review** (`what-is-teacher-upskilling`) |
+| 23 | How do employers help shape FSIC's training programs? | Talent |  |  | What Are Industry-Recognized Credentials, and Why Do They Matter? | **In review** (`how-employers-shape-fsic-training`) |
+| 24 | How will FSIC be funded over its first five years? | About FSIC |  |  | What Is Return on Investment (ROI) for Workforce Programs? | **In review** (`how-is-fsic-funded`) |
+| 25 | How can school districts partner with FSIC? | Talent |  |  | What Is Teacher Upskilling? FSIC's Plans for Educators | **In review** (`how-school-districts-partner-with-fsic`) |
+| 26 | What aerospace and advanced manufacturing jobs exist on the Space Coast, and what do they pay? | The region |  |  |  | **In review** (`space-coast-aerospace-jobs-and-pay`) |
+| 27 | What is a rapid prototyping studio, and what happens at an innovation sprint? | Innovation |  |  |  | **In review** (`what-is-a-rapid-prototyping-studio`) |
+| 28 | What is the Regional Talent Marketplace, and how will it connect employers and job seekers? | Talent |  |  | How Do Employers Help Shape FSIC's Training Programs? | **In review** (`what-is-the-regional-talent-marketplace`) |
 
 <!-- calendar:end -->
 

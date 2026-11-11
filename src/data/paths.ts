@@ -44,7 +44,7 @@ export const paths: Path[] = [
       { program: 'Dual-Enrollment STEM Pathways', what: 'College credit while still in high school, with hands-on experience, in engineering technology, advanced manufacturing, computer science and cybersecurity, or aerospace technology.', start: 1, end: 1, when: 'Year 1', href: '/programs-facilities/#portfolio' },
       microCredential,
       embedded('Job shadowing, then an internship or apprenticeship in a real industry setting.'),
-      marketplace('Openings with employers in the region, in one place.'),
+      marketplace('A digital platform that connects students, job seekers, employers and educators, with visibility into opportunities in the region.'),
     ],
   },
   {
@@ -54,7 +54,7 @@ export const paths: Path[] = [
     steps: [
       microCredential,
       embedded('An apprenticeship or employer-led workshops, to learn on the job.'),
-      marketplace('A direct line to employers looking for those skills.'),
+      marketplace('The same platform, connecting job seekers with employers and with visibility into opportunities in the region.'),
     ],
   },
   {
@@ -63,7 +63,7 @@ export const paths: Path[] = [
     tone: 'orange',
     steps: [
       { program: 'Employer advisory councils', what: 'A say in what FSIC teaches: councils validate curriculum and micro-credentials, so graduates have the skills the shop needs.', start: 1, end: 1, when: 'Year 1', href: '/governance/#structure' },
-      marketplace('A way to find and hire trained local people.'),
+      marketplace('The same platform, connecting employers with students, job seekers and educators in the region.'),
       market('Supplier Readiness Bootcamps', 'Training in quality systems, compliance, contracting and procurement, to enter aerospace and defense supply chains.'),
       market('Certification & Compliance Support', 'Help with AS9100, ITAR, CMMC and ISO standards.'),
       market('Contract Matchmaking & Procurement Support', 'Connections to prime contractors, federal agencies, spaceport operators and local government procurement.'),
