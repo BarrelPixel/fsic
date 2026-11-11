@@ -155,7 +155,7 @@ export const faqs: { q: string; id: string; a: Block[] }[] = [
     id: 'first-programs',
     a: [
       { p: 'FSIC launches with a phased, low-risk model focused on early wins and visible community value.' },
-      { label: phaseLabel(phases[0]), list: ['Micro-credential academies', 'Dual-enrollment STEM pathways', 'Teacher upskilling', 'Industry-embedded learning', 'K–12 STEM exploration programs'] },
+      { label: phaseLabel(phases[0]), list: ['Micro-credential academies', 'Dual-enrollment STEM pathways', 'Teacher upskilling', 'The Regional Talent Marketplace', 'Employer advisory councils'] },
       { label: 'Then:', list: phases.slice(1).map(phaseLabel) },
       { p: `Each phase's activities are on the ${page('/deployment', 'Phased Deployment')} page.` },
     ],

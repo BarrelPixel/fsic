@@ -142,8 +142,10 @@ FSIC launches with a phased, low-risk model focused on early wins and visible co
 - Micro-credential academies
 - Dual-enrollment STEM pathways
 - Teacher upskilling
-- Industry-embedded learning
-- K–12 STEM exploration programs
+- The Regional Talent Marketplace
+- Employer advisory councils
+
+> **⚠ Review (November 11, 2026):** the live site lists "Industry-embedded learning" and "K–12 STEM exploration programs" here. The Master Plan's Phase 1 activities (p. 13) are micro-credential academies, dual-enrollment STEM pathways, teacher upskilling, the Regional Talent Marketplace and employer advisory councils; industry-embedded learning is one of the Talent Engine programs but isn't listed for a phase, and K–12 STEM exploration isn't in Phase 1. The list now follows p. 13. Confirm, or restore the live wording.
 
 **Then:**
 - Phase 2: Innovation Engine Activation (Years 1–2)

@@ -107,6 +107,8 @@ FSIC transforms fragmented potential into coordinated progress. It ensures that 
 ## CLOSING
 
 **Statement:** the callout above ("FSIC transforms fragmented potential into coordinated progress. It ensures that opportunity flows into Southeast Volusia — not past it.")
+
+> **Proposed (November 11, 2026, `docs/23` S6), not yet on the page:** "FSIC is how Southeast Volusia takes part: one organization that brings the region's schools, employers and partners together, so that opportunity flows into the region, not past it." Replaces "transforms fragmented potential into coordinated progress", which is abstract and uses "coordinated", the word most pages open or close on. **⚠ Review.**
 **CTAs:** Explore the FSIC Model → /model; View Economic Impact → /economic-impact
 
 > On the page the callout is the closing statement, so it is not repeated in section 4.
