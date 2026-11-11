@@ -23,11 +23,13 @@ Keep the wording as published, including quotes. Fix only obvious formatting (bo
 
 > **Source:** fsic.space/news (verbatim). Checked November 8, 2026: no releases newer than July 29.
 > **August 3 release (Jake Johansson, Founders Council):** text and graphic supplied by the project lead (November 8, 2026), not taken from fsic.space. Added as supplied; the only changes are the bold dateline and ordinary hyphens in place of non-breaking ones ("county-level", "fastest-growing", "long-term", "forward-looking").
-> **⚠ Review:** The site doesn't describe a Founders Council anywhere else. The Governance page names a Board of Directors and a Multi-Institution Advisory Council. Add the Founders Council to the governance copy (`governance.md`) if it is a standing body.
+> **⚠ Review:** The Founders Council is now named on the homepage and the Governance page (Jake Johansson), but nothing says what it is or does. Describe it in `governance.md` if it is a standing body.
 > **Note:** The releases use words the content guidelines avoid ("proud to announce", "premier hub"). They stay as published.
 > **Images:** each release shows the graphic published with it on fsic.space/news (November 2026). The files are in `src/content/news/images/`, set by `image` and `imageAlt` in each release's frontmatter. The alt text transcribes the words in the graphic.
 
-> **⚠ Review:** The Jessie Thompson graphic says "Executive Board"; the release says "Board of Directors". The Trine and DePew graphics show a building signed "Florida Space Innovation Center" next to a rocket, and FSIC has no building yet. Confirm these graphics should stay.
+> **⚠ Review:** The Trine and DePew graphics show a building signed "Florida Space Innovation Center" next to a rocket, and FSIC has no building yet. Confirm these graphics should stay, and that FSIC owns them.
+
+> **Resolved (November 11, 2026):** the Jessie Thompson graphic says "Executive Board"; the release says "Board of Directors". The graphic stays as FSIC published it (DESIGN.md: release graphics aren't altered); the site's own text uses the release's "Board of Directors".
 
 ---
 
@@ -53,4 +55,4 @@ Headline, then "<date> · Press release", the release graphic beside the text (a
 
 ## BOILERPLATE
 
-> **⚠ Review:** The two "About FSIC" paragraphs above (July 7 and May 25) differ. Choose one standard boilerplate for future releases, and consider using it in the site footer or meta description.
+> **Resolved (November 11, 2026):** use the newer (July 7) paragraph as the standard boilerplate for future releases. Published releases stay as published.

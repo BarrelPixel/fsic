@@ -41,7 +41,7 @@ export const bodies: Body[] = [
     name: 'Board of Advisors',
     purpose: 'The Board of Advisors provides high-level guidance, strategic insight, and relationship-driven support to the CEO and leadership team.',
     lists: [
-      { label: 'Composition', items: ['Influential community and regional leaders', 'Senior executives from key industries', 'Philanthropic and civic influencers', 'University, research, and innovation partners', 'Entrepreneurs, founders, and small-business leaders', 'Former elected officials and policy influencers', 'Strategic connectors who open networks and opportunities', "Subject-matter experts aligned to FSIC's four engines"] },
+      { label: 'Composition', items: ['Influential community and regional leaders', 'Senior executives from key industries', 'Philanthropic and civic leaders', 'University, research, and innovation partners', 'Entrepreneurs, founders, and small-business leaders', 'Former elected officials and policy leaders', 'Strategic connectors who open networks and opportunities', "Subject-matter experts aligned to FSIC's four engines"] },
     ],
     duties: { label: 'Responsibilities', items: ['Open doors to employers, funders, and institutional partners', 'Support resource development and philanthropic outreach', 'Offer insight on regional trends, opportunities, and risks', 'Serve as ambassadors for FSIC in the community and across sectors', "Strengthen FSIC's visibility, credibility, and influence", 'Advise on program relevance and emerging industry needs', 'Support special initiatives, events, and public engagement'] },
   },

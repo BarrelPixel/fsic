@@ -59,10 +59,12 @@ FSIC is intentionally designed to amplify, not compete with, existing institutio
 
 > **Source:** Master Plan p. 15 (verbatim)
 
-**Lead:** FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — will be featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution.
+**Lead:** FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — are featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution.
 
 > **Source:** fsic.space FAQ, "Who leads FSIC?" (verbatim)
-> **⚠ Review:** This says members "will be featured … as they are formally seated", and the page names none yet, although press releases have announced four board members (below). Add the names once the seated board and titles are confirmed. The FAQ's "Multi-Institution Advisory Council" is not a name the Master Plan uses; the Master Plan has five advisory councils (below).
+> **Resolved (November 11, 2026):** "will be featured" → "are featured" (the FAQ's wording too): the board is named on this page (Who serves). Titles stay open (`07-open-questions.md`, Titles).
+
+> **⚠ Review:** The FAQ's "Multi-Institution Advisory Council" is not a name the Master Plan uses; the Master Plan has five advisory councils (below). Confirm the name FSIC uses.
 
 ### Board of Directors
 
@@ -142,10 +144,10 @@ The Board of Advisors provides high-level guidance, strategic insight, and relat
 **Composition:**
 - Influential community and regional leaders
 - Senior executives from key industries
-- Philanthropic and civic influencers
+- Philanthropic and civic leaders
 - University, research, and innovation partners
 - Entrepreneurs, founders, and small-business leaders
-- Former elected officials and policy influencers
+- Former elected officials and policy leaders
 - Strategic connectors who open networks and opportunities
 - Subject-matter experts aligned to FSIC's four engines
 
@@ -159,7 +161,7 @@ The Board of Advisors provides high-level guidance, strategic insight, and relat
 - Support special initiatives, events, and public engagement
 
 > **Source:** Master Plan pp. 16–17 (verbatim)
-> **⚠ Review:** "Influencers" appears twice. Consider "leaders" to keep the institutional tone (`docs/03-content-guidelines.md`).
+> **Resolved (November 11, 2026):** "influencers" → "leaders" in both lines (content guidelines).
 
 ### Committees
 
@@ -276,14 +278,14 @@ Master Plan p. 17: the founder serves as unpaid CEO during the startup phase, th
 **Thesis (label column):** Developers play a collaborative — not controlling — role in FSIC's work.
 
 **Body:**
-FSIC is an independent, community-aligned organization, and we recognize that many residents value slow growth or prefer no additional growth at all. Large developments in the region have already been approved, and FSIC does not influence or promote those decisions.
+FSIC is an independent, community-aligned organization, and it recognizes that many residents value slow growth or prefer no additional growth at all. Large developments in the region have already been approved, and FSIC does not influence or promote those decisions.
 
 Our role is to help ensure that what happens within that approved growth reflects community priorities by steering opportunities toward high-wage, future-focused industries rather than low-value or high-impact uses. Developers may help create spaces that support training, innovation, and community engagement, but FSIC does not endorse specific projects or drive development.
 
 Our focus is protecting community character while shaping the future economy in ways that benefit the people who already live here.
 
 > **Source:** fsic.space FAQ, "What is the role of developers in the FSIC?" (verbatim). An important trust statement; consistent with the decision not to name a site (audit §3.3).
-> **⚠ Review:** The FAQ speaks as "we"; the rest of the page is in the third person. Fine as FSIC's own statement, or change to "FSIC" throughout.
+> **Resolved (November 11, 2026):** "and we recognize" → "and it recognizes", so the page speaks of FSIC in the third person throughout (here and in the FAQ).
 
 ---
 

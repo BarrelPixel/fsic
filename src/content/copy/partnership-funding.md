@@ -100,7 +100,7 @@ For each partner type: who they are (overview), partnership roles, strategic ben
 | Stream | Years | Purpose | Sources |
 |--------|-------|---------|---------|
 | Startup Funding | 1–2 | Startup funding focuses on establishing core operations, launching the Talent Engine, and building early momentum. | Philanthropic contributions; Family foundations; Corporate sponsorships; Local government support; In-kind contributions (space, equipment, staffing) |
-| Public Funding & Government Grants | 1–5 | Public funding plays a critical role in scaling FSIC's programs and facilities. | State workforce development grants; Florida Department of Education innovation funding; Space Florida partnerships; EDA Tech Hubs & Build Back Better programs; NSF Engines & STEM education grants |
+| Public Funding & Government Grants | 1–5 | Public funding plays a critical role in scaling FSIC's programs and facilities. | State workforce development grants; Florida Department of Education innovation funding; Space Florida partnerships; EDA Tech Hubs; NSF Engines & STEM education grants |
 | Employer Partnerships & Corporate | — | Employers benefit directly from FSIC's programs and therefore play a key role in funding operations and program delivery. | Annual employer memberships; Sponsorship of labs, programs, and events; Equipment donations; Paid internships and apprenticeships; Co-funded research and innovation projects |
 | Earned Revenue Streams | 2–5 | Earned revenue becomes a significant component of FSIC's financial model as programs mature and demand increases. | Tuition for micro-credentials and adult training; Contract training for employers; Facility rentals for events and conferences; Innovation challenge sponsorships; Startup incubation fees |
 | Federal Innovation & Research Funding | 2–5 | FSIC's Innovation and Market Engines position the organization to compete for major federal innovation funding. | SBIR/STTR partnerships; Dual-use technology development grants; Applied research funding from DoD, NASA, NSF; EDA innovation and entrepreneurship grants |
@@ -108,7 +108,7 @@ For each partner type: who they are (overview), partnership roles, strategic ben
 
 > **Source:** Master Plan pp. 25–26, funding table (stream names, years, sources and purpose sentences verbatim; the public-funding purpose is the first sentence of its two).
 > **⚠ Review — years:** The table gives no timeframe for Employer Partnerships & Corporate. The page shows "Not stated" rather than guessing. The p. 25 text extraction suggests "Years 2–5"; confirm with FSIC.
-> **⚠ Review — Build Back Better:** Listed verbatim as a potential source. `strategic-moment.md` notes that this program name may be dated. Confirm before approval.
+> **Resolved (November 11, 2026):** "Build Back Better programs" removed from the public-funding sources. EDA's Build Back Better Regional Challenge made its awards in 2022 and has no open round, so it isn't a source FSIC can pursue. The Master Plan's list (p. 25) is otherwise kept verbatim.
 
 **Sustainability:** By Year 3, FSIC is positioned to sustain 30–50% of its operating budget through earned revenue and employer partnerships, with grants and philanthropy supporting innovation and growth.
 

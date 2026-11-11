@@ -5,7 +5,7 @@
 **Route:** /leadership (proposed; could instead be a section of /governance, which is now built and has no names yet)
 **Sources:** fsic.space/john-joaquin, fsic.space/leadership, fsic.space/news
 
-> **⚠ Review:** The live /leadership page lists Wix sample people (Ashley Jones, Tech Lead; Tess Brown, Office Manager; Lisa Rose, Product Manager). They are **not real**. Do not migrate them. Only John Joaquin's entry is real.
+> **Resolved (November 11, 2026):** the live /leadership page lists Wix sample people (Ashley Jones, Tech Lead; Tess Brown, Office Manager; Lisa Rose, Product Manager). They are **not real** and are not on the new site, which has no Leadership page: the board is on Governance. Only John Joaquin's entry is real.
 
 ---
 
@@ -69,7 +69,7 @@ That realization — and a lifelong commitment to serving where I'm needed — i
 - Johns Hopkins University School of Public Health — Health Technology and Public Policy
 
 > **Source:** fsic.space/john-joaquin (verbatim; list formatting normalized). The live contact block (`info@mysite.com`, `123-456-7890`) is a placeholder and has been left out.
-> **⚠ Review:** The live site spells it "Citizen's for Sensible Transportation". Check whether it should be "Citizens for…". The live text also splits "Carver VoTech High Schoo / l" across lines (fixed above). Ask John whether the political candidacy should appear on an institutional site.
+> **⚠ Review:** The live site spells it "Citizen's for Sensible Transportation"; it is almost certainly "Citizens for…". Confirm with John, and ask whether the political candidacy should appear on an institutional site. ("Carver VoTech High School", split across lines on the live site, is fixed above.)
 
 ---
 
