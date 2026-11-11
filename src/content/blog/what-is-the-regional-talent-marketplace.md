@@ -21,6 +21,7 @@ sources:
 visual:
   phases: [1]
 status: draft
+from: how-employers-shape-fsic-training
 followUp:
   question: "What is industry-embedded learning, and how will students learn on the job?"
   slug: what-is-industry-embedded-learning
