@@ -11,7 +11,7 @@
 > - "talent development, innovation, commercialization, and civic engagement" (04) → The FSIC Model
 > - New line after Risks and Opportunities (03): "Why the region must act now is on the Strategic Moment page." → The Strategic Moment. **⚠ Review:** new wording
 
-> **⚠ Review — scenario attribution (see `docs/08-current-site-audit.md` §3.10):** The Master Plan's chart (p. 8) shows that the headline figures ($10.2–$12.4B output, 74,500–79,500 job-years, $1.35–$1.55B wages, $690–$910M fiscal, $800M–$1.56B funding) are the **Extended FSIC (FSIC 2.0)** scenario. The foundational FSIC 1.0 scenario is lower ($8.1–$9.7B output). This page labels the headline figures as FSIC 2.0 and shows all three scenarios. The approved home page says "Independent 25-year analysis projects that FSIC will generate:" above the same figures, without naming the scenario. Decide whether the home page should name it.
+> **Resolved (November 11, 2026) — scenario attribution (see `docs/08-current-site-audit.md` §3.10):** The Master Plan's chart (p. 8) shows that the headline figures ($10.2–$12.4B output, 74,500–79,500 job-years, $1.35–$1.55B wages, $690–$910M fiscal, $800M–$1.56B funding) are the **Extended FSIC (FSIC 2.0)** scenario. The foundational FSIC 1.0 scenario is lower ($8.1–$9.7B output). This page labels the headline figures as FSIC 2.0 and shows all three scenarios. The approved home page says "Independent 25-year analysis projects that FSIC will generate:" above the same figures, without naming the scenario. Decide whether the home page should name it. **Answer:** yes; the homepage and this page both name it ("with full implementation (the Master Plan's FSIC 2.0 scenario)"). The two chart values below stay open.
 
 
 > **Answer-first opening (November 11, 2026, `docs/23` S1).** The page now opens with its answer: Statement: "What Participation Is Worth Over 25 Years" (was "Transformational, Long-Term Regional Impact", the homepage's change). Lead: Independent 25-year analysis projects that, with full implementation (the Master Plan's FSIC 2.0 scenario), FSIC would help the region generate $10.2–$12.4 billion in economic output, 74,500–79,500 job-years, $1.35–$1.55 billion in new wages, and $690–$910 million in fiscal revenue for local and state governments. (Figures from FIGURES. Replaces the lead "The Florida Space Innovation Center (FSIC) is a regional platform designed to ensure…"; its paragraph that follows stays.) Every page also ends with "Questions about this", "Read more" and "Next" (`site-wide.md`). **⚠ Review:** new wording.
@@ -54,7 +54,7 @@
 | External funding potential | $800 million–$1.56 billion | FSIC aligns with federal, state, private, and philanthropic funding streams tied to workforce development, innovation, research, and economic competitiveness. |
 
 > **Source:** Master Plan pp. 7–8, "25-Year Impact at-a-Glance" (headline and explanations verbatim). Scenario from the p. 8 chart.
-> **⚠ Review:** The intro line names the scenario. See the note at the top of this file.
+> **Resolved (November 11, 2026):** the intro line names the scenario (FSIC 2.0), as the homepage does.
 
 **Thesis (label column):** This is not a short-term program. It is a durable economic backbone.
 
@@ -74,7 +74,7 @@
 - **FSIC 2.0** — FSIC 2.0 represents a transformational path: a fully realized innovation district anchored by NASA, university partners, high tech employers, and a convention and performing arts center. This expanded model generates the strongest economic output, highest wage job creation, and the largest influx of external funding, while establishing New Smyrna Beach as a statewide hub for space related research, education, and tourism.
 
 > **Source:** Master Plan pp. 8–9 (verbatim).
-> **⚠ Review:** FSIC 2.0 names NASA as an anchor. Don't present it as a confirmed partner (`docs/03-content-guidelines.md`: no invented partners). The text describes a scenario, which is how the page frames it.
+> **Resolved (November 11, 2026):** the page describes FSIC 2.0 as a scenario and presents no one, NASA included, as a confirmed partner. Keep it that way (`docs/03-content-guidelines.md`).
 
 **Comparison table:**
 
@@ -160,7 +160,7 @@ Independent economic modeling shows that FSIC dramatically improves the region's
 These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at info@fsic.space.
 
 > **Source:** fsic.space FAQ (verbatim). Shown in the hero and, with "Source: FSIC Master Plan 2026–2031.", under each set of figures.
-> **⚠ Review:** Decide whether the full analysis should be downloadable (see `07-open-questions.md`, Document downloads).
+> **Resolved (November 11, 2026):** not for now. The approved disclaimer asks readers to contact FSIC for the full analysis (`07-open-questions.md`, Document downloads).
 
 ---
 

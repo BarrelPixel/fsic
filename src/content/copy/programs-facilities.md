@@ -97,7 +97,7 @@ One row per engine: the engine's line, then its programs (each opens to its desc
 
 > **Source:** Master Plan pp. 19–21, "Program Portfolio and Core Offerings" (verbatim; hyphens added in compound terms such as "Micro-Credential" and "employer-led"). Left out: the Market Engine's one-line outcomes, which are misaligned with their programs in the PDF table, and a stray "tools" under Certification & Compliance Support.
 > **Decision (November 2026):** the project lead chose the Master Plan's program names for both pages. The Model page's engine components are replaced with this portfolio (separate PR); both pages read one list (`src/lib/programs.ts`).
-> **⚠ Review:** Do **not** move the Wix "Book Online" services (Challenge Lab $100, STEM Outreach Event $80, Micro-Credential Academy $250) or the sample events dated Jan 15, 2026. They are template placeholders. See audit §1.
+> **Resolved (November 11, 2026):** the Wix "Book Online" services (Challenge Lab $100, STEM Outreach Event $80, Micro-Credential Academy $250) and the sample events dated Jan 15, 2026 are template placeholders and are not on the new site. See audit §1.
 
 ---
 

@@ -100,9 +100,9 @@ This creates a pipeline of supplier-ready companies capable of competing in high
 **Link:** These are the Market Engine's programs, on the FSIC Model page.
 
 ### What economic impact will FSIC have on the region?
-Independent economic modeling shows that FSIC dramatically improves the region's long-term economic trajectory. With full implementation over 25 years (the Master Plan's Extended FSIC, or FSIC 2.0, scenario), FSIC is projected to help the region generate $10.2–$12.4 billion in economic output, support 74,500–79,500 job-years, increase local wages by $1.35–$1.55 billion, and generate $690–$910 million in fiscal revenue for local and state governments. It also positions the region to attract $800 million to $1.56 billion in external funding tied to workforce development, innovation, and research. These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at info@fsic.space.
+Independent economic modeling projects that, with full implementation over 25 years (the Master Plan's Extended FSIC, or FSIC 2.0, scenario), FSIC would help the region generate $10.2–$12.4 billion in economic output, support 74,500–79,500 job-years, increase local wages by $1.35–$1.55 billion, and generate $690–$910 million in fiscal revenue for local and state governments. It also positions the region to attract $800 million to $1.56 billion in external funding tied to workforce development, innovation, and research. These are estimates based upon assumptions that may or may not be accurate over time. For the full analysis contact us at info@fsic.space.
 
-> **⚠ Review (November 10, 2026, `docs/13` B8):** answer engines quote first sentences on their own; "dramatically improves" may be quoted without the ranges and the disclaimer. Consider opening with the figures instead, e.g. "Independent economic modeling projects that, with full implementation over 25 years, FSIC would help the region generate $10.2–$12.4 billion in economic output…".
+> **Resolved (November 11, 2026):** the answer now opens with the figures ("Independent economic modeling projects that, with full implementation over 25 years … FSIC would help the region generate…"), so a quoted first sentence carries the ranges; "dramatically improves" is gone (content guidelines). The rest is unchanged. Decided by Barrel & Pixel; FSIC can object on the review page.
 
 **Link:** The full analysis is on the Economic Impact page.
 
@@ -178,11 +178,11 @@ The Florida Space Innovation Center is founded by John Joaquin, a technology ind
 
 In addition, he served as chair of the City of New Smyrna Beach's Economic Development Task Force (EDTF) and the Southeast Volusia Chamber of Commerce's Advocacy & Economic Development (A&ED) committee, where the idea of the FSIC was developed.
 
-FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — will be featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution.
+FSIC's leadership model is intentionally broad. A cross-sector Board of Directors and a Multi-Institution Advisory Council — representing education, industry, workforce, civic, and government partners — are featured on the FSIC website as they are formally seated. This structure ensures FSIC remains a neutral, community-anchored institution.
 
 **Link:** The board, councils and committees are described on the Governance & Transparency page.
 
-> **⚠ Review:** Shown as published. Board members have now been seated and announced (see the News page), so "will be featured on the FSIC website as they are formally seated" is out of date. Update the answer once titles and the seated board are confirmed. See audit §3.6.
+> **Resolved (November 11, 2026):** "will be featured" → "are featured": the board and Founders Council are now named on the Governance page and the homepage. Titles stay open (`07-open-questions.md`, Titles).
 
 ### How can the public get involved?
 FSIC is designed to be a community-powered movement, and there are many ways for residents, educators, businesses, and civic partners to participate from the very beginning.

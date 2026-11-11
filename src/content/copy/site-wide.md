@@ -102,4 +102,4 @@ Shown for any address on the site that has no page, including old fsic.space add
 | Terms & Conditions | Unedited Wix template | [TODO] |
 | Refund Policy | Unedited Wix template | Likely not needed (no paid services) |
 
-> **⚠ Review:** All four legal pages on the live site are linked from the footer but contain only template text. Fixing them on the current site may be worth doing before the new site launches.
+> **Resolved (November 11, 2026):** all four legal pages on the live site are linked from the footer but contain only template text. Not worth fixing on Wix: the launch replaces them (the new site's privacy and accessibility drafts are ready for FSIC's review).

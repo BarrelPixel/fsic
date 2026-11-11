@@ -89,7 +89,7 @@ The Talent Engine is FSIC's workforce powerhouse, building clear, employer-align
 > **Changed (November 2026):** each engine's "Components" (from fsic.space) are replaced by the Master Plan's programs, as chosen by the project lead, so the Model and Programs & Facilities pages use one list.
 > **Source:** Summary from fsic.space/about-4; overview from fsic.space/talent (verbatim).
 > **Layout note:** The page leaves out the "Includes:" line because the programs list says the same thing.
-> **⚠ Review:** "workforce powerhouse" is hype language under the content guidelines.
+> **Resolved (November 11, 2026):** the page doesn't show this overview paragraph (it shows Brings together, What it solves and Regional impact instead), so "workforce powerhouse" isn't on the site. If the paragraph is ever used, drop the phrase (content guidelines).
 
 ---
 
