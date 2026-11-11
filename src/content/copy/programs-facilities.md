@@ -8,6 +8,8 @@
 > **Links (November 2026):** existing words link to the page that covers them (internal-linking review); the wording is unchanged except where noted.
 > - Each phase name in the facilities plan (03) → that phase on Phased Deployment
 
+
+> **Answer-first opening (November 11, 2026, `docs/23` S1).** The page now opens with its answer: FSIC's programs are planned for students and families, adults and career-switchers, businesses, and the whole community, starting with the Talent Engine in Year 1. FSIC is a virtual organization today, so programs run with partners while facilities are planned in phases. (The approved lead follows it.) Every page also ends with "Questions about this", "Read more" and "Next" (`site-wide.md`). **⚠ Review:** new wording.
 ---
 
 ## HERO

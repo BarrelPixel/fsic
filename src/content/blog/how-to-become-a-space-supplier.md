@@ -1,12 +1,36 @@
 ---
-title: "How to Become a Supplier to the Space Industry"
-description: "Becoming a space industry supplier requires certifications and capabilities. Steps for small businesses and what FSIC offers."
+title: "How Can a Small Business Become a Space Industry Supplier?"
+description: "What aerospace and defense buyers can require of suppliers, from AS9100 to ITAR and CMMC, and the supplier-readiness support FSIC plans."
 question: "How can a small business become a supplier to the space industry?"
-summary: "Becoming a supplier to the space industry requires meeting quality and security certifications such as AS9100 (aerospace quality management), ITAR registration (for defense-related work), and often CMMC (cybersecurity). Small businesses must also demonstrate technical capabilities, capacity, and reliability. FSIC's Market Engine will help Volusia County companies navigate certification requirements, strengthen proposals, and connect with prime contractors seeking qualified suppliers."
+summary: "A small business becomes a space industry supplier by meeting the requirements its buyers set, which can include AS9100 quality certification, ITAR registration for defense articles and services, and CMMC status for Department of Defense contracts, and by registering where buyers look. FSIC’s Master Plan includes supplier-readiness bootcamps and certification support in its Market Engine, planned for Years 2–3."
 date: 2026-11-10
 author: erik-ahlgren
 topic: market
 audiences: [employers]
+faqs:
+  - q: "Does every aerospace supplier need AS9100?"
+    a: "No. Requirements depend on the buyer, the product and the contract. The solicitation or purchase order states what is required."
+  - q: "Does FSIC offer supplier-readiness training now?"
+    a: "Not yet. Supplier-readiness bootcamps and certification support are part of the Market Engine, planned for Phase 3 (Years 2–3 of the Master Plan). FSIC is in Phase 1, launching the Talent Engine."
+sources:
+  - title: "AS9100D: Quality Management Systems – Requirements for Aviation, Space and Defense Organizations"
+    publisher: "SAE International"
+    url: "https://www.sae.org/standards/as9100d-quality-management-systems-requirements-aviation-space-defense-organizations"
+  - title: "22 CFR 122.1, Registration: requirements, exemptions, and purpose (ITAR)"
+    publisher: "Electronic Code of Federal Regulations"
+    url: "https://www.ecfr.gov/current/title-22/chapter-I/subchapter-M/part-122/section-122.1"
+  - title: "32 CFR Part 170, Cybersecurity Maturity Model Certification (CMMC) Program"
+    publisher: "Electronic Code of Federal Regulations"
+    url: "https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-G/part-170"
+  - title: "48 CFR 204.7502, CMMC policy (DFARS)"
+    publisher: "Electronic Code of Federal Regulations"
+    url: "https://www.ecfr.gov/current/title-48/chapter-2/subchapter-B/part-204/subpart-204.75/section-204.7502"
+  - title: "Entity Registration"
+    publisher: "SAM.gov, U.S. General Services Administration"
+    url: "https://sam.gov/entity-registration"
+  - title: "FSIC Master Plan 2026–2031"
+    publisher: "Florida Space Innovation Center"
+    date: "pp. 6, 10, 14, 18, 20–21, 32–34"
 status: review
 publishDate: 2026-11-30
 followUp:
@@ -14,184 +38,47 @@ followUp:
   slug: what-is-as9100-certification
   topic: market
 from: what-are-sbir-and-sttr
-sources:
-  - title: "AS9100 Quality Management Systems"
-    publisher: "International Aerospace Quality Group"
-    url: "https://www.sae.org/standards/content/as9100d/"
-  - title: "ITAR Registration"
-    publisher: "U.S. Department of State, Directorate of Defense Trade Controls"
-    url: "https://www.pmddtc.state.gov/ddtc_public/ddtc_public"
-  - title: "Cybersecurity Maturity Model Certification (CMMC)"
-    publisher: "U.S. Department of Defense"
-    url: "https://www.acq.osd.mil/cmmc/"
-  - title: "Florida Space Innovation Center Master Plan"
-    publisher: "FSIC"
-    date: "2026"
 ---
 
-Becoming a supplier to the space industry requires meeting quality and security certifications such as AS9100 (aerospace quality management), ITAR registration (for defense-related work), and often CMMC (cybersecurity). Small businesses must also demonstrate technical capabilities, capacity, and reliability. FSIC's Market Engine will help Volusia County companies navigate certification requirements, strengthen proposals, and connect with prime contractors seeking qualified suppliers.
+## What does it take to become a supplier?
 
-## What does the space industry need from suppliers?
+A supplier is a company that sells parts, materials or services to another company or to a government buyer. In aerospace and defense, buyers often set requirements beyond price and delivery: a certified quality system, registration under export rules, or a cybersecurity status. Which ones apply depends on the buyer, the product and the contract.
 
-The space industry's supply chain includes thousands of companies producing components, materials, software, and services for spacecraft, satellites, launch vehicles, and ground systems. Prime contractors—companies like SpaceX, Blue Origin, Lockheed Martin, and Northrop Grumman—rely on a network of suppliers for specialized parts and capabilities.
+FSIC’s Master Plan names three of these as barriers that keep local companies out of aerospace and defense supply chains: **AS9100, ITAR and CMMC**.
 
-Suppliers provide:
+## What is AS9100?
 
-- **Precision-manufactured components**: CNC-machined parts, castings, forgings, fasteners, and assemblies built to tight tolerances
-- **Materials and coatings**: Composites, alloys, thermal protection systems, and surface treatments
-- **Electronics and avionics**: Circuit boards, sensors, communication systems, and control electronics
-- **Software and IT services**: Flight software, simulation tools, cybersecurity, and data management
-- **Testing and inspection**: Non-destructive testing, quality assurance, and certification support
-- **Logistics and support services**: Packaging, transportation, and maintenance
+**AS9100** is a quality management standard for aviation, space and defense organizations, published by SAE International. Buyers decide whether they require it, so a supplier should confirm the requirement, and the revision that applies, with each customer.
 
-The industry values suppliers who can meet strict quality standards, deliver on time, protect sensitive information, and scale production as contracts grow.
+## What is ITAR registration?
 
-## What certifications do aerospace suppliers need?
+The **International Traffic in Arms Regulations (ITAR)** govern defense articles and defense services. Under 22 CFR 122.1, any person in the United States in the business of manufacturing, exporting or temporarily importing defense articles, or furnishing defense services, must register with the State Department’s Directorate of Defense Trade Controls. A manufacturer that does not export must still register. The regulation lists some exemptions.
 
-Most prime contractors require suppliers to hold specific certifications that demonstrate quality management, security compliance, and technical capability:
+## What is CMMC?
 
-### AS9100: Aerospace Quality Management
+The **Cybersecurity Maturity Model Certification (CMMC)** is the Department of Defense program that checks whether contractors protect Federal Contract Information and Controlled Unclassified Information. It has three levels (32 CFR Part 170):
 
-AS9100 is an international quality management standard for the aerospace industry. It builds on ISO 9001 (the general quality standard) with additional requirements for risk management, configuration control, and traceability.
+- **Level 1:** the basic safeguarding requirements, met through an annual self-assessment.
+- **Level 2:** the requirements of NIST SP 800-171, met through a self-assessment or a certification assessment by an accredited third-party assessor, depending on the contract.
+- **Level 3:** selected requirements of NIST SP 800-172, assessed by the Defense Contract Management Agency.
 
-Prime contractors often require AS9100 certification for suppliers producing flight hardware, critical components, or assemblies. Certification involves:
-
-- Implementing a quality management system that meets AS9100 requirements
-- Undergoing an audit by an accredited registrar
-- Maintaining the system through annual surveillance audits
-
-AS9100 certification signals to buyers that a supplier has the processes, documentation, and controls needed to produce aerospace-grade products consistently.
-
-### ITAR Registration: Defense-Related Work
-
-The International Traffic in Arms Regulations (ITAR) govern the export of defense-related articles and services. Companies working on defense or national security space programs must register with the U.S. Department of State and comply with ITAR requirements.
-
-ITAR compliance includes:
-
-- Registering with the Directorate of Defense Trade Controls (DDTC)
-- Implementing physical and cybersecurity controls to protect technical data
-- Training employees on export control requirements
-- Screening foreign nationals' access to ITAR-controlled information
-
-Not all space work requires ITAR registration. Commercial satellite work and non-defense launch services often do not. But work for the Department of Defense, intelligence agencies, or classified programs almost always does.
-
-### CMMC: Cybersecurity Maturity Model Certification
-
-The Cybersecurity Maturity Model Certification (CMMC) is a Department of Defense requirement for contractors handling Controlled Unclassified Information (CUI). CMMC verifies that companies have cybersecurity practices in place to protect sensitive data.
-
-CMMC has three levels:
-
-- **Level 1 (Foundational)**: Basic cybersecurity practices, such as password policies and antivirus software
-- **Level 2 (Advanced)**: Implements the 110 practices in NIST SP 800-171, the standard for protecting CUI
-- **Level 3 (Expert)**: Advanced practices for protecting highly sensitive information
-
-Most Department of Defense suppliers need Level 2 certification. Certification requires an assessment by an accredited third-party organization.
-
-## What technical capabilities do suppliers need?
-
-Certifications prove processes and compliance, but prime contractors also evaluate technical capabilities:
-
-- **Precision manufacturing**: The ability to machine, fabricate, or assemble parts to aerospace tolerances (often measured in thousandths of an inch or microns)
-- **Materials expertise**: Experience working with aerospace-grade metals, composites, or specialty materials
-- **Testing and inspection equipment**: Tools to verify dimensions, material properties, and surface finishes
-- **Capacity**: Sufficient equipment, staff, and floor space to meet production volumes and delivery schedules
-- **Traceability**: Systems to track materials, processes, and inspections from raw material to finished product
-
-Many small businesses already have some of these capabilities from work in other industries—medical devices, automotive, industrial equipment—but need to adapt their processes and documentation to meet aerospace standards.
+The level a contract needs is stated in the solicitation, and a contractor must hold that status at the time of award (DFARS 204.7502).
 
 ## How does a business get started?
 
-Becoming a qualified aerospace supplier is a multi-step process that can take six months to several years, depending on the company's starting point:
+1. **Learn what your target buyers require.** Requirements differ by customer, product and contract, and are stated in solicitations and purchase orders.
+2. **Compare those requirements with what you have.** Quality system, equipment, traceability, cybersecurity and export controls.
+3. **Close the gaps that matter for your market.** For example, a quality system to AS9100 for buyers who require it, ITAR registration if you will manufacture defense articles, or the CMMC level a Department of Defense contract names.
+4. **Register where buyers look.** To bid on federal contracts as a prime contractor, a business needs a registration in SAM.gov, the federal System for Award Management.
 
-### 1. Assess current capabilities and gaps
+## How will FSIC help?
 
-Start by evaluating what the business already does well and what needs to change:
+FSIC’s Market Engine is planned as “the commercialization and supplier-readiness platform that helps local companies enter aerospace and defense supply chains.” Its programs include:
 
-- Do you have precision manufacturing equipment and skilled operators?
-- Is your quality management system documented and consistent?
-- Can you meet aerospace material and traceability requirements?
-- Do you have the cybersecurity and physical security controls needed for defense work?
+- **Supplier readiness bootcamps:** training on quality systems, compliance requirements, contracting and procurement pathways
+- **Certification and compliance support:** assistance with AS9100, ITAR, CMMC and ISO standards
+- **Contract matchmaking and procurement support:** connections to prime contractors, federal agencies, spaceport operators and local government procurement
 
-Identify the certifications, equipment, or staff training required to close the gaps.
+These are planned for **Phase 3: Market Engine Deployment (Years 2–3)**, with a small business resource center and certification and compliance training rooms among the planned spaces. The plan’s roadmap begins supplier-readiness bootcamps in Year 2 and expands certification support in Year 3. FSIC is now in Phase 1. It plans to report the businesses it supports and the certifications they achieve.
 
-### 2. Choose target customers and products
-
-Not all aerospace work requires the same certifications or capabilities. A company producing non-critical hardware for commercial satellites faces different requirements than one making defense-related components.
-
-Research potential customers—prime contractors, Tier 1 and Tier 2 suppliers, and regional aerospace companies—and understand what they need. Attend industry events, join supplier directories, and ask buyers what certifications and capabilities they require.
-
-### 3. Pursue necessary certifications
-
-Start with the certifications that open the most doors:
-
-- **AS9100** for companies producing hardware or assemblies
-- **ITAR registration** if pursuing defense or national security work
-- **CMMC Level 2** if handling Department of Defense contracts
-
-Certification typically requires consulting support, internal process changes, employee training, and an assessment or audit. Budget for both the direct costs (consultant fees, audit fees, registration) and the time required to implement changes.
-
-### 4. Register in supplier databases
-
-Prime contractors use supplier databases to find qualified companies. Register your business in:
-
-- **SAM.gov** (System for Award Management): Required for federal contracts
-- **Supplier portals** for major primes (SpaceX, Blue Origin, Lockheed Martin, Northrop Grumman, etc.)
-- **Regional directories**: Space Florida, Florida High Tech Corridor, and industry associations
-
-Update your profiles with certifications, capabilities, past performance, and contact information.
-
-### 5. Build relationships and prove capability
-
-Aerospace supply chains are built on trust and proven performance. Small businesses often start with small orders or test projects to demonstrate capability before winning larger contracts.
-
-Attend industry events, participate in supplier matchmaking programs, and respond to Requests for Information (RFIs) or Requests for Quotation (RFQs). Build relationships with procurement teams, engineers, and program managers.
-
-## How will FSIC help businesses become suppliers?
-
-FSIC's Market Engine will provide support to Volusia County businesses pursuing aerospace and advanced manufacturing opportunities:
-
-- **Certification bootcamps**: Training on AS9100, ITAR, CMMC, and other standards, including what they require and how to prepare for audits
-- **Technical assessments**: Evaluations of current capabilities and recommendations for equipment, process, or staff investments
-- **Matchmaking with prime contractors**: Events and introductions connecting local suppliers with companies seeking qualified partners
-- **Proposal and RFQ support**: Feedback on quotes, proposals, and capability statements to increase competitiveness
-- **Access to shared resources**: Prototyping equipment, testing labs, and expertise that small businesses cannot afford individually
-
-These services reduce the time, cost, and risk of entering aerospace supply chains, helping local businesses compete for high-value contracts.
-
-## Why this matters for Southeast Volusia
-
-The Space Coast is experiencing unprecedented growth, with billions of dollars in aerospace contracts awarded annually. But most of that economic activity flows to large primes and out-of-state suppliers because local businesses lack the certifications, capacity, or connections to compete.
-
-FSIC's goal is to change that by building a pipeline of supplier-ready companies in Southeast Volusia. When local businesses can capture even a small percentage of the region's aerospace spending, it translates to higher wages, new jobs, and retained wealth in the community.
-
-Supplier readiness is not just about growing individual businesses—it is about ensuring that the Space Coast's economic boom benefits the people who already live here.
-
-## Frequently Asked Questions
-
-### How long does it take to become a certified aerospace supplier?
-
-It depends on the starting point. A company with strong manufacturing processes and quality management might achieve AS9100 certification in six to twelve months. A company starting from scratch may need two years or more to implement systems, train staff, pursue certification, and build relationships with buyers. ITAR registration and CMMC certification add additional time. FSIC's support accelerates the process by providing training, connections, and shared resources.
-
-### Do all aerospace suppliers need AS9100 certification?
-
-No, but many do. AS9100 is typically required for companies producing flight hardware, safety-critical components, or assemblies. Suppliers providing raw materials, commercial off-the-shelf products, or non-critical services may not need it. The requirement depends on the customer, the product, and the contract. Buyers specify certification requirements in their solicitations.
-
-### Can a small business compete with large, established suppliers?
-
-Yes, especially in niche areas where large suppliers lack capacity, expertise, or interest. Small businesses succeed by specializing in difficult-to-produce parts, offering faster turnaround, or serving markets too small for large competitors. Prime contractors actively seek to diversify their supplier base and often set aside contracts for small businesses. The key is demonstrating capability, reliability, and the willingness to meet aerospace standards.
-
-### What if my business works in another industry, like medical devices or automotive?
-
-Many capabilities transfer well to aerospace: precision machining, welding, electronics assembly, and quality management. The standards are stricter and the documentation more rigorous, but the underlying skills are similar. Companies with ISO 9001 certification (the general quality standard) have a head start on AS9100. FSIC's supplier readiness programs help businesses adapt their existing capabilities to aerospace requirements.
-
----
-
-**Read more about FSIC's support for businesses:**
-
-- [What Are SBIR and STTR? Federal Grants for Innovation](/blog/what-are-sbir-and-sttr/)
-- [The Market Engine](/model#market) (pillar page)
-- [Partnership & Funding](/partnership-funding/)
-
-**Related FAQ answers:**
-
-- [How does FSIC support local businesses and entrepreneurs?](/faq#businesses-and-entrepreneurs)
+Businesses that also develop new technology can read [What are SBIR and STTR?](/blog/what-are-sbir-and-sttr/) The Market Engine is described on the [FSIC Model](/model#market) page, and the phases on the [Phased Deployment](/deployment/#phase-3) page. See also [How does FSIC support local businesses and entrepreneurs?](/faq#businesses-and-entrepreneurs)

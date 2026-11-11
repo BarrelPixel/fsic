@@ -1,12 +1,19 @@
 ---
 title: "How Is FSIC Governed and Kept Independent?"
-description: "FSIC's cross-sector Board, conflict policies, and public transparency. How governance ensures independence and accountability."
+description: "How FSIC's board, advisory councils and committees are designed so that no single sector, developers included, controls its decisions."
 question: "How is FSIC governed, and how is it kept independent from developers?"
-summary: "FSIC is governed by a cross-sector Board of Directors representing education, workforce, industry, civic organizations, and the community—no single sector controls decision-making. Board members serve without compensation and must disclose conflicts of interest. FSIC's governance follows nonprofit best practices: bylaws are public, Board meetings are transparent, and financial reports (Form 990) are filed annually with the IRS. These structures ensure FSIC remains independent, community-aligned, and accountable to its mission, not private interests."
+summary: "FSIC is governed by a Board of Directors responsible for strategic oversight, fiduciary stewardship and accountability. Under FSIC's Master Plan, the board is designed so that no single individual, partner or sector can dominate decisions, with an independent chair, term limits, conflict-of-interest policies and balanced representation. FSIC states that developers play a collaborative, not controlling, role and that it does not endorse specific projects."
 date: 2026-11-10
 author: erik-ahlgren
 topic: organization
 audiences: [funders, community, policymakers]
+faqs:
+  - q: "Do developers control FSIC?"
+    a: "No. FSIC states that developers play a collaborative, not controlling, role in its work, and that it does not endorse specific projects or drive development."
+  - q: "Who chairs FSIC's Board of Directors?"
+    a: "Erik Ahlgren is Board Chair, as FSIC's July 29, 2026 release states."
+  - q: "Where can I see FSIC's IRS documents?"
+    a: "The Governance & Transparency page explains how to request FSIC's IRS determination letter, and will post each annual return once filed. FSIC's fiscal year runs July 1 to June 30."
 status: review
 publishDate: 2027-01-03
 followUp:
@@ -15,189 +22,67 @@ followUp:
   topic: organization
 from: what-is-a-backbone-organization
 sources:
-  - title: "Florida Space Innovation Center Master Plan"
-    publisher: "FSIC"
-    date: "2026"
+  - title: "FSIC Master Plan 2026–2031"
+    publisher: "Florida Space Innovation Center"
+    date: "pp. 13, 15–17, 31"
+  - title: "Frequently Asked Questions (“What is the role of developers in the FSIC?”)"
+    publisher: "Florida Space Innovation Center"
+  - title: "Board of Directors and Founders Council appointment releases"
+    publisher: "Florida Space Innovation Center"
+    date: "July 7, July 13, July 29 and August 3, 2026"
+  - title: "Public disclosure and availability of exempt organizations returns and applications: Documents subject to public disclosure"
+    publisher: "Internal Revenue Service"
+    url: "https://www.irs.gov/charities-non-profits/public-disclosure-and-availability-of-exempt-organizations-returns-and-applications-documents-subject-to-public-disclosure"
 ---
-
-FSIC is governed by a cross-sector Board of Directors representing education, workforce, industry, civic organizations, and the community—no single sector controls decision-making. Board members serve without compensation and must disclose conflicts of interest. FSIC's governance follows nonprofit best practices: bylaws are public, Board meetings are transparent, and financial reports (Form 990) are filed annually with the IRS. These structures ensure FSIC remains independent, community-aligned, and accountable to its mission, not private interests.
 
 ## Who governs FSIC?
 
-FSIC is governed by a Board of Directors, which is responsible for:
+FSIC is governed by a **Board of Directors**, "the governing body responsible for strategic oversight, fiduciary stewardship, and organizational accountability" (Master Plan, p. 15). Under the Master Plan, the board's responsibilities are:
 
-- Setting strategic direction and priorities
-- Approving budgets and major expenditures
-- Hiring and overseeing the Executive Director
-- Ensuring compliance with laws, regulations, and nonprofit standards
-- Safeguarding FSIC's mission and independence
+- Strategic direction and mission alignment
+- Fiscal oversight and budget approval
+- CEO hiring, evaluation, and succession planning
+- Policy development and compliance
+- Oversight of major partnerships and agreements
+- Ensuring transparency and public accountability
 
-The Board is cross-sector, with seats designated for representatives from:
+The Master Plan calls for a board drawn from independent community leaders, industry and employer representatives, education and workforce leaders, economic development partners, and philanthropic and civic leaders, with non-voting ex officio roles for key partners (p. 15).
 
-- **Education**: K–12 school districts, community colleges, universities
-- **Workforce development**: Workforce boards, training providers
-- **Industry**: Aerospace, advanced manufacturing, small business, startups
-- **Civic and community organizations**: Nonprofits, civic groups, residents
-- **Government**: Local and regional government representatives (non-voting or advisory)
+## Who is on the board?
 
-This structure ensures that no single sector—education, industry, or developers—dominates decision-making. Decisions require consensus across stakeholders with different perspectives and interests.
+As of November 2026, FSIC has announced these members of its Board of Directors: Erik Ahlgren (Board Chair), Beth Hamilton, Jessie Thompson (a member of the Volusia County School Board), Diezel DePew (Mayor of Edgewater) and Ryan Trine (CEO of R3Doubt). Jake Johansson has joined FSIC's Founders Council. The appointments are announced on the [News](/news/) page.
 
-## How are Board members selected?
+## How is the board kept independent?
 
-Board members are nominated and elected according to FSIC's bylaws. The nomination process prioritizes:
+The Master Plan states that "the governance model ensures that no single individual, partner, or sector can dominate decision-making" (p. 15). It is designed to include:
 
-- **Relevant expertise**: Board members bring knowledge of education, workforce, industry, innovation, or community development
-- **Cross-sector representation**: The Board reflects the diversity of FSIC's partners and stakeholders
-- **Independence**: Board members act in FSIC's best interest, not the interests of their employer or affiliated organization
-- **Demographic diversity**: The Board reflects the region's diversity in race, gender, age, and socioeconomic background
+- An independent board chair
+- Term limits
+- Conflict-of-interest policies
+- Balanced representation across sectors
+- Clear separation between governance and operations
 
-Board members serve staggered terms (typically three years) and may be re-elected for additional terms. Staggered terms ensure continuity while allowing new voices and perspectives to join over time.
+FSIC is in its first phase, which includes establishing its governance, bylaws and board independence (Master Plan, p. 13). The full structure is set out on the [Governance & Transparency](/governance/#structure) page.
 
-## What is the Board's conflict-of-interest policy?
+## What role do developers play?
 
-FSIC's conflict-of-interest policy requires Board members, staff, and contractors to:
+FSIC's [FAQ](/faq/#developers) answers this directly: "Developers play a collaborative — not controlling — role in FSIC's work." FSIC describes itself as an independent, community-aligned organization. Large developments in the region have already been approved, and FSIC does not influence or promote those decisions.
 
-- **Disclose conflicts**: Any financial or personal interest that could influence decisions must be disclosed in writing
-- **Recuse themselves**: Board members with conflicts must recuse themselves from discussions and votes on matters where they have a conflict
-- **Document decisions**: Conflicts and recusals are documented in Board minutes and reviewed annually
+FSIC's stated role is to help ensure that what happens within that approved growth reflects community priorities, by steering opportunities toward high-wage, future-focused industries. Developers may help create spaces that support training, innovation and community engagement, but FSIC does not endorse specific projects or drive development.
 
-Examples of conflicts include:
+## Who else advises FSIC?
 
-- A Board member whose employer bids on a contract with FSIC
-- A Board member who owns property that FSIC is considering for a lease or purchase
-- A Board member whose family member is a candidate for a staff position
+The board is the governing body. The Master Plan adds four other parts to the structure (pp. 16–17):
 
-The conflict-of-interest policy ensures that decisions serve FSIC's mission, not individual gain.
+- **Executive leadership:** a CEO, supported by a director for each of the four engines and a Director of Operations and Finance, runs day-to-day operations and implements board-approved strategy.
+- **Advisory councils:** five councils (Employer; Education and Workforce; Innovation and Research; Community and Civic; Small Business and Supplier) provide technical expertise, validate curriculum and program design, and strengthen community engagement.
+- **Board of Advisors:** community, industry, university and civic leaders who give strategic guidance to the CEO and leadership team.
+- **Standing committees:** Finance and Audit; Governance and Nominating; Programs and Impact; Development and Partnerships.
 
-## How does FSIC ensure independence from developers?
+Advisory councils and the Board of Advisors advise; governing authority rests with the Board of Directors.
 
-FSIC's independence from developers and real estate interests is ensured through governance structure, policies, and transparency:
+## How is FSIC held accountable?
 
-### 1. No developer control of the Board
-Developers may participate in FSIC as industry partners, but they do not control Board seats or decision-making. The cross-sector Board structure prevents any single interest—including developers—from dominating.
+The Master Plan's compliance framework calls for annual audits, conflict-of-interest disclosures, public reporting and transparency, grant compliance and reporting, and ethical fundraising policies (p. 17). Its public reporting plan includes an Annual Impact Report, grant-specific reporting for funders, and regular updates to local governments and partners (p. 31).
 
-### 2. Mission-driven decision-making
-FSIC's bylaws and 501(c)(3) status require it to operate for charitable and educational purposes: workforce development, innovation, and community benefit. Decisions that primarily benefit developers rather than the public would violate FSIC's mission and tax-exempt status.
-
-### 3. Conflict-of-interest policy
-Board members with ties to development projects must disclose those interests and recuse themselves from decisions where conflicts exist.
-
-### 4. Public transparency
-FSIC's bylaws, Board membership, and governance policies are publicly available. Annual reports and Form 990 filings disclose revenues, expenses, and relationships with other organizations. This transparency allows the community, funders, and partners to monitor FSIC's independence.
-
-### 5. Community representation
-Civic and community representatives on the Board ensure that residents' voices are heard and that FSIC remains aligned with community priorities, not just developer or industry interests.
-
-The Master Plan states explicitly: "Developers play a collaborative—not controlling—role in FSIC's work. FSIC is an independent, community-aligned organization."
-
-## What is the Multi-Institution Advisory Council?
-
-In addition to the Board of Directors, FSIC will establish a Multi-Institution Advisory Council (MIAC) that includes representatives from:
-
-- Community colleges and universities
-- K–12 school districts
-- Workforce development boards
-- Economic development agencies
-- Employers and industry associations
-- Civic and community organizations
-
-The MIAC advises the Board on programmatic priorities, partnership opportunities, and alignment with regional needs. It ensures that FSIC's programs reflect the input of institutions that deliver services and the community they serve.
-
-The MIAC is advisory, not governing. The Board retains decision-making authority, but the MIAC provides input that informs those decisions.
-
-## How does FSIC ensure financial accountability?
-
-FSIC follows nonprofit financial management best practices:
-
-### Annual audit
-FSIC's financial statements are audited by an independent accounting firm annually. The audit verifies that revenues and expenses are accurately reported, internal controls are in place, and financial practices comply with accounting standards and nonprofit regulations.
-
-### Form 990 filing
-FSIC files Form 990 with the IRS each year, disclosing:
-
-- Revenues by source (grants, donations, earned revenue)
-- Expenses by category (programs, administration, fundraising)
-- Governance practices and policies
-- Compensation of key staff and contractors
-- Relationships with other organizations
-
-Form 990 is publicly available and allows anyone to review FSIC's finances.
-
-### Budget oversight
-The Board reviews and approves FSIC's annual budget and monitors spending throughout the year. Major expenditures or changes to the budget require Board approval.
-
-### Restricted and unrestricted funds
-Grants and donations may be restricted (designated for specific programs or purposes) or unrestricted (available for general operations). FSIC tracks restricted funds separately and uses them only for their designated purposes.
-
-These practices ensure that funders, partners, and the community can trust that FSIC's resources are used responsibly and in alignment with its mission.
-
-## How transparent is FSIC's governance?
-
-FSIC operates with a high level of transparency:
-
-### Public documents
-The following are publicly available on FSIC's website or upon request:
-
-- Bylaws
-- Conflict-of-interest policy
-- Board membership and bios
-- Form 990 (annual IRS filing)
-- Annual reports and impact reports
-- IRS determination letter (501(c)(3) status)
-
-### Open meetings
-Board meetings follow transparent processes. Meeting agendas, minutes, and major decisions are documented and made available to the public (except for confidential matters such as personnel or litigation).
-
-### Stakeholder engagement
-FSIC engages stakeholders—partners, funders, participants, and the community—through advisory councils, public forums, and feedback mechanisms. This ensures that governance decisions reflect diverse perspectives, not just the Board's views.
-
-Transparency builds trust and allows stakeholders to hold FSIC accountable.
-
-## What happens if FSIC violates its governance policies?
-
-Violations of governance policies—conflicts of interest, misuse of funds, failure to follow bylaws—can result in:
-
-- **Board action**: The Board can remove a Board member or staff member who violates policies
-- **IRS sanctions**: The IRS can revoke FSIC's 501(c)(3) status or impose excise taxes for violations of nonprofit rules
-- **Legal liability**: Board members and staff can be held personally liable for breach of fiduciary duty, fraud, or misuse of funds
-- **Reputational damage**: Violations erode trust with funders, partners, and the community, making it harder to secure support
-
-FSIC's governance structure, policies, and transparency practices are designed to prevent violations and ensure accountability.
-
-## Frequently Asked Questions
-
-### Can developers sit on FSIC's Board?
-
-Yes, if they meet the qualifications and are elected by the Board. However, no single sector—including developers—controls Board seats or decision-making. Developers who serve on the Board must act in FSIC's best interest, disclose conflicts, and recuse themselves from decisions where conflicts exist. The cross-sector structure and conflict-of-interest policy prevent developer dominance.
-
-### How are Board members compensated?
-
-Board members serve without compensation. They may be reimbursed for reasonable expenses (travel, meals, lodging) related to Board service, but they do not receive salaries, stipends, or bonuses. Serving on a nonprofit board is a volunteer role.
-
-### Can the public attend Board meetings?
-
-FSIC's bylaws specify whether Board meetings are open to the public or closed. Many nonprofit boards hold open sessions for routine business and closed sessions for confidential matters (personnel, legal, real estate negotiations). FSIC will publish meeting schedules, agendas, and minutes to keep stakeholders informed.
-
-### How can the community hold FSIC accountable?
-
-The community can:
-- Review FSIC's Form 990, annual reports, and governance documents
-- Attend public Board meetings or community forums
-- Provide feedback through FSIC's website, surveys, or advisory councils
-- Contact Board members or staff with concerns
-- Raise issues with funders, partners, or regulatory agencies (IRS, Florida Attorney General)
-
-FSIC's transparency and accountability structures are designed to make these pathways accessible.
-
----
-
-**Read more about FSIC's governance and structure:**
-
-- [Governance & Transparency](/governance/) (pillar page)
-- [What Is a Backbone Organization? FSIC's Role](/blog/what-is-a-backbone-organization/)
-- [What Does FSIC's 501(c)(3) Status Mean?](/blog/what-fsic-501c3-status-means/)
-
-**Related FAQ answers:**
-
-- [What is the role of developers in the FSIC?](/faq#developers)
-- [Is FSIC a school, a research center, or an economic development agency?](/faq#what-kind-of-organization)
+As a 501(c)(3) public charity, FSIC must also make its exemption application, the IRS letters about it, and its recent annual returns available to anyone who asks. FSIC's fiscal year runs July 1 to June 30. The [Governance & Transparency](/governance/#tax-status) page explains how to request FSIC's determination letter and will post each annual return once filed. What 501(c)(3) status means is explained in [What Does FSIC's 501(c)(3) Status Mean?](/blog/what-fsic-501c3-status-means/), and FSIC's coordinating role in [What Is a Backbone Organization?](/blog/what-is-a-backbone-organization/)

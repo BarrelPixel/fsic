@@ -12,6 +12,8 @@
 
 > **Decision (November 2026):** The page uses the Master Plan's **five-phase** model (pp. 13–14), chosen by the project lead. This settles audit §3.4 for this page. The FAQ's three-phase answer and the home page's two-stage summary ("First: the Talent Engine" / "Then: Innovation, Market, and Civic") should be brought in line when those are next edited. The home page summary is compatible: Talent is Phase 1, and the other engines follow.
 
+
+> **Answer-first opening (November 11, 2026, `docs/23` S1).** The page now opens with its answer: Year 1 is underway: FSIC has launched with the Talent Engine. The Innovation, Market and Civic Engines follow over five years, as partnerships, funding and demand are ready. (The approved lead follows it.) Every page also ends with "Questions about this", "Read more" and "Next" (`site-wide.md`). **⚠ Review:** new wording.
 ---
 
 ## HERO

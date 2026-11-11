@@ -20,7 +20,7 @@ import { stakes } from '../data/strategic';
 const sections: PageSection[] = [
   { id: 'inflection-point', name: 'A Region at an Inflection Point', short: 'Inflection point' },
   { id: 'place-based-innovation', name: 'A National Shift Toward Place-Based Innovation', short: 'Place-based innovation' },
-  { id: 'catalyst', name: 'A Once-in-a-Generation Catalyst', short: 'Catalyst' },
+  { id: 'catalyst', name: 'Regional Growth as a Catalyst', short: 'Catalyst' },
   { id: 'window', name: 'The Window Is Open', short: 'The window' },
 ];
 const at = (id: string) => sectionProps(sections, id);
@@ -36,7 +36,11 @@ const figures = [
 
   <!-- Interior page template (DESIGN.md): PageHero, four narrative sections, closing -->
   <PageHero title="Why Now — The Strategic Moment">
-    <p class="text-lead text-white/90 mb-10">
+    <!-- Answer first (docs/23 S1): the page's conclusion, from its own approved "window" section -->
+    <p class="text-lead text-white/90 mb-6 max-w-3xl">
+      The Space Coast is growing either way. The next five years will determine whether Southeast Volusia becomes a full participant in that growth, or a region that watches opportunity flow past it.
+    </p>
+    <p class="text-white/75 mb-10 max-w-3xl">
       Southeast Volusia is entering one of the most consequential economic windows in its modern history.
     </p>
     <HeroIndex label="Page contents" size="large" items={sections} />
@@ -88,7 +92,7 @@ const figures = [
   <!-- 03 · The catalyst on night: the figures, introduced by the first half of the sentence (cols 1–4); the
        consequence and the before/after pair as
        adjacent rows on one axis (Master Plan pp. 4 and 6; the development is not named) -->
-  <Section {...at('catalyst')} dark heading="Southeast Volusia County: A Once-in-a-Generation Catalyst">
+  <Section {...at('catalyst')} dark heading="Southeast Volusia County: Regional Growth as a Catalyst">
     <Grid>
       <div slot="label">
         <p class="mb-5 font-sans text-white/75">A master-planned development in Southeast Volusia will add:</p>
@@ -135,7 +139,7 @@ const figures = [
   </div>
 
   <!-- CLOSING: the callout as the statement, next steps on the content axis -->
-  <Closing statement="FSIC transforms fragmented potential into coordinated progress. It ensures that opportunity flows into Southeast Volusia — not past it.">
+  <Closing page="/strategic-moment" statement="FSIC transforms fragmented potential into coordinated progress. It ensures that opportunity flows into Southeast Volusia — not past it.">
     <Button href="/model">Explore the FSIC Model</Button>
     <Button href="/economic-impact" variant="secondary">View Economic Impact</Button>
   </Closing>

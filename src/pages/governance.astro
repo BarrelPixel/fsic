@@ -11,15 +11,17 @@ import Disclosure from '../components/Disclosure.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
-import { bodies, metrics, reportingCalendar } from '../data/governance';
+import { bodies, metrics, reportingCalendar, people } from '../data/governance';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 import { faqText } from '../data/faq';
 import Dot from '../components/Dot.astro';
 import TableRow from '../components/TableRow.astro';
+import { url } from '../lib/url';
 
 // Copy: src/content/copy/governance.md (Draft). Wording is verbatim from the copy deck.
-// Not on the page until confirmed (see governance.md ⚠): board member names and the founder transition.
+// Board and council names are shown as announced (people, shared with the homepage); titles still to be
+// confirmed (governance.md ⚠). Not on the page until confirmed: the founder transition.
 
 const sections: PageSection[] = [
   { id: 'backbone', name: 'A neutral backbone organization', short: 'Backbone' },
@@ -35,7 +37,11 @@ const at = (id: string) => sectionProps(sections, id);
 
   <!-- Interior page template (DESIGN.md): PageHero with an index of sections, narrative sections, closing -->
   <PageHero title="Governance & Transparency">
-    <p class="text-lead text-white/90 mb-6">
+    <!-- Answer first (docs/23 S1): who governs, and how no one interest dominates -->
+    <p class="text-lead text-white/90 mb-6 max-w-3xl">
+      An independent, cross-sector Board of Directors governs FSIC, advised by councils of partners and accountable through public reporting. No single individual, partner, or sector can dominate its decisions.
+    </p>
+    <p class="text-white/75 mb-6 max-w-3xl">
       FSIC operates under a partner-first, coalition-driven governance structure.
     </p>
     <p class="text-white/75 mb-10 max-w-3xl">
@@ -87,6 +93,18 @@ const at = (id: string) => sectionProps(sections, id);
         <p class="max-w-3xl mb-10">
           {faqText.leadershipBroad}
         </p>
+        <!-- Who serves (docs/23 S4): the same list as the homepage (src/data/governance.ts people), each
+             appointment linking to the release that announced it. Titles still to be confirmed (governance.md ⚠). -->
+        <dl class="max-w-3xl mb-12">
+          {people.map((g, i) => (
+            <Row label={g.group} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
+              <List
+                html
+                items={g.members.map((m) => `${m.slug ? `<a href="${url(`/news/${m.slug}`)}" class="link">${m.name}</a>` : m.name}${m.role ? `, ${m.role}` : ''}`)}
+              />
+            </Row>
+          ))}
+        </dl>
         <dl>
           {bodies.map((body, i) => (
             <Row label={body.name} class={i === bodies.length - 1 ? 'border-b border-rule' : undefined}>
@@ -231,7 +249,7 @@ const at = (id: string) => sectionProps(sections, id);
   </div>
 
   <!-- CLOSING (home.md). "Contact FSIC" opens an email until the Contact page has a form. -->
-  <Closing statement="Neutral convener. Clear structure. Long-term accountability.">
+  <Closing page="/governance" statement="Neutral convener. Clear structure. Long-term accountability.">
     <Button href="/partnership-funding">Become a Partner</Button>
     <Button href={mailto()} variant="secondary">Contact FSIC</Button>
   </Closing>

@@ -18,6 +18,7 @@ import { url } from '../lib/url';
 import RangeTable from '../components/RangeTable.astro';
 import RangeRow from '../components/RangeRow.astro';
 import TableRow from '../components/TableRow.astro';
+import { FIGURES } from '../data/economics';
 
 // Copy: src/content/copy/economic-impact.md (Draft). Wording is verbatim from the copy deck.
 // Open review items (see the ⚠ notes there): the headline figures are the FSIC 2.0 scenario;
@@ -41,9 +42,10 @@ const at = (id: string) => sectionProps(sections, id);
       {DISCLAIMER} For the full analysis contact us at
       <a href={mailto()} class="link-on-dark">{EMAIL}</a>.
     </p>
-    <p class="text-statement text-white mb-6">Transformational, Long-Term Regional Impact</p>
-    <p class="text-lead text-white/90 mb-6">
-      The Florida Space Innovation Center (FSIC) is a regional platform designed to ensure that the growth of Florida's space economy directly benefits the people who live and work in Volusia County.
+    <p class="text-statement text-white mb-6">What Participation Is Worth Over 25 Years</p>
+    <!-- Answer first (docs/23 S1): the four ranges, with the scenario, from FIGURES -->
+    <p class="text-lead text-white/90 mb-6 max-w-3xl">
+      Independent 25-year analysis projects that, with full implementation (the Master Plan’s FSIC 2.0 scenario), FSIC would help the region generate {FIGURES.output.display} in economic output, {FIGURES.jobYears.display} job-years, {FIGURES.wages.display} in new wages, and {FIGURES.fiscal.display} in fiscal revenue for local and state governments.
     </p>
     <p class="text-white/75 mb-10 max-w-3xl">
       By coordinating workforce training, research partnerships, business attraction, and community programming, FSIC strengthens the region's economic foundation and expands access to high-skill, high-wage career pathways. It accelerates development, attracts new employers, and brings in substantial external investment—creating long-term economic stability and opportunity.
@@ -216,7 +218,7 @@ const at = (id: string) => sectionProps(sections, id);
   </div>
 
   <!-- CLOSING (Master Plan p. 29) -->
-  <Closing spacing="stacked" statement="FSIC positions Southeast Volusia as a full participant in the Space Coast's next decade of growth.">
+  <Closing page="/economic-impact" spacing="stacked" statement="FSIC positions Southeast Volusia as a full participant in the Space Coast's next decade of growth.">
     <Button href="/partnership-funding">Become a Partner</Button>
     <Button href="/deployment" variant="secondary">View the Deployment Timeline</Button>
   </Closing>

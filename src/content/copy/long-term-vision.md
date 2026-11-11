@@ -12,6 +12,8 @@
 > **Decisions (November 2026):** the period is **2032–2040** (Master Plan p. 36; the Overview PDF and home.md said 2031–2040, and home.md is corrected). The page takes the **Master Plan's** content, framed by the **FAQ's caveat** as its opening note.
 > **The unnamed development (audit §3.3):** the Master Plan names it throughout. "Deering Park" becomes "Southeast Volusia"; "at Deering Park" is dropped from the consortium's first element; "A legacy asset that reflects the Deering family's values and vision" is left out; "positions New Smyrna Beach as a leader" becomes "Southeast Volusia", because a city implies a campus location.
 
+
+> **Answer-first opening (November 11, 2026, `docs/23` S1).** The page now opens with its answer: By 2032–2040, FSIC plans to grow into a permanent anchor for the Space Coast: a multi-university consortium with shared research facilities, a performing arts center, and a landmark campus for Southeast Volusia. (Replaces the fragment "A Permanent, Multi-University, Cultural, and Innovation Anchor for the Space Coast".) Every page also ends with "Questions about this", "Read more" and "Next" (`site-wide.md`). **⚠ Review:** new wording.
 ---
 
 ## HERO

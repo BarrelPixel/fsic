@@ -10,6 +10,8 @@
 > - "clear governance" (Guiding Principles) → Governance, Structure
 > - New line under each engine's Regional impact: "Return on investment by area" → Economic Impact, Return on investment. **⚠ Review:** new wording
 
+
+> **Answer-first opening (November 11, 2026, `docs/23` S1).** The page now opens with its answer: FSIC works through four engines, started in order: the Talent Engine first, in Year 1, then the Innovation, Market and Civic Engines over Years 1–4, working as one regional ecosystem by Years 3–5. (Timeframes from the phases; the approved lead follows it.) Every page also ends with "Questions about this", "Read more" and "Next" (`site-wide.md`). **⚠ Review:** new wording.
 ---
 
 ## HERO

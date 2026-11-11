@@ -9,6 +9,8 @@
 > - "advisory councils" (Employers & Industry, partnership roles) → Governance, Structure
 > - "Explore the Full Economic Analysis" (Funding) now goes to Economic Impact, At a glance
 
+
+> **Answer-first opening (November 11, 2026, `docs/23` S1).** The page now opens with its answer: Start with an email. Find your organization below to see what partners do with FSIC and what they gain, then write to FSIC. Residents can take part through events, programs and volunteering. Buttons: "Email FSIC About Partnering" (email, subject "Partnership inquiry"); "Ways for Residents" (to section 04). (Replaces the lead "The Florida Space Innovation Center represents a coordinated investment in the region's future."; the paragraph that follows stays.) Every page also ends with "Questions about this", "Read more" and "Next" (`site-wide.md`). **⚠ Review:** new wording.
 ---
 
 ## HERO

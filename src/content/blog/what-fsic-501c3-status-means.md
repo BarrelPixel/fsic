@@ -1,12 +1,19 @@
 ---
 title: "What Does FSIC's 501(c)(3) Status Mean?"
-description: "FSIC is a 501(c)(3) nonprofit. What that means for donors, tax deductions, and how funds are used."
+description: "What FSIC's 501(c)(3) public charity status means: tax exemption, deductible contributions, the rules FSIC follows, and how to verify it."
 question: "What does FSIC's 501(c)(3) status mean for donors and partners?"
-summary: "FSIC is a 501(c)(3) nonprofit organization, which means donations to FSIC are tax-deductible, and the organization is exempt from federal income tax. The 501(c)(3) status requires FSIC to operate exclusively for charitable, educational, or scientific purposes and prohibits it from engaging in political campaigns or substantial lobbying. For donors and partners, this status provides transparency, accountability, and assurance that contributions support public benefit, not private profit."
+summary: "Florida Space Innovation Center Inc. is a 501(c)(3) public charity, recognized by the IRS as exempt from federal income tax effective July 1, 2026 (EIN 43-2277165). Contributions to it are tax-deductible to the extent allowed by law. In return, FSIC must operate exclusively for exempt purposes, may not let its earnings benefit insiders, may not take part in political campaigns, and may not make lobbying a substantial part of its activities."
 date: 2026-11-10
 author: erik-ahlgren
 topic: organization
 audiences: [funders]
+faqs:
+  - q: "Are contributions to FSIC tax-deductible?"
+    a: "Yes, to the extent allowed by law. FSIC's IRS determination letter states that contributions to it are deductible under section 170 of the Internal Revenue Code. What a contributor can deduct depends on their own situation; consult a tax advisor."
+  - q: "Can a 501(c)(3) charge fees for its programs?"
+    a: "Yes. A public charity may earn revenue. Net income from a trade or business that is regularly carried on and not substantially related to its exempt purpose is taxable."
+  - q: "How can I confirm FSIC's status?"
+    a: "Search the IRS Tax Exempt Organization Search for EIN 43-2277165, or ask FSIC for a copy of its IRS determination letter."
 status: review
 publishDate: 2026-12-11
 followUp:
@@ -14,144 +21,66 @@ followUp:
   slug: how-fsic-reports-finances
   topic: organization
 sources:
-  - title: "Tax-Exempt Status for Your Organization"
+  - title: "FSIC determination letter (Letter 947)"
+    publisher: "Internal Revenue Service"
+    date: "October 20, 2026"
+  - title: "Exemption requirements - 501(c)(3) organizations"
     publisher: "Internal Revenue Service"
     url: "https://www.irs.gov/charities-non-profits/charitable-organizations/exemption-requirements-501c3-organizations"
+  - title: "Exempt purposes - Internal Revenue Code Section 501(c)(3)"
+    publisher: "Internal Revenue Service"
+    url: "https://www.irs.gov/charities-non-profits/charitable-organizations/exempt-purposes-internal-revenue-code-section-501c3"
   - title: "Publication 4221-PC: Compliance Guide for 501(c)(3) Public Charities"
     publisher: "Internal Revenue Service"
     url: "https://www.irs.gov/pub/irs-pdf/p4221pc.pdf"
-  - title: "Florida Space Innovation Center Master Plan"
-    publisher: "FSIC"
-    date: "2026"
+    date: "Rev. 3-2018"
+  - title: "Public disclosure and availability of exempt organizations returns and applications: Documents subject to public disclosure"
+    publisher: "Internal Revenue Service"
+    url: "https://www.irs.gov/charities-non-profits/public-disclosure-and-availability-of-exempt-organizations-returns-and-applications-documents-subject-to-public-disclosure"
+  - title: "FSIC Master Plan 2026–2031"
+    publisher: "Florida Space Innovation Center"
+    date: "p. 25"
 ---
-
-FSIC is a 501(c)(3) nonprofit organization, which means donations to FSIC are tax-deductible, and the organization is exempt from federal income tax. The 501(c)(3) status requires FSIC to operate exclusively for charitable, educational, or scientific purposes and prohibits it from engaging in political campaigns or substantial lobbying. For donors and partners, this status provides transparency, accountability, and assurance that contributions support public benefit, not private profit.
 
 ## What is a 501(c)(3) organization?
 
-Section 501(c)(3) of the Internal Revenue Code defines the requirements for nonprofit organizations that are exempt from federal income tax and eligible to receive tax-deductible charitable contributions. Organizations with 501(c)(3) status include charities, educational institutions, scientific research organizations, and religious organizations.
+A **501(c)(3) organization** is one recognized by the IRS as exempt from federal income tax under section 501(c)(3) of the Internal Revenue Code. To qualify, according to the IRS, an organization must be organized and operated exclusively for exempt purposes, none of its earnings may benefit any private shareholder or individual, and it may not be an "action organization": it may not attempt to influence legislation as a substantial part of its activities, and it may not take part in any campaign for or against political candidates.
 
-To qualify, an organization must:
+The exempt purposes in section 501(c)(3) are charitable, religious, educational, scientific, literary, testing for public safety, fostering national or international amateur sports competition, and preventing cruelty to children or animals.
 
-- **Operate exclusively for exempt purposes**: Charitable, educational, religious, scientific, literary, testing for public safety, fostering national or international amateur sports competition, or preventing cruelty to children or animals
-- **Not distribute profits to private individuals**: No part of the organization's net earnings may benefit private shareholders or individuals. Board members, staff, and contractors can be compensated for their work, but profits cannot be distributed as dividends or bonuses.
-- **Not engage in prohibited political activity**: 501(c)(3) organizations cannot participate in political campaigns for or against candidates. They can engage in limited lobbying for policy changes, but it cannot be a substantial part of their activities.
-- **Serve a public interest**: The organization's activities must benefit the public, a community, or a defined charitable class—not a private group.
+## What is FSIC's status?
 
-FSIC meets these requirements by operating for educational and charitable purposes—workforce development, innovation, and community engagement—and by serving the residents, students, and businesses of Southeast Volusia.
+FSIC's legal name is Florida Space Innovation Center Inc. Its IRS determination letter, dated October 20, 2026, recognizes it as exempt under section 501(c)(3), effective July 1, 2026, and classifies it as a public charity under section 509(a)(2). Its Employer Identification Number (EIN) is 43-2277165, and its fiscal year runs July 1 to June 30.
 
-## What does 501(c)(3) status mean for donors?
+## What does it mean for contributors?
 
-Donations to FSIC are tax-deductible under IRS rules for charitable contributions. This means:
+Contributions to FSIC are tax-deductible to the extent allowed by law: the determination letter states that contributions are deductible under section 170 of the Internal Revenue Code. How much a contributor can deduct depends on their own tax situation. Contributors should consult a tax advisor.
 
-### For individual donors:
-- Contributions to FSIC can be deducted on Schedule A of Form 1040 (itemized deductions)
-- Cash donations are deductible up to 60% of adjusted gross income (AGI) in a given year
-- Donations of appreciated assets (such as stock) can provide additional tax benefits by avoiding capital gains tax
+IRS Publication 4221-PC sets out two rules that apply to any public charity:
 
-### For corporate donors:
-- Contributions are deductible as charitable contributions, typically up to 10% of taxable income
-- In-kind donations (equipment, materials, professional services) may also be deductible
+- **Written acknowledgment:** a donor cannot claim a deduction for any single contribution of $250 or more without a contemporaneous written acknowledgment from the charity.
+- **Payments that buy something:** when a payment is partly a contribution and partly for goods or services, such as an event ticket, the donor may deduct only the amount above the value of what they received. For payments over $75, the charity must give a written statement of that value.
 
-### For estate planning:
-- Bequests to FSIC are deductible from the donor's estate, reducing estate tax liability
-- Charitable remainder trusts and donor-advised funds can be structured to benefit FSIC while providing income to the donor or their heirs
+## What rules does FSIC follow as a 501(c)(3)?
 
-Donors should consult a tax advisor to understand the specific benefits and limits that apply to their situation. FSIC provides a receipt for all contributions, which donors use to claim the deduction.
+Publication 4221-PC describes the limits every public charity works within:
 
-## What does 501(c)(3) status mean for how FSIC operates?
+- **No private benefit or inurement.** A charity's income and assets may not benefit insiders, such as officers, directors or key employees. Paying an insider unreasonable compensation is one example of prohibited inurement. Excise taxes apply to anyone who receives an excess benefit from a public charity, and to any organization manager who knowingly approves the transaction.
+- **No political campaign activity.** A public charity may not participate in any political campaign on behalf of, or in opposition to, any candidate for elective public office.
+- **Limited legislative activity.** Lobbying may not be a substantial part of a public charity's activities. Substantiality is measured either by the facts and circumstances of each case or, for a charity that elects it, by an expenditure test.
+- **Tax on unrelated business income.** Net income from a trade or business that is regularly carried on and not substantially related to the charity's exempt purpose is taxable.
+- **Annual returns.** A public charity files an annual return with the IRS (Form 990, 990-EZ or 990-N, depending on its size). An organization that fails to file for three consecutive years loses its exemption automatically.
 
-The 501(c)(3) status imposes rules and responsibilities:
+## Can FSIC earn revenue?
 
-### Transparency and accountability:
-- **Annual reporting**: FSIC files Form 990 with the IRS each year, disclosing revenues, expenses, governance, and programs. Form 990 is publicly available and allows donors, partners, and the community to see how funds are used.
-- **Public disclosure**: FSIC's determination letter (the IRS document granting 501(c)(3) status), bylaws, conflict-of-interest policy, and recent Form 990s must be made available to anyone who requests them.
-- **Independent governance**: FSIC's Board of Directors is responsible for overseeing the organization and ensuring it operates in the public interest. Board members serve without compensation (though they may be reimbursed for expenses).
+Yes. A 501(c)(3) may charge for its programs. FSIC's Master Plan proposes earned revenue from sources such as tuition for micro-credentials and adult training, contract training for employers, facility rentals for events and conferences, innovation challenge sponsorships and startup incubation fees (p. 25). Whether a given source is related to FSIC's exempt purposes determines how its income is taxed. FSIC's funding streams are described on the [Partnership & Funding](/partnership-funding/) page.
 
-### Use of funds:
-- Funds must be used for FSIC's exempt purposes: workforce development, innovation, community STEM engagement, and supporting businesses in aerospace and advanced manufacturing.
-- Compensation for staff, consultants, and contractors must be reasonable and aligned with comparable roles in similar organizations.
-- FSIC cannot use its funds to benefit private individuals, enrich insiders, or support political campaigns.
+## What must FSIC make public?
 
-### Prohibited activities:
-- **No political campaigns**: FSIC cannot endorse, oppose, or contribute to candidates for public office. It can educate the public on policy issues and advocate for legislation that supports its mission, but political campaigning is strictly prohibited.
-- **Limited lobbying**: FSIC can advocate for policies related to workforce development, innovation, and economic development, but lobbying cannot be a substantial part of its activities (typically defined as no more than 20% of expenditures).
-- **No private benefit**: FSIC's activities must serve the public or a charitable class, not private individuals or businesses. When FSIC works with businesses, the purpose is to strengthen the regional economy and create jobs—not to enrich specific companies.
+Under IRS rules, a 501(c)(3) must make its exemption application, with the supporting documents and any IRS letters about it, available for public inspection, along with its annual returns for three years after they are due or filed. It is not required to disclose the names and addresses of its contributors.
 
-These rules ensure that 501(c)(3) organizations operate in the public interest and that donors' tax-deductible contributions support charitable work.
+FSIC offers its determination letter on request and will post each annual return on the [Governance & Transparency](/governance/#tax-status) page once filed. How FSIC is governed is explained in [How Is FSIC Governed and Kept Independent?](/blog/how-fsic-is-governed/)
 
-## What are FSIC's exempt purposes?
+## How can anyone verify FSIC's status?
 
-FSIC's 501(c)(3) determination letter specifies its exempt purposes under IRS rules. These purposes include:
-
-### Educational purposes:
-- Providing workforce training and education to prepare residents for high-wage careers in aerospace, advanced manufacturing, and related fields
-- Offering STEM education and maker programs for students, families, and the broader community
-- Delivering professional development for educators and upskilling for career-switchers
-
-### Charitable purposes:
-- Reducing unemployment and underemployment by connecting residents to training and job opportunities
-- Strengthening the economic well-being of Southeast Volusia by building workforce capacity and supporting small businesses
-- Expanding access to opportunity for students, job-seekers, and underserved populations
-
-### Scientific purposes:
-- Supporting applied research, prototyping, and innovation through challenge labs and university partnerships
-- Advancing knowledge in aerospace, advanced manufacturing, robotics, and related fields
-
-These purposes align with FSIC's mission: ensuring that the Space Coast's growth benefits the people who already live in Southeast Volusia by building the workforce, innovation, and supplier infrastructure the region needs.
-
-## How does FSIC ensure independence and avoid conflicts of interest?
-
-FSIC's 501(c)(3) status requires it to operate independently and in the public interest. To ensure independence:
-
-- **No control by private interests**: FSIC's Board of Directors is cross-sector and includes representatives from education, workforce, industry, civic organizations, and the community. No single sector or private interest controls the Board or decision-making.
-- **Conflict-of-interest policy**: Board members, staff, and contractors must disclose any financial or personal interests that could create conflicts. Decisions that benefit those interests require recusal and Board approval.
-- **Governance transparency**: FSIC's bylaws, Board membership, and governance policies are publicly available. Board meetings follow transparent processes, and major decisions are documented.
-- **Independent oversight**: FSIC's Form 990 is reviewed by independent accountants, and the Board's audit committee (if formed) oversees financial practices.
-
-These safeguards ensure that FSIC remains a community-anchored, mission-driven organization—not a vehicle for private gain.
-
-## What happens if FSIC violates 501(c)(3) rules?
-
-Violations of 501(c)(3) requirements can result in:
-
-- **Excise taxes**: The IRS can impose taxes on transactions that provide excessive benefit to private individuals or insiders
-- **Revocation of tax-exempt status**: Serious or repeated violations can result in the IRS revoking FSIC's 501(c)(3) status, making donations no longer tax-deductible and subjecting the organization to income tax
-- **Legal liability**: Board members and staff can be held personally liable for violations of fiduciary duty, fraud, or misuse of funds
-
-FSIC's governance structure, policies, and transparency practices are designed to prevent violations and ensure compliance with IRS rules.
-
-## Frequently Asked Questions
-
-### Can businesses donate to FSIC and receive a tax deduction?
-
-Yes. Corporate contributions to FSIC are tax-deductible as charitable contributions, typically up to 10% of the company's taxable income. In-kind donations—such as equipment, materials, or professional services—may also be deductible. Businesses should consult a tax advisor to understand the specific benefits and documentation required.
-
-### Does 501(c)(3) status mean FSIC cannot charge for services?
-
-No. 501(c)(3) organizations can charge fees for services, host events with admission fees, and generate earned revenue, as long as the activities support the organization's exempt purposes and any profits are reinvested in the mission. FSIC may charge tuition for training programs, fees for employer-sponsored challenge lab projects, or admission to community events. These revenues help sustain FSIC's operations and reduce reliance on grants and donations.
-
-### Can FSIC advocate for workforce funding or economic development policies?
-
-Yes. 501(c)(3) organizations can educate policymakers, advocate for legislation, and participate in public debates on issues related to their mission. FSIC can advocate for state workforce grants, federal innovation programs, or economic development policies that support its goals. However, lobbying cannot be a substantial part of FSIC's activities, and FSIC cannot engage in political campaigns for or against candidates.
-
-### How can donors verify that FSIC is a legitimate 501(c)(3) organization?
-
-Donors can verify FSIC's 501(c)(3) status by:
-- Searching the IRS Tax Exempt Organization Search (TEOS) tool at irs.gov
-- Reviewing FSIC's determination letter, which FSIC will provide upon request
-- Checking FSIC's Form 990 on public databases such as GuideStar, Charity Navigator, or the IRS website
-
-FSIC's EIN (Employer Identification Number) is listed on its website, donation receipts, and Form 990.
-
----
-
-**Read more about FSIC's governance and funding:**
-
-- [Governance & Transparency](/governance/) (pillar page)
-- [Partnership & Funding: How FSIC Is Funded](/partnership-funding/)
-
-**Related FAQ answers:**
-
-- [How is FSIC funded?](/faq#funding)
-- [How is FSIC governed, and how is it kept independent?](/faq#governance)
+The IRS Tax Exempt Organization Search, on irs.gov, lets anyone look up a tax-exempt organization by its EIN. FSIC's is 43-2277165. A copy of FSIC's determination letter is available on request, as described on the [Governance & Transparency](/governance/#tax-status) page.
