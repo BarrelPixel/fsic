@@ -1,6 +1,6 @@
 # 24 — Narrative: place, paths and the present tense
 
-**Status:** Built (November 11, 2026); wording awaits FSIC's review (⚠ Review in `home.md` and `programs-facilities.md`).
+**Status:** Example Paths built (November 11, 2026); wording awaits FSIC's review (⚠ Review in `programs-facilities.md`). The map and next-launch line were built, then taken off the homepage for now at the project lead's direction; `RegionMap`, `src/data/region-map.json` and `src/lib/launches.ts` stay in the code so they can return.
 **Builds on:** `23-site-elevation-plan.md`. That plan made every page answer its question; this one gives the story a place, a person-shaped path, and something happening now.
 
 ## What was missing

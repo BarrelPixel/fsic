@@ -31,7 +31,7 @@ src/pages/           One .astro file per route. index, model, economic-impact, d
 src/components/      Grid components (Section, Grid, Row, List, PageHero, SectionBar, RunningHead),
                      Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBar, RangeLegend,
                      RangeBarsDraw, RangeTable, RangeRow, TableRow, YearScale, YearBar, Dot, MoreLink,
-                     ConceptRendering, HomeHero, BaseLinks, PostVisual (a blog post's "at a glance" figure), RegionMap (the homepage map and next launch), SolicitationDisclosure, Analytics, ComingSoon
+                     ConceptRendering, HomeHero, BaseLinks, PostVisual (a blog post's "at a glance" figure), RegionMap (a regional map and the next launch; not on a page for now), SolicitationDisclosure, Analytics, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, range-bar animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
