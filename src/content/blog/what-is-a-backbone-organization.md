@@ -1,12 +1,19 @@
 ---
 title: "What Is a Backbone Organization? FSIC's Role"
-description: "A backbone organization coordinates partners without replacing them. Why FSIC is structured as one and what that means."
+description: "A backbone organization coordinates many partners toward a shared goal. What the term means and why FSIC's Master Plan describes FSIC as one."
 question: "What is a \"backbone organization\", and why is FSIC one?"
-summary: "A backbone organization is a neutral coordinator that brings together multiple institutions—schools, colleges, employers, and civic partners—to work toward a shared goal. Backbone organizations do not replace existing institutions; they fill gaps, align efforts, and provide the connective infrastructure that no single organization can create alone. FSIC is structured as a backbone organization to ensure it strengthens Southeast Volusia's existing partners rather than competing with them, coordinating workforce training, innovation, and economic development across the region."
+summary: "A backbone organization is a separate organization, with its own staff, that coordinates the work of many partners toward a shared goal. FSIC's Master Plan describes FSIC as Southeast Volusia's neutral backbone organization: it is designed to coordinate K–12 districts, state colleges, universities, workforce boards, employers and civic partners, and to strengthen those institutions rather than replace or compete with them."
 date: 2026-11-10
 author: erik-ahlgren
 topic: organization
 audiences: [policymakers, community]
+faqs:
+  - q: "Does FSIC replace schools, colleges or workforce programs?"
+    a: "No. FSIC is designed to coordinate and strengthen existing institutions, not replace or compete with them. Its Master Plan describes a partnership strategy that coordinates, amplifies and accelerates existing efforts rather than duplicating them."
+  - q: "Why does a backbone organization need its own staff?"
+    a: "Coordination takes time that partner organizations rarely have to spare. Kania and Kramer describe backbone staff who facilitate the work, support communications, collect and report data, and handle the logistics a shared effort needs."
+  - q: "Where is the term used?"
+    a: "It is used in “Collective Impact”, a 2011 article by John Kania and Mark Kramer in the Stanford Social Innovation Review, which names backbone support organizations as one of five conditions of successful collective impact."
 status: review
 publishDate: 2026-12-07
 followUp:
@@ -14,129 +21,66 @@ followUp:
   slug: how-fsic-is-governed
   topic: organization
 sources:
-  - title: "Collective Impact"
+  - title: "Collective Impact (John Kania and Mark Kramer)"
     publisher: "Stanford Social Innovation Review"
     url: "https://ssir.org/articles/entry/collective_impact"
     date: "Winter 2011"
-  - title: "Florida Space Innovation Center Master Plan"
-    publisher: "FSIC"
-    date: "2026"
+  - title: "FSIC Master Plan 2026–2031"
+    publisher: "Florida Space Innovation Center"
+    date: "pp. 3, 9, 11, 15, 22–24, 31–32"
+  - title: "Frequently Asked Questions (“Is FSIC a school, a research center, or an economic development agency?” and “Will FSIC compete with local schools, colleges, or nonprofits?”)"
+    publisher: "Florida Space Innovation Center"
 ---
-
-A backbone organization is a neutral coordinator that brings together multiple institutions—schools, colleges, employers, and civic partners—to work toward a shared goal. Backbone organizations do not replace existing institutions; they fill gaps, align efforts, and provide the connective infrastructure that no single organization can create alone. FSIC is structured as a backbone organization to ensure it strengthens Southeast Volusia's existing partners rather than competing with them, coordinating workforce training, innovation, and economic development across the region.
 
 ## What is a backbone organization?
 
-A backbone organization is a dedicated entity that supports collective impact—the idea that complex social or economic problems require coordinated action across many organizations, not just one hero institution working alone.
+A **backbone organization** is a separate organization, with dedicated staff, that coordinates an effort shared by many partners. The term is used in "Collective Impact", an article by John Kania and Mark Kramer in the Winter 2011 issue of the *Stanford Social Innovation Review*.
 
-Backbone organizations provide five core functions:
-
-1. **Guide vision and strategy**: Facilitate conversations among partners to define shared goals, priorities, and metrics
-2. **Support aligned activities**: Help partners coordinate their work so that efforts reinforce each other rather than duplicate or conflict
-3. **Establish shared measurement**: Define common indicators of success and track progress across the system
-4. **Build public will**: Communicate the shared agenda to funders, policymakers, and the community
-5. **Advance policy**: Advocate for changes in regulations, funding, or institutional practices that support the shared goals
-
-The term "backbone organization" comes from a 2011 article in the *Stanford Social Innovation Review* that studied successful regional initiatives. The authors found that efforts with a dedicated coordinator succeeded where ad hoc collaborations often stalled.
-
-## What does a backbone organization not do?
-
-Backbone organizations are coordinators, not operators. They do not:
-
-- **Replace existing institutions**: Schools, colleges, workforce boards, and employers continue doing what they do. The backbone organization connects them, not replaces them.
-- **Deliver all services directly**: Most programs are delivered by partners. The backbone organization may run pilot programs or fill gaps, but it does not take over the partner's role.
-- **Control decisions**: Backbone organizations facilitate, but partners retain autonomy over their own programs, budgets, and priorities.
-- **Claim sole credit**: Success belongs to the entire network. Backbone organizations share credit and visibility with partners.
-
-This structure is deliberate. Complex challenges require the capacity and expertise of many institutions. A backbone organization's value lies in making the whole system work better, not in becoming the biggest or most powerful player.
-
-## Why is FSIC structured as a backbone organization?
-
-Southeast Volusia already has strong institutions: Volusia County Schools, Daytona State College, universities in Central Florida, workforce development agencies, and hundreds of employers. The region does not need another institution competing with them. It needs a coordinator that helps these institutions work together toward a shared vision: ensuring that the Space Coast's growth benefits the people who already live here.
-
-FSIC's backbone role means it:
-
-- **Co-brands programs with partners**: A micro-credential offered through FSIC is co-branded with the community college that grants it. Students earn college credits and a credential recognized by employers. FSIC coordinates the program and connects it to jobs, but the college remains the credentialing institution.
-- **Fills gaps, not duplicates**: If dual enrollment in STEM fields is limited, FSIC works with the school district and colleges to expand it—not by building a competing program, but by funding instructors, equipment, or student support that the district and colleges cannot afford alone.
-- **Connects rather than replaces**: FSIC introduces businesses to university researchers, students to employers, and educators to industry partners. These connections create opportunities that benefit everyone, without FSIC controlling the outcome.
-- **Aligns efforts**: When multiple partners work on workforce training, innovation, or business support, FSIC ensures their efforts complement each other. It prevents duplication, identifies gaps, and helps partners share resources.
-
-This structure ensures FSIC strengthens the region's institutions rather than weakening them.
+The article describes backbone staff who plan, manage and support a shared initiative through ongoing facilitation, technology and communications support, data collection and reporting, and the logistical and administrative details it needs. The authors write that "the expectation that collaboration can occur without a supporting infrastructure is one of the most frequent reasons why it fails."
 
 ## What is collective impact?
 
-Collective impact is the framework that backbone organizations support. It describes how communities solve complex problems through coordinated action across many institutions.
+Kania and Kramer define **collective impact** as "the commitment of a group of important actors from different sectors to a common agenda for solving a specific social problem." They identify five conditions that successful collective impact efforts typically share:
 
-Collective impact requires five conditions:
+1. **A common agenda:** a shared vision for change, with a common understanding of the problem and a joint approach to solving it.
+2. **Shared measurement systems:** results measured consistently, on a short list of indicators, across all participating organizations.
+3. **Mutually reinforcing activities:** each participant does the work it does best, coordinated with the others through a shared plan of action.
+4. **Continuous communication:** regular meetings over time, so participants build trust and a common vocabulary.
+5. **Backbone support organizations:** a separate organization and staff that coordinate the whole effort.
 
-1. **A common agenda**: All participants agree on the problem to solve and the vision for success
-2. **Shared measurement**: Partners track the same indicators and use the same definitions of success
-3. **Mutually reinforcing activities**: Each partner's work supports the others'. Efforts build on each other rather than working at cross purposes.
-4. **Continuous communication**: Regular meetings, shared data, and transparent decision-making keep everyone aligned
-5. **Backbone support**: A dedicated organization coordinates the work, manages data, and facilitates collaboration
+The article's main example is Strive, a nonprofit that brought together local leaders to improve education across greater Cincinnati and northern Kentucky.
 
-Southeast Volusia's challenge—connecting residents to the opportunities the Space Coast's growth is creating—requires all five conditions. No single institution can train thousands of workers, connect hundreds of businesses to supply chains, build innovation infrastructure, and engage the community in STEM. But together, the region's schools, colleges, employers, and civic partners can. FSIC's role is to make that collective effort work.
+## Why does the Master Plan describe FSIC as a backbone organization?
 
-## What are examples of backbone organizations?
+FSIC's Master Plan describes FSIC as "the region's neutral backbone organization—coordinating K–12 districts, state colleges, universities, workforce boards, employers, civic partners, and community organizations around a shared economic future" (p. 3). Its partnership strategy is designed so that "FSIC is not duplicating existing efforts but instead coordinating, amplifying, and accelerating them" (p. 22).
 
-Backbone organizations exist across the country, typically focused on education, workforce development, or economic revitalization. Examples include:
+FSIC states its role the same way on its [FAQ page](/faq/#what-kind-of-organization) and on the [Governance & Transparency](/governance/#backbone) page: FSIC is a neutral backbone organization that coordinates the work of schools, colleges, universities, employers and civic partners. It does not replace existing institutions; it strengthens them, filling gaps, aligning stakeholders and building the connective infrastructure that no single organization can create alone.
 
-- **StriveTogether**: A national network of regional partnerships (called "cradle-to-career networks") that improve education and economic mobility. Local backbone organizations coordinate schools, colleges, employers, and social service agencies to ensure students succeed from kindergarten through career.
-- **Regional workforce boards**: Some workforce development boards function as backbone organizations, coordinating training providers, employers, and economic development agencies to align workforce programs with employer needs.
-- **Innovation districts and tech hubs**: Organizations like the St. Louis Regional Chamber's Cortex Innovation Community or Pittsburgh's Innovation District serve as backbone organizations, coordinating universities, startups, and investors to build innovation ecosystems.
+## What does that mean in practice?
 
-FSIC follows this model but focuses on the unique needs of a region experiencing rapid aerospace and advanced manufacturing growth.
+FSIC is designed to amplify, not compete with, existing institutions. As its [FAQ](/faq/#compete) puts it, FSIC:
 
-## How is FSIC different from a traditional economic development agency?
+- Co-brands programs with partners
+- Shares credit, curriculum and facilities
+- Strengthens enrollment in partner institutions
+- Builds pathways that benefit all stakeholders
 
-Traditional economic development agencies focus on business attraction, retention, and expansion—bringing companies to the region, helping existing businesses grow, and supporting entrepreneurs. They often provide incentives, navigate permitting, and market the region to site selectors.
+The Master Plan sets out the roles partners are expected to play (pp. 22–24):
 
-FSIC's focus is narrower and deeper:
+- **Employers** validate curriculum and micro-credentials, provide challenge lab problems, host internships and apprenticeships, and take part in advisory councils.
+- **K–12 school districts** co-design dual-enrollment and micro-credential pathways and support teacher upskilling.
+- **State colleges and universities** co-develop curriculum and degree pathways, provide faculty expertise and collaborate on applied research.
+- **Economic development organizations and workforce boards** provide labor market data and align regional strategies and funding opportunities.
+- **Community and civic organizations** support outreach, STEM events and volunteer and mentorship programs.
 
-- **Workforce development**: Training residents for high-wage technical careers in aerospace and advanced manufacturing
-- **Innovation infrastructure**: Challenge labs, prototyping facilities, and university partnerships that help businesses innovate and compete
-- **Supply chain development**: Helping local businesses become certified suppliers to aerospace and advanced manufacturing companies
-- **Civic engagement**: Making STEM careers and the space economy accessible and visible to students, families, and the broader community
+These are the roles the Master Plan proposes, not agreements already in place.
 
-FSIC works with economic development agencies but does not duplicate their functions. It fills the gaps that traditional economic development does not address—specifically, the workforce, innovation, and supplier readiness challenges that limit the region's ability to capture value from the Space Coast's growth.
+## How is FSIC different from an economic development agency?
 
-## What does success look like for a backbone organization?
+FSIC does not take the place of economic development agencies. The Master Plan lists regional economic development organizations and workforce boards among FSIC's partners, "essential partners in aligning FSIC's programs with broader regional strategies" (p. 23). FSIC's own work is organized in four engines: Talent (workforce training), Innovation (challenge labs and applied research), Market (support for small businesses and startups) and Civic (community engagement). Each is described on [The FSIC Model](/model/) page.
 
-Success for FSIC is measured by system-level outcomes, not just FSIC's direct programs:
+## How will results be measured?
 
-- **More students complete STEM pathways**: Whether through Volusia County Schools, Daytona State College, or a university, because FSIC helped expand dual enrollment, micro-credentials, and career counseling
-- **More residents get hired in high-wage jobs**: Whether those jobs are with a Space Coast prime contractor, a local supplier, or a startup, because FSIC coordinated training with employer needs
-- **More businesses compete successfully**: Whether they win an SBIR grant, achieve AS9100 certification, or land a supply contract, because FSIC provided bootcamps, matchmaking, and proposal support
-- **Partners are stronger**: Schools enroll more students in STEM programs, colleges see higher completion rates, and employers fill open positions, because FSIC helped them align and share resources
+Shared measurement is one of the five conditions of collective impact. The Master Plan sets metrics for each engine, such as completion and certification rates, job placement rates, businesses supported and attendance at community STEM events, with a reporting cadence for each (pp. 31–32). They are listed on the [Governance & Transparency](/governance/#metrics) page.
 
-If FSIC succeeds, the credit belongs to the entire network. If the region's institutions thrive, FSIC has done its job.
-
-## Frequently Asked Questions
-
-### If FSIC is a backbone organization, why does it need staff and a budget?
-
-Coordination requires resources. Backbone organizations employ staff who facilitate partnerships, manage programs, track data, secure funding, and communicate with the community. They need budgets for pilot programs, shared equipment, events, and the day-to-day work of keeping partners aligned. FSIC's staff and budget are smaller than what would be required if it tried to deliver all services directly, because partners do most of the heavy lifting.
-
-### Can a backbone organization advocate for policy changes?
-
-Yes. Backbone organizations often identify policy barriers that prevent the system from working well—such as outdated regulations, misaligned funding formulas, or gaps in state programs—and advocate for changes. FSIC may advocate for workforce funding, innovation grants, or education policies that support its mission. However, as a 501(c)(3) nonprofit, FSIC cannot engage in partisan politics or support candidates for office.
-
-### What happens if FSIC and a partner disagree?
-
-Partnerships require trust, communication, and shared commitment to the common agenda. Disagreements are resolved through dialogue, data, and a focus on what benefits the region. If a partner's priorities shift or a collaboration is not working, FSIC and the partner may agree to end or modify the partnership. FSIC's governance structure—a cross-sector Board and Multi-Institution Advisory Council—ensures that no single partner dominates decision-making.
-
-### How is a backbone organization funded?
-
-Backbone organizations are typically funded through a blend of public grants, philanthropic contributions, and earned revenue from programs or services. FSIC's funding model includes state and federal workforce and innovation grants, philanthropic support from foundations and individual donors, employer contributions, and earned revenue from training, events, and partnerships. This diversified funding model ensures FSIC remains independent and sustainable.
-
----
-
-**Read more about FSIC's structure and governance:**
-
-- [Governance & Transparency](/governance/) (pillar page)
-- [Partnership & Funding: How FSIC Is Funded](/partnership-funding/)
-
-**Related FAQ answers:**
-
-- [Is FSIC a school, a research center, or an economic development agency?](/faq#what-kind-of-organization)
-- [Will FSIC compete with local schools, colleges, or nonprofits?](/faq#compete)
+The next question is how FSIC itself is governed, and how its structure is designed to keep any one partner from controlling it: see [How Is FSIC Governed and Kept Independent?](/blog/how-fsic-is-governed/)
