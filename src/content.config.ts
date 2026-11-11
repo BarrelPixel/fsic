@@ -51,7 +51,8 @@ const blog = defineCollection({
         faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
         /** Every figure and claim traces to one of these (docs/03 "Attribution"). */
         sources: z.array(z.object({ title: z.string(), publisher: z.string(), url: z.url().optional(), date: z.string().optional() })).min(1),
-        status: z.enum(['draft', 'review', 'published']).default('draft'),
+        /** draft → review (waiting for FSIC) → scheduled (approved; live on publishDate) or published (live now). */
+        status: z.enum(['draft', 'review', 'scheduled', 'published']).default('draft'),
         /**
          * The date to publish this post (YYYY-MM-DD). When set, a post with status 'review' will be automatically
          * published on this date by the scheduled publishing workflow. Optional: omit to publish manually.
@@ -73,6 +74,7 @@ const blog = defineCollection({
       .refine((d) => !d.image || d.imageAlt, { error: 'imageAlt is required when image is set' })
       .refine((d) => !d.updated || d.updated >= d.date, { error: 'updated must be on or after date' })
       .refine((d) => !d.publishDate || d.publishDate >= d.date, { error: 'publishDate must be on or after date' })
+      .refine((d) => d.status !== 'scheduled' || d.publishDate, { error: 'a scheduled post needs a publishDate' })
       .refine((d) => d.status === 'draft' || d.followUp, { error: 'followUp is required before a post goes to review or is published (docs/14 §10)' }),
 });
 

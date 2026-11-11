@@ -75,7 +75,9 @@ for (const p of posts) {
   const f = p.followUp;
   if (!TOPICS[f.topic]) errors.push(`${p.slug}: follow-up topic "${f.topic}" isn't one of the seven topics`);
   if (f.slug === p.slug) errors.push(`${p.slug}: the follow-up can't be the post itself`);
-  if (p.status !== 'published') continue;
+  // Approved posts (scheduled or published) add their follow-up when they're approved, not when they go live, so
+  // the daily rebuild that releases a scheduled post never finds the plan out of date.
+  if (p.status !== 'published' && p.status !== 'scheduled') continue;
   // A published post's follow-up joins the plan (or claims the planned question it names).
   const existing = inPlan(f.slug);
   if (existing) {
@@ -112,12 +114,12 @@ const planOut =
   '\n  ]\n}\n';
 
 // The calendar table.
-const STATUS = { published: 'Published', review: 'In review', draft: 'Drafted' };
+const STATUS = { published: 'Published', scheduled: 'Scheduled', review: 'In review', draft: 'Drafted' };
 const cell = (s) => String(s ?? '').replace(/\|/g, '\\|');
 const title = (slug) => bySlug.get(slug)?.title ?? slug;
 const rows = plan.map((e, i) => {
   const post = bySlug.get(e.slug);
-  const status = post ? `**${STATUS[post.status] ?? 'Drafted'}** (\`${e.slug}\`)` : 'Planned';
+  const status = post ? `**${STATUS[post.status] ?? 'Drafted'}**${post.status === 'scheduled' && post.publishDate ? ` ${String(post.publishDate instanceof Date ? post.publishDate.toISOString().slice(0, 10) : post.publishDate)}` : ''} (\`${e.slug}\`)` : 'Planned';
   const follows = e.from ? `${cell(title(e.from))}` : '';
   return `| ${i + 1} | ${cell(e.question)} | ${TOPICS[e.topic]} | ${cell(e.audiences)} | ${cell(e.sources)} | ${follows} | ${status} |`;
 });

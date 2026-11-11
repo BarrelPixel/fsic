@@ -8,9 +8,10 @@ import { FIGURES, DISCLAIMER } from '../data/economics';
 import { faqs } from '../data/faq';
 import { engines } from '../data/engines';
 import { getCollection } from 'astro:content';
+import { isLive } from '../lib/blog-status';
 
 export const GET: APIRoute = async () => {
-  const posts = (await getCollection('blog', (p) => p.data.status === 'published')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  const posts = (await getCollection('blog', (p) => isLive(p.data))).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
   const lines = [
     '# Florida Space Innovation Center (FSIC)',
     '',

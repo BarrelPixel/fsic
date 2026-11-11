@@ -1,3 +1,10 @@
+> **Revised November 11, 2026.** The first version published any post in `review` on its `publishDate`, by a workflow that committed to `main`. Review means waiting for FSIC's approval, so that skipped approval; and a push made by that workflow's token doesn't trigger the deploy, so posts wouldn't have appeared anyway. It's replaced by:
+> - **`status: scheduled`** means FSIC has approved the post. It goes live when `publishDate` has passed, at the next build (`isLive` in `src/lib/blog-status.ts`). No commit is needed.
+> - **The deploy rebuilds every morning** (`schedule` in `.github/workflows/deploy.yml`, 14:00 UTC), so a scheduled post appears on its day. `publish-scheduled-posts.yml` is removed.
+> - **Posts in `review` are never published automatically.** To schedule a post after approval, set `status: scheduled` and `publishDate`, run `npm run blog-plan` (an approved post's follow-up joins the plan at approval), and commit.
+>
+> The rest of this document describes the first version and is kept for the record.
+
 # Scheduled Blog Publishing
 
 **Created:** November 10, 2026  
