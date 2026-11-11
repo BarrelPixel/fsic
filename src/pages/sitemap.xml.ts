@@ -4,6 +4,7 @@ import type { APIRoute } from 'astro';
 import { absolute, sitePages } from '../lib/seo';
 import { getReleases, isoDate } from '../lib/news';
 import { getCollection } from 'astro:content';
+import { isLive } from '../lib/blog-status';
 
 export const GET: APIRoute = async () => {
   // sitePages() already includes the homepage (the menus list it), so it isn't added separately.
@@ -18,7 +19,7 @@ export const GET: APIRoute = async () => {
     priority: '0.6',
     changefreq: 'never'
   }));
-  const posts = (await getCollection('blog', (p) => p.data.status === 'published')).map((p) => ({ 
+  const posts = (await getCollection('blog', (p) => isLive(p.data))).map((p) => ({ 
     loc: absolute(`/blog/${p.id}/`), 
     lastmod: isoDate(p.data.updated ?? p.data.date),
     priority: '0.7',

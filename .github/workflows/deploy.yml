@@ -3,6 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Rebuild every morning so blog posts scheduled by FSIC (status: scheduled, publishDate reached) go live on
+  # their day without a commit (src/lib/blog-status.ts). 9:00 AM Eastern standard time.
+  schedule:
+    - cron: '0 14 * * *'
   workflow_dispatch:
 
 permissions:

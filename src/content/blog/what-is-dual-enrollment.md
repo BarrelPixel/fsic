@@ -7,7 +7,7 @@ date: 2026-11-10
 author: erik-ahlgren
 topic: talent
 audiences: [students-families, educators]
-status: published
+status: review
 followUp:
   question: "What apprenticeships will FSIC offer for aerospace and advanced manufacturing?"
   slug: what-apprenticeships-will-fsic-offer

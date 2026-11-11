@@ -6,7 +6,10 @@ import { FIGURES } from '../data/economics';
 
 export type Post = CollectionEntry<'blog'>;
 
-export const isPublished = (p: Post) => p.data.status === 'published';
+import { isLive } from './blog-status';
+
+/** Live on the public site: published, or scheduled with its publishDate passed (src/lib/blog-status.ts). */
+export const isPublished = (p: Post) => isLive(p.data);
 const visible = (p: Post) => isPublished(p) || import.meta.env.DEV;
 
 /** Posts to show, newest first. */

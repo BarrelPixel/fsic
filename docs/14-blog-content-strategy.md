@@ -143,7 +143,7 @@ Answer engines quote short, self-contained passages that state facts plainly, an
 | 2. Draft | B&P | `src/content/blog/<slug>.md` with `status: draft`. Readable in place with `npm run dev` (marked as a draft); not on the public site |
 | 3. Check | B&P | Every fact against its source. Figures exactly as in `FIGURES` (the build fails on a dollar or thousands range that isn't one of them). Links work (`npm run check-links`). Nonprofit rules |
 | 4. Review | FSIC (and counsel or the program lead where §7 says) | `status: review`, then approval in writing |
-| 5. Publish | B&P | **Manual:** `status: published`, then `npm run blog-plan`: the post's follow-up joins the plan and the calendar below (§10). Commit both. **Scheduled:** set `status: review` and add `publishDate: YYYY-MM-DD` in frontmatter; the post publishes automatically on that date. The first published post adds Blog to the menu, the sitemap, the RSS feed and `llms.txt` automatically. Merge; the deploy checks types and links, and fails if the plan is out of date |
+| 5. Publish | B&P | Only after FSIC's written approval. **Now:** `status: published`. **On a date:** `status: scheduled` with a `publishDate`; the post goes live that morning at the deploy's daily rebuild (`isLive`, `src/lib/blog-status.ts`). `review` is never published automatically. Then `npm run blog-plan`: the post's follow-up joins the plan and the calendar below (§10). Commit both. The first live post adds Blog to the menu, the sitemap, the RSS feed and `llms.txt` automatically. Merge; the deploy checks types and links, and fails if the plan is out of date |
 | 6. Share | FSIC | LinkedIn, Facebook and X, partner newsletters, and the RSS feed |
 | 7. Maintain | B&P, quarterly | §11 |
 
@@ -199,7 +199,7 @@ When a post is published, `npm run blog-plan` adds its follow-up to the plan, ma
 | 1 | What is a job-year, and what does FSIC's projection mean? | Regional economy | Policymakers, funders | Master Plan pp. 7–8 |  | **Published** (`what-is-a-job-year`) |
 | 2 | What is a micro-credential, and how will FSIC offer them? | Talent | Students, job-seekers, employers | Master Plan pp. 13, 19–21; FAQ |  | **Published** (`what-is-a-micro-credential`) |
 | 3 | Why does FSIC start with the Talent Engine? | Talent | Partners, funders | Master Plan p. 13; Deployment page |  | **In review** (`why-fsic-starts-with-talent`) |
-| 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | What Is a Micro-Credential? FSIC’s Short, Job-Focused Training | **Published** (`what-is-dual-enrollment`) |
+| 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | What Is a Micro-Credential? FSIC’s Short, Job-Focused Training | **In review** (`what-is-dual-enrollment`) |
 | 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | What Are SBIR and STTR? Federal Grants for Innovation | **In review** (`how-to-become-a-space-supplier`) |
 | 6 | What are SBIR and STTR, and how can a Volusia County business apply? | Business | Employers, startups | SBIR.gov; Master Plan |  | **In review** (`what-are-sbir-and-sttr`) |
 | 7 | What is a challenge lab? | Innovation | Universities, employers | Master Plan pp. 19–21 |  | **In review** (`what-is-a-challenge-lab`) |
@@ -258,7 +258,7 @@ Not in this post:  (what belongs on another page or post)
 |------|-------|
 | Posts | `src/content/blog/<slug>.md`, validated by the `blog` collection (`src/content.config.ts`) |
 | Statuses | `draft` and `review` show only in `npm run dev` (marked) and are `noindex`; `published` goes live |
-| Scheduled publishing | Posts with `status: review` and a `publishDate` are automatically published on that date by `.github/workflows/publish-scheduled-posts.yml` (daily at 9 AM EST). The workflow changes their status to `published`, runs `npm run blog-plan`, verifies checks, and commits. Also triggerable manually via GitHub Actions |
+| Scheduled publishing | `status: scheduled` (approved) plus `publishDate`: live once the date has passed, at build time (`src/lib/blog-status.ts`); the deploy rebuilds daily at 14:00 UTC (`.github/workflows/deploy.yml`). `review` never publishes on its own (`docs/20`) |
 | Pages | `/blog` (index; a `noindex` holding note until a post is published), `/blog/<slug>` (the post anatomy in §4) |
 | Menu | "Blog" appears with the first published post (`src/lib/blog-status.ts`, `nav.ts`) |
 | Structured data | `BlogPosting` with author, dates, section and citations; `FAQPage` from `faqs`; breadcrumb Home › Blog › post (`src/lib/seo.ts`) |

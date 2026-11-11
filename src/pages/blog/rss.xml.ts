@@ -3,11 +3,12 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { absolute } from '../../lib/seo';
+import { isLive } from '../../lib/blog-status';
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 export const GET: APIRoute = async () => {
-  const posts = (await getCollection('blog', (p) => p.data.status === 'published')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  const posts = (await getCollection('blog', (p) => isLive(p.data))).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
   const items = posts
     .map((p) => {
       const link = absolute(`/blog/${p.id}/`);
