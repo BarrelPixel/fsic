@@ -36,7 +36,9 @@ import { url } from '../lib/url';
   </div>
   </div>
   <div class="hidden md:block absolute inset-0 bg-linear-to-b from-night/90 via-night/80 to-night/50 lg:bg-linear-to-r lg:from-night/90 lg:via-night/65 lg:via-45% lg:to-night/0 lg:to-75%" aria-hidden="true"></div>
-  <div class="relative z-10 max-md:bg-[linear-gradient(to_bottom,transparent_calc(max(46svh,62.5vw,16rem)),var(--color-night)_calc(max(46svh,62.5vw,16rem)))]">
+  <!-- will-change (phones): Safari on iPhone can paint content over a pinned (sticky) layer late during a fast
+       scroll, so the photo shows bare until the text pops in. Its own layer keeps the text drawn with the photo. -->
+  <div class="relative z-10 max-md:will-change-transform max-md:bg-[linear-gradient(to_bottom,transparent_calc(max(46svh,62.5vw,16rem)),var(--color-night)_calc(max(46svh,62.5vw,16rem)))]">
   <div class="relative container pt-[calc(max(46svh,62.5vw,16rem)+2.5rem)] pb-14 md:pt-24 md:pb-48 lg:pb-56 grid lg:grid-cols-12 lg:gap-x-8">
     <div class="lg:col-span-6 max-w-2xl">
       <h1 class="text-white mb-8">Opportunity That Flows Into Southeast Volusia — Not Past It</h1>
