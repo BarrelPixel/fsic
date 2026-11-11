@@ -45,20 +45,18 @@ The plan lists six guiding principles for that model (p. 25):
 
 The plan sets out six funding streams, most with the years in which they apply (pp. 25–26):
 
-| Stream | Years |
-|--------|-------|
-| Startup funding | Years 1–2 |
-| Public funding and government grants | Years 1–5 |
-| Employer partnerships and corporate support | Not stated |
-| Earned revenue | Years 2–5 |
-| Federal innovation and research funding | Years 2–5 |
-| Long-term sustainability model | Years 3–5 |
+- **Startup funding:** Years 1–2
+- **Public funding and government grants:** Years 1–5
+- **Employer partnerships and corporate support:** years not stated
+- **Earned revenue:** Years 2–5
+- **Federal innovation and research funding:** Years 2–5
+- **Long-term sustainability model:** Years 3–5
 
 Each stream is described, with its sources, on the [Partnership & Funding](/partnership-funding/#funding) page.
 
 ## How is FSIC funded in its first year?
 
-Mainly by startup funding. The plan's primary startup sources are philanthropic contributions, family foundations, corporate sponsorships, local government support and in-kind contributions of space, equipment and staffing (p. 25). Startup funding "focuses on establishing core operations, launching the Talent Engine, and building early momentum" (p. 26).
+In the Master Plan, mainly by startup funding. The plan's primary startup sources are philanthropic contributions, family foundations, corporate sponsorships, local government support and in-kind contributions of space, equipment and staffing (p. 25). Startup funding "focuses on establishing core operations, launching the Talent Engine, and building early momentum" (p. 26).
 
 The plan's five-year financial outlook describes Year 1 as "primarily philanthropic and local support" (p. 28). Securing "startup philanthropic and local government funding" is a Year 1 milestone (p. 33), and securing "initial philanthropic and public funding" is a Phase 1 activity (p. 13).
 

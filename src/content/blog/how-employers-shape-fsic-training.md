@@ -2,7 +2,7 @@
 title: "How Do Employers Help Shape FSIC's Training Programs?"
 description: "How FSIC's Master Plan gives employers a say in training: advisory councils, curriculum validation, work-based learning and employer feedback."
 question: "How do employers help shape FSIC's training programs?"
-summary: "Employers help shape the Florida Space Innovation Center's (FSIC's) training in three ways under its Master Plan. They validate curriculum and micro-credentials, including through employer advisory councils that FSIC plans to form in Phase 1. They host job shadowing, internships and apprenticeships and lead workshops. And their view is measured: the Talent Engine's metrics include employer satisfaction and alignment, with employer advisory council reviews. As of November 2026, FSIC is in Phase 1, and these are plans."
+summary: "Under the Master Plan of the Florida Space Innovation Center (FSIC), employers help shape its training in three ways. They validate curriculum and micro-credentials, including through employer advisory councils that FSIC plans to form in Phase 1. They host job shadowing, internships and apprenticeships and lead workshops. And their view is measured: the Talent Engine's metrics include employer satisfaction and alignment, with employer advisory council reviews. As of November 2026, FSIC is in Phase 1, and these are plans."
 date: 2026-11-11
 author: erik-ahlgren
 topic: talent
