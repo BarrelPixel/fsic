@@ -2,7 +2,8 @@
 // Footer navigation reads the same structure as the header (src/lib/nav.ts): one column per group,
 // then the single links. Each page appears once.
 import { getNavColumns, href as navHref } from '../lib/nav';
-import { EMAIL, mailto, SOCIAL_LINKS, ORG } from '../lib/site';
+import { EMAIL, mailto, ORG } from '../lib/site';
+import SocialIcons from './SocialIcons.astro';
 import { url } from '../lib/url';
 import SolicitationDisclosure from './SolicitationDisclosure.astro';
 
@@ -29,15 +30,7 @@ const columns = getNavColumns();
         <p class="text-sm mt-4">
           <a href={mailto()} class="text-white/75 hover:text-white underline underline-offset-4 decoration-white/30">{EMAIL}</a>
         </p>
-        <ul class="flex gap-5 mt-4" role="list">
-          {SOCIAL_LINKS.map((link) => (
-            <li>
-              <a href={link.href} class="text-sm text-white/75 hover:text-white transition-colors" rel="noopener">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <SocialIcons dark class="mt-3" />
       </div>
 
       <!-- Site navigation, grouped as in the header -->

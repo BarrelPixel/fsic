@@ -3,7 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Grid from '../components/Grid.astro';
-import { EMAIL, mailto, SOCIAL_LINKS } from '../lib/site';
+import { EMAIL, mailto } from '../lib/site';
+import SocialIcons from '../components/SocialIcons.astro';
 import { url } from '../lib/url';
 
 // Copy: src/content/copy/contact.md (Draft). No form until a backend and routing are chosen
@@ -68,11 +69,7 @@ const topics = [
           <div>
             <dt class="font-semibold text-navy">Follow FSIC</dt>
             <dd>
-              <ul role="list" class="flex flex-wrap gap-x-5 gap-y-1">
-                {SOCIAL_LINKS.map((s) => (
-                  <li><a href={s.href} rel="noopener" class="link">{s.label}</a></li>
-                ))}
-              </ul>
+              <SocialIcons class="mt-1" />
             </dd>
           </div>
         </dl>
