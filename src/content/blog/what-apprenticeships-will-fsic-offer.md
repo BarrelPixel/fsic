@@ -21,7 +21,7 @@ sources:
   - title: "What is a Registered Apprenticeship Program?"
     publisher: "U.S. Department of Labor, Apprenticeship.gov"
     url: "https://www.apprenticeship.gov/employers/registered-apprenticeship-program"
-status: review
+status: draft
 publishDate: 2026-12-15
 followUp:
   question: "How do registered apprenticeships differ from internships or co-ops?"
