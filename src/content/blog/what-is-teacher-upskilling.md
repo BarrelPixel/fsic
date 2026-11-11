@@ -42,7 +42,7 @@ followUp:
 
 ## How does the law define professional development?
 
-Federal education law, the Every Student Succeeds Act, defines **professional development** as activities that give educators "the knowledge and skills necessary to enable students to succeed." It describes them as "sustained (not stand-alone, 1-day, or short term workshops), intensive, collaborative, job-embedded, data-driven, and classroom-focused." They may include training in the use of technology in the classroom.
+Federal education law (the Elementary and Secondary Education Act, as amended by the Every Student Succeeds Act) defines **professional development** as activities that give educators "the knowledge and skills necessary to enable students to succeed." It describes them as "sustained (not stand-alone, 1-day, or short term workshops), intensive, collaborative, job-embedded, data-driven, and classroom-focused." They may include training in the use of technology in the classroom.
 
 Florida uses the term **professional learning**. The School Community Professional Learning Act describes it as learning that is aligned to the state's standards, "incorporates active learning; is collaborative; provides models; and is sustained and continuous." Its purposes include preparing students "for continuing education and the workforce." Routine informational meetings do not count.
 
@@ -92,4 +92,4 @@ The Master Plan does not say which teachers or subjects the programs will serve,
 - [What Is a Micro-Credential? FSIC's Short, Job-Focused Training](/blog/what-is-a-micro-credential/)
 - [The Talent Engine](/model/#talent)
 - [What kinds of programs will FSIC offer first?](/faq/#first-programs)
-- [How can I get involved?](/faq/#get-involved)
+- [How can the public get involved?](/faq/#get-involved)

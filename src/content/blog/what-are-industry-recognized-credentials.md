@@ -53,7 +53,7 @@ Two parts of that definition matter most: the assessment is done by an independe
 
 The **Master Credentials List** is Florida's list of approved "credentials of value." It is built by a Credentials Review Committee that the state workforce development board appoints. The committee includes the chancellors of Florida's public schools, career and adult education, the Florida College System and the State University System, along with members from local workforce development boards, industry associations and Florida-based businesses.
 
-By law, the credentials it considers include:
+By law, the credentials of value must include:
 
 - Registered apprenticeship programs
 - Industry certifications
@@ -61,11 +61,11 @@ By law, the credentials it considers include:
 - Career certificates, college credit certificates, advanced technical certificates and applied technology diplomas
 - Associate, bachelor's and graduate degrees
 
-The committee reviews credential applications at least quarterly and reviews the whole list every year. Credentials that no longer meet its framework of quality are phased out.
+The committee reviews credential applications at least quarterly and the whole list once a year, and phases out credentials that no longer meet its framework of quality.
 
 ## How does Florida decide a credential has value?
 
-For credentials other than degrees, Florida law asks the committee to require, at a minimum, evidence that:
+For credentials other than degrees, Florida law says the committee's criteria should, at a minimum, require evidence that:
 
 - The credential meets labor market demand, statewide or locally.
 - The skills it certifies are aligned with that demand.

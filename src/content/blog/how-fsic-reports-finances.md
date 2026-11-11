@@ -52,7 +52,7 @@ FSIC's determination letter and its application for exemption are available on r
 
 ## Which annual return will FSIC file?
 
-Most tax-exempt organizations are required to file an annual return with the IRS. **Form 990**, the "Return of Organization Exempt From Income Tax," is the full version. According to the IRS, which form an organization files generally depends on its financial activity:
+Most tax-exempt organizations are required to file an annual return with the IRS. **Form 990** is the IRS "Return of Organization Exempt From Income Tax." According to the IRS, which form an organization files generally depends on its financial activity:
 
 - **Form 990-N** (the e-Postcard): gross receipts normally $50,000 or less
 - **Form 990-EZ or Form 990:** gross receipts under $200,000 and total assets under $500,000

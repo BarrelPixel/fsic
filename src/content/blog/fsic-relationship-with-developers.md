@@ -16,8 +16,8 @@ faqs:
     a: "FSIC's Master Plan designs its governance so that no single individual, partner or sector can dominate decision-making, with an independent board chair, term limits, conflict-of-interest policies and balanced representation across sectors."
 status: draft
 followUp:
-  question: "Where will FSIC be located, and how will its future site be chosen?"
-  slug: how-fsic-future-site-will-be-chosen
+  question: "What are FSIC's advisory councils, and what do they do?"
+  slug: what-are-fsics-advisory-councils
   topic: organization
 from: how-fsic-is-governed
 sources:
