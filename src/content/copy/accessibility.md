@@ -18,7 +18,9 @@
 
 ## OUR TARGET
 
-FSIC aims for the website to meet the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA.
+FSIC aims for the website to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at Level AA.
+
+> **Changed (November 2026):** WCAG 2.1 → 2.2, the current version; the site was reviewed against 2.2 AA (`docs/25-accessibility-review.md`). **⚠ Review** with the rest of this draft.
 
 ---
 

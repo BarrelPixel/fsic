@@ -51,7 +51,7 @@ src/lib/seo.ts       Indexing switch, absolute URLs, schema.org builders, the on
 src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
                      ranges, read by home, Economic Impact, Partnership & Funding and the FAQ), phases,
                      engines, programs, faq, partnership, governance
-docs/                Project docs 00–24 (IA, content guidelines, site audit, copy-deck workflow, homepage reviews, refactor/SEO/AEO review, blog strategy, site elevation plan, narrative)
+docs/                Project docs 00–25 (IA, content guidelines, site audit, copy-deck workflow, homepage reviews, refactor/SEO/AEO review, blog strategy, site elevation plan, narrative, accessibility review)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
 scripts/             check-links.mjs (run via `npm run check-links`)

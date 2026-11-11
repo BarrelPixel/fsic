@@ -4,6 +4,8 @@
 // /fsic preview and at fsic.space. External ("https://…"), protocol-relative ("//…") and in-page ("#…") links
 // are left alone.
 //
+// Tables get a keyboard-reachable scroll region (below).
+//
 // A link to another post that isn't live yet (in review, or scheduled for a later date) is shown as its text
 // without the link, and becomes a link on the build after that post goes live. So a post can link ahead to one
 // published later, and the daily rebuild that releases it never meets a broken link.
@@ -19,6 +21,17 @@ const showAll = import.meta.env.DEV;
 html = html.replace(/<a href="\/blog\/([a-z0-9-]+)\/?(#[^"]*)?"[^>]*>([\s\S]*?)<\/a>/g, (link, slug, _hash, text) =>
   showAll || live.has(slug) ? link : text,
 );
+
+// Tables scroll sideways inside themselves on phones (global.css, .table-scroll). A scrolling region must be
+// reachable by keyboard (WCAG 2.1.1), so each table sits in a focusable region named after the heading it answers.
+let tableCount = 0;
+html = html.replace(/<table[\s\S]*?<\/table>/g, (table, offset: number) => {
+  tableCount++;
+  const before = html.slice(0, offset);
+  const heading = [...before.matchAll(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/g)].pop()?.[1].replace(/<[^>]+>/g, '').trim();
+  const label = (heading || `Table ${tableCount}`).replace(/"/g, '&quot;');
+  return `<div class="table-scroll" role="region" tabindex="0" aria-label="${label}">${table}</div>`;
+});
 
 // Root-relative links not already under the base: href="/x" → href="/fsic/x" (and not "//x" or "/fsic/x").
 const rootLink = new RegExp(`href="/(?!/|${base.slice(1).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/)`, 'g');
