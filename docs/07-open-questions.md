@@ -2,6 +2,8 @@
 
 Items requiring stakeholder input or decisions before full launch.
 
+**FSIC review page (November 11, 2026):** every open item here and every ⚠ Review note in the copy deck, in plain language, with FSIC's answers saved in one place: https://claude.ai/artifact/8NVQTh87xnqNxnuPk9h5KC (private; reviewers must be invited as editors to record answers). `npm run review-items` lists the same items from the files; when FSIC answers, apply each answer here or in the copy deck and mark it resolved.
+
 ## Branding & Identity
 - [ ] **Logo:** A PNG (300×128) was provided and is in use (`public/images/fsic-logo.png`, plus a dark-background version). Still need an SVG or a larger source so it stays sharp at larger sizes.
 - [ ] **Favicon:** Derived from logo. Need source file.
