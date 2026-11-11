@@ -28,6 +28,7 @@ sources:
     date: "pp. 4–5, 13, 19 and 33"
 image: ./images/space-coast-aerospace-jobs-and-pay.png
 imageAlt: "What Do Aerospace and Manufacturing Jobs Pay on the Space Coast? (FSIC Blog)"
+publishDate: 2027-01-21
 status: review
 followUp:
   question: "Where do Southeast Volusia residents work, and how far do they commute?"

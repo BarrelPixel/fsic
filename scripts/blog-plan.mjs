@@ -67,6 +67,11 @@ for (const p of posts) {
 // Connections from the posts.
 for (const p of posts) {
   if (p.from && !bySlug.has(p.from)) errors.push(`${p.slug}: "from: ${p.from}" names no post`);
+  // A follow-up comes after the post it follows (docs/14 §10, cadence). Drafts are on hold and have no date to keep.
+  const day = (d) => (d instanceof Date ? d.toISOString().slice(0, 10) : d ? String(d) : '');
+  const parent = p.from ? bySlug.get(p.from) : undefined;
+  if (parent && p.status !== 'draft' && parent.status !== 'draft' && day(p.publishDate) && day(parent.publishDate) && day(p.publishDate) <= day(parent.publishDate))
+    errors.push(`${p.slug}: its publishDate (${day(p.publishDate)}) must come after ${p.from}'s (${day(parent.publishDate)})`);
   if (p.from) {
     const e = inPlan(p.slug);
     if (e && !e.from) e.from = p.from;
@@ -119,7 +124,7 @@ const cell = (s) => String(s ?? '').replace(/\|/g, '\\|');
 const title = (slug) => bySlug.get(slug)?.title ?? slug;
 const rows = plan.map((e, i) => {
   const post = bySlug.get(e.slug);
-  const status = post ? `**${STATUS[post.status] ?? 'Drafted'}**${post.status === 'scheduled' && post.publishDate ? ` ${String(post.publishDate instanceof Date ? post.publishDate.toISOString().slice(0, 10) : post.publishDate)}` : ''} (\`${e.slug}\`)` : 'Planned';
+  const status = post ? `**${STATUS[post.status] ?? 'Drafted'}**${post.status === 'review' && post.publishDate ? ', proposed' : ''}${(post.status === 'scheduled' || post.status === 'review') && post.publishDate ? ` ${String(post.publishDate instanceof Date ? post.publishDate.toISOString().slice(0, 10) : post.publishDate)}` : ''} (\`${e.slug}\`)` : 'Planned';
   const follows = e.from ? `${cell(title(e.from))}` : '';
   return `| ${i + 1} | ${cell(e.question)} | ${TOPICS[e.topic]} | ${cell(e.audiences)} | ${cell(e.sources)} | ${follows} | ${status} |`;
 });

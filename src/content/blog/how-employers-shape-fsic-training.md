@@ -26,6 +26,7 @@ sources:
     publisher: "Florida Space Innovation Center"
 image: ./images/how-employers-shape-fsic-training.png
 imageAlt: "How Do Employers Help Shape FSIC's Training Programs? (FSIC Blog)"
+publishDate: 2027-02-27
 status: review
 followUp:
   question: "What is the Regional Talent Marketplace, and how will it connect employers and job seekers?"

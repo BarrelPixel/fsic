@@ -24,7 +24,6 @@ sources:
 image: ./images/what-apprenticeships-will-fsic-offer.png
 imageAlt: "What Apprenticeships Will FSIC Offer? (FSIC Blog)"
 status: draft
-publishDate: 2026-12-15
 followUp:
   question: "How do registered apprenticeships differ from internships or co-ops?"
   slug: apprenticeships-vs-internships
