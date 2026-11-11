@@ -40,9 +40,14 @@ const at = (id: string) => sectionProps(sections, id);
 
   <!-- Interior page template (DESIGN.md): PageHero with an index of partner types, narrative sections, closing -->
   <PageHero title="Partner. Collaborate. Participate.">
-    <p class="text-lead text-white/90 mb-6">
-      The Florida Space Innovation Center represents a coordinated investment in the region's future.
+    <!-- Answer first (docs/23 S1): how to take part, with the action on the first screen -->
+    <p class="text-lead text-white/90 mb-6 max-w-3xl">
+      Start with an email. Find your organization below to see what partners do with FSIC and what they gain, then write to FSIC. Residents can take part through events, programs and volunteering.
     </p>
+    <div class="flex flex-wrap gap-4 mb-10">
+      <Button href={mailto('Partnership inquiry')}>Email FSIC About Partnering</Button>
+      <Button href="#get-involved" variant="secondary-light">Ways for Residents</Button>
+    </div>
     <p class="text-white/75 mb-10 max-w-3xl">
       Whether you are an employer, university leader, policymaker, workforce partner, or community member, there is a role to play in shaping Southeast Volusia's place in the global space economy.
     </p>

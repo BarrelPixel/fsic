@@ -50,7 +50,11 @@ const phases = phaseData.map((p, i) => ({ n: i + 1, name: p.name, when: p.timefr
 
   <!-- Interior page template (DESIGN.md): PageHero with an index of the three sections -->
   <PageHero title="Programs & Facilities">
-    <p class="text-lead text-white/90 mb-10 max-w-3xl">
+    <!-- Answer first (docs/23 S1): what FSIC offers, to whom, and where it stands -->
+    <p class="text-lead text-white/90 mb-6 max-w-3xl">
+      FSIC’s programs are planned for students and families, adults and career-switchers, businesses, and the whole community, starting with the Talent Engine in Year 1. FSIC is a virtual organization today, so programs run with partners while facilities are planned in phases.
+    </p>
+    <p class="text-white/75 mb-10 max-w-3xl">
       {faqText.residentsLead}
     </p>
     <HeroIndex label="Page contents" size="large" items={sections} />

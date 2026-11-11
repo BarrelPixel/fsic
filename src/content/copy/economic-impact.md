@@ -13,6 +13,8 @@
 
 > **⚠ Review — scenario attribution (see `docs/08-current-site-audit.md` §3.10):** The Master Plan's chart (p. 8) shows that the headline figures ($10.2–$12.4B output, 74,500–79,500 job-years, $1.35–$1.55B wages, $690–$910M fiscal, $800M–$1.56B funding) are the **Extended FSIC (FSIC 2.0)** scenario. The foundational FSIC 1.0 scenario is lower ($8.1–$9.7B output). This page labels the headline figures as FSIC 2.0 and shows all three scenarios. The approved home page says "Independent 25-year analysis projects that FSIC will generate:" above the same figures, without naming the scenario. Decide whether the home page should name it.
 
+
+> **Answer-first opening (November 11, 2026, `docs/23` S1).** The page now opens with its answer: Statement: "What Participation Is Worth Over 25 Years" (was "Transformational, Long-Term Regional Impact", the homepage's change). Lead: Independent 25-year analysis projects that, with full implementation (the Master Plan's FSIC 2.0 scenario), FSIC would help the region generate $10.2–$12.4 billion in economic output, 74,500–79,500 job-years, $1.35–$1.55 billion in new wages, and $690–$910 million in fiscal revenue for local and state governments. (Figures from FIGURES. Replaces the lead "The Florida Space Innovation Center (FSIC) is a regional platform designed to ensure…"; its paragraph that follows stays.) Every page also ends with "Questions about this", "Read more" and "Next" (`site-wide.md`). **⚠ Review:** new wording.
 ---
 
 ## HERO

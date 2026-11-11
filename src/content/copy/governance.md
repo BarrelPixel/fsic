@@ -10,6 +10,8 @@
 
 > **Built (November 2026)** from this file. Left out until confirmed: the names of board members and the founder transition (see the ⚠ notes below). Master Plan text is from a PDF text extraction; obvious extraction errors are corrected ("Oficer" → "Officer", "SIC's" → "FSIC's", "certihcation" → "certification", "diversihcation" → "diversification").
 
+
+> **Answer-first opening (November 11, 2026, `docs/23` S1).** The page now opens with its answer: An independent, cross-sector Board of Directors governs FSIC, advised by councils of partners and accountable through public reporting. No single individual, partner, or sector can dominate its decisions. (From this page's approved structure section; the approved lead follows it.) Every page also ends with "Questions about this", "Read more" and "Next" (`site-wide.md`). **⚠ Review:** new wording.
 ---
 
 ## HERO

@@ -10,6 +10,8 @@
 > - "civilian-facing innovation hub" (02) → The FSIC Model, Innovation Engine
 > - "long-term economic trajectory" (03) → Economic Impact, Risks and Opportunities
 
+
+> **Answer-first opening (November 11, 2026, `docs/23` S1).** The page now opens with its answer: The Space Coast is growing either way. The next five years will determine whether Southeast Volusia becomes a full participant in that growth, or a region that watches opportunity flow past it. (Drawn from this page's approved "The Window Is Open" section; the approved lead, "Southeast Volusia is entering one of the most consequential economic windows in its modern history.", follows it.) Every page also ends with "Questions about this", "Read more" and "Next" (`site-wide.md`). **⚠ Review:** new wording.
 ---
 
 ## HERO
@@ -20,7 +22,7 @@
 Southeast Volusia is entering one of the most consequential economic windows in its modern history.
 
 > **Source:** fsic.space/about-4 — section heading "Why Now — The Strategic Moment". Lead: Master Plan p. 4 (verbatim).
-**Index:** the four sections (03 is shortened to "A Once-in-a-Generation Catalyst", 04 to "The Window Is Open").
+**Index:** the four sections (03 is shortened to "Regional Growth as a Catalyst", 04 to "The Window Is Open").
 
 ---
 
@@ -57,7 +59,9 @@ On the page, the five areas of capacity are a list, as in the Master Plan.
 
 ## A ONCE-IN-A-GENERATION CATALYST
 
-**Headline:** Southeast Volusia County: A Once-in-a-Generation Catalyst
+**Headline:** Southeast Volusia County: Regional Growth as a Catalyst
+
+> **Changed (November 11, 2026, `docs/23` S6):** was "A Once-in-a-Generation Catalyst", a superlative the content guidelines avoid. **⚠ Review.**
 
 **Body:**
 A master-planned development in Southeast Volusia will add more than 10,000 homes and over 10 million square feet of industrial and commercial space. This growth will reshape the region's workforce needs, employer mix, and long-term economic trajectory.
