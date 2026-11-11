@@ -20,7 +20,9 @@ sources:
     date: "pp. 5, 9–10, 12–13, 19–20, 22 and 32–33"
 visual:
   phases: [1]
-status: draft
+image: ./images/what-is-the-regional-talent-marketplace.png
+imageAlt: "What Is FSIC's Regional Talent Marketplace? (FSIC Blog)"
+status: review
 from: how-employers-shape-fsic-training
 followUp:
   question: "What is industry-embedded learning, and how will students learn on the job?"

@@ -24,7 +24,9 @@ sources:
     publisher: "Florida Space Innovation Center"
   - title: "Governance & Transparency: Advisory Councils"
     publisher: "Florida Space Innovation Center"
-status: draft
+image: ./images/how-employers-shape-fsic-training.png
+imageAlt: "How Do Employers Help Shape FSIC's Training Programs? (FSIC Blog)"
+status: review
 followUp:
   question: "What is the Regional Talent Marketplace, and how will it connect employers and job seekers?"
   slug: what-is-the-regional-talent-marketplace

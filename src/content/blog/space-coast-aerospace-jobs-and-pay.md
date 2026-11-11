@@ -26,7 +26,9 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 4–5, 13, 19 and 33"
-status: draft
+image: ./images/space-coast-aerospace-jobs-and-pay.png
+imageAlt: "What Do Aerospace and Manufacturing Jobs Pay on the Space Coast? (FSIC Blog)"
+status: review
 followUp:
   question: "Where do Southeast Volusia residents work, and how far do they commute?"
   slug: where-southeast-volusia-residents-commute

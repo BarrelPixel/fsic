@@ -20,7 +20,9 @@ sources:
     date: "pp. 3, 7–8, 13–17, 25–28, 30, 33–34"
   - title: "Partnership & Funding: How Is FSIC Funded?"
     publisher: "Florida Space Innovation Center"
-status: draft
+image: ./images/how-is-fsic-funded.png
+imageAlt: "How Will FSIC Be Funded Over Its First Five Years? (FSIC Blog)"
+status: review
 followUp:
   question: "What are EDA Tech Hubs and NSF Engines, and why do they matter for regions like Southeast Volusia?"
   slug: what-are-eda-tech-hubs-and-nsf-engines

@@ -22,6 +22,12 @@
     {"slug":"how-to-partner-with-civic-engine","question":"How can schools and community groups partner with FSIC's Civic Engine?","topic":"civic","audiences":"","sources":"","from":"what-the-civic-engine-offers"},
     {"slug":"what-are-industry-recognized-credentials","question":"What are industry-recognized credentials, and why do they matter?","topic":"talent","audiences":"","sources":"","from":"how-fsic-measures-talent-outcomes"},
     {"slug":"what-is-roi-for-workforce-programs","question":"What is return on investment (ROI) for workforce development programs?","topic":"economy","audiences":"","sources":"","from":"how-fsic-measures-economic-impact"},
-    {"slug":"what-is-teacher-upskilling","question":"What is teacher upskilling, and what does FSIC plan for educators?","topic":"talent","audiences":"","sources":""}
+    {"slug":"what-is-teacher-upskilling","question":"What is teacher upskilling, and what does FSIC plan for educators?","topic":"talent","audiences":"","sources":""},
+    {"slug":"how-employers-shape-fsic-training","question":"How do employers help shape FSIC's training programs?","topic":"talent","audiences":"","sources":"","from":"what-are-industry-recognized-credentials"},
+    {"slug":"how-is-fsic-funded","question":"How will FSIC be funded over its first five years?","topic":"organization","audiences":"","sources":"","from":"what-is-roi-for-workforce-programs"},
+    {"slug":"how-school-districts-partner-with-fsic","question":"How can school districts partner with FSIC?","topic":"talent","audiences":"","sources":"","from":"what-is-teacher-upskilling"},
+    {"slug":"space-coast-aerospace-jobs-and-pay","question":"What aerospace and advanced manufacturing jobs exist on the Space Coast, and what do they pay?","topic":"region","audiences":"","sources":""},
+    {"slug":"what-is-a-rapid-prototyping-studio","question":"What is a rapid prototyping studio, and what happens at an innovation sprint?","topic":"innovation","audiences":"","sources":""},
+    {"slug":"what-is-the-regional-talent-marketplace","question":"What is the Regional Talent Marketplace, and how will it connect employers and job seekers?","topic":"talent","audiences":"","sources":"","from":"how-employers-shape-fsic-training"}
   ]
 }

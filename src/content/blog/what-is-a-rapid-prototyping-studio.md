@@ -20,7 +20,9 @@ sources:
     date: "pp. 3, 6, 10–13, 18, 20–25, 32–33"
 visual:
   phases: [2]
-status: draft
+image: ./images/what-is-a-rapid-prototyping-studio.png
+imageAlt: "What Is a Rapid Prototyping Studio and an Innovation Sprint? (FSIC Blog)"
+status: review
 followUp:
   question: "What is dual-use technology, and why does FSIC focus on it?"
   slug: what-is-dual-use-technology

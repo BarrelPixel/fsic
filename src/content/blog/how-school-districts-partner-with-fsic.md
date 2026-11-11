@@ -23,7 +23,9 @@ sources:
     url: "https://fsic.space/partnership-funding/"
 visual:
   phases: [1]
-status: draft
+image: ./images/how-school-districts-partner-with-fsic.png
+imageAlt: "How Can School Districts Partner With FSIC? (FSIC Blog)"
+status: review
 followUp:
   question: "What is K–12 STEM exploration, and what will FSIC offer younger students?"
   slug: what-is-k12-stem-exploration

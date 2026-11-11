@@ -403,6 +403,45 @@ html {
   .post li + li {
     margin-top: 0.5rem;
   }
+
+  /* Data tables (e.g. wages by area): set in Archivo with tabular numerals, hairlines between rows, a heavier rule
+     under the header. Wider than the column on phones, a table scrolls inside itself, never the page. */
+  .post table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0 2rem;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post th,
+  .post td {
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-bottom: 1px solid var(--color-rule);
+    vertical-align: top;
+  }
+
+  .post th:first-child,
+  .post td:first-child {
+    padding-left: 0;
+    min-width: 13rem;
+  }
+
+  .post th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-navy);
+    border-bottom: 2px solid var(--color-navy);
+    white-space: nowrap;
+  }
+
+  .post td:not(:first-child) {
+    white-space: nowrap;
+  }
 }
 
 /* ============================================
