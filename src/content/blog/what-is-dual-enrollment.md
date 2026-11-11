@@ -21,6 +21,10 @@ sources:
   - title: "Florida Statutes, s. 1007.271, Dual enrollment programs (2026)"
     publisher: "The Florida Legislature"
     url: "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=1000-1099/1007/Sections/1007.271.html"
+visual:
+  phases: [1]
+image: ./images/what-is-dual-enrollment.png
+imageAlt: "What Is Dual Enrollment? FSIC's STEM Pathways (FSIC Blog)"
 status: review
 followUp:
   question: "What apprenticeships will FSIC offer for aerospace and advanced manufacturing?"

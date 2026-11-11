@@ -14,6 +14,8 @@ faqs:
     a: "Coordination takes time that partner organizations rarely have to spare. Kania and Kramer describe backbone staff who facilitate the work, support communications, collect and report data, and handle the logistics a shared effort needs."
   - q: "Where is the term used?"
     a: "It is used in “Collective Impact”, a 2011 article by John Kania and Mark Kramer in the Stanford Social Innovation Review, which names backbone support organizations as one of five conditions of successful collective impact."
+image: ./images/what-is-a-backbone-organization.png
+imageAlt: "What Is a Backbone Organization? FSIC's Role (FSIC Blog)"
 status: review
 publishDate: 2026-12-07
 followUp:

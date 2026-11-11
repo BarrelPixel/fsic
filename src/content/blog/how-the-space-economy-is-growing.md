@@ -14,6 +14,8 @@ faqs:
     a: "It is the central estimate. The same report gives a lower estimate of $1.4 trillion and an upside estimate of $2.3 trillion by 2035."
   - q: "Who made the projection?"
     a: "The World Economic Forum, in knowledge partnership with McKinsey & Company, in the report Space: The $1.8 Trillion Opportunity for Global Economic Growth (April 2024)."
+image: ./images/how-the-space-economy-is-growing.png
+imageAlt: "How Is the Space Economy Growing? (FSIC Blog)"
 status: review
 publishDate: 2026-12-26
 followUp:

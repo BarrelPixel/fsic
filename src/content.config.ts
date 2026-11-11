@@ -1,5 +1,6 @@
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
+import { FIGURE_KEYS } from './data/economics';
 import { glob } from 'astro/loaders';
 
 // Press releases: one Markdown file per release, wording as published (see src/content/copy/news.md).
@@ -54,8 +55,8 @@ const blog = defineCollection({
         /** draft → review (waiting for FSIC) → scheduled (approved; live on publishDate) or published (live now). */
         status: z.enum(['draft', 'review', 'scheduled', 'published']).default('draft'),
         /**
-         * The date to publish this post (YYYY-MM-DD). When set, a post with status 'review' will be automatically
-         * published on this date by the scheduled publishing workflow. Optional: omit to publish manually.
+         * The date a scheduled post goes live (YYYY-MM-DD), at the deploy's daily rebuild (src/lib/blog-status.ts).
+         * Required with status 'scheduled'; ignored for review and draft, which never publish on their own.
          */
         publishDate: z.coerce.date().optional(),
         /**
@@ -68,8 +69,20 @@ const blog = defineCollection({
         followUp: z.object({ question: z.string(), slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/), topic }).optional(),
         /** The post whose follow-up this post answers (its slug), so the two link to each other. */
         from: z.string().optional(),
+        /** The share image (og:image), e.g. the card made by `npm run blog-cards`. */
         image: image().optional(),
         imageAlt: z.string().optional(),
+        /**
+         * The "at a glance" figure under the summary (src/components/PostVisual.astro), drawn from the site's data:
+         * a diagram, Master Plan figures (keys of FIGURES) and/or the phases (1–5) the post is about.
+         */
+        visual: z
+          .object({
+            diagram: z.enum(['job-years', 'scenarios']).optional(),
+            figures: z.array(z.enum(FIGURE_KEYS)).optional(),
+            phases: z.array(z.number().int().min(1).max(5)).optional(),
+          })
+          .optional(),
       })
       .refine((d) => !d.image || d.imageAlt, { error: 'imageAlt is required when image is set' })
       .refine((d) => !d.updated || d.updated >= d.date, { error: 'updated must be on or after date' })

@@ -18,6 +18,10 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 3, 6, 10, 12–13, 18, 20, 22–25, 32–33"
+visual:
+  phases: [2]
+image: ./images/what-is-a-challenge-lab.png
+imageAlt: "What Is a Challenge Lab? (FSIC Blog)"
 status: review
 publishDate: 2026-12-03
 followUp:

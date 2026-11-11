@@ -21,6 +21,10 @@ sources:
   - title: "Frequently Asked Questions"
     publisher: "Florida Space Innovation Center"
     url: "https://fsic.space/faq/"
+visual:
+  phases: [1]
+image: ./images/what-is-a-micro-credential.png
+imageAlt: "What Is a Micro-Credential? FSIC’s Short, Job-Focused Training (FSIC Blog)"
 status: published
 followUp:
   question: "What is dual enrollment, and how will FSIC expand STEM pathways?"

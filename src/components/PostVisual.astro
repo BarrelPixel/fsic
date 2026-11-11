@@ -1,0 +1,126 @@
+---
+// A blog post's "at a glance" figure (docs/14 §4, "Visuals"), chosen in the post's frontmatter with `visual`.
+// Every part is drawn from the site's data, never typed into a post, so a figure can't drift from its source:
+//   diagram: job-years   what a job-year counts (one job for five years = five jobs for one year)
+//   diagram: scenarios   the three scenarios' economic output on one scale (Master Plan pp. 8–9)
+//   figures: [keys]      FIGURES ranges as range bars (the FSIC 2.0 scenario), with the legend and disclaimer
+//   phases: [n]          the five phases on the Years 1–5 track, the post's phase(s) marked
+// The bars are decorative (aria-hidden); each figure's words are in the text beside it. Range bars draw in
+// (DESIGN.md "Motion"): the page includes RangeBarsDraw.
+import RangeBar from './RangeBar.astro';
+import RangeLegend from './RangeLegend.astro';
+import YearScale from './YearScale.astro';
+import YearBar from './YearBar.astro';
+import { FIGURES, DISCLAIMER, glance, scenarios, comparison, type FigureKey } from '../data/economics';
+import { phases } from '../data/phases';
+import { pad2 } from '../lib/format';
+
+export interface Visual {
+  diagram?: 'job-years' | 'scenarios';
+  figures?: FigureKey[];
+  phases?: number[];
+}
+
+interface Props {
+  visual: Visual;
+}
+
+const { visual } = Astro.props;
+const metricFor = (key: FigureKey) => glance.find((g) => g.display === FIGURES[key].display)?.metric ?? key;
+const figures = (visual.figures ?? []).map((key) => ({ key, metric: metricFor(key), ...FIGURES[key] }));
+const marked = new Set(visual.phases ?? []);
+const output = comparison[0];
+const outputMax = Math.max(...output.cells.map((c) => c.high));
+const pct = (n: number) => Math.round((n / outputMax) * 1000) / 10;
+---
+<div class="post-visual mb-12 font-sans">
+  {visual.diagram === 'job-years' && (
+    <figure class="mb-10 last:mb-0">
+      <figcaption class="mb-4 text-label text-navy">Two ways to make five job-years</figcaption>
+      <div class="grid gap-y-8 sm:grid-cols-2 sm:gap-x-8 border-t border-rule pt-5">
+        {[
+          { label: 'One job for five years', bars: [[1, 5]] },
+          { label: 'Five jobs for one year each', bars: [[1, 1], [1, 1], [1, 1], [1, 1], [1, 1]] },
+        ].map((panel) => (
+          <div>
+            <YearScale class="mb-2" />
+            <div class="grid gap-y-1 sm:h-[4.25rem] content-start" aria-hidden="true">
+              {panel.bars.map(([a, b]) => <YearBar start={a} end={b} size="sm" />)}
+            </div>
+            <p class="mt-3 mb-0 text-caption text-gray-dark"><span class="text-navy font-semibold">{panel.label}</span> = 5 job-years</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-3 mb-0 text-caption text-gray-dark">Each bar is one job; its length is how long the job lasts.</p>
+    </figure>
+  )}
+
+  {visual.diagram === 'scenarios' && (
+    <figure class="mb-10 last:mb-0">
+      <figcaption class="mb-4 text-label text-navy">Economic output over 25 years, by scenario</figcaption>
+      <ol class="range-bars border-t border-rule" data-range-bars>
+        {scenarios.map((s, i) => {
+          const cell = output.cells[i];
+          return (
+            <li class="grid gap-y-2 sm:grid-cols-[minmax(0,2fr)_minmax(0,5fr)] sm:gap-x-6 sm:items-center py-3 border-b border-rule" style={`--row:${i}`}>
+              <span>
+                <span class="block font-semibold text-navy">{s.short}</span>
+                <span class="block text-caption text-gray-dark tabular-nums">{cell.display}</span>
+              </span>
+              <span class="flex gap-0.5 h-2.5" aria-hidden="true">
+                <span class="range-low h-full" style={`width:${pct(cell.low)}%;background:${s.color}`}></span>
+                <span class="range-high h-full opacity-40" style={`width:${pct(cell.high - cell.low)}%;background:${s.color}`}></span>
+              </span>
+            </li>
+          );
+        })}
+      </ol>
+      <p class="mt-3 mb-0 text-caption text-gray-dark">Solid bar: low estimate. Lighter extension: range to the high estimate. One scale for all three. Source: FSIC Master Plan 2026–2031, pp. 8–9. {DISCLAIMER}</p>
+    </figure>
+  )}
+
+  {figures.length > 0 && (
+    <figure class="mb-10 last:mb-0">
+      <figcaption class="mb-4 text-label text-navy">Over 25 years, with full implementation (FSIC 2.0)</figcaption>
+      <ul role="list" class="range-bars border-t border-rule" data-range-bars>
+        {figures.map((f, i) => (
+          <li class="py-4 border-b border-rule" style={`--row:${i}`}>
+            <p class="mb-1 font-display text-2xl md:text-3xl font-bold text-navy leading-tight tabular-nums">{f.display}</p>
+            <p class="mb-3 text-caption text-gray-dark">{f.metric}</p>
+            <RangeBar low={f.low} high={f.high} />
+          </li>
+        ))}
+      </ul>
+      <RangeLegend class="mt-3 mb-0" />
+      <p class="mt-2 mb-0 text-caption text-gray-dark">Each bar runs to its high estimate. Source: FSIC Master Plan 2026–2031. {DISCLAIMER}</p>
+    </figure>
+  )}
+
+  {marked.size > 0 && (
+    <figure class="mb-10 last:mb-0">
+      <figcaption class="mb-4 text-label text-navy">Where this fits in the five-year plan</figcaption>
+      <div class="hidden sm:grid sm:grid-cols-[minmax(0,3fr)_minmax(0,4fr)] sm:gap-x-6 border-b border-rule pb-2" aria-hidden="true">
+        <span></span>
+        <YearScale current={1} />
+      </div>
+      <ol class="border-t border-rule sm:border-t-0">
+        {phases.map((phase, i) => {
+          const on = marked.has(i + 1);
+          return (
+            <li class="grid gap-y-2 sm:grid-cols-[minmax(0,3fr)_minmax(0,4fr)] sm:gap-x-6 sm:items-center py-2.5 border-b border-rule">
+              <span class="flex items-baseline gap-3">
+                <span class="text-caption text-gray tabular-nums">{pad2(i + 1)}</span>
+                <span class:list={['leading-snug', on ? 'text-navy font-semibold' : 'text-gray-dark']}>
+                  {phase.short}<span class="text-caption font-normal text-gray-dark"> · {phase.timeframe}</span>
+                  {on && <span class="sr-only"> (this post)</span>}
+                </span>
+              </span>
+              <YearBar start={phase.start} end={phase.end} tone={phase.tone} barClass={on ? undefined : 'bg-navy/20'} size="sm" />
+            </li>
+          );
+        })}
+      </ol>
+      <p class="mt-3 mb-0 text-caption text-gray-dark">FSIC is in Year 1. Timeframes: FSIC Master Plan 2026–2031, pp. 13–14.</p>
+    </figure>
+  )}
+</div>

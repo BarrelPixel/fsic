@@ -18,6 +18,11 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 7–8"
+visual:
+  diagram: job-years
+  figures: [jobYears]
+image: ./images/what-is-a-job-year.png
+imageAlt: "What Is a Job-Year? Reading FSIC’s 25-Year Projections (FSIC Blog)"
 status: published
 followUp:
   question: "What are the three scenarios in FSIC's economic analysis, and how do they differ?"

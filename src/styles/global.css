@@ -320,12 +320,51 @@ html {
    ============================================ */
 
 @layer components {
+  /* Each section is one of the reader's questions, numbered like the site's section indexes (01, 02…) and
+     matching the post's "In this post" list. The number sits above the question in Archivo, on a hairline
+     that marks where a new question starts. */
+  .post {
+    counter-reset: post-section;
+  }
+
   .post h2 {
+    counter-increment: post-section;
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.15;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     margin-bottom: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-rule);
+    scroll-margin-top: 1.5rem;
+  }
+
+  .post h2::before {
+    content: counter(post-section, decimal-leading-zero);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    color: var(--color-gray);
+  }
+
+  /* A quotation from a source (the Master Plan's own words): set off in the display face. */
+  .post blockquote {
+    margin: 2rem 0;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--color-navy);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--color-navy);
+  }
+
+  .post blockquote p:last-child {
+    margin-bottom: 0;
   }
 
   .post h3 {

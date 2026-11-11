@@ -76,7 +76,7 @@ Answer engines quote short, self-contained passages that state facts plainly, an
 | **Headline** (`title`) | Close to the question; 60 characters or fewer when possible; names the subject plainly ("What Is a Micro-Credential?") | Search results truncate around 60 characters; question-form headlines match conversational queries | ≤ 90 |
 | **Description** (`description`) | 70–155 characters: what the reader will learn | The search snippet and link preview | 70–155 |
 | **Answer first** (`summary`) | 40–90 words that answer the question completely on their own, shown under the headline | Answer engines quote one passage. Make it this one. Readers who stop here are still served | 150–600 characters |
-| **Body** | H2s phrased as the follow-up questions; a one-sentence definition wherever a term is introduced ("A micro-credential is…"); paragraphs of 2–4 sentences; lists for steps and sets | Each section can be quoted alone; question headings match "People also ask" and follow-up prompts | Review |
+| **Body** | H2s phrased as the follow-up questions (numbered 01, 02… on the page, and listed as "In this post" beside the body from desktop width); a one-sentence definition wherever a term is introduced ("A micro-credential is…"); paragraphs of 2–4 sentences; lists for steps and sets | Each section can be quoted alone; question headings match "People also ask" and follow-up prompts | Review |
 | **Facts** | Every figure and claim traces to a listed source. Master Plan figures exactly as in `FIGURES`, always as ranges, with the disclaimer. Time-sensitive facts dated ("as of November 2026") | Trust (E-E-A-T); CLAUDE.md's figures rule | Ranges checked at build (§8) |
 | **Questions and answers** (`faqs`) | 2–4 short follow-up questions, each answered in one to three sentences. Not copies of `/faq` entries: link to those instead | `FAQPage` structured data; quotable answers | Optional |
 | **Sources** (`sources`) | At least one, listed at the end with publisher and date or page; link when public | Answer engines and readers check sources; it's the attribution rule | ≥ 1 |
@@ -84,7 +84,8 @@ Answer engines quote short, self-contained passages that state facts plainly, an
 | **Follow-up** (`followUp`) | The question a reader is likely to ask next, with its slug and topic. Required before review. Publishing the post adds it to the plan (§10) | Every post leads somewhere, and the plan grows from what readers of each post will want next | Required from review on |
 | **Author** (`author`) | A real person at FSIC with their role, or FSIC itself (`src/data/authors.ts`) | Experience and accountability (E-E-A-T) | Required |
 | **Dates** (`date`, `updated`) | Publication date; `updated` only when the substance changes | Freshness signals; honest dating | `updated` ≥ `date` |
-| **Image** (optional) | Only real, owned photographs or the post's own diagram, with descriptive alt text. No stock rockets or astronauts (DESIGN.md) | Share previews; accessibility | `imageAlt` with `image` |
+| **At a glance** (`visual`, optional) | One figure under the summary, drawn from the site's data so it can't drift from its source: `diagram` (`job-years`, `scenarios`), `figures` (keys of `FIGURES`, shown as range bars with the legend and disclaimer) and/or `phases` (1–5: where the post's subject sits on the Years 1–5 track). Use it when the answer has a shape (a range, a comparison, a timeframe); leave it off when it doesn't | A reader sees the answer's shape before reading it; the same visual language as the pages | Keys checked by the schema |
+| **Share image** (`image`) | The post's card: `npm run blog-cards` makes a 1200 × 630 card with the headline and topic in the site's type (`src/content/blog/images/<slug>.png`) and sets `image` and `imageAlt`. Remake with `-- --all` after a headline changes. A real, owned photograph may replace it. No stock rockets or astronauts (DESIGN.md) | Share previews on LinkedIn, Facebook and X show the question, not the homepage photo | `imageAlt` with `image` |
 
 **Length:** as long as the question needs. Most explainers run 600–1,200 words. Don't pad: answer engines and readers both prefer the shortest complete answer.
 
@@ -140,7 +141,7 @@ Answer engines quote short, self-contained passages that state facts plainly, an
 | Step | Who | Output |
 |------|-----|--------|
 | 1. Brief | B&P, from the calendar (§10) | The brief template (§12) filled in: question, audience, topic, sources available |
-| 2. Draft | B&P | `src/content/blog/<slug>.md` with `status: draft`. Readable in place with `npm run dev` (marked as a draft); not on the public site |
+| 2. Draft | B&P | `src/content/blog/<slug>.md` with `status: draft`, its `visual` if the answer has a shape (§4), and its share card (`npm run blog-cards`). Readable in place with `npm run dev` (marked as a draft); not on the public site |
 | 3. Check | B&P | Every fact against its source. Figures exactly as in `FIGURES` (the build fails on a dollar or thousands range that isn't one of them). Links work (`npm run check-links`). Nonprofit rules |
 | 4. Review | FSIC (and counsel or the program lead where §7 says) | `status: review`, then approval in writing |
 | 5. Publish | B&P | Only after FSIC's written approval. **Now:** `status: published`. **On a date:** `status: scheduled` with a `publishDate`; the post goes live that morning at the deploy's daily rebuild (`isLive`, `src/lib/blog-status.ts`). `review` is never published automatically. Then `npm run blog-plan`: the post's follow-up joins the plan and the calendar below (§10). Commit both. The first live post adds Blog to the menu, the sitemap, the RSS feed and `llms.txt` automatically. Merge; the deploy checks types and links, and fails if the plan is out of date |
@@ -268,5 +269,6 @@ Not in this post:  (what belongs on another page or post)
 | Authors | `src/data/authors.ts` |
 | Topics and pillars | `TOPICS` in `src/lib/blog.ts` |
 | Plan and follow-ups | `src/data/blog-plan.json`; `npm run blog-plan` adds each published post's follow-up and rewrites §10's calendar; the deploy runs `node scripts/blog-plan.mjs --check` (inside `npm run check-links`) |
+| At a glance and cards | `visual` → `src/components/PostVisual.astro` (diagrams, `FIGURES` range bars, the phase track); share cards by `scripts/blog-cards.mjs` (`npm run blog-cards`, needs Playwright), committed in `src/content/blog/images/` |
 | Read next / This follows | The post page links a post to the post that answers its follow-up (`from`), both ways |
 | Old Wix blog | `/blog` now belongs to this blog (the old redirect to News is removed). The old `/post/*` addresses still go to the 404 page. Once their slugs are known, redirect any with a matching new post |

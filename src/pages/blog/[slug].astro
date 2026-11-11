@@ -7,11 +7,14 @@ import Section from '../../components/Section.astro';
 import Grid from '../../components/Grid.astro';
 import MoreLink from '../../components/MoreLink.astro';
 import BaseLinks from '../../components/BaseLinks.astro';
+import PostVisual from '../../components/PostVisual.astro';
+import RangeBarsDraw from '../../components/RangeBarsDraw.astro';
 import { getPosts, postHref, readingMinutes, isPublished, checkFigures, TOPICS, type Post } from '../../lib/blog';
 import { authorFor } from '../../data/authors';
 import { formatDate, isoDate } from '../../lib/news';
 import { blogPosting, faqPage } from '../../lib/seo';
 import { url } from '../../lib/url';
+import { pad2 } from '../../lib/format';
 
 // One blog post (docs/14-blog-content-strategy.md §4, the post anatomy): the question as the headline, the
 // answer first (the summary, under the headline), the body, questions and answers, sources, and the pillar
@@ -37,7 +40,9 @@ interface Props {
 
 const { post, others, follows, next } = Astro.props;
 checkFigures(post);
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+// The post's sections (its h2 questions), numbered as the body numbers them (global.css `.post h2`).
+const sections = headings.filter((h) => h.depth === 2);
 const d = post.data;
 const author = authorFor(d.author);
 const topic = TOPICS[d.topic];
@@ -89,6 +94,23 @@ const authorImage = author.photo ? (await getImage({ src: author.photo.src, widt
         </p>
         <p class="mb-1 text-caption text-gray-dark">More on this topic</p>
         <MoreLink href={topic.pillar.path}>{topic.pillar.name}</MoreLink>
+        <!-- In this post: the section questions, so a reader sees the shape of the whole answer and can jump to
+             their part. From lg only, where the column sits beside the body (on phones it would push the body down). -->
+        {sections.length > 2 && (
+          <nav aria-labelledby="in-this-post" class="hidden lg:block mt-8">
+            <p id="in-this-post" class="mb-2 text-caption text-gray-dark">In this post</p>
+            <ol class="border-t border-rule">
+              {sections.map((h, i) => (
+                <li class="border-b border-rule">
+                  <a href={`#${h.slug}`} class="flex gap-3 py-2 text-sm leading-snug text-navy">
+                    <span class="text-gray tabular-nums">{pad2(i + 1)}</span>
+                    <span class="underline-reveal underline-offset-4">{h.text}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
         {follows && (
           <>
             <p class="mt-4 mb-1 text-caption text-gray-dark">This follows</p>
@@ -97,6 +119,7 @@ const authorImage = author.photo ? (await getImage({ src: author.photo.src, widt
         )}
       </div>
       <div class="max-w-3xl">
+        {d.visual && <PostVisual visual={d.visual} />}
         <article class="post links-in">
           <BaseLinks><Content /></BaseLinks>
         </article>
@@ -165,4 +188,5 @@ const authorImage = author.photo ? (await getImage({ src: author.photo.src, widt
     )}
   </Section>
 
+  {(d.visual?.figures?.length || d.visual?.diagram === 'scenarios') && <RangeBarsDraw />}
 </BaseLayout>
