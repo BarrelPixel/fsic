@@ -182,6 +182,9 @@ const itemClass = (active: boolean) => [
     toggle?.classList.toggle('menu-open', open);
     menu?.classList.toggle('hidden', !open);
     backdrop?.classList.toggle('hidden', !open);
+    // The page under the open menu is covered by its backdrop: make it inert, so Tab stays in the menu and
+    // never lands on a link the menu hides (WCAG 2.4.11), and screen readers read only the menu.
+    document.querySelectorAll('.skip-link, #main-content, footer').forEach((el) => el.toggleAttribute('inert', open));
     
     // Prevent body scroll when menu is open
     if (open) {

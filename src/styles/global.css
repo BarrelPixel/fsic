@@ -79,6 +79,9 @@ html {
     color: var(--color-navy);
     font-family: var(--font-display);
     text-wrap: balance;
+    /* A word longer than the line (a long word in a large heading on a narrow screen, or with a reader's own
+       wider letter spacing, WCAG 1.4.12) breaks instead of being cut off. Normal text is unaffected. */
+    overflow-wrap: break-word;
   }
 
   h1 {
@@ -409,11 +412,15 @@ html {
 
   /* Data tables (e.g. wages by area): set in Archivo with tabular numerals, hairlines between rows, a heavier rule
      under the header. Wider than the column on phones, a table scrolls inside itself, never the page. */
-  .post table {
-    display: block;
+  /* The scroll region around each table (BaseLinks): focusable, so keyboard users can scroll it. */
+  .post .table-scroll {
     max-width: 100%;
     overflow-x: auto;
     margin: 1.5rem 0 2rem;
+  }
+
+  .post table {
+    min-width: 100%;
     border-collapse: collapse;
     font-family: var(--font-sans);
     font-size: 0.9375rem;
