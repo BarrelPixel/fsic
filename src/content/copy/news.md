@@ -7,6 +7,16 @@
 
 ---
 
+## UPDATES
+
+Short entries in the site's own voice, usually from a post FSIC made on social media: what happened, when, why it matters to the region, and a link to the original post ("First posted on…"). Unlike press releases, updates are rewritten to the content guidelines (`docs/03`): no hashtags, no hype, and every fact checked against a source. Photos only when FSIC owns them or has permission; photos of students or minors need consent on file. Labeled "Update" on the News list and the entry page (`kind: update` in the file).
+
+### FSIC at NASA's MAX POWER Aerospace Expo (`2026-11-12-fsic-at-nasa-max-power.md`)
+
+From FSIC's Facebook post about the expo. Facts checked against NASA's announcements and trade coverage (November 2026): the expo dates (November 7–8, Kennedy Space Center), Administrator Jared Isaacman's skydive, the X-70 Fractal, astronaut applications, the $1 million student Moon Base challenge and the awards involving 12 companies (NASA's count). Left out: the MiG-29 flight (no source found) and the post's hashtags and promotional wording.
+
+> **⚠ Review:** new wording, and the post's three photos (the Thunderbirds, a parachutist, Jared Isaacman on the Air Show Tour stage) are held until FSIC confirms who took them and that it may use them.
+
 ## PRESS RELEASES
 
 Each release is its own Markdown file in `src/content/news/`, named `<YYYY-MM-DD>-<slug>.md`, with the headline and date in the frontmatter. The file name is the URL. To publish a new release, add a file; the list page and the "More news" links update themselves.
