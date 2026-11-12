@@ -26,7 +26,7 @@ visual:
 image: ./images/why-fsic-starts-with-talent.png
 imageAlt: "Why Does FSIC Start with the Talent Engine? (FSIC Blog)"
 status: review
-publishDate: 2026-11-19
+publishDate: 2026-11-16
 followUp:
   question: "How will FSIC measure Talent Engine outcomes and report results?"
   slug: how-fsic-measures-talent-outcomes

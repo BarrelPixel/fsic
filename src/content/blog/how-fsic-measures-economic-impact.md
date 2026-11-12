@@ -19,7 +19,7 @@ visual:
 image: ./images/how-fsic-measures-economic-impact.png
 imageAlt: "How Will FSIC Measure Its Economic Impact? (FSIC Blog)"
 status: review
-publishDate: 2026-12-18
+publishDate: 2026-12-03
 followUp:
   question: "What is return on investment (ROI) for workforce development programs?"
   slug: what-is-roi-for-workforce-programs
