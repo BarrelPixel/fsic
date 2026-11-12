@@ -47,6 +47,7 @@ const blog = defineCollection({
         /** A key in src/data/authors.ts. */
         author: z.string(),
         topic,
+        /** Who the post is for (docs/14 §2), the primary audience first. */
         audiences: z.array(z.enum(['employers', 'educators', 'students-families', 'job-seekers', 'policymakers', 'community', 'funders'])).default([]),
         /** Short questions and answers at the end of the post (FAQPage structured data). */
         faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
