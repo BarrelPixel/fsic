@@ -11,7 +11,7 @@ import Disclosure from '../components/Disclosure.astro';
 import HeroIndex from '../components/HeroIndex.astro';
 import { pad2 } from '../lib/format';
 import Closing from '../components/Closing.astro';
-import { bodies, metrics, reportingCalendar, people } from '../data/governance';
+import { bodies, metrics, reportingCalendar, people, personHref } from '../data/governance';
 import SectionBar from '../components/SectionBar.astro';
 import { type PageSection, sectionProps, sectionBarItems } from '../lib/sections';
 import { faqText } from '../data/faq';
@@ -100,7 +100,7 @@ const at = (id: string) => sectionProps(sections, id);
             <Row label={g.group} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
               <List
                 html
-                items={g.members.map((m) => `${m.slug ? `<a href="${url(`/news/${m.slug}`)}" class="link">${m.name}</a>` : m.name}${m.role ? `, ${m.role}` : ''}`)}
+                items={g.members.map((m) => `${personHref(m) ? `<a href="${url(personHref(m)!)}" class="link">${m.name}</a>` : m.name}${m.role ? `, ${m.role}` : ''}`)}
               />
             </Row>
           ))}

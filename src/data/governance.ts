@@ -86,8 +86,13 @@ export const reportingCalendar = [...FREQUENCIES, 'Other' as const].map((frequen
 // added at the project lead's direction and have no appointment release, so they aren't links. Titles to be
 // confirmed (docs/07 "Titles"). Jessie Thompson is no longer a school board member (November 12, 2026), so she
 // has no role here; her appointment release keeps its published wording. Jake Johansson's role (Florida State
-// Senator, District 8) is from the project lead, November 12, 2026.
-export const people: { group: string; members: { name: string; role: string; slug?: string }[] }[] = [
+// Senator, District 8) is from the project lead, November 12, 2026. John Joaquin is listed as Founder, the title his
+// press releases use (the live site's "Founder & CEO" is still to be confirmed, leadership.md); his name links to his
+// bio in the FAQ.
+export const people: { group: string; members: { name: string; role: string; slug?: string; href?: string }[] }[] = [
+  { group: 'Founder', members: [
+    { name: 'John Joaquin', role: '', href: '/faq/#leadership' },
+  ] },
   { group: 'Board of Directors', members: [
     { name: 'Erik Ahlgren', role: 'Board Chair' },
     { name: 'Beth Hamilton', role: '' },
@@ -99,3 +104,6 @@ export const people: { group: string; members: { name: string; role: string; slu
     { name: 'Jake Johansson', role: 'Florida State Senator, District 8', slug: '2026-08-03-jake-johansson-joins-founders-council' },
   ] },
 ];
+
+/** Where a person's name links: their page on the site (`href`), or the release that announced them (`slug`). */
+export const personHref = (m: { slug?: string; href?: string }) => m.href ?? (m.slug ? `/news/${m.slug}` : undefined);
