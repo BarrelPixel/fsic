@@ -25,7 +25,7 @@ visual:
   phases: [4]
 image: ./images/how-to-partner-with-civic-engine.png
 imageAlt: "How Can Schools and Community Groups Partner With the Civic Engine? (FSIC Blog)"
-publishDate: 2027-02-15
+publishDate: 2027-01-06
 status: review
 followUp:
   question: "How can residents volunteer or mentor with FSIC?"

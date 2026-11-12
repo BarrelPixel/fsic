@@ -23,7 +23,7 @@ visual:
 image: ./images/what-is-a-challenge-lab.png
 imageAlt: "What Is a Challenge Lab? (FSIC Blog)"
 status: review
-publishDate: 2026-12-03
+publishDate: 2026-11-25
 followUp:
   question: "How can a business sponsor a challenge lab project at FSIC?"
   slug: how-to-sponsor-challenge-lab

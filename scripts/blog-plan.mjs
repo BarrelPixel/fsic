@@ -70,6 +70,9 @@ for (const p of posts) {
   // A follow-up comes after the post it follows (docs/14 §10, cadence). Drafts are on hold and have no date to keep.
   const day = (d) => (d instanceof Date ? d.toISOString().slice(0, 10) : d ? String(d) : '');
   const parent = p.from ? bySlug.get(p.from) : undefined;
+  // Posts publish on weekdays only (docs/14 §10, cadence).
+  if (p.status !== 'draft' && p.status !== 'published' && day(p.publishDate) && [0, 6].includes(new Date(`${day(p.publishDate)}T12:00:00Z`).getUTCDay()))
+    errors.push(`${p.slug}: its publishDate (${day(p.publishDate)}) falls on a weekend; posts publish Monday to Friday`);
   if (parent && p.status !== 'draft' && parent.status !== 'draft' && day(p.publishDate) && day(parent.publishDate) && day(p.publishDate) <= day(parent.publishDate))
     errors.push(`${p.slug}: its publishDate (${day(p.publishDate)}) must come after ${p.from}'s (${day(parent.publishDate)})`);
   if (p.from) {
