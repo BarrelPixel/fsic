@@ -17,7 +17,7 @@ faqs:
 image: ./images/how-fsic-is-governed.png
 imageAlt: "How Is FSIC Governed and Kept Independent? (FSIC Blog)"
 status: review
-publishDate: 2026-12-14
+publishDate: 2026-12-21
 followUp:
   question: "What is FSIC's relationship with developers and real estate interests?"
   slug: fsic-relationship-with-developers

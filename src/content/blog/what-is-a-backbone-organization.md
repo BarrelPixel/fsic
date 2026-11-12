@@ -17,7 +17,7 @@ faqs:
 image: ./images/what-is-a-backbone-organization.png
 imageAlt: "What Is a Backbone Organization? FSIC's Role (FSIC Blog)"
 status: review
-publishDate: 2026-11-27
+publishDate: 2026-11-30
 followUp:
   question: "How is FSIC governed, and how is it kept independent from developers?"
   slug: how-fsic-is-governed

@@ -36,6 +36,33 @@ const TOPICS = {
 };
 
 const errors = [];
+
+// Days posts don't publish (docs/14 §10, cadence): weekends, U.S. federal holidays (as observed), and the days
+// around them that offices commonly close: the day after Thanksgiving, Christmas Eve and New Year's Eve. Worked out
+// from the calendar, so every year is covered.
+const iso = (d) => d.toISOString().slice(0, 10);
+const utc = (y, m, d) => new Date(Date.UTC(y, m - 1, d));
+const nth = (y, m, wd, n) => { const d = utc(y, m, 1); d.setUTCDate(1 + ((wd - d.getUTCDay() + 7) % 7) + (n - 1) * 7); return d; };
+const lastWd = (y, m, wd) => { const d = utc(y, m + 1, 0); d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() - wd + 7) % 7)); return d; };
+const observed = (d) => { const o = new Date(d); if (o.getUTCDay() === 6) o.setUTCDate(o.getUTCDate() - 1); if (o.getUTCDay() === 0) o.setUTCDate(o.getUTCDate() + 1); return o; };
+function holidays(y) {
+  const thanksgiving = nth(y, 11, 4, 4);
+  const dayAfter = new Date(thanksgiving); dayAfter.setUTCDate(dayAfter.getUTCDate() + 1);
+  return new Map([
+    [iso(observed(utc(y, 1, 1))), "New Year's Day"], [iso(nth(y, 1, 1, 3)), 'Martin Luther King Jr. Day'],
+    [iso(nth(y, 2, 1, 3)), "Washington's Birthday"], [iso(lastWd(y, 5, 1)), 'Memorial Day'],
+    [iso(observed(utc(y, 6, 19))), 'Juneteenth'], [iso(observed(utc(y, 7, 4))), 'Independence Day'],
+    [iso(nth(y, 9, 1, 1)), 'Labor Day'], [iso(nth(y, 10, 1, 2)), 'Columbus Day'],
+    [iso(observed(utc(y, 11, 11))), 'Veterans Day'], [iso(thanksgiving), 'Thanksgiving'], [iso(dayAfter), 'the day after Thanksgiving'],
+    [iso(utc(y, 12, 24)), 'Christmas Eve'], [iso(observed(utc(y, 12, 25))), 'Christmas'], [iso(utc(y, 12, 31)), "New Year's Eve"],
+  ]);
+}
+/** Why a date can't carry a post ('a weekend', a holiday's name), or null. */
+const dayOff = (day) => {
+  const d = new Date(`${day}T12:00:00Z`);
+  if ([0, 6].includes(d.getUTCDay())) return 'a weekend';
+  return holidays(d.getUTCFullYear()).get(day) ?? null;
+};
 const norm = (q) => q.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 
 // Posts: frontmatter only.
@@ -70,9 +97,9 @@ for (const p of posts) {
   // A follow-up comes after the post it follows (docs/14 §10, cadence). Drafts are on hold and have no date to keep.
   const day = (d) => (d instanceof Date ? d.toISOString().slice(0, 10) : d ? String(d) : '');
   const parent = p.from ? bySlug.get(p.from) : undefined;
-  // Posts publish on weekdays only (docs/14 §10, cadence).
-  if (p.status !== 'draft' && p.status !== 'published' && day(p.publishDate) && [0, 6].includes(new Date(`${day(p.publishDate)}T12:00:00Z`).getUTCDay()))
-    errors.push(`${p.slug}: its publishDate (${day(p.publishDate)}) falls on a weekend; posts publish Monday to Friday`);
+  // Posts publish on working weekdays only (docs/14 §10, cadence).
+  const off = p.status !== 'draft' && p.status !== 'published' && day(p.publishDate) ? dayOff(day(p.publishDate)) : null;
+  if (off) errors.push(`${p.slug}: its publishDate (${day(p.publishDate)}) falls on ${off}; posts publish on working weekdays`);
   if (parent && p.status !== 'draft' && parent.status !== 'draft' && day(p.publishDate) && day(parent.publishDate) && day(p.publishDate) <= day(parent.publishDate))
     errors.push(`${p.slug}: its publishDate (${day(p.publishDate)}) must come after ${p.from}'s (${day(parent.publishDate)})`);
   if (p.from) {
