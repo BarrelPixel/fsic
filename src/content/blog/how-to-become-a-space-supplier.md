@@ -36,7 +36,7 @@ visual:
 image: ./images/how-to-become-a-space-supplier.png
 imageAlt: "How Can a Small Business Become a Space Industry Supplier? (FSIC Blog)"
 status: review
-publishDate: 2026-12-10T11:13:00-05:00
+publishDate: 2026-12-30T11:13:00-05:00
 followUp:
   question: "What is AS9100 certification, and do all aerospace suppliers need it?"
   slug: what-is-as9100-certification

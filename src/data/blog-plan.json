@@ -39,6 +39,16 @@
     {"slug":"where-southeast-volusia-residents-commute","question":"Where do Southeast Volusia residents work, and how far do they commute?","topic":"region","audiences":"","sources":"","from":"space-coast-aerospace-jobs-and-pay"},
     {"slug":"how-to-sponsor-challenge-lab","question":"How can a business sponsor a challenge lab project at FSIC?","topic":"innovation","audiences":"","sources":"","from":"what-is-a-challenge-lab"},
     {"slug":"what-is-dual-use-technology","question":"What is dual-use technology, and why does FSIC focus on it?","topic":"innovation","audiences":"","sources":"","from":"what-is-a-rapid-prototyping-studio"},
-    {"slug":"what-is-industry-embedded-learning","question":"What is industry-embedded learning, and how will students learn on the job?","topic":"talent","audiences":"","sources":"","from":"what-is-the-regional-talent-marketplace"}
+    {"slug":"what-is-industry-embedded-learning","question":"What is industry-embedded learning, and how will students learn on the job?","topic":"talent","audiences":"","sources":"","from":"what-is-the-regional-talent-marketplace"},
+    {"slug":"how-colleges-and-universities-partner-with-fsic","question":"How can colleges and universities partner with FSIC?","topic":"innovation","audiences":"","sources":""},
+    {"slug":"southeast-volusia-by-the-numbers","question":"Who lives in Southeast Volusia? Population, age, education and income","topic":"region","audiences":"","sources":""},
+    {"slug":"what-fsic-means-for-southeast-volusia-residents","question":"What will FSIC mean for people who already live in Southeast Volusia?","topic":"civic","audiences":"","sources":""},
+    {"slug":"what-is-the-florida-space-innovation-center","question":"What is the Florida Space Innovation Center?","topic":"organization","audiences":"","sources":""},
+    {"slug":"what-is-fsics-multi-university-consortium","question":"What is the multi-university consortium in FSIC's long-term vision?","topic":"innovation","audiences":"","sources":"","from":"how-colleges-and-universities-partner-with-fsic"},
+    {"slug":"how-southeast-volusia-population-has-changed","question":"How has Southeast Volusia's population changed since 2010?","topic":"region","audiences":"","sources":"","from":"southeast-volusia-by-the-numbers"},
+    {"slug":"what-is-a-regional-innovation-ecosystem","question":"What is a regional innovation ecosystem, and what does Southeast Volusia need to build one?","topic":"region","audiences":"","sources":"","from":"what-are-eda-tech-hubs-and-nsf-engines"},
+    {"slug":"what-is-economic-mobility","question":"What is economic mobility, and how does FSIC plan to expand it in Southeast Volusia?","topic":"economy","audiences":"","sources":"","from":"what-fsic-means-for-southeast-volusia-residents"},
+    {"slug":"how-fsic-started","question":"How did FSIC start, and who founded it?","topic":"organization","audiences":"","sources":"","from":"what-is-the-florida-space-innovation-center"},
+    {"slug":"which-counties-southeast-volusia-residents-work-in","question":"Which counties do Southeast Volusia residents commute to for work?","topic":"region","audiences":"","sources":"","from":"where-southeast-volusia-residents-commute"}
   ]
 }
