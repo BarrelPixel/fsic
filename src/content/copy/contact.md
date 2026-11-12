@@ -45,7 +45,7 @@ No section headline: the hero names the page. The four topics are peers in a 2×
 
 **Proposed addition — inquiry type:** [TODO: e.g. Partnership; Employer / Workforce; Education; Volunteer / Leadership interest; Media; General]
 
-> **⚠ Review:** Routing and form backend are still open (see `07-open-questions.md`). Until a form exists, the page uses the topic links above, and the "Contact FSIC" buttons on /partnership-funding and /governance open an email to info@fsic.space; point them to /contact once the form exists.
+> **Decided (November 12, 2026, project lead):** no form yet. The page keeps the topic email links, and the "Contact FSIC" buttons open email.
 
 ---
 
@@ -57,7 +57,7 @@ No section headline: the hero names the page. The four topics are peers in a 2×
 **Media contact:** Erik Ahlgren, Communications Leader — info@fsic.space (not shown on the page until the title is confirmed; the Media row covers it)
 
 > **Source:** fsic.space footer and press releases.
-> **⚠ Review:** The current site's email link points to `info@mysite.com`. Decide whether John Joaquin's direct email and phone from the PDFs should be public. Confirm the media contact title. See audit §3.8.
+> **Resolved (November 12, 2026, project lead):** info@fsic.space for everything, media included. John Joaquin's direct email and phone are not published.
 
 ---
 

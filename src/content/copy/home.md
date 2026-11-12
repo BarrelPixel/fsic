@@ -182,11 +182,11 @@ It is a durable economic backbone.
 > **Added (November 10, 2026, plan B6):** a next step for visitors not ready to partner. Links from `src/lib/site.ts`. **⚠ Review:** new line. A newsletter sign-up can join it once a provider is chosen.
 
 **Governance block** (from Governance & Transparency, below): after the governance list, the people appointed so far, each linking to the release that announced them, with the role as the release headline gives it:
-- Founder: John Joaquin (links to his bio in the FAQ)
+- Founder & CEO: John Joaquin (links to his bio in the FAQ)
 - Board of Directors: Erik Ahlgren, Board Chair; Beth Hamilton; Jessie Thompson; Diezel DePew, Mayor of Edgewater; Ryan Trine, CEO of R3Doubt
 - Founders Council: Jake Johansson, Florida State Senator, District 8 (role from the project lead, November 12, 2026)
 
-> **Added (November 12, 2026):** John Joaquin as Founder, first, at the project lead's direction; the title his press releases use. **⚠ Review:** "Founder" or "Founder & CEO" (leadership.md).
+> **Added (November 12, 2026):** John Joaquin, Founder & CEO (title confirmed by the project lead the same day), first, at the project lead's direction.
 
 > **Added (November 10, 2026):** Erik Ahlgren (Board Chair, the title the July 29 release gives him) and Beth Hamilton, at the project lead's direction. They have no appointment release, so their names don't link. **⚠ Review:** Beth Hamilton's role.
 

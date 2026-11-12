@@ -13,7 +13,7 @@ In Southeast Volusia, FSIC is working to bring [local schools, workforce partner
 
 ## A new initiative for girls and young women
 
-FSIC is developing an initiative to encourage girls and young women to pursue technical careers and leadership roles in the space industry. It is inspired by a longtime New Smyrna Beach resident who helped launch Apollo 11, the first Moon landing, and later rose to senior leadership at Kennedy Space Center: proof that talent of that kind can come from right here on the Space Coast.
+FSIC is developing an initiative to encourage girls and young women to pursue technical careers and leadership roles in the space industry. It is inspired by [JoAnn Morgan](/news/2026-11-12-lunch-with-joann-morgan/), a longtime New Smyrna Beach resident who helped launch Apollo 11, the first Moon landing, and later became the first woman senior executive at Kennedy Space Center: proof that talent of that kind can come from right here on the Space Coast.
 
 FSIC is looking for community members who want to help shape it:
 

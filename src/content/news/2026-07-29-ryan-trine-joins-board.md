@@ -1,8 +1,6 @@
 ---
 title: "Florida Space Innovation Center Announces Appointment of R3Doubt CEO Ryan Trine to Board of Directors"
 date: 2026-07-29
-image: ./images/2026-07-29-ryan-trine-joins-board.jpg
-imageAlt: "Announcement graphic: “Welcome! Ryan Trine to the Board of Directors, Florida Space Innovation Center.” A man in a light suit stands in front of a rocket and a building at sunset. Tagline: Ignite, Inspire, Impact."
 related:
   - label: "Governance: FSIC's board and how it is run"
     href: "/governance/#structure"

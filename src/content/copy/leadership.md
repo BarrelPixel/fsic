@@ -24,7 +24,7 @@ Our team brings together experienced leaders in innovation, education, industry,
 
 **Title:** Founder & CEO
 
-> **⚠ Review:** The live site says "Founder & CEO". Press releases say "Founder". The Master Plan describes an unpaid CEO role during startup. Confirm the title. See audit §3.6.
+> **Resolved (November 12, 2026, project lead):** Founder & CEO, on the homepage and Governance.
 
 **Short bio:**
 John is a service-driven leader who has spent his career helping organizations and communities move forward with clarity and purpose. After decades guiding complex initiatives in technology, government, and economic development, he turned his focus to Southeast Volusia — a community he has been part of for more than 35 years — at a historic moment of opportunity. Known for uniting partners and stepping up when leadership is needed, John founded the Florida Space Innovation Center to ensure the region's growth creates real, lasting value for local families and future generations.
@@ -50,12 +50,12 @@ That realization — and a lifelong commitment to serving where I'm needed — i
 - DC Bilingual Public Charter School — Board of Directors; Development Committee Chair
 - P-TECH at Baltimore's Carver VoTech High School — Leader; student mentor
 - Leadership Greater Washington — Mentor; Connector; Membership Committee
-- John Joaquin for Maryland House of Delegates — Candidate; party nominee for Maryland state office
+- ~~John Joaquin for Maryland House of Delegates — Candidate; party nominee for Maryland state office~~ (not to be used; project lead, November 12, 2026)
 - Meritorious Presidential Rank Panel — George W. Bush Presidential appointee
 - St. Patrick's Catholic School — Founding Board Vice Chair; Chair
 - Wolf Trap, America's National Park for the Performing Arts — Chair, Entrepreneurs' Committee
 - IT Community Foundation — Founder; Chairman of non-profit organization
-- Citizen's for Sensible Transportation — Founder; Leader
+- Citizens for Sensible Transportation — Founder; Leader
 
 **Career Highlights:**
 - Ernst & Young (EY) — Global Government Alliance Leader
@@ -69,7 +69,7 @@ That realization — and a lifelong commitment to serving where I'm needed — i
 - Johns Hopkins University School of Public Health — Health Technology and Public Policy
 
 > **Source:** fsic.space/john-joaquin (verbatim; list formatting normalized). The live contact block (`info@mysite.com`, `123-456-7890`) is a placeholder and has been left out.
-> **⚠ Review:** The live site spells it "Citizen's for Sensible Transportation"; it is almost certainly "Citizens for…". Confirm with John, and ask whether the political candidacy should appear on an institutional site. ("Carver VoTech High School", split across lines on the live site, is fixed above.)
+> **Resolved (November 12, 2026, project lead):** "Citizens for Sensible Transportation" (spelling corrected above). The Maryland House of Delegates candidacy stays out of his bio.
 
 ---
 
