@@ -21,6 +21,11 @@ const news = defineCollection({
         image: image().optional(),
         imageAlt: z.string().optional(),
         /**
+         * Pages on this site to read next, listed under the entry ("Related on this site"). For press releases, whose
+         * text is kept as published, this is how they link into the site. `href` is a site path from the root.
+         */
+        related: z.array(z.object({ label: z.string(), href: z.string().startsWith('/') })).optional(),
+        /**
          * Photos shown with an update, below its text, each with a caption that says who and what is shown and
          * whose photo it is. Only photos FSIC owns or has permission to use (src/content/copy/news.md, Updates).
          * The first is the share image when the entry has no `image`.

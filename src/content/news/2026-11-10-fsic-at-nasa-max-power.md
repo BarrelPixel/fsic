@@ -13,7 +13,7 @@ During the week, NASA announced:
 
 - the X-70 Fractal, a new crewed experimental aircraft;
 - applications for its next class of astronauts;
-- a [$1 million Moon Base challenge](https://www.nasa.gov/news-release/nasa-announces-1-million-to-students-for-moon-base-challenge/) for student teams at U.S. high schools, colleges and universities;
+- a [$1 million Moon Base challenge](https://www.nasa.gov/news-release/nasa-announces-1-million-to-students-for-moon-base-challenge/) for student teams at U.S. high schools, colleges and universities ([FSIC's invitation to Volusia County students](/news/2026-11-11-nasa-moon-base-challenge-for-students/));
 - awards, task orders and selections involving 12 companies for Moon Base transportation, technology and science.
 
-For FSIC, the week showed where the space economy is heading, and the opportunity in front of the region: making sure more Florida companies, entrepreneurs and young people have a pathway to take part. That is the work of FSIC's [Talent, Innovation and Market Engines](/model/).
+For FSIC, the week showed where the space economy is heading, and the opportunity in front of the region: making sure more Florida companies, entrepreneurs and young people have a [pathway](/programs-facilities/#paths) to take part. That is the work of FSIC's [Talent](/model/#talent), [Innovation](/model/#innovation) and [Market](/model/#market) Engines.

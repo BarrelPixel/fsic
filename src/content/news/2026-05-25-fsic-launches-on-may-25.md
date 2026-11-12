@@ -3,6 +3,15 @@ title: "Florida Space Innovation Center Launches on Historic May 25 Anniversary 
 date: 2026-05-25
 image: ./images/2026-05-25-fsic-launches-on-may-25.jpg
 imageAlt: "Poster: “Launching the space industry in New Smyrna Beach for all of Florida.” A rocket lifts off above clouds and ocean waves."
+related:
+  - label: "The Strategic Moment: why now"
+    href: "/strategic-moment/"
+  - label: "The FSIC Model: how FSIC works"
+    href: "/model/"
+  - label: "Economic Impact: what the region stands to gain"
+    href: "/economic-impact/"
+  - label: "Get Involved: ways to take part"
+    href: "/partnership-funding/"
 ---
 
 **New Smyrna Beach, FL** — The Florida Space Innovation Center (FSIC) launches today on a date of profound significance in America's space story. On May 25, 1961, President John F. Kennedy delivered his "Urgent National Needs" address, setting the moonshot in motion and transforming Florida's Space Coast into a global center of innovation.

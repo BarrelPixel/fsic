@@ -3,6 +3,11 @@ title: "Florida Space Innovation Center Announces Appointment of Edgewater Mayor
 date: 2026-07-13
 image: ./images/2026-07-13-diezel-depew-joins-board.jpg
 imageAlt: "Announcement graphic: “Congratulations! Diezel Depew, Mayor of Edgewater, named to the Board of Directors of the Florida Space Innovation Center.” Three men stand in front of a rocket and a building at sunset. Tagline: Ignite, Inspire, Impact."
+related:
+  - label: "Governance: FSIC's board and how it is run"
+    href: "/governance/#structure"
+  - label: "Partnering with FSIC: local governments"
+    href: "/partnership-funding/#local-government"
 ---
 
 **Southeast Volusia, FL** — The Florida Space Innovation Center (FSIC) is pleased to announce the appointment of Edgewater Mayor Diezel DePew to its Board of Directors, further strengthening the region's commitment to cultivating forward-thinking leadership as the space industry accelerates across Southeast Volusia.

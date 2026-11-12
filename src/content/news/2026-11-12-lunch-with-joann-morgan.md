@@ -25,4 +25,4 @@ When Apollo 11 lifted off from Kennedy Space Center on July 16, 1969, Morgan was
 
 "One of the greatest joys of my involvement with the Florida Space Innovation Center," Joaquin wrote after their conversation, "is getting to know people like JoAnn, people who helped make history and who continue to inspire the future."
 
-Her story is a reminder that the history of the space program lives in the region's own neighborhoods, and of what FSIC is working toward: pathways that let the next generation from the region take part in it. That is the work of FSIC's [Talent Engine](/model/).
+Her story is a reminder that the history of the space program lives in the region's own neighborhoods, and of what FSIC is working toward: [pathways](/programs-facilities/#paths) that let the next generation from the region take part in it. That is the work of FSIC's [Talent Engine](/model/#talent).

@@ -80,6 +80,15 @@ const description = truncate(firstParagraph(release));
             </figcaption>
           </figure>
         ))}
+        {release.data.related && (
+          <>
+            <!-- The hairline and spacing come from `.release h2` (global.css); the list's dots and spacing from `.release li`. -->
+            <h2 class="text-label text-navy">Related on this site</h2>
+            <ul class="list font-sans" role="list">
+              {release.data.related.map((r) => <li><a href={url(r.href)} class="link">{r.label}</a></li>)}
+            </ul>
+          </>
+        )}
         {release.data.source && (
           <p class="mt-8 mb-0 font-sans text-caption text-gray-dark">
             First posted on <a href={release.data.source.url} class="link" rel="noopener">{release.data.source.label}</a>.

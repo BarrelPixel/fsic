@@ -52,5 +52,5 @@ Every post and its status is in the calendar in `docs/14-blog-content-strategy.m
 
 | Post | File | Status |
 |------|------|--------|
-| What Is a Job-Year? Reading FSIC's 25-Year Projections | `src/content/blog/what-is-a-job-year.md` | Draft. **⚠ Review:** the job-year definition (also on the homepage, in review there) and the five-year example |
-| What Is a Micro-Credential? FSIC's Short, Job-Focused Training | `src/content/blog/what-is-a-micro-credential.md` | Draft. **⚠ Review:** the general definition of a micro-credential and of "stackable" (not from the Master Plan); the FAQ answer "Do micro-credentials replace a degree?" |
+| What Is a Job-Year? Reading FSIC's 25-Year Projections | `src/content/blog/what-is-a-job-year.md` | Publishes November 18, 2026. **⚠ Review:** the job-year definition (also on the homepage, in review there) and the five-year example |
+| What Is a Micro-Credential? FSIC's Short, Job-Focused Training | `src/content/blog/what-is-a-micro-credential.md` | Publishes November 30, 2026. **⚠ Review:** the general definition of a micro-credential and of "stackable" (not from the Master Plan); the FAQ answer "Do micro-credentials replace a degree?" |

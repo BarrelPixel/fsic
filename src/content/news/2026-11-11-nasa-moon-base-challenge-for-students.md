@@ -19,4 +19,4 @@ Who can enter:
 
 The full rules and dates are on the [challenge website](https://moonbasechallenge.org).
 
-For FSIC, this is the kind of hands-on, mission-driven learning that can draw students toward space careers while they build the skills the region's employers will need. Preparing that future workforce is the work of FSIC's [Talent Engine](/model/), including its plans for [dual enrollment in STEM](/blog/what-is-dual-enrollment/).
+For FSIC, this is the kind of hands-on, mission-driven learning that can draw students toward [space careers](/blog/space-coast-aerospace-jobs-and-pay/) while they build the skills the region's employers will need. Preparing that future workforce is the work of FSIC's [Talent Engine](/model/#talent), including its plans for [dual enrollment in STEM](/blog/what-is-dual-enrollment/).
