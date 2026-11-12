@@ -1,6 +1,6 @@
 # 14 — Blog Content Strategy (SEO and AEO)
 
-**Status:** In use (updated November 12, 2026). 28 posts are written: 2 published and 25 dated to publish one every 2 to 4 weekdays through January 18, 2027 (§10), plus one held as a draft. Posts publish by date at the daily rebuild; there is no approval gate (§8, `20-scheduled-blog-publishing.md`).
+**Status:** In use (updated November 12, 2026). 28 posts are written: 2 published and 25 dated to publish one every 2 to 4 working days through February 4, 2027 (§10), plus one held as a draft. Posts publish by date at the daily rebuild; there is no approval gate (§8, `20-scheduled-blog-publishing.md`).
 **Owner:** Barrel & Pixel drafts, fact-checks and dates posts. FSIC can read every post and hold any (the review page linked from `07-open-questions.md`); a held post goes back to `draft`.
 **Related:**
 - `03-content-guidelines.md` (voice, nonprofit rules, attribution)
@@ -167,7 +167,7 @@ Targets are modest at first. Six months after launch: every published post index
 
 ## 10. Calendar and connected posts
 
-**Cadence (set November 12, 2026; was every 3 to 7 days):** one post every 2 to 4 days, on weekdays only (Monday to Friday), at irregular intervals rather than on a fixed weekday, so the blog reads as edited, not automated. `npm run blog-plan` fails if a dated post falls on a weekend. Every post carries a `publishDate` on that rhythm, and it publishes on that date (§8); set a post to `draft` to hold it. A post never comes before the post it follows (`from`): `npm run blog-plan` fails if one does. When FSIC holds a post, the dates after it can stay as they are (a longer gap is fine) or move up.
+**Cadence (set November 12, 2026; was every 3 to 7 days):** one post every 2 to 4 days, on working weekdays only, at irregular intervals rather than on a fixed weekday, so the blog reads as edited, not automated. No posts on weekends, U.S. federal holidays, the day after Thanksgiving, Christmas Eve or New Year's Eve; a gap next to a holiday can run to 5 days. `npm run blog-plan` fails if a dated post falls on one of those days (the holidays are worked out from the calendar, so every year is covered). Every post carries a `publishDate` on that rhythm, and it publishes on that date (§8); set a post to `draft` to hold it. A post never comes before the post it follows (`from`): `npm run blog-plan` fails if one does. When FSIC holds a post, the dates after it can stay as they are (a longer gap is fine) or move up.
 
 The first topics could all be written **from sources FSIC already has** (the Master Plan, the FAQ, approved copy, IRS and federal program pages), so nothing waits on new data.
 
@@ -202,31 +202,31 @@ When a post is published, `npm run blog-plan` adds its follow-up to the plan, ma
 | 1 | What is a job-year, and what does FSIC's projection mean? | Regional economy | Policymakers, funders | Master Plan pp. 7–8 |  | **Published** (`what-is-a-job-year`) |
 | 2 | What is a micro-credential, and how will FSIC offer them? | Talent | Students, job-seekers, employers | Master Plan pp. 13, 19–21; FAQ |  | **Published** (`what-is-a-micro-credential`) |
 | 3 | Why does FSIC start with the Talent Engine? | Talent | Partners, funders | Master Plan p. 13; Deployment page |  | **Scheduled** 2026-11-16 (`why-fsic-starts-with-talent`) |
-| 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | What Is a Micro-Credential? FSIC’s Short, Job-Focused Training | **Scheduled** 2026-12-16 (`what-is-dual-enrollment`) |
+| 4 | What is dual enrollment, and how will FSIC expand STEM pathways? | Talent | Students and families, educators | Master Plan; Florida Department of Education (dual enrollment) | What Is a Micro-Credential? FSIC’s Short, Job-Focused Training | **Scheduled** 2026-12-23 (`what-is-dual-enrollment`) |
 | 5 | How can a small business become a supplier to the space industry? | Business | Employers | Master Plan (supplier readiness); certification bodies' public pages (AS9100, CMMC) | What Are SBIR and STTR? Federal Funding for Small Business R&D | **Scheduled** 2026-11-23 (`how-to-become-a-space-supplier`) |
 | 6 | What are SBIR and STTR, and how can a Volusia County business apply? | Business | Employers, startups | SBIR.gov; Master Plan |  | **Scheduled** 2026-11-13 (`what-are-sbir-and-sttr`) |
 | 7 | What is a challenge lab? | Innovation | Universities, employers | Master Plan pp. 19–21 |  | **Scheduled** 2026-11-25 (`what-is-a-challenge-lab`) |
-| 8 | What is a "backbone organization", and why is FSIC one? | About FSIC | Policymakers, partners | FAQ; Governance page |  | **Scheduled** 2026-11-27 (`what-is-a-backbone-organization`) |
-| 9 | What does FSIC's 501(c)(3) status mean for donors and partners? | About FSIC | Funders | IRS determination letter; IRS Publication 4221-PC. Counsel review |  | **Scheduled** 2026-12-01 (`what-fsic-501c3-status-means`) |
-| 10 | How is the space economy growing, and what does it mean for Southeast Volusia? | The region | Residents, policymakers | WEF and McKinsey (April 2024); Strategic Moment |  | **Scheduled** 2026-12-09 (`how-the-space-economy-is-growing`) |
-| 11 | What will the Civic Engine offer residents? | Community | Residents, families | Master Plan pp. 19–21; Programs & Facilities |  | **Scheduled** 2026-12-11 (`what-the-civic-engine-offers`) |
-| 12 | How is FSIC governed, and how is it kept independent? | About FSIC | Funders, residents | Governance page; Master Plan pp. 15–17 | What Is a Backbone Organization? FSIC's Role | **Scheduled** 2026-12-14 (`how-fsic-is-governed`) |
+| 8 | What is a "backbone organization", and why is FSIC one? | About FSIC | Policymakers, partners | FAQ; Governance page |  | **Scheduled** 2026-11-30 (`what-is-a-backbone-organization`) |
+| 9 | What does FSIC's 501(c)(3) status mean for donors and partners? | About FSIC | Funders | IRS determination letter; IRS Publication 4221-PC. Counsel review |  | **Scheduled** 2026-12-04 (`what-fsic-501c3-status-means`) |
+| 10 | How is the space economy growing, and what does it mean for Southeast Volusia? | The region | Residents, policymakers | WEF and McKinsey (April 2024); Strategic Moment |  | **Scheduled** 2026-12-14 (`how-the-space-economy-is-growing`) |
+| 11 | What will the Civic Engine offer residents? | Community | Residents, families | Master Plan pp. 19–21; Programs & Facilities |  | **Scheduled** 2026-12-18 (`what-the-civic-engine-offers`) |
+| 12 | How is FSIC governed, and how is it kept independent? | About FSIC | Funders, residents | Governance page; Master Plan pp. 15–17 | What Is a Backbone Organization? FSIC's Role | **Scheduled** 2026-12-21 (`how-fsic-is-governed`) |
 | 13 | What are the three scenarios in FSIC's economic analysis, and how do they differ? | Regional economy |  |  | What Is a Job-Year? Reading FSIC’s 25-Year Projections | **Scheduled** 2026-11-20 (`what-are-fsics-economic-scenarios`) |
 | 14 | What apprenticeships will FSIC offer for aerospace and advanced manufacturing? | Talent |  |  | What Is Dual Enrollment? FSIC's STEM Pathways | **Drafted (held)** (`what-apprenticeships-will-fsic-offer`) |
-| 15 | How will FSIC's economic impact be measured and reported over time? | Regional economy |  |  | What Are FSIC's Three Economic Scenarios? | **Scheduled** 2026-12-03 (`how-fsic-measures-economic-impact`) |
-| 16 | How will FSIC measure Talent Engine outcomes and report results? | About FSIC |  |  | Why Does FSIC Start with the Talent Engine? | **Scheduled** 2026-12-07 (`how-fsic-measures-talent-outcomes`) |
-| 17 | What is FSIC's relationship with developers and real estate interests? | About FSIC |  |  | How Is FSIC Governed and Kept Independent? | **Scheduled** 2027-01-01 (`fsic-relationship-with-developers`) |
-| 18 | How does FSIC report its finances and outcomes to the public? | About FSIC |  |  | What Does FSIC's 501(c)(3) Status Mean? | **Scheduled** 2026-12-22 (`how-fsic-reports-finances`) |
-| 19 | How can schools and community groups partner with FSIC's Civic Engine? | Community |  |  | What Will the Civic Engine Offer Residents? | **Scheduled** 2027-01-06 (`how-to-partner-with-civic-engine`) |
-| 20 | What are industry-recognized credentials, and why do they matter? | Talent |  |  | How Will FSIC Measure Talent Engine Outcomes? | **Scheduled** 2026-12-28 (`what-are-industry-recognized-credentials`) |
-| 21 | What is return on investment (ROI) for workforce development programs? | Regional economy |  |  | How Will FSIC Measure Its Economic Impact? | **Scheduled** 2026-12-30 (`what-is-roi-for-workforce-programs`) |
-| 22 | What is teacher upskilling, and what does FSIC plan for educators? | Talent |  |  |  | **Scheduled** 2027-01-04 (`what-is-teacher-upskilling`) |
-| 23 | How do employers help shape FSIC's training programs? | Talent |  |  | What Are Industry-Recognized Credentials, and Why Do They Matter? | **Scheduled** 2027-01-12 (`how-employers-shape-fsic-training`) |
-| 24 | How will FSIC be funded over its first five years? | About FSIC |  |  | What Is Return on Investment (ROI) for Workforce Programs? | **Scheduled** 2027-01-08 (`how-is-fsic-funded`) |
-| 25 | How can school districts partner with FSIC? | Talent |  |  | What Is Teacher Upskilling? FSIC's Plans for Educators | **Scheduled** 2027-01-14 (`how-school-districts-partner-with-fsic`) |
-| 26 | What aerospace and advanced manufacturing jobs exist on the Space Coast, and what do they pay? | The region |  |  |  | **Scheduled** 2026-12-24 (`space-coast-aerospace-jobs-and-pay`) |
-| 27 | What is a rapid prototyping studio, and what happens at an innovation sprint? | Innovation |  |  |  | **Scheduled** 2026-12-18 (`what-is-a-rapid-prototyping-studio`) |
-| 28 | What is the Regional Talent Marketplace, and how will it connect employers and job seekers? | Talent |  |  | How Do Employers Help Shape FSIC's Training Programs? | **Scheduled** 2027-01-18 (`what-is-the-regional-talent-marketplace`) |
+| 15 | How will FSIC's economic impact be measured and reported over time? | Regional economy |  |  | What Are FSIC's Three Economic Scenarios? | **Scheduled** 2026-12-07 (`how-fsic-measures-economic-impact`) |
+| 16 | How will FSIC measure Talent Engine outcomes and report results? | About FSIC |  |  | Why Does FSIC Start with the Talent Engine? | **Scheduled** 2026-12-10 (`how-fsic-measures-talent-outcomes`) |
+| 17 | What is FSIC's relationship with developers and real estate interests? | About FSIC |  |  | How Is FSIC Governed and Kept Independent? | **Scheduled** 2027-01-15 (`fsic-relationship-with-developers`) |
+| 18 | How does FSIC report its finances and outcomes to the public? | About FSIC |  |  | What Does FSIC's 501(c)(3) Status Mean? | **Scheduled** 2026-12-30 (`how-fsic-reports-finances`) |
+| 19 | How can schools and community groups partner with FSIC's Civic Engine? | Community |  |  | What Will the Civic Engine Offer Residents? | **Scheduled** 2027-01-21 (`how-to-partner-with-civic-engine`) |
+| 20 | What are industry-recognized credentials, and why do they matter? | Talent |  |  | How Will FSIC Measure Talent Engine Outcomes? | **Scheduled** 2027-01-07 (`what-are-industry-recognized-credentials`) |
+| 21 | What is return on investment (ROI) for workforce development programs? | Regional economy |  |  | How Will FSIC Measure Its Economic Impact? | **Scheduled** 2027-01-11 (`what-is-roi-for-workforce-programs`) |
+| 22 | What is teacher upskilling, and what does FSIC plan for educators? | Talent |  |  |  | **Scheduled** 2027-01-19 (`what-is-teacher-upskilling`) |
+| 23 | How do employers help shape FSIC's training programs? | Talent |  |  | What Are Industry-Recognized Credentials, and Why Do They Matter? | **Scheduled** 2027-01-29 (`how-employers-shape-fsic-training`) |
+| 24 | How will FSIC be funded over its first five years? | About FSIC |  |  | What Is Return on Investment (ROI) for Workforce Programs? | **Scheduled** 2027-01-25 (`how-is-fsic-funded`) |
+| 25 | How can school districts partner with FSIC? | Talent |  |  | What Is Teacher Upskilling? FSIC's Plans for Educators | **Scheduled** 2027-02-01 (`how-school-districts-partner-with-fsic`) |
+| 26 | What aerospace and advanced manufacturing jobs exist on the Space Coast, and what do they pay? | The region |  |  |  | **Scheduled** 2027-01-04 (`space-coast-aerospace-jobs-and-pay`) |
+| 27 | What is a rapid prototyping studio, and what happens at an innovation sprint? | Innovation |  |  |  | **Scheduled** 2026-12-28 (`what-is-a-rapid-prototyping-studio`) |
+| 28 | What is the Regional Talent Marketplace, and how will it connect employers and job seekers? | Talent |  |  | How Do Employers Help Shape FSIC's Training Programs? | **Scheduled** 2027-02-04 (`what-is-the-regional-talent-marketplace`) |
 | 29 | What are FSIC's advisory councils, and what do they do? | About FSIC |  |  | What Is FSIC's Relationship With Developers? | Planned |
 | 30 | What is a Form 990, and what does it show about a nonprofit? | About FSIC |  |  | How Does FSIC Report Its Finances and Outcomes? | Planned |
 | 31 | What are EDA Tech Hubs and NSF Engines, and why do they matter for regions like Southeast Volusia? | The region |  |  | How Will FSIC Be Funded Over Its First Five Years? | Planned |

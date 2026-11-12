@@ -26,7 +26,7 @@ visual:
 image: ./images/what-the-civic-engine-offers.png
 imageAlt: "What Will the Civic Engine Offer Residents? (FSIC Blog)"
 status: review
-publishDate: 2026-12-11
+publishDate: 2026-12-18
 followUp:
   question: "How can schools and community groups partner with FSIC’s Civic Engine?"
   slug: how-to-partner-with-civic-engine
