@@ -23,6 +23,12 @@ From FSIC's Facebook post of November 11, 2026, calling on Volusia County School
 
 > **⚠ Review:** new wording. The source link goes to FSIC's Facebook page, not the post itself (no link to the post yet). moonbasechallenge.org, the site the post links, couldn't be reached to check; confirm it is the official challenge site.
 
+### Lunch with NASA Pioneer JoAnn Morgan (`2026-11-12-lunch-with-joann-morgan.md`)
+
+From John Joaquin's own Facebook post of November 12, 2026. Facts checked against NASA's profile ("Rocket Fuel in Her Blood") and news coverage (2019 Apollo 11 anniversary, her 2003 retirement): instrumentation controller, the only woman in the launch firing room at the Apollo 11 liftoff (July 16, 1969), the first woman senior executive at Kennedy Space Center, a career from 1958 to 2003. The quote is John's own words from the post. Photos: the lunch photo from John's post; two NASA archive photos (public domain, credited "NASA", no endorsement implied). No source link: the post is on John's personal page, not FSIC's.
+
+> **⚠ Review:** new wording. Confirm: (1) JoAnn Morgan is comfortable with the entry, the photo and being named as a New Smyrna Beach resident (from John's post; not found in public sources); (2) who took the lunch photo, and that the caption names the right people; (3) the two archive photos' captions (both are widely published as the Apollo 11 launch; check NASA's photo records); (4) whether to link John's post.
+
 ## PRESS RELEASES
 
 Each release is its own Markdown file in `src/content/news/`, named `<YYYY-MM-DD>-<slug>.md`, with the headline and date in the frontmatter. The file name is the URL. To publish a new release, add a file; the list page and the "More news" links update themselves.

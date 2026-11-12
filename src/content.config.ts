@@ -20,6 +20,14 @@ const news = defineCollection({
         // The graphic published with the release (src/content/news/images/). Its text goes in imageAlt.
         image: image().optional(),
         imageAlt: z.string().optional(),
+        /**
+         * Photos shown with an update, below its text, each with a caption that says who and what is shown and
+         * whose photo it is. Only photos FSIC owns or has permission to use (src/content/copy/news.md, Updates).
+         * The first is the share image when the entry has no `image`.
+         */
+        photos: z
+          .array(z.object({ src: image(), alt: z.string(), caption: z.string(), credit: z.string().optional() }))
+          .optional(),
       })
       .refine((d) => !d.image || d.imageAlt, { error: 'imageAlt is required when image is set' }),
 });
