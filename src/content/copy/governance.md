@@ -186,7 +186,7 @@ Confirmed by the project lead (November 10, 2026), no release:
 Appointed by release:
 - **Ryan Trine** — R3Doubt CEO; retired U.S. Army Chief Warrant Officer; cybersecurity and technology leader (appointed July 29, 2026)
 - **Diezel DePew** — Mayor of Edgewater (appointed July 13, 2026)
-- **Jessie Thompson** — Member, Volusia County School Board; education and community representative (appointed July 7, 2026)
+- **Jessie Thompson** — appointed July 7, 2026. No longer a school board member (project lead, November 12, 2026), so the site lists her without a role; the July 7 release keeps its published wording. **⚠ Review:** her current title, if FSIC wants one shown
 
 > **Source:** fsic.space/news
 > **⚠ Review:** Confirm the full seated board as of today. The July 7 release mentions an inaugural board meeting in September. Collect approved bios, photos, and titles. Confirm current titles for John Joaquin and Erik Ahlgren. See audit §3.6. This could also take in the proposed Leadership page (`leadership.md`).
