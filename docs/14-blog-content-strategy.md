@@ -21,9 +21,9 @@ The rest of the site says what FSIC is and plans. The blog answers the questions
 | **Blog** | **Depth:** explainers, how-to guides and context. Each post answers one question fully and links back to the page it supports | `/blog` |
 
 ### Three goals, in order
-1. **Be the source answer engines cite** when people ask about workforce training, the space economy or FSIC in Southeast Volusia (AEO).
-2. **Bring the right visitors from search**: residents, employers, educators, policymakers and funders, each to the page that serves them (SEO).
-3. **Show momentum and expertise** between press releases, so a funder or partner sees an active, knowledgeable organization.
+1. **Show the people who decide FSIC's future an active, credible organization**: a partner or funder who looks FSIC up finds clear, sourced answers to what they'd ask (§2, tier 1).
+2. **Be the source answer engines and search cite** when people in the region ask about FSIC, workforce training or the space economy in Southeast Volusia (AEO and SEO). Local relevance beats search volume.
+3. **Bring the right visitors, not the most visitors**, each to the page that serves them (§2).
 
 ### What the blog is not
 - Not press releases (those stay in News, as published).
@@ -33,6 +33,28 @@ The rest of the site says what FSIC is and plans. The blog answers the questions
 ---
 
 ## 2. Audiences and what they ask
+
+### Who the blog is for (set November 12, 2026)
+
+FSIC is in Year 1: no programs are open yet, and it is building its coalition and raising startup funding. The audiences are ranked by what FSIC needs from them **now**. Review the order when Phase 2 begins, or when programs open for enrollment (tier 3 then moves up).
+
+| Tier | Audience | Why they matter now | How they arrive | What they need from a post |
+|------|----------|---------------------|-----------------|----------------------------|
+| **1** | **Partners and funders:** regional employers, state colleges and universities, school districts, local and state government, foundations and grant-makers | They decide whether FSIC happens. The site's main button, Get Involved, is for them | By name, after a meeting, a referral or a press release; rarely from a generic search | Proof that FSIC is credible and well run: governance, funding, finances, how results are measured, what partnering involves. Sourced, exact, no hype |
+| **2** | **Residents of Southeast Volusia** | FSIC needs the community's trust, and residents ask the hardest questions (growth, developers, what's in it for local families) | Local searches, social media, word of mouth | Plain, local answers: what FSIC means for the region, its independence, jobs and pay here, community programs |
+| **3** | **Students, families, job-seekers and educators in the region** | The eventual beneficiaries. Nothing is open to enroll in yet, so posts build understanding and an audience for when programs open | Searches for training and career questions, schools, families | Explainers tied to FSIC's planned programs and to local data; always clear that programs are planned, not open |
+| **4** | **Local small businesses and suppliers** | Served by the Market Engine, planned for Years 2–3 | Searches, chambers, referrals | A few posts that show FSIC knows their world; depth comes when the programs near |
+
+**Not the audience:** readers outside the region with no tie to it. A generic explainer that would rank nationally ("What is ITAR?") brings visitors FSIC can't serve and who can't help FSIC. Write a general topic only with the regional angle that makes it FSIC's to answer (what it means for a Southeast Volusia business, student or funder).
+
+**The test for every post, before it is written:**
+1. Which tier is it for, and who exactly (one primary audience)?
+2. What would that reader do next: get in touch, partner, fund, trust, tell a neighbor, plan a course?
+3. Is it local or about FSIC? If the same post could sit unchanged on any organization's site in any state, it isn't for this blog.
+
+**Balance of the schedule:** about half the posts for tier 1, a quarter for tier 2, and the rest for tiers 3 and 4, alternating so no stretch speaks to one audience only. The About FSIC topic is the core of tier 1, not filler.
+
+### What each audience asks
 
 Search and AI queries are questions. Each audience brings its own. The questions below are **hypotheses** drawn from the FAQ and the audience pages. No keyword-volume data exists for this region yet; after launch, Search Console's query report replaces guesses with real searches (§9).
 
@@ -140,7 +162,7 @@ Answer engines quote short, self-contained passages that state facts plainly, an
 
 | Step | Who | Output |
 |------|-----|--------|
-| 1. Brief | B&P, from the calendar (§10) | The brief template (§12) filled in: question, audience, topic, sources available |
+| 1. Brief | B&P, from the calendar (§10) | The brief template (§12) filled in: question, the audience tier and primary audience (§2, and its three-question test), topic, sources available |
 | 2. Draft | B&P | `src/content/blog/<slug>.md` with `status: draft`, its `visual` if the answer has a shape (§4), and its share card (`npm run blog-cards`). Readable in place with `npm run dev` (marked as a draft); not on the public site |
 | 3. Check | B&P | Every fact against its source. Figures exactly as in `FIGURES` (the build fails on a dollar or thousands range that isn't one of them). Links work (`npm run check-links`). Nonprofit rules |
 | 4. Review | FSIC (and counsel or the program lead where §7 says), optional | `status: review` with a proposed `publishDate`. Review is not a gate: the post publishes on its date unless someone sets it back to `draft` |
@@ -267,7 +289,8 @@ These link to the matching press release rather than repeating it.
 Question:          (the one question, as people ask it)
 Headline idea:     (≤ 60 characters)
 Topic / pillar:    (one of §3)
-Audience:          (who asks this, and what they'll do next)
+Audience:          (tier and primary audience, §2; what they'll do next)
+Local or FSIC angle: (why this is FSIC's question to answer, §2 test 3)
 Answer in brief:   (2–3 sentences: the summary's substance)
 Follow-up questions (H2s and FAQs):
 Sources available: (Master Plan pages, FAQ answers, approved copy, primary public sources)
