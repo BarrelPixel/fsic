@@ -24,7 +24,7 @@ sources:
     date: "last amended March 25, 2024; checked November 11, 2026"
 image: ./images/what-is-roi-for-workforce-programs.png
 imageAlt: "What Is Return on Investment (ROI) for Workforce Programs? (FSIC Blog)"
-publishDate: 2027-01-11
+publishDate: 2027-01-11T12:50:00-05:00
 status: review
 followUp:
   question: "How will FSIC be funded over its first five years?"

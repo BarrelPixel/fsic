@@ -12,7 +12,8 @@ type Status = { status?: string; publishDate?: Date | string };
 // coming release builds and links cleanly: BLOG_NOW=2027-03-09 npm run check-links).
 // (Read through globalThis: the browser bundle has no `process`, and the project has no Node types.)
 const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env;
-const NOW = env?.BLOG_NOW ? new Date(`${env.BLOG_NOW}T15:00:00Z`) : new Date();
+// A preview day means the end of its working day (after every post's time).
+const NOW = env?.BLOG_NOW ? new Date(`${env.BLOG_NOW}T23:59:00Z`) : new Date();
 
 export function isLive(d: Status, now: Date = NOW): boolean {
   if (d.status === 'published') return true;

@@ -37,7 +37,7 @@ visual:
   phases: [1]
 image: ./images/what-are-industry-recognized-credentials.png
 imageAlt: "What Are Industry-Recognized Credentials, and Why Do They Matter? (FSIC Blog)"
-publishDate: 2027-01-07
+publishDate: 2027-01-07T10:45:00-05:00
 status: review
 followUp:
   question: "How do employers help shape FSIC's training programs?"

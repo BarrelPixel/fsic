@@ -1,5 +1,6 @@
 // sitemap.xml (docs/13 B2): every page in the menus, the homepage, and each press release (lastmod: its date).
 // Absolute URLs from `site` and the base path, so it is right on the preview and at fsic.space.
+import { postDate } from '../lib/blog';
 import type { APIRoute } from 'astro';
 import { absolute, sitePages } from '../lib/seo';
 import { getReleases, isoDate } from '../lib/news';
@@ -21,7 +22,7 @@ export const GET: APIRoute = async () => {
   }));
   const posts = (await getCollection('blog', (p) => isLive(p.data))).map((p) => ({ 
     loc: absolute(`/blog/${p.id}/`), 
-    lastmod: isoDate(p.data.updated ?? p.data.date),
+    lastmod: isoDate(p.data.updated ?? postDate(p)),
     priority: '0.7',
     changefreq: 'monthly'
   }));

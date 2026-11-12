@@ -14,7 +14,8 @@
     "check-links": "astro build && node scripts/check-links.mjs dist && node scripts/blog-plan.mjs --check",
     "review-items": "node scripts/review-items.mjs",
     "blog-plan": "node scripts/blog-plan.mjs",
-    "blog-cards": "node scripts/blog-cards.mjs"
+    "blog-cards": "node scripts/blog-cards.mjs",
+    "blog-times": "node scripts/blog-times.mjs"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.3.0",

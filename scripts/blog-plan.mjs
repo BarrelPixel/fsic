@@ -75,7 +75,7 @@ const posts = readdirSync(POSTS_DIR)
       errors.push(`${f}: no frontmatter`);
       return null;
     }
-    return { slug: f.replace(/\.md$/, ''), ...parse(fm[1]) };
+    return { slug: f.replace(/\.md$/, ''), ...parse(fm[1]), publishDateRaw: fm[1].match(/^publishDate: (\S+)$/m)?.[1] };
   })
   .filter(Boolean);
 const bySlug = new Map(posts.map((p) => [p.slug, p]));
@@ -95,11 +95,17 @@ for (const p of posts) {
 for (const p of posts) {
   if (p.from && !bySlug.has(p.from)) errors.push(`${p.slug}: "from: ${p.from}" names no post`);
   // A follow-up comes after the post it follows (docs/14 §10, cadence). Drafts are on hold and have no date to keep.
-  const day = (d) => (d instanceof Date ? d.toISOString().slice(0, 10) : d ? String(d) : '');
+  // The publishing day: a Date (date only) or the text "2026-11-13" / "2026-11-13T12:29:00-05:00" (its own, Eastern, date).
+  const day = (d) => (d instanceof Date ? d.toISOString().slice(0, 10) : d ? String(d).slice(0, 10) : '');
   const parent = p.from ? bySlug.get(p.from) : undefined;
   // Posts publish on working weekdays only (docs/14 §10, cadence).
   const off = p.status !== 'draft' && p.status !== 'published' && day(p.publishDate) ? dayOff(day(p.publishDate)) : null;
   if (off) errors.push(`${p.slug}: its publishDate (${day(p.publishDate)}) falls on ${off}; posts publish on working weekdays`);
+  // A time, when given, falls in the working day, Eastern (scripts/blog-times.mjs; the deploy checks hourly 7 AM–6 PM).
+  if (p.status !== 'draft' && /T/.test(String(p.publishDateRaw ?? ''))) {
+    const [h, m] = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date(p.publishDateRaw)).split(':').map(Number);
+    if (h * 60 + m < 8 * 60 || h * 60 + m > 16 * 60) errors.push(`${p.slug}: its publishing time (${h}:${String(m).padStart(2, '0')} Eastern) is outside 8 AM–4 PM`);
+  }
   if (parent && p.status !== 'draft' && parent.status !== 'draft' && day(p.publishDate) && day(parent.publishDate) && day(p.publishDate) <= day(parent.publishDate))
     errors.push(`${p.slug}: its publishDate (${day(p.publishDate)}) must come after ${p.from}'s (${day(parent.publishDate)})`);
   if (p.from) {
@@ -148,13 +154,23 @@ const planOut =
   plan.map((e) => `    ${JSON.stringify(e)}`).join(',\n') +
   '\n  ]\n}\n';
 
+// When a dated post publishes, for the calendar: "2026-11-13, 12:29 PM ET" (or just the date).
+function when(post) {
+  const raw = String(post.publishDateRaw ?? '');
+  const d = post.publishDate instanceof Date ? post.publishDate : new Date(raw);
+  if (!/T/.test(raw)) return raw.slice(0, 10) || d.toISOString().slice(0, 10);
+  const date = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(d);
+  const time = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(d);
+  return `${date}, ${time} ET`;
+}
+
 // The calendar table.
 const STATUS = { published: 'Published', scheduled: 'Scheduled', review: 'Scheduled', draft: 'Drafted (held)' };
 const cell = (s) => String(s ?? '').replace(/\|/g, '\\|');
 const title = (slug) => bySlug.get(slug)?.title ?? slug;
 const rows = plan.map((e, i) => {
   const post = bySlug.get(e.slug);
-  const status = post ? `**${STATUS[post.status] ?? 'Drafted'}**${(post.status === 'scheduled' || post.status === 'review') && post.publishDate ? ` ${String(post.publishDate instanceof Date ? post.publishDate.toISOString().slice(0, 10) : post.publishDate)}` : ''} (\`${e.slug}\`)` : 'Planned';
+  const status = post ? `**${STATUS[post.status] ?? 'Drafted'}**${(post.status === 'scheduled' || post.status === 'review') && post.publishDate ? ` ${when(post)}` : ''} (\`${e.slug}\`)` : 'Planned';
   const follows = e.from ? `${cell(title(e.from))}` : '';
   return `| ${i + 1} | ${cell(e.question)} | ${TOPICS[e.topic]} | ${cell(e.audiences)} | ${cell(e.sources)} | ${follows} | ${status} |`;
 });
