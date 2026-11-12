@@ -1,5 +1,7 @@
 # Session Summary: November 10, 2026
 
+> **Historical (session log, November 10, 2026).** A record of one session, not current documentation. For how the site works now, see `CLAUDE.md`, `DESIGN.md` and the numbered docs; for the blog, `14-blog-content-strategy.md` and `20-scheduled-blog-publishing.md`.
+
 **Time:** 11:17 AM - 11:45 AM EST  
 **Duration:** ~28 minutes  
 **Total Commits:** 7 to main branch  

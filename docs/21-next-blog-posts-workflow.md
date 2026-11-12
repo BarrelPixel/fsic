@@ -1,5 +1,7 @@
 # Next Blog Posts: Production Workflow
 
+> **Superseded (November 2026).** All four posts in this queue are written and dated. The workflow for new posts is `14-blog-content-strategy.md` (§4 anatomy, §8 workflow, §10 calendar); the brief template is §12.
+
 **Created:** November 10, 2026  
 **Purpose:** Structured workflow for creating the next 4 SEO/AEO-optimized blog posts
 

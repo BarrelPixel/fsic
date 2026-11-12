@@ -40,7 +40,7 @@ Consider adding `Organization` schema markup for the homepage:
 ## Accessibility
 
 ### Standards
-Target **WCAG 2.1 Level AA** compliance.
+Target **WCAG 2.2 Level AA** compliance. Reviewed November 2026 (`25-accessibility-review.md`): no remaining failures found; three fixed.
 
 ### Checklist
 - [ ] All images have descriptive `alt` attributes

@@ -1,7 +1,7 @@
 # Analytics Setup Guide
 
 **Created:** November 10, 2026  
-**Status:** Framework ready, switched off. Which provider FSIC uses is an open question (`07-open-questions.md`, Analytics).
+**Status:** Framework ready, switched off. **Decided (November 11, 2026): Plausible**, switched on at the domain switch (`06-launch-plan.md`). It sets no cookies, so the site needs no consent banner. FSIC needs a Plausible account for fsic.space; then set `PUBLIC_ANALYTICS_ID` (any value) in the deploy's environment.
 **Revised:** November 10, 2026, after review (see "Corrections" below).
 
 ## Overview

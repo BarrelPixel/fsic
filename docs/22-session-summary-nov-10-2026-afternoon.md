@@ -1,5 +1,7 @@
 # Session Summary: November 10, 2026 (Afternoon)
 
+> **Historical (session log, November 10, 2026).** Superseded in substance: the posts it lists were fact-checked and largely rewritten (November 11), the publishing workflow it describes was replaced (`20-scheduled-blog-publishing.md`: posts now publish by date at the daily rebuild), and the blog has grown to 28 posts. Current plan and calendar: `14-blog-content-strategy.md` §10.
+
 **Time:** 12:16 PM - 1:33 PM EST  
 **Focus:** Blog content creation, SEO/AEO optimization, automated publishing
 

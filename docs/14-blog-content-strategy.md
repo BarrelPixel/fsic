@@ -1,7 +1,7 @@
 # 14 — Blog Content Strategy (SEO and AEO)
 
-**Status:** Proposed (November 10, 2026). The blog is built (`/blog`) and two drafts are written. No post is published, so the blog is out of the menu, the sitemap and search until the first approval.
-**Owner:** FSIC approves every post. Barrel & Pixel drafts and publishes.
+**Status:** In use (updated November 12, 2026). 28 posts are written: 2 published and 25 dated to publish one every 3 to 7 days through March 8, 2027 (§10), plus one held as a draft. Posts publish by date at the daily rebuild; there is no approval gate (§8, `20-scheduled-blog-publishing.md`).
+**Owner:** Barrel & Pixel drafts, fact-checks and dates posts. FSIC can read every post and hold any (the review page linked from `07-open-questions.md`); a held post goes back to `draft`.
 **Related:**
 - `03-content-guidelines.md` (voice, nonprofit rules, attribution)
 - `13-refactor-seo-aeo.md` (the site's search and answer-engine setup)
@@ -169,7 +169,7 @@ Targets are modest at first. Six months after launch: every published post index
 
 **Cadence (set November 10, 2026):** one post every 3 to 7 days, at irregular intervals rather than on a fixed weekday, so the blog reads as edited, not automated. Every post carries a `publishDate` on that rhythm, and it publishes on that date (§8); set a post to `draft` to hold it. A post never comes before the post it follows (`from`): `npm run blog-plan` fails if one does. When FSIC holds a post, the dates after it can stay as they are (a gap of up to a week is within the rhythm) or move up.
 
-Two posts a month is sustainable and enough to build topical depth. The first twelve topics can all be written **from sources FSIC already has** (the Master Plan, the FAQ, approved copy, IRS and federal program pages), so nothing waits on new data.
+The first topics could all be written **from sources FSIC already has** (the Master Plan, the FAQ, approved copy, IRS and federal program pages), so nothing waits on new data.
 
 ### Connected posts: each published post adds the next topic
 
@@ -283,7 +283,7 @@ Not in this post:  (what belongs on another page or post)
 | Part | Where |
 |------|-------|
 | Posts | `src/content/blog/<slug>.md`, validated by the `blog` collection (`src/content.config.ts`) |
-| Statuses | `draft` and `review` show only in `npm run dev` (marked) and are `noindex`; `published` goes live |
+| Statuses | `draft` never publishes (shown only in `npm run dev`, marked, `noindex`). `review` and `scheduled` publish on their `publishDate`; `published` is live now. Until its date, a dated post is like a draft |
 | Publishing by date | A post with a `publishDate` (status `review` or `scheduled`) is live once the date has passed, at build time (`src/lib/blog-status.ts`); the deploy rebuilds daily at 14:00 UTC (`.github/workflows/deploy.yml`). `draft` never publishes (`docs/20`) |
 | Pages | `/blog` (index; a `noindex` holding note until a post is published), `/blog/<slug>` (the post anatomy in §4) |
 | Menu | "Blog" appears with the first published post (`src/lib/blog-status.ts`, `nav.ts`) |

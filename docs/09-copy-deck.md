@@ -18,10 +18,10 @@ All website copy lives in `src/content/copy/`, with one Markdown file per page. 
 | `contact.md` | `/contact` | Draft |
 | `faq.md` | `/faq` | Draft |
 | `news.md` | `/news` (releases in `src/content/news/`, one file each) | Draft |
-| `blog.md` | `/blog` (posts in `src/content/blog/`, one file each, each with its own `status`; `docs/14`) | Draft; two posts drafted |
+| `blog.md` | `/blog` (posts in `src/content/blog/`, one file each, each with its own `status`; `docs/14`) | Draft (page wording). Posts follow `14-blog-content-strategy.md` and publish by date |
 | `privacy.md` | `/privacy` (noindex, not linked yet) | Draft; FSIC and counsel to approve |
 | `accessibility.md` | `/accessibility` (noindex, not linked yet) | Draft; FSIC to approve |
-| `leadership.md` | `/leadership` (proposed) | Draft |
+| `leadership.md` | Not a page: Leadership is part of Governance (`/leadership` forwards there) | Source notes for John Joaquin's entry |
 | `site-wide.md` | Header, footer, metadata, 404 page | Draft |
 
 Update the table when a file's status changes.

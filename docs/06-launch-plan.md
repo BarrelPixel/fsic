@@ -13,7 +13,8 @@ fsic.space, now the Wix site's domain, will point to this site on GitHub Pages. 
 3. **DNS** (at the registrar, or wherever Wix manages the zone): for `fsic.space`, A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (and AAAA `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`); for `www`, a CNAME to `barrelpixel.github.io`. Keep the MX and TXT records. Disconnect the domain from the Wix site.
 4. **`astro.config.mjs`:** set `site` to `'https://fsic.space'` and `BASE` to `''` (the redirects from the old Wix addresses use it too). This also turns on search indexing (`src/lib/seo.ts`). Commit and push to `main`; the deploy checks types and links.
 5. **After the certificate is issued** (minutes to a day): tick "Enforce HTTPS" in Settings → Pages. Check `https://fsic.space`, `https://www.fsic.space`, a page, a press release and a missing address (the 404 page).
-6. **Old Wix addresses:** until redirects are added (`07-open-questions.md`), they land on the 404 page, which points visitors onward.
+6. **Old Wix addresses:** 29 forward to their new pages (`redirects` in `astro.config.mjs`, checked against the live Wix sitemaps); the rest (template legal pages, member profiles) land on the 404 page, which points visitors onward.
+7. **Analytics:** turn on Plausible (`16-analytics-setup.md`): add fsic.space in FSIC's Plausible account and set `PUBLIC_ANALYTICS_ID` in the deploy's environment.
 
 ## 3-Month Weekly Plan
 
@@ -102,4 +103,4 @@ fsic.space, now the Wix site's domain, will point to this site on GitHub Pages. 
 - [ ] DNS propagation is complete
 - [x] 404 page is styled and helpful (`src/pages/404.astro`; its copy in `site-wide.md` still needs review)
 - [ ] Analytics tracking is active
-- [ ] Redirects are configured (if migrating from existing site). Old fsic.space addresses (`08-current-site-audit.md` §1) land on the 404 page until redirects are set up; GitHub Pages can't do server redirects, so this depends on the production host
+- [x] Redirects are configured: 29 old Wix addresses forward to their new pages (`astro.config.mjs`)

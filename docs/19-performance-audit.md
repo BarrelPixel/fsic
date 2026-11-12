@@ -1,5 +1,7 @@
 # Performance Audit & Optimization
 
+> **Snapshot (November 10, 2026).** Measured before the November 11–12 work (blog visuals and share cards, social icons, hero changes). Re-measure before launch.
+
 **Date:** November 10, 2026  
 **Status:** ✅ Audit Complete - Optimizations Implemented
 

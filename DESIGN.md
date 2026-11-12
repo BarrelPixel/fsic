@@ -189,7 +189,10 @@ Don't put the hero photo on interior pages.
 | `Dot` | The small round marker. `tone` (orange, lagoon, navy, gray, or `none` to keep the space), `dark` on night, `size` sm (8px) or md (10px). Colors come from `src/lib/tones.ts`, which also gives bars their color (`toneBg`): lagoon becomes lagoon-light and navy becomes white on night. `Row`'s and `RunningHead`'s dots use it |
 | `YearScale` / `YearBar` | The Years 1–5 track: `YearScale` labels the years (`current` marks "Year 1 · Now"), each `YearBar` spans `start`–`end` in its `tone`'s color (or `barClass`), `size` sm on the homepage, md elsewhere, `dark` on night. Decorative: the timeframe is always in the text beside it. Used by the homepage, Deployment and Partnership & Funding |
 | `HomeHero` | The homepage hero (the launch photo, headline, lead, buttons, Find your part) |
-| `BaseLinks` | Wraps rendered Markdown (a blog post's body) and adds the base path to its root-relative links ("/economic-impact/"), since Markdown can't call `url()` |
+| `BaseLinks` | Wraps rendered Markdown (a blog post's body): adds the base path to its root-relative links ("/economic-impact/"), since Markdown can't call `url()`; shows a link to a post that isn't live yet as plain text; and puts each table in a focusable, labeled scroll region (`.table-scroll`) |
+| `PostVisual` | A blog post's "at a glance" figure under its summary, from `visual` in the post: a diagram (`job-years`, `scenarios`), `FIGURES` as range bars, or its phase on the Years 1–5 track (`docs/14` §4) |
+| `SocialIcons` | FSIC's profiles as icons (`SOCIAL_LINKS`): the platforms' marks in one color, 24px in 44px targets, each named "FSIC on …". `dark` on night. Footer and Contact |
+| `RegionMap` | The regional map with the next launch (`docs/24`). Not on a page for now |
 | `MoreLink` | A "read more" text link to an interior page (`link`, or `link-on-dark` with `dark`), for the end of a homepage section. On the homepage, buttons are only for actions (the hero and the close), so the story isn't interrupted by a button in every section |
 | `ConceptRendering` | The campus concept rendering, full bleed with its required caption. Put it in a dark `Section`'s `media` slot |
 | `ComingSoon` | Placeholder for interior pages until they're built |
