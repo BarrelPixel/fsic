@@ -78,7 +78,7 @@ The phases are set out on the [Phased Deployment](/deployment/#phase-1) page.
 
 FSIC was founded by John Joaquin, who chaired the City of New Smyrna Beach's Economic Development Task Force and the Southeast Volusia Chamber of Commerce's Advocacy & Economic Development committee, "where the idea of the FSIC was developed" ([FAQ](/faq/#leadership)).
 
-As of November 2026, FSIC has announced these members of its Board of Directors: Erik Ahlgren (Board Chair), Beth Hamilton, Jessie Thompson, Diezel DePew (Mayor of Edgewater) and Ryan Trine (CEO of R3Doubt). Jake Johansson has joined FSIC's Founders Council. The board is listed on the [Governance & Transparency](/governance/#structure) page, and each appointment is announced on the [News](/news/) page.
+As of November 2026, FSIC has announced these members of its Board of Directors: Erik Ahlgren (Board Chair), Beth Hamilton, Jessie Thompson, Diezel DePew (Mayor of Edgewater) and Ryan Trine (CEO of R3Doubt). Jake Johansson (Florida State Senator, District 8) has joined FSIC's Founders Council. The board is listed on the [Governance & Transparency](/governance/#structure) page, and each appointment is announced on the [News](/news/) page.
 
 ## Where did FSIC come from?
 

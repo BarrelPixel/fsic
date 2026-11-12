@@ -85,7 +85,8 @@ export const reportingCalendar = [...FREQUENCIES, 'Other' as const].map((frequen
 // the release that announced it. Erik Ahlgren (Board Chair, per the July 29 release) and Beth Hamilton were
 // added at the project lead's direction and have no appointment release, so they aren't links. Titles to be
 // confirmed (docs/07 "Titles"). Jessie Thompson is no longer a school board member (November 12, 2026), so she
-// has no role here; her appointment release keeps its published wording.
+// has no role here; her appointment release keeps its published wording. Jake Johansson's role (Florida State
+// Senator, District 8) is from the project lead, November 12, 2026.
 export const people: { group: string; members: { name: string; role: string; slug?: string }[] }[] = [
   { group: 'Board of Directors', members: [
     { name: 'Erik Ahlgren', role: 'Board Chair' },
@@ -95,6 +96,6 @@ export const people: { group: string; members: { name: string; role: string; slu
     { name: 'Ryan Trine', role: 'CEO of R3Doubt', slug: '2026-07-29-ryan-trine-joins-board' },
   ] },
   { group: 'Founders Council', members: [
-    { name: 'Jake Johansson', role: '', slug: '2026-08-03-jake-johansson-joins-founders-council' },
+    { name: 'Jake Johansson', role: 'Florida State Senator, District 8', slug: '2026-08-03-jake-johansson-joins-founders-council' },
   ] },
 ];
