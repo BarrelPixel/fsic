@@ -1,8 +1,6 @@
 ---
 title: "Florida Space Innovation Center Welcomes Jake Johansson to Founders Council"
 date: 2026-08-03
-image: ./images/2026-08-03-jake-johansson-joins-founders-council.jpg
-imageAlt: "Announcement graphic: “Welcome! Jake Johansson to the Founders Council, Florida Space Innovation Center.” Two men stand in front of an American flag. Tagline: Ignite, Inspire, Impact."
 related:
   - label: "Governance: FSIC's board and how it is run"
     href: "/governance/#structure"

@@ -61,7 +61,7 @@ Keep the wording as published, including quotes. Fix only obvious formatting (bo
 > **Note:** The releases use words the content guidelines avoid ("proud to announce", "premier hub"). They stay as published.
 > **Images:** each release shows the graphic published with it on fsic.space/news (November 2026). The files are in `src/content/news/images/`, set by `image` and `imageAlt` in each release's frontmatter. The alt text transcribes the words in the graphic.
 
-> **Resolved (November 12, 2026, project lead):** the Trine and DePew graphics are removed (they show a building FSIC doesn't have). Their releases now share the hero photo. The other graphics stay.
+> **Resolved (November 12, 2026, project lead):** the release graphics for board and council members are removed: Trine and DePew first (they show a building FSIC doesn't have), then Thompson and Johansson. Those releases share the hero photo. Only the launch release keeps its graphic.
 
 > **Resolved (November 11, 2026):** the Jessie Thompson graphic says "Executive Board"; the release says "Board of Directors". The graphic stays as FSIC published it (DESIGN.md: release graphics aren't altered); the site's own text uses the release's "Board of Directors".
 

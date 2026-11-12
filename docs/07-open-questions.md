@@ -9,7 +9,7 @@ Items requiring stakeholder input or decisions before full launch.
 - [ ] **Favicon:** Derived from logo. Need source file.
 - [x] **Typography:** Resolved. Barlow Semi Condensed, Source Serif 4 and Archivo, self-hosted (see `DESIGN.md`).
 - [ ] **Photography / Imagery:** No approved photos provided. Need hero images, section backgrounds, campus renderings if available. What are the usage rights for conceptual renderings referenced in the PDFs?
-- [ ] **Press release graphics:** the Trine and DePew graphics are removed (project lead, November 12, 2026: they show a building FSIC doesn't have). The launch, Thompson and Johansson graphics stay; confirm FSIC owns them, and note the Thompson graphic says "Executive Board" (the release says Board of Directors). See `src/content/copy/news.md`.
+- [ ] **Press release graphics:** the graphics for board and council appointments (Thompson, DePew, Trine, Johansson) are removed (project lead, November 12, 2026). Only the launch release keeps its poster; confirm FSIC owns it.
 - [ ] **Brand guidelines:** Are there existing brand guidelines beyond the color palette provided?
 
 ## Content & Copy
