@@ -3,9 +3,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  # Rebuild every morning so blog posts scheduled by FSIC (status: scheduled, publishDate reached) go live on
-  # their day without a commit (src/lib/blog-status.ts). 9:00 AM Eastern standard time.
+  # Blog posts publish at their publishDate (date and time, docs/14 §10) without a commit (src/lib/blog-status.ts):
+  # - hourly on weekdays, 7:05 AM to 6:05 PM Eastern (12:05–23:05 UTC), a quick check rebuilds only when a post
+  #   has come due since the last check (scripts/blog-due.mjs), so a post appears within the hour after its time;
+  # - every morning at 9:00 AM Eastern standard time, a full rebuild regardless (a backstop, and any other
+  #   build-time data).
   schedule:
+    - cron: '5 12-23 * * 1-5'
     - cron: '0 14 * * *'
   workflow_dispatch:
 
@@ -19,7 +23,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # The hourly check: build only if a blog post has come due. Pushes, manual runs and the daily rebuild always build.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      build: ${{ steps.decide.outputs.build }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Is a post due?
+        id: decide
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "5 12-23 * * 1-5" ]; then
+            node scripts/blog-due.mjs --window=130
+            grep -q '^due=true' "$GITHUB_OUTPUT" && echo "build=true" >> "$GITHUB_OUTPUT" || echo "build=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "build=true" >> "$GITHUB_OUTPUT"
+          fi
+
   build:
+    needs: gate
+    if: needs.gate.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

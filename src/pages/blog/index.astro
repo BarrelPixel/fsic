@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import TableRow from '../../components/TableRow.astro';
-import { getPosts, postHref, readingMinutes, isPublished, TOPICS } from '../../lib/blog';
+import { postDate, getPosts, postHref, readingMinutes, isPublished, TOPICS } from '../../lib/blog';
 import { formatDate, isoDate } from '../../lib/news';
 import { url } from '../../lib/url';
 
@@ -32,7 +32,7 @@ const anyPublished = posts.some(isPublished);
         {posts.map((p) => (
           <TableRow as="li" spans={[4, 8]} rule={false} baseline cellClass={[undefined, 'max-w-3xl']} class="gap-y-2 py-8 first:pt-0">
             <p slot="c1" class="mb-0 text-label text-gray-dark">
-              <time datetime={isoDate(p.data.date)}>{formatDate(p.data.date)}</time>
+              <time datetime={isoDate(postDate(p))}>{formatDate(postDate(p))}</time>
               <span class="block font-normal text-gray">{TOPICS[p.data.topic].label} · {readingMinutes(p)} min read</span>
               {!isPublished(p) && <span class="block text-navy">Draft ({p.data.status}): not on the public site</span>}
             </p>

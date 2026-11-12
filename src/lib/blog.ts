@@ -10,11 +10,15 @@ import { isLive } from './blog-status';
 
 /** Live on the public site: published, or scheduled with its publishDate passed (src/lib/blog-status.ts). */
 export const isPublished = (p: Post) => isLive(p.data);
+
+/** When a post went (or goes) live: its publishDate, or for a post published without one, its date. Shown on
+ *  the post and the blog index, and used for order, the feed, the sitemap and structured data. */
+export const postDate = (p: Post): Date => p.data.publishDate ?? p.data.date;
 const visible = (p: Post) => isPublished(p) || import.meta.env.DEV;
 
 /** Posts to show, newest first. */
 export async function getPosts(): Promise<Post[]> {
-  return (await getCollection('blog', visible)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  return (await getCollection('blog', visible)).sort((a, b) => postDate(b).getTime() - postDate(a).getTime());
 }
 
 export const postHref = (post: Post) => url(`/blog/${post.id}`);

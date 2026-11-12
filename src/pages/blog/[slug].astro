@@ -9,7 +9,7 @@ import MoreLink from '../../components/MoreLink.astro';
 import BaseLinks from '../../components/BaseLinks.astro';
 import PostVisual from '../../components/PostVisual.astro';
 import RangeBarsDraw from '../../components/RangeBarsDraw.astro';
-import { getPosts, postHref, readingMinutes, isPublished, checkFigures, TOPICS, type Post } from '../../lib/blog';
+import { getPosts, postDate, postHref, readingMinutes, isPublished, checkFigures, TOPICS, type Post } from '../../lib/blog';
 import { authorFor } from '../../data/authors';
 import { formatDate, isoDate } from '../../lib/news';
 import { blogPosting, faqPage } from '../../lib/seo';
@@ -55,11 +55,11 @@ const authorImage = author.photo ? (await getImage({ src: author.photo.src, widt
   title={d.title}
   description={d.description}
   image={shareImage?.src}
-  article={{ published: d.date }}
+  article={{ published: postDate(post) }}
   parents={[{ name: 'Blog', path: '/blog/' }]}
   noindex={!isPublished(post)}
   jsonLd={[
-    blogPosting({ headline: d.title, description: d.description, path, date: d.date, updated: d.updated, section: topic.label, author: { ...author, image: authorImage, description: author.bio }, sources: d.sources, image: shareImage?.src }),
+    blogPosting({ headline: d.title, description: d.description, path, date: postDate(post), updated: d.updated, section: topic.label, author: { ...author, image: authorImage, description: author.bio }, sources: d.sources, image: shareImage?.src }),
     ...(d.faqs.length > 0 ? [faqPage(d.faqs.map((f) => ({ q: f.q, answer: f.a })))] : []),
   ]}
 >
@@ -75,7 +75,7 @@ const authorImage = author.photo ? (await getImage({ src: author.photo.src, widt
       </div>
     </div>
     <p class="mb-6 font-sans text-white/75">
-      <time datetime={isoDate(d.date)}>{formatDate(d.date)}</time>
+      <time datetime={postDate(post).toISOString()}>{formatDate(postDate(post))}</time>
       {d.updated && <><span aria-hidden="true"> · </span>Updated <time datetime={isoDate(d.updated)}>{formatDate(d.updated)}</time></>}
       <span aria-hidden="true"> · </span>{readingMinutes(post)} min read
       <span aria-hidden="true"> · </span>{topic.label}
@@ -178,7 +178,7 @@ const authorImage = author.photo ? (await getImage({ src: author.photo.src, widt
           {others.map((p) => (
             <li class="py-4 first:pt-0">
               <p class="mb-1 text-caption text-gray-dark">
-                <time datetime={isoDate(p.data.date)}>{formatDate(p.data.date)}</time>
+                <time datetime={isoDate(postDate(p))}>{formatDate(postDate(p))}</time>
               </p>
               <a href={postHref(p)} class="font-display text-xl font-semibold text-navy leading-snug underline-reveal underline-offset-4">{p.data.title}</a>
             </li>

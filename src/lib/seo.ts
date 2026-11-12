@@ -100,7 +100,7 @@ export const blogPosting = (p: {
   description: p.description,
   url: absolute(p.path),
   mainEntityOfPage: absolute(p.path),
-  datePublished: p.date.toISOString().slice(0, 10),
+  datePublished: p.date.toISOString(),
   dateModified: (p.updated ?? p.date).toISOString().slice(0, 10),
   articleSection: p.section,
   inLanguage: 'en-US',
