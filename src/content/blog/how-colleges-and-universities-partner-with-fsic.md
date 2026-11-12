@@ -70,14 +70,14 @@ Universities appear twice in that description: they can provide problems, and th
 
 ## What applied research does the plan describe?
 
-**Applied research** is research aimed at solving a practical problem. The Master Plan describes applied research partnerships as "collaborations with universities and federal agencies" in four areas (p. 20):
+The Master Plan describes applied research partnerships as "collaborations with universities and federal agencies" in four areas (p. 20):
 
 - Dual-use technology development
 - Autonomy and artificial intelligence (AI) research
 - Materials and manufacturing innovation
 - Space systems and sensors
 
-A **dual-use technology** is one with both civilian and defense uses. The plan states that these partnerships "strengthen regional competitiveness for federal funding" (p. 20).
+The plan's examples of dual-use technology are AI, autonomy, sensors and cybersecurity (p. 10). It states that these partnerships "strengthen regional competitiveness for federal funding" (p. 20).
 
 Applied research partnerships belong to FSIC's Innovation Engine, which the plan describes as a place where "students, educators, researchers, startups, and industry partners collaborate to solve real aerospace and advanced manufacturing challenges" (p. 10). More on the engine is on the [FSIC Model](/model/#innovation) page.
 
@@ -129,7 +129,7 @@ The Master Plan's Innovation Engine metrics are (p. 32):
 - Innovation sprint and hackathon participation
 - Dual-use technology projects initiated
 
-They are reported through semiannual innovation reports, an annual research and development summary, and partner feedback sessions. "Stronger university partnerships" is one of the plan's intended innovation and research outcomes (p. 29).
+They are reported through semiannual innovation reports, an annual research and development summary, and partner feedback sessions. "Stronger university partnerships" is one of the key outcomes the plan lists for innovation and research (p. 29).
 
 The plan also lists an Innovation and Research Advisory Council and an Education and Workforce Advisory Council among FSIC's advisory councils (p. 16). It does not say who will sit on them. The councils are described on the [Governance & Transparency](/governance/#structure) page.
 
@@ -143,7 +143,7 @@ A formal consortium. The Master Plan's long-term vision, for 2032–2040, states
 - Cross-institutional degree pathways in aerospace, robotics, AI, materials and systems engineering
 - A unified governance and funding model
 
-This is a vision, not a commitment, and it names no universities. The site's FAQ says of FSIC's long-term future that "no outcomes are guaranteed" ([What is the long-term vision for FSIC?](/faq/#future)). The vision is set out on the [Long-Term Vision](/long-term-vision/#consortium) page.
+This is a vision, not a commitment, and it names no universities. The site's FAQ says of FSIC's long-term future that "no outcomes are guaranteed" ([What could FSIC look like in the future?](/faq/#future)). The vision is set out on the [Long-Term Vision](/long-term-vision/#consortium) page.
 
 ## How can an institution start a conversation now?
 
