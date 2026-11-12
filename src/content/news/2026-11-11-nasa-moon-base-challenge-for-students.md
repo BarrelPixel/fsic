@@ -3,7 +3,7 @@ title: "NASA's Moon Base Challenge: An Invitation to Volusia County Students"
 date: 2026-11-11
 kind: update
 source:
-  url: "https://www.facebook.com/profile.php?id=61589280681125"
+  url: "https://www.facebook.com/share/p/1AFWmRJL4M/"
   label: "FSIC's Facebook page"
 ---
 

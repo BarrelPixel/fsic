@@ -21,7 +21,7 @@ From FSIC's Facebook post about the expo. Facts checked against NASA's announcem
 
 From FSIC's Facebook post of November 11, 2026, calling on Volusia County Schools high school students to enter. Facts checked against NASA's announcement and coverage of it (November 2026): the $1 million, the six categories, the two divisions (high school ages 13–18; post-secondary), teams of two to five students with an adult coach, and registration through NASA's STEM Gateway by January 25, 2027. The post listed fields (engineering, manufacturing, robotics, IT, environmental systems, construction); the entry uses NASA's six categories instead. Left out: the hashtags, and later deadlines reported by only one outlet. It doesn't say FSIC runs the challenge or partners with Volusia County Schools on it.
 
-> **⚠ Review:** new wording. The source link goes to FSIC's Facebook page, not the post itself (no link to the post yet). moonbasechallenge.org, the site the post links, couldn't be reached to check; confirm it is the official challenge site.
+> **⚠ Review:** new wording. moonbasechallenge.org, the site the post links, couldn't be reached to check; confirm it is the official challenge site.
 
 ### Lunch with NASA Pioneer JoAnn Morgan (`2026-11-12-lunch-with-joann-morgan.md`)
 
