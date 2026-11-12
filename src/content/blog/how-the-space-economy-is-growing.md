@@ -17,7 +17,7 @@ faqs:
 image: ./images/how-the-space-economy-is-growing.png
 imageAlt: "How Is the Space Economy Growing? (FSIC Blog)"
 status: review
-publishDate: 2026-12-14T12:54:00-05:00
+publishDate: 2026-11-13T12:54:00-05:00
 followUp:
   question: "What is the difference between 'old space' and 'new space' companies?"
   slug: old-space-vs-new-space

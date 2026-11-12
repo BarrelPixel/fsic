@@ -31,7 +31,7 @@ visual:
   phases: [1]
 image: ./images/what-is-teacher-upskilling.png
 imageAlt: "What Is Teacher Upskilling? FSIC's Plans for Educators (FSIC Blog)"
-publishDate: 2027-01-19T09:07:00-05:00
+publishDate: 2027-01-07T09:07:00-05:00
 status: review
 followUp:
   question: "How can school districts partner with FSIC?"
