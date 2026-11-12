@@ -26,8 +26,9 @@ interface Props {
 
 const { release, others } = Astro.props;
 const { Content } = await render(release);
-const { image, imageAlt } = release.data;
-const shareImage = image ? await getImage({ src: image, width: 1200, format: 'jpg' }) : undefined;
+const { image, imageAlt, photos = [] } = release.data;
+const shareSrc = image ?? photos[0]?.src;
+const shareImage = shareSrc ? await getImage({ src: shareSrc, width: 1200, format: 'jpg' }) : undefined;
 const description = truncate(firstParagraph(release));
 ---
 <BaseLayout
@@ -65,6 +66,20 @@ const description = truncate(firstParagraph(release));
       </div>
       <article class="release links-in max-w-3xl">
         <BaseLinks><Content /></BaseLinks>
+        {photos.map((photo) => (
+          <figure class="mt-10 mb-0">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              widths={[480, 768, 1024]}
+              sizes="(min-width: 768px) 48rem, 100vw"
+              class:list={['w-full h-auto', photo.src.height > photo.src.width && 'max-w-md']}
+            />
+            <figcaption class="mt-2 font-sans text-caption text-gray-dark">
+              {photo.caption}{photo.credit && <> Photo: {photo.credit}.</>}
+            </figcaption>
+          </figure>
+        ))}
         {release.data.source && (
           <p class="mt-8 mb-0 font-sans text-caption text-gray-dark">
             First posted on <a href={release.data.source.url} class="link" rel="noopener">{release.data.source.label}</a>.
