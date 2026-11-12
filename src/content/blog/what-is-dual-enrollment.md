@@ -25,7 +25,7 @@ visual:
   phases: [1]
 image: ./images/what-is-dual-enrollment.png
 imageAlt: "What Is Dual Enrollment? FSIC's STEM Pathways (FSIC Blog)"
-publishDate: 2026-11-20T13:13:00-05:00
+publishDate: 2026-11-12T10:44:00-05:00
 status: review
 followUp:
   question: "What apprenticeships will FSIC offer for aerospace and advanced manufacturing?"

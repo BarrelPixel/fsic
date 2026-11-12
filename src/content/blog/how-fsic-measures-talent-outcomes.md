@@ -26,7 +26,7 @@ visual:
 image: ./images/how-fsic-measures-talent-outcomes.png
 imageAlt: "How Will FSIC Measure Talent Engine Outcomes? (FSIC Blog)"
 status: review
-publishDate: 2026-12-21T08:41:00-05:00
+publishDate: 2026-12-02T08:41:00-05:00
 followUp:
   question: "What are industry-recognized credentials, and why do they matter?"
   slug: what-are-industry-recognized-credentials

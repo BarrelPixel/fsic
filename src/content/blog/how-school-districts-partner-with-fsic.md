@@ -25,7 +25,7 @@ visual:
   phases: [1]
 image: ./images/how-school-districts-partner-with-fsic.png
 imageAlt: "How Can School Districts Partner With FSIC? (FSIC Blog)"
-publishDate: 2027-02-01T10:49:00-05:00
+publishDate: 2027-01-19T10:49:00-05:00
 status: review
 followUp:
   question: "What is K–12 STEM exploration, and what will FSIC offer younger students?"
