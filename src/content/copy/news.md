@@ -29,6 +29,12 @@ From John Joaquin's post of November 12, 2026 (LinkedIn; also on his private Fac
 
 > **Confirmed (November 12, 2026, project lead):** FSIC owns the lunch photo (John had it taken); all three captions are correct; JoAnn Morgan is fine with being named a New Smyrna Beach resident.
 
+### Remembering Margaret Hamilton (`2026-10-11-remembering-margaret-hamilton.md`)
+
+From FSIC's Facebook post of October 11, 2026. Facts checked against the Associated Press obituary and MIT (October 2026): died September 30, 2026, at 90; led the MIT team that wrote the Apollo onboard flight software; Presidential Medal of Freedom, 2016. "Widely credited with naming the field of software engineering" is the usual wording in her obituaries. Left out: the hashtags. The condolence line is new.
+
+> **⚠ Review:** new wording, including the condolence line.
+
 ## PRESS RELEASES
 
 Each release is its own Markdown file in `src/content/news/`, named `<YYYY-MM-DD>-<slug>.md`, with the headline and date in the frontmatter. The file name is the URL. To publish a new release, add a file; the list page and the "More news" links update themselves.
