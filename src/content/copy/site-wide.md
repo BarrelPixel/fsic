@@ -52,7 +52,7 @@ Used as: the homepage's meta description; the description in FSIC's structured d
 
 **Contact:** info@fsic.space · New Smyrna Beach, FL, USA
 
-**Social:** [TODO: add to `Footer.astro`. Not in the new build yet.]
+**Social:** in the footer and on Contact as icons (`SocialIcons`, from `SOCIAL_LINKS` in `src/lib/site.ts`), each named "FSIC on LinkedIn", "FSIC on Facebook", "FSIC on X" for screen readers.
 - LinkedIn — https://www.linkedin.com/company/florida-space-innovation-center/
 - Facebook — https://www.facebook.com/profile.php?id=61589280681125
 - X — https://x.com/FLSpaceCenter

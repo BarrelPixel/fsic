@@ -31,15 +31,18 @@ src/pages/           One .astro file per route. index, model, economic-impact, d
 src/components/      Grid components (Section, Grid, Row, List, PageHero, SectionBar, RunningHead),
                      Button, Header, Footer, Disclosure, ProgramList, HeroIndex, Closing, RangeBar, RangeLegend,
                      RangeBarsDraw, RangeTable, RangeRow, TableRow, YearScale, YearBar, Dot, MoreLink,
-                     ConceptRendering, HomeHero, BaseLinks, PostVisual (a blog post's "at a glance" figure), RegionMap (a regional map and the next launch; not on a page for now), SolicitationDisclosure, Analytics, ComingSoon
+                     ConceptRendering, HomeHero, BaseLinks (post links and tables), SocialIcons, PostVisual (a blog post's "at a glance" figure), RegionMap (a regional map and the next launch; not on a page for now), SolicitationDisclosure, Analytics, ComingSoon
 src/layouts/         BaseLayout.astro (meta tags, font loading, header and footer)
 src/styles/global.css  Design tokens (@theme), base styles, range-bar animation
 src/content/copy/    Copy deck: one Markdown file per page (see below)
 src/content/news/    Press releases, one Markdown file each, wording as published (built into /news and /news/<slug>);
                      images/ holds the graphic published with each release
-src/content/blog/    Blog posts, one Markdown file each (/blog/<slug>), with status draft | review | published;
+src/content/blog/    Blog posts, one Markdown file each (/blog/<slug>), with status draft | review | scheduled | published
+                     (dated posts publish on their publishDate; images/ holds the share cards);
                      the schema enforces the post anatomy in docs/14 (question, answer-first summary, sources)
 src/lib/blog.ts      Blog helpers: getPosts (drafts in dev only), TOPICS (pillar pages), checkFigures
+src/lib/blog-status.ts  isLive: when a post is live (publish by date; BLOG_NOW=YYYY-MM-DD previews a coming day)
+src/lib/launches.ts  The next launch from the Cape, read at build time (RegionMap)
 src/lib/news.ts      Press release helpers
 src/lib/nav.ts       Site navigation (groups and links), shared by Header, Footer and the 404 page
 src/lib/site.ts      EMAIL, mailto(), SOCIAL_LINKS: use these, don't retype the address or links
@@ -50,11 +53,12 @@ src/lib/tones.ts     Marker colors by meaning (toneBg), on white and on night; u
 src/lib/seo.ts       Indexing switch, absolute URLs, schema.org builders, the one-sentence "what is FSIC"
 src/data/            Page content as typed data, shared where pages overlap: economics (the Master Plan
                      ranges, read by home, Economic Impact, Partnership & Funding and the FAQ), phases,
-                     engines, programs, faq, partnership, governance
+                     engines, programs, faq, partnership, governance, paths (Example Paths), onward (page endings),
+                     strategic, authors, blog-plan.json (the blog plan), region-map.json
 docs/                Project docs 00–25 (IA, content guidelines, site audit, copy-deck workflow, homepage reviews, refactor/SEO/AEO review, blog strategy, site elevation plan, narrative, accessibility review)
 DESIGN.md            Visual design direction: source of truth for design decisions
 mnt/data/            Source PDFs (Master Plan, Overview). Not deployed
-scripts/             check-links.mjs (run via `npm run check-links`)
+scripts/             check-links, review-items, blog-plan, blog-cards (npm scripts above); region-map (by hand)
 ```
 
 ## Rules

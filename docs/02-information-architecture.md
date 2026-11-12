@@ -54,7 +54,7 @@
 ### Programs & Facilities (`/programs-facilities`) — IMPLEMENTED
 **Goal:** Detail every program offering across all four engines plus facilities plan.
 **Audience:** Students, educators, businesses, community members.
-**Key content:** Programs by audience (FAQ); the Master Plan's program portfolio, one row per engine with each program opening in place and a link to that engine on the Model page; the facilities plan: FSIC is a virtual organization today, guiding principles, and planned core spaces per phase (no development named).
+**Key content:** Programs by audience (FAQ); example paths (a student, a career-switcher, a manufacturer, each step a Master Plan program on the Years 1–5 track; `24-narrative.md`); the Master Plan's program portfolio, one row per engine with each program opening in place and a link to that engine on the Model page; the facilities plan: FSIC is a virtual organization today, guiding principles, and planned core spaces per phase (no development named).
 **Source:** Master Plan Pages 17–21.
 
 ### Governance & Transparency (`/governance`) — IMPLEMENTED
@@ -85,10 +85,10 @@
 **Audience:** All, especially residents.
 **Key content:** Mission and vision in the hero with an index of four topics (About FSIC, Why Now, Programs and Funding, Getting Involved), then one section per topic holding the 16 questions from the live FAQ page, each opening from its question with its own link (`/faq#<id>`). Answers are as published except where `faq.md` notes a change (economic ranges, five phases, sourced space-economy figures).
 
-### Blog (`/blog`) — IMPLEMENTED (no post published yet)
+### Blog (`/blog`) — IMPLEMENTED (in the menu; posts publish by date)
 **Goal:** Answer the questions people bring to search engines and AI assistants (training, jobs, the space economy, taking part), and show FSIC's expertise and momentum between press releases.
 **Audience:** All, by post: students and families, job-seekers, employers, educators, policymakers, funders, residents.
-**Key content:** Explainers and guides, one question per post, each tied to a pillar page (the engines, Economic Impact, The Strategic Moment, Governance). Strategy, post anatomy, workflow and the first twelve topics are in `14-blog-content-strategy.md`. Until the first post is published, the page is a `noindex` holding note, out of the menu and sitemap.
+**Key content:** Explainers and guides, one question per post, each tied to a pillar page (the engines, Economic Impact, The Strategic Moment, Governance). Strategy, post anatomy, workflow, cadence and calendar are in `14-blog-content-strategy.md`.
 
 ### News & Media (`/news`) — IMPLEMENTED
 **Goal:** Publish FSIC's press releases as issued.
@@ -116,4 +116,4 @@ The logo links to Home. Each page appears once in the menu. On phones, the menu 
 **Footer:** one column per group (Why FSIC, The Model), then a column "FSIC" with Home, Governance, Get Involved, News, FAQ and Contact. Each page appears once. The 404 page lists the same columns (`getNavColumns()` in `src/lib/nav.ts`).
 
 ## Implementation Note
-Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, Long-Term Vision, FAQ, News & Media, and Contact (no form yet), plus the 404 page. The Governance page leaves out board member names and the founder transition until they are confirmed (see `governance.md`). Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. No page uses `<ComingSoon>` at present; it remains for future pages. After building a page, run `npm run check` and `npm run check-links` (the deploy runs both and stops on a type error or broken link).
+Built (November 2026): Home, The FSIC Model, Economic Impact, Phased Deployment, Governance & Transparency, Partnership & Funding, The Strategic Moment, Programs & Facilities, Long-Term Vision, FAQ, News & Media, and Contact (no form yet), plus the 404 page. The Governance page lists the board and Founders Council (titles still to confirm) and leaves out the founder transition until John Joaquin checks it (see `governance.md`). Leadership is part of Governance, not its own page. Interior pages follow the template in `DESIGN.md` ("Interior page template"); `src/pages/model.astro` is the reference. No page uses `<ComingSoon>` at present; it remains for future pages. After building a page, run `npm run check` and `npm run check-links` (the deploy runs both and stops on a type error or broken link).
