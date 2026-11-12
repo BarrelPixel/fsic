@@ -178,7 +178,7 @@ Committees support board governance and ensure compliance with nonprofit regulat
 ### Board members (on the page since November 11, 2026, under 02 Structure, after the lead; same list as the homepage)
 
 Founder (added November 12, 2026, at the project lead's direction; links to his bio in the FAQ):
-- **John Joaquin** — Founder (the title in FSIC's press releases)
+- **John Joaquin** — Founder & CEO (confirmed November 12, 2026)
 
 Announced in press releases:
 - **Erik Ahlgren** — Board Chair
@@ -192,7 +192,7 @@ Appointed by release:
 - **Jessie Thompson** — appointed July 7, 2026. No longer a school board member (project lead, November 12, 2026), so the site lists her without a role; the July 7 release keeps its published wording. **⚠ Review:** her current title, if FSIC wants one shown
 
 > **Source:** fsic.space/news
-> **⚠ Review:** Confirm the full seated board as of today. The July 7 release mentions an inaugural board meeting in September. Collect approved bios, photos, and titles. Confirm current titles for John Joaquin and Erik Ahlgren. See audit §3.6. This could also take in the proposed Leadership page (`leadership.md`).
+> **Resolved (November 12, 2026, project lead):** the list on the page is the full seated board. John Joaquin's title is Founder & CEO. Still open: Erik Ahlgren's title is from the July 29 release (Board Chair); bios and photos when FSIC has them.
 
 ### Founder transition (not on the page yet)
 
@@ -214,7 +214,7 @@ Master Plan p. 17: the founder serves as unpaid CEO during the startup phase, th
 
 **Public reporting:**
 - Annual Impact Report
-- Public dashboards on FSIC's website
+- ~~Public dashboards on FSIC's website~~ (not on the page; see below)
 - Community presentations and exhibitions
 - Grant-specific reporting for funders
 - Regular updates to local governments and partners
@@ -234,7 +234,7 @@ Master Plan p. 17: the founder serves as unpaid CEO during the startup phase, th
 - Demonstrate clear return on investment
 
 > **Source:** Master Plan pp. 17 (compliance framework) and 31 (verbatim)
-> **⚠ Review:** "Public dashboards on FSIC's website" is a commitment the site doesn't meet yet (see `07-open-questions.md`, Public dashboards). Confirm FSIC wants to state it.
+> **Resolved (November 12, 2026, project lead):** removed from the page. It is a Master Plan plan the site doesn't meet; it can return when there are dashboards.
 
 ### Tax-Exempt Status and Public Filings (closing row of 03)
 

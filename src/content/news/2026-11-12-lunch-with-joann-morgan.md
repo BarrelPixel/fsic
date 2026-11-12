@@ -21,7 +21,7 @@ photos:
 
 FSIC founder John Joaquin had lunch recently with JoAnn Morgan, one of the pioneers of the American space program and a longtime New Smyrna Beach resident.
 
-When Apollo 11 lifted off from Kennedy Space Center on July 16, 1969, Morgan was at her console as an instrumentation controller, the only woman in the launch firing room. Over a NASA career that ran from 1958 to 2003, she became the first woman senior executive at Kennedy Space Center. NASA tells her story in [Rocket Fuel in Her Blood](https://www.nasa.gov/people-of-nasa/women-at-nasa/rocket-fuel-in-her-blood-the-story-of-joann-morgan/). She remains engaged with the space community today.
+When Apollo 11 lifted off from Kennedy Space Center on July 16, 1969, Morgan was at her console as an instrumentation controller, the only woman in the launch firing room. Over a NASA career that ran from 1958 to 2003, she became the first woman senior executive at Kennedy Space Center. NASA tells her story in [Rocket Fuel in Her Blood](https://www.nasa.gov/people-of-nasa/women-at-nasa/rocket-fuel-in-her-blood-the-story-of-joann-morgan/). She remains engaged with the space community today, and her career inspired FSIC's [initiative for girls and young women](/news/2026-09-24-preparing-the-space-workforce-in-southeast-volusia/) in technical careers.
 
 "One of the greatest joys of my involvement with the Florida Space Innovation Center," Joaquin wrote after their conversation, "is getting to know people like JoAnn, people who helped make history and who continue to inspire the future."
 

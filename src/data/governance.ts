@@ -86,11 +86,10 @@ export const reportingCalendar = [...FREQUENCIES, 'Other' as const].map((frequen
 // added at the project lead's direction and have no appointment release, so they aren't links. Titles to be
 // confirmed (docs/07 "Titles"). Jessie Thompson is no longer a school board member (November 12, 2026), so she
 // has no role here; her appointment release keeps its published wording. Jake Johansson's role (Florida State
-// Senator, District 8) is from the project lead, November 12, 2026. John Joaquin is listed as Founder, the title his
-// press releases use (the live site's "Founder & CEO" is still to be confirmed, leadership.md); his name links to his
-// bio in the FAQ.
+// Senator, District 8) is from the project lead, November 12, 2026. John Joaquin is Founder & CEO (project lead,
+// November 12, 2026; the Master Plan's unpaid CEO during startup); his name links to his bio in the FAQ.
 export const people: { group: string; members: { name: string; role: string; slug?: string; href?: string }[] }[] = [
-  { group: 'Founder', members: [
+  { group: 'Founder & CEO', members: [
     { name: 'John Joaquin', role: '', href: '/faq/#leadership' },
   ] },
   { group: 'Board of Directors', members: [

@@ -89,7 +89,7 @@ Shown for any address on the site that has no page, including old fsic.space add
 
 **Current site:** "Connect With Us". Fields: Email (required), checkbox "Yes, subscribe me to your newsletter." (required). Button: "Subscribe".
 
-> **⚠ Review:** Decide whether the new site keeps a newsletter signup, and with which provider (see `07-open-questions.md`). Existing subscribers live in Wix, so plan to export them.
+> **Decided (November 12, 2026, project lead):** no newsletter signup for now. The Wix subscriber list should be exported before the Wix site is retired, in case one returns.
 
 ---
 
