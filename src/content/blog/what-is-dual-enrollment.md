@@ -31,7 +31,6 @@ followUp:
   question: "What apprenticeships will FSIC offer for aerospace and advanced manufacturing?"
   slug: what-apprenticeships-will-fsic-offer
   topic: talent
-from: what-is-a-micro-credential
 ---
 
 ## What is dual enrollment?

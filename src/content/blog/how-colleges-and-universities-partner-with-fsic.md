@@ -28,7 +28,7 @@ sources:
     url: "https://fsic.space/long-term-vision/"
 visual:
   phases: [1, 2]
-publishDate: 2026-12-23T08:55:00-05:00
+publishDate: 2026-12-30T08:55:00-05:00
 image: ./images/how-colleges-and-universities-partner-with-fsic.png
 imageAlt: "How Can Colleges and Universities Partner With FSIC? (FSIC Blog)"
 status: review

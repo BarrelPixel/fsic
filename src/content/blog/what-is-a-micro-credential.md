@@ -25,10 +25,11 @@ visual:
   phases: [1]
 image: ./images/what-is-a-micro-credential.png
 imageAlt: "What Is a Micro-Credential? FSIC’s Short, Job-Focused Training (FSIC Blog)"
-status: published
+status: review
+publishDate: 2026-11-30T11:25:00-05:00
 followUp:
-  question: "What is dual enrollment, and how will FSIC expand STEM pathways?"
-  slug: what-is-dual-enrollment
+  question: "What are industry-recognized credentials, and why do they matter?"
+  slug: what-are-industry-recognized-credentials
   topic: talent
 ---
 
