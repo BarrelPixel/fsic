@@ -1,8 +1,6 @@
 ---
 title: "Florida Space Innovation Center Appoints School Board Member Jessie Thompson to Board of Directors"
 date: 2026-07-07
-image: ./images/2026-07-07-jessie-thompson-joins-board.jpg
-imageAlt: "Announcement graphic: “Congratulations! Jessie Thompson named to the Executive Board of the Florida Space Innovation Center.” Three people stand outdoors, with an inset portrait. Tagline: Innovate, Collaborate, Elevate."
 related:
   - label: "Governance: FSIC's board and how it is run"
     href: "/governance/#structure"
