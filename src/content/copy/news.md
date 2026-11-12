@@ -35,6 +35,12 @@ From FSIC's Facebook post of October 11, 2026. Facts checked against the Associa
 
 > **⚠ Review:** new wording, including the condolence line.
 
+### Preparing Southeast Volusia's Space Workforce, and a New Initiative for Girls and Young Women (`2026-09-24-preparing-the-space-workforce-in-southeast-volusia.md`)
+
+From FSIC's Facebook post of September 24, 2026. The post's NASA link was missing; the entry links NASA's "NASA Kicks Off Nationwide Effort to Prepare Tomorrow's Space Workforce" (the State Hubs for Skilled Technical Workforce kickoff, September 15, 2026, Space Center Houston), which matches the post's wording, and Space Florida's release on Project ORBIT, Florida's hub. Changed from the post: "helped make the first Apollo mission possible" is now "helped launch Apollo 11, the first Moon landing" (Apollo 11 was not the first Apollo mission); "is bringing together" is now "is working to bring together"; the closing slogans and emoji are left out. The entry doesn't claim a partnership with NASA or Space Florida.
+
+> **⚠ Review:** new wording. (1) Confirm the NASA announcement is the one the post meant. (2) The post doesn't name the woman who inspired the initiative (JoAnn Morgan, from the November 12 update); the entry doesn't either. Name her and link the two only if FSIC and she agree. (3) Has the initiative a name, and is it still recruiting? If not, update or remove the call for volunteers.
+
 ## PRESS RELEASES
 
 Each release is its own Markdown file in `src/content/news/`, named `<YYYY-MM-DD>-<slug>.md`, with the headline and date in the frontmatter. The file name is the URL. To publish a new release, add a file; the list page and the "More news" links update themselves.
