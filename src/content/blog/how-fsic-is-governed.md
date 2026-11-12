@@ -52,7 +52,7 @@ The Master Plan calls for a board drawn from independent community leaders, indu
 
 ## Who is on the board?
 
-As of November 2026, FSIC has announced these members of its Board of Directors: Erik Ahlgren (Board Chair), Beth Hamilton, Jessie Thompson, Diezel DePew (Mayor of Edgewater) and Ryan Trine (CEO of R3Doubt). Jake Johansson has joined FSIC's Founders Council. The appointments are announced on the [News](/news/) page.
+As of November 2026, FSIC has announced these members of its Board of Directors: Erik Ahlgren (Board Chair), Beth Hamilton, Jessie Thompson, Diezel DePew (Mayor of Edgewater) and Ryan Trine (CEO of R3Doubt). Jake Johansson (Florida State Senator, District 8) has joined FSIC's Founders Council. The appointments are announced on the [News](/news/) page.
 
 ## How is the board kept independent?
 
