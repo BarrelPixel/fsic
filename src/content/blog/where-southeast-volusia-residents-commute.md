@@ -31,7 +31,7 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 3–4 and 6"
-publishDate: 2026-12-14T13:09:00-05:00
+publishDate: 2026-12-21T13:09:00-05:00
 image: ./images/where-southeast-volusia-residents-commute.png
 imageAlt: "Where Do Southeast Volusia Residents Work and Commute? (FSIC Blog)"
 status: review

@@ -23,7 +23,8 @@ visual:
   figures: [jobYears]
 image: ./images/what-is-a-job-year.png
 imageAlt: "What Is a Job-Year? Reading FSIC’s 25-Year Projections (FSIC Blog)"
-status: published
+status: review
+publishDate: 2026-11-18T10:20:00-05:00
 followUp:
   question: "What are the three scenarios in FSIC's economic analysis, and how do they differ?"
   slug: what-are-fsics-economic-scenarios

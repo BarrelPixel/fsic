@@ -31,7 +31,7 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 3–4 and 6"
-publishDate: 2026-12-03T12:34:00-05:00
+publishDate: 2026-12-11T12:34:00-05:00
 image: ./images/southeast-volusia-by-the-numbers.png
 imageAlt: "Who Lives in Southeast Volusia? The Region by the Numbers (FSIC Blog)"
 status: review

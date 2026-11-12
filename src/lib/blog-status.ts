@@ -18,7 +18,10 @@ const NOW = env?.BLOG_NOW ? new Date(`${env.BLOG_NOW}T23:59:00Z`) : new Date();
 export function isLive(d: Status, now: Date = NOW): boolean {
   if (d.status === 'published') return true;
   if (d.status === 'draft' || !d.publishDate) return false;
-  const day = typeof d.publishDate === 'string' ? new Date(`${d.publishDate}T00:00:00Z`) : d.publishDate;
+  // Frontmatter read here (not through the collection schema) can leave the date a string: a bare date
+  // ("2026-11-16") or a date and time ("2026-11-16T12:22:00-05:00").
+  const p = d.publishDate;
+  const day = typeof p === 'string' ? new Date(p.length > 10 ? p : `${p}T00:00:00Z`) : p;
   return day.getTime() <= now.getTime();
 }
 

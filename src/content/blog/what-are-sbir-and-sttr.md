@@ -29,7 +29,7 @@ visual:
 image: ./images/what-are-sbir-and-sttr.png
 imageAlt: "What Are SBIR and STTR? Federal Funding for Small Business R&D (FSIC Blog)"
 status: review
-publishDate: 2026-12-28T12:29:00-05:00
+publishDate: 2027-01-04T12:29:00-05:00
 followUp:
   question: "How can a small business become a supplier to the space industry?"
   slug: how-to-become-a-space-supplier
