@@ -177,6 +177,9 @@ Committees support board governance and ensure compliance with nonprofit regulat
 
 ### Board members (on the page since November 11, 2026, under 02 Structure, after the lead; same list as the homepage)
 
+Founder (added November 12, 2026, at the project lead's direction; links to his bio in the FAQ):
+- **John Joaquin** — Founder (the title in FSIC's press releases)
+
 Announced in press releases:
 - **Erik Ahlgren** — Board Chair
 

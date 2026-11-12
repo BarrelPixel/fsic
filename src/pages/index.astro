@@ -25,7 +25,7 @@ import TableRow from '../components/TableRow.astro';
 import MoreLink from '../components/MoreLink.astro';
 import YearScale from '../components/YearScale.astro';
 import YearBar from '../components/YearBar.astro';
-import { people } from '../data/governance';
+import { people, personHref } from '../data/governance';
 import { audiences } from '../data/partnership';
 import HomeHero from '../components/HomeHero.astro';
 import { WHAT_IS_FSIC } from '../lib/seo';
@@ -220,7 +220,7 @@ const commonQuestions = ['residents-and-families', 'developers', 'compete', 'fun
             <Row label={g.group} rule="bottom" class={i > 0 ? 'pt-5' : undefined}>
               <List
                 html
-                items={g.members.map((m) => `${m.slug ? `<a href="${url(`/news/${m.slug}`)}" class="link">${m.name}</a>` : m.name}${m.role ? `, ${m.role}` : ''}`)}
+                items={g.members.map((m) => `${personHref(m) ? `<a href="${url(personHref(m)!)}" class="link">${m.name}</a>` : m.name}${m.role ? `, ${m.role}` : ''}`)}
               />
             </Row>
           ))}
