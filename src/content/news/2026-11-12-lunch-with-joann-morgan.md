@@ -2,6 +2,9 @@
 title: "Lunch with NASA Pioneer JoAnn Morgan"
 date: 2026-11-12
 kind: update
+source:
+  url: "https://www.linkedin.com/posts/johnjoaquin_floridaspaceinnovationcenter-fsic-nasa-ugcPost-7526416820371623936-jhzm/"
+  label: "John Joaquin's LinkedIn"
 photos:
   - src: "./images/2026-11-12-lunch-with-joann-morgan.jpg"
     alt: "John Joaquin and JoAnn Morgan standing together in a dining room, with a marina and the water behind them."
