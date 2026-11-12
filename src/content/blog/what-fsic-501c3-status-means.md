@@ -17,7 +17,7 @@ faqs:
 image: ./images/what-fsic-501c3-status-means.png
 imageAlt: "What Does FSIC's 501(c)(3) Status Mean? (FSIC Blog)"
 status: review
-publishDate: 2026-12-04T12:40:00-05:00
+publishDate: 2026-12-28T12:40:00-05:00
 followUp:
   question: "How does FSIC report its finances and outcomes to the public?"
   slug: how-fsic-reports-finances

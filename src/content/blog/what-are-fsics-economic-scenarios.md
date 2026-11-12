@@ -19,7 +19,7 @@ visual:
 image: ./images/what-are-fsics-economic-scenarios.png
 imageAlt: "What Are FSIC's Three Economic Scenarios? (FSIC Blog)"
 status: review
-publishDate: 2026-11-20T08:28:00-05:00
+publishDate: 2026-11-25T08:28:00-05:00
 followUp:
   question: "How will FSIC's economic impact be measured and reported over time?"
   slug: how-fsic-measures-economic-impact
