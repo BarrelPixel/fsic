@@ -16,7 +16,7 @@ faqs:
     a: "The Master Plan lists an Annual Impact Report among FSIC's public reporting tools. FSIC is in its first year, and the report's timing and contents have not been announced."
 image: ./images/how-fsic-reports-finances.png
 imageAlt: "How Does FSIC Report Its Finances and Outcomes? (FSIC Blog)"
-publishDate: 2027-01-11T11:06:00-05:00
+publishDate: 2026-12-28T11:06:00-05:00
 status: review
 followUp:
   question: "What is a Form 990, and what does it show about a nonprofit?"

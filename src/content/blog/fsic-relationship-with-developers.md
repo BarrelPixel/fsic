@@ -16,7 +16,7 @@ faqs:
     a: "FSIC's Master Plan designs its governance so that no single individual, partner or sector can dominate decision-making, with an independent board chair, term limits, conflict-of-interest policies and balanced representation across sectors."
 image: ./images/fsic-relationship-with-developers.png
 imageAlt: "What Is FSIC's Relationship With Developers? (FSIC Blog)"
-publishDate: 2027-01-19T08:27:00-05:00
+publishDate: 2027-01-04T08:27:00-05:00
 status: review
 followUp:
   question: "What are FSIC's advisory councils, and what do they do?"

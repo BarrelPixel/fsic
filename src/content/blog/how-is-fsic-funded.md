@@ -22,7 +22,7 @@ sources:
     publisher: "Florida Space Innovation Center"
 image: ./images/how-is-fsic-funded.png
 imageAlt: "How Will FSIC Be Funded Over Its First Five Years? (FSIC Blog)"
-publishDate: 2027-01-29T10:29:00-05:00
+publishDate: 2027-01-15T10:29:00-05:00
 status: review
 followUp:
   question: "What are EDA Tech Hubs and NSF Engines, and why do they matter for regions like Southeast Volusia?"
