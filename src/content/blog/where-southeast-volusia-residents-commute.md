@@ -31,7 +31,10 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 3–4 and 6"
-status: draft
+publishDate: 2026-12-14T13:09:00-05:00
+image: ./images/where-southeast-volusia-residents-commute.png
+imageAlt: "Where Do Southeast Volusia Residents Work and Commute? (FSIC Blog)"
+status: review
 from: space-coast-aerospace-jobs-and-pay
 followUp:
   question: "Which counties do Southeast Volusia residents commute to for work?"
@@ -163,3 +166,5 @@ FSIC has not projected commute times or where residents will work. The Master Pl
 - [Why is FSIC needed now?](/faq/#why-now)
 - [What Do Aerospace and Manufacturing Jobs Pay on the Space Coast?](/blog/space-coast-aerospace-jobs-and-pay/)
 - [The Talent Engine](/model/#talent)
+
+For who lives in these three cities (population, age, education and income), see [Southeast Volusia by the numbers](/blog/southeast-volusia-by-the-numbers/).

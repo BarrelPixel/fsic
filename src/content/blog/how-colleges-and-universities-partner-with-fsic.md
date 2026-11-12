@@ -28,7 +28,10 @@ sources:
     url: "https://fsic.space/long-term-vision/"
 visual:
   phases: [1, 2]
-status: draft
+publishDate: 2026-12-23T08:55:00-05:00
+image: ./images/how-colleges-and-universities-partner-with-fsic.png
+imageAlt: "How Can Colleges and Universities Partner With FSIC? (FSIC Blog)"
+status: review
 followUp:
   question: "What is the multi-university consortium in FSIC's long-term vision?"
   slug: what-is-fsics-multi-university-consortium

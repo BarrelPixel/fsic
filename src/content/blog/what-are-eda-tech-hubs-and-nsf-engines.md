@@ -35,7 +35,10 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 3–4, 14, 22–26 and 36"
-status: draft
+publishDate: 2027-02-03T10:32:00-05:00
+image: ./images/what-are-eda-tech-hubs-and-nsf-engines.png
+imageAlt: "What Are EDA Tech Hubs and NSF Engines? What They Mean for Southeast Volusia (FSIC Blog)"
+status: review
 followUp:
   question: "What is a regional innovation ecosystem, and what does Southeast Volusia need to build one?"
   slug: what-is-a-regional-innovation-ecosystem

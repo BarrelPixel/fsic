@@ -31,7 +31,10 @@ sources:
   - title: "FSIC Master Plan 2026–2031"
     publisher: "Florida Space Innovation Center"
     date: "pp. 3–4 and 6"
-status: draft
+publishDate: 2026-12-03T12:34:00-05:00
+image: ./images/southeast-volusia-by-the-numbers.png
+imageAlt: "Who Lives in Southeast Volusia? The Region by the Numbers (FSIC Blog)"
+status: review
 followUp:
   question: "How has Southeast Volusia's population changed since 2010?"
   slug: how-southeast-volusia-population-has-changed
@@ -156,3 +159,5 @@ FSIC's programs are planned and not yet running; as of November 2026, FSIC is in
 - [How will FSIC benefit local residents and families?](/faq/#residents-and-families)
 - [The Talent Engine](/model/#talent)
 - [What Do Aerospace and Manufacturing Jobs Pay on the Space Coast?](/blog/space-coast-aerospace-jobs-and-pay/)
+
+For where residents of these three cities work and how long they travel, see [Where do Southeast Volusia residents work?](/blog/where-southeast-volusia-residents-commute/)

@@ -23,7 +23,10 @@ sources:
   - title: "Florida Space Innovation Center Launches on Historic May 25 Anniversary to Ensure Southeast Volusia Shapes Its Own Future"
     publisher: "Florida Space Innovation Center"
     date: "May 25, 2026"
-status: draft
+publishDate: 2026-11-20T15:11:00-05:00
+image: ./images/what-fsic-means-for-southeast-volusia-residents.png
+imageAlt: "What Will FSIC Mean for Southeast Volusia Residents? (FSIC Blog)"
+status: review
 followUp:
   question: "What is economic mobility, and how does FSIC plan to expand it in Southeast Volusia?"
   slug: what-is-economic-mobility

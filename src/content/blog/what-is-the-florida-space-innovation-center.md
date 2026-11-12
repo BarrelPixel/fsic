@@ -31,7 +31,10 @@ sources:
     date: "July 7, July 13, July 29 and August 3, 2026"
 visual:
   phases: [1]
-status: draft
+publishDate: 2026-11-16T12:22:00-05:00
+image: ./images/what-is-the-florida-space-innovation-center.png
+imageAlt: "What Is the Florida Space Innovation Center (FSIC)? (FSIC Blog)"
+status: review
 followUp:
   question: "How did FSIC start, and who founded it?"
   slug: how-fsic-started

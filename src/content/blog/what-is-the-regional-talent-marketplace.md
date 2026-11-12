@@ -22,7 +22,7 @@ visual:
   phases: [1]
 image: ./images/what-is-the-regional-talent-marketplace.png
 imageAlt: "What Is FSIC's Regional Talent Marketplace? (FSIC Blog)"
-publishDate: 2027-01-21T12:59:00-05:00
+publishDate: 2027-02-08T12:59:00-05:00
 status: review
 from: how-employers-shape-fsic-training
 followUp:
