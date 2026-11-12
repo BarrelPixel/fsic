@@ -3,14 +3,14 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
-import { getReleases, formatDate, firstSentence, isoDate, releaseHref } from '../../lib/news';
+import { getReleases, formatDate, firstSentence, isoDate, releaseHref, kindLabel } from '../../lib/news';
 import { EMAIL, mailto } from '../../lib/site';
 import TableRow from '../../components/TableRow.astro';
 
 // Copy: src/content/copy/news.md (page wording); releases: src/content/news/ (as published).
 const releases = await getReleases();
 ---
-<BaseLayout title="News & Media" description="Press releases from the Florida Space Innovation Center, including its launch and the appointments to its Board of Directors.">
+<BaseLayout title="News & Media" description="Press releases and updates from the Florida Space Innovation Center: its launch, appointments to its board, and where FSIC has been.">
 
   <!-- Interior page template (DESIGN.md): PageHero, then the releases as rows on the grid -->
   <PageHero title="News & Media">
@@ -19,7 +19,7 @@ const releases = await getReleases();
       <a href={mailto()} class="link-on-dark">{EMAIL}</a>
     </p>
     <p class="text-lead text-white/90 mb-0">
-      Press releases from the Florida Space Innovation Center, newest first.
+      Press releases and updates from the Florida Space Innovation Center, newest first.
     </p>
   </PageHero>
 
@@ -32,6 +32,7 @@ const releases = await getReleases();
           <Fragment slot="c1">
             <p class="mb-0 text-label text-gray-dark">
               <time datetime={isoDate(r.data.date)}>{formatDate(r.data.date)}</time>
+              <span class="block mt-1 font-normal">{kindLabel(r)}</span>
             </p>
             {/* Thumbnail of the release graphic at one height (width follows the graphic; never cropped).
                 A mouse shortcut to the release: hidden from keyboard and screen readers, since the

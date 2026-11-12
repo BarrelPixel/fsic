@@ -10,6 +10,9 @@ export async function getReleases(): Promise<Release[]> {
 }
 
 /** The release page's address: /news/<slug>, with the base path. */
+/** "Press release" or "Update", for the list and the entry page. */
+export const kindLabel = (release: Release) => (release.data.kind === 'update' ? 'Update' : 'Press release');
+
 export const releaseHref = (release: Release) => url(`/news/${release.id}`);
 
 /** "2026-07-29", for <time datetime>. */

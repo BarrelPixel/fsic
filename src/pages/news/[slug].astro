@@ -5,7 +5,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import Grid from '../../components/Grid.astro';
-import { getReleases, formatDate, firstParagraph, truncate, isoDate, releaseHref, type Release } from '../../lib/news';
+import BaseLinks from '../../components/BaseLinks.astro';
+import { kindLabel, getReleases, formatDate, firstParagraph, truncate, isoDate, releaseHref, type Release } from '../../lib/news';
 import { url } from '../../lib/url';
 import { newsArticle } from '../../lib/seo';
 
@@ -41,7 +42,7 @@ const description = truncate(firstParagraph(release));
   <PageHero title={release.data.title} titleClass="text-4xl md:text-5xl">
     <p class="mb-0 font-sans text-white/75">
       <time datetime={isoDate(release.data.date)}>{formatDate(release.data.date)}</time>
-      <span aria-hidden="true"> · </span>Press release
+      <span aria-hidden="true"> · </span>{kindLabel(release)}
     </p>
   </PageHero>
 
@@ -62,8 +63,13 @@ const description = truncate(firstParagraph(release));
           />
         )}
       </div>
-      <article class="release max-w-3xl">
-        <Content />
+      <article class="release links-in max-w-3xl">
+        <BaseLinks><Content /></BaseLinks>
+        {release.data.source && (
+          <p class="mt-8 mb-0 font-sans text-caption text-gray-dark">
+            First posted on <a href={release.data.source.url} class="link" rel="noopener">{release.data.source.label}</a>.
+          </p>
+        )}
       </article>
       <!-- Below lg the label column stacks first, so the graphic follows the text there instead of
            pushing the first paragraph below the fold. (On lg it sits in the label column above.) -->

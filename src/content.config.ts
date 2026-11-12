@@ -3,7 +3,8 @@ import { z } from 'astro/zod';
 import { FIGURE_KEYS } from './data/economics';
 import { glob } from 'astro/loaders';
 
-// Press releases: one Markdown file per release, wording as published (see src/content/copy/news.md).
+// News: press releases (wording as published) and updates (short entries in the site's own voice, often from a
+// post FSIC made on social media: what happened, when, and a link to the original). See src/content/copy/news.md.
 // The file name (without .md) is the URL slug: /news/<slug>.
 const news = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/news' }),
@@ -12,6 +13,10 @@ const news = defineCollection({
       .object({
         title: z.string(),
         date: z.coerce.date(),
+        /** 'release': a press release, kept as published. 'update': a short entry in the site's voice. */
+        kind: z.enum(['release', 'update']).default('release'),
+        /** Where the update was first posted (e.g. FSIC's Facebook post), linked at its foot. */
+        source: z.object({ url: z.url(), label: z.string() }).optional(),
         // The graphic published with the release (src/content/news/images/). Its text goes in imageAlt.
         image: image().optional(),
         imageAlt: z.string().optional(),
