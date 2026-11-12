@@ -13,4 +13,4 @@ At the Massachusetts Institute of Technology, Hamilton led the team that wrote t
 
 She is widely credited with naming the field of software engineering, and she helped establish it as an engineering discipline in its own right. In 2016 she received the Presidential Medal of Freedom.
 
-Every mission, system and innovation that depends on reliable software builds on her work, including the work the next generation of engineers in the region will take on. FSIC extends its condolences to her family.
+Every mission, system and innovation that depends on reliable software builds on her work, including the work the [next generation of engineers in the region](/model/#talent) will take on. FSIC extends its condolences to her family.

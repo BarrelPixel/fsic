@@ -3,6 +3,11 @@ title: "Florida Space Innovation Center Welcomes Jake Johansson to Founders Coun
 date: 2026-08-03
 image: ./images/2026-08-03-jake-johansson-joins-founders-council.jpg
 imageAlt: "Announcement graphic: “Welcome! Jake Johansson to the Founders Council, Florida Space Innovation Center.” Two men stand in front of an American flag. Tagline: Ignite, Inspire, Impact."
+related:
+  - label: "Governance: FSIC's board and how it is run"
+    href: "/governance/#structure"
+  - label: "Partnering with FSIC: local governments"
+    href: "/partnership-funding/#local-government"
 ---
 
 **New Smyrna Beach, FL** — The Florida Space Innovation Center (FSIC) is honored to welcome Jake Johansson to its Founders Council. Johansson’s decades of military service, his steady municipal leadership, and his deep experience in county-level governance have long contributed to the strength and resilience of communities across Volusia County. His commitment to public service and his collaborative leadership style bring valuable perspective to FSIC’s founding team.

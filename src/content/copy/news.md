@@ -67,6 +67,12 @@ Keep the wording as published, including quotes. Fix only obvious formatting (bo
 
 ---
 
+## RELATED ON THIS SITE (November 12, 2026)
+
+Under each press release, a short list of site pages to read next (`related` in the release's file), so releases link into the site without changing their published wording: the launch release to the Strategic Moment, the FSIC Model, Economic Impact and Get Involved; each appointment to Governance and the matching partner row or engine. Updates link inline instead (Talent Engine and other engine anchors, Example Paths, the jobs-and-pay post, each other).
+
+> **⚠ Review:** the link labels are new.
+
 ## LIST PAGE
 
 **Headline:** News & Media

@@ -7,9 +7,9 @@ source:
   label: "FSIC's Facebook page"
 ---
 
-On September 15, 2026, NASA [kicked off a nationwide effort to prepare the space workforce](https://www.nasa.gov/learning-resources/nasa-kicks-off-nationwide-effort-to-prepare-tomorrows-space-workforce/): state hubs that connect students and workers with the training and credentials for skilled technical jobs in aerospace. Florida's hub is [Project ORBIT](https://www.spaceflorida.gov/news/florida-selected-as-one-of-seven-nasa-designated-aerospace-workforce-hubs-launches-project-orbit), led by Space Florida.
+On September 15, 2026, NASA [kicked off a nationwide effort to prepare the space workforce](https://www.nasa.gov/learning-resources/nasa-kicks-off-nationwide-effort-to-prepare-tomorrows-space-workforce/): state hubs that connect students and workers with the training and [credentials](/blog/what-are-industry-recognized-credentials/) for skilled technical jobs in aerospace. Florida's hub is [Project ORBIT](https://www.spaceflorida.gov/news/florida-selected-as-one-of-seven-nasa-designated-aerospace-workforce-hubs-launches-project-orbit), led by Space Florida.
 
-In Southeast Volusia, FSIC is working to bring local schools, workforce partners, small businesses and civic leaders together, so that residents can reach the high-wage technical careers the space industry is creating. That is the work of FSIC's [Talent Engine](/model/).
+In Southeast Volusia, FSIC is working to bring [local schools, workforce partners, small businesses and civic leaders](/partnership-funding/#partners) together, so that residents can reach the [high-wage technical careers](/blog/space-coast-aerospace-jobs-and-pay/) the space industry is creating. That is the work of FSIC's [Talent Engine](/model/#talent).
 
 ## A new initiative for girls and young women
 
