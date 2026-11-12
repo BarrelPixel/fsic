@@ -1,6 +1,6 @@
 ---
 title: "FSIC at NASA's MAX POWER Aerospace Expo"
-date: 2026-11-12
+date: 2026-11-10
 kind: update
 source:
   url: "https://www.facebook.com/share/p/1VeGFTfDNy/"

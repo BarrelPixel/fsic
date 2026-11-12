@@ -7,7 +7,7 @@ source:
   label: "FSIC's Facebook page"
 ---
 
-FSIC is encouraging high school students in Volusia County Schools to enter NASA's [Moon Base Challenge](https://moonbasechallenge.org), a national competition for student teams that NASA announced during its [MAX POWER aerospace expo](/news/2026-11-12-fsic-at-nasa-max-power/) at Kennedy Space Center.
+FSIC is encouraging high school students in Volusia County Schools to enter NASA's [Moon Base Challenge](https://moonbasechallenge.org), a national competition for student teams that NASA announced during its [MAX POWER aerospace expo](/news/2026-11-10-fsic-at-nasa-max-power/) at Kennedy Space Center.
 
 The challenge asks students to design solutions that support NASA's Artemis missions and a lasting human presence on the Moon. Teams choose one of six areas: power generation and storage, construction with lunar materials, life-support systems, surface mobility, communications networks, and astronaut safety. They take their idea from a first concept to a technical design and a presentation. NASA has set aside [$1 million for the challenge](https://www.nasa.gov/news-release/nasa-announces-1-million-to-students-for-moon-base-challenge/).
 
