@@ -13,10 +13,10 @@ on:
     - cron: '0 14 * * *'
   workflow_dispatch:
 
+# Least privilege: every job can only read the repository. Only the deploy job, which runs no project code,
+# gets the Pages and OIDC permissions it needs; the build job (npm ci, the build scripts) never holds them.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Is a post due?
         id: decide
         run: |
@@ -48,6 +50,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -73,6 +77,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

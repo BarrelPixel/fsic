@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Screenshots and other scratch output, never in the repo root
+/*.png
