@@ -29,6 +29,8 @@ export function firstParagraph(release: Release): string {
   return para
     .replace(/^\*\*[^*]+\*\*\s*—\s*/, '')
     .replace(/\*\*([^*]+)\*\*/g, '$1')
+    // Links ([text](url), in updates) become their text: a raw URL can't wrap and widened the list on phones.
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
     .replace(/\s+/g, ' ')
     .trim();
 }
