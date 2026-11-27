@@ -79,7 +79,7 @@ Without a sitemap, crawlers discover pages only through links. There's no `robot
 - `src/pages/robots.txt.ts` points to the sitemap. Both read `site` and `base`, so they're right under `/fsic` and at fsic.space.
 
 ### B3. The GitHub Pages preview is indexable (high; decision)
-The preview has canonical URLs on `barrelpixel.github.io/fsic`. If search engines index it now, those URLs compete with fsic.space at launch. This is the open question "Search indexing before launch".
+The preview has canonical URLs on `barrelandpixel.github.io/fsic`. If search engines index it now, those URLs compete with fsic.space at launch. This is the open question "Search indexing before launch".
 **Recommendation:**
 - **Now:** `noindex` on every page and `Disallow: /` in `robots.txt`, controlled by one setting.
 - **At launch:** flip the setting when `site` becomes `https://fsic.space`, and add the switch to `06-launch-plan.md`.

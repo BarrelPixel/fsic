@@ -15,7 +15,7 @@ export default defineConfig({
   // GitHub Pages preview. When fsic.space points here (docs/06-launch-plan.md, "Switching to fsic.space"),
   // set site to 'https://fsic.space' and BASE (above) to '': links go through url() (src/lib/url.ts) and the
   // redirects through to(), so nothing else changes. That also switches on indexing (src/lib/seo.ts).
-  site: 'https://barrelpixel.github.io',
+  site: 'https://barrelandpixel.github.io',
   base: BASE || undefined,
   // Astro 7 defaults to JSX-style whitespace, which drops the spaces between inline elements on separate
   // lines (a link and the word after it). Keep HTML whitespace rules.
